@@ -1,0 +1,94 @@
+<button class="menu-button" type="button" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen" aria-label="Open navigation">☰</button>
+
+<aside class="sidebar" [class.open]="menuOpen">
+  <a class="brand" href="#home" (click)="closeMenu()" aria-label="Go to home">
+    <span class="brand-mark">AH</span>
+    <span><strong>Alamgir Hossain</strong><small>PMP® · CSM® · ITIL</small></span>
+  </a>
+
+  <nav aria-label="Primary navigation">
+    <a href="#home" (click)="closeMenu()">Home</a>
+    <a href="#about" (click)="closeMenu()">About</a>
+    <a href="#expertise" (click)="closeMenu()">Expertise</a>
+    <a href="#portfolio" (click)="closeMenu()">Portfolio</a>
+    <a href="#credentials" (click)="closeMenu()">Credentials</a>
+    <a href="#contact" (click)="closeMenu()">Contact</a>
+  </nav>
+
+  <div class="sidebar-footer">
+    <span>Regina, Saskatchewan</span>
+    <a href="mailto:alamgircanb@gmail.com">alamgircanb&#64;gmail.com</a>
+  </div>
+</aside>
+<button class="scrim" [class.visible]="menuOpen" (click)="closeMenu()" aria-label="Close navigation"></button>
+
+<main>
+  <section id="home" class="hero section">
+    <div class="hero-copy">
+      <p class="eyebrow">Project leadership · Business analysis · Digital delivery</p>
+      <h1>Turning complex work into clear, measurable progress.</h1>
+      <p class="lead">I’m Md Alamgir Hossain, a PMP-certified project professional and Business Information Systems student with 12+ years of experience leading programs, improving reporting, and coordinating people, processes and technology.</p>
+      <div class="actions">
+        <a class="button primary" href="#portfolio">View selected work</a>
+        <a class="button secondary" href="https://www.linkedin.com/in/alamgircanb/" target="_blank" rel="noreferrer">Connect on LinkedIn</a>
+      </div>
+    </div>
+    <div class="hero-panel" aria-label="Professional summary">
+      <div><strong>12+</strong><span>Years leading programs</span></div>
+      <div><strong>95.04%</strong><span>BIS academic average</span></div>
+      <div><strong>200</strong><span>Partner organizations supported</span></div>
+      <div><strong>35</strong><span>Team members supervised</span></div>
+    </div>
+  </section>
+
+  <section id="about" class="section split">
+    <div><p class="eyebrow">About</p><h2>Business perspective with hands-on technology skills.</h2></div>
+    <div class="body-copy">
+      <p>My background combines project and program leadership, management information systems, stakeholder engagement and operational improvement. At PKSF in Bangladesh, I progressed from Assistant Program Manager to Program Manager and supported large-scale initiatives involving approximately 200 partner organizations.</p>
+      <p>Now based in Regina, I am completing a Business Information Systems diploma at Saskatchewan Polytechnic. I bring structured delivery experience together with current skills in Power BI, SQL, Python, Java, REST APIs, Microsoft 365 and IT service practices.</p>
+    </div>
+  </section>
+
+  <section id="expertise" class="section">
+    <p class="eyebrow">Expertise</p><h2>Where strategy meets execution.</h2>
+    <div class="card-grid three">
+      <article><span class="card-number">01</span><h3>Project & Program Delivery</h3><p>Planning, governance, risk, resources, vendors, reporting and stakeholder alignment across Agile, Waterfall and hybrid environments.</p></article>
+      <article><span class="card-number">02</span><h3>Business Analysis</h3><p>Requirements elicitation, process mapping, gap analysis, documentation, traceability and translating business needs into practical solutions.</p></article>
+      <article><span class="card-number">03</span><h3>Data & Digital Tools</h3><p>Power BI dashboards, advanced Excel, SQL, Python, SharePoint, Jira, REST APIs and service-management fundamentals.</p></article>
+    </div>
+  </section>
+
+  <section id="portfolio" class="section portfolio-section">
+    <div class="section-heading"><div><p class="eyebrow">Selected portfolio</p><h2>Work that connects insight, systems and delivery.</h2></div><a href="https://github.com/hossain8078" target="_blank" rel="noreferrer">Explore GitHub ↗</a></div>
+    <div class="project-grid">
+      @for (project of projects; track project.title) {
+        <article class="project-card">
+          <p class="project-category">{{ project.category }}</p><h3>{{ project.title }}</h3><p>{{ project.description }}</p>
+          <ul>@for (tool of project.tools; track tool) { <li>{{ tool }}</li> }</ul>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section id="credentials" class="section split">
+    <div><p class="eyebrow">Credentials</p><h2>Professional standards, continuously applied.</h2></div>
+    <div class="credentials">
+      <a href="https://www.credly.com/users/alamgircanb/badges" target="_blank" rel="noreferrer"><strong>PMP®</strong><span>Project Management Professional</span><small>View credential ↗</small></a>
+      <a href="https://www.credly.com/users/alamgircanb/badges" target="_blank" rel="noreferrer"><strong>CSM®</strong><span>Certified ScrumMaster</span><small>View credential ↗</small></a>
+      <a href="https://www.credly.com/users/alamgircanb/badges" target="_blank" rel="noreferrer"><strong>ITIL</strong><span>IT Service Management Foundation</span><small>View credential ↗</small></a>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact">
+    <p class="eyebrow">Contact</p><h2>Let’s discuss projects, systems and better ways of working.</h2>
+    <p>I’m open to professional opportunities and conversations in project coordination, PMO, business analysis, digital delivery and IT services.</p>
+    <div class="actions">
+      <a class="button light" href="mailto:alamgircanb@gmail.com">Email me</a>
+      <a class="button ghost" href="https://www.linkedin.com/in/alamgircanb/" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a class="button ghost" href="https://github.com/hossain8078" target="_blank" rel="noreferrer">GitHub</a>
+      <a class="button ghost" href="https://www.credly.com/users/alamgircanb/badges" target="_blank" rel="noreferrer">Credly</a>
+    </div>
+  </section>
+
+  <footer><span>© {{ year }} Md Alamgir Hossain</span><span>Built with Angular & TypeScript</span></footer>
+</main>
