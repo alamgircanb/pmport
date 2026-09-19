@@ -1,11 +1,17 @@
 import { Component, inject } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
-interface Project {
+interface WorkItem {
   title: string;
+  repositoryUrl?: string;
+}
+
+interface PortfolioArea {
+  number: string;
   category: string;
   description: string;
   tools: string[];
+  workItems: WorkItem[];
   image?: string;
   imageAlt?: string;
 }
@@ -40,32 +46,54 @@ export class AppComponent {
     // }
   ];
 
-  readonly projects: Project[] = [
+  // Add a repositoryUrl to any work item below. A GitHub link will then
+  // appear automatically beside that project.
+  readonly portfolioAreas: PortfolioArea[] = [
     {
-      title: 'Executive Power BI Dashboard',
-      category: 'Business Intelligence',
-      description: 'Cleaned, modelled and visualized operational data to turn detailed records into decision-ready performance insights.',
-      tools: ['Power BI', 'Data modelling', 'Excel'],
+      number: '01',
+      category: 'Business Analysis, Data Analytics & Intelligence',
+      description: 'Turning business needs and operational data into clear requirements, useful insights and decision-ready reporting.',
+      tools: ['Business analysis', 'Power BI', 'Excel', 'SQL', 'Python'],
+      workItems: [
+        { title: 'Executive Power BI Dashboard', repositoryUrl: '' },
+        { title: 'Wine Classification Model', repositoryUrl: '' },
+        { title: 'Data Modelling and Cleaning', repositoryUrl: '' }
+      ],
       image: 'power-bi-project-presentation.png',
       imageAlt: 'Alamgir presenting a project progress dashboard to his team'
     },
     {
-      title: 'Wide World Importers REST API',
-      category: 'Application Development',
-      description: 'Developed a layered .NET REST API using controllers, services, repositories, DTOs and asynchronous data access.',
-      tools: ['.NET 9', 'REST', 'SQL']
+      number: '02',
+      category: 'IT & Systems Development',
+      description: 'Designing and developing practical applications, APIs and connected systems using layered, maintainable approaches.',
+      tools: ['.NET 9', 'REST APIs', 'Java', 'SQL'],
+      workItems: [
+        { title: 'Wide World Importers REST API', repositoryUrl: '' },
+        { title: 'EyeMax Cinemas Web Application', repositoryUrl: '' },
+        { title: 'Java Client–Server Application', repositoryUrl: '' }
+      ]
     },
     {
-      title: 'Wine Classification Model',
-      category: 'Data & Machine Learning',
-      description: 'Prepared data and trained a decision-tree model to classify wine observations and evaluate predictive performance.',
-      tools: ['Python', 'Decision Tree', 'Data preparation']
+      number: '03',
+      category: 'Project, Program & Change Leadership',
+      description: 'Aligning stakeholders, resources, risks and reporting so complex initiatives move from planning to measurable results.',
+      tools: ['PMP', 'Agile', 'Waterfall', 'Stakeholders', 'Change'],
+      workItems: [
+        { title: 'Reporting Process Redesign', repositoryUrl: '' },
+        { title: 'Multi-Partner Program Delivery', repositoryUrl: '' },
+        { title: 'Stakeholder and Vendor Coordination', repositoryUrl: '' }
+      ]
     },
     {
-      title: 'Reporting Process Redesign',
-      category: 'Project & Process Improvement',
-      description: 'Led requirements alignment and reporting redesign across stakeholders, shortening the reporting cycle by approximately two weeks.',
-      tools: ['Requirements', 'Stakeholders', 'Process improvement']
+      number: '04',
+      category: 'Academic Projects & Applied Learning',
+      description: 'Applying Business Information Systems concepts through practical assignments that connect analysis, technology and business value.',
+      tools: ['BIS', 'Systems analysis', 'Research', 'Teamwork'],
+      workItems: [
+        { title: 'Business Information Systems Coursework', repositoryUrl: '' },
+        { title: 'Systems Analysis and Requirements Exercises', repositoryUrl: '' },
+        { title: 'Technical Labs and Team Projects', repositoryUrl: '' }
+      ]
     }
   ];
 

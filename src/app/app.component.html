@@ -45,7 +45,7 @@
 
   <section id="profile" class="section profile-section">
     <div class="profile-photo-wrap">
-      <img src="professional-photo.jpg" alt="Professional portrait of Md Alamgir Hossain" class="profile-photo">
+      <img src="100x100.jpg" alt="Professional portrait of Md Alamgir Hossain" class="profile-photo">
     </div>
     <div class="profile-copy">
       <p class="eyebrow">Professional profile</p>
@@ -76,15 +76,33 @@
   </section>
 
   <section id="portfolio" class="section portfolio-section">
-    <div class="section-heading"><div><p class="eyebrow">Selected portfolio</p><h2>Work that connects insight, systems and delivery.</h2></div><a href="https://github.com/hossain8078" target="_blank" rel="noreferrer">Explore GitHub ↗</a></div>
+    <div class="section-heading"><div><p class="eyebrow">Professional & academic portfolio</p><h2>Experience organized around the value I deliver.</h2></div><a href="https://github.com/hossain8078" target="_blank" rel="noreferrer">Explore GitHub ↗</a></div>
     <div class="project-grid">
-      @for (project of projects; track project.title) {
+      @for (area of portfolioAreas; track area.category) {
         <article class="project-card">
-          @if (project.image) {
-            <img class="project-image" [src]="project.image" [alt]="project.imageAlt || project.title" loading="lazy">
+          @if (area.image) {
+            <img class="project-image" [src]="area.image" [alt]="area.imageAlt || area.category" loading="lazy">
           }
-          <p class="project-category">{{ project.category }}</p><h3>{{ project.title }}</h3><p>{{ project.description }}</p>
-          <ul>@for (tool of project.tools; track tool) { <li>{{ tool }}</li> }</ul>
+          <div class="project-body">
+            <span class="portfolio-number">{{ area.number }}</span>
+            <p class="project-category">Area of practice</p>
+            <h3>{{ area.category }}</h3>
+            <p>{{ area.description }}</p>
+            <div class="work-list" aria-label="Selected work">
+              <h4>Selected work</h4>
+              @for (work of area.workItems; track work.title) {
+                <div class="work-item">
+                  <span>{{ work.title }}</span>
+                  @if (work.repositoryUrl) {
+                    <a [href]="work.repositoryUrl" target="_blank" rel="noreferrer" [attr.aria-label]="'View GitHub repository for ' + work.title">Repository ↗</a>
+                  }
+                </div>
+              }
+            </div>
+            <div class="project-footer">
+              <ul>@for (tool of area.tools; track tool) { <li>{{ tool }}</li> }</ul>
+            </div>
+          </div>
         </article>
       }
     </div>
