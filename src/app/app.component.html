@@ -9,8 +9,10 @@
   <nav aria-label="Primary navigation">
     <a href="#home" (click)="closeMenu()">Home</a>
     <a href="#about" (click)="closeMenu()">About</a>
+    <a href="#profile" (click)="closeMenu()">Profile</a>
     <a href="#expertise" (click)="closeMenu()">Expertise</a>
     <a href="#portfolio" (click)="closeMenu()">Portfolio</a>
+    <a href="#media" (click)="closeMenu()">Media</a>
     <a href="#credentials" (click)="closeMenu()">Credentials</a>
     <a href="#contact" (click)="closeMenu()">Contact</a>
   </nav>
@@ -41,6 +43,21 @@
     </div>
   </section>
 
+  <section id="profile" class="section profile-section">
+    <div class="profile-photo-wrap">
+      <img src="professional-photo.jpg" alt="Professional portrait of Md Alamgir Hossain" class="profile-photo">
+    </div>
+    <div class="profile-copy">
+      <p class="eyebrow">Professional profile</p>
+      <h2>Leading with clarity, collaboration and accountability.</h2>
+      <p>I combine program leadership experience with current business-systems knowledge to help teams define priorities, solve operational problems and deliver measurable results.</p>
+      <div class="profile-details">
+        <span><strong>Based in</strong> Regina, Saskatchewan</span>
+        <span><strong>Focus</strong> Project delivery, business analysis and digital services</span>
+      </div>
+    </div>
+  </section>
+
   <section id="about" class="section split">
     <div><p class="eyebrow">About</p><h2>Business perspective with hands-on technology skills.</h2></div>
     <div class="body-copy">
@@ -63,6 +80,9 @@
     <div class="project-grid">
       @for (project of projects; track project.title) {
         <article class="project-card">
+          @if (project.image) {
+            <img class="project-image" [src]="project.image" [alt]="project.imageAlt || project.title" loading="lazy">
+          }
           <p class="project-category">{{ project.category }}</p><h3>{{ project.title }}</h3><p>{{ project.description }}</p>
           <ul>@for (tool of project.tools; track tool) { <li>{{ tool }}</li> }</ul>
         </article>
@@ -70,12 +90,40 @@
     </div>
   </section>
 
+  <section id="media" class="section media-section">
+    <div class="section-heading media-heading">
+      <div><p class="eyebrow">Media</p><h2>Videos, presentations and professional insights.</h2></div>
+      @if (youtubeChannelUrl) {
+        <a [href]="youtubeChannelUrl" target="_blank" rel="noreferrer">Visit YouTube channel ↗</a>
+      }
+    </div>
+
+    @if (mediaVideos.length) {
+      <div class="video-grid">
+        @for (video of mediaVideos; track video.title) {
+          <article class="video-card">
+            <div class="video-frame">
+              <iframe [src]="video.embedUrl" [title]="video.title" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="video-copy"><h3>{{ video.title }}</h3><p>{{ video.description }}</p></div>
+          </article>
+        }
+      </div>
+    } @else {
+      <div class="media-empty">
+        <span class="play-mark" aria-hidden="true">▶</span>
+        <div><h3>Video library coming soon</h3><p>Project walkthroughs, Power BI demonstrations and professional insights will appear here.</p></div>
+      </div>
+    }
+  </section>
+
   <section id="credentials" class="section split">
     <div><p class="eyebrow">Credentials</p><h2>Professional standards, continuously applied.</h2></div>
     <div class="credentials">
-      <a href="https://www.credly.com/users/alamgircanb/badges" target="_blank" rel="noreferrer"><strong>PMP®</strong><span>Project Management Professional</span><small>View credential ↗</small></a>
-      <a href="https://www.credly.com/users/alamgircanb/badges" target="_blank" rel="noreferrer"><strong>CSM®</strong><span>Certified ScrumMaster</span><small>View credential ↗</small></a>
+      <a href="https://www.credly.com/badges/d80ef58d-6eac-46b5-8d22-b0a255c9ee16/linked_in_profile" target="_blank" rel="noreferrer"><strong>PMP®</strong><span>Project Management Professional</span><small>Verify credential ↗</small></a>
+      <a href="https://app.badgecert.com/public/badges/tvtrllat" target="_blank" rel="noreferrer"><strong>CSM®</strong><span>Certified ScrumMaster</span><small>Verify credential ↗</small></a>
       <a href="https://www.credly.com/users/alamgircanb/badges" target="_blank" rel="noreferrer"><strong>ITIL</strong><span>IT Service Management Foundation</span><small>View credential ↗</small></a>
+      <a href="https://badges.wes.org/Evidence?i=8d95a5d1-7f78-40d0-a8d0-93cfa5f00854&amp;type=ca" target="_blank" rel="noreferrer"><strong>MBA</strong><span>Master of Business Administration · WES verified</span><small>Verify credential ↗</small></a>
     </div>
   </section>
 
