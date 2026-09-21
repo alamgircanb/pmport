@@ -1,11 +1,24 @@
+<!-- ================================================================
+     MOBILE MENU BUTTON
+     toggleMenu() and menuOpen are defined in the component TypeScript.
+     The aria-expanded value tells screen readers whether the menu is open.
+================================================================= -->
 <button class="menu-button" type="button" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen" aria-label="Open navigation">☰</button>
 
+<!-- ================================================================
+     SIDEBAR / MAIN NAVIGATION
+     To add a new page section:
+     1. Give the section a unique id, for example id="awards".
+     2. Add a link here using href="#awards".
+     3. Keep (click)="closeMenu()" so the mobile menu closes after selection.
+================================================================= -->
 <aside class="sidebar" [class.open]="menuOpen">
+  <!-- Personal brand shown at the top of the sidebar. -->
   <a class="brand" href="#home" (click)="closeMenu()" aria-label="Go to home">
     <span class="brand-mark">AH</span>
     <span><strong>Alamgir Hossain</strong><small>PMP® · CSM® · ITILv5</small></span>
   </a>
-<!--Side Bar-->
+  <!-- Keep these links in the same order as the sections below. -->
   <nav aria-label="Primary navigation">
     <a href="#home" (click)="closeMenu()">Home</a>
     <a href="#about" (click)="closeMenu()">About</a>
@@ -20,17 +33,24 @@
   </nav>
 
   <div class="sidebar-footer">
+    <!-- Change the location and email address here if needed. -->
     <span>Regina, Saskatchewan</span>
     <a href="https://outlook.office.com/mail/deeplink/compose?to=alamgircanb%40gmail.com" target="_blank" rel="noreferrer">alamgircanb&#64;gmail.com</a>
   </div>
 </aside>
+<!-- Dark overlay behind the sidebar on small screens; clicking it closes the menu. -->
 <button class="scrim" [class.visible]="menuOpen" (click)="closeMenu()" aria-label="Close navigation"></button>
 
 <main>
+  <!-- ================================================================
+       HOME / HERO SECTION
+       Edit the headline, introduction, and action links directly below.
+       The four statistics are intentionally short for easy scanning.
+  ================================================================= -->
   <section id="home" class="hero section">
     <div class="hero-copy">
       <p class="eyebrow">Project leadership · Business analysis · Digital delivery</p>
-      <h1>Turning complex work into clear, measurable progress with a constant focus on value.</h1>
+      <h1>Turning complex work into clear, measurable progress.</h1>
       <p class="lead">I’m Md Alamgir Hossain, a PMP-certified project professional and Business Information Systems student with 12+ years of experience leading programs, improving reporting, and coordinating people, processes and technology.</p>
       <div class="actions">
         <a class="button primary" href="#portfolio">View selected work</a>
@@ -38,6 +58,7 @@
       </div>
     </div>
     <div class="hero-panel" aria-label="Professional summary">
+      <!-- Update these numbers whenever your experience or results change. -->
       <div><strong>12+</strong><span>Years leading programs</span></div>
       <div><strong>95.04%</strong><span>BIS academic average</span></div>
       <div><strong>200</strong><span>Partner organizations supported</span></div>
@@ -45,6 +66,11 @@
     </div>
   </section>
 
+  <!-- ================================================================
+       PROFESSIONAL PROFILE
+       Replace my_profile_pic.png with another image stored in the same
+       Angular public/assets location, or update src to the new path.
+  ================================================================= -->
   <section id="profile" class="section profile-section">
     <div class="profile-photo-wrap">
       <img src="my_profile_pic.png" alt="Professional portrait of Md Alamgir Hossain" class="profile-photo">
@@ -60,6 +86,7 @@
     </div>
   </section>
 
+  <!-- ABOUT SECTION: longer career and education summary. -->
   <section id="about" class="section split">
     <div><p class="eyebrow">About</p><h2>Business perspective with hands-on technology skills.</h2></div>
     <div class="body-copy">
@@ -68,6 +95,11 @@
     </div>
   </section>
 
+  <!-- ================================================================
+       EXPERTISE SECTION
+       Add another <article> if you want a fourth expertise card.
+       If you do, also review the grid styling in the component CSS.
+  ================================================================= -->
   <section id="expertise" class="section">
     <p class="eyebrow">Expertise</p><h2>Where strategy meets execution.</h2>
     <div class="card-grid three">
@@ -77,11 +109,24 @@
     </div>
   </section>
 
+  <!-- ================================================================
+       PORTFOLIO SECTION
+       Content is data-driven from portfolioAreas in the TypeScript file.
+       Each portfolio area can contain:
+       - category, number, description, image, and imageAlt
+       - workItems (projects displayed in the scrollable list)
+       - tools (technology labels displayed at the bottom)
+
+       To control project order, change each work item's priority value in
+       TypeScript. sortedWorkItems(...) displays higher-priority work first.
+  ================================================================= -->
   <section id="portfolio" class="section portfolio-section">
     <div class="section-heading"><div><p class="eyebrow">Professional & academic portfolio</p><h2>Experience organized around the value I deliver.</h2></div><a href="https://github.com/hossain8078" target="_blank" rel="noreferrer">Explore GitHub ↗</a></div>
     <div class="project-grid">
+      <!-- Angular creates one project card for every object in portfolioAreas. -->
       @for (area of portfolioAreas; track area.category) {
         <article class="project-card">
+          <!-- The image block is omitted automatically when area.image is empty. -->
           @if (area.image) {
             <img class="project-image" [src]="area.image" [alt]="area.imageAlt || area.category" loading="lazy">
           }
@@ -92,10 +137,17 @@
             <p>{{ area.description }}</p>
             <div class="work-list" aria-label="Selected work">
               <h4>Selected work</h4>
+              <!--
+                This list becomes vertically scrollable through the
+                .portfolio-scroll CSS rule. tabindex="0" lets keyboard users
+                focus the list and scroll it without using a mouse.
+              -->
               <div class="scroll-list portfolio-scroll" tabindex="0" aria-label="Scrollable selected work list">
+                <!-- Project order comes from sortedWorkItems(area.workItems). -->
                 @for (work of sortedWorkItems(area.workItems); track work.title) {
                   <div class="work-item">
                     <span>{{ work.title }}</span>
+                    <!-- Repository link appears only when repositoryUrl exists. -->
                     @if (work.repositoryUrl) {
                       <a [href]="work.repositoryUrl" target="_blank" rel="noreferrer" [attr.aria-label]="'View GitHub repository for ' + work.title">Repository ↗</a>
                     }
@@ -104,6 +156,7 @@
               </div>
             </div>
             <div class="project-footer">
+              <!-- Angular creates one technology label for every item in area.tools. -->
               <ul>@for (tool of area.tools; track tool) { <li>{{ tool }}</li> }</ul>
             </div>
           </div>
@@ -112,16 +165,23 @@
     </div>
   </section>
 
+  <!-- ================================================================
+       MEDIA / VIDEO LIBRARY
+       Add videos to mediaVideos in TypeScript. Each video needs an id,
+       title, description, embedUrl, youtubeUrl, and thumbnailUrl.
+  ================================================================= -->
   <section id="media" class="section media-section">
     <div class="section-heading media-heading">
       <div><p class="eyebrow">Media</p><h2>Videos, presentations and professional insights.</h2></div>
       @if (youtubeChannelUrl) {
+        <!-- The channel link is hidden automatically when the URL is empty. -->
         <a [href]="youtubeChannelUrl" target="_blank" rel="noreferrer">Visit YouTube channel ↗</a>
       }
     </div>
 
     @if (mediaVideos.length) {
       <div class="media-library">
+        <!-- The selected video is displayed as the large featured video. -->
         @if (selectedVideo; as featuredVideo) {
           <article class="featured-video">
             <div class="video-frame">
@@ -135,6 +195,7 @@
         }
 
         <div class="video-list" aria-label="Choose a video">
+          <!-- Clicking a list item calls selectVideo(video) in TypeScript. -->
           @for (video of mediaVideos; track video.id) {
             <button type="button" class="video-list-item" [class.selected]="selectedVideo?.id === video.id" (click)="selectVideo(video)" [attr.aria-pressed]="selectedVideo?.id === video.id">
               <img [src]="video.thumbnailUrl" [alt]="''" loading="lazy">
@@ -145,6 +206,7 @@
         </div>
       </div>
     } @else {
+      <!-- Friendly fallback shown before any videos have been added. -->
       <div class="media-empty">
         <span class="play-mark" aria-hidden="true">▶</span>
         <div><h3>Video library coming soon</h3><p>Project walkthroughs, Power BI demonstrations and professional insights will appear here.</p></div>
@@ -152,6 +214,11 @@
     }
   </section>
 
+  <!-- ================================================================
+       CREDENTIALS
+       Each card is a direct public verification link. Replace a URL here
+       when a credential provider changes its public profile address.
+  ================================================================= -->
   <section id="credentials" class="section split">
     <div><p class="eyebrow">Credentials</p><h2>Professional standards, continuously applied.</h2></div>
     <div class="credentials">
@@ -162,6 +229,14 @@
     </div>
   </section>
 
+  <!-- ================================================================
+       EVENTS & PHOTO GALLERY
+       This section appears before Books & Articles as requested.
+
+       featuredEvents: the four most important/recent events shown as cards.
+       archivedEvents: all additional events shown in the scrollable list.
+       Both arrays are maintained in the component TypeScript file.
+  ================================================================= -->
   <section id="events" class="section events-section">
     <div class="section-heading">
       <div><p class="eyebrow">Events & photo gallery</p><h2>Recent moments from my professional journey.</h2></div>
@@ -169,6 +244,7 @@
     </div>
 
     <div class="event-grid">
+      <!-- Keep four items in featuredEvents for a balanced four-card layout. -->
       @for (event of featuredEvents; track event.title) {
         <article class="event-card">
           <img [src]="event.image" [alt]="event.imageAlt" loading="lazy">
@@ -176,6 +252,7 @@
             <span class="event-date">{{ event.date }}</span>
             <h3>{{ event.title }}</h3>
             <p>{{ event.description }}</p>
+            <!-- Gallery link is hidden when an event has no repositoryUrl. -->
             @if (event.repositoryUrl) {
               <a [href]="event.repositoryUrl" target="_blank" rel="noreferrer">View event gallery ↗</a>
             }
@@ -185,10 +262,13 @@
     </div>
 
     @if (archivedEvents.length) {
+      <!-- This entire archive block disappears when archivedEvents is empty. -->
       <div class="event-archive">
         <div class="archive-heading"><h3>More events</h3><span>Scroll to explore</span></div>
         <div class="scroll-list event-scroll" tabindex="0" aria-label="Scrollable list of additional events">
+          <!-- Add as many archived events as needed; CSS limits visible height. -->
           @for (event of archivedEvents; track event.title) {
+            <!-- If repositoryUrl is missing, the link falls back to your GitHub profile. -->
             <a class="archive-item" [href]="event.repositoryUrl || 'https://github.com/hossain8078'" target="_blank" rel="noreferrer">
               <img [src]="event.image" alt="" loading="lazy">
               <span><strong>{{ event.title }}</strong><small>{{ event.date }} · {{ event.description }}</small></span>
@@ -200,12 +280,18 @@
     }
   </section>
 
+  <!-- ================================================================
+       BOOKS & ARTICLES
+       Add or reorder entries in the resources array in TypeScript.
+       The repository button appears only after repositoryUrl is provided.
+  ================================================================= -->
   <section id="resources" class="section resources-section">
     <div class="section-heading">
       <div><p class="eyebrow">Books & articles</p><h2>Practical ideas for projects, analysis and digital delivery.</h2></div>
       <a href="https://github.com/hossain8078" target="_blank" rel="noreferrer">Browse all repositories ↗</a>
     </div>
     <div class="resource-grid">
+      <!-- Angular creates one card for each object in resources. -->
       @for (resource of resources; track resource.title) {
         <article class="resource-card">
           <span class="resource-type">{{ resource.type }}</span>
@@ -214,6 +300,7 @@
           @if (resource.repositoryUrl) {
             <a [href]="resource.repositoryUrl" target="_blank" rel="noreferrer">Read on GitHub ↗</a>
           } @else {
+            <!-- Temporary message used until a real GitHub link is available. -->
             <span class="link-placeholder">GitHub link placeholder</span>
           }
         </article>
@@ -221,6 +308,11 @@
     </div>
   </section>
 
+  <!-- ================================================================
+       CONTACT SECTION
+       Update the email address and profile URLs here when needed.
+       The email link opens a new Outlook compose window.
+  ================================================================= -->
   <section id="contact" class="section contact">
     <p class="eyebrow">Contact</p><h2>Let’s discuss projects, systems and better ways of working.</h2>
     <p>I’m open to professional opportunities and conversations in project coordination, PMO, business analysis, digital delivery and IT services.</p>
@@ -232,5 +324,6 @@
     </div>
   </section>
 
+  <!-- The year value is generated in TypeScript so it stays current automatically. -->
   <footer><span>© {{ year }} Md Alamgir Hossain</span><span>Built with Angular & TypeScript</span></footer>
 </main>
