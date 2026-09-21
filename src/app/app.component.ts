@@ -149,10 +149,10 @@ export class AppComponent {
    * every additional item moves into the scrollable archive automatically.
    */
   readonly eventItems: EventItem[] = [
-    { title: 'Recent event title one', date: 'Month Year', description: 'Add a short paragraph describing the event, your role and the main outcome.', image: 'power-bi-project-presentation.png', imageAlt: 'Replace with a description of event photo one', repositoryUrl: '', priority: 1 },
-    { title: 'Recent event title two', date: 'Month Year', description: 'Add a short paragraph describing the event, your contribution and what visitors should know.', image: 'IT&SD.png', imageAlt: 'Replace with a description of event photo two', repositoryUrl: '', priority: 2 },
-    { title: 'Recent event title three', date: 'Month Year', description: 'Add a short paragraph describing the people, activity and professional value of the event.', image: 'pm_pg_leadership.png', imageAlt: 'Replace with a description of event photo three', repositoryUrl: '', priority: 3 },
-    { title: 'Recent event title four', date: 'Month Year', description: 'Add a short paragraph highlighting the event and your most important takeaway.', image: 'professional-photo.jpg', imageAlt: 'Replace with a description of event photo four', repositoryUrl: '', priority: 4 },
+    { title: 'Recent event title one', date: 'Month Year', description: 'content comming soon.', image: 'picture place holder', imageAlt: 'Replace with a description of event photo one', repositoryUrl: '', priority: 1 },
+    { title: 'Recent event title two', date: 'Month Year', description: 'content coming soon', image: 'picture placeholder', imageAlt: 'Replace with a description of event photo two', repositoryUrl: '', priority: 2 },
+    { title: 'Recent event title three', date: 'Month Year', description: 'content coming soon', image: 'picture placeholder', imageAlt: 'Replace with a description of event photo three', repositoryUrl: '', priority: 3 },
+    { title: 'Recent event title four', date: 'Month Year', description: 'content coming soon.', image: 'picture placeholder', imageAlt: 'Replace with a description of event photo four', repositoryUrl: '', priority: 4 },
     // Add a fifth item here; it will appear in the scrollable event archive.
     // { title: 'Older event', date: 'Month Year', description: 'Short paragraph.', image: 'event-05.jpg', imageAlt: 'Event photo description', repositoryUrl: 'https://github.com/hossain8078/REPOSITORY', priority: 5 },
   ];
