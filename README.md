@@ -31,7 +31,7 @@ npm run build
 ## Customize
 
 - Edit page content in `src/app/app.component.html`.
-- Edit project cards in `src/app/app.component.ts`.
+- Edit project cards, priorities, image names, GitHub links, YouTube videos, events, books and articles in `src/app/app.component.ts`. Comments beside each section explain exactly what to replace.
 - Edit the design in `src/app/app.component.css` and `src/styles.css`.
 - Add images, a résumé, or certificates to `public/`, then link to them from the page.
 - Replace or add social profile URLs before publishing.

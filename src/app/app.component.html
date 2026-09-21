@@ -14,6 +14,8 @@
     <a href="#portfolio" (click)="closeMenu()">Portfolio</a>
     <a href="#media" (click)="closeMenu()">Media</a>
     <a href="#credentials" (click)="closeMenu()">Credentials</a>
+    <a href="#events" (click)="closeMenu()">Events & Gallery</a>
+    <a href="#resources" (click)="closeMenu()">Books & Articles</a>
     <a href="#contact" (click)="closeMenu()">Contact</a>
   </nav>
 
@@ -90,14 +92,16 @@
             <p>{{ area.description }}</p>
             <div class="work-list" aria-label="Selected work">
               <h4>Selected work</h4>
-              @for (work of area.workItems; track work.title) {
-                <div class="work-item">
-                  <span>{{ work.title }}</span>
-                  @if (work.repositoryUrl) {
-                    <a [href]="work.repositoryUrl" target="_blank" rel="noreferrer" [attr.aria-label]="'View GitHub repository for ' + work.title">Repository ↗</a>
-                  }
-                </div>
-              }
+              <div class="scroll-list portfolio-scroll" tabindex="0" aria-label="Scrollable selected work list">
+                @for (work of sortedWorkItems(area.workItems); track work.title) {
+                  <div class="work-item">
+                    <span>{{ work.title }}</span>
+                    @if (work.repositoryUrl) {
+                      <a [href]="work.repositoryUrl" target="_blank" rel="noreferrer" [attr.aria-label]="'View GitHub repository for ' + work.title">Repository ↗</a>
+                    }
+                  </div>
+                }
+              </div>
             </div>
             <div class="project-footer">
               <ul>@for (tool of area.tools; track tool) { <li>{{ tool }}</li> }</ul>
@@ -117,15 +121,28 @@
     </div>
 
     @if (mediaVideos.length) {
-      <div class="video-grid">
-        @for (video of mediaVideos; track video.title) {
-          <article class="video-card">
+      <div class="media-library">
+        @if (selectedVideo; as featuredVideo) {
+          <article class="featured-video">
             <div class="video-frame">
-              <iframe [src]="video.embedUrl" [title]="video.title" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              <iframe [src]="featuredVideo.embedUrl" [title]="featuredVideo.title" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
-            <div class="video-copy"><h3>{{ video.title }}</h3><p>{{ video.description }}</p></div>
+            <div class="video-copy">
+              <div><p class="video-label">Now playing</p><h3>{{ featuredVideo.title }}</h3><p>{{ featuredVideo.description }}</p></div>
+              <a [href]="featuredVideo.youtubeUrl" target="_blank" rel="noreferrer">Open on YouTube ↗</a>
+            </div>
           </article>
         }
+
+        <div class="video-list" aria-label="Choose a video">
+          @for (video of mediaVideos; track video.id) {
+            <button type="button" class="video-list-item" [class.selected]="selectedVideo?.id === video.id" (click)="selectVideo(video)" [attr.aria-pressed]="selectedVideo?.id === video.id">
+              <img [src]="video.thumbnailUrl" [alt]="''" loading="lazy">
+              <span><strong>{{ video.title }}</strong><small>{{ video.description }}</small></span>
+              <span class="list-play" aria-hidden="true">▶</span>
+            </button>
+          }
+        </div>
       </div>
     } @else {
       <div class="media-empty">
@@ -142,6 +159,65 @@
       <a href="https://app.badgecert.com/public/badges/tvtrllat" target="_blank" rel="noreferrer"><strong>CSM®</strong><span>Certified ScrumMaster</span><small>Verify credential ↗</small></a>
       <a href="https://www.peoplecert.org/public-profile?ed=XCHu3ZqUTNJoAkbRtfdXH4jNnyT4aRSR" target="_blank" rel="noreferrer"><strong>ITIL</strong><span>IT Service Management Foundation</span><small>View credential ↗</small></a>
       <a href="https://badges.wes.org/Evidence?i=8d95a5d1-7f78-40d0-a8d0-93cfa5f00854&amp;type=ca" target="_blank" rel="noreferrer"><strong>MBA</strong><span>Master of Business Administration · WES verified</span><small>Verify credential ↗</small></a>
+    </div>
+  </section>
+
+  <section id="events" class="section events-section">
+    <div class="section-heading">
+      <div><p class="eyebrow">Events & photo gallery</p><h2>Recent moments from my professional journey.</h2></div>
+      <a href="https://github.com/hossain8078" target="_blank" rel="noreferrer">View photo repositories ↗</a>
+    </div>
+
+    <div class="event-grid">
+      @for (event of featuredEvents; track event.title) {
+        <article class="event-card">
+          <img [src]="event.image" [alt]="event.imageAlt" loading="lazy">
+          <div class="event-copy">
+            <span class="event-date">{{ event.date }}</span>
+            <h3>{{ event.title }}</h3>
+            <p>{{ event.description }}</p>
+            @if (event.repositoryUrl) {
+              <a [href]="event.repositoryUrl" target="_blank" rel="noreferrer">View event gallery ↗</a>
+            }
+          </div>
+        </article>
+      }
+    </div>
+
+    @if (archivedEvents.length) {
+      <div class="event-archive">
+        <div class="archive-heading"><h3>More events</h3><span>Scroll to explore</span></div>
+        <div class="scroll-list event-scroll" tabindex="0" aria-label="Scrollable list of additional events">
+          @for (event of archivedEvents; track event.title) {
+            <a class="archive-item" [href]="event.repositoryUrl || 'https://github.com/hossain8078'" target="_blank" rel="noreferrer">
+              <img [src]="event.image" alt="" loading="lazy">
+              <span><strong>{{ event.title }}</strong><small>{{ event.date }} · {{ event.description }}</small></span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          }
+        </div>
+      </div>
+    }
+  </section>
+
+  <section id="resources" class="section resources-section">
+    <div class="section-heading">
+      <div><p class="eyebrow">Books & articles</p><h2>Practical ideas for projects, analysis and digital delivery.</h2></div>
+      <a href="https://github.com/hossain8078" target="_blank" rel="noreferrer">Browse all repositories ↗</a>
+    </div>
+    <div class="resource-grid">
+      @for (resource of resources; track resource.title) {
+        <article class="resource-card">
+          <span class="resource-type">{{ resource.type }}</span>
+          <h3>{{ resource.title }}</h3>
+          <p>{{ resource.description }}</p>
+          @if (resource.repositoryUrl) {
+            <a [href]="resource.repositoryUrl" target="_blank" rel="noreferrer">Read on GitHub ↗</a>
+          } @else {
+            <span class="link-placeholder">GitHub link placeholder</span>
+          }
+        </article>
+      }
     </div>
   </section>
 
