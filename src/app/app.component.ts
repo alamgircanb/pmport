@@ -93,8 +93,8 @@ export class AppComponent {
       tools: ['Business analysis', 'Power BI', 'Excel', 'SQL', 'Python'],
       workItems: [
         { title: 'Executive Power BI Dashboard', repositoryUrl: 'https://github.com/alamgircanb/Business-Analysis-Data-Analytics-Intelligence/tree/main/Final%20Project', priority: 1 },
-        { title: 'Wine Classification Model', repositoryUrl: '', priority: 2 },
-        { title: 'Data Modelling and Cleaning', repositoryUrl: '', priority: 3 }
+        { title: 'Wine Classification Model', repositoryUrl: 'https://github.com/hossain8078/Machine-Learning-and-Deep-Learning/blob/main/Alamgir_BIS_Wine_Classification_EDA_and_RegressionModel.ipynb', priority: 2 },
+        { title: 'Data Modelling and Cleaning (Regression with the Diabetes Dataset)', repositoryUrl: 'https://github.com/hossain8078/Machine-Learning-and-Deep-Learning/blob/main/Completed_Lab_Exercise_2_Diabetes_Regression.ipynb', priority: 3 }
       ],
       image: 'power-bi-project-presentation.png',
       imageAlt: 'Alamgir presenting a project progress dashboard to his team'
