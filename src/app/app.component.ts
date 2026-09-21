@@ -92,7 +92,7 @@ export class AppComponent {
       description: 'Turning business needs and operational data into clear requirements, useful insights and decision-ready reporting.',
       tools: ['Business analysis', 'Power BI', 'Excel', 'SQL', 'Python'],
       workItems: [
-        { title: 'Executive Power BI Dashboard', repositoryUrl: '', priority: 1 },
+        { title: 'Executive Power BI Dashboard', repositoryUrl: 'https://github.com/alamgircanb/Business-Analysis-Data-Analytics-Intelligence/tree/main/Final%20Project', priority: 1 },
         { title: 'Wine Classification Model', repositoryUrl: '', priority: 2 },
         { title: 'Data Modelling and Cleaning', repositoryUrl: '', priority: 3 }
       ],
