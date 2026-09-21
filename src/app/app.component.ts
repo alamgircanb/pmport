@@ -109,7 +109,7 @@ export class AppComponent {
         { title: 'EyeMax Cinemas Web Application', repositoryUrl: '', priority: 2 },
         { title: 'Java Client–Server Application', repositoryUrl: '', priority: 3 }
       ],
-      image: 'IT&SD.png',
+      image: 'it-systems-development.png',
       imageAlt: 'Information technology and systems development project work'
     },
     {
@@ -135,7 +135,7 @@ export class AppComponent {
         { title: 'Systems Analysis and Requirements Exercises', repositoryUrl: '', priority: 2 },
         { title: 'Technical Labs and Team Projects', repositoryUrl: '', priority: 3 }
       ],
-      image: 'paca_pro_al.png',
+      image: 'aca_pro_al.png',
       imageAlt: 'Md Alamgir Hossain representing academic projects and applied learning'
     }
   ];
