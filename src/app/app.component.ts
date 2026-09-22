@@ -95,7 +95,9 @@ export class AppComponent {
         { title: 'Executive Power BI Dashboard', repositoryUrl: 'https://github.com/alamgircanb/Business-Analysis-Data-Analytics-Intelligence/tree/main/Final%20Project', priority: 1 },
         { title: 'Wine Classification Model', repositoryUrl: 'https://github.com/hossain8078/Machine-Learning-and-Deep-Learning/blob/main/Alamgir_BIS_Wine_Classification_EDA_and_RegressionModel.ipynb', priority: 2 },
         { title: 'Data Modelling and Cleaning (Regression with the Diabetes Dataset)', repositoryUrl: 'https://github.com/hossain8078/Machine-Learning-and-Deep-Learning/blob/main/Completed_Lab_Exercise_2_Diabetes_Regression.ipynb', priority: 3 },
-        { title: 'BusinessAnalysis Practice Lead Artifact Templates', repositoryUrl: 'https://github.com/alamgircanb/Business-Analysis-Data-Analytics-Intelligence/tree/main/BusinessAnalysis%20Practice%20Lead%20Artifact%20Templates', priority: 4}
+        { title: 'BusinessAnalysis Practice Lead Artifact Templates', repositoryUrl: 'https://github.com/alamgircanb/Business-Analysis-Data-Analytics-Intelligence/tree/main/BusinessAnalysis%20Practice%20Lead%20Artifact%20Templates', priority: 4},
+        { title: 'Data Science Basics Course Project', repositoryUrl: 'https://github.com/alamgircanb/Business-Analysis-Data-Analytics-Intelligence/tree/main/DataScienceBasicsProject', priority: 5},
+        { title: 'Final Project_SSIS_SQL_PowerBI_Final (FlatFile-SSIS-SQL-PowerBI)', repositoryUrl: 'https://github.com/alamgircanb/Business-Analysis-Data-Analytics-Intelligence/tree/main/Final%20Project_SSIS_SQL_PowerBI_Final', priority: 6}
       ],
       image: 'power-bi-project-presentation.png',
       imageAlt: 'Alamgir presenting a project progress dashboard to his team'
