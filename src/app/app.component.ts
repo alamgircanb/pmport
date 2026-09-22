@@ -94,7 +94,8 @@ export class AppComponent {
       workItems: [
         { title: 'Executive Power BI Dashboard', repositoryUrl: 'https://github.com/alamgircanb/Business-Analysis-Data-Analytics-Intelligence/tree/main/Final%20Project', priority: 1 },
         { title: 'Wine Classification Model', repositoryUrl: 'https://github.com/hossain8078/Machine-Learning-and-Deep-Learning/blob/main/Alamgir_BIS_Wine_Classification_EDA_and_RegressionModel.ipynb', priority: 2 },
-        { title: 'Data Modelling and Cleaning (Regression with the Diabetes Dataset)', repositoryUrl: 'https://github.com/hossain8078/Machine-Learning-and-Deep-Learning/blob/main/Completed_Lab_Exercise_2_Diabetes_Regression.ipynb', priority: 3 }
+        { title: 'Data Modelling and Cleaning (Regression with the Diabetes Dataset)', repositoryUrl: 'https://github.com/hossain8078/Machine-Learning-and-Deep-Learning/blob/main/Completed_Lab_Exercise_2_Diabetes_Regression.ipynb', priority: 3 },
+        { title: 'BusinessAnalysis Practice Lead Artifact Templates', repositoryUrl: 'https://github.com/alamgircanb/Business-Analysis-Data-Analytics-Intelligence/tree/main/BusinessAnalysis%20Practice%20Lead%20Artifact%20Templates', priority: 4}
       ],
       image: 'power-bi-project-presentation.png',
       imageAlt: 'Alamgir presenting a project progress dashboard to his team'
@@ -121,7 +122,8 @@ export class AppComponent {
       workItems: [
         { title: 'Reporting Process Redesign', repositoryUrl: '', priority: 1 },
         { title: 'Multi-Partner Program Delivery', repositoryUrl: '', priority: 2 },
-        { title: 'Stakeholder and Vendor Coordination', repositoryUrl: '', priority: 3 }
+        { title: 'Stakeholder and Vendor Coordination', repositoryUrl: '', priority: 3 },
+         { title: 'Agile artifact Templates', repositoryUrl: 'https://github.com/alamgircanb/Project-Program-Change-Leadership/tree/main/Agile%20artifact%20Templates', priority: 4 }
       ],
       image: 'pm_pg_leadership.png',
       imageAlt: 'Project, program and change leadership in a collaborative setting'
