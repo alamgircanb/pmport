@@ -9,7 +9,7 @@ An Angular and TypeScript professional portfolio configured for automatic deploy
 3. In the repository, open **Settings → Pages**.
 4. Under **Build and deployment → Source**, select **GitHub Actions**.
 5. Open the **Actions** tab and wait for “Deploy portfolio to GitHub Pages” to finish.
-6. The site will be available at `https://YOUR-USERNAME.github.io/REPOSITORY-NAME/`.
+6. The site will be available at `https://alamgircanb.github.io/REPOSITORY-NAME/`.
 
 The deployment workflow automatically detects the repository name and sets Angular’s base path correctly.
 
