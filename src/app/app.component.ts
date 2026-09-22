@@ -106,8 +106,8 @@ export class AppComponent {
       tools: ['.NET 9', 'REST APIs', 'Java', 'SQL'],
       workItems: [
         { title: 'Wide World Importers REST API', repositoryUrl: '', priority: 1 },
-        { title: 'EyeMax Cinemas Web Application (MVC)', repositoryUrl: '', priority: 2 },
-        { title: 'Java Coding and Application Dev', repositoryUrl: 'https://github.com/alamgircanb/IT-Systems-Development/tree/main/ASP.NET_MVC_WEB%20Application', priority: 3 }
+        { title: 'EyeMax Cinemas Web Application (MVC)', repositoryUrl: 'https://github.com/alamgircanb/IT-Systems-Development/tree/main/ASP.NET_MVC_WEB%20Application', priority: 2 },
+        { title: 'Java Coding and Application Dev', repositoryUrl: 'https://github.com/alamgircanb/IT-Systems-Development/tree/main/ProgrammingWithJava', priority: 3 }
       ],
       image: 'it-systems-development.png',
       imageAlt: 'Information technology and systems development project work'
