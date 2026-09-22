@@ -100,7 +100,8 @@ export class AppComponent {
         { title: 'Final Project_SSIS_SQL_PowerBI_Final (FlatFile-SSIS-SQL-PowerBI)', repositoryUrl: 'https://github.com/alamgircanb/Business-Analysis-Data-Analytics-Intelligence/tree/main/Final%20Project_SSIS_SQL_PowerBI_Final', priority: 6},
         { title: 'Database Management (MongoDB)', repositoryUrl: 'https://github.com/alamgircanb/Business-Analysis-Data-Analytics-Intelligence/tree/main/MongoDB', priority: 7},
         { title: 'Database Management Basics (SQL)', repositoryUrl: 'https://github.com/alamgircanb/Business-Analysis-Data-Analytics-Intelligence/tree/main/SQL_Basics', priority: 8},
-         { title: 'PowerShell_CourseWork', repositoryUrl: 'https://github.com/alamgircanb/Business-Analysis-Data-Analytics-Intelligence/tree/main/PowerShell_myWork', priority: 9}
+        { title: 'PowerShell_CourseWork', repositoryUrl: 'https://github.com/alamgircanb/Business-Analysis-Data-Analytics-Intelligence/tree/main/PowerShell_myWork', priority: 9},
+        { title: 'Business Case Analysis and Business Plan Design_CourseWork', repositoryUrl: 'https://github.com/alamgircanb/Business-Analysis-Data-Analytics-Intelligence/tree/main/BusinessCase%26Plan', priority: 10}
       ],
       image: 'power-bi-project-presentation.png',
       imageAlt: 'Alamgir presenting a project progress dashboard to his team'
