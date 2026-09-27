@@ -20,7 +20,7 @@
     "category":"IT & Systems Development",
     "description":"Designing and developing practical applications, APIs and connected systems using layered, maintainable approaches.",
     "tools":[".NET 9","REST APIs","Java","SQL"],
-    "image":"IT&SD.png",
+    "image":"public/IT&SD.png",
     "imageAlt":"Information technology and systems development project work",
     "priority":2,
     "workItems":[
