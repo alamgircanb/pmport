@@ -1,0 +1,4 @@
+[
+  {"id":"welcome","title":"Add your featured PMPortLive video","description":"Paste a YouTube video ID in public/data/media.json to display the embedded video.","youtubeVideoId":"","priority":1,"published":true},
+  {"id":"video-2","title":"Add another video","description":"Videos are ordered by priority.","youtubeVideoId":"","priority":2,"published":true}
+]

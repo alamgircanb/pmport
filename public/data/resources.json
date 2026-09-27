@@ -1,0 +1,4 @@
+[
+  {"type":"Book","title":"Book title placeholder","description":"Add your reading note, review or book project.","repositoryUrl":"","priority":1},
+  {"type":"Article","title":"Article title placeholder","description":"Add a concise abstract and a clickable GitHub repository link.","repositoryUrl":"","priority":2}
+]

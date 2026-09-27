@@ -1,0 +1,5 @@
+{
+  "$schema":"https://openapi.vercel.sh/vercel.json",
+  "framework":"angular",
+  "rewrites":[{"source":"/((?!api/).*)","destination":"/index.html"}]
+}

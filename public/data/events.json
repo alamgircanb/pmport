@@ -1,0 +1,6 @@
+[
+  {"title":"Recent event one","date":"2026","description":"Add a short paragraph describing this event and replace the image.","image":"professional-photo.jpg","imageAlt":"Event placeholder","repositoryUrl":"","priority":1},
+  {"title":"Recent event two","date":"2026","description":"Use this card for a workshop, conference, presentation or community activity.","image":"pm_pg_leadership.png","imageAlt":"Leadership event placeholder","repositoryUrl":"","priority":2},
+  {"title":"Recent event three","date":"2026","description":"Keep four priority events visible; additional entries appear in the scrolling archive.","image":"IT&SD.png","imageAlt":"Technology event placeholder","repositoryUrl":"","priority":3},
+  {"title":"Recent event four","date":"2026","description":"Link the card to a photo folder or repository when it is ready.","image":"power-bi-project-presentation.png","imageAlt":"Analytics event placeholder","repositoryUrl":"","priority":4}
+]
