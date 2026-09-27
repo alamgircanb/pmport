@@ -1,6 +1,6 @@
 <button class="menu-button" type="button" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen" aria-controls="site-sidebar" aria-label="Open navigation">☰</button>
 <aside id="site-sidebar" class="sidebar" [class.open]="menuOpen">
-  <a class="brand" routerLink="/" (click)="closeMenu()"><span class="brand-mark">PMPort</span><span><strong>PM Port</strong><small>Your Learning Facilitator</small></span></a>
+  <a class="brand" routerLink="/" (click)="closeMenu()"><span class="brand-mark">AH</span><span><strong>PM Port</strong><small>Your Learning Facilitator</small></span></a>
   <nav aria-label="Primary navigation">
     @for(item of navigation;track item.path){<a [routerLink]="item.path" routerLinkActive="active" [routerLinkActiveOptions]="{exact:item.path === '/'}" (click)="closeMenu()">{{item.label}}</a>}
   </nav>
