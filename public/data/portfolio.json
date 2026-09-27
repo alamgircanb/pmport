@@ -1,6 +1,34 @@
 [
-  {"id":"project-management","number":"01","category":"Project Management","description":"Delivery leadership, planning, governance and stakeholder alignment.","tools":["PMP","Agile","Scrum","Jira"],"image":"pm_pg_leadership.png","imageAlt":"Project and program leadership presentation","priority":1,"workItems":[{"title":"Selected project — add repository link","description":"Replace this text and URL with your project case study.","repositoryUrl":"","priority":1}]},
-  {"id":"business-analysis","number":"02","category":"Business Analysis","description":"Requirements, process improvement and evidence-based decision support.","tools":["BPMN","UML","SQL","Power BI"],"image":"IT&SD.png","imageAlt":"Information technology and system development work","priority":2,"workItems":[{"title":"Selected analysis — add repository link","description":"Add more items here; priority controls display order.","repositoryUrl":"","priority":1}]},
-  {"id":"data-analytics","number":"03","category":"Data & Analytics","description":"Clear dashboards and models that turn operational data into useful decisions.","tools":["Power BI","Excel","Python","SQL"],"image":"power-bi-project-presentation.png","imageAlt":"Power BI project presentation","priority":3,"workItems":[{"title":"Dashboard project — add repository link","description":"Use a GitHub repository or live demonstration URL.","repositoryUrl":"","priority":1}]},
-  {"id":"web-systems","number":"04","category":"Web & Information Systems","description":"Accessible, maintainable applications built around real user needs.","tools":["Angular","TypeScript","REST APIs","Databases"],"image":"my_profile_pic.png","imageAlt":"Web and information systems portfolio","priority":4,"workItems":[{"title":"Application project — add repository link","description":"This list scrolls automatically after five items.","repositoryUrl":"","priority":1}]}
+  {
+    "id":"data-analytics","number":"01","category":"Data Analytics & Intelligence","description":"Turning operational data into clear insight through dashboards, analysis and applied machine learning.","tools":["Power BI","Excel","Python","SQL"],"image":"power-bi-project-presentation.png","imageAlt":"Alamgir presenting a project progress dashboard to his team","priority":1,
+    "workItems":[
+      {"title":"Executive Power BI Dashboard","description":"Dashboard and business-intelligence work available through my GitHub portfolio.","repositoryUrl":"https://github.com/hossain8078","priority":1},
+      {"title":"Wine Classification Model","description":"Applied machine-learning and data-analysis work.","repositoryUrl":"https://github.com/hossain8078","priority":2},
+      {"title":"Data Modelling and Cleaning","description":"Data preparation, modelling and analysis exercises.","repositoryUrl":"https://github.com/hossain8078","priority":3}
+    ]
+  },
+  {
+    "id":"it-systems","number":"02","category":"IT & Systems Development","description":"Building practical systems with APIs, web applications, databases and cloud technologies.","tools":["Angular","ASP.NET","Java","AWS"],"image":"IT&SD.png","imageAlt":"Information technology and systems development project work","priority":2,
+    "workItems":[
+      {"title":"Wide World Importers REST API","description":"Controller, service, repository, DTO and database-layer implementation.","repositoryUrl":"https://github.com/alamgircanb/IT-Systems-Development","priority":1},
+      {"title":"EyeMax Cinemas Web Application","description":"Web application development project.","repositoryUrl":"https://github.com/alamgircanb/IT-Systems-Development","priority":2},
+      {"title":"Java Client–Server Application","description":"Java application and data-structure work.","repositoryUrl":"https://github.com/alamgircanb/IT-Systems-Development","priority":3}
+    ]
+  },
+  {
+    "id":"leadership","number":"03","category":"Project, Program & Change Leadership","description":"Leading complex delivery, stakeholder alignment, governance and organizational improvement.","tools":["PMP","Agile","Scrum","PMO"],"image":"pm_pg_leadership.png","imageAlt":"Project, program and change leadership in a collaborative setting","priority":3,
+    "workItems":[
+      {"title":"Reporting Process Redesign","description":"Business-process and reporting improvement portfolio.","repositoryUrl":"https://github.com/hossain8078","priority":1},
+      {"title":"Multi-Partner Program Delivery","description":"Program governance and delivery experience.","repositoryUrl":"https://github.com/hossain8078","priority":2},
+      {"title":"Stakeholder and Vendor Coordination","description":"Stakeholder, procurement and delivery coordination work.","repositoryUrl":"https://github.com/hossain8078","priority":3}
+    ]
+  },
+  {
+    "id":"academic-projects","number":"04","category":"Academic Projects","description":"Applied coursework connecting business requirements, software development, analytics and infrastructure.","tools":["BIS","Requirements","Cloud","Databases"],"image":"professional-photo.jpg","imageAlt":"Md Alamgir Hossain representing academic projects and applied learning","priority":4,
+    "workItems":[
+      {"title":"Business Information Systems Coursework","description":"BIS technical labs and course projects.","repositoryUrl":"https://github.com/alamgircanb","priority":1},
+      {"title":"Systems Analysis and Requirements Exercises","description":"Systems-analysis and business-requirements work.","repositoryUrl":"https://github.com/alamgircanb","priority":2},
+      {"title":"Technical Labs and Team Projects","description":"Development, analytics and infrastructure labs.","repositoryUrl":"https://github.com/alamgircanb","priority":3}
+    ]
+  }
 ]
