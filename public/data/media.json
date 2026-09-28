@@ -8,11 +8,11 @@
     "published": true
   },
   {
-    "id": "video-2",
-    "title": "Add Another Video",
-    "description": "Add the next video description here.",
-    "youtubeVideoId": "",
+    "id": "crashing-vs-fast-tracking",
+    "title": "Crashing vs Fast Traking",
+    "description": "Difference Between Crashing and Fast Traking in keep project on schedule.",
+    "youtubeVideoId": "GwPdnVgzxRktQWi1",
     "priority": 2,
-    "published": false
+    "published": true
   }
 ]
