@@ -9,10 +9,50 @@
   },
   {
     "id": "crashing-vs-fast-tracking",
-    "title": "Crashing vs Fast Traking",
-    "description": "Difference Between Crashing and Fast Traking in keep project on schedule.",
-    "youtubeVideoId": "GwPdnVgzxRktQWi1",
+    "title": "Crashing vs Fast Tracking",
+    "description": "Difference between Crashing and Fast Tracking to keep a project on schedule.",
+    "youtubeVideoId": "Z-C332bHSdw",
     "priority": 2,
     "published": true
+  },
+  {
+    "id": "agile-vs-waterfall",
+    "title": "Agile vs Waterfall",
+    "description": "Compare iterative project delivery against traditional sequential planning.",
+    "youtubeVideoId": "PLACEHOLDER_3",
+    "priority": 3,
+    "published": false
+  },
+  {
+    "id": "risk-mitigation-vs-contingency",
+    "title": "Risk Mitigation vs Contingency Planning",
+    "description": "Learn how to reduce risk probability versus preparing fallback responses.",
+    "youtubeVideoId": "PLACEHOLDER_4",
+    "priority": 4,
+    "published": false
+  },
+  {
+    "id": "qualitative-vs-quantitative-risk-analysis",
+    "title": "Qualitative vs Quantitative Risk Analysis",
+    "description": "Evaluate subjectively prioritizing risks versus calculating exact numeric impacts.",
+    "youtubeVideoId": "PLACEHOLDER_5",
+    "priority": 5,
+    "published": false
+  },
+  {
+    "id": "stakeholder-engagement-vs-management",
+    "title": "Stakeholder Engagement vs Stakeholder Management",
+    "description": "Understand building relationships versus executing structured communications.",
+    "youtubeVideoId": "PLACEHOLDER_6",
+    "priority": 6,
+    "published": false
+  },
+  {
+    "id": "earned-value-management-basics",
+    "title": "Earned Value Management (EVM) Basics",
+    "description": "Track project performance using Schedule Variance and Cost Variance metrics.",
+    "youtubeVideoId": "PLACEHOLDER_7",
+    "priority": 7,
+    "published": false
   }
 ]
