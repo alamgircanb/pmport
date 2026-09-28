@@ -1,4 +1,18 @@
 [
-  {"id":"welcome","title":"Scope Creep vs Goldplating","description":"Paste a YouTube video ID in public/data/media.json to display the embedded video.","https://youtube.com/shorts/VgWWn1ue0Bg?si=mT4XM0nm3mwPWBCs":"","priority":1,"published":true},
-  {"id":"video-2","title":"Add another video","description":"Videos are ordered by priority.","youtubeVideoId":"","priority":2,"published":true}
+  {
+    "id": "scope-creep-vs-goldplating",
+    "title": "Scope Creep vs Gold Plating",
+    "description": "Understand the difference between unauthorized scope expansion and adding unrequested features.",
+    "youtubeVideoId": "VgWWn1ue0Bg",
+    "priority": 1,
+    "published": true
+  },
+  {
+    "id": "video-2",
+    "title": "Add Another Video",
+    "description": "Add the next video description here.",
+    "youtubeVideoId": "",
+    "priority": 2,
+    "published": false
+  }
 ]
