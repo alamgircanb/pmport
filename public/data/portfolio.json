@@ -9,9 +9,9 @@
     "imageAlt":"Alamgir presenting a project progress dashboard to his team",
     "priority":1,
     "workItems":[
-      {"title":"Executive Power BI Dashboard","description":"Dashboard and business-intelligence portfolio work.","repositoryUrl":"https://github.com/hossain8078","priority":1},
-      {"title":"Wine Classification Model","description":"Applied machine-learning classification work.","repositoryUrl":"https://github.com/hossain8078","priority":2},
-      {"title":"Data Modelling and Cleaning","description":"Data preparation, modelling and analysis work.","repositoryUrl":"https://github.com/hossain8078","priority":3}
+      {"title":"Executive Power BI Dashboard","description":"Dashboard and business-intelligence portfolio work.","repositoryUrl":"https://github.com/alamgircanb/Business-Analysis-Data-Analytics-Intelligence/tree/main/Final%20Project_SSIS_SQL_PowerBI_Final","priority":1},
+      {"title":"Wine Classification Model","description":"Applied machine-learning classification work.","repositoryUrl":"https://github.com/alamgircanb/Business-Analysis-Data-Analytics-Intelligence/blob/main/MachineLearning%26DeepLearning/Wine_Classification_EDA%20and%20RegressionModel.ipynb","priority":2},
+      {"title":"Data Modelling and Cleaning","description":"Data preparation, modelling and analysis work.","repositoryUrl":"https://github.com/alamgircanb/Business-Analysis-Data-Analytics-Intelligence/tree/main/DataScienceBasicsProject","priority":3}
     ]
   },
   {
@@ -25,8 +25,8 @@
     "priority":2,
     "workItems":[
       {"title":"Wide World Importers REST API","description":"Layered API using controllers, services, repositories, DTOs and a database context.","repositoryUrl":"https://github.com/alamgircanb/IT-Systems-Development","priority":1},
-      {"title":"EyeMax Cinemas Web Application","description":"Web application development project.","repositoryUrl":"https://github.com/alamgircanb/IT-Systems-Development","priority":2},
-      {"title":"Java Client–Server Application","description":"Java client-server and data-structure work.","repositoryUrl":"https://github.com/alamgircanb/IT-Systems-Development","priority":3}
+      {"title":"EyeMax Cinemas Web Application","description":"Web application development project.","repositoryUrl":"https://github.com/alamgircanb/IT-Systems-Development/tree/main/ASP.NET_MVC_WEB%20Application","priority":2},
+      {"title":"Java Client–Server Application","description":"Java client-server and data-structure work.","repositoryUrl":"https://github.com/alamgircanb/IT-Systems-Development/tree/main/ProgrammingWithJava/3.JavaAdvance/FinalProject/FinalProject/src/finalproject","priority":3}
     ]
   },
   {
