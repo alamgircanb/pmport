@@ -1,0 +1,83 @@
+<section class="page tools-page">
+  <header class="page-header">
+    <p class="eyebrow">Interactive workspace</p>
+    <h1>PM Tools</h1>
+    <p class="lead">Choose a template, enter your project information and export a working copy. Your saved data stays in this browser.</p>
+  </header>
+
+  <!-- Tool cards make each mini-application independently selectable. -->
+  <div class="tool-picker" role="tablist" aria-label="Project management tools">
+    @for(tool of tools;track tool.id){
+      <button type="button" role="tab" [attr.aria-selected]="selectedTool.id===tool.id" [class.active]="selectedTool.id===tool.id" (click)="selectTool(tool)">
+        <span class="tool-icon" aria-hidden="true">{{tool.icon}}</span>
+        <span><strong>{{tool.name}}</strong><small>{{tool.description}}</small></span>
+      </button>
+    }
+  </div>
+
+  <section class="workspace card" aria-live="polite">
+    <div class="workspace-heading">
+      <div>
+        <p class="eyebrow">Current tool</p>
+        <h2>{{selectedTool.name}}</h2>
+        <p class="muted">{{selectedTool.description}}</p>
+      </div>
+      <label class="project-name">Project or document name
+        <input [(ngModel)]="projectName" maxlength="80" placeholder="My Project">
+      </label>
+    </div>
+
+    <!-- Every cell is editable. The row order is also the order used in exports. -->
+    <div class="table-wrap" tabindex="0" aria-label="Editable tool data">
+      <table>
+        <thead><tr><th class="order-column">Order</th>@for(column of selectedTool.columns;track column.key){<th>{{column.label}}</th>}<th class="action-column">Actions</th></tr></thead>
+        <tbody>
+          @for(row of rows;track trackRow($index);let rowIndex=$index){
+            <tr>
+              <td class="row-order"><button type="button" (click)="moveRow(rowIndex,-1)" [disabled]="rowIndex===0" aria-label="Move row up">↑</button><button type="button" (click)="moveRow(rowIndex,1)" [disabled]="rowIndex===rows.length-1" aria-label="Move row down">↓</button></td>
+              @for(column of selectedTool.columns;track column.key){
+                <td>
+                  @if(column.type==='select'){
+                    <select [(ngModel)]="$any(row)[column.key]" [attr.aria-label]="column.label">@for(option of column.options;track option){<option [value]="option">{{option}}</option>}</select>
+                  }@else{
+                    <input [type]="column.type" [(ngModel)]="$any(row)[column.key]" [attr.aria-label]="column.label" [min]="column.key==='progress'?0:null" [max]="column.key==='progress'?100:null">
+                  }
+                </td>
+              }
+              <td><button class="delete-button" type="button" (click)="deleteRow(rowIndex)">Delete</button></td>
+            </tr>
+          }@empty{<tr><td class="empty-cell" [attr.colspan]="selectedTool.columns.length+2">No rows yet. Select “Add row” to begin.</td></tr>}
+        </tbody>
+      </table>
+    </div>
+
+    <!-- These small visual summaries make the Gantt and EVM templates immediately testable. -->
+    @if(selectedTool.id==='gantt'&&rows.length){
+      <div class="preview-block">
+        <h3>Progress preview</h3>
+        @for(row of rows;track trackRow($index)){
+          <div class="progress-row"><span>{{row['task']||'Untitled task'}}</span><div class="progress-track"><i [style.width.%]="progress(row['progress'])"></i></div><strong>{{progress(row['progress'])}}%</strong></div>
+        }
+      </div>
+    }
+    @if(selectedTool.id==='evm'){
+      @let summary=evmSummary();
+      <div class="metric-grid">
+        <article><small>Schedule Variance</small><strong>{{summary.sv|currency}}</strong></article>
+        <article><small>Cost Variance</small><strong>{{summary.cv|currency}}</strong></article>
+        <article><small>SPI</small><strong>{{summary.spi|number:'1.2-2'}}</strong></article>
+        <article><small>CPI</small><strong>{{summary.cpi|number:'1.2-2'}}</strong></article>
+      </div>
+    }
+
+    <div class="workspace-actions">
+      <button class="button primary" type="button" (click)="addRow()">＋ Add row</button>
+      <button class="button secondary" type="button" (click)="saveWorkspace()">Save on this device</button>
+      <button class="button secondary" type="button" (click)="exportExcel()">Export to Excel</button>
+      <button class="button secondary" type="button" (click)="exportPdf()">Export to PDF</button>
+      <button class="button subtle" type="button" (click)="resetWorkspace()">Reset template</button>
+    </div>
+    @if(message){<p class="status" role="status">{{message}}</p>}
+    @if(savedAt){<p class="save-note">Last saved: {{savedAt|date:'medium'}}</p>}
+  </section>
+</section>

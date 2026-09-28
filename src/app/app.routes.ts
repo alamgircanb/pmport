@@ -5,6 +5,7 @@ export const routes:Routes=[
   {path:'about',loadComponent:()=>import('./pages/about/about.component').then(m=>m.AboutComponent)},
   {path:'education',loadComponent:()=>import('./pages/education/education.component').then(m=>m.EducationComponent)},
   {path:'portfolio',loadComponent:()=>import('./pages/portfolio/portfolio.component').then(m=>m.PortfolioComponent)},
+  {path:'pm-tools',loadComponent:()=>import('./pages/pm-tools/pm-tools.component').then(m=>m.PMToolsComponent)},
   {path:'pm-faciliter',loadComponent:()=>import('./pages/pm-faciliter/pm-faciliter.component').then(m=>m.PMFaciliterComponent)},
   {path:'pm-faciliter/member',canActivate:[authGuard],loadComponent:()=>import('./pages/member/member.component').then(m=>m.MemberComponent)},
   {path:'media',loadComponent:()=>import('./pages/media/media.component').then(m=>m.MediaComponent)},

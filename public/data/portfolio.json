@@ -20,7 +20,7 @@
     "category":"IT & Systems Development",
     "description":"Designing and developing practical applications, APIs and connected systems using layered, maintainable approaches.",
     "tools":[".NET 9","REST APIs","Java","SQL"],
-    "image":"ITandSD.png",
+    "image":"it-systems-development.png",
     "imageAlt":"Information technology and systems development project work",
     "priority":2,
     "workItems":[
@@ -50,7 +50,7 @@
     "category":"Academic Projects & Applied Learning",
     "description":"Applying Business Information Systems concepts through practical assignments that connect analysis, technology and business value.",
     "tools":["BIS","Systems analysis","Research","Teamwork"],
-    "image":"aca_pro_al.png",
+    "image":"professional-photo.jpg",
     "imageAlt":"Md Alamgir Hossain representing academic projects and applied learning",
     "priority":4,
     "workItems":[
