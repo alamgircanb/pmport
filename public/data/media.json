@@ -16,36 +16,36 @@
     "published": true
   },
   {
-    "id": "agile-vs-waterfall",
-    "title": "Agile vs Waterfall",
-    "description": "Compare iterative project delivery against traditional sequential planning.",
-    "youtubeVideoId": "PLACEHOLDER_3",
+    "id": "user-story-vs-acceptance-criteria",
+    "title": "User Story vs Acceptance Criteria",
+    "description": "Understand the difference between user stories and acceptance criteria.",
+    "youtubeVideoId": "f-RDghE9NQk",
     "priority": 3,
-    "published": false
+    "published": true
   },
   {
-    "id": "risk-mitigation-vs-contingency",
-    "title": "Risk Mitigation vs Contingency Planning",
-    "description": "Learn how to reduce risk probability versus preparing fallback responses.",
-    "youtubeVideoId": "PLACEHOLDER_4",
+    "id": "milestone-vs-deliverable",
+    "title": "Milestone vs Deliverable",
+    "description": "Understand the difference between project milestones and project deliverables.",
+    "youtubeVideoId": "oJ8ZplJLnM0",
     "priority": 4,
-    "published": false
+    "published": true
   },
   {
-    "id": "qualitative-vs-quantitative-risk-analysis",
-    "title": "Qualitative vs Quantitative Risk Analysis",
-    "description": "Evaluate subjectively prioritizing risks versus calculating exact numeric impacts.",
-    "youtubeVideoId": "PLACEHOLDER_5",
+    "id": "business-requirement-vs-functional-requirement",
+    "title": "Business Requirement vs Functional Requirement",
+    "description": "Compare high-level business requirements against specific functional system requirements.",
+    "youtubeVideoId": "zjVMoS_rhxc",
     "priority": 5,
-    "published": false
+    "published": true
   },
   {
-    "id": "stakeholder-engagement-vs-management",
-    "title": "Stakeholder Engagement vs Stakeholder Management",
-    "description": "Understand building relationships versus executing structured communications.",
-    "youtubeVideoId": "PLACEHOLDER_6",
+    "id": "assumption-vs-constraint",
+    "title": "Assumption vs Constraint",
+    "description": "Understand the difference between project assumptions and project constraints.",
+    "youtubeVideoId": "LW4GSb7xquc",
     "priority": 6,
-    "published": false
+    "published": true
   },
   {
     "id": "earned-value-management-basics",
