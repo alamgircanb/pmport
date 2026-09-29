@@ -8,7 +8,7 @@
     "published": true
   },
   {
-    "id": "crashing-vs-fast-tracking",
+    "id": "crashing-vs-fast-tracking-video",
     "title": "Crashing vs Fast Tracking",
     "description": "Difference between Crashing and Fast Tracking to keep a project on schedule.",
     "youtubeVideoId": "Z-C332bHSdw",
@@ -53,6 +53,30 @@
     "description": "The differences between Gap and Root Causes Analysis .",
     "youtubeVideoId": "MrZvvq7jYCc",
     "priority": 7,
+    "published": true
+  },
+    {
+    "id": "risk-vs-issue",
+    "title": "Risk vs Issue",
+    "description": "The concept of risk and issue is not the same",
+    "youtubeVideoId": "1oCZSq0qDys",
+    "priority": 8,
+    "published": true
+  },
+    {
+    "id": "authentication-vs-uthorization",
+    "title": "Authentication vs Authorization",
+    "description": "Authentication vs Authorization #pmp #agile #projectmanagement #security #itsecurity #cybersecurity",
+    "youtubeVideoId": "_MVjx-AswGc",
+    "priority": 9,
+    "published": true
+  },
+    {
+    "id": "verification-vs-validation",
+    "title": "Verification vs Validation",
+    "description": "What's the real difference between Verification and Validation",
+    "youtubeVideoId": "Ms23eu_mfrw",
+    "priority": 10,
     "published": true
   }
 ]
