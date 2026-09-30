@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Link to your actual sitemap file
+Sitemap: https://pmport.ca
