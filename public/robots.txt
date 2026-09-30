@@ -1,6 +1,10 @@
+# Global rules for all standard web crawlers
 User-agent: *
 Allow: /
 
-# Link to your actual sitemap file
+# Optional: Block private admin or staging paths if you have them
+# Disallow: /admin/
+# Disallow: /private/
 
-Sitemap: https://pmport.ca
+# Point to your actual XML sitemap file location
+Sitemap: https://pmport.ca/sitemap.xml
