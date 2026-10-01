@@ -3,12 +3,12 @@
     <p class="eyebrow">Interactive workspace</p>
     <h1>PM Tools</h1>
     <p class="lead">Choose a template, enter your project information and export a working copy. Your saved data stays in this browser.</p>
-  </header>
+  </header><div class="grid two studio-links"><a class="card" routerLink="/pm-tools/diagram-studio"><p class="eyebrow">Diagram Studio</p><h3>Draw processes and data flows</h3><p class="muted">Context diagrams, DFDs, process maps, WBS and custom diagrams. Export PNG, JPG or PDF.</p></a><a class="card" routerLink="/pm-tools/pert-cpm"><p class="eyebrow">Schedule analysis</p><h3>PERT / CPM Calculator</h3><p class="muted">Build activity networks, calculate float and highlight critical paths.</p></a></div><h2 style="font-size:2rem;margin:2rem 0 1rem">Project artifacts</h2>
 
   <!-- Tool cards make each mini-application independently selectable. -->
-  <div class="tool-picker" role="tablist" aria-label="Project management tools">
+  <div class="tool-picker" role="group" aria-label="Project management tools">
     @for(tool of tools;track tool.id){
-      <button type="button" role="tab" [attr.aria-selected]="selectedTool.id===tool.id" [class.active]="selectedTool.id===tool.id" (click)="selectTool(tool)">
+      <button type="button"  [attr.aria-pressed]="selectedTool.id===tool.id" [class.active]="selectedTool.id===tool.id" (click)="selectTool(tool)">
         <span class="tool-icon" aria-hidden="true">{{tool.icon}}</span>
         <span><strong>{{tool.name}}</strong><small>{{tool.description}}</small></span>
       </button>
@@ -23,14 +23,15 @@
         <p class="muted">{{selectedTool.description}}</p>
       </div>
       <label class="project-name">Project or document name
-        <input [(ngModel)]="projectName" maxlength="80" placeholder="My Project">
+        <input [(ngModel)]="projectName" (ngModelChange)="dirty=true" maxlength="80" placeholder="My Project">
       </label>
     </div>
 
+    <div class="workspace-actions"><label class="project-name">Add a custom field<input [(ngModel)]="newColumn" placeholder="Field name"></label><button class="button secondary" (click)="addColumn()">Add column</button></div><p class="muted">Use Save before switching tools. Download an editable file to keep a portable backup.</p>
     <!-- Every cell is editable. The row order is also the order used in exports. -->
     <div class="table-wrap" tabindex="0" aria-label="Editable tool data">
       <table>
-        <thead><tr><th class="order-column">Order</th>@for(column of selectedTool.columns;track column.key){<th>{{column.label}}</th>}<th class="action-column">Actions</th></tr></thead>
+        <thead><tr><th class="order-column">Order</th>@for(column of selectedTool.columns;track column.key){<th>{{column.label}} <button type="button" (click)="removeColumn(column.key)" [attr.aria-label]="'Remove column '+column.label" class="column-delete">×</button></th>}<th class="action-column">Actions</th></tr></thead>
         <tbody>
           @for(row of rows;track trackRow($index);let rowIndex=$index){
             <tr>
@@ -38,9 +39,9 @@
               @for(column of selectedTool.columns;track column.key){
                 <td>
                   @if(column.type==='select'){
-                    <select [(ngModel)]="$any(row)[column.key]" [attr.aria-label]="column.label">@for(option of column.options;track option){<option [value]="option">{{option}}</option>}</select>
+                    <select [(ngModel)]="$any(row)[column.key]" (ngModelChange)="dirty=true" [attr.aria-label]="column.label + ' row ' + (rowIndex+1)">@for(option of column.options;track option){<option [value]="option">{{option}}</option>}</select>
                   }@else{
-                    <input [type]="column.type" [(ngModel)]="$any(row)[column.key]" [attr.aria-label]="column.label" [min]="column.key==='progress'?0:null" [max]="column.key==='progress'?100:null">
+                    <input [type]="column.type" [(ngModel)]="$any(row)[column.key]" (ngModelChange)="dirty=true" [attr.aria-label]="column.label + ' row ' + (rowIndex+1)" [min]="column.key==='progress'?0:null" [max]="column.key==='progress'?100:null">
                   }
                 </td>
               }
@@ -60,6 +61,7 @@
         }
       </div>
     }
+    @if(selectedTool.id==='budget'){@let b=budgetSummary();<div class="metric-grid"><article><small>Planned cost</small><strong>{{b.planned|number:'1.2-2'}}</strong></article><article><small>Actual cost</small><strong>{{b.actual|number:'1.2-2'}}</strong></article><article><small>Forecast cost</small><strong>{{b.forecast|number:'1.2-2'}}</strong></article><article><small>Planned − forecast</small><strong>{{b.variance|number:'1.2-2'}}</strong></article></div>}
     @if(selectedTool.id==='evm'){
       @let summary=evmSummary();
       <div class="metric-grid">
@@ -75,7 +77,7 @@
       <button class="button secondary" type="button" (click)="saveWorkspace()">Save on this device</button>
       <button class="button secondary" type="button" (click)="exportExcel()">Export to Excel</button>
       <button class="button secondary" type="button" (click)="exportPdf()">Export to PDF</button>
-      <button class="button subtle" type="button" (click)="resetWorkspace()">Reset template</button>
+      <button class="button secondary" (click)="backup()">Download editable file</button><label class="button secondary file">Import editable file<input type="file" accept=".json" (change)="importFile($event)"></label><button class="button subtle" type="button" (click)="resetWorkspace()">Reset template</button>
     </div>
     @if(message){<p class="status" role="status">{{message}}</p>}
     @if(savedAt){<p class="save-note">Last saved: {{savedAt|date:'medium'}}</p>}

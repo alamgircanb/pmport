@@ -1,0 +1,15 @@
+const assert=require('node:assert/strict');const {calculateSchedule}=require(require('node:path').resolve(process.argv[2]));
+const a=(id,duration,predecessors='',optimistic=duration,likely=duration,pessimistic=duration)=>({id,name:id,duration,predecessors,optimistic,likely,pessimistic});
+let r=calculateSchedule([a('D',3,'B,C'),a('B',4,'A'),a('A',3),a('C',2,'A')],false);
+assert.equal(r.duration,10);assert.deepEqual(r.paths,[['A','B','D']]);assert.equal(r.activities.find(x=>x.id==='C').float,2);
+r=calculateSchedule([a('A',3),a('B',4,'A'),a('C',4,'A'),a('D',3,'B,C')],false);assert.equal(r.paths.length,2);
+r=calculateSchedule([a('A',2),a('B',7)],false);assert.equal(r.duration,7);assert.equal(r.activities.find(x=>x.id==='A').float,5);
+r=calculateSchedule([a('A',0),a('B',0,'A')],false);assert.equal(r.duration,0);assert.deepEqual(r.paths,[['A','B']]);
+r=calculateSchedule([a('A',3,'',1,2,9)],true);assert.equal(r.duration,3);assert.ok(Math.abs(r.activities[0].variance-16/9)<1e-9);
+assert.throws(()=>calculateSchedule([a('A',1,'B'),a('B',1,'A')],false),/Circular/);
+assert.throws(()=>calculateSchedule([a('A',1,'X')],false),/does not exist/);
+assert.throws(()=>calculateSchedule([a('A',1),a('A',2)],false),/Duplicate/);
+assert.throws(()=>calculateSchedule([a('A',-1)],false),/non-negative/);
+assert.throws(()=>calculateSchedule([a('A',1,'',3,2,1)],true),/optimistic/);
+assert.throws(()=>calculateSchedule([],false),/at least/);
+console.log('11 schedule checks passed.');

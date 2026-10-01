@@ -20,9 +20,11 @@ The Save button stores each tool separately in the visitor's browser using `loca
 
 ## Export behaviour
 
-- **Excel:** downloads an Excel-compatible `.xls` workbook.
-- **PDF:** opens a print-ready report. Select **Save as PDF** in the browser print window.
+- **Excel:** downloads a real `.xlsx` workbook.
+- **PDF:** downloads a PDF report directly.
 
 ## Deploy
 
-Run `npm install`, then `npm run build`. Upload the project to the same GitHub repository connected to Vercel; Vercel will rebuild the site automatically.
+Run `npm ci`, then `npm run build`. Upload the project to the same GitHub repository connected to Vercel; Vercel will rebuild the site automatically.
+
+See `PMPORT_UPDATE_GUIDE.md` for Diagram Studio, PERT/CPM, editable backups and custom artifact fields.

@@ -1,18 +1,18 @@
-<button class="menu-button" type="button" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen" aria-controls="site-sidebar" aria-label="Open navigation">☰</button>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<button class="menu-button" type="button" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen" aria-controls="site-sidebar" aria-label="Toggle navigation">☰</button>
 <aside id="site-sidebar" class="sidebar" [class.open]="menuOpen">
-  <a class="brand" routerLink="/" (click)="closeMenu()"><span class="brand-mark">AH</span><span><strong>Alamgir Hossain</strong><small>PMP® · CSM® · ITIL</small></span></a>
-  <nav aria-label="Primary navigation">
-    @for(item of navigation;track item.path){<a [routerLink]="item.path" routerLinkActive="active" [routerLinkActiveOptions]="{exact:item.path === '/'}" (click)="closeMenu()">{{item.label}}</a>}
-  </nav>
-  <div class="sidebar-account">
-    @if(auth.user();as user){<span class="account-email">{{user.email}}</span><button type="button" (click)="auth.signOut()">Log out</button>}
-    @else{<a routerLink="/login" (click)="closeMenu()">Member login</a>}
-  </div>
-  <div class="sidebar-footer"><span>Regina, Saskatchewan</span><a href="mailto:alamgircanb@gmail.com">alamgircanb&#64;gmail.com</a></div>
+<a class="brand" routerLink="/" (click)="closeMenu()"><span class="brand-mark">PM</span><span><strong>PMPORT</strong><small>Knowledge into practice</small></span></a>
+<nav aria-label="Primary navigation">
+<a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" (click)="closeMenu()">Home</a>
+<a routerLink="/about-pmport" routerLinkActive="active" (click)="closeMenu()">About PMPORT</a>
+<button class="nav-group" (click)="portfolioOpen=!portfolioOpen" [attr.aria-expanded]="portfolioOpen" aria-controls="portfolio-menu">Portfolio <span>{{portfolioOpen?'−':'+'}}</span></button>
+@if(portfolioOpen){<div id="portfolio-menu" class="subnav">@for(item of portfolio;track item.path){<a [routerLink]="item.path" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" (click)="closeMenu()">{{item.label}}</a>}</div>}
+@for(item of navigation;track item.path){<a [routerLink]="item.path" routerLinkActive="active" (click)="closeMenu()">{{item.label}}</a>}
+</nav>
+<div class="sidebar-account">@if(auth.user();as user){<span class="account-email">{{user.email}}</span><button type="button" (click)="auth.signOut()">Log out</button>}@else{<a routerLink="/login" (click)="closeMenu()">Member login</a>}</div>
+<div class="sidebar-footer"><span>Created by Md Alamgir Hossain</span><a href="mailto:alamgircanb@gmail.com">alamgircanb&#64;gmail.com</a></div>
 </aside>
 <button class="scrim" [class.visible]="menuOpen" (click)="closeMenu()" aria-label="Close navigation"></button>
-<div class="site-shell">
-  <header class="topbar"><a routerLink="/" class="topbar-name">Md Alamgir Hossain</a><div class="topbar-links"><a href="https://www.youtube.com/@pmportlive" target="_blank" rel="noreferrer">PMPortLive</a><a href="https://www.linkedin.com/in/alamgircanb/" target="_blank" rel="noreferrer">LinkedIn</a></div></header>
-  <main id="main-content" tabindex="-1"><router-outlet></router-outlet></main>
-  <footer><span>© {{year}} Md Alamgir Hossain</span><span>Angular · TypeScript · Responsive design</span></footer>
-</div>
+<div class="site-shell"><header class="topbar"><a routerLink="/" class="topbar-name">PMPORT <span>Explore · Learn · Practice</span></a><div class="topbar-links"><a href="https://www.youtube.com/@pmportlive" target="_blank" rel="noreferrer">PMPortLive</a><a href="https://www.linkedin.com/in/alamgircanb/" target="_blank" rel="noreferrer">LinkedIn</a></div></header>
+<main id="main-content" tabindex="-1"><router-outlet></router-outlet></main>
+<footer><span>© {{year}} PMPORT · Md Alamgir Hossain</span><a routerLink="/contact">Connect with PMPORT</a></footer></div>

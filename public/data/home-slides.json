@@ -1,0 +1,46 @@
+[
+  {
+    "id": "welcome",
+    "label": "Welcome to PMPORT",
+    "title": "Turn project knowledge into practice.",
+    "description": "Explore project management, business analysis and data analytics. Learn a concept. Try a tool. Build something useful.",
+    "image": "pm_pg_leadership.png",
+    "alt": "Collaborative project leadership",
+    "path": "/pm-tools",
+    "action": "Explore PM Tools",
+    "published": true
+  },
+  {
+    "id": "canada",
+    "label": "Featured article \u00b7 Canada",
+    "title": "The future of project management in Canada.",
+    "description": "Explore how AI, business needs and data are shaping project delivery.",
+    "image": "future-project-management-canada.png",
+    "alt": "Canadian maple leaf connecting delivery, people and analytics",
+    "path": "/resources/future-project-management-canada",
+    "action": "Read article",
+    "published": true
+  },
+  {
+    "id": "tools",
+    "label": "PM Tools \u00b7 Interactive workspaces",
+    "title": "Plan. Track. Make better decisions.",
+    "description": "Create project artifacts, draw diagrams and explore PERT and critical path calculations.",
+    "image": "power-bi-project-presentation.png",
+    "alt": "Project dashboard presentation",
+    "path": "/pm-tools",
+    "action": "Open PM Tools",
+    "published": true
+  },
+  {
+    "id": "media",
+    "label": "PM Media \u00b7 PMPortLive",
+    "title": "Learn one concept at a time.",
+    "description": "Discover short videos explaining commonly confused concepts in project management and business analysis.",
+    "image": "it-systems-development.png",
+    "alt": "Technology and systems development",
+    "path": "/media",
+    "action": "Watch videos",
+    "published": true
+  }
+]

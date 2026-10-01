@@ -1,6 +1,6 @@
-# Md Alamgir Hossain — Angular Portfolio
+# PMPORT — Project Management, Learning & Practice
 
-A responsive, component-based Angular portfolio ready for Vercel. Shared navigation and footer stay consistent while each subject has its own lazy-loaded page.
+A responsive Angular learning platform and portfolio, with rotating Home banners, project artifacts, Diagram Studio, and a PERT/CPM calculator. See `PMPORT_UPDATE_GUIDE.md` for the updated structure and editing instructions.
 
 ## Run and build
 
@@ -15,6 +15,7 @@ Open `http://localhost:4200`. Create a production build with `npm run build`.
 
 All growing lists are JSON-driven in `public/data/`:
 
+- `home-slides.json` — rotating Home banner content
 - `portfolio.json` — four portfolio areas, images, work items and repository links
 - `education.json` — BBA, MBA and BIS details and searchable courses
 - `media.json` — featured and listed YouTube videos

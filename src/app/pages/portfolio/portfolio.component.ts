@@ -1,6 +1,7 @@
 import {AsyncPipe} from '@angular/common';
 import {Component,inject} from '@angular/core';
-import {map} from 'rxjs';
+import {map,combineLatest} from 'rxjs';
+import {ActivatedRoute} from '@angular/router';
 import {PortfolioArea} from '../../core/models/portfolio.models';
 import {ContentService} from '../../core/services/content.service';
 
@@ -12,8 +13,8 @@ import {ContentService} from '../../core/services/content.service';
     <section class="page">
       <header class="page-header">
         <p class="eyebrow">Portfolio</p>
-        <h1>Selected work</h1>
-        <p class="lead">The original four portfolio areas, pictures and project names are preserved. Add exact project repository links in <code>public/data/portfolio.json</code>.</p>
+        <h1>{{heading}}</h1>
+        <p class="lead">Explore projects spanning business analysis, technology, project leadership and applied learning.</p>
         <div class="actions">
           <a class="button secondary" href="https://github.com/hossain8078" target="_blank" rel="noreferrer">hossain8078 GitHub ↗</a>
           <a class="button secondary" href="https://github.com/alamgircanb" target="_blank" rel="noreferrer">alamgircanb GitHub ↗</a>
@@ -66,12 +67,12 @@ import {ContentService} from '../../core/services/content.service';
 })
 export class PortfolioComponent{
   private readonly content=inject(ContentService);
+  private readonly route=inject(ActivatedRoute);
+  get heading(){return this.route.snapshot.data['area']==='course'?'Course Work':this.route.snapshot.data['area']==='professional'?'Professional Work':'Selected work'}
 
   // Portfolio content lives in public/data/portfolio.json so new work can be
   // added without changing this component. Lower priority numbers appear first.
-  readonly areas$=this.content.load<PortfolioArea[]>('portfolio.json').pipe(
-    map(areas=>areas.sort((a,b)=>a.priority-b.priority))
-  );
+  readonly areas$=combineLatest([this.content.load<PortfolioArea[]>('portfolio.json'),inject(ActivatedRoute).data]).pipe(map(([areas,data])=>areas.filter(a=>data['area']==='course'?a.id!=='project-program-change-leadership':data['area']==='professional'?a.id==='project-program-change-leadership':true).sort((a,b)=>a.priority-b.priority))); 
 
   sorted<T extends {priority:number}>(items:T[]):T[]{
     return [...items].sort((a,b)=>a.priority-b.priority);
