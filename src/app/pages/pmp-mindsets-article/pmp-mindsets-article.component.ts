@@ -28,7 +28,7 @@ type MindsetSection={id:string;number:string;label:string;title:string;start:num
 
     <nav class="toc card" aria-label="Article contents">
       <p class="eyebrow">In this article</p>
-      <div class="toc-grid">@for(section of sections;track section.id){<a [href]="'#'+section.id">{{section.number}} · {{section.title}}</a>}</div>
+      <div class="toc-grid">@for(section of sections;track section.id){<a routerLink="/resources/111-essential-pmp-mindsets" [fragment]="section.id">{{section.number}} · {{section.title}}</a>}</div>
     </nav>
 
     @for(section of sections;track section.id){
