@@ -1,6 +1,6 @@
 <a class="skip-link" href="#main-content">Skip to content</a>
-<button class="menu-button" type="button" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen" aria-controls="site-sidebar" aria-label="Toggle navigation">☰</button>
-<aside id="site-sidebar" class="sidebar" [class.open]="menuOpen">
+<button class="menu-button" type="button" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen" aria-controls="site-sidebar" [attr.aria-label]="menuOpen?'Collapse sidebar':'Open sidebar'">☰</button>
+<aside id="site-sidebar" class="sidebar" [class.open]="menuOpen" [attr.aria-hidden]="!menuOpen" [inert]="!menuOpen">
 <a class="brand" routerLink="/" (click)="closeMenu()"><span class="brand-mark">PM</span><span><strong>PMPORT</strong><small>Knowledge into practice</small></span></a>
 <nav aria-label="Primary navigation">
 <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" (click)="closeMenu()">Home</a>
@@ -13,6 +13,6 @@
 <div class="sidebar-footer"><span>Created by Md Alamgir Hossain</span><a href="mailto:alamgircanb@gmail.com">alamgircanb&#64;gmail.com</a></div>
 </aside>
 <button class="scrim" [class.visible]="menuOpen" (click)="closeMenu()" aria-label="Close navigation"></button>
-<div class="site-shell"><header class="topbar"><a routerLink="/" class="topbar-name">PMPORT <span>Explore · Learn · Practice</span></a><div class="topbar-links"><a href="https://www.youtube.com/@pmportlive" target="_blank" rel="noreferrer">PMPortLive</a><a href="https://www.linkedin.com/company/pmport" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://www.facebook.com/pmportlive" target="_blank" rel="noreferrer">Facebook</a></div></header>
+<div class="site-shell" [class.sidebar-collapsed]="!menuOpen"><header class="topbar"><a routerLink="/" class="topbar-name">PMPORT <span>Explore · Learn · Practice</span></a><div class="topbar-links"><a href="https://www.youtube.com/@pmportlive" target="_blank" rel="noreferrer">PMPortLive</a><a href="https://www.linkedin.com/company/pmport" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://www.facebook.com/pmportlive" target="_blank" rel="noreferrer">Facebook</a></div></header>
 <main id="main-content" tabindex="-1"><router-outlet></router-outlet></main>
 <footer><span>© {{year}} PMPORT · Md Alamgir Hossain</span><a routerLink="/about-pmport" fragment="contact">Connect with PMPORT</a></footer></div>
