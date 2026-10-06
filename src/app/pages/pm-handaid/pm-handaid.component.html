@@ -26,7 +26,7 @@
 @if(mode==='type'||(mode==='draw'&&tool==='textbox')){<label>Text size <select [value]="fontSize" (change)="fontSize=+$any($event.target).value;updateStyle()"><option value="20">Small</option><option value="28">Medium</option><option value="36">Large</option><option value="48">Extra large</option></select></label>}
 </div>
 </div>
-<p class="note" [hidden]="mode!=='draw'||tool!=='textbox'">Click or tap the canvas where you want to place your textbox.</p>
+<p class="note" [hidden]="mode!=='draw'||tool!=='textbox'">Click or tap an empty area to add text. Select an existing textbox and drag it to move it inside the canvas.</p>
 <div class="exports" aria-label="Export all pages"><span>Export all pages</span><button type="button" [disabled]="busy" (click)="export('docx')">Word (.docx)</button><button type="button" [disabled]="busy" (click)="export('pdf')">PDF</button><button type="button" [disabled]="busy" (click)="export('jpeg')">JPEG</button><button type="button" [disabled]="busy" (click)="export('gif')">GIF</button></div>
 <p class="note">Use a mouse, finger or stylus to write and draw. Multiple JPEG or GIF pages download together as a ZIP. Word keeps the canvas image and includes editable typed text.</p>
 <p class="note">Pages stay in memory while this page is open. Export to keep a copy before refreshing or closing.</p>
