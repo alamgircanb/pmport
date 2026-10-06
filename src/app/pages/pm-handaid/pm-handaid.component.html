@@ -1,0 +1,29 @@
+<section class="handaid">
+<h1>PM HandAid</h1>
+<div class="top-controls" aria-label="Page controls">
+<button type="button" (click)="addPage()">＋ Add page</button>
+<button type="button" (click)="deletePage()">Delete page</button>
+<button type="button" (click)="undo()" [disabled]="!past.length">Undo</button>
+<button type="button" (click)="redo()" [disabled]="!future.length">Redo</button>
+<label class="page-select">Page <select [value]="index" (change)="selectPage(+$any($event.target).value)">@for(page of pages;track $index){<option [value]="$index">{{$index+1}} of {{pages.length}}</option>}</select></label>
+</div>
+<div class="paper" role="tabpanel" id="handaid-paper" [attr.aria-labelledby]="'tab-'+mode">
+<canvas #surface width="1200" height="800" (pointerdown)="start($event)" (pointermove)="move($event)" (pointerup)="finish($event)" (pointercancel)="finish($event)" (lostpointercapture)="finish($event)" [class.typing]="mode==='type'" aria-label="Handwriting and drawing canvas">Use Type below for keyboard input.</canvas>
+@if(mode==='type'){<textarea aria-label="Type on this page" [value]="page.text" (input)="updateText($event)" [style.color]="page.color" [style.font-size.cqw]="page.fontSize/12" placeholder="Type here…" spellcheck="true"></textarea>}
+</div>
+<div class="bottom-controls">
+<div class="tabs" role="tablist" aria-label="Input mode">
+@for(tab of ['write','draw','type'];track tab){<button type="button" role="tab" [id]="'tab-'+tab" aria-controls="handaid-paper" [attr.aria-selected]="mode===tab" [class.selected]="mode===tab" (click)="setMode($any(tab))">{{tab==='write'?'Write':tab==='draw'?'Draw':'Type'}}</button>}
+</div>
+<div class="tools">
+<label>Colour <input type="color" [value]="color" (input)="color=$any($event.target).value;updateStyle()"></label>
+@if(mode!=='type'){<label>Pen size <input type="range" min="1" max="20" [value]="size" (input)="size=+$any($event.target).value"><span>{{size}}</span></label>}
+@if(mode==='draw'){<label>Tool <select [value]="tool" (change)="tool=$any($event.target).value"><option value="pen">Freehand</option><option value="line">Line</option><option value="rectangle">Rectangle</option><option value="ellipse">Ellipse</option></select></label>}
+@if(mode==='type'){<label>Text size <select [value]="fontSize" (change)="fontSize=+$any($event.target).value;updateStyle()"><option value="20">Small</option><option value="28">Medium</option><option value="36">Large</option><option value="48">Extra large</option></select></label>}
+</div>
+</div>
+<div class="exports" aria-label="Export all pages"><span>Export all pages</span><button type="button" [disabled]="busy" (click)="export('docx')">Word (.docx)</button><button type="button" [disabled]="busy" (click)="export('pdf')">PDF</button><button type="button" [disabled]="busy" (click)="export('jpeg')">JPEG</button><button type="button" [disabled]="busy" (click)="export('gif')">GIF</button></div>
+<p class="note">Use a mouse, finger or stylus to write and draw. Multiple JPEG or GIF pages download together as a ZIP. Word keeps the canvas image and includes editable typed text.</p>
+<p class="note">Pages stay in memory while this page is open. Export to keep a copy before refreshing or closing.</p>
+<p role="status" aria-live="polite">{{status}}</p>
+</section>
