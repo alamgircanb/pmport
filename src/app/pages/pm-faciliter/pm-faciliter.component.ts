@@ -12,7 +12,7 @@ import {buildQuestionBank,PracticeQuestion,PracticeQuestionType} from './pm-ques
   standalone:true,selector:'app-pm-faciliter',imports:[AsyncPipe,FormsModule,RouterLink],
   template:`
     <section class="page">
-      <header class="page-header"><p class="eyebrow">PMFaciliter</p><h1>Learn by doing.</h1><p class="lead">Training modules combine organized YouTube lessons with quizzes, sequencing, diagrams, project-math practice and a 100-question practice bank.</p></header>
+      <header class="page-header"><p class="eyebrow">PM Faciliter</p><h1>Learn by doing.</h1><p class="lead">Training modules combine organized YouTube lessons with quizzes, sequencing, diagrams, project-math practice and a 100-question practice bank.</p></header>
       @if(modules$|async;as modules){
         <div class="module-tabs scroll-list" tabindex="0">@for(m of modules;track m.id){<button type="button" [class.active]="selected?.id===m.id" (click)="choose(m)"><small>{{m.level}}</small><strong>{{m.title}}</strong><span>{{m.videos.length}} videos</span></button>}</div>
         @if(selected;as m){
