@@ -1,20 +1,19 @@
 import {AsyncPipe} from '@angular/common';
 import {HttpClient} from '@angular/common/http';
 import {Component,inject} from '@angular/core';
-import {FormsModule} from '@angular/forms';
 import {DomSanitizer} from '@angular/platform-browser';
 import {RouterLink} from '@angular/router';
-import {finalize,map} from 'rxjs';
+import {map} from 'rxjs';
 
 interface AboutVideo {title:string;description:string;youtubeVideoId:string}
 
 @Component({
   standalone:true,
   selector:'app-about',
-  imports:[AsyncPipe,FormsModule,RouterLink],
+  imports:[AsyncPipe,RouterLink],
   template:`
     <section class="page about-page">
-      <header class="page-header"><p class="eyebrow">Portfolio · About Alamgir</p><h1>Md Alamgir Hossain</h1><img src="my_profile_pic.png" alt="Md Alamgir Hossain" style="width:160px;height:180px;object-fit:cover;border-radius:18px;margin-top:24px"><p class="lead">I am a project management and business information systems professional in Regina, Saskatchewan. My work sits where project leadership, systems analysis and data-informed decision making meet.</p></header>
+      <header class="page-header"><p class="eyebrow">Portfolio · PM Profile</p><h1>Md Alamgir Hossain</h1><img src="my_profile_pic.png" alt="Md Alamgir Hossain" style="width:160px;height:180px;object-fit:cover;border-radius:18px;margin-top:24px"><p class="lead">I am a project management and business information systems professional in Regina, Saskatchewan. My work sits where project leadership, systems analysis and data-informed decision making meet.</p></header>
 
       <div class="grid two">
         <article class="card"><h2>How I work</h2><p class="muted">I translate complex requirements into practical plans, make progress visible, and help multidisciplinary teams stay aligned around value. My approach combines structured delivery with curiosity and continuous learning.</p></article>
@@ -35,25 +34,6 @@ interface AboutVideo {title:string;description:string;youtubeVideoId:string}
         }
       </section>
 
-      <!-- Contact was moved here from its former standalone page. The API behaviour is unchanged. -->
-      <section id="contact" class="contact-section section-block">
-        <header class="page-header"><p class="eyebrow">Contact</p><h2>Let’s make the next step clear.</h2><p class="lead">Send a message about a project, collaboration, training request or professional opportunity.</p></header>
-        <div class="contact-grid">
-          <form class="card form-grid" #form="ngForm" (ngSubmit)="send(form.valid)">
-            <div class="field"><label for="name">Name</label><input id="name" name="name" [(ngModel)]="model.name" required></div>
-            <div class="field"><label for="email">Email</label><input id="email" name="email" [(ngModel)]="model.email" type="email" required></div>
-            <div class="field"><label for="subject">Subject</label><input id="subject" name="subject" [(ngModel)]="model.subject" required></div>
-            <div class="field"><label for="message">Message</label><textarea id="message" name="message" [(ngModel)]="model.message" required></textarea></div>
-            <input class="honey" name="company" [(ngModel)]="model.company" tabindex="-1" autocomplete="off" aria-hidden="true">
-            <button class="button primary" [disabled]="sending||!form.valid">{{sending?'Sending…':'Send message'}}</button>
-            @if(status){<p class="status" [class.error]="failed">{{status}}</p>}
-          </form>
-          <aside>
-            <div class="card"><span class="eyebrow">Direct</span><a class="email" href="mailto:alamgircanb@gmail.com">alamgircanb&#64;gmail.com</a><p class="muted">Regina, Saskatchewan, Canada</p></div>
-            <div class="card availability"><span class="dot"></span><div><strong>Open to conversation</strong><p class="muted">Project leadership · Business systems · Training</p></div></div>
-          </aside>
-        </div>
-      </section>
     </section>
   `,
   styles:[`
@@ -69,17 +49,9 @@ export class AboutComponent {
   private http=inject(HttpClient);
   private sanitizer=inject(DomSanitizer);
   video$=this.http.get<AboutVideo>('data/about-video.json').pipe(map(video=>video));
-  model={name:'',email:'',subject:'',message:'',company:''};
-  sending=false;status='';failed=false;
-
-  embed(id:string){return this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube-nocookie.com/embed/${id}`);}
-
-  send(valid:boolean|null){
-    if(!valid)return;
-    this.sending=true;this.status='';
-    this.http.post<{ok:boolean;message?:string}>('/api/contact',this.model).pipe(finalize(()=>this.sending=false)).subscribe({
-      next:()=>{this.failed=false;this.status='Thank you — your message has been sent.';this.model={name:'',email:'',subject:'',message:'',company:''}},
-      error:error=>{this.failed=true;this.status=error?.error?.message||'The form could not send. Email alamgircanb@gmail.com directly.'}
-    });
+  private embedUrls=new Map<string,ReturnType<DomSanitizer['bypassSecurityTrustResourceUrl']>>();
+  embed(id:string){
+    if(!this.embedUrls.has(id))this.embedUrls.set(id,this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube-nocookie.com/embed/${id}`));
+    return this.embedUrls.get(id)!;
   }
 }

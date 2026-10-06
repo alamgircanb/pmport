@@ -20,7 +20,7 @@ export const routes:Routes=[
   {path:'events',loadComponent:()=>import('./pages/events/events.component').then(m=>m.EventsComponent)},
   {path:'resources',loadComponent:()=>import('./pages/resources/resources.component').then(m=>m.ResourcesComponent)},
   {path:'credentials',loadComponent:()=>import('./pages/credentials/credentials.component').then(m=>m.CredentialsComponent)},
-  {path:'contact',redirectTo:'about',pathMatch:'full'},
+  {path:'contact',redirectTo:'about-pmport',pathMatch:'full'},
   {path:'login',loadComponent:()=>import('./pages/auth/auth.component').then(m=>m.AuthComponent)},
   {path:'**',loadComponent:()=>import('./pages/not-found/not-found.component').then(m=>m.NotFoundComponent)}
 ];
