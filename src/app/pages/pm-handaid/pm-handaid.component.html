@@ -10,9 +10,9 @@
 <div #paper class="paper" [class.expanded]="fullscreen" role="tabpanel" id="handaid-paper" [attr.aria-labelledby]="'tab-'+mode">
 <button class="fullscreen-toggle" type="button" [attr.aria-pressed]="fullscreen" (click)="toggleFullscreen()">{{fullscreen?'Normal screen':'Full screen'}}</button>
 <div class="sheet">
-<canvas #surface width="1200" height="800" (pointerdown)="start($event)" (pointermove)="move($event)" (pointerup)="finish($event)" (pointercancel)="finish($event)" (lostpointercapture)="finish($event)" [class.typing]="mode==='type'" aria-label="Handwriting and drawing canvas">Use Type below for keyboard input.</canvas>
+<canvas #surface width="1200" height="800" (dblclick)="editTextbox($event)" (pointerdown)="start($event)" (pointermove)="move($event)" (pointerup)="finish($event)" (pointercancel)="finish($event)" (lostpointercapture)="finish($event)" [class.typing]="mode==='type'" aria-label="Handwriting and drawing canvas">Use Type below for keyboard input.</canvas>
 @if(mode==='type'){<textarea aria-label="Type on this page" [value]="page.text" (input)="updateText($event)" [style.color]="page.color" [style.font-size.cqw]="page.fontSize/12" placeholder="Type here…" spellcheck="true"></textarea>}
-@if(textAnchor){<div class="textbox-editor" role="dialog" aria-label="Add textbox"><label for="drawing-text">Text for your drawing</label><textarea id="drawing-text" class="drawing-text" [value]="textDraft" (input)="textDraft=$any($event.target).value" placeholder="Enter text…" rows="4"></textarea><div class="textbox-actions"><button type="button" (click)="saveTextbox()" [disabled]="!textDraft.trim()">Add text</button><button type="button" (click)="cancelTextbox()">Cancel</button></div></div>}
+@if(textAnchor){<div class="textbox-editor" role="dialog" [attr.aria-label]="editingTextbox===null?'Add textbox':'Edit textbox'"><label for="drawing-text">Text for your drawing</label><textarea id="drawing-text" class="drawing-text" [value]="textDraft" (input)="textDraft=$any($event.target).value" placeholder="Enter text…" rows="4"></textarea><div class="textbox-actions"><button type="button" (click)="saveTextbox()" [disabled]="!textDraft.trim()">{{editingTextbox===null?'Add text':'Save changes'}}</button><button type="button" (click)="cancelTextbox()">Cancel</button></div></div>}
 </div>
 </div>
 <div class="bottom-controls">
@@ -26,7 +26,7 @@
 @if(mode==='type'||(mode==='draw'&&tool==='textbox')){<label>Text size <select [value]="fontSize" (change)="fontSize=+$any($event.target).value;updateStyle()"><option value="20">Small</option><option value="28">Medium</option><option value="36">Large</option><option value="48">Extra large</option></select></label>}
 </div>
 </div>
-<p class="note" [hidden]="mode!=='draw'||tool!=='textbox'">Click or tap an empty area to add text. Select an existing textbox and drag it to move it inside the canvas.</p>
+<p class="note" [hidden]="mode!=='draw'||tool!=='textbox'">Click or tap an empty area to add text. Select an existing textbox and drag it to move it inside the canvas. Double-click a textbox to edit its text.</p>
 <div class="exports" aria-label="Export all pages"><span>Export all pages</span><button type="button" [disabled]="busy" (click)="export('docx')">Word (.docx)</button><button type="button" [disabled]="busy" (click)="export('pdf')">PDF</button><button type="button" [disabled]="busy" (click)="export('jpeg')">JPEG</button><button type="button" [disabled]="busy" (click)="export('gif')">GIF</button></div>
 <p class="note">Use a mouse, finger or stylus to write and draw. Multiple JPEG or GIF pages download together as a ZIP. Word keeps the canvas image and includes editable typed text.</p>
 <p class="note">Pages stay in memory while this page is open. Export to keep a copy before refreshing or closing.</p>
