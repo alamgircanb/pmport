@@ -6,7 +6,7 @@ export class CredentialsComponent{
   readonly credentials:Credential[]=[
     {shortName:'PMP®',issuer:'Project Management Institute',title:'Project Management Professional',url:'https://www.credly.com/badges/d80ef58d-6eac-46b5-8d22-b0a255c9ee16/linked_in_profile',action:'Verify credential'},
     {shortName:'CSM®',issuer:'Scrum Alliance',title:'Certified ScrumMaster',url:'https://app.badgecert.com/public/badges/tvtrllat',action:'Verify credential'},
-    {shortName:'ITIL',issuer:'PeopleCert',title:'IT Service Management Foundation',url:'https://www.peoplecert.org/public-profile?ed=XCHu3ZqUTNJoAkbRtfdXH4jNnyT4aRSR',action:'View credential'},
+    {shortName:'ITILv5',issuer:'PeopleCert',title:'IT Service Management Foundation',url:'https://www.peoplecert.org/public-profile?ed=XCHu3ZqUTNJoAkbRtfdXH4jNnyT4aRSR',action:'View credential'},
     {shortName:'MBA',issuer:'World Education Services',title:'Master of Business Administration · WES verified',url:'https://badges.wes.org/Evidence?i=8d95a5d1-7f78-40d0-a8d0-93cfa5f00854&type=ca',action:'Verify credential'}
   ];
 }
