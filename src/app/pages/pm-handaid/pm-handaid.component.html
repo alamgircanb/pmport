@@ -7,9 +7,12 @@
 <button type="button" (click)="redo()" [disabled]="!future.length">Redo</button>
 <label class="page-select">Page <select [value]="index" (change)="selectPage(+$any($event.target).value)">@for(page of pages;track $index){<option [value]="$index">{{$index+1}} of {{pages.length}}</option>}</select></label>
 </div>
-<div class="paper" role="tabpanel" id="handaid-paper" [attr.aria-labelledby]="'tab-'+mode">
+<div #paper class="paper" [class.expanded]="fullscreen" role="tabpanel" id="handaid-paper" [attr.aria-labelledby]="'tab-'+mode">
+<button class="fullscreen-toggle" type="button" [attr.aria-pressed]="fullscreen" (click)="toggleFullscreen()">{{fullscreen?'Normal screen':'Full screen'}}</button>
+<div class="sheet">
 <canvas #surface width="1200" height="800" (pointerdown)="start($event)" (pointermove)="move($event)" (pointerup)="finish($event)" (pointercancel)="finish($event)" (lostpointercapture)="finish($event)" [class.typing]="mode==='type'" aria-label="Handwriting and drawing canvas">Use Type below for keyboard input.</canvas>
 @if(mode==='type'){<textarea aria-label="Type on this page" [value]="page.text" (input)="updateText($event)" [style.color]="page.color" [style.font-size.cqw]="page.fontSize/12" placeholder="Type here…" spellcheck="true"></textarea>}
+</div>
 </div>
 <div class="bottom-controls">
 <div class="tabs" role="tablist" aria-label="Input mode">

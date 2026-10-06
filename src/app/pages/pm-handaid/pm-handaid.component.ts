@@ -1,4 +1,4 @@
-import {AfterViewInit,Component,ElementRef,ViewChild} from '@angular/core';
+import {AfterViewInit,Component,ElementRef,HostListener,ViewChild} from '@angular/core';
 import {downloadBlob} from '../../core/export-utils';
 import {encodeDocx,encodeGif,zipStored} from './handaid-export';
 type Point={x:number;y:number};
@@ -7,6 +7,11 @@ type Page={strokes:Stroke[];text:string;color:string;fontSize:number};
 type Snapshot={pages:Page[];index:number};
 @Component({selector:'app-pm-handaid',standalone:true,templateUrl:'./pm-handaid.component.html',styleUrl:'./pm-handaid.component.css'})
 export class PMHandAidComponent implements AfterViewInit{
+ @ViewChild('paper') paper!:ElementRef<HTMLDivElement>;
+ fullscreen=false;private fullscreenFallback=false;
+ @HostListener('document:fullscreenchange') syncFullscreen(){this.fullscreen=this.fullscreenFallback||document.fullscreenElement===this.paper.nativeElement}
+ @HostListener('document:keydown.escape') exitFallback(){if(this.fullscreenFallback){this.fullscreenFallback=false;this.fullscreen=false}}
+ async toggleFullscreen(){const paper=this.paper.nativeElement;if(this.fullscreen){if(document.fullscreenElement===paper)await document.exitFullscreen();this.fullscreenFallback=false;this.fullscreen=false;return}try{if(!paper.requestFullscreen)throw new Error('Fullscreen unavailable');await paper.requestFullscreen();this.fullscreen=true}catch{this.fullscreenFallback=true;this.fullscreen=true}}
  @ViewChild('surface') surface!:ElementRef<HTMLCanvasElement>;
  mode:'write'|'draw'|'type'='write';tool='pen';color='#173349';size=3;fontSize=28;
  pages:Page[]=[this.blank()];index=0;past:Snapshot[]=[];future:Snapshot[]=[];active:Stroke|null=null;pointer:number|null=null;
