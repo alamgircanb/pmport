@@ -12,7 +12,7 @@
   },
   {
     "id": "canada",
-    "label": "Featured article \u00b7 Canada",
+    "label": "Featured article · Canada",
     "title": "The future of project management in Canada.",
     "description": "Explore how AI, business needs and data are shaping project delivery.",
     "image": "future-project-management-canada.png",
@@ -23,7 +23,7 @@
   },
   {
     "id": "tools",
-    "label": "PM Tools \u00b7 Interactive workspaces",
+    "label": "PM Tools · Interactive workspaces",
     "title": "Plan. Track. Make better decisions.",
     "description": "Create project artifacts, draw diagrams and explore PERT and critical path calculations.",
     "image": "power-bi-project-presentation.png",
@@ -34,13 +34,68 @@
   },
   {
     "id": "media",
-    "label": "PM Media \u00b7 PMPortLive",
+    "label": "PM Media · PMPortLive",
     "title": "Learn one concept at a time.",
     "description": "Discover short videos explaining commonly confused concepts in project management and business analysis.",
     "image": "it-systems-development.png",
     "alt": "Technology and systems development",
     "path": "/media",
     "action": "Watch videos",
+    "published": true
+  },
+  {
+    "id": "portfolio-business-analysis-data-analytics",
+    "label": "Portfolio · Selected work",
+    "title": "Business Analysis, Data Analytics & Intelligence",
+    "description": "Turning business needs and operational data into clear requirements, useful insights and decision-ready reporting.",
+    "image": "power-bi-project-presentation.png",
+    "alt": "Alamgir presenting a project progress dashboard to his team",
+    "path": "/portfolio",
+    "action": "Explore portfolio",
+    "published": true
+  },
+  {
+    "id": "portfolio-it-systems-development",
+    "label": "Portfolio · Selected work",
+    "title": "IT & Systems Development",
+    "description": "Designing and developing practical applications, APIs and connected systems using layered, maintainable approaches.",
+    "image": "it-systems-development.png",
+    "alt": "Information technology and systems development project work",
+    "path": "/portfolio",
+    "action": "Explore portfolio",
+    "published": true
+  },
+  {
+    "id": "portfolio-project-program-change-leadership",
+    "label": "Portfolio · Selected work",
+    "title": "Project, Program & Change Leadership",
+    "description": "Aligning stakeholders, resources, risks and reporting so complex initiatives move from planning to measurable results.",
+    "image": "pm_pg_leadership.png",
+    "alt": "Project, program and change leadership in a collaborative setting",
+    "path": "/portfolio/professional-work",
+    "action": "Explore portfolio",
+    "published": true
+  },
+  {
+    "id": "portfolio-academic-projects-applied-learning",
+    "label": "Portfolio · Selected work",
+    "title": "Academic Projects & Applied Learning",
+    "description": "Applying Business Information Systems concepts through practical assignments that connect analysis, technology and business value.",
+    "image": "aca_pro_al.png",
+    "alt": "Md Alamgir Hossain representing academic projects and applied learning",
+    "path": "/portfolio/course-work",
+    "action": "Explore portfolio",
+    "published": true
+  },
+  {
+    "id": "pmp-mindsets",
+    "label": "PM Knowledge Lake · PMP exam preparation",
+    "title": "111 Essential PMP Mindsets for Exam Excellence",
+    "description": "Think like a project leader and approach predictive, agile and hybrid situational questions with confidence.",
+    "image": "pmp-111-mindsets.png",
+    "alt": "Project leader and collaborative team progressing toward project management excellence",
+    "path": "/resources/111-essential-pmp-mindsets",
+    "action": "Explore all 111 mindsets",
     "published": true
   }
 ]
