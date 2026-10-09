@@ -1,6 +1,6 @@
 [
-  {"The Future of Project Management in Canada: Connecting Delivery, Business Needs, and Data":"Recent event one","date":"2026","description":"","image":"professional-photo.jpg","imageAlt":"Event placeholder","repositoryUrl":"","priority":1},
-  {"title":"Recent event two","date":"2026","description":"Use this card for a workshop, conference, presentation or community activity.","image":"pm_pg_leadership.png","imageAlt":"Leadership event placeholder","repositoryUrl":"","priority":2},
-  {"title":"Recent event three","date":"2026","description":"Keep four priority events visible; additional entries appear in the scrolling archive.","image":"IT&SD.png","imageAlt":"Technology event placeholder","repositoryUrl":"","priority":3},
-  {"title":"Recent event four","date":"2026","description":"Link the card to a photo folder or repository when it is ready.","image":"power-bi-project-presentation.png","imageAlt":"Analytics event placeholder","repositoryUrl":"","priority":4}
+  {"title":"The Future of Project Management in Canada: Connecting Delivery, Business Needs, and Data","date":"2026","description":"","image":"professional-photo.webp","imageAlt":"Event placeholder","repositoryUrl":"","priority":1},
+  {"title":"Recent event two","date":"2026","description":"Use this card for a workshop, conference, presentation or community activity.","image":"pm_pg_leadership.webp","imageAlt":"Leadership event placeholder","repositoryUrl":"","priority":2},
+  {"title":"Recent event three","date":"2026","description":"Keep four priority events visible; additional entries appear in the scrolling archive.","image":"it-systems-development.webp","imageAlt":"Technology event placeholder","repositoryUrl":"","priority":3},
+  {"title":"Recent event four","date":"2026","description":"Link the card to a photo folder or repository when it is ready.","image":"power-bi-project-presentation.webp","imageAlt":"Analytics event placeholder","repositoryUrl":"","priority":4}
 ]

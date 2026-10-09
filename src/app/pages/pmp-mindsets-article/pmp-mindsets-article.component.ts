@@ -12,7 +12,7 @@ type MindsetSection={id:string;number:string;label:string;title:string;start:num
     <a routerLink="/resources" class="back">← PM Knowledge Lake</a>
 
     <header class="article-hero">
-      <img src="pmp-111-mindsets.png" alt="Project leader and collaborative team progressing toward project management excellence">
+      <img src="pmp-111-mindsets.webp" alt="Project leader and collaborative team progressing toward project management excellence">
       <div class="hero-overlay">
         <p class="eyebrow">PMP exam preparation</p>
         <h1>111 Essential PMP Mindsets for Exam Excellence</h1>
