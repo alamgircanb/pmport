@@ -77,7 +77,8 @@ export class PMFaciliterComponent{
 
   choose(module:TrainingModule){this.selected=module;this.activeVideo=this.sortedVideos(module.videos)[0];this.steps=[...module.steps].reverse();this.feedback='';this.calcFeedback='';this.quizAnswer=null;}
   sortedVideos(videos:TrainingVideo[]){return [...videos].sort((a,b)=>a.priority-b.priority);}
-  embed(id:string){return this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube-nocookie.com/embed/'+id);}
+  private embedUrls=new Map<string,ReturnType<DomSanitizer['bypassSecurityTrustResourceUrl']>>();
+  embed(id:string){if(!this.embedUrls.has(id))this.embedUrls.set(id,this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube-nocookie.com/embed/'+encodeURIComponent(id)));return this.embedUrls.get(id)!;}
   checkQuiz(module:TrainingModule){this.feedback=this.quizAnswer===module.quiz.answer?'Correct — well done.':'Not yet. Review the lesson and try again.';}
   checkCalculation(module:TrainingModule){this.calcFeedback=Math.abs(Number(this.calculation)-module.calculation.answer)<.001?`Correct: ${module.calculation.answer} ${module.calculation.unit}`:'Check the formula and try again.';}
   move(index:number,direction:number){const next=index+direction;if(next<0||next>=this.steps.length)return;[this.steps[index],this.steps[next]]=[this.steps[next],this.steps[index]];}

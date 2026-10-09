@@ -5,7 +5,7 @@
     "category":"Business Analysis, Data Analytics & Intelligence",
     "description":"Turning business needs and operational data into clear requirements, useful insights and decision-ready reporting.",
     "tools":["Business analysis","Power BI","Excel","SQL","Python"],
-    "image":"power-bi-project-presentation.png",
+    "image":"power-bi-project-presentation.webp",
     "imageAlt":"Alamgir presenting a project progress dashboard to his team",
     "priority":1,
     "workItems":[
@@ -20,7 +20,7 @@
     "category":"IT & Systems Development",
     "description":"Designing and developing practical applications, APIs and connected systems using layered, maintainable approaches.",
     "tools":[".NET 9","REST APIs","Java","SQL"],
-    "image":"it-systems-development.png",
+    "image":"it-systems-development.webp",
     "imageAlt":"Information technology and systems development project work",
     "priority":2,
     "workItems":[
@@ -35,7 +35,7 @@
     "category":"Project, Program & Change Leadership",
     "description":"Aligning stakeholders, resources, risks and reporting so complex initiatives move from planning to measurable results.",
     "tools":["PMP","Agile","Waterfall","Stakeholders","Change"],
-    "image":"pm_pg_leadership.png",
+    "image":"pm_pg_leadership.webp",
     "imageAlt":"Project, program and change leadership in a collaborative setting",
     "priority":3,
     "workItems":[
@@ -50,7 +50,7 @@
     "category":"Academic Projects & Applied Learning",
     "description":"Applying Business Information Systems concepts through practical assignments that connect analysis, technology and business value.",
     "tools":["BIS","Systems analysis","Research","Teamwork"],
-    "image":"aca_pro_al.png",
+    "image":"aca_pro_al.webp",
     "imageAlt":"Md Alamgir Hossain representing academic projects and applied learning",
     "priority":4,
     "workItems":[

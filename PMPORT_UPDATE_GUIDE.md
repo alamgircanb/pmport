@@ -30,7 +30,7 @@ Slides follow the order in the file. Set `published` to false to hide a slide. U
 
 ## PM Knowledge Lake
 
-Existing books and articles are still loaded from `public/data/resources.json`. The featured Canada article is at `/resources/future-project-management-canada`. Its full text and reference links are in `src/app/pages/article/article.component.ts`. The exact selected illustration is `public/future-project-management-canada.png`.
+Existing books and articles are still loaded from `public/data/resources.json`. The featured Canada article is at `/resources/future-project-management-canada`. Its full text and reference links are in `src/app/pages/article/article.component.ts`. The exact selected illustration is `public/future-project-management-canada.webp`.
 
 ## Project artifacts
 

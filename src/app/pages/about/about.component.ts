@@ -13,7 +13,7 @@ interface AboutVideo {title:string;description:string;youtubeVideoId:string}
   imports:[AsyncPipe,RouterLink],
   template:`
     <section class="page about-page">
-      <header class="page-header"><p class="eyebrow">Portfolio · PM Profile</p><h1>Md Alamgir Hossain</h1><img src="my_profile_pic.png" alt="Md Alamgir Hossain" style="width:160px;height:180px;object-fit:cover;border-radius:18px;margin-top:24px"><p class="lead">I am a project management and business information systems professional in Regina, Saskatchewan. My work sits where project leadership, systems analysis and data-informed decision making meet.</p></header>
+      <header class="page-header"><p class="eyebrow">Portfolio · PM Profile</p><h1>Md Alamgir Hossain</h1><img src="my_profile_pic.webp" alt="Md Alamgir Hossain" style="width:160px;height:180px;object-fit:cover;border-radius:18px;margin-top:24px"><p class="lead">I am a project management and business information systems professional in Regina, Saskatchewan. My work sits where project leadership, systems analysis and data-informed decision making meet.</p></header>
 
       <div class="grid two">
         <article class="card"><h2>How I work</h2><p class="muted">I translate complex requirements into practical plans, make progress visible, and help multidisciplinary teams stay aligned around value. My approach combines structured delivery with curiosity and continuous learning.</p></article>
