@@ -1,4 +1,4 @@
-import {CaseStudy,ExamQuestion} from '../exam-types';
+import {CaseStudy,ExamQuestion} from '../../exam-types';
 
 export const CASE_STUDIES:CaseStudy[]=[
   {id:'A',title:'Case A · Prairie Power: Customer Billing Modernization (hybrid)',graphic:'ev-curve',context:[

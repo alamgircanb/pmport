@@ -1,12 +1,13 @@
-import {Approach,Domain,ExamQuestion} from './exam-types';
-import {CASE_QUESTIONS,CASE_STUDIES} from './questions/cases';
-import {PEOPLE_QUESTIONS} from './questions/people';
-import {PROCESS_QUESTIONS} from './questions/process';
-import {BUSINESS_ENVIRONMENT_QUESTIONS} from './questions/business-environment';
+import {Approach,CaseStudy,Domain,ExamQuestion,ExamSet} from './exam-types';
+import {EXAMS} from './questions';
 
-export {CASE_STUDIES};
-export const ALL_QUESTIONS:ExamQuestion[]=[...CASE_QUESTIONS,...PEOPLE_QUESTIONS,...PROCESS_QUESTIONS,...BUSINESS_ENVIRONMENT_QUESTIONS];
+export {EXAMS};
+export const CASE_STUDIES:CaseStudy[]=EXAMS.flatMap(e=>e.cases);
+export const ALL_QUESTIONS:ExamQuestion[]=EXAMS.flatMap(e=>[...e.caseQuestions,...e.questions]);
 export const QUESTION_BY_ID=new Map(ALL_QUESTIONS.map(q=>[q.id,q]));
+/** Which exam (1, 2 or 3) each question belongs to. */
+export const EXAM_OF=new Map<string,number>(EXAMS.flatMap(e=>[...e.caseQuestions,...e.questions].map(q=>[q.id,e.id] as [string,number])));
+export function examById(id:number):ExamSet{return EXAMS.find(e=>e.id===id)??EXAMS[0]}
 
 export const EXAM_MINUTES=240;
 export const BREAK_MINUTES=10;
@@ -16,7 +17,7 @@ export const PRETEST_COUNT=10;
 export type Response=number[];
 
 export interface ExamSection{title:string;ids:string[]}
-export interface ExamForm{seed:number;sections:ExamSection[];pretest:string[];optionOrder:Record<string,number[]>}
+export interface ExamForm{examId:number;seed:number;sections:ExamSection[];pretest:string[];optionOrder:Record<string,number[]>}
 
 /** Small deterministic PRNG so an attempt can be restored exactly after a page refresh. */
 export function rng(seed:number){let s=seed>>>0||1;return()=>{s^=s<<13;s>>>=0;s^=s>>17;s^=s<<5;s>>>=0;return s/4294967296}}
@@ -30,24 +31,28 @@ function optionOrders(questions:ExamQuestion[],rand:()=>number){
 }
 
 /** Full mock: Section 1 = the three case studies (in order); Sections 2–3 = the 150 independent items shuffled and split. Ten independent items are unscored pretest items. */
-export function buildFullExam(seed=Date.now()):ExamForm{
+export function buildFullExam(examId=1,seed=Date.now()):ExamForm{
   const rand=rng(seed);
-  const caseIds=CASE_QUESTIONS.map(q=>q.id);
-  const independent=shuffle(ALL_QUESTIONS.filter(q=>!q.caseId).map(q=>q.id),rand);
+  const exam=examById(examId);
+  const caseIds=exam.caseQuestions.map(q=>q.id);
+  const independent=shuffle(exam.questions.map(q=>q.id),rand);
   const half=Math.ceil(independent.length/2);
   const pretest=shuffle(independent,rand).slice(0,PRETEST_COUNT);
-  return {seed,pretest,optionOrder:optionOrders(ALL_QUESTIONS,rand),sections:[
+  return {examId:exam.id,seed,pretest,optionOrder:optionOrders([...exam.caseQuestions,...exam.questions],rand),sections:[
     {title:'Section 1 · Case studies',ids:caseIds},
     {title:'Section 2 · Independent questions',ids:independent.slice(0,half)},
     {title:'Section 3 · Independent questions',ids:independent.slice(half)}]};
 }
 
-export interface PracticeFilter{domain:Domain|'All';task:number;approach:Approach|'All';count:number}
+/** exam: 0 = all exams. */
+export interface PracticeFilter{exam:number;domain:Domain|'All';task:number;approach:Approach|'All';count:number}
+export function practicePool(filter:PracticeFilter){return ALL_QUESTIONS.filter(q=>(!filter.exam||EXAM_OF.get(q.id)===filter.exam)&&(filter.domain==='All'||q.domain===filter.domain)&&(!filter.task||q.task===filter.task)&&(filter.approach==='All'||q.approach===filter.approach))}
 export function buildPractice(filter:PracticeFilter,seed=Date.now()):ExamForm{
   const rand=rng(seed);
-  const pool=ALL_QUESTIONS.filter(q=>(filter.domain==='All'||q.domain===filter.domain)&&(!filter.task||q.task===filter.task)&&(filter.approach==='All'||q.approach===filter.approach));
+  const pool=practicePool(filter);
   const ids=shuffle(pool.map(q=>q.id),rand).slice(0,filter.count||pool.length);
-  return {seed,pretest:[],optionOrder:optionOrders(ALL_QUESTIONS,rand),sections:[{title:'Practice set',ids}]};
+  const chosen=ids.map(id=>QUESTION_BY_ID.get(id)!);
+  return {examId:0,seed,pretest:[],optionOrder:optionOrders(chosen,rand),sections:[{title:'Practice set',ids}]};
 }
 
 export function isAnswered(q:ExamQuestion,r:Response|undefined):boolean{

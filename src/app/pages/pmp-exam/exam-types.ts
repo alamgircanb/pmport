@@ -6,7 +6,8 @@
 export type Domain='People'|'Process'|'Business Environment';
 export type Approach='Predictive'|'Agile'|'Hybrid';
 export type ItemType='single'|'multi'|'matching'|'dropdown'|'hotspot';
-export type GraphicId='burndown'|'ev-curve'|'network'|'risk-matrix'|'cfd'|'stakeholder-grid'|'burnup'|'control-chart';
+/** Id of an exhibit in exam-graphics-data.ts. */
+export type GraphicId=string;
 
 export interface ExamQuestion{
   id:string;
@@ -41,3 +42,6 @@ export const ECO_TASKS:Record<Domain,string[]>={
 };
 
 export const DOMAIN_WEIGHT:Record<Domain,number>={'People':33,'Process':41,'Business Environment':26};
+
+/** One complete mock exam: three case studies (10 questions each) and 150 independent questions. */
+export interface ExamSet{id:number;title:string;subtitle:string;cases:CaseStudy[];caseQuestions:ExamQuestion[];questions:ExamQuestion[]}
