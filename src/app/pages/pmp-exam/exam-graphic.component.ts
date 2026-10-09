@@ -50,7 +50,7 @@ import {GraphicId} from './exam-types';
         <text class="axis-t" x="281" y="350" text-anchor="middle">Interest →</text><text class="axis-t" x="20" y="170" transform="rotate(-90 20 170)" text-anchor="middle">Power →</text>
         <text class="axis-t" x="66" y="340">Low</text><text class="axis-t" x="496" y="340" text-anchor="end">High</text>
         @for(s of stakeholders;track s.label){<g [class.region]="hotspot" [class.picked]="hotspot&&s.idx===selected" (click)="pick(s.idx)" (keydown.enter)="pick(s.idx)" [attr.tabindex]="hotspot?0:null" [attr.role]="hotspot?'button':null" [attr.aria-label]="s.label">
-          <rect class="chip" [attr.x]="s.x-78" [attr.y]="s.y-17" width="156" height="34" rx="17"/><text class="chip-t" [attr.x]="s.x" [attr.y]="s.y+5" text-anchor="middle">{{s.label}}</text></g>}
+          <rect class="chip" [attr.x]="s.x-100" [attr.y]="s.y-20" width="200" height="40" rx="20"/><text class="chip-t" [attr.x]="s.x" [attr.y]="s.y+5" text-anchor="middle">{{s.label}}</text></g>}
       </svg>}
     @case('cfd'){
       <svg viewBox="0 0 560 320" role="img" aria-label="Cumulative flow diagram over 10 days: Testing band widens while Done grows slowly">
@@ -78,7 +78,7 @@ import {GraphicId} from './exam-types';
   </figure>`,
   styles:[`
     .exhibit{margin:0 0 1rem;padding:.75rem;border:1px solid var(--line);border-radius:12px;background:#061629}
-    svg{display:block;width:100%;height:auto;font:12px Inter,Arial,sans-serif}
+    svg{display:block;width:100%;height:auto;font:13px Inter,Arial,sans-serif}
     figcaption{margin-top:.4rem;font-size:.85rem;color:var(--muted)}
     .axis line{stroke:#1d3a57;stroke-width:1}.axis text,.axis-t{fill:#9db1c7}
     .pv{fill:none;stroke:#8fa8ff;stroke-width:2.5;stroke-dasharray:6 4}.evl{fill:none;stroke:#49cce1;stroke-width:2.5}.ac{fill:none;stroke:#ff9c7a;stroke-width:2.5}
@@ -89,7 +89,7 @@ import {GraphicId} from './exam-types';
     .box{fill:#0b2340;stroke:#3b5874;stroke-width:1.5}.node-t{fill:#fff;font-weight:800;font-size:14px}.node-d{fill:#9db1c7}
     .cell{stroke:#061629;stroke-width:2}.cell.red{fill:#7a2a33}.cell.amber{fill:#7a5a22}.cell.green{fill:#1f5a45}
     .risk{fill:#0b2340;stroke:#fff;stroke-width:1.5}.risk-t{fill:#fff;font-weight:800}
-    .quad{fill:#0b2340;stroke:#1d3a57}.chip{fill:#123459;stroke:#49cce1}.chip-t{fill:#eaf3fc;font-weight:700}
+    .quad{fill:#0b2340;stroke:#1d3a57}.chip{fill:#123459;stroke:#49cce1}.chip-t{fill:#eaf3fc;font-weight:700;font-size:15px}
     .band{stroke:#061629;stroke-width:1}.b0{fill:#2f7d5b}.b1{fill:#b8783a}.b2{fill:#3c6fb0}.b3{fill:#3a4a63}.band-t{fill:#dcebf7;font-weight:700}
     .limit{stroke:#ff8f8f;stroke-dasharray:6 4}.mean{stroke:#9db1c7}
     .hot .region{cursor:pointer}.hot .region:hover .box,.hot .region:hover .risk,.hot .region:hover .chip,.hot .region:focus .box,.hot .region:focus .risk,.hot .region:focus .chip{stroke:#f0c36b;stroke-width:3}
@@ -136,7 +136,7 @@ export class ExamGraphicComponent{
   readonly risks=[{id:'R1',p:4,i:5,idx:0,dx:0},{id:'R2',p:2,i:2,idx:1,dx:0},{id:'R3',p:5,i:2,idx:2,dx:0},{id:'R4',p:1,i:5,idx:3,dx:0},{id:'R5',p:3,i:4,idx:4,dx:0},{id:'R6',p:4,i:1,idx:5,dx:0}];
   zone(s:number){return s>=15?'red':s>=6?'amber':'green'}
   // Stakeholder grid
-  readonly stakeholders=[{label:'Regional VP',x:170,y:80,idx:0},{label:'Union representative',x:392,y:95,idx:1},{label:'Call-centre agents',x:400,y:250,idx:2},{label:'Vendor account manager',x:165,y:255,idx:3}];
+  readonly stakeholders=[{label:'Regional VP',x:170,y:80,idx:0},{label:'Union representative',x:392,y:95,idx:1},{label:'Call-centre agents',x:392,y:250,idx:2},{label:'Vendor account manager',x:170,y:255,idx:3}];
   // Cumulative flow (bands from bottom: Done, Testing, In progress, To do)
   readonly tenDays=[1,2,3,4,5,6,7,8,9,10];
   readonly cfdBands=[
