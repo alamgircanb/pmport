@@ -9,7 +9,7 @@ async function answerCurrent(p){
   else if(await p.$('.question .hot .region'))await p.click('.question .hot .region >> nth=1');
 }
 async function shotExhibits(p,tag){
-  for(const fig of await p.$$('figure.exhibit')){const cap=(await fig.$eval('.cap',e=>e.textContent))||'';if(seenCaps.has(cap))continue;seenCaps.add(cap);await fig.scrollIntoViewIfNeeded();await fig.screenshot({path:`${out}/${tag}-exhibit-${slug(cap.replace('Exhibit · ',''))}.png`});}
+  for(const fig of await p.$$('figure.exhibit')){const id=await fig.getAttribute('data-graphic');const key=tag.split('-')[0]+id;if(seenCaps.has(key))continue;seenCaps.add(key);await fig.scrollIntoViewIfNeeded();await fig.screenshot({path:`${out}/${tag}-exhibit-${id}.png`});}
 }
 async function takeExam(p,examId,tag,shoot){
   await p.goto(base+'/pm-faciliter/pmp-exam-simulator');await p.waitForSelector('.exam-card');
@@ -34,7 +34,7 @@ async function takeExam(p,examId,tag,shoot){
 }
 (async()=>{
   const b=await chromium.launch();
-  for(const vp of [{name:'desk',width:1366,height:900,exams:[1,2,3]},{name:'mob',width:390,height:844,exams:[3]}]){
+  for(const vp of [{name:'desk',width:1366,height:900,exams:[1,2,3]},{name:'mob',width:390,height:844,exams:[2]}]){
     const ctx=await b.newContext({viewport:{width:vp.width,height:vp.height}});const p=await ctx.newPage();
     p.on('console',m=>{if(m.type()==='error')log.push(`[${vp.name}] console: ${m.text()}`)});p.on('pageerror',e=>log.push(`[${vp.name}] pageerror: ${e.message}`));
     // legacy save migration: seed an old v1 save for exam 1 shape
