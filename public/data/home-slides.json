@@ -11,6 +11,17 @@
     "published": true
   },
   {
+    "id": "project-failure-causes",
+    "label": "PM Knowledge Lake · Project delivery",
+    "title": "Top 21 Causes of Project Failure",
+    "description": "Learn why projects break down, the early warning signals to watch for and the practical actions that keep delivery on course.",
+    "image": "project-failure-causes.webp",
+    "alt": "Project team studying a project path that breaks under warning signs and then recovers toward a summit",
+    "path": "/resources/21-causes-of-project-failure",
+    "action": "Read all 21 causes",
+    "published": true
+  },
+  {
     "id": "canada",
     "label": "Featured article · Canada",
     "title": "The future of project management in Canada.",

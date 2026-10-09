@@ -6,6 +6,7 @@ export const routes:Routes=[
   {path:'about-pmport',loadComponent:()=>import('./pages/about-pmport/about-pmport.component').then(m=>m.AboutPMPortComponent)},
   {path:'resources/future-project-management-canada',loadComponent:()=>import('./pages/article/article.component').then(m=>m.ArticleComponent)},
   {path:'resources/111-essential-pmp-mindsets',loadComponent:()=>import('./pages/pmp-mindsets-article/pmp-mindsets-article.component').then(m=>m.PmpMindsetsArticleComponent),title:'111 Essential PMP Mindsets | PMPORT'},
+  {path:'resources/21-causes-of-project-failure',loadComponent:()=>import('./pages/project-failure-article/project-failure-article.component').then(m=>m.ProjectFailureArticleComponent),title:'Top 21 Causes of Project Failure | PMPORT'},
   {path:'pm-tools/diagram-studio',canDeactivate:[unsaved],loadComponent:()=>import('./pages/diagram/diagram.component').then(m=>m.DiagramComponent)},
   {path:'pm-tools/pert-cpm',canDeactivate:[unsaved],loadComponent:()=>import('./pages/pert/pert.component').then(m=>m.PertComponent)},
   {path:'portfolio/course-work',data:{area:'course'},loadComponent:()=>import('./pages/portfolio/portfolio.component').then(m=>m.PortfolioComponent)},
