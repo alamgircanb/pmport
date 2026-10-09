@@ -1,4 +1,4 @@
-import {ExamQuestion} from '../exam-types';
+import {ExamQuestion} from '../../exam-types';
 
 const D='Business Environment' as const;
 
