@@ -1,0 +1,12 @@
+[desk-exam1] answered 180; results "Exam Simulator 1 results" 21% Needs Improvement
+[desk-exam2] answered 180; results "Exam Simulator 2 results" 25% Needs Improvement
+[desk-exam3] answered 180; results "Exam Simulator 3 results" 23% Needs Improvement
+[desk] card statuses: ["Completed · 21%","Completed · 25%","Completed · 23%"]
+[desk] resume shows results OK
+[desk] practice filter exam2+Process: 74 questions match these filters.
+[desk] scrollWidth 1366
+[mob-exam3] answered 180; results "Exam Simulator 3 results" 29% Needs Improvement
+[mob] card statuses: ["Completed · 29%"]
+[mob] resume shows results OK
+[mob] practice filter exam2+Process: 74 questions match these filters.
+[mob] scrollWidth 390
