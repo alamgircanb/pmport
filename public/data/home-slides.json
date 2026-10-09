@@ -11,6 +11,17 @@
     "published": true
   },
   {
+    "id": "pmp-exam-simulator",
+    "label": "PM Faciliter · PMP exam preparation",
+    "title": "PMP Exam Simulator",
+    "description": "A full 180-question mock exam modelled on the July 2026 PMP exam and the PMBOK® Guide, Eighth Edition.",
+    "image": "pmp-exam-simulator.webp",
+    "alt": "Candidate taking a computer-based exam with project charts floating around the workstation",
+    "path": "/pm-faciliter/pmp-exam-simulator",
+    "action": "Start the simulator",
+    "published": true
+  },
+  {
     "id": "claude-pm-ba-guide",
     "label": "PM Knowledge Lake · AI in practice",
     "title": "Using Claude in PM and Business Analysis",

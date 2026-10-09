@@ -19,6 +19,7 @@ export const routes:Routes=[
   {path:'pm-handaid',canDeactivate:[unsaved],loadComponent:()=>import('./pages/pm-handaid/pm-handaid.component').then(m=>m.PMHandAidComponent),title:'PM HandAid | PMPORT'},
   {path:'pm-jobs-prep',loadComponent:()=>import('./pages/pm-jobs-prep/pm-jobs-prep.component').then(m=>m.PMJobsPrepComponent),title:'PM JOBS Prep | PMPORT'},
   {path:'pm-faciliter',loadComponent:()=>import('./pages/pm-faciliter/pm-faciliter.component').then(m=>m.PMFaciliterComponent)},
+  {path:'pm-faciliter/pmp-exam-simulator',loadComponent:()=>import('./pages/pmp-exam/pmp-exam.component').then(m=>m.PmpExamComponent),title:'PMP Exam Simulator | PMPORT'},
   {path:'pm-faciliter/member',canActivate:[authGuard],loadComponent:()=>import('./pages/member/member.component').then(m=>m.MemberComponent)},
   {path:'media',loadComponent:()=>import('./pages/media/media.component').then(m=>m.MediaComponent)},
   {path:'events',loadComponent:()=>import('./pages/events/events.component').then(m=>m.EventsComponent)},
