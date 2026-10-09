@@ -2,3 +2,20 @@
 
 .video-thumb{aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#123959;display:grid;place-items:center}.video-thumb img{height:100%}.video-fallback{font-size:3rem;color:var(--accent);text-align:center}.video-fallback small{display:block;font-size:.875rem;margin-top:.5rem;color:#c7d8e7}
 
+
+/* Tablet and mobile: stop the 3:2 shape + min-height from stretching the banner wider than the screen */
+@media(max-width:920px){.banner{aspect-ratio:auto;width:100%;min-width:0}}
+/* Mobile: picture on top, text below, so neither is cropped or covered */
+@media(max-width:650px){
+.banner{flex-direction:column;align-items:stretch;min-height:0;background:#0b2340}
+.banner-image{position:relative;display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;opacity:1;animation:none}
+.banner-shade{display:none}
+.banner-copy{display:flex;flex-direction:column;align-items:flex-start;max-width:none;min-height:350px;padding:1.4rem 1.25rem 1rem}
+.banner-copy h1{font-size:clamp(1.75rem,7.5vw,2.4rem);line-height:1.1;letter-spacing:-.03em;margin-bottom:.75rem}
+.banner-copy p:not(.eyebrow){font-size:1rem;line-height:1.6;margin:0 0 1.25rem}
+.banner-copy .button{margin-top:auto}
+.banner-controls{position:static;justify-content:space-between;gap:.4rem;padding:0 1.25rem 1.25rem}
+.banner-controls>button{flex:0 0 36px;width:36px;height:36px}
+.dots{flex:1;justify-content:center;gap:.35rem;padding:0}
+.dots button{width:8px;height:8px}.dots button.selected{width:20px}
+}
