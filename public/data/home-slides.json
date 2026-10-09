@@ -11,6 +11,17 @@
     "published": true
   },
   {
+    "id": "claude-pm-ba-guide",
+    "label": "PM Knowledge Lake · AI in practice",
+    "title": "Using Claude in PM and Business Analysis",
+    "description": "A practical field manual: set up Claude, apply it across the project lifecycle and use it responsibly.",
+    "image": "claude-pm-ba-guide.webp",
+    "alt": "Project team collaborating around a laptop running an AI assistant with floating project dashboards",
+    "path": "/resources/claude-for-project-management-business-analysis",
+    "action": "Read the guide",
+    "published": true
+  },
+  {
     "id": "project-failure-causes",
     "label": "PM Knowledge Lake · Project delivery",
     "title": "Top 21 Causes of Project Failure",
