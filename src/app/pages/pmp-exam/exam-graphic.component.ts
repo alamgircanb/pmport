@@ -7,7 +7,7 @@ import {GRAPHICS,GraphicSpec} from './exam-graphics-data';
   selector:'app-exam-graphic',
   template:`
   @if(spec;as g){
-  <figure class="exhibit" [class.hot]="hotspot">
+  <figure class="exhibit" [class.hot]="hotspot" [attr.data-graphic]="id">
     <p class="cap">Exhibit · {{g.label}}</p>
     @switch(g.kind){
     @case('ev'){@if(ev;as e){
@@ -65,7 +65,7 @@ import {GRAPHICS,GraphicSpec} from './exam-graphics-data';
           <rect class="chip" [attr.x]="s.x-102" [attr.y]="s.y-20" width="204" height="40" rx="20"/><text class="chip-t" [attr.x]="s.x" [attr.y]="s.y+5" text-anchor="middle">{{s.label}}</text></g>}
       </svg>}}
     @case('cfd'){@if(cfd;as c){
-      <svg viewBox="0 0 580 320" role="img" [attr.aria-label]="c.aria">
+      <svg viewBox="0 0 640 320" role="img" [attr.aria-label]="c.aria">
         <g class="axis">@for(t of c.ticks;track t){<line x1="56" x2="500" [attr.y1]="c.y(t)" [attr.y2]="c.y(t)"/><text x="50" [attr.y]="c.y(t)+4" text-anchor="end">{{t}}</text>}
           @for(d of c.xs;track d){<text [attr.x]="c.x(d)" y="300" text-anchor="middle">{{d}}</text>}<text x="278" y="318" text-anchor="middle">Day</text></g>
         @for(b of c.bands;track b.name;let k=$index){<polygon [attr.class]="'band b'+k" [attr.points]="b.points"/>}
@@ -81,13 +81,13 @@ import {GRAPHICS,GraphicSpec} from './exam-graphics-data';
     @case('pareto'){@if(par;as p){
       <svg viewBox="0 0 580 330" role="img" [attr.aria-label]="p.aria">
         <g class="axis">@for(t of p.ticks;track t){<line x1="56" x2="520" [attr.y1]="p.y(t)" [attr.y2]="p.y(t)"/><text x="50" [attr.y]="p.y(t)+4" text-anchor="end">{{t}}</text>}<text x="524" [attr.y]="p.y(p.max)+4">100%</text><text x="8" y="14">Defects</text></g>
-        @for(b of p.bars;track b.label){<rect class="bar-r" [attr.x]="b.x" [attr.y]="b.y" [attr.width]="b.w" [attr.height]="b.h"/><text class="label" [attr.x]="b.x+b.w/2" [attr.y]="b.y-6" text-anchor="middle">{{b.v}}</text><text class="axis-t" [attr.x]="b.x+b.w/2" y="300" text-anchor="middle">{{b.label}}</text>}
-        <polyline class="cum" [attr.points]="p.cum"/>@for(b of p.bars;track b.label){<circle class="dot cumdot" [attr.cx]="b.cx" [attr.cy]="b.cy" r="3.5"/><text class="cum-t" [attr.x]="b.cx+5" [attr.y]="b.cy-6">{{b.cumPct}}%</text>}
+        @for(b of p.bars;track b.label){<rect class="bar-r" [attr.x]="b.x" [attr.y]="b.y" [attr.width]="b.w" [attr.height]="b.h"/><text [attr.class]="b.h>24?'bar-v':'label'" [attr.x]="b.x+b.w/2" [attr.y]="b.h>24?b.y+18:b.y-6" text-anchor="middle">{{b.v}}</text><text class="axis-t small" [attr.x]="b.x+b.w/2" y="300" text-anchor="middle">{{b.label}}</text>}
+        <polyline class="cum" [attr.points]="p.cum"/>@for(b of p.bars;track b.label){<circle class="dot cumdot" [attr.cx]="b.cx" [attr.cy]="b.cy" r="3.5"/><text class="cum-t" [attr.x]="b.cx+6" [attr.y]="b.cy-9">{{b.cumPct}}%</text>}
       </svg>}}
     @case('tornado'){@if(tor;as t){
       <svg viewBox="0 0 580 300" role="img" [attr.aria-label]="t.aria">
         <line class="mean" [attr.x1]="t.cx" [attr.x2]="t.cx" y1="20" y2="262"/><text class="label" [attr.x]="t.cx" y="285" text-anchor="middle">Base NPV {{t.base}}</text>
-        @for(b of t.bars;track b.label){<text class="axis-t" x="166" [attr.y]="b.y+17" text-anchor="end">{{b.label}}</text>
+        @for(b of t.bars;track b.label){<text class="axis-t" x="196" [attr.y]="b.y+17" text-anchor="end">{{b.label}}</text>
           <rect class="bar-low" [attr.x]="b.lx" [attr.y]="b.y" [attr.width]="b.lw" height="26"/><rect class="bar-high" [attr.x]="t.cx" [attr.y]="b.y" [attr.width]="b.hw" height="26"/>
           <text class="label" [attr.x]="b.lx-4" [attr.y]="b.y+17" text-anchor="end">{{b.low}}</text><text class="label" [attr.x]="t.cx+b.hw+4" [attr.y]="b.y+17">+{{b.high}}</text>}
       </svg>}}
@@ -101,7 +101,8 @@ import {GRAPHICS,GraphicSpec} from './exam-graphics-data';
     @if(hotspot){<figcaption>Click an item in the exhibit to select your answer.</figcaption>}
   </figure>}`,
   styles:[`
-    .exhibit{margin:0 0 1rem;padding:.75rem;border:1px solid var(--line);border-radius:12px;background:#061629}
+    .exhibit{margin:0 0 1rem;padding:.75rem;border:1px solid var(--line);border-radius:12px;background:#061629;overflow-x:auto}
+    @media(max-width:600px){svg{min-width:500px}figcaption::after{content:' Swipe sideways to see the whole exhibit.'}}
     .cap{margin:0 0 .4rem;font-size:.8rem;font-weight:700;color:#9db1c7}
     svg{display:block;width:100%;height:auto;font:13px Inter,Arial,sans-serif}
     figcaption{margin-top:.4rem;font-size:.85rem;color:var(--muted)}
@@ -117,7 +118,7 @@ import {GRAPHICS,GraphicSpec} from './exam-graphics-data';
     .quad{fill:#0b2340;stroke:#1d3a57}.chip{fill:#123459;stroke:#49cce1}.chip-t{fill:#eaf3fc;font-weight:700;font-size:15px}
     .band{stroke:#061629;stroke-width:1}.b0{fill:#2f7d5b}.b1{fill:#b8783a}.b2{fill:#3c6fb0}.b3{fill:#3a4a63}.band-t{fill:#dcebf7;font-weight:700}
     .limit{stroke:#ff8f8f;stroke-dasharray:6 4}.mean{stroke:#9db1c7}
-    .bar-r{fill:#3c6fb0}.bar-over{fill:#b8505a}.bar-low{fill:#b8505a}.bar-high{fill:#2f7d5b}.cum{fill:none;stroke:#f0c36b;stroke-width:2.5}.cumdot{fill:#f0c36b}.cum-t{fill:#ffd98c;font-size:12px;font-weight:700}
+    .bar-r{fill:#3c6fb0}.bar-over{fill:#b8505a}.bar-low{fill:#b8505a}.bar-high{fill:#2f7d5b}.cum{fill:none;stroke:#f0c36b;stroke-width:2.5}.cumdot{fill:#f0c36b}.cum-t{fill:#ffd98c;font-size:12px;font-weight:700}.bar-v{fill:#fff;font-weight:800}.small{font-size:11px}
     .hot .region{cursor:pointer}.hot .region:hover .box,.hot .region:hover .risk,.hot .region:hover .chip,.hot .region:focus .box,.hot .region:focus .risk,.hot .region:focus .chip{stroke:#f0c36b;stroke-width:3}
     .picked .box,.picked .risk,.picked .chip{stroke:#f0c36b!important;stroke-width:4!important;fill:#4a3a12!important}
     .region:focus{outline:none}
@@ -168,6 +169,7 @@ export class ExamGraphicComponent{
     const x=(d:number)=>56+(d-1)*(444/(n-1)),y=(v:number)=>285-v*(260/top);
     const cum=(k:number,i:number)=>g.bands.slice(0,k+1).reduce((s,b)=>s+b.v[i],0);const xs=this.range(n,1);
     const bands=g.bands.map((b,k)=>{const top=xs.map((d,i)=>`${x(d)},${y(cum(k,i))}`);const bottom=xs.map((d,i)=>`${x(d)},${y(k?cum(k-1,i):0)}`).reverse();const lo=k?cum(k-1,n-1):0;return {name:b.name,points:[...top,...bottom].join(' '),labelY:y((lo+cum(k,n-1))/2)+4}});
+    for(let k=1;k<bands.length;k++)if(bands[k].labelY>bands[k-1].labelY-16)bands[k].labelY=bands[k-1].labelY-16;
     return {ticks,x,y,xs,bands,aria:'Cumulative flow diagram. '+g.bands.map(b=>`${b.name}: ${b.v.join(', ')}`).join('. ')}}
   get ctl(){const g=this.spec;if(g?.kind!=='control')return null;
     const lo=Math.min(g.lcl,...g.values),hi=Math.max(g.ucl,...g.values);const pad=(hi-lo)*0.15;const y=(v:number)=>262-(v-(lo-pad))*(240/((hi+pad)-(lo-pad)));const x=(i:number)=>70+i*(430/(g.values.length-1));
@@ -177,7 +179,7 @@ export class ExamGraphicComponent{
     const bars=g.bars.map((b,i)=>{c+=b.v;const x=56+gap+i*(w+gap);return {...b,x,w,y:y(b.v),h:280-y(b.v),cx:x+w/2,cy:y(c/total*max),cumPct:Math.round(c/total*100)}});
     return {ticks,y,max,bars,cum:bars.map(b=>`${b.cx},${b.cy}`).join(' '),aria:'Pareto chart. '+g.bars.map(b=>`${b.label} ${b.v}`).join(', ')+`. Total ${total}.`}}
   get tor(){const g=this.spec;if(g?.kind!=='tornado')return null;
-    const m=Math.max(...g.bars.map(b=>Math.max(-b.low,b.high)));const cx=360,scale=170/m;
+    const m=Math.max(...g.bars.map(b=>Math.max(-b.low,b.high)));const cx=392,scale=140/m;
     return {cx,base:g.base,bars:g.bars.map((b,i)=>({...b,y:24+i*46,lx:cx+b.low*scale,lw:-b.low*scale,hw:b.high*scale})),aria:'Tornado diagram of NPV swing from base '+g.base+': '+g.bars.map(b=>`${b.label} ${b.low} to +${b.high}`).join('; ')}}
   get res(){const g=this.spec;if(g?.kind!=='resource')return null;
     const ticks=this.axis(Math.max(g.limit,...g.values)+1);const top=ticks[ticks.length-1];const y=(v:number)=>270-v*(240/top);const w=34,gap=(474-g.values.length*w)/(g.values.length+1);
