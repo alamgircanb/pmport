@@ -8,20 +8,36 @@
     <img src="pmp-exam-simulator.webp" alt="Candidate taking a computer-based exam with project charts floating around the workstation">
     <div class="hero-overlay">
       <p class="eyebrow">PM Faciliter · PMP exam preparation</p>
-      <h1>PMP Exam Simulator</h1>
-      <p class="hero-lead">A full-length mock exam modelled on the July 2026 PMP exam—case studies, timed sections, breaks and domain-level results—with original questions reflecting the PMBOK® Guide, Eighth Edition.</p>
-      <div class="hero-actions"><button class="button primary" type="button" (click)="startIntro()">Start full mock exam</button><a class="button secondary" href="#practice">Practice by domain</a></div>
+      <h1>PMP Exam Simulators</h1>
+      <p class="hero-lead">Three full-length mock exams modelled on the July 2026 PMP exam—case studies, timed sections, breaks and domain-level results—with 540 original questions reflecting the PMBOK® Guide, Eighth Edition.</p>
+      <div class="hero-actions"><a class="button primary" href="#exams">Choose an exam</a><a class="button secondary" href="#practice">Practice by domain</a></div>
     </div>
   </header>
 
-  @if(saved){
-    <div class="resume card"><div><p class="eyebrow">Saved in this browser</p><strong>{{savedLabel(saved)}}</strong></div><div class="resume-actions"><button class="button primary small" type="button" (click)="resume()">{{saved.finished?'View results':'Resume'}}</button><button class="button secondary small" type="button" (click)="discard()">Discard</button></div></div>
+  <section id="exams" class="exam-cards">
+    @for(e of exams;track e.id){
+      <article class="card exam-card">
+        <p class="eyebrow">Full mock · 180 questions · 240 minutes</p>
+        <h2>{{e.title}}</h2>
+        <p class="muted">Case studies: {{e.subtitle}}</p>
+        @if(savedFor(slotKey(e.id));as sv){<p class="exam-status" [class.done]="sv.finished">{{savedLabel(sv)}}</p>}
+        <div class="exam-actions">
+          @if(savedFor(slotKey(e.id));as sv){
+            <button class="button primary small" type="button" (click)="resume(slotKey(e.id))">{{sv.finished?'View results':'Resume'}}</button>
+            <button class="button secondary small" type="button" (click)="discard(slotKey(e.id));startIntro(e.id)">{{sv.finished?'Retake':'Restart'}}</button>
+          }@else{<button class="button primary small" type="button" (click)="startIntro(e.id)">Start {{e.title}}</button>}
+        </div>
+      </article>
+    }
+  </section>
+  @if(savedFor('practice');as pv){
+    <div class="resume card"><div><p class="eyebrow">Practice set saved in this browser</p><strong>{{savedLabel(pv)}}</strong></div><div class="resume-actions"><button class="button primary small" type="button" (click)="resume('practice')">{{pv.finished?'View results':'Resume'}}</button><button class="button secondary small" type="button" (click)="discard('practice')">Discard</button></div></div>
   }
 
   <section class="facts">
     <div class="fact"><strong>180</strong><span>questions (170 scored + 10 unscored pretest)</span></div>
     <div class="fact"><strong>240</strong><span>minutes, plus two optional 10-minute breaks</span></div>
-    <div class="fact"><strong>3</strong><span>case studies open the exam (30 questions)</span></div>
+    <div class="fact"><strong>540</strong><span>original questions across three full exams, each opening with three case studies</span></div>
     <div class="fact"><strong>~60%</strong><span>agile and hybrid scenarios, ~40% predictive</span></div>
   </section>
 
@@ -44,6 +60,7 @@
     <p class="eyebrow">Practice mode</p><h2>Drill a domain or task</h2>
     <p class="muted">No timer. Check each answer as you go and read the explanation straight away.</p>
     <div class="filters">
+      <label>Exam<select (change)="setExam($any($event.target).value)"><option value="0">All three exams</option>@for(e of exams;track e.id){<option [value]="e.id" [selected]="filter.exam===e.id">{{e.title}}</option>}</select></label>
       <label>Domain<select (change)="setDomain($any($event.target).value)"><option value="All">All domains</option>@for(d of domains;track d){<option [value]="d" [selected]="filter.domain===d">{{d}}</option>}</select></label>
       <label>Task<select (change)="setTask($any($event.target).value)" [disabled]="filter.domain==='All'"><option value="0">All tasks</option>@if(filter.domain!=='All'){@for(t of tasks[filter.domain];track t;let i=$index){<option [value]="i+1" [selected]="filter.task===i+1">{{i+1}}. {{t}}</option>}}</select></label>
       <label>Approach<select (change)="setApproach($any($event.target).value)">@for(a of approachList;track a){<option [value]="a" [selected]="filter.approach===a">{{a==='All'?'All approaches':a}}</option>}</select></label>
@@ -59,7 +76,7 @@
 <!-- ================= INTRO / TUTORIAL ================= -->
 @case('intro'){
 <section class="page sim-intro">
-  <p class="eyebrow">Before you begin</p><h1>Exam instructions</h1>
+  <p class="eyebrow">Before you begin · {{examTitle}}</p><h1>Exam instructions</h1>
   <ol class="rules card">
     <li>The exam has <strong>180 questions</strong> and a <strong>240-minute</strong> time limit. The timer runs only while you are answering questions; it pauses during breaks.</li>
     <li><strong>Section 1</strong> contains three case studies with 10 questions each. Read the case on the left; it stays visible while you answer.</li>
@@ -89,7 +106,7 @@
 @case('exam'){
 <section class="exam-shell">
   <header class="exam-bar">
-    <div class="bar-left"><strong>{{isPractice?'Practice set':form?.sections?.[section]?.title}}</strong><span>Question {{index+1}} of {{ids.length}}</span></div>
+    <div class="bar-left"><strong>{{isPractice?'Practice set':examTitle+' · '+form?.sections?.[section]?.title}}</strong><span>Question {{index+1}} of {{ids.length}}</span></div>
     <div class="bar-right">
       @if(!isPractice){<span class="timer" [class.low]="timeLeft<900" aria-live="off">⏱ {{clock(timeLeft)}}</span>}
       <button type="button" class="tool" (click)="showCalc=!showCalc" [class.on]="showCalc">Calculator</button>
@@ -177,7 +194,7 @@
 @case('results'){
 @if(result;as r){
 <section class="page sim-results">
-  <p class="eyebrow">{{isPractice?'Practice results':'Mock exam results'}}</p>
+  <p class="eyebrow">{{isPractice?'Practice results':examTitle+' results'}}</p>
   <h1>{{r.overall.pct}}% <span [class]="'rating-pill '+ratingClass(r.overall.rating)">{{r.overall.rating}}</span></h1>
   <p class="lead">{{r.overall.correct}} of {{r.overall.total}} scored questions correct · {{r.answered}} answered@if(!isPractice){ · time used {{clock(examMinutes*60-timeLeft)}}}</p>
   @if(!isPractice){<p class="muted">Many candidates aim to score consistently at or above about 75% on full-length mocks before booking the real exam. Use the domain and task results to target your study.</p>}
@@ -196,7 +213,7 @@
   <div class="results-actions">
     <button class="button primary" type="button" (click)="showAnswers('incorrect')">Review incorrect answers</button>
     <button class="button secondary" type="button" (click)="showAnswers('all')">Review all answers</button>
-    <button class="button secondary" type="button" (click)="retake()">{{isPractice?'New practice set':'Take a new exam form'}}</button>
+    <button class="button secondary" type="button" (click)="retake()">{{isPractice?'New practice set':'Retake '+examTitle}}</button>
     <button class="button secondary" type="button" (click)="home()">Simulator home</button>
   </div>
 </section>

@@ -2,12 +2,14 @@ import {Component,HostListener,OnDestroy,OnInit} from '@angular/core';
 import {RouterLink} from '@angular/router';
 import {ExamGraphicComponent} from './exam-graphic.component';
 import {Approach,CaseStudy,DOMAIN_WEIGHT,Domain,ECO_TASKS,ExamQuestion} from './exam-types';
-import {ALL_QUESTIONS,BREAK_MINUTES,CASE_STUDIES,EXAM_MINUTES,ExamForm,ExamResult,PracticeFilter,QUESTION_BY_ID,Response,buildFullExam,buildPractice,calculate,isAnswered,isCorrect,score} from './exam-engine';
+import {ALL_QUESTIONS,BREAK_MINUTES,CASE_STUDIES,EXAMS,EXAM_MINUTES,ExamForm,ExamResult,PracticeFilter,QUESTION_BY_ID,Response,buildFullExam,buildPractice,calculate,examById,isAnswered,isCorrect,practicePool,score} from './exam-engine';
 
 type View='home'|'intro'|'exam'|'review'|'break'|'results'|'answers';
 type Mode='full'|'practice';
 interface Saved{v:1;mode:Mode;form:ExamForm;view:View;section:number;index:number;responses:Record<string,Response>;flags:string[];strikes:Record<string,number[]>;checked:string[];timeLeft:number;breakLeft:number;finished:boolean;savedAt:number}
-const STORE='pmport-pmp-exam-v1';
+const LEGACY_STORE='pmport-pmp-exam-v1';
+const STORE='pmport-pmp-exam-v2-';
+type SlotKey='exam1'|'exam2'|'exam3'|'practice';
 
 @Component({
   standalone:true,
@@ -21,6 +23,8 @@ export class PmpExamComponent implements OnInit,OnDestroy{
   readonly tasks=ECO_TASKS;
   readonly weights=DOMAIN_WEIGHT;
   readonly totalQuestions=ALL_QUESTIONS.length;
+  readonly exams=EXAMS;
+  readonly slots:SlotKey[]=['exam1','exam2','exam3','practice'];
   readonly examMinutes=EXAM_MINUTES;
   readonly breakMinutes=BREAK_MINUTES;
   readonly letters='ABCDEFGH';
@@ -38,9 +42,10 @@ export class PmpExamComponent implements OnInit,OnDestroy{
   breakLeft=BREAK_MINUTES*60;
   finished=false;
   result:ExamResult|null=null;
-  saved:Saved|null=null;
+  saves:Partial<Record<SlotKey,Saved>>={};
+  pendingExam=1;
 
-  filter:PracticeFilter={domain:'All',task:0,approach:'All',count:20};
+  filter:PracticeFilter={exam:0,domain:'All',task:0,approach:'All',count:20};
   answerFilter:'all'|'incorrect'|'flagged'|'unanswered'='incorrect';
   showNavigator=false;
   showCase=true;
@@ -51,18 +56,18 @@ export class PmpExamComponent implements OnInit,OnDestroy{
   private timer?:ReturnType<typeof setInterval>;
   private ticks=0;
 
-  ngOnInit(){this.saved=this.load();this.timer=setInterval(()=>this.tick(),1000)}
+  ngOnInit(){this.loadAll();this.timer=setInterval(()=>this.tick(),1000)}
   ngOnDestroy(){clearInterval(this.timer);this.persist()}
 
   // ---------- Starting ----------
-  startIntro(){this.mode='full';this.view='intro';window.scrollTo({top:0})}
-  startFull(){this.reset('full',buildFullExam());this.view='exam';this.persist();window.scrollTo({top:0})}
+  startIntro(examId=this.pendingExam){this.pendingExam=examId;this.mode='full';this.view='intro';window.scrollTo({top:0})}
+  startFull(){this.reset('full',buildFullExam(this.pendingExam));this.view='exam';this.persist();window.scrollTo({top:0})}
   startPractice(){const form=buildPractice(this.filter);if(!form.sections[0].ids.length)return;this.reset('practice',form);this.view='exam';this.persist();window.scrollTo({top:0})}
-  practiceCount(){return ALL_QUESTIONS.filter(q=>(this.filter.domain==='All'||q.domain===this.filter.domain)&&(!this.filter.task||q.task===this.filter.task)&&(this.filter.approach==='All'||q.approach===this.filter.approach)).length}
+  practiceCount(){return practicePool(this.filter).length}
   private reset(mode:Mode,form:ExamForm){this.mode=mode;this.form=form;this.section=0;this.index=0;this.responses={};this.flags=new Set();this.strikes={};this.checked=new Set();this.timeLeft=EXAM_MINUTES*60;this.breakLeft=BREAK_MINUTES*60;this.finished=false;this.result=null;this.confirmEnd=false;this.showNavigator=false}
-  resume(){const s=this.saved;if(!s)return;this.mode=s.mode;this.form=s.form;this.view=s.view;this.section=s.section;this.index=s.index;this.responses=s.responses;this.flags=new Set(s.flags);this.strikes=s.strikes;this.checked=new Set(s.checked);this.timeLeft=s.timeLeft;this.breakLeft=s.breakLeft;this.finished=s.finished;if(this.finished)this.result=score(this.form,this.responses);this.saved=null}
-  discard(){this.saved=null;try{localStorage.removeItem(STORE)}catch{}}
-  home(){this.persist();this.view='home';this.saved=this.load();window.scrollTo({top:0})}
+  resume(key:SlotKey){const s=this.saves[key];if(!s)return;if(s.mode==='full')this.pendingExam=s.form.examId;this.mode=s.mode;this.form=s.form;this.view=s.view;this.section=s.section;this.index=s.index;this.responses=s.responses;this.flags=new Set(s.flags);this.strikes=s.strikes;this.checked=new Set(s.checked);this.timeLeft=s.timeLeft;this.breakLeft=s.breakLeft;this.finished=s.finished;if(this.finished)this.result=score(this.form,this.responses);window.scrollTo({top:0})}
+  discard(key:SlotKey){delete this.saves[key];try{localStorage.removeItem(STORE+key);if(key==='exam1')localStorage.removeItem(LEGACY_STORE)}catch{}}
+  home(){this.persist();this.view='home';this.loadAll();window.scrollTo({top:0})}
 
   // ---------- Current question ----------
   get ids(){return this.form?.sections[this.section].ids??[]}
@@ -70,6 +75,7 @@ export class PmpExamComponent implements OnInit,OnDestroy{
   get caseStudy():CaseStudy|undefined{return this.caseFor(this.q)}
   caseFor(q:ExamQuestion){return q.caseId?CASE_STUDIES.find(c=>c.id===q.caseId):undefined}
   get isPractice(){return this.mode==='practice'}
+  get examTitle(){return this.isPractice?'Practice set':examById(this.form?.examId||this.pendingExam).title}
   get lockedQuestion(){return this.isPractice&&this.checked.has(this.q.id)}
   options(q:ExamQuestion){const order=this.form?.optionOrder[q.id]??q.options!.map((_,i)=>i);return order.map(o=>({o,text:q.options![o]}))}
   selected(q:ExamQuestion,o:number){return (this.responses[q.id]??[]).includes(o)}
@@ -108,7 +114,7 @@ export class PmpExamComponent implements OnInit,OnDestroy{
   endBreak(){this.view='exam';this.touch();window.scrollTo({top:0})}
   check(){this.checked.add(this.q.id);this.touch()}
   finish(){if(!this.form)return;this.finished=true;this.result=score(this.form,this.responses);this.view='results';this.touch();window.scrollTo({top:0})}
-  retake(){this.mode==='full'?this.startIntro():this.home()}
+  retake(){this.mode==='full'?this.startIntro(this.form?.examId||1):this.home()}
 
   private scrollQuestion(){setTimeout(()=>document.getElementById('exam-question')?.scrollIntoView({block:'start',behavior:'smooth'}),0)}
 
@@ -146,14 +152,23 @@ export class PmpExamComponent implements OnInit,OnDestroy{
 
   // ---------- Persistence (per-browser convenience only) ----------
   private touch(){this.persist()}
+  private slot():SlotKey{return this.mode==='practice'?'practice':(`exam${this.form?.examId||1}` as SlotKey)}
   private persist(){
     if(!this.form||this.view==='home')return;
     const s:Saved={v:1,mode:this.mode,form:this.form,view:this.view==='intro'?'exam':this.view,section:this.section,index:this.index,responses:this.responses,flags:[...this.flags],strikes:this.strikes,checked:[...this.checked],timeLeft:this.timeLeft,breakLeft:this.breakLeft,finished:this.finished,savedAt:Date.now()};
-    try{localStorage.setItem(STORE,JSON.stringify(s))}catch{}
+    try{localStorage.setItem(STORE+this.slot(),JSON.stringify(s))}catch{}
   }
-  private load():Saved|null{try{const raw=localStorage.getItem(STORE);if(!raw)return null;const s=JSON.parse(raw) as Saved;return s&&s.v===1&&s.form?s:null}catch{return null}}
-  savedLabel(s:Saved){const total=s.form.sections.reduce((n,x)=>n+x.ids.length,0);const done=Object.keys(s.responses).length;return `${s.mode==='full'?'Full mock exam':'Practice set'} · ${done} of ${total} answered${s.finished?' · completed':''}`}
+  private read(key:string):Saved|null{try{const raw=localStorage.getItem(key);if(!raw)return null;const s=JSON.parse(raw) as Saved;if(!s||s.v!==1||!s.form)return null;if(!s.form.examId&&s.mode==='full')s.form.examId=1;return s}catch{return null}}
+  private loadAll(){
+    this.saves={};
+    for(const k of this.slots){const s=this.read(STORE+k);if(s)this.saves[k]=s}
+    if(!this.saves.exam1){const legacy=this.read(LEGACY_STORE);if(legacy){if(legacy.mode==='full')this.saves.exam1=legacy;else if(!this.saves.practice)this.saves.practice=legacy}}
+  }
+  savedFor(key:SlotKey){return this.saves[key]??null}
+  slotKey(examId:number){return `exam${examId}` as SlotKey}
+  savedLabel(s:Saved){const total=s.form.sections.reduce((n,x)=>n+x.ids.length,0);const done=Object.keys(s.responses).length;return s.finished?`Completed · ${score(s.form,s.responses).overall.pct}%`:`In progress · ${done} of ${total} answered`}
   approachList:(Approach|'All')[]=['All','Predictive','Agile','Hybrid'];
+  setExam(v:string){this.filter={...this.filter,exam:Number(v)}}
   setDomain(v:string){this.filter={...this.filter,domain:v as Domain|'All',task:0}}
   setTask(v:string){this.filter={...this.filter,task:Number(v)}}
   setApproach(v:string){this.filter={...this.filter,approach:v as Approach|'All'}}
