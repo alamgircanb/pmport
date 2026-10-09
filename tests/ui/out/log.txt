@@ -1,4 +1,0 @@
-[desk] graphic types seen: graphic,dropdown,multi,hotspot,matching
-[desk] scrollWidth home 1366
-[mob] graphic types seen: graphic,dropdown,multi,hotspot,matching
-[mob] scrollWidth home 390
