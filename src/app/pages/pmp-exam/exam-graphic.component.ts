@@ -82,7 +82,7 @@ import {GRAPHICS,GraphicSpec} from './exam-graphics-data';
       <svg viewBox="0 0 580 330" role="img" [attr.aria-label]="p.aria">
         <g class="axis">@for(t of p.ticks;track t){<line x1="56" x2="520" [attr.y1]="p.y(t)" [attr.y2]="p.y(t)"/><text x="50" [attr.y]="p.y(t)+4" text-anchor="end">{{t}}</text>}<text x="524" [attr.y]="p.y(p.max)+4">100%</text><text x="8" y="14">Defects</text></g>
         @for(b of p.bars;track b.label){<rect class="bar-r" [attr.x]="b.x" [attr.y]="b.y" [attr.width]="b.w" [attr.height]="b.h"/><text [attr.class]="b.h>24?'bar-v':'label'" [attr.x]="b.x+b.w/2" [attr.y]="b.h>24?b.y+18:b.y-6" text-anchor="middle">{{b.v}}</text><text class="axis-t small" [attr.x]="b.x+b.w/2" y="300" text-anchor="middle">{{b.label}}</text>}
-        <polyline class="cum" [attr.points]="p.cum"/>@for(b of p.bars;track b.label){<circle class="dot cumdot" [attr.cx]="b.cx" [attr.cy]="b.cy" r="3.5"/><text class="cum-t" [attr.x]="b.cx+6" [attr.y]="b.cy-9">{{b.cumPct}}%</text>}
+        <polyline class="cum" [attr.points]="p.cum"/>@for(b of p.bars;track b.label){<circle class="dot cumdot" [attr.cx]="b.cx" [attr.cy]="b.cy" r="3.5"/><text class="cum-t" [attr.x]="b.cx-7" [attr.y]="b.cy-7" text-anchor="end">{{b.cumPct}}%</text>}
       </svg>}}
     @case('tornado'){@if(tor;as t){
       <svg viewBox="0 0 580 300" role="img" [attr.aria-label]="t.aria">

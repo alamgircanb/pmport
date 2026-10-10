@@ -1,4 +1,4 @@
-<a class="skip-link" href="#main-content">Skip to content</a>
+<a class="skip-link" href="#main-content" (click)="skipToMain($event)">Skip to content</a>
 <button class="menu-button" type="button" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen" aria-controls="site-sidebar" [attr.aria-label]="menuOpen?'Collapse sidebar':'Open sidebar'">☰</button>
 <aside id="site-sidebar" class="sidebar" [class.open]="menuOpen" [attr.aria-hidden]="!menuOpen" [inert]="!menuOpen">
 <a class="brand" routerLink="/" (click)="closeMenu()"><span class="brand-mark">PM</span><span><strong>PMPORT</strong><small>Knowledge into practice</small></span></a>
