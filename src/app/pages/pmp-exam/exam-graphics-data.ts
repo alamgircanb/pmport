@@ -60,5 +60,34 @@ export const GRAPHICS:Record<string,GraphicSpec>={
     {id:'Start',d:0,x:10,y:118},{id:'A',d:4,x:110,y:118},{id:'B',d:3,x:225,y:40},{id:'C',d:5,x:225,y:196},
     {id:'D',d:2,x:345,y:40},{id:'E',d:4,x:345,y:196},{id:'F',d:1,x:465,y:118},{id:'End',d:0,x:568,y:118}],
     edges:[['Start','A'],['A','B'],['A','C'],['B','D'],['C','D'],['C','E'],['D','F'],['E','F'],['F','End']]},
-  'grid-3':{kind:'grid',label:'Power–interest grid',items:[{label:'Provincial ministry',x:LEFT,y:TOP},{label:'Union local',x:RIGHT,y:TOP},{label:'Daily commuters',x:RIGHT,y:BOTTOM},{label:'Equipment supplier',x:LEFT,y:BOTTOM}]}
+  'grid-3':{kind:'grid',label:'Power–interest grid',items:[{label:'Provincial ministry',x:LEFT,y:TOP},{label:'Union local',x:RIGHT,y:TOP},{label:'Daily commuters',x:RIGHT,y:BOTTOM},{label:'Equipment supplier',x:LEFT,y:BOTTOM}]},
+
+  // ---------------- Exam 4 ----------------
+  'ev-4':{kind:'ev',label:'Earned value at the end of month 7 ($000)',months:12,status:7,bac:3600,
+    pv:[0,100,250,450,720,1050,1500,2000,2500,2900,3250,3480,3600],ev:[0,95,235,420,660,960,1370,1800],ac:[0,90,220,390,600,870,1230,1600]},
+  'burnup-4':{kind:'burnup',label:'Claims-automation release burnup (story points)',sprints:12,scope:[400,400,400,400,440,440,440,440,480,480,480,480,480],done:[0,40,80,120,160,200,240,280,320]},
+  'network-4':{kind:'network',label:'Network diagram (durations in days)',nodes:[
+    {id:'Start',d:0,x:10,y:118},{id:'A',d:5,x:100,y:118},{id:'B',d:3,x:205,y:30},{id:'C',d:4,x:205,y:183},
+    {id:'D',d:6,x:315,y:30},{id:'E',d:2,x:315,y:140},{id:'F',d:5,x:315,y:226},{id:'G',d:3,x:425,y:85},{id:'H',d:2,x:535,y:118},{id:'End',d:0,x:640,y:118}],
+    edges:[['Start','A'],['A','B'],['A','C'],['B','D'],['C','E'],['C','F'],['D','G'],['E','G'],['G','H'],['F','H'],['H','End']]},
+  'grid-4':{kind:'grid',label:'Power–interest grid',items:[{label:'Airport authority board',x:LEFT,y:TOP},{label:'Airline station managers',x:RIGHT,y:TOP},{label:'Concession tenants',x:RIGHT,y:BOTTOM},{label:'Taxi dispatch',x:LEFT,y:BOTTOM}]},
+  'pareto-2':{kind:'pareto',label:'Customer complaints about the claims portal, by category',bars:[{label:'Slow response',v:38},{label:'Unclear status',v:27},{label:'Login problems',v:15},{label:'Payment errors',v:12},{label:'Other',v:8}]},
+  'control-4':{kind:'control',label:'Daily average pump vibration',unit:'mm/s',mean:50,ucl:56,lcl:44,values:[49,51,48.5,50.5,47.8,49.6,50.2,48.4,49,50.1,51.2,52,53.1,54,55.2]},
+
+  // ---------------- Exam 5 ----------------
+  'risk-5':{kind:'risk',label:'Probability and impact matrix',risks:[{id:'R1',p:3,i:4},{id:'R2',p:4,i:4},{id:'R3',p:5,i:3},{id:'R4',p:2,i:5},{id:'R5',p:4,i:1},{id:'R6',p:1,i:2}]},
+  'cfd-5':{kind:'cfd',label:'Route-optimization team cumulative flow (work items)',bands:[
+    {name:'Done',v:[0,4,8,12,16,20,24,28,32,36]},{name:'Testing',v:[3,3,3,3,3,3,3,3,3,3]},
+    {name:'In progress',v:[6,6,6,6,6,6,6,6,6,6]},{name:'Backlog',v:[20,23,26,29,32,35,38,41,44,47]}]},
+  'ev-5':{kind:'ev',label:'Earned value at the end of month 9 ($000)',months:12,status:9,bac:5000,
+    pv:[0,150,380,700,1100,1600,2150,2700,3200,3600,4100,4600,5000],ev:[0,140,350,640,980,1400,1850,2300,2680,3000],ac:[0,150,380,700,1080,1540,2030,2520,2930,3300]},
+  'resource-2':{kind:'resource',label:'Nurses required for transition shifts (8 available)',unit:'Nurses',limit:8,values:[6,7,8,10,11,9,8,6]},
+  'tornado-2':{kind:'tornado',label:'Sensitivity of project NPV to key variables ($000)',base:1200,unit:'$000',bars:[
+    {label:'Enrolment growth',low:-500,high:450},{label:'Staff productivity gain',low:-250,high:300},{label:'Licence cost',low:-300,high:150},{label:'Discount rate',low:-120,high:100},{label:'Hosting cost',low:-80,high:60}]},
+  'grid-5':{kind:'grid',label:'Power–interest grid',items:[{label:'Board of governors',x:LEFT,y:TOP},{label:'Dean of Engineering',x:RIGHT,y:TOP},{label:'Students',x:RIGHT,y:BOTTOM},{label:'Alumni office',x:LEFT,y:BOTTOM}]},
+  'burndown-5':{kind:'burndown',label:'Sprint burndown (story points remaining)',days:10,total:50,actual:[50,50,50,49,48,48,30,18]},
+  'network-5':{kind:'network',label:'Network diagram (durations in days)',nodes:[
+    {id:'Start',d:0,x:10,y:118},{id:'A',d:2,x:110,y:118},{id:'B',d:4,x:225,y:40},{id:'C',d:3,x:225,y:196},
+    {id:'D',d:5,x:345,y:40},{id:'E',d:4,x:345,y:196},{id:'F',d:3,x:465,y:118},{id:'End',d:0,x:568,y:118}],
+    edges:[['Start','A'],['A','B'],['A','C'],['B','D'],['C','E'],['D','F'],['E','F'],['F','End']]}
 };
