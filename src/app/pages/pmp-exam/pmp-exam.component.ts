@@ -67,6 +67,8 @@ export class PmpExamComponent implements OnInit,OnDestroy{
   private reset(mode:Mode,form:ExamForm){this.mode=mode;this.form=form;this.section=0;this.index=0;this.responses={};this.flags=new Set();this.strikes={};this.checked=new Set();this.timeLeft=EXAM_MINUTES*60;this.breakLeft=BREAK_MINUTES*60;this.finished=false;this.result=null;this.confirmEnd=false;this.showNavigator=false}
   resume(key:SlotKey){const s=this.saves[key];if(!s)return;if(s.mode==='full')this.pendingExam=s.form.examId;this.mode=s.mode;this.form=s.form;this.view=s.view;this.section=s.section;this.index=s.index;this.responses=s.responses;this.flags=new Set(s.flags);this.strikes=s.strikes;this.checked=new Set(s.checked);this.timeLeft=s.timeLeft;this.breakLeft=s.breakLeft;this.finished=s.finished;if(this.finished)this.result=score(this.form,this.responses);window.scrollTo({top:0})}
   discard(key:SlotKey){delete this.saves[key];try{localStorage.removeItem(STORE+key);if(key==='exam1')localStorage.removeItem(LEGACY_STORE)}catch{}}
+  /** In-page scrolling. Plain href="#id" links resolve against <base href="/"> and would navigate to the home page. */
+  scrollToSection(id:string){document.getElementById(id)?.scrollIntoView({behavior:'smooth',block:'start'})}
   home(){this.persist();this.view='home';this.loadAll();window.scrollTo({top:0})}
 
   // ---------- Current question ----------

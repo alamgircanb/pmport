@@ -12,6 +12,7 @@ export class AppComponent{
  private savePreference(){this.desktopPreference=this.menuOpen;try{localStorage.setItem('pmport-sidebar-open',String(this.menuOpen))}catch{}}
  readonly navigation=[{label:'PM HandAid',path:'/pm-handaid'},{label:'PM JOBS Prep',path:'/pm-jobs-prep'},{label:'PM Tools',path:'/pm-tools'},{label:'PM Faciliter',path:'/pm-faciliter'},{label:'PM Media',path:'/media'},{label:'PM Events & Gallery',path:'/events'},{label:'PM Knowledge Lake',path:'/resources'}];
  readonly portfolio=[{label:'PM Profile',path:'/about'},{label:'All selected work',path:'/portfolio'},{label:'Course Work',path:'/portfolio/course-work'},{label:'Professional Work',path:'/portfolio/professional-work'},{label:'Education',path:'/education'},{label:'Credentials',path:'/credentials'}];
+ skipToMain(e:Event){e.preventDefault();const main=document.getElementById('main-content');main?.focus();main?.scrollIntoView()}
  toggleMenu(){this.menuOpen=!this.menuOpen;if(!this.isMobile)this.savePreference()} closeMenu(){if(this.isMobile)this.menuOpen=false}
  @HostListener('document:keydown.escape') closeOnEscape(){if(this.menuOpen){this.menuOpen=false;if(!this.isMobile)this.savePreference()}}
 }
