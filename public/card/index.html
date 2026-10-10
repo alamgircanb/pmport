@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Md Alamgir Hossain, PMP | Digital Card</title>
+<meta name="description" content="Md Alamgir Hossain, PMP. Project and Program Manager in Regina, Saskatchewan. Phone, email, LinkedIn and scan-to-save contact.">
+<meta property="og:title" content="Md Alamgir Hossain, PMP">
+<meta property="og:description" content="Project & Program Manager · Regina, SK · Save my contact">
+<meta property="og:image" content="https://pmport.ca/my_profile_pic.webp">
+<meta property="og:url" content="https://pmport.ca/card">
+<meta name="theme-color" content="#101a2c">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: one column, a dark "charter" card on top (milestone timeline as its art), then tap-to-copy contact rows and a scan-to-save QR. */
+:root{
+  --bg:#eef1f5; --surface:#ffffff; --fg:#17202e; --muted:#5b6678; --line:#d9dee7;
+  --card:#101a2c; --card-2:#17253d; --card-fg:#f3f5f9; --card-muted:#a8b3c6;
+  --wheat:#d9a441; --chip:#e6ebf2;
+  --display:"Sora",ui-sans-serif,system-ui,sans-serif;
+  --body:"IBM Plex Sans",ui-sans-serif,system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0b111c; --surface:#141c2a; --fg:#e8ecf3; --muted:#9aa5b8; --line:#26324a; --chip:#1d283b; color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0b111c; --surface:#141c2a; --fg:#e8ecf3; --muted:#9aa5b8; --line:#26324a; --chip:#1d283b; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.5}
+.wrap{max-width:440px;margin:0 auto;padding-inline:16px;padding-block:24px 40px;display:flex;flex-direction:column;gap:18px}
+
+.card{background:linear-gradient(155deg,var(--card-2),var(--card) 60%);color:var(--card-fg);border-radius:20px;padding:26px 22px 22px;position:relative;overflow:hidden;box-shadow:0 14px 36px -18px rgba(10,20,40,.55)}
+.creds{display:flex;gap:6px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.08em}
+.creds span{border:1px solid rgba(217,164,65,.55);color:var(--wheat);padding:2px 8px;border-radius:4px}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(28px,8vw,36px);line-height:1.05;margin:20px 0 6px;text-wrap:balance;letter-spacing:-.01em}
+h1 small{display:block;font-size:.45em;font-weight:500;color:var(--card-muted);letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}
+.role{font-size:15px;color:var(--card-fg);margin:0}
+.loc{font-size:13px;color:var(--card-muted);margin:2px 0 0}
+
+/* Milestone timeline: a real program arc, initiate to close */
+.timeline{margin-top:22px}
+.track{position:relative;height:22px}
+.track::before{content:"";position:absolute;left:0;right:0;top:10px;height:2px;background:rgba(168,179,198,.3)}
+.track .done{position:absolute;left:0;top:10px;height:2px;width:78%;background:var(--wheat)}
+.ms{position:absolute;top:5px;width:12px;height:12px;transform:translateX(-50%) rotate(45deg);background:var(--card);border:2px solid var(--wheat)}
+.ms.filled{background:var(--wheat)}
+.ms.next{border-color:var(--card-muted)}
+.labels{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:var(--card-muted);text-transform:uppercase;margin-top:4px}
+
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:6px 18px}
+.row{display:flex;align-items:center;gap:14px;padding:14px 0;border-top:1px solid var(--line)}
+.row:first-child{border-top:0}
+.ico{flex:none;width:40px;height:40px;border-radius:50%;background:var(--chip);display:grid;place-items:center;color:var(--fg)}
+.ico svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.txt{min-width:0;flex:1}
+.val{font-weight:500;overflow-wrap:anywhere;user-select:all}
+.val a{color:inherit;text-decoration:none}
+.lbl{font-size:12.5px;color:var(--muted)}
+.copy{flex:none;font:500 12px var(--body);color:var(--fg);background:transparent;border:1px solid var(--line);border-radius:999px;padding:6px 12px;cursor:pointer}
+.copy:hover{background:var(--chip)}
+.copy:focus-visible{outline:2px solid var(--wheat);outline-offset:2px}
+
+h2{font-family:var(--display);font-size:13px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+.roles{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
+.roles li{background:var(--chip);border-radius:6px;padding:5px 10px;font-size:13.5px}
+.block{padding:16px 18px}
+.facts{margin:0;display:grid;gap:10px}
+.facts div{display:grid;grid-template-columns:96px 1fr;gap:10px}
+.facts dt{font-size:12.5px;color:var(--muted)}
+.facts dd{margin:0;min-width:0}
+
+.qrbox{display:flex;gap:16px;align-items:center;padding:16px 18px}
+#qr{flex:none;background:#fff;padding:8px;border-radius:10px;line-height:0}
+#qr img,#qr canvas{width:116px!important;height:116px!important}
+.qrtxt p{margin:0}
+.qrtxt .big{font-family:var(--display);font-weight:700;font-size:16px;margin-bottom:4px}
+.qrtxt .small{font-size:13px;color:var(--muted)}
+@media (max-width:360px){.qrbox{flex-direction:column;align-items:flex-start}}
+@media (prefers-reduced-motion:no-preference){.card{animation:rise .5s ease-out both}@keyframes rise{from{transform:translateY(8px)}to{transform:none}}}
+
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;min-height:100vh}
+.avatar{position:absolute;top:20px;right:20px;width:76px;height:76px;border-radius:50%;object-fit:cover;border:2px solid var(--wheat);background:var(--card-2)}
+.card .creds{padding-right:88px}
+.save{display:inline-block;margin-top:12px;font:500 14px var(--body);color:var(--card-fg);background:var(--card);border:0;border-radius:999px;padding:10px 18px;cursor:pointer}
+.save:hover{background:var(--card-2)}
+.save:focus-visible{outline:2px solid var(--wheat);outline-offset:2px}
+.foot{text-align:center;font-size:13px;color:var(--muted)}
+.foot a{color:inherit}
+</style>
+</head>
+<body>
+
+<main class="wrap">
+  <section class="card" aria-label="Business card">
+    <img class="avatar" src="/my_profile_pic.webp" alt="Photo of Md Alamgir Hossain" width="76" height="76">
+    <div class="creds"><span>PMP</span><span>CSM</span><span>ITIL</span><span>GOOGLE DATA ANALYTICS</span></div>
+    <h1><small>Md</small>Alamgir Hossain</h1>
+    <p class="role">Project &amp; Program Manager · 12+ years</p>
+    <p class="loc">Regina, Saskatchewan, Canada</p>
+    <div class="timeline" aria-hidden="true">
+      <div class="track">
+        <div class="done"></div>
+        <i class="ms filled" style="left:6px"></i>
+        <i class="ms filled" style="left:28%"></i>
+        <i class="ms filled" style="left:53%"></i>
+        <i class="ms filled" style="left:78%"></i>
+        <i class="ms next" style="left:calc(100% - 6px)"></i>
+      </div>
+      <div class="labels"><span>Initiate</span><span>Plan</span><span>Execute</span><span>Control</span><span>Close</span></div>
+    </div>
+  </section>
+
+  <section class="panel" aria-label="Contact">
+    <div class="row">
+      <div class="ico"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></div>
+      <div class="txt"><div class="val" id="phone"><a href="tel:+16395253496">(639) 525-3496</a></div><div class="lbl">Mobile</div></div>
+      <button class="copy" id="copy-phone" data-copy="+1 639 525 3496" data-target="phone">Copy</button>
+    </div>
+    <div class="row">
+      <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
+      <div class="txt"><div class="val" id="email"><a href="mailto:alamgircanb@gmail.com">alamgircanb@gmail.com</a></div><div class="lbl">Email</div></div>
+      <button class="copy" id="copy-email" data-copy="alamgircanb@gmail.com" data-target="email">Copy</button>
+    </div>
+    <div class="row">
+      <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
+      <div class="txt"><div class="val" id="website"><a href="https://pmport.ca" target="_blank" rel="noopener">www.pmport.ca</a></div><div class="lbl">Website</div></div>
+      <a class="copy" href="https://pmport.ca" target="_blank" rel="noopener" style="text-decoration:none">Open</a>
+    </div>
+    <div class="row">
+      <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-7M12 13a3 3 0 0 1 6 0v4"/></svg></div>
+      <div class="txt"><div class="val" id="linkedin"><a href="https://www.linkedin.com/in/alamgircanb" target="_blank" rel="noopener">linkedin.com/in/alamgircanb</a></div><div class="lbl">LinkedIn</div></div>
+      <a class="copy" href="https://www.linkedin.com/in/alamgircanb" target="_blank" rel="noopener" style="text-decoration:none">Open</a>
+    </div>
+    <div class="row">
+      <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
+      <div class="txt"><div class="val">Regina, SK</div><div class="lbl">Open to on-site, hybrid and remote roles in Canada</div></div>
+    </div>
+    <div class="row">
+      <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg></div>
+      <div class="txt"><div class="val">PMI South Saskatchewan Chapter</div><div class="lbl">Volunteer</div></div>
+    </div>
+  </section>
+
+  <section class="panel block" aria-label="Roles of interest">
+    <h2>Open to</h2>
+    <ul class="roles"><li>PMO Analyst</li><li>Program Analyst</li><li>Business Analyst</li><li>Project Analyst</li><li>Project Manager</li></ul>
+  </section>
+
+  <section class="panel block" aria-label="Background">
+    <h2>Background</h2>
+    <dl class="facts">
+      <div><dt>Focus</dt><dd>Governance, stakeholder alignment and data-driven delivery</dd></div>
+      <div><dt>Certified</dt><dd>PMP (2025) · Certified ScrumMaster · ITIL Foundation · Google Advanced Data Analytics</dd></div>
+      <div><dt>Education</dt><dd>MBA &amp; BBA in MIS, University of Dhaka · Business Information Systems Diploma, Saskatchewan Polytechnic (2027)</dd></div>
+    </dl>
+  </section>
+
+  <section class="panel qrbox" aria-label="Save contact">
+    <div id="qr" role="img" aria-label="QR code that saves this contact"></div>
+    <div class="qrtxt">
+      <p class="big">Scan to save contact</p>
+      <p class="small">Point a phone camera at the code. It adds my name, title, phone and email straight to contacts.</p>
+      <button class="save" id="save-contact" type="button">Save contact</button>
+    </div>
+  </section>
+  <p class="foot"><a href="/">pmport.ca</a> · Project management resources and tools</p>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+const vcard = [
+  "BEGIN:VCARD","VERSION:3.0",
+  "N:Hossain;Md Alamgir;;;","FN:Md Alamgir Hossain",
+  "TITLE:PMP | Project & Program Manager",
+  "TEL;TYPE=CELL:+16395253496",
+  "EMAIL;TYPE=INTERNET:alamgircanb@gmail.com",
+  "URL;TYPE=WORK:https://pmport.ca",
+  "URL;TYPE=LinkedIn:https://www.linkedin.com/in/alamgircanb",
+  "ADR;TYPE=WORK:;;;Regina;SK;;Canada",
+  "NOTE:PMP, CSM, ITIL Foundation. Open to PMO, Program, Business and Project Analyst and PM roles.",
+  "END:VCARD"
+].join("\n");
+try{ new QRCode(document.getElementById("qr"),{text:vcard,width:232,height:232,colorDark:"#101a2c",colorLight:"#ffffff",correctLevel:QRCode.CorrectLevel.M}); }
+catch(e){ document.getElementById("qr").textContent="QR unavailable"; }
+
+document.getElementById("save-contact").addEventListener("click",()=>{
+  const blob=new Blob([vcard.replace(/\n/g,"\r\n")],{type:"text/vcard"});
+  const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="Md_Alamgir_Hossain.vcf";
+  document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),2000);
+});
+document.querySelectorAll(".copy[data-copy]").forEach(b=>b.addEventListener("click",()=>{
+  const t=b.dataset.copy, done=()=>{b.textContent="Copied";setTimeout(()=>b.textContent="Copy",1600)};
+  const fallback=()=>{const r=document.createRange();r.selectNodeContents(document.getElementById(b.dataset.target));const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent="Selected"};
+  try{navigator.clipboard.writeText(t).then(done,fallback)}catch(e){fallback()}
+}));
+</script>
+
+</body>
+</html>
