@@ -9,7 +9,7 @@ type Mode='full'|'practice';
 interface Saved{v:1;mode:Mode;form:ExamForm;view:View;section:number;index:number;responses:Record<string,Response>;flags:string[];strikes:Record<string,number[]>;checked:string[];timeLeft:number;breakLeft:number;finished:boolean;savedAt:number}
 const LEGACY_STORE='pmport-pmp-exam-v1';
 const STORE='pmport-pmp-exam-v2-';
-type SlotKey='exam1'|'exam2'|'exam3'|'practice';
+type SlotKey='exam1'|'exam2'|'exam3'|'exam4'|'exam5'|'practice';
 
 @Component({
   standalone:true,
@@ -24,7 +24,7 @@ export class PmpExamComponent implements OnInit,OnDestroy{
   readonly weights=DOMAIN_WEIGHT;
   readonly totalQuestions=ALL_QUESTIONS.length;
   readonly exams=EXAMS;
-  readonly slots:SlotKey[]=['exam1','exam2','exam3','practice'];
+  readonly slots:SlotKey[]=['exam1','exam2','exam3','exam4','exam5','practice'];
   readonly examMinutes=EXAM_MINUTES;
   readonly breakMinutes=BREAK_MINUTES;
   readonly letters='ABCDEFGH';
