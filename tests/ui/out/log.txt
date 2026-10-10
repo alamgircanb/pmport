@@ -1,0 +1,8 @@
+PASS [mob] "Choose an exam" stays on /pm-faciliter/pmp-exam-simulator, section top at 80px
+PASS [mob] "Practice by domain" stays on /pm-faciliter/pmp-exam-simulator, section top at 80px
+PASS [mob] article [1] link → /resources/future-project-management-canada#ref1, ref top 45px
+PASS [mob] skip link stays on page (/pm-faciliter/pmp-exam-simulator)
+PASS [desk] "Choose an exam" stays on /pm-faciliter/pmp-exam-simulator, section top at 80px
+FAIL [desk] "Practice by domain" stays on /pm-faciliter/pmp-exam-simulator, section top at 303px
+FAIL [desk] article [1] link → /resources/future-project-management-canada#ref1, ref top 328px
+PASS [desk] skip link stays on page (/pm-faciliter/pmp-exam-simulator)
