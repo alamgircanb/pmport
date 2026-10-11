@@ -78,5 +78,125 @@
     "youtubeVideoId": "Ms23eu_mfrw",
     "priority": 10,
     "published": true
+  },
+  {
+    "id": "accountability-vs-responsibility",
+    "title": "Accountability vs Responsibility",
+    "description": "Who owns the outcome versus who does the work, and why the difference matters on a project.",
+    "youtubeVideoId": "6ueottLtqKg",
+    "priority": 11,
+    "published": true
+  },
+  {
+    "id": "compromise-vs-collaboration",
+    "title": "Compromise vs Collaboration",
+    "description": "Two conflict-resolution approaches: splitting the difference versus working together for a win-win.",
+    "youtubeVideoId": "_m21jPEAgwo",
+    "priority": 12,
+    "published": true
+  },
+  {
+    "id": "coaching-vs-mentoring",
+    "title": "Coaching vs Mentoring",
+    "description": "How coaching builds skills for today while mentoring guides long-term growth.",
+    "youtubeVideoId": "jL9bfYmSWGc",
+    "priority": 13,
+    "published": true
+  },
+  {
+    "id": "cost-baseline-vs-project-budget",
+    "title": "Cost Baseline vs Project Budget",
+    "description": "Why the project budget includes management reserve and the cost baseline does not.",
+    "youtubeVideoId": "k3LKIafFtnE",
+    "priority": 14,
+    "published": true
+  },
+  {
+    "id": "disagreement-vs-conflict",
+    "title": "Disagreement vs Conflict",
+    "description": "When a healthy difference of opinion turns into conflict, and how to handle each.",
+    "youtubeVideoId": "KgSZCIbZ6hc",
+    "priority": 15,
+    "published": true
+  },
+  {
+    "id": "contingency-vs-management-reserve",
+    "title": "Contingency Reserve vs Management Reserve",
+    "description": "Reserves for known risks versus unknown risks, and who controls each.",
+    "youtubeVideoId": "ESGurLIQm5c",
+    "priority": 16,
+    "published": true
+  },
+  {
+    "id": "leading-vs-lagging-indicators",
+    "title": "Leading vs Lagging Indicators",
+    "description": "Measures that predict future performance versus measures that report past results.",
+    "youtubeVideoId": "mJwki-7goNo",
+    "priority": 17,
+    "published": true
+  },
+  {
+    "id": "team-vs-silos",
+    "title": "Team vs Silos",
+    "description": "Why cross-functional teams deliver better than departments working in isolation.",
+    "youtubeVideoId": "aX_gLfqN4YM",
+    "priority": 18,
+    "published": true
+  },
+  {
+    "id": "precision-vs-accuracy",
+    "title": "Precision vs Accuracy",
+    "description": "Consistent results versus correct results, and why quality needs both.",
+    "youtubeVideoId": "ZomLAu8aTws",
+    "priority": 19,
+    "published": true
+  },
+  {
+    "id": "sample-vs-population",
+    "title": "Sample vs Population",
+    "description": "Measuring a subset versus the whole group, and when sampling makes sense.",
+    "youtubeVideoId": "tOXe1wlJd5M",
+    "priority": 20,
+    "published": true
+  },
+  {
+    "id": "mean-vs-median",
+    "title": "Mean vs Median",
+    "description": "Average versus middle value, and which one to trust when data is skewed.",
+    "youtubeVideoId": "pgOSQZAdZpI",
+    "priority": 21,
+    "published": true
+  },
+  {
+    "id": "correlation-vs-causation",
+    "title": "Correlation vs Causation",
+    "description": "Two things moving together does not mean one causes the other.",
+    "youtubeVideoId": "oKNI1r09sPI",
+    "priority": 22,
+    "published": true
+  },
+  {
+    "id": "acceptance-criteria-vs-dod",
+    "title": "Acceptance Criteria vs Definition of Done",
+    "description": "Story-specific conditions versus the team-wide quality standard every item must meet.",
+    "youtubeVideoId": "eb4XWB2YEbU",
+    "priority": 23,
+    "published": true
+  },
+  {
+    "id": "functional-vs-nonfunctional-requirements",
+    "title": "Functional vs Non-functional Requirements",
+    "description": "What the system does versus how well it does it.",
+    "youtubeVideoId": "dN2zJN1mf1g",
+    "priority": 24,
+    "published": true
+  },
+  {
+    "id": "context-diagram-vs-dfd",
+    "title": "Context Diagram vs Data Flow Diagram",
+    "description": "The system's boundary with external entities versus the detailed flow of data inside it.",
+    "youtubeVideoId": "2WEzZx7s_3A",
+    "priority": 25,
+    "published": true
   }
 ]
