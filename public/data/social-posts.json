@@ -2,11 +2,141 @@
   {
     "id": "pmi-volunteer-appreciation-2026",
     "platform": "linkedin",
-    "title": "PMI South Saskatchewan Volunteer Appreciation Day 2026",
-    "description": "An evening recognizing the volunteers who help our chapter thrive.",
-    "date": "October 2026",
+    "title": "Volunteer Appreciation Day 2026: thank you",
+    "description": "Grateful to serve the PMI South Saskatchewan community and support our dedicated volunteers.",
+    "date": "October 11, 2026",
     "url": "https://www.linkedin.com/feed/update/urn:li:activity:7515165380768722944/",
     "priority": 1,
+    "published": true
+  },
+  {
+    "id": "li-7514633585975472129",
+    "platform": "linkedin",
+    "title": "My first event coordinated in Canada",
+    "description": "Helping coordinate PMI South Saskatchewan's Volunteer Appreciation Day 2026: venue, magic show, logistics and communications.",
+    "date": "October 10, 2026",
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7514633585975472129/",
+    "priority": 2,
+    "published": true
+  },
+  {
+    "id": "li-7514562480283721728",
+    "platform": "linkedin",
+    "title": "Thank you for the coaching, Robert Dash",
+    "description": "A fun first-try win at the Volunteer Appreciation Day 2026.",
+    "date": "October 10, 2026",
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7514562480283721728/",
+    "priority": 3,
+    "published": true
+  },
+  {
+    "id": "li-7512687782990094336",
+    "platform": "linkedin",
+    "title": "The PMP exam tests your project management mindset",
+    "description": "Assess before acting, find the root cause, collaborate, follow the process and protect value.",
+    "date": "October 5, 2026",
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7512687782990094336/",
+    "priority": 4,
+    "published": true
+  },
+  {
+    "id": "li-7511696654530666496",
+    "platform": "linkedin",
+    "title": "Team vs. Silos",
+    "description": "Why cross-functional teams deliver better than departments working in isolation.",
+    "date": "October 2, 2026",
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7511696654530666496/",
+    "priority": 5,
+    "published": true
+  },
+  {
+    "id": "li-7510737364504240129",
+    "platform": "linkedin",
+    "title": "Verification vs Validation in Business Analysis",
+    "description": "Building the product right versus building the right product.",
+    "date": "September 29, 2026",
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7510737364504240129/",
+    "priority": 6,
+    "published": true
+  },
+  {
+    "id": "li-7510735163685773314",
+    "platform": "linkedin",
+    "title": "Acceptance Criteria vs Definition of Done",
+    "description": "Story-specific conditions versus the team-wide quality standard.",
+    "date": "September 29, 2026",
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7510735163685773314/",
+    "priority": 7,
+    "published": true
+  },
+  {
+    "id": "li-7510734160232136704",
+    "platform": "linkedin",
+    "title": "Functional vs Non-functional Requirements",
+    "description": "What the system does versus how well it does it.",
+    "date": "September 29, 2026",
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7510734160232136704/",
+    "priority": 8,
+    "published": true
+  },
+  {
+    "id": "li-7510533455026343937",
+    "platform": "linkedin",
+    "title": "Gap Analysis vs Root Cause Analysis",
+    "description": "Where you are versus where you need to be, and why a problem happens.",
+    "date": "September 29, 2026",
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7510533455026343937/",
+    "priority": 9,
+    "published": true
+  },
+  {
+    "id": "li-7510533210615898113",
+    "platform": "linkedin",
+    "title": "Context Diagram vs Data Flow Diagram",
+    "description": "The system boundary versus the detailed flow of data inside it.",
+    "date": "September 29, 2026",
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7510533210615898113/",
+    "priority": 10,
+    "published": true
+  },
+  {
+    "id": "li-7510199692140437506",
+    "platform": "linkedin",
+    "title": "Assumption vs Constraint",
+    "description": "What we believe to be true versus the limits we must work within.",
+    "date": "September 28, 2026",
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7510199692140437506/",
+    "priority": 11,
+    "published": true
+  },
+  {
+    "id": "li-7510199174743834624",
+    "platform": "linkedin",
+    "title": "Milestone vs Deliverable",
+    "description": "A point in time versus a tangible output.",
+    "date": "September 28, 2026",
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7510199174743834624/",
+    "priority": 12,
+    "published": true
+  },
+  {
+    "id": "li-7509982843331088384",
+    "platform": "linkedin",
+    "title": "Scope Creep or Gold Plating?",
+    "description": "Unapproved scope growth versus adding extras nobody asked for.",
+    "date": "September 27, 2026",
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7509982843331088384/",
+    "priority": 13,
+    "published": true
+  },
+  {
+    "id": "li-7501533833163628545",
+    "platform": "linkedin",
+    "title": "PMI South Saskatchewan Project of the Year Award 2026",
+    "description": "Nominations open for Saskatchewan projects essentially completed in 2025.",
+    "date": "September 4, 2026",
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7501533833163628545/",
+    "priority": 14,
     "published": true
   }
 ]
