@@ -28,6 +28,16 @@ Edit `public/data/home-slides.json` to add or change slides. Fields: `id`, `labe
 
 Slides follow the order in the file. Set `published` to false to hide a slide. Use a valid image in `public/` and an existing internal route. The banner rotates every 7 seconds and pauses on hover, focus and hidden tabs. Arrows, dots, pause/play and mobile swiping are supported. Reduced-motion visitors start with rotation paused.
 
+## Facebook and LinkedIn posts (Events page)
+
+Edit `public/data/social-posts.json`. Each item needs `id` (unique, no spaces), `platform` (`linkedin` or `facebook`), `title`, `url` and `priority` (lower shows first). Optional: `description`, `date`, `published` (false hides it), `height` (embed height in pixels) and `embedUrl`.
+
+- **LinkedIn post:** on the post, open the **…** menu → **Copy link to post**, and paste it as `url`. If a post doesn't display, use **…** → **Embed this post** and paste the whole embed code (or its `src` address) as `embedUrl`.
+- **Facebook post or video:** open the post's date/time link and paste the address as `url`. The post must be **Public**.
+- **Facebook or LinkedIn event:** paste the event link as `url`. Events can't be embedded, so they show as a card with an "Open on Facebook/LinkedIn" button.
+
+The section appears under the event cards. It moves to the next post every 30 seconds, pauses while the pointer or keyboard focus is on a post, and stops rotating once a visitor picks a post.
+
 ## PM Knowledge Lake
 
 Existing books and articles are still loaded from `public/data/resources.json`. The featured Canada article is at `/resources/future-project-management-canada`. Its full text and reference links are in `src/app/pages/article/article.component.ts`. The exact selected illustration is `public/future-project-management-canada.webp`.

@@ -2,6 +2,7 @@ export interface WorkItem{title:string;description?:string;repositoryUrl?:string
 export interface PortfolioArea{id:string;number:string;category:string;description:string;tools:string[];workItems:WorkItem[];image:string;imageAlt:string;priority:number}
 export interface MediaVideo{id:string;title:string;description:string;youtubeVideoId:string;priority:number;published:boolean}
 export interface EventItem{title:string;date:string;description:string;image:string;imageAlt:string;repositoryUrl?:string;priority:number}
+export interface SocialPost{id:string;platform:'linkedin'|'facebook';title:string;description?:string;date?:string;url:string;embedUrl?:string;height?:number;priority:number;published?:boolean}
 export interface ResourceItem{type:'Book'|'Article';title:string;description:string;repositoryUrl?:string;priority:number}
 export interface Course{courseCode:string|null;courseName:string;academicStage?:string;term?:string;creditHours:number;grade:string|number|null;status:string;importantCoursework:string[]}
 export interface Degree{id:string;shortName:string;degree:string;major:string;institution:string;studyPeriod:string;status:string;cgpa:number;cgpaScale:number|string;totalCredits?:number;completedCredits?:number;canadianEquivalency?:string;courses:Course[]}
