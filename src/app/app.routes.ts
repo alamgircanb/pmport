@@ -7,6 +7,7 @@ export const routes:Routes=[
   {path:'resources/future-project-management-canada',loadComponent:()=>import('./pages/article/article.component').then(m=>m.ArticleComponent)},
   {path:'resources/111-essential-pmp-mindsets',loadComponent:()=>import('./pages/pmp-mindsets-article/pmp-mindsets-article.component').then(m=>m.PmpMindsetsArticleComponent),title:'111 Essential PMP Mindsets | PMPORT'},
   {path:'resources/claude-for-project-management-business-analysis',loadComponent:()=>import('./pages/claude-pm-ba-article/claude-pm-ba-article.component').then(m=>m.ClaudePmBaArticleComponent),title:'Using Claude in Project Management and Business Analysis | PMPORT'},
+  {path:'resources/ai-super-coworker-project-manager-business-analyst',loadComponent:()=>import('./pages/ai-coworker-article/ai-coworker-article.component').then(m=>m.AiCoworkerArticleComponent),title:'AI: Not Only a Tool but a Super Coworker for the Next-Gen PM and BA | PMPORT'},
   {path:'resources/21-causes-of-project-failure',loadComponent:()=>import('./pages/project-failure-article/project-failure-article.component').then(m=>m.ProjectFailureArticleComponent),title:'Top 21 Causes of Project Failure | PMPORT'},
   {path:'pm-tools/diagram-studio',canDeactivate:[unsaved],loadComponent:()=>import('./pages/diagram/diagram.component').then(m=>m.DiagramComponent)},
   {path:'pm-tools/pert-cpm',canDeactivate:[unsaved],loadComponent:()=>import('./pages/pert/pert.component').then(m=>m.PertComponent)},
