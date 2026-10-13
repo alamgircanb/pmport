@@ -179,7 +179,7 @@ type Ref={n:number;text:string;url:string};
     .hero-overlay{position:relative;z-index:1;display:flex;min-height:590px;width:56%;padding:clamp(2rem,6vw,5rem);flex-direction:column;justify-content:center;background:linear-gradient(90deg,rgba(4,18,35,.96),rgba(4,18,35,.75) 72%,transparent);color:#fff}
     .hero-overlay h1{font-size:clamp(2.3rem,4.6vw,4.3rem);line-height:1.04;margin:.7rem 0 1rem}.hero-lead{font-size:clamp(1.05rem,2vw,1.3rem);line-height:1.6;color:#d8e8f5}.byline{font-size:.88rem;color:#a9bfd2;line-height:1.6}
     .opening{margin-bottom:2rem}.opening p,.body{font-size:1.06rem;line-height:1.85;color:#c4d4e2}
-    .dropcap::first-letter{float:left;font-size:4.2rem;line-height:.9;margin:.35rem .6rem 0 0;color:var(--accent);font-weight:800;font-family:Manrope,Inter,sans-serif}
+    .dropcap::first-letter{float:left;font-size:4.2rem;line-height:.9;margin:.3rem .25rem 0 0;color:var(--accent);font-weight:800;font-family:Manrope,Inter,sans-serif}
     .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-bottom:2rem}
     .stat{display:flex;flex-direction:column;gap:.35rem;padding:1.3rem;border-radius:16px;border:1px solid var(--line);background:linear-gradient(145deg,#0e2d4e,#081e36)}
     .stat strong{font-size:clamp(2rem,4vw,2.8rem);font-family:Manrope,Inter,sans-serif;background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1.1}
