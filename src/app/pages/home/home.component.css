@@ -19,3 +19,4 @@
 .dots{flex:1;justify-content:center;gap:.35rem;padding:0}
 .dots button{width:8px;height:8px}.dots button.selected{width:20px}
 }
+.event-stack{display:grid;gap:1rem;align-content:start}

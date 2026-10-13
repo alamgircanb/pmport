@@ -1,4 +1,5 @@
-import {Component,DestroyRef,inject,OnInit} from '@angular/core';
+import {Component,DestroyRef,inject,Input,OnInit} from '@angular/core';
+import {RouterLink} from '@angular/router';
 import {DomSanitizer,SafeResourceUrl} from '@angular/platform-browser';
 import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
 import {ContentService} from '../../core/services/content.service';
@@ -12,24 +13,26 @@ import {SocialPost} from '../../core/models/portfolio.models';
 @Component({
   standalone:true,
   selector:'app-social-posts',
+  imports:[RouterLink],
   template:`
     @if(posts.length){
-      <section class="section-block social">
-        <p class="eyebrow">Posts & events</p><h2>From LinkedIn and Facebook</h2>
+      <section class="social" [class.section-block]="!compact" [class.compact]="compact">
+        @if(compact){<div class="compact-head"><p class="eyebrow">Posts & events</p><a routerLink="/events" fragment="posts">See all posts</a></div>}
+        @else{<p class="eyebrow" id="posts">Posts & events</p><h2>From LinkedIn and Facebook</h2>}
         <div class="social-layout">
           <div class="player card" (mouseenter)="hover=true" (mouseleave)="hover=false" (focusin)="hover=true" (focusout)="hover=false">
             @if(selected){
               @if(frame(selected);as src){
-                <div class="frame-wrap"><iframe [src]="src" [title]="selected.title" [style.height.px]="selected.height||defaultHeight(selected)" loading="lazy" allowfullscreen></iframe></div>
+                <div class="frame-wrap"><iframe [src]="src" [title]="selected.title" [style.height.px]="compact?460:(selected.height||defaultHeight(selected))" loading="lazy" allowfullscreen></iframe></div>
               }@else{
                 <div class="link-card"><span class="badge" [class.fb]="selected.platform==='facebook'">{{label(selected)}}</span><strong>{{selected.title}}</strong>@if(selected.date){<small>{{selected.date}}</small>}<p class="muted">{{selected.description}}</p><a class="button primary" [href]="selected.url" target="_blank" rel="noreferrer">Open on {{label(selected)}} ↗</a></div>
               }
               <nav class="post-controls" aria-label="Post navigation"><button type="button" class="button secondary" (click)="step(-1)" [disabled]="posts.length<2" aria-label="Previous post">‹ Previous</button><a class="button small secondary" [href]="selected.url" target="_blank" rel="noreferrer">View on {{label(selected)}} ↗</a><button type="button" class="button secondary" (click)="step(1)" [disabled]="posts.length<2" aria-label="Next post">Next ›</button></nav>
             }
           </div>
-          <div class="post-list scroll-list" tabindex="0" aria-label="All posts and events">
+          @if(!compact){<div class="post-list scroll-list" tabindex="0" aria-label="All posts and events">
             @for(p of posts;track p.id){<button type="button" [class.active]="selected?.id===p.id" (click)="choose(p)"><span class="badge" [class.fb]="p.platform==='facebook'">{{p.platform==='facebook'?'f':'in'}}</span><div><strong>{{p.title}}</strong>@if(p.date){<small>{{p.date}}</small>}@if(p.description){<small>{{p.description}}</small>}</div></button>}
-          </div>
+          </div>}
         </div>
       </section>
     }
@@ -48,17 +51,25 @@ import {SocialPost} from '../../core/models/portfolio.models';
     .post-list small{display:block;color:var(--muted);margin-top:.3rem}
     .badge{flex:none;display:inline-grid;place-items:center;min-width:2rem;height:2rem;padding:0 .5rem;border-radius:8px;background:#0a66c2;color:#fff;font-weight:800;font-size:.8rem}
     .badge.fb{background:#1877f2}
+    .compact .social-layout{grid-template-columns:1fr}
+    .compact .player{padding:1rem}
+    .compact-head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
+    .compact-head a{color:var(--accent)}
+    .compact .post-controls .button{min-height:38px;padding:.5rem .8rem}
     @media(max-width:850px){.social-layout{grid-template-columns:1fr}.post-list{max-height:390px}}
   `]
 })
 export class SocialPostsComponent implements OnInit{
   private content=inject(ContentService);private sanitizer=inject(DomSanitizer);private destroyRef=inject(DestroyRef);
+  /** Home-page version: player only, no list. */
+  @Input() compact=false;
   posts:SocialPost[]=[];selected?:SocialPost;hover=false;private auto=true;private timer?:ReturnType<typeof setInterval>;
   private frames=new Map<string,SafeResourceUrl|null>();
 
   ngOnInit():void{
     this.content.load<SocialPost[]>('social-posts.json').pipe(takeUntilDestroyed(this.destroyRef)).subscribe({
-      next:items=>{this.posts=items.filter(p=>p.published!==false&&p.url).sort((a,b)=>a.priority-b.priority);this.selected=this.posts[0];this.startRotation();},
+      next:items=>{this.posts=items.filter(p=>p.published!==false&&p.url).sort((a,b)=>a.priority-b.priority);this.selected=this.posts[0];this.startRotation();
+        if(!this.compact&&location.hash==='#posts')setTimeout(()=>document.getElementById('posts')?.scrollIntoView());},
       error:()=>{this.posts=[];}
     });
     this.destroyRef.onDestroy(()=>this.stopRotation());
