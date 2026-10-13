@@ -11,6 +11,17 @@
     "published": true
   },
   {
+    "id": "ai-super-coworker",
+    "label": "PM Knowledge Lake · Future of work",
+    "title": "AI: Not Only a Tool, but a Super Coworker",
+    "description": "How AI evolved from calculator to colleague, what the data says today, and the next ten years for project managers and business analysts.",
+    "image": "ai-super-coworker.webp",
+    "alt": "Project manager and business analyst working with a glowing AI coworker at a holographic project board",
+    "path": "/resources/ai-super-coworker-project-manager-business-analyst",
+    "action": "Read the article",
+    "published": true
+  },
+  {
     "id": "pmp-exam-simulator",
     "label": "PM Faciliter · PMP exam preparation",
     "title": "PMP Exam Simulator",
