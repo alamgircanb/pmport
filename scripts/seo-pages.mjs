@@ -60,12 +60,25 @@ const ldScript=(id,data)=>`  <script type="application/ld+json" id="${id}">${JSO
 
 const esc=s=>String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 
-// Main sections, linked from every generated page so crawlers can find them.
+// Main sections, linked (with a one-line summary) from every generated page so crawlers can find them.
 const sections=[
-  ['pm-faciliter/pmp-exam-simulator','Free PMP Exam Simulator'],['pm-faciliter','PMP Exam Preparation'],['resources','PM Knowledge Lake'],
-  ['pm-tools','PM Tools & Templates'],['pm-learninglink','PM LearningLink'],['media','PMPortLive Videos'],['pm-jobs-prep','PM JOBS Prep'],
-  ['pm-handaid','PM HandAid'],['events','PM Events & Gallery'],['about','About Md Alamgir Hossain'],['about-pmport','About PMPORT']
+  ['pm-faciliter/pmp-exam-simulator','Free PMP Exam Simulator','Five full-length PMP practice exams with 900 original questions, case studies, timed sections and results by domain.'],
+  ['pm-faciliter','PMP Exam Preparation','PMP exam preparation and project management training: video lessons, quizzes, project math practice and a question bank.'],
+  ['resources','PM Knowledge Lake','Articles on the PMP mindset, why projects fail, AI for project managers and business analysts, and project management in Canada.'],
+  ['pm-tools','PM Tools & Templates','Free browser tools: project charter, risk and stakeholder registers, earned value, process diagrams and PERT/CPM critical path.'],
+  ['pm-learninglink','PM LearningLink','200 popular free YouTube channels and websites for project management, business analysis, data analytics and coding.'],
+  ['media','PMPortLive Videos','Short videos that explain one project management or business analysis concept at a time.'],
+  ['pm-jobs-prep','PM JOBS Prep','Practical guidance and practice questions for project manager, PMO analyst and business analyst job interviews.'],
+  ['pm-handaid','PM HandAid','A quick reference for everyday project management tasks, terms and techniques.'],
+  ['events','PM Events & Gallery','Community events, PMI South Saskatchewan activities and posts from LinkedIn and Facebook.'],
+  ['about','About Md Alamgir Hossain','PMP-certified project and program management professional in Regina, Saskatchewan.'],
+  ['about-pmport','About PMPORT','Why PMPORT exists: project management, business analysis, technology and data in one place to learn and practise.']
 ];
+
+// Extra introduction for the home page, which is otherwise only a menu of sections.
+const homeIntro=`<p>PMPORT is a free learning and practice hub for project managers, business analysts and data professionals, built by Md Alamgir Hossain, PMP, in Regina, Saskatchewan, Canada. Everything on the site is free to use and needs no sign-up.</p>
+<h2>Prepare for the PMP exam</h2><p>Practise with five full-length PMP exam simulators: 900 original scenario questions in the style of the real exam, covering the People, Process and Business Environment domains, with explanations and results by domain. The PMP preparation section adds video lessons, quizzes and project math practice, and the article on 111 essential PMP mindsets explains how the exam expects a project manager to think.</p>
+<h2>Learn project management, business analysis and data analytics</h2><p>Read practical articles on why projects fail, how AI is becoming a coworker for project managers and business analysts, and where project management in Canada is heading. Use free tools for project charters, risk registers, stakeholder registers, earned value and critical path analysis, and explore 200 hand-picked YouTube channels and websites for project management, business analysis, data analysis (Excel, SQL, Power BI) and coding.</p>`;
 
 function render(path,page){
   const url=`${SITE}/${path}`;
@@ -91,10 +104,12 @@ function render(path,page){
   const crumbs=breadcrumbs(path);
   if(crumbs)html=html.replace('</head>',ldScript('seo-breadcrumb',crumbs));
   const heading=page.title.replace(/ \| PMPORT$/,'').replace(/^PMPORT \| /,'');
-  const links=sections.filter(([p])=>p!==path).map(([p,l])=>`<li><a href="/${p}" style="color:#8fe8f5">${esc(l)}</a></li>`).join('');
+  const links=sections.filter(([p])=>p!==path).map(([p,l,d])=>`<li><a href="/${p}">${esc(l)}</a>: ${esc(d)}</li>`).join('');
   const article=staticArticleHtml(path);
-  const intro=article||`<p style="color:#49cce1;letter-spacing:.15em;font-weight:800;font-size:.75rem">PMPORT</p><h1>${esc(heading)}</h1><p style="color:#b1c3d7;line-height:1.7">${esc(page.description)}</p>`;
-  const summary=`<app-root><main style="max-width:900px;margin:auto;padding:3rem 1.25rem;font-family:Inter,Arial,sans-serif;color:#eaf3fc">${intro}<nav aria-label="PMPORT sections"><ul style="line-height:1.9">${links}</ul></nav></main></app-root>`;
+  const intro=article||`<p class="seo-eyebrow">PMPORT</p><h1>${esc(heading)}</h1><p>${esc(page.description)}</p>${path===''?homeIntro:''}`;
+  // Styles live in one <style> block (not inline attributes); the Angular app replaces this content once it starts.
+  html=html.replace('</head>',`  <style>.seo-summary{max-width:900px;margin:auto;padding:3rem 1.25rem;font-family:Inter,Arial,sans-serif;color:#eaf3fc;line-height:1.7}.seo-summary p{color:#b1c3d7}.seo-summary .seo-eyebrow{color:#49cce1;letter-spacing:.15em;font-weight:800;font-size:.75rem}.seo-summary a{color:#8fe8f5}</style>\n  </head>`);
+  const summary=`<app-root><main class="seo-summary">${intro}<nav aria-label="PMPORT sections"><h2>Explore PMPORT</h2><ul>${links}</ul></nav></main></app-root>`;
   return html.replace('<app-root></app-root>',()=>summary);
 }
 
