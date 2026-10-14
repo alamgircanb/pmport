@@ -1,0 +1,1226 @@
+[
+ {
+  "id": "pm",
+  "title": "Project Management",
+  "links": [
+   {
+    "type": "Website",
+    "title": "Project Management Institute (PMI)",
+    "url": "https://www.pmi.org",
+    "note": "Global PM standards, certifications and research"
+   },
+   {
+    "type": "Website",
+    "title": "PMI certifications (PMP, CAPM, PMI-ACP)",
+    "url": "https://www.pmi.org/certifications",
+    "note": "Compare PMI credentials and requirements"
+   },
+   {
+    "type": "Website",
+    "title": "ProjectManagement.com",
+    "url": "https://www.projectmanagement.com",
+    "note": "PMI community: articles, templates and webinars"
+   },
+   {
+    "type": "Website",
+    "title": "PMI Infinity",
+    "url": "https://infinity.pmi.org",
+    "note": "PMI’s AI assistant for project professionals"
+   },
+   {
+    "type": "Website",
+    "title": "PMI Disciplined Agile",
+    "url": "https://www.pmi.org/disciplined-agile",
+    "note": "Toolkit for choosing your way of working"
+   },
+   {
+    "type": "Website",
+    "title": "Association for Project Management (APM)",
+    "url": "https://www.apm.org.uk",
+    "note": "UK chartered body for the PM profession"
+   },
+   {
+    "type": "Website",
+    "title": "IPMA – International Project Management Association",
+    "url": "https://www.ipma.world",
+    "note": "Competence-based PM standards worldwide"
+   },
+   {
+    "type": "Website",
+    "title": "PeopleCert (PRINCE2, ITIL)",
+    "url": "https://www.peoplecert.org",
+    "note": "PRINCE2 and ITIL certifications"
+   },
+   {
+    "type": "Website",
+    "title": "Scrum.org",
+    "url": "https://www.scrum.org",
+    "note": "Professional Scrum training and assessments"
+   },
+   {
+    "type": "Website",
+    "title": "Scrum Alliance",
+    "url": "https://www.scrumalliance.org",
+    "note": "CSM, CSPO and agile certifications"
+   },
+   {
+    "type": "Website",
+    "title": "The Scrum Guide",
+    "url": "https://scrumguides.org",
+    "note": "The official definition of Scrum"
+   },
+   {
+    "type": "Website",
+    "title": "Manifesto for Agile Software Development",
+    "url": "https://agilemanifesto.org",
+    "note": "The four values and twelve principles"
+   },
+   {
+    "type": "Website",
+    "title": "Agile Alliance",
+    "url": "https://www.agilealliance.org",
+    "note": "Agile glossary, articles and conferences"
+   },
+   {
+    "type": "Website",
+    "title": "Atlassian Agile Coach",
+    "url": "https://www.atlassian.com/agile",
+    "note": "Practical guides to Scrum, Kanban and agile"
+   },
+   {
+    "type": "Website",
+    "title": "Kanban University",
+    "url": "https://kanban.university",
+    "note": "Kanban Method training and resources"
+   },
+   {
+    "type": "Website",
+    "title": "Scaled Agile Framework (SAFe)",
+    "url": "https://scaledagileframework.com",
+    "note": "Guidance for agile at enterprise scale"
+   },
+   {
+    "type": "Website",
+    "title": "Mountain Goat Software (Mike Cohn)",
+    "url": "https://www.mountaingoatsoftware.com",
+    "note": "Agile estimating, planning and user stories"
+   },
+   {
+    "type": "Website",
+    "title": "ProjectManager.com Blog",
+    "url": "https://www.projectmanager.com/blog",
+    "note": "How-to guides, templates and PM terms"
+   },
+   {
+    "type": "Website",
+    "title": "Asana Resources",
+    "url": "https://asana.com/resources",
+    "note": "Articles on planning, workflows and teams"
+   },
+   {
+    "type": "Website",
+    "title": "Smartsheet Content Center",
+    "url": "https://www.smartsheet.com/content-center",
+    "note": "Free PM templates and guides"
+   },
+   {
+    "type": "Website",
+    "title": "Wrike Project Management Guide",
+    "url": "https://www.wrike.com/project-management-guide/",
+    "note": "Beginner-to-advanced PM guide"
+   },
+   {
+    "type": "Website",
+    "title": "Atlassian – Project management guide",
+    "url": "https://www.atlassian.com/work-management/project-management",
+    "note": "Planning, roles and PM basics"
+   },
+   {
+    "type": "Website",
+    "title": "Mind Tools",
+    "url": "https://www.mindtools.com",
+    "note": "Management, leadership and planning skills"
+   },
+   {
+    "type": "Website",
+    "title": "Harvard Business Review – Project management",
+    "url": "https://hbr.org/topic/subject/project-management",
+    "note": "Research-based articles on managing projects"
+   },
+   {
+    "type": "Website",
+    "title": "Lean Enterprise Institute",
+    "url": "https://www.lean.org",
+    "note": "Lean thinking and continuous improvement"
+   },
+   {
+    "type": "Website",
+    "title": "Google Project Management Certificate (Coursera)",
+    "url": "https://www.coursera.org/professional-certificates/google-project-management",
+    "note": "Beginner professional certificate"
+   },
+   {
+    "type": "Website",
+    "title": "edX – Project management courses",
+    "url": "https://www.edx.org/learn/project-management",
+    "note": "University PM courses online"
+   },
+   {
+    "type": "Website",
+    "title": "GOV.UK Service Manual – Agile delivery",
+    "url": "https://www.gov.uk/service-manual/agile-delivery",
+    "note": "How government runs agile projects"
+   },
+   {
+    "type": "Website",
+    "title": "Government of Canada Digital Standards",
+    "url": "https://www.canada.ca/en/government/system/digital-government/government-canada-digital-standards.html",
+    "note": "Canadian digital delivery principles"
+   },
+   {
+    "type": "Website",
+    "title": "The PM PrepCast",
+    "url": "https://www.project-management-prepcast.com",
+    "note": "PMP exam preparation resources"
+   },
+   {
+    "type": "YouTube",
+    "title": "Project Management Institute (PMI)",
+    "url": "https://www.youtube.com/@pmi",
+    "note": "Official PMI channel"
+   },
+   {
+    "type": "YouTube",
+    "title": "ProjectManager",
+    "url": "https://www.youtube.com/c/ProjectManager",
+    "note": "Short PM tutorials and explainers"
+   },
+   {
+    "type": "YouTube",
+    "title": "Adriana Girdler",
+    "url": "https://www.youtube.com/@AdrianaGirdler",
+    "note": "PM and productivity coaching"
+   },
+   {
+    "type": "YouTube",
+    "title": "Online PM Courses – Mike Clayton",
+    "url": "https://www.youtube.com/@Onlinepmcourses",
+    "note": "Hundreds of PM lessons"
+   },
+   {
+    "type": "YouTube",
+    "title": "Chris Croft",
+    "url": "https://www.youtube.com/@theChrisCroft",
+    "note": "Practical project and management skills"
+   },
+   {
+    "type": "YouTube",
+    "title": "Association for Project Management",
+    "url": "https://www.youtube.com/@APMProjectMgmt",
+    "note": "APM talks and webinars"
+   },
+   {
+    "type": "YouTube",
+    "title": "International Institute for Learning (IIL)",
+    "url": "https://www.youtube.com/c/Iilglobalinc",
+    "note": "PM, agile and leadership webinars"
+   },
+   {
+    "type": "YouTube",
+    "title": "IT Project Managers",
+    "url": "https://www.youtube.com/@ITProjectManagers",
+    "note": "PM career and PMP tips"
+   },
+   {
+    "type": "YouTube",
+    "title": "Cornelius Fichtner – PM PrepCast",
+    "url": "https://www.youtube.com/@CorneliusFichtnerPrepCast",
+    "note": "PMP exam preparation"
+   },
+   {
+    "type": "YouTube",
+    "title": "Project Mgmt Made Simple",
+    "url": "https://www.youtube.com/@ProjectMgmtMadeSimple",
+    "note": "PM basics explained simply"
+   },
+   {
+    "type": "YouTube",
+    "title": "Stuart Taylor",
+    "url": "https://www.youtube.com/@StuartTaylorProject",
+    "note": "Real-world project management"
+   },
+   {
+    "type": "YouTube",
+    "title": "Ogaga Johnson",
+    "url": "https://www.youtube.com/@ogagajohnson",
+    "note": "PM career and certification guidance"
+   },
+   {
+    "type": "YouTube",
+    "title": "Alvin the PM",
+    "url": "https://www.youtube.com/@alvinthepmofficial",
+    "note": "Day-to-day PM and career advice"
+   },
+   {
+    "type": "YouTube",
+    "title": "Proper Project Management",
+    "url": "https://www.youtube.com/@ProperProjectManagement",
+    "note": "Structured PM techniques"
+   },
+   {
+    "type": "YouTube",
+    "title": "Kristina Kushner",
+    "url": "https://www.youtube.com/@KristinaKushner",
+    "note": "Project manager life and careers"
+   },
+   {
+    "type": "YouTube",
+    "title": "Not Scrum Dumb",
+    "url": "https://www.youtube.com/channel/UCdNfzWBdCN9PVFlKYy7peBw",
+    "note": "Agile and Scrum done right"
+   },
+   {
+    "type": "YouTube",
+    "title": "Scrum.org",
+    "url": "https://www.youtube.com/user/Scrumorg",
+    "note": "Professional Scrum videos"
+   },
+   {
+    "type": "YouTube",
+    "title": "TechnologyAdvice",
+    "url": "https://www.youtube.com/c/TechnologyAdvice",
+    "note": "PM software reviews and tutorials"
+   },
+   {
+    "type": "YouTube",
+    "title": "Sunday Lunch PM",
+    "url": "https://www.youtube.com/channel/UCWLpDG2adAm2hfxrlZVSdtQ",
+    "note": "Bite-size project management lessons"
+   },
+   {
+    "type": "YouTube",
+    "title": "iZenBridge Consultancy",
+    "url": "https://www.youtube.com/c/iZenBridge1",
+    "note": "PMP and agile certification prep"
+   }
+  ]
+ },
+ {
+  "id": "ba",
+  "title": "Business Analysis",
+  "links": [
+   {
+    "type": "Website",
+    "title": "International Institute of Business Analysis (IIBA)",
+    "url": "https://www.iiba.org",
+    "note": "BABOK® Guide, ECBA, CCBA and CBAP"
+   },
+   {
+    "type": "Website",
+    "title": "PMI Professional in Business Analysis (PMI-PBA)",
+    "url": "https://www.pmi.org/certifications/business-analysis-pba",
+    "note": "PMI’s business analysis credential"
+   },
+   {
+    "type": "Website",
+    "title": "IREB – Certified Professional for Requirements Engineering",
+    "url": "https://www.ireb.org",
+    "note": "CPRE requirements engineering certification"
+   },
+   {
+    "type": "Website",
+    "title": "BCS – The Chartered Institute for IT",
+    "url": "https://www.bcs.org",
+    "note": "BCS business analysis certifications"
+   },
+   {
+    "type": "Website",
+    "title": "Modern Analyst",
+    "url": "https://www.modernanalyst.com",
+    "note": "BA articles, templates and interview questions"
+   },
+   {
+    "type": "Website",
+    "title": "BA Times",
+    "url": "https://www.batimes.com",
+    "note": "Business analysis news and articles"
+   },
+   {
+    "type": "Website",
+    "title": "Bridging the Gap",
+    "url": "https://www.bridging-the-gap.com",
+    "note": "BA career and process framework"
+   },
+   {
+    "type": "Website",
+    "title": "Adaptive US",
+    "url": "https://www.adaptiveus.com",
+    "note": "CBAP/CCBA prep and BA blogs"
+   },
+   {
+    "type": "Website",
+    "title": "Business Analyst Mentor",
+    "url": "https://businessanalystmentor.com",
+    "note": "BA techniques and career guidance"
+   },
+   {
+    "type": "Website",
+    "title": "Process Impact (Karl Wiegers)",
+    "url": "https://www.processimpact.com",
+    "note": "Software requirements best practices"
+   },
+   {
+    "type": "Website",
+    "title": "Volere Requirements",
+    "url": "https://www.volere.org",
+    "note": "Requirements templates and techniques"
+   },
+   {
+    "type": "Website",
+    "title": "Requirements Engineering Magazine",
+    "url": "https://re-magazine.ireb.org",
+    "note": "Articles from IREB on RE practice"
+   },
+   {
+    "type": "Website",
+    "title": "Jama Software – Requirements Management Guide",
+    "url": "https://www.jamasoftware.com/requirements-management-guide/",
+    "note": "End-to-end requirements guide"
+   },
+   {
+    "type": "Website",
+    "title": "Mountain Goat Software – User Stories",
+    "url": "https://www.mountaingoatsoftware.com/agile/user-stories",
+    "note": "Writing good user stories"
+   },
+   {
+    "type": "Website",
+    "title": "Agile Alliance Glossary",
+    "url": "https://www.agilealliance.org/agile101/agile-glossary/",
+    "note": "Definitions of agile terms"
+   },
+   {
+    "type": "Website",
+    "title": "Atlassian – Product requirements",
+    "url": "https://www.atlassian.com/agile/product-management/requirements",
+    "note": "Writing agile requirements"
+   },
+   {
+    "type": "Website",
+    "title": "Atlassian Confluence templates",
+    "url": "https://www.atlassian.com/software/confluence/templates",
+    "note": "BRD, PRD and meeting templates"
+   },
+   {
+    "type": "Website",
+    "title": "BPMN.org",
+    "url": "https://www.bpmn.org",
+    "note": "Business Process Model and Notation"
+   },
+   {
+    "type": "Website",
+    "title": "Camunda – BPMN tutorial",
+    "url": "https://camunda.com/bpmn/",
+    "note": "Learn BPMN with examples"
+   },
+   {
+    "type": "Website",
+    "title": "OMG – Object Management Group",
+    "url": "https://www.omg.org",
+    "note": "Home of BPMN and UML specifications"
+   },
+   {
+    "type": "Website",
+    "title": "UML.org",
+    "url": "https://www.uml.org",
+    "note": "Unified Modeling Language resources"
+   },
+   {
+    "type": "Website",
+    "title": "Visual Paradigm Guides",
+    "url": "https://www.visual-paradigm.com/guide/",
+    "note": "UML, BPMN and agile modelling guides"
+   },
+   {
+    "type": "Website",
+    "title": "draw.io (diagrams.net)",
+    "url": "https://www.drawio.com",
+    "note": "Free diagramming tool"
+   },
+   {
+    "type": "Website",
+    "title": "Lucidchart Blog",
+    "url": "https://www.lucidchart.com/blog",
+    "note": "Process mapping and diagram tips"
+   },
+   {
+    "type": "Website",
+    "title": "Miro Templates",
+    "url": "https://miro.com/templates/",
+    "note": "Workshop and analysis templates"
+   },
+   {
+    "type": "Website",
+    "title": "Balsamiq – Learn wireframing",
+    "url": "https://balsamiq.com/learn/",
+    "note": "Wireframing guides for analysts"
+   },
+   {
+    "type": "Website",
+    "title": "Figma",
+    "url": "https://www.figma.com",
+    "note": "Prototyping and UI collaboration"
+   },
+   {
+    "type": "Website",
+    "title": "Nielsen Norman Group",
+    "url": "https://www.nngroup.com",
+    "note": "UX research and usability articles"
+   },
+   {
+    "type": "Website",
+    "title": "Interaction Design Foundation",
+    "url": "https://www.interaction-design.org",
+    "note": "UX and design-thinking courses"
+   },
+   {
+    "type": "Website",
+    "title": "GOV.UK Service Manual – User research",
+    "url": "https://www.gov.uk/service-manual/user-research",
+    "note": "How to research user needs"
+   },
+   {
+    "type": "Website",
+    "title": "Strategyzer",
+    "url": "https://www.strategyzer.com",
+    "note": "Business Model and Value Proposition Canvas"
+   },
+   {
+    "type": "Website",
+    "title": "LEANSTACK (Lean Canvas)",
+    "url": "https://leanstack.com",
+    "note": "Lean Canvas and problem validation"
+   },
+   {
+    "type": "Website",
+    "title": "ProductPlan Glossary",
+    "url": "https://www.productplan.com/glossary/",
+    "note": "Product and analysis terms explained"
+   },
+   {
+    "type": "Website",
+    "title": "Mind the Product",
+    "url": "https://www.mindtheproduct.com",
+    "note": "Product management community"
+   },
+   {
+    "type": "Website",
+    "title": "Product School",
+    "url": "https://productschool.com",
+    "note": "Product management learning"
+   },
+   {
+    "type": "Website",
+    "title": "Pragmatic Institute",
+    "url": "https://www.pragmaticinstitute.com",
+    "note": "Product and data training"
+   },
+   {
+    "type": "Website",
+    "title": "ASQ Quality Resources",
+    "url": "https://asq.org/quality-resources",
+    "note": "Root cause analysis, fishbone and quality tools"
+   },
+   {
+    "type": "Website",
+    "title": "BPM Institute",
+    "url": "https://www.bpminstitute.org",
+    "note": "Business process management articles"
+   },
+   {
+    "type": "Website",
+    "title": "Celonis – Process mining",
+    "url": "https://www.celonis.com/process-mining/",
+    "note": "What process mining is and how it works"
+   },
+   {
+    "type": "Website",
+    "title": "Coursera – Business analysis courses",
+    "url": "https://www.coursera.org/courses?query=business%20analysis",
+    "note": "Online BA courses"
+   },
+   {
+    "type": "Website",
+    "title": "edX – Business analysis courses",
+    "url": "https://www.edx.org/learn/business-analysis",
+    "note": "University BA courses"
+   },
+   {
+    "type": "Website",
+    "title": "Scrum.org – What is a Product Owner?",
+    "url": "https://www.scrum.org/resources/what-is-a-product-owner",
+    "note": "PO accountabilities explained"
+   },
+   {
+    "type": "Website",
+    "title": "Harvard Business Review – Decision making",
+    "url": "https://hbr.org/topic/subject/decision-making-and-problem-solving",
+    "note": "Problem-solving research for analysts"
+   },
+   {
+    "type": "Website",
+    "title": "McKinsey Insights",
+    "url": "https://www.mckinsey.com/featured-insights",
+    "note": "Business strategy and transformation research"
+   },
+   {
+    "type": "YouTube",
+    "title": "IIBA",
+    "url": "https://www.youtube.com/@iiba",
+    "note": "Official IIBA channel"
+   },
+   {
+    "type": "YouTube",
+    "title": "Adaptive US – Sky Rocket Your BA Career",
+    "url": "https://www.youtube.com/channel/UCJfK66V4NLbCycPiXv1HtLQ",
+    "note": "CBAP/CCBA and BA techniques"
+   },
+   {
+    "type": "YouTube",
+    "title": "Scrum.org",
+    "url": "https://www.youtube.com/user/Scrumorg",
+    "note": "Product ownership and Scrum"
+   },
+   {
+    "type": "YouTube",
+    "title": "Simplilearn",
+    "url": "https://www.youtube.com/@SimplilearnOfficial",
+    "note": "BA, agile and analytics tutorials"
+   },
+   {
+    "type": "YouTube",
+    "title": "edureka!",
+    "url": "https://www.youtube.com/@edurekaIN",
+    "note": "BA and tools tutorials"
+   },
+   {
+    "type": "YouTube",
+    "title": "Project Mgmt Made Simple",
+    "url": "https://www.youtube.com/@ProjectMgmtMadeSimple",
+    "note": "Requirements and stakeholder basics"
+   }
+  ]
+ },
+ {
+  "id": "data",
+  "title": "Data Analytics",
+  "links": [
+   {
+    "type": "Website",
+    "title": "Kaggle Learn",
+    "url": "https://www.kaggle.com/learn",
+    "note": "Free micro-courses: Python, SQL, pandas, ML"
+   },
+   {
+    "type": "Website",
+    "title": "Microsoft Learn – Power BI training",
+    "url": "https://learn.microsoft.com/en-us/training/powerplatform/power-bi",
+    "note": "Official Power BI learning paths"
+   },
+   {
+    "type": "Website",
+    "title": "Power BI documentation",
+    "url": "https://learn.microsoft.com/en-us/power-bi/",
+    "note": "Official Power BI docs"
+   },
+   {
+    "type": "Website",
+    "title": "Microsoft Fabric documentation",
+    "url": "https://learn.microsoft.com/en-us/fabric/",
+    "note": "Microsoft’s end-to-end analytics platform"
+   },
+   {
+    "type": "Website",
+    "title": "DAX Guide",
+    "url": "https://dax.guide",
+    "note": "Every DAX function with examples"
+   },
+   {
+    "type": "Website",
+    "title": "SQLBI",
+    "url": "https://www.sqlbi.com",
+    "note": "Deep DAX and Power BI articles"
+   },
+   {
+    "type": "Website",
+    "title": "Tableau Learning",
+    "url": "https://www.tableau.com/learn",
+    "note": "Tableau tutorials and training"
+   },
+   {
+    "type": "Website",
+    "title": "Tableau Public",
+    "url": "https://public.tableau.com",
+    "note": "Gallery of public dashboards"
+   },
+   {
+    "type": "Website",
+    "title": "Google Data Analytics Certificate (Coursera)",
+    "url": "https://www.coursera.org/professional-certificates/google-data-analytics",
+    "note": "Beginner professional certificate"
+   },
+   {
+    "type": "Website",
+    "title": "IBM Data Analyst Certificate (Coursera)",
+    "url": "https://www.coursera.org/professional-certificates/ibm-data-analyst",
+    "note": "Excel, SQL, Python and dashboards"
+   },
+   {
+    "type": "Website",
+    "title": "DataCamp",
+    "url": "https://www.datacamp.com",
+    "note": "Interactive data courses"
+   },
+   {
+    "type": "Website",
+    "title": "Towards Data Science",
+    "url": "https://towardsdatascience.com",
+    "note": "Data science articles"
+   },
+   {
+    "type": "Website",
+    "title": "Analytics Vidhya",
+    "url": "https://www.analyticsvidhya.com",
+    "note": "Analytics and ML tutorials"
+   },
+   {
+    "type": "Website",
+    "title": "KDnuggets",
+    "url": "https://www.kdnuggets.com",
+    "note": "Data science news and guides"
+   },
+   {
+    "type": "Website",
+    "title": "Storytelling with Data",
+    "url": "https://www.storytellingwithdata.com",
+    "note": "Data visualization and storytelling"
+   },
+   {
+    "type": "Website",
+    "title": "From Data to Viz",
+    "url": "https://www.data-to-viz.com",
+    "note": "Choose the right chart"
+   },
+   {
+    "type": "Website",
+    "title": "FlowingData",
+    "url": "https://flowingdata.com",
+    "note": "Visualization examples and tutorials"
+   },
+   {
+    "type": "Website",
+    "title": "Our World in Data",
+    "url": "https://ourworldindata.org",
+    "note": "Research datasets and charts"
+   },
+   {
+    "type": "Website",
+    "title": "Statistics Canada",
+    "url": "https://www.statcan.gc.ca/en/start",
+    "note": "Canadian official statistics"
+   },
+   {
+    "type": "Website",
+    "title": "Open Government Portal (Canada)",
+    "url": "https://open.canada.ca",
+    "note": "Open datasets from the Government of Canada"
+   },
+   {
+    "type": "Website",
+    "title": "Data.gov",
+    "url": "https://data.gov",
+    "note": "U.S. open data"
+   },
+   {
+    "type": "Website",
+    "title": "Google Dataset Search",
+    "url": "https://datasetsearch.research.google.com",
+    "note": "Find datasets across the web"
+   },
+   {
+    "type": "Website",
+    "title": "Exceljet",
+    "url": "https://exceljet.net",
+    "note": "Excel formulas and functions"
+   },
+   {
+    "type": "Website",
+    "title": "Chandoo.org",
+    "url": "https://chandoo.org",
+    "note": "Excel and Power BI lessons"
+   },
+   {
+    "type": "Website",
+    "title": "SQLBolt",
+    "url": "https://sqlbolt.com",
+    "note": "Interactive SQL lessons"
+   },
+   {
+    "type": "Website",
+    "title": "Select Star SQL",
+    "url": "https://selectstarsql.com",
+    "note": "Interactive SQL book"
+   },
+   {
+    "type": "Website",
+    "title": "W3Schools SQL",
+    "url": "https://www.w3schools.com/sql/",
+    "note": "SQL reference and exercises"
+   },
+   {
+    "type": "Website",
+    "title": "PostgreSQL Tutorial",
+    "url": "https://www.postgresqltutorial.com",
+    "note": "Learn PostgreSQL step by step"
+   },
+   {
+    "type": "Website",
+    "title": "pandas documentation",
+    "url": "https://pandas.pydata.org/docs/",
+    "note": "Python data analysis library"
+   },
+   {
+    "type": "Website",
+    "title": "Khan Academy – Statistics and probability",
+    "url": "https://www.khanacademy.org/math/statistics-probability",
+    "note": "Statistics foundations"
+   },
+   {
+    "type": "Website",
+    "title": "Seeing Theory (Brown University)",
+    "url": "https://seeing-theory.brown.edu",
+    "note": "Visual introduction to probability"
+   },
+   {
+    "type": "Website",
+    "title": "Looker Studio Help",
+    "url": "https://support.google.com/looker-studio",
+    "note": "Google’s free dashboard tool"
+   },
+   {
+    "type": "YouTube",
+    "title": "Alex The Analyst",
+    "url": "https://www.youtube.com/@AlexTheAnalyst",
+    "note": "Data analyst career, SQL, Excel, Power BI"
+   },
+   {
+    "type": "YouTube",
+    "title": "Luke Barousse",
+    "url": "https://www.youtube.com/c/LukeBarousse",
+    "note": "Data analyst projects and skills"
+   },
+   {
+    "type": "YouTube",
+    "title": "Ken Jee",
+    "url": "https://www.youtube.com/c/KenJee1",
+    "note": "Data science careers and projects"
+   },
+   {
+    "type": "YouTube",
+    "title": "Tina Huang",
+    "url": "https://www.youtube.com/c/TinaHuang1",
+    "note": "Data science learning strategies"
+   },
+   {
+    "type": "YouTube",
+    "title": "Guy in a Cube",
+    "url": "https://www.youtube.com/@GuyInACube",
+    "note": "Power BI and Microsoft Fabric"
+   },
+   {
+    "type": "YouTube",
+    "title": "ExcelIsFun",
+    "url": "https://www.youtube.com/user/ExcelIsFun",
+    "note": "Thousands of Excel tutorials"
+   },
+   {
+    "type": "YouTube",
+    "title": "StatQuest with Josh Starmer",
+    "url": "https://www.youtube.com/@statquest",
+    "note": "Statistics and ML explained clearly"
+   },
+   {
+    "type": "YouTube",
+    "title": "Codebasics",
+    "url": "https://www.youtube.com/@codebasics",
+    "note": "Data analytics and Python projects"
+   },
+   {
+    "type": "YouTube",
+    "title": "Krish Naik",
+    "url": "https://www.youtube.com/@krishnaik06",
+    "note": "Data science and ML tutorials"
+   },
+   {
+    "type": "YouTube",
+    "title": "sentdex",
+    "url": "https://www.youtube.com/@sentdex",
+    "note": "Python for data and ML"
+   },
+   {
+    "type": "YouTube",
+    "title": "Chandoo",
+    "url": "https://www.youtube.com/@chandoo_",
+    "note": "Excel and Power BI"
+   },
+   {
+    "type": "YouTube",
+    "title": "techTFQ",
+    "url": "https://www.youtube.com/@techTFQ",
+    "note": "SQL interview and analytics"
+   },
+   {
+    "type": "YouTube",
+    "title": "Curbal",
+    "url": "https://www.youtube.com/@CurbalEN",
+    "note": "Power BI and DAX"
+   },
+   {
+    "type": "YouTube",
+    "title": "Mo Chen",
+    "url": "https://www.youtube.com/@mo-chen",
+    "note": "Data analyst career and skills"
+   },
+   {
+    "type": "YouTube",
+    "title": "LearnBI",
+    "url": "https://www.youtube.com/@LearnBI",
+    "note": "Power BI and Excel tutorials"
+   },
+   {
+    "type": "YouTube",
+    "title": "Egor Howell",
+    "url": "https://www.youtube.com/@egorhowell",
+    "note": "Data science careers"
+   },
+   {
+    "type": "YouTube",
+    "title": "Recall by Dataiku",
+    "url": "https://www.youtube.com/c/RecallbyDataiku",
+    "note": "Data science concepts"
+   },
+   {
+    "type": "YouTube",
+    "title": "Simplilearn",
+    "url": "https://www.youtube.com/@SimplilearnOfficial",
+    "note": "Data analytics full courses"
+   }
+  ]
+ },
+ {
+  "id": "coding",
+  "title": "Coding",
+  "links": [
+   {
+    "type": "Website",
+    "title": "freeCodeCamp",
+    "url": "https://www.freecodecamp.org",
+    "note": "Free full-stack curriculum and certifications"
+   },
+   {
+    "type": "Website",
+    "title": "MDN Web Docs",
+    "url": "https://developer.mozilla.org",
+    "note": "HTML, CSS and JavaScript reference"
+   },
+   {
+    "type": "Website",
+    "title": "W3Schools",
+    "url": "https://www.w3schools.com",
+    "note": "Beginner-friendly tutorials and references"
+   },
+   {
+    "type": "Website",
+    "title": "The Odin Project",
+    "url": "https://www.theodinproject.com",
+    "note": "Free full-stack web development path"
+   },
+   {
+    "type": "Website",
+    "title": "CS50x (Harvard)",
+    "url": "https://cs50.harvard.edu/x/",
+    "note": "Introduction to computer science"
+   },
+   {
+    "type": "Website",
+    "title": "Python Tutorial (official)",
+    "url": "https://docs.python.org/3/tutorial/",
+    "note": "Learn Python from the source"
+   },
+   {
+    "type": "Website",
+    "title": "Python for Beginners (python.org)",
+    "url": "https://www.python.org/about/gettingstarted/",
+    "note": "Getting started with Python"
+   },
+   {
+    "type": "Website",
+    "title": "Real Python",
+    "url": "https://realpython.com",
+    "note": "Python tutorials and articles"
+   },
+   {
+    "type": "Website",
+    "title": "Automate the Boring Stuff with Python",
+    "url": "https://automatetheboringstuff.com",
+    "note": "Practical Python, free online"
+   },
+   {
+    "type": "Website",
+    "title": "Python for Everybody (Coursera)",
+    "url": "https://www.coursera.org/specializations/python",
+    "note": "Popular beginner Python course"
+   },
+   {
+    "type": "Website",
+    "title": "JavaScript.info",
+    "url": "https://javascript.info",
+    "note": "Modern JavaScript tutorial"
+   },
+   {
+    "type": "Website",
+    "title": "Eloquent JavaScript",
+    "url": "https://eloquentjavascript.net",
+    "note": "Free JavaScript book"
+   },
+   {
+    "type": "Website",
+    "title": "TypeScript Handbook",
+    "url": "https://www.typescriptlang.org/docs/",
+    "note": "Official TypeScript docs"
+   },
+   {
+    "type": "Website",
+    "title": "Angular",
+    "url": "https://angular.dev",
+    "note": "Official Angular docs and tutorials"
+   },
+   {
+    "type": "Website",
+    "title": "React",
+    "url": "https://react.dev",
+    "note": "Official React docs and tutorials"
+   },
+   {
+    "type": "Website",
+    "title": "Node.js – Learn",
+    "url": "https://nodejs.org/en/learn",
+    "note": "Official Node.js learning"
+   },
+   {
+    "type": "Website",
+    "title": "web.dev",
+    "url": "https://web.dev",
+    "note": "Google’s modern web development guides"
+   },
+   {
+    "type": "Website",
+    "title": "CSS-Tricks",
+    "url": "https://css-tricks.com",
+    "note": "CSS guides and techniques"
+   },
+   {
+    "type": "Website",
+    "title": "Codecademy",
+    "url": "https://www.codecademy.com",
+    "note": "Interactive coding courses"
+   },
+   {
+    "type": "Website",
+    "title": "Khan Academy – Computing",
+    "url": "https://www.khanacademy.org/computing",
+    "note": "Programming and computer science basics"
+   },
+   {
+    "type": "Website",
+    "title": "Scrimba",
+    "url": "https://scrimba.com",
+    "note": "Interactive screencast coding courses"
+   },
+   {
+    "type": "Website",
+    "title": "Frontend Mentor",
+    "url": "https://www.frontendmentor.io",
+    "note": "Real-world front-end challenges"
+   },
+   {
+    "type": "Website",
+    "title": "roadmap.sh",
+    "url": "https://roadmap.sh",
+    "note": "Developer learning roadmaps"
+   },
+   {
+    "type": "Website",
+    "title": "GitHub Skills",
+    "url": "https://skills.github.com",
+    "note": "Learn Git and GitHub hands-on"
+   },
+   {
+    "type": "Website",
+    "title": "Pro Git book",
+    "url": "https://git-scm.com/book/en/v2",
+    "note": "Free official Git book"
+   },
+   {
+    "type": "Website",
+    "title": "Microsoft Learn – Training",
+    "url": "https://learn.microsoft.com/en-us/training/",
+    "note": "Free Microsoft developer training"
+   },
+   {
+    "type": "Website",
+    "title": "Google for Developers",
+    "url": "https://developers.google.com",
+    "note": "Google developer docs and courses"
+   },
+   {
+    "type": "Website",
+    "title": "Visual Studio Code Docs",
+    "url": "https://code.visualstudio.com/docs",
+    "note": "Master your code editor"
+   },
+   {
+    "type": "Website",
+    "title": "Docker – Get started",
+    "url": "https://docs.docker.com/get-started/",
+    "note": "Containers for beginners"
+   },
+   {
+    "type": "Website",
+    "title": "MIT OpenCourseWare",
+    "url": "https://ocw.mit.edu",
+    "note": "Free MIT computer science courses"
+   },
+   {
+    "type": "Website",
+    "title": "Stack Overflow",
+    "url": "https://stackoverflow.com",
+    "note": "Programming Q&A community"
+   },
+   {
+    "type": "Website",
+    "title": "GeeksforGeeks",
+    "url": "https://www.geeksforgeeks.org",
+    "note": "Data structures, algorithms and interview prep"
+   },
+   {
+    "type": "Website",
+    "title": "LeetCode",
+    "url": "https://leetcode.com",
+    "note": "Coding interview practice"
+   },
+   {
+    "type": "Website",
+    "title": "HackerRank",
+    "url": "https://www.hackerrank.com",
+    "note": "Coding challenges and skills tests"
+   },
+   {
+    "type": "Website",
+    "title": "Exercism",
+    "url": "https://exercism.org",
+    "note": "Free mentored coding exercises"
+   },
+   {
+    "type": "Website",
+    "title": "Codewars",
+    "url": "https://www.codewars.com",
+    "note": "Kata-style coding challenges"
+   },
+   {
+    "type": "Website",
+    "title": "Project Euler",
+    "url": "https://projecteuler.net",
+    "note": "Math and programming problems"
+   },
+   {
+    "type": "YouTube",
+    "title": "freeCodeCamp.org",
+    "url": "https://www.youtube.com/@freecodecamp",
+    "note": "Full-length free coding courses"
+   },
+   {
+    "type": "YouTube",
+    "title": "Traversy Media",
+    "url": "https://www.youtube.com/@TraversyMedia",
+    "note": "Web development crash courses"
+   },
+   {
+    "type": "YouTube",
+    "title": "Programming with Mosh",
+    "url": "https://www.youtube.com/@programmingwithmosh",
+    "note": "Clear programming tutorials"
+   },
+   {
+    "type": "YouTube",
+    "title": "Fireship",
+    "url": "https://www.youtube.com/@Fireship",
+    "note": "Fast, modern tech explainers"
+   },
+   {
+    "type": "YouTube",
+    "title": "Corey Schafer",
+    "url": "https://www.youtube.com/@coreyms",
+    "note": "In-depth Python tutorials"
+   },
+   {
+    "type": "YouTube",
+    "title": "CS50",
+    "url": "https://www.youtube.com/@cs50",
+    "note": "Harvard computer science lectures"
+   },
+   {
+    "type": "YouTube",
+    "title": "The Net Ninja",
+    "url": "https://www.youtube.com/@NetNinja",
+    "note": "Web development tutorial series"
+   },
+   {
+    "type": "YouTube",
+    "title": "Academind",
+    "url": "https://www.youtube.com/@academind",
+    "note": "Web and Angular/React tutorials"
+   },
+   {
+    "type": "YouTube",
+    "title": "The Coding Train",
+    "url": "https://www.youtube.com/@TheCodingTrain",
+    "note": "Creative coding and JavaScript"
+   },
+   {
+    "type": "YouTube",
+    "title": "Tech With Tim",
+    "url": "https://www.youtube.com/channel/UC4JX40jDee_tINbkjycV4Sg",
+    "note": "Python and software projects"
+   },
+   {
+    "type": "YouTube",
+    "title": "Real Python",
+    "url": "https://www.youtube.com/channel/UCI0vQvr9aFn27yR6Ej6n5UA",
+    "note": "Python tips and tutorials"
+   },
+   {
+    "type": "YouTube",
+    "title": "CS Dojo",
+    "url": "https://www.youtube.com/channel/UCxX9wt5FWQUAAz4UrysqK9A",
+    "note": "Programming and interview basics"
+   },
+   {
+    "type": "YouTube",
+    "title": "Derek Banas",
+    "url": "https://www.youtube.com/user/derekbanas",
+    "note": "Languages in one video"
+   }
+  ]
+ }
+]

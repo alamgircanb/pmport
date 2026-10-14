@@ -24,6 +24,7 @@ export const routes:Routes=[
   {path:'pm-faciliter/member',canActivate:[authGuard],loadComponent:()=>import('./pages/member/member.component').then(m=>m.MemberComponent)},
   {path:'media',loadComponent:()=>import('./pages/media/media.component').then(m=>m.MediaComponent)},
   {path:'events',loadComponent:()=>import('./pages/events/events.component').then(m=>m.EventsComponent)},
+  {path:'pm-learninglink',loadComponent:()=>import('./pages/learning-links/learning-links.component').then(m=>m.LearningLinksComponent),title:'PM LearningLink | PMPORT'},
   {path:'resources',loadComponent:()=>import('./pages/resources/resources.component').then(m=>m.ResourcesComponent)},
   {path:'credentials',loadComponent:()=>import('./pages/credentials/credentials.component').then(m=>m.CredentialsComponent)},
   {path:'contact',redirectTo:'about-pmport',pathMatch:'full'},
