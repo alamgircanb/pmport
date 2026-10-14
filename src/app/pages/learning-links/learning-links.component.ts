@@ -14,7 +14,7 @@ type LinkCategory={id:string;title:string;links:LearningLink[]};
   imports:[AsyncPipe,RouterLink],
   template:`
   <section class="page learning-links">
-    <header class="page-header"><p class="eyebrow">PM LearningLink</p><h1>Learning links</h1><p class="lead">Popular YouTube channels and websites for project management, business analysis, data analytics and coding, all in one place.</p></header>
+    <header class="hero"><img src="pm-learninglink.webp" alt="A learner at a laptop surrounded by glowing video and link tiles for project management, business analysis, data analytics and coding"><div class="hero-text"><p class="eyebrow">PM LearningLink</p><h1>Learning links</h1><p class="lead">Popular YouTube channels and websites for project management, business analysis, data analytics and coding, all in one place.</p></div></header>
     @if(categories$|async;as categories){
       <nav class="jump" aria-label="Categories">
         @for(c of categories;track c.id){<a routerLink="/pm-learninglink" [fragment]="c.id">{{c.title}} <small>{{c.links.length}}</small></a>}
@@ -36,6 +36,9 @@ type LinkCategory={id:string;title:string;links:LearningLink[]};
     }
   </section>`,
   styles:[`
+    .hero{position:relative;min-height:440px;overflow:hidden;border-radius:24px;margin-bottom:2rem;background:#041223}.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% center}
+    .hero-text{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:center;min-height:440px;width:55%;padding:clamp(1.5rem,5vw,4rem);background:linear-gradient(90deg,rgba(4,18,35,.95),rgba(4,18,35,.7) 70%,transparent)}.hero-text h1{margin:.4rem 0 1rem}
+    @media(max-width:800px){.hero,.hero-text{min-height:480px}.hero-text{width:100%;justify-content:flex-end;background:linear-gradient(0deg,rgba(4,18,35,.98),rgba(4,18,35,.6) 60%,rgba(4,18,35,.05))}}
     .jump{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1rem}.jump a{padding:.55rem .9rem;border:1px solid var(--line);border-radius:99px;background:#082039;color:#d9eef7;text-decoration:none;font-weight:700}.jump small{color:var(--accent);margin-left:.25rem}
     .filter{display:flex;gap:.4rem;margin-bottom:2rem}.filter button{border:1px solid #3b5874;background:transparent;color:#c9d9e7;border-radius:8px;padding:.45rem .8rem;cursor:pointer}.filter button.active{background:var(--accent);border-color:var(--accent);color:#041223;font-weight:700}
     .category{margin-bottom:2.5rem;scroll-margin-top:80px}.category h2{font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:1rem}
