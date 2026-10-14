@@ -106,3 +106,10 @@ The event display recovers a title from a nonstandard title key in the original 
 - **Glossary:** every term is in `src/app/pages/glossary/glossary-data.json` (term, slug, category, definition, example, related slugs).
   - Each term automatically gets its own page at `/pm-glossary/<slug>`, its own search title and description, structured data, and a sitemap entry. No other changes are needed.
   - Keep `related` pointing at slugs that exist.
+
+## PM Playground (/pm-playground)
+- Model (all the maths): `src/app/pages/playground/playground-model.ts`. Change effect sizes there (onboarding `RAMP`, meeting/WIP/testing factors, defect fix cost, overtime fatigue).
+- Challenges: the `CHALLENGES` array in the same file. Each has starting `params`, a `goal` text and a `check()` rule. After changing a challenge, make sure it fails with its starting settings and passes with the fix described in its `hint`.
+- Page and charts: `src/app/pages/playground/playground.component.ts`.
+- Search-engine text for the page: `customHtml['pm-playground']` in `scripts/seo-pages.mjs`; title and description in `src/app/core/seo/seo-pages.json`.
+- Shareable links: `?challenge=<id>` or the settings as query parameters (see `toQuery`/`fromQuery`).
