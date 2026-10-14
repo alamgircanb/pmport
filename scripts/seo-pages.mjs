@@ -76,9 +76,9 @@ const sections=[
 ];
 
 // Extra introduction for the home page, which is otherwise only a menu of sections.
-const homeIntro=`<p>PMPORT is a free learning and practice hub for project managers, business analysts and data professionals, built by Md Alamgir Hossain, PMP, in Regina, Saskatchewan, Canada. Everything on the site is free to use and needs no sign-up.</p>
-<h2>Prepare for the PMP exam</h2><p>Practise with five full-length PMP exam simulators: 900 original scenario questions in the style of the real exam, covering the People, Process and Business Environment domains, with explanations and results by domain. The PMP preparation section adds video lessons, quizzes and project math practice, and the article on 111 essential PMP mindsets explains how the exam expects a project manager to think.</p>
-<h2>Learn project management, business analysis and data analytics</h2><p>Read practical articles on why projects fail, how AI is becoming a coworker for project managers and business analysts, and where project management in Canada is heading. Use free tools for project charters, risk registers, stakeholder registers, earned value and critical path analysis, and explore 200 hand-picked YouTube channels and websites for project management, business analysis, data analysis (Excel, SQL, Power BI) and coding.</p>`;
+const homeIntro=`<p>PMPORT is a free learning and practice hub for project managers, business analysts and data professionals. It was built by Md Alamgir Hossain, PMP, in Regina, Saskatchewan, Canada. Everything on the site is free. No sign-up is needed.</p>
+<h2>Prepare for the PMP exam</h2><p>Practise with five full-length PMP exam simulators. They hold 900 original scenario questions in the style of the real exam. Questions cover the People, Process and Business Environment domains. Each answer has an explanation, and you see your results by domain.</p><p>The PMP preparation section adds video lessons, quizzes and project math practice. The article on 111 essential PMP mindsets explains how the exam expects a project manager to think. The exam itself is run by the <a href="https://www.pmi.org/certifications/project-management-pmp" rel="noopener">Project Management Institute (PMI)</a>.</p>
+<h2>Learn project management, business analysis and data analytics</h2><p>Read practical articles on why projects fail and how AI is becoming a coworker for project managers. Other articles look at where project management in Canada is heading. Free tools cover project charters, risk registers, stakeholder registers, earned value and critical path analysis.</p><p>PM LearningLink lists 200 hand-picked YouTube channels and websites. They cover project management, business analysis, data analysis (Excel, SQL, Power BI) and coding. You can also watch short PMPortLive videos on <a href="https://www.youtube.com/@pmportlive" rel="noopener">YouTube</a> and follow updates on <a href="https://www.linkedin.com/in/alamgircanb" rel="noopener">LinkedIn</a>.</p>`;
 
 function render(path,page){
   const url=`${SITE}/${path}`;
@@ -104,7 +104,7 @@ function render(path,page){
   const crumbs=breadcrumbs(path);
   if(crumbs)html=html.replace('</head>',ldScript('seo-breadcrumb',crumbs));
   const heading=page.title.replace(/ \| PMPORT$/,'').replace(/^PMPORT \| /,'');
-  const links=sections.filter(([p])=>p!==path).map(([p,l,d])=>`<li><a href="/${p}">${esc(l)}</a>: ${esc(d)}</li>`).join('');
+  const links=sections.filter(([p])=>p!==path).map(([p,l,d])=>`<li><a href="/${p}">${esc(l)}</a>. ${esc(d)}</li>`).join('');
   const article=staticArticleHtml(path);
   const intro=article||`<p class="seo-eyebrow">PMPORT</p><h1>${esc(heading)}</h1><p>${esc(page.description)}</p>${path===''?homeIntro:''}`;
   // Styles live in one <style> block (not inline attributes); the Angular app replaces this content once it starts.
