@@ -63,7 +63,7 @@ export const DEBT:SimDef<DebtState>={
     tiles(s,p){const left=s.scope-s.done;const fc=s.finishedAt??(s.velocity>0.5?Math.ceil(s.t+left/s.velocity):null);return [
       {label:'Delivered / scope',value:`${Math.round(s.done)} / ${Math.round(s.scope)}`},
       {label:s.finishedAt?'Released':'Forecast release',value:fc===null?'–':'Sprint '+fc,tone:fc===null?undefined:fc<=p['release']?'good':'bad'},
-      {label:'Velocity',value:Math.round(s.velocity)+' pts',sub:'peak '+Math.round(s.peakVelocity),tone:s.velocity<s.peakVelocity*0.75&&s.t>3?'bad':undefined},
+      {label:s.finishedAt?'Average velocity':'Velocity (last sprint)',value:Math.round(s.finishedAt?s.done/s.t:s.velocity)+' pts',sub:'peak '+Math.round(s.peakVelocity),tone:!s.finishedAt&&s.velocity<s.peakVelocity*0.75&&s.t>3?'bad':undefined},
       {label:'Technical debt',value:Math.round(s.debt)+' pts',sub:'slows work by '+Math.round(0.7*drag(s.debt)*100)+'%',tone:drag(s.debt)>0.4?'bad':drag(s.debt)<0.15?'good':undefined},
       {label:'Test coverage',value:pct(s.cov),tone:s.cov>=0.6?'good':s.cov<0.2?'bad':undefined},
       {label:'Escaped defects',value:Math.round(s.totalBugs)+' total',sub:Math.round(s.bugs)+' still open',tone:s.escaped>5?'bad':undefined},

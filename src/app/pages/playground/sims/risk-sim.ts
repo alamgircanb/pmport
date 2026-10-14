@@ -7,7 +7,7 @@ import {clamp,money,seeded,type P,type SimDef} from './sim-engine';
 // not which random numbers it gets (a fair comparison between runs with the same seed).
 interface Risk{name:string;p:number;cost:number;delay:number;from:number;to:number;emergent:boolean;responded:boolean;hit:boolean;u:number;uc:number;ud:number}
 export interface RiskState{t:number;rand:()=>number;rem:number;risks:Risk[];spent:{base:number;impact:number;delay:number;mitigation:number;monitoring:number};
-  hits:number;unknownHits:number;env:()=>number;lastHitCost:number;respondedCount:number;weekly:number;reserve:number;names:string[]}
+  hits:number;unknownHits:number;env:()=>number;startEmv:number;lastHitCost:number;respondedCount:number;weekly:number;reserve:number;names:string[]}
 
 const NAMES=['Key supplier delivers late','Regulator changes a requirement','Integration defect found late','Key specialist leaves','Vendor raises prices',
   'Data migration errors','Security review finding','Hardware arrives late','Scope dispute with the client','Test environment unavailable',
@@ -57,14 +57,14 @@ export const RISK:SimDef<RiskState>={
       {key:'pv',label:'Planned spend',color:'#7aa7d6'},{key:'ac',label:'Actual cost',color:'#ff8f8f',style:'dash'}],
       refs:p=>[{axis:'y',v:p['budget'],label:'Budget'},{axis:'y',v:p['budget']*(1+p['reserve']/100),label:'Budget + reserve'},{axis:'x',v:p['duration'],label:'Plan'}],
       max:(rows,p)=>Math.max(p['budget']*(1+p['reserve']/100),...rows.map(r=>r['ac']))*1.12},
-    {title:'Cost of risks that hit each week',fmt:'money',series:[
-      {key:'hitCost',label:'Impact of risks that occurred',color:'#ff8f8f',style:'bars'},{key:'respondSpend',label:'Spend on responses (cumulative)',color:'#49cce1'}]},
+    {title:'Risk costs vs spending on responses (cumulative)',fmt:'money',series:[
+      {key:'hitCost',label:'Risk impact that week',color:'#ff8f8f',style:'bars'},{key:'cumImpact',label:'Risk and delay costs',color:'#ff8f8f'},{key:'respondSpend',label:'Spend on responses',color:'#49cce1',style:'dash'}]},
   ],
   model:{
     create(p){const s:RiskState={t:0,rand:seeded(p['seed']),env:seeded(p['seed']*7+3),rem:p['duration'],risks:[],spent:{base:0,impact:0,delay:0,mitigation:0,monitoring:0},
-      hits:0,unknownHits:0,lastHitCost:0,respondedCount:0,weekly:p['budget']/p['duration'],reserve:p['budget']*p['reserve']/100,names:[...NAMES]};
+      hits:0,unknownHits:0,startEmv:0,lastHitCost:0,respondedCount:0,weekly:p['budget']/p['duration'],reserve:p['budget']*p['reserve']/100,names:[...NAMES]};
       for(let i=0;i<p['risks'];i++){const from=1+Math.floor(s.env()*Math.max(1,p['duration']-3));s.risks.push(makeRisk(s,p,from,false));}
-      return s;},
+      s.startEmv=exposure(s,p);return s;},
     step(s,p){
       const ev:string[]=[];const r=s.env;s.t++;s.reserve=p['budget']*p['reserve']/100;s.weekly=p['budget']/p['duration'];
       const working=s.rem>0;
@@ -90,7 +90,7 @@ export const RISK:SimDef<RiskState>={
       s.lastHitCost=hitCost;const left=reserveLeft(s);
       if(left<0&&left+hitCost>=0)ev.push('The contingency reserve is used up. Further overruns need management reserve or a change request.');
       if(s.rem<=0&&working)ev.push(`Project complete in week ${s.t}.`);
-      return {row:{reserveLeft:Math.max(0,left),emv:exposure(s,p),ac:totalCost(s),pv:p['budget']*Math.min(1,s.t/p['duration']),hitCost,
+      return {row:{reserveLeft:Math.max(0,left),emv:exposure(s,p),ac:totalCost(s),pv:p['budget']*Math.min(1,s.t/p['duration']),hitCost,cumImpact:s.spent.impact+s.spent.delay,
         respondSpend:s.spent.mitigation,finish:s.t+Math.max(0,s.rem)},events:ev};
     },
     finished:s=>s.rem<=0,
@@ -107,6 +107,7 @@ export const RISK:SimDef<RiskState>={
       {label:'Risk responses',v:s.spent.mitigation,color:'#5fd68a'},{label:'Reviews and monitoring',v:s.spent.monitoring,color:'#7aa7d6'}]}),
     insights(s,p){const out:string[]=[];const tc=totalCost(s);const resp=s.spent.mitigation+s.spent.monitoring;const impact=s.spent.impact+s.spent.delay;
       out.push(`Final cost ${money(tc)}: ${Math.round(tc/p['budget']*100)}% of the budget, against a limit of ${100+p['reserve']}% with the reserve. Risks and delays cost ${money(impact)}; responses and monitoring cost ${money(resp)}.`);
+      if(s.startEmv>0)out.push(`At the start, the risks in the register had an expected monetary value (EMV) of ${money(s.startEmv)}, before any responses. The ${p['reserve']}% reserve (${money(s.reserve)}) covered that ${(s.reserve/s.startEmv).toFixed(1)} times. Response costs also came out of the reserve here.`);
       if(p['mitigation']===0)out.push('With no budget for risk responses, every risk hit at full strength. Spending a little up front on the biggest risks usually costs less than absorbing them.');
       else if(p['mitigation']>=18)out.push(`Response spending of ${p['mitigation']}% has diminishing returns: the last few percent cost more than the risk they removed. Spend on responses only where the EMV justifies it.`);
       const emergentUnresponded=s.risks.filter(k=>k.emergent&&k.hit&&!k.responded).length;

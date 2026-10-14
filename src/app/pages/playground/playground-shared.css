@@ -57,3 +57,4 @@ svg{width:100%;height:auto;display:block}
 .zero{stroke:#557495}
 .principles{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.8rem;margin-top:1rem}.principles h3{margin:0 0 .4rem;font-size:1rem}.principles p{margin:0;font-size:.9rem;line-height:1.6;color:#c9d9e7}
 .explain h3{margin:1.5rem 0 .2rem}
+.key .k::before{display:none}
