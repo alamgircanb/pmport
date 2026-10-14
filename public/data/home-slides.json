@@ -11,6 +11,83 @@
     "published": true
   },
   {
+    "id": "pm-playground",
+    "label": "PM Playground · Project simulator",
+    "title": "PM Playground",
+    "description": "Change team size, WIP, overtime, testing and scope, then press play and watch schedule, cost, quality and morale respond week by week.",
+    "image": "pm-playground.webp",
+    "alt": "Simulator control panel with sliders, a burn-up chart and a play button",
+    "path": "/pm-playground",
+    "action": "Open the playground",
+    "published": true
+  },
+  {
+    "id": "pm-datalab",
+    "label": "PM DataLab · Data skills practice",
+    "title": "PM DataLab",
+    "description": "Practise SQL, Excel, Power BI DAX, Python and status reporting on one sample project portfolio, with every answer checked instantly.",
+    "image": "pm-datalab.webp",
+    "alt": "SQL query editor beside a results table and a bar chart",
+    "path": "/pm-datalab",
+    "action": "Start practising",
+    "published": true
+  },
+  {
+    "id": "pm-calculators",
+    "label": "PM Calculators · Free tools",
+    "title": "PM Calculators",
+    "description": "Earned value, PERT, risk EMV, NPV and ROI, Monte Carlo, sprint capacity and communication channels, each with formulas and a worked example.",
+    "image": "pm-calculators.webp",
+    "alt": "Calculator showing a CPI result beside a Monte Carlo curve and project formulas",
+    "path": "/pm-calculators",
+    "action": "Open the calculators",
+    "published": true
+  },
+  {
+    "id": "pm-glossary",
+    "label": "PM Glossary · 217 terms",
+    "title": "PM Glossary",
+    "description": "More than 200 project management, agile and business analysis terms explained in plain English, each with a real-world example.",
+    "image": "pm-glossary.webp",
+    "alt": "Stacked glossary cards for scope creep, critical path and earned value above an A to Z index",
+    "path": "/pm-glossary",
+    "action": "Browse the glossary",
+    "published": true
+  },
+  {
+    "id": "pmp-study-guide",
+    "label": "PM Knowledge Lake · PMP preparation",
+    "title": "Free PMP Study Guide & 8-Week Plan",
+    "description": "A week-by-week plan for the PMP exam, with the free resources to use at each stage and how to know you are ready.",
+    "image": "pmp-study-guide.webp",
+    "alt": "A winding eight-step study path leading to a PMP goal",
+    "path": "/resources/pmp-study-guide-8-week-plan",
+    "action": "Read the study guide",
+    "published": true
+  },
+  {
+    "id": "free-pmp-practice-exams",
+    "label": "PM Knowledge Lake · PMP preparation",
+    "title": "Best Free PMP Practice Exams",
+    "description": "A comparison of free PMP practice exams and question banks: how many questions each has, how close they are to the real exam, and how to use them.",
+    "image": "free-pmp-practice-exams.webp",
+    "alt": "Practice exam question card with a countdown timer and a results chart",
+    "path": "/resources/best-free-pmp-practice-exams",
+    "action": "Compare practice exams",
+    "published": true
+  },
+  {
+    "id": "pm-learninglink",
+    "label": "PM LearningLink · Free resources",
+    "title": "PM LearningLink",
+    "description": "200 popular free YouTube channels and websites for project management, business analysis, data analytics and coding.",
+    "image": "pm-learninglink.webp",
+    "alt": "Learner at a desk surrounded by linked videos and resources for project management, data and coding",
+    "path": "/pm-learninglink",
+    "action": "Explore the links",
+    "published": true
+  },
+  {
     "id": "ai-super-coworker",
     "label": "PM Knowledge Lake · Future of work",
     "title": "AI: Not Only a Tool, but a Super Coworker",
