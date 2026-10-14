@@ -95,3 +95,14 @@ The event display recovers a title from a nonstandard title key in the original 
 - The SQL lab (sql.js) and the Python lab (Pyodide) load from cdn.jsdelivr.net when a visitor uses them.
 - The Excel lab uses its own formula engine (`excel-engine.ts`), so nothing extra is downloaded.
 - Progress is saved in the visitor's browser only (localStorage).
+
+## PM Calculators (/pm-calculators) and PM Glossary (/pm-glossary)
+
+- **Calculators:** each one is its own component in `src/app/pages/calculators/`. All the maths is in `calc-math.ts`. To add a calculator:
+  - add it to `CALCULATORS` in `calc-shared.ts`;
+  - add a route in `app.routes.ts`;
+  - add an entry in `seo-pages.json`;
+  - add a line in `articleSources` in `scripts/seo-pages.mjs`.
+- **Glossary:** every term is in `src/app/pages/glossary/glossary-data.json` (term, slug, category, definition, example, related slugs).
+  - Each term automatically gets its own page at `/pm-glossary/<slug>`, its own search title and description, structured data, and a sitemap entry. No other changes are needed.
+  - Keep `related` pointing at slugs that exist.

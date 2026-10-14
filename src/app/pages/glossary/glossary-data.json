@@ -1,0 +1,2415 @@
+[
+{
+"term": "Acceptance Criteria",
+"slug": "acceptance-criteria",
+"category": "Scope",
+"definition": "The conditions that must be met before a deliverable or user story is accepted.",
+"example": "A user story is accepted only if the report loads in under 3 seconds and exports to Excel.",
+"related": [
+"definition-of-done-dod",
+"validate-scope",
+"user-story"
+]
+},
+{
+"term": "Activity",
+"slug": "activity",
+"category": "Schedule",
+"definition": "A distinct, scheduled portion of work performed during a project.",
+"example": "'Write test scripts' is an activity with a duration of five days.",
+"related": [
+"work-package",
+"network-diagram"
+]
+},
+{
+"term": "Actual Cost (AC)",
+"slug": "actual-cost-ac",
+"category": "Cost",
+"definition": "The actual cost incurred for the work performed during a given period.",
+"example": "The team has spent $182,000 so far, so AC = $182,000.",
+"related": [
+"earned-value-ev",
+"cost-variance-cv"
+]
+},
+{
+"term": "ADKAR",
+"slug": "adkar",
+"category": "Business Analysis",
+"definition": "A change model describing what individuals need to change: Awareness, Desire, Knowledge, Ability and Reinforcement.",
+"example": "Staff know why the change is happening (awareness) but are not yet willing (desire).",
+"related": [
+"organizational-change-management"
+]
+},
+{
+"term": "Agile",
+"slug": "agile",
+"category": "Agile",
+"definition": "A mindset and set of practices for delivering value in small increments, with frequent feedback, collaboration and the ability to respond to change. It is defined by the Agile Manifesto's values and principles.",
+"example": "Instead of one big release after a year, the team delivers working features every two weeks.",
+"related": [
+"scrum",
+"kanban",
+"agile-manifesto"
+]
+},
+{
+"term": "Agile Manifesto",
+"slug": "agile-manifesto",
+"category": "Agile",
+"definition": "The 2001 statement of four values and twelve principles for agile software development, such as valuing individuals and interactions over processes and tools.",
+"example": "'Responding to change over following a plan' guides how the team handles new requirements.",
+"related": [
+"agile"
+]
+},
+{
+"term": "Analogous Estimating",
+"slug": "analogous-estimating",
+"category": "Schedule",
+"definition": "Estimating duration or cost using values from a similar past project. It is fast but less accurate.",
+"example": "The last portal took 6 months, so the team estimates a similar one at about 6 months.",
+"related": [
+"parametric-estimating",
+"bottom-up-estimating"
+]
+},
+{
+"term": "As-Is and To-Be",
+"slug": "as-is-and-to-be",
+"category": "Business Analysis",
+"definition": "Describing the current state of a process or system (as-is) and the desired future state (to-be), to identify the changes needed.",
+"example": "The as-is process has 12 manual steps; the to-be process has 5.",
+"related": [
+"gap-analysis",
+"process-map"
+]
+},
+{
+"term": "Assumption",
+"slug": "assumption",
+"category": "Fundamentals",
+"definition": "A factor considered true, real or certain without proof, used for planning. Assumptions should be logged and validated because they carry risk.",
+"example": "The plan assumes the vendor will deliver the API by May; the team tracks this in the assumption log.",
+"related": [
+"constraint",
+"risk"
+]
+},
+{
+"term": "Backlog Refinement",
+"slug": "backlog-refinement",
+"category": "Agile",
+"definition": "The ongoing activity of adding detail, estimates and order to product backlog items so they are ready for future sprints.",
+"example": "In refinement the team splits a large epic into five smaller user stories.",
+"related": [
+"product-backlog",
+"user-story",
+"epic"
+]
+},
+{
+"term": "Baseline",
+"slug": "baseline",
+"category": "Integration",
+"definition": "The approved version of a plan (scope, schedule or cost) used as the basis for comparison. It can be changed only through formal change control.",
+"example": "Actual progress is compared with the schedule baseline to calculate schedule variance.",
+"related": [
+"scope-baseline",
+"change-control",
+"performance-measurement-baseline"
+]
+},
+{
+"term": "Benefits Realization",
+"slug": "benefits-realization",
+"category": "Business Analysis",
+"definition": "Making sure the outcomes and benefits promised in the business case are actually achieved, often after the project ends.",
+"example": "Six months after go-live, the PMO checks whether processing time really fell by 50%.",
+"related": [
+"business-case",
+"benefits-register",
+"key-performance-indicator-kpi"
+]
+},
+{
+"term": "Benefits Register",
+"slug": "benefits-register",
+"category": "Business Analysis",
+"definition": "A record of planned benefits, their measures, owners and timing.",
+"example": "The register shows a benefit of 2,000 hours saved a year, owned by the operations director.",
+"related": [
+"benefits-realization"
+]
+},
+{
+"term": "Bottom-Up Estimating",
+"slug": "bottom-up-estimating",
+"category": "Schedule",
+"definition": "Estimating each work package or activity in detail and adding them up. It is the most accurate but takes the most effort.",
+"example": "Adding the estimates of all 85 work packages gives a total of 4,200 hours.",
+"related": [
+"work-package",
+"analogous-estimating"
+]
+},
+{
+"term": "BPMN",
+"slug": "bpmn",
+"category": "Business Analysis",
+"definition": "Business Process Model and Notation: a standard graphical notation for business process diagrams.",
+"example": "The BA uses BPMN gateways to show the approval decision.",
+"related": [
+"process-map"
+]
+},
+{
+"term": "Budget at Completion (BAC)",
+"slug": "budget-at-completion-bac",
+"category": "Cost",
+"definition": "The sum of all budgets established for the work to be performed; the total planned budget.",
+"example": "The approved project budget of $250,000 is the BAC.",
+"related": [
+"estimate-at-completion-eac",
+"variance-at-completion-vac"
+]
+},
+{
+"term": "Burndown Chart",
+"slug": "burndown-chart",
+"category": "Agile",
+"definition": "A chart that shows the work remaining over time in a sprint or release. A burnup chart shows work completed and total scope.",
+"example": "The burndown line flattens mid-sprint, showing the team is blocked.",
+"related": [
+"velocity",
+"burnup-chart"
+]
+},
+{
+"term": "Burnup Chart",
+"slug": "burnup-chart",
+"category": "Agile",
+"definition": "A chart that shows work completed over time against total scope, making scope changes visible.",
+"example": "The scope line jumps in sprint 5 when new requirements are added.",
+"related": [
+"burndown-chart"
+]
+},
+{
+"term": "Business Analysis",
+"slug": "business-analysis",
+"category": "Business Analysis",
+"definition": "The practice of enabling change by defining needs and recommending solutions that deliver value to stakeholders.",
+"example": "The business analyst studies the claims process and recommends automating triage.",
+"related": [
+"business-analyst",
+"requirements",
+"elicitation"
+]
+},
+{
+"term": "Business Analyst",
+"slug": "business-analyst",
+"category": "Business Analysis",
+"definition": "A person who identifies business needs, elicits and manages requirements and helps define solutions.",
+"example": "The BA runs workshops with nurses to understand how they record medication.",
+"related": [
+"business-analysis",
+"elicitation"
+]
+},
+{
+"term": "Business Case",
+"slug": "business-case",
+"category": "Integration",
+"definition": "A documented economic feasibility study that justifies a project by comparing its expected benefits with its costs and risks.",
+"example": "The business case shows the new portal will save $300,000 a year against a cost of $500,000.",
+"related": [
+"net-present-value-npv",
+"return-on-investment-roi",
+"benefits-realization"
+]
+},
+{
+"term": "Business Requirements",
+"slug": "business-requirements",
+"category": "Business Analysis",
+"definition": "High-level statements of the goals or needs of the organization. Stakeholder, solution (functional and non-functional) and transition requirements are other types.",
+"example": "Business requirement: reduce invoice processing time by 50%.",
+"related": [
+"functional-requirement",
+"non-functional-requirement"
+]
+},
+{
+"term": "Change Control",
+"slug": "change-control",
+"category": "Integration",
+"definition": "The process of reviewing all change requests, assessing their impact, and approving or rejecting them before baselines are updated.",
+"example": "No feature is added to the scope until the change control process approves it.",
+"related": [
+"change-request",
+"change-control-board-ccb",
+"baseline"
+]
+},
+{
+"term": "Change Control Board (CCB)",
+"slug": "change-control-board-ccb",
+"category": "Integration",
+"definition": "A formally constituted group responsible for reviewing, evaluating and approving, deferring or rejecting changes to the project.",
+"example": "The CCB approves a two-week extension because the change adds regulatory value.",
+"related": [
+"change-control",
+"change-request",
+"governance"
+]
+},
+{
+"term": "Change Request",
+"slug": "change-request",
+"category": "Integration",
+"definition": "A formal proposal to modify a document, deliverable or baseline. It is reviewed through the integrated change control process.",
+"example": "The client asks for a mobile app version, so the project manager logs a change request and assesses its impact.",
+"related": [
+"change-control",
+"change-control-board-ccb",
+"scope-creep"
+]
+},
+{
+"term": "Code of Ethics and Professional Conduct",
+"slug": "code-of-ethics-and-professional-conduct",
+"category": "Fundamentals",
+"definition": "PMI's standard for ethical behaviour, built on four values: responsibility, respect, fairness and honesty.",
+"example": "Reporting the true project status, even when it is bad news, reflects honesty.",
+"related": [
+"project-manager"
+]
+},
+{
+"term": "Colocation",
+"slug": "colocation",
+"category": "Resources",
+"definition": "Placing team members in the same physical location to improve communication and collaboration.",
+"example": "The team works in one room for the three-week integration sprint.",
+"related": [
+"virtual-team"
+]
+},
+{
+"term": "Communication Channels",
+"slug": "communication-channels",
+"category": "Communications",
+"definition": "The number of possible communication paths in a team: n(n − 1) ÷ 2, where n is the number of people.",
+"example": "A team of 8 has 8 × 7 ÷ 2 = 28 channels.",
+"related": [
+"communications-management-plan"
+]
+},
+{
+"term": "Communications Management Plan",
+"slug": "communications-management-plan",
+"category": "Communications",
+"definition": "The plan that defines what information is shared, with whom, when, how and by whom.",
+"example": "The plan says the steering committee gets a one-page status report every second Friday.",
+"related": [
+"communication-channels",
+"status-report"
+]
+},
+{
+"term": "Conflict Management",
+"slug": "conflict-management",
+"category": "Resources",
+"definition": "Handling disagreements constructively. Common approaches are collaborate (problem-solve), compromise, smooth, force and withdraw. Collaborating is usually preferred.",
+"example": "The project manager brings two leads together to find a design that meets both teams' needs.",
+"related": [
+"tuckman-ladder",
+"emotional-intelligence"
+]
+},
+{
+"term": "Constraint",
+"slug": "constraint",
+"category": "Fundamentals",
+"definition": "A limiting factor that affects how a project is performed, such as a fixed budget, deadline, resource or regulation.",
+"example": "The go-live date is a constraint because the old system's licence expires on March 31.",
+"related": [
+"assumption",
+"triple-constraint"
+]
+},
+{
+"term": "Context Diagram",
+"slug": "context-diagram",
+"category": "Business Analysis",
+"definition": "A top-level diagram that shows a system as one process and its interactions with external entities.",
+"example": "The context diagram shows the payroll system exchanging data with banks and the tax agency.",
+"related": [
+"data-flow-diagram-dfd",
+"scope"
+]
+},
+{
+"term": "Contingency Reserve",
+"slug": "contingency-reserve",
+"category": "Cost",
+"definition": "Budget or time set aside for identified risks (known unknowns). It is part of the cost baseline and is controlled by the project manager.",
+"example": "The team adds $20,000 contingency for the risk that data cleansing takes longer.",
+"related": [
+"management-reserve",
+"expected-monetary-value-emv"
+]
+},
+{
+"term": "Continuous Improvement",
+"slug": "continuous-improvement",
+"category": "Quality",
+"definition": "Ongoing effort to improve products, services or processes in small steps, such as Kaizen or Plan-Do-Check-Act.",
+"example": "Each retrospective produces one small process change the team tries in the next sprint.",
+"related": [
+"retrospective",
+"plan-do-check-act-pdca"
+]
+},
+{
+"term": "Contract Types",
+"slug": "contract-types",
+"category": "Procurement",
+"definition": "The main contract families are fixed price (seller carries cost risk), cost-reimbursable (buyer carries cost risk) and time and materials (a hybrid, used for staff augmentation).",
+"example": "A fixed-price contract suits a well-defined deliverable; T&M suits uncertain scope.",
+"related": [
+"fixed-price-contract",
+"cost-reimbursable-contract"
+]
+},
+{
+"term": "Control Chart",
+"slug": "control-chart",
+"category": "Quality",
+"definition": "A chart that shows whether a process is stable over time, with a mean and upper and lower control limits.",
+"example": "Seven points in a row above the mean signal the process may be out of control.",
+"related": [
+"control-quality",
+"pareto-chart"
+]
+},
+{
+"term": "Control Quality",
+"slug": "control-quality",
+"category": "Quality",
+"definition": "Monitoring and recording the results of quality activities to check that deliverables are correct and meet requirements.",
+"example": "Testers run the regression suite and log 12 defects before release.",
+"related": [
+"manage-quality",
+"validate-scope",
+"defect"
+]
+},
+{
+"term": "Cost Baseline",
+"slug": "cost-baseline",
+"category": "Cost",
+"definition": "The approved, time-phased budget, excluding management reserve, used to measure cost performance.",
+"example": "The cost baseline shows $40,000 planned for each month of build.",
+"related": [
+"baseline",
+"performance-measurement-baseline"
+]
+},
+{
+"term": "Cost of Quality (COQ)",
+"slug": "cost-of-quality-coq",
+"category": "Quality",
+"definition": "The total cost of quality-related efforts: prevention and appraisal (cost of conformance) plus internal and external failures (cost of non-conformance).",
+"example": "Training and code reviews are prevention costs; fixing bugs after go-live is an external failure cost.",
+"related": [
+"quality",
+"control-quality"
+]
+},
+{
+"term": "Cost Performance Index (CPI)",
+"slug": "cost-performance-index-cpi",
+"category": "Cost",
+"definition": "A measure of cost efficiency: CPI = EV ÷ AC. Below 1 means over budget; above 1 means under budget.",
+"example": "CPI = 170,000 ÷ 182,000 = 0.93, so each dollar earns 93 cents of work.",
+"related": [
+"cost-variance-cv",
+"estimate-at-completion-eac"
+]
+},
+{
+"term": "Cost Variance (CV)",
+"slug": "cost-variance-cv",
+"category": "Cost",
+"definition": "The difference between earned value and actual cost: CV = EV − AC. A negative CV means over budget.",
+"example": "EV $170,000 − AC $182,000 = CV of −$12,000 (over budget).",
+"related": [
+"cost-performance-index-cpi",
+"earned-value-ev"
+]
+},
+{
+"term": "Cost-Reimbursable Contract",
+"slug": "cost-reimbursable-contract",
+"category": "Procurement",
+"definition": "A contract where the buyer pays the seller's actual costs plus a fee. The buyer carries most of the cost risk.",
+"example": "Research work is paid on a cost-plus-fixed-fee basis because the scope is uncertain.",
+"related": [
+"contract-types",
+"fixed-price-contract"
+]
+},
+{
+"term": "Crashing",
+"slug": "crashing",
+"category": "Schedule",
+"definition": "Shortening the schedule by adding resources to critical path activities, usually at extra cost.",
+"example": "The team adds two developers to the critical build activity to recover a week.",
+"related": [
+"fast-tracking",
+"critical-path"
+]
+},
+{
+"term": "Critical Path",
+"slug": "critical-path",
+"category": "Schedule",
+"definition": "The longest sequence of activities through the network. It sets the shortest possible project duration, and activities on it have zero total float.",
+"example": "Any delay to the data migration, which is on the critical path, delays go-live.",
+"related": [
+"critical-path-method-cpm",
+"float-slack",
+"network-diagram"
+]
+},
+{
+"term": "Critical Path Method (CPM)",
+"slug": "critical-path-method-cpm",
+"category": "Schedule",
+"definition": "A method that calculates early and late start and finish dates for each activity to find the critical path and float.",
+"example": "Using CPM, the team finds three activities with 5 days of float that can absorb small delays.",
+"related": [
+"critical-path",
+"float-slack",
+"pert"
+]
+},
+{
+"term": "Cycle Time",
+"slug": "cycle-time",
+"category": "Agile",
+"definition": "The time an item takes from when work starts to when it is finished. Lead time runs from request to delivery.",
+"example": "The average cycle time for bug fixes dropped from 6 days to 3.",
+"related": [
+"kanban",
+"lead-time"
+]
+},
+{
+"term": "Daily Scrum",
+"slug": "daily-scrum",
+"category": "Agile",
+"definition": "A 15-minute daily event for developers to inspect progress toward the sprint goal and adapt their plan.",
+"example": "At the daily scrum a developer mentions she is blocked by missing test data.",
+"related": [
+"scrum",
+"impediment"
+]
+},
+{
+"term": "Dashboard",
+"slug": "dashboard",
+"category": "Data",
+"definition": "A visual display of key metrics and KPIs on one screen, used to monitor performance and support decisions.",
+"example": "The portfolio dashboard shows budget, CPI, SPI and RAG status for every project.",
+"related": [
+"key-performance-indicator-kpi",
+"rag-status"
+]
+},
+{
+"term": "Data Flow Diagram (DFD)",
+"slug": "data-flow-diagram-dfd",
+"category": "Business Analysis",
+"definition": "A diagram that shows how data moves between processes, data stores and external entities.",
+"example": "The DFD shows customer data flowing from the web form to the CRM database.",
+"related": [
+"context-diagram",
+"process-map"
+]
+},
+{
+"term": "Decision Tree",
+"slug": "decision-tree",
+"category": "Risk",
+"definition": "A diagram that compares options by mapping decisions, chance events, probabilities and outcomes, and calculating the EMV of each path.",
+"example": "The decision tree shows building in-house has a better EMV than buying.",
+"related": [
+"expected-monetary-value-emv"
+]
+},
+{
+"term": "Decomposition",
+"slug": "decomposition",
+"category": "Scope",
+"definition": "Dividing project scope and deliverables into smaller, more manageable parts.",
+"example": "The team decomposes 'reporting' into separate dashboards, exports and scheduled emails.",
+"related": [
+"work-breakdown-structure-wbs",
+"work-package"
+]
+},
+{
+"term": "Defect",
+"slug": "defect",
+"category": "Quality",
+"definition": "An imperfection or deficiency in a deliverable that does not meet its requirements or specifications.",
+"example": "The export button produces a blank file: a defect logged for the next build.",
+"related": [
+"control-quality",
+"root-cause-analysis"
+]
+},
+{
+"term": "Definition of Done (DoD)",
+"slug": "definition-of-done-dod",
+"category": "Agile",
+"definition": "A shared, formal description of the quality an increment must meet before it is considered done.",
+"example": "Done means coded, peer reviewed, tested, documented and deployed to staging.",
+"related": [
+"acceptance-criteria",
+"increment"
+]
+},
+{
+"term": "Definition of Ready (DoR)",
+"slug": "definition-of-ready-dor",
+"category": "Agile",
+"definition": "Criteria a backlog item should meet before the team starts it, such as clear acceptance criteria and an estimate.",
+"example": "A story is ready when it has acceptance criteria, a size and no open dependencies.",
+"related": [
+"definition-of-done-dod",
+"backlog-refinement"
+]
+},
+{
+"term": "Dependency",
+"slug": "dependency",
+"category": "Schedule",
+"definition": "A logical relationship between activities. The most common is finish-to-start: one activity must finish before the next starts. Dependencies can be mandatory, discretionary or external.",
+"example": "Painting depends on the walls being built (finish-to-start, mandatory).",
+"related": [
+"network-diagram",
+"lead-and-lag"
+]
+},
+{
+"term": "Earned Value (EV)",
+"slug": "earned-value-ev",
+"category": "Cost",
+"definition": "The value of the work actually completed, expressed in terms of its approved budget. EV = BAC × % complete.",
+"example": "A $250,000 project that is 68% complete has EV = $170,000.",
+"related": [
+"planned-value-pv",
+"actual-cost-ac",
+"budget-at-completion-bac"
+]
+},
+{
+"term": "Earned Value Management (EVM)",
+"slug": "earned-value-management-evm",
+"category": "Cost",
+"definition": "A method that integrates scope, schedule and cost to measure project performance and forecast results, using planned value, earned value and actual cost.",
+"example": "EVM shows the project has done 60% of the work but spent 70% of the budget.",
+"related": [
+"earned-value-ev",
+"planned-value-pv",
+"actual-cost-ac"
+]
+},
+{
+"term": "Elicitation",
+"slug": "elicitation",
+"category": "Business Analysis",
+"definition": "Drawing out information from stakeholders and other sources, using techniques such as interviews, workshops, observation and surveys.",
+"example": "The BA observes call agents for a day to elicit pain points.",
+"related": [
+"requirements",
+"requirements-workshop"
+]
+},
+{
+"term": "Emotional Intelligence",
+"slug": "emotional-intelligence",
+"category": "Resources",
+"definition": "The ability to recognize and manage your own emotions and those of others, which supports leadership and team performance.",
+"example": "Noticing a frustrated team member and talking privately before the meeting shows emotional intelligence.",
+"related": [
+"servant-leadership",
+"conflict-management"
+]
+},
+{
+"term": "Enterprise Environmental Factors (EEF)",
+"slug": "enterprise-environmental-factors-eef",
+"category": "Integration",
+"definition": "Conditions not under the team's immediate control that influence or constrain the project, such as regulations, market conditions, culture and infrastructure.",
+"example": "Provincial privacy legislation is an EEF that shapes how the team designs data storage.",
+"related": [
+"organizational-process-assets-opa",
+"constraint"
+]
+},
+{
+"term": "Epic",
+"slug": "epic",
+"category": "Agile",
+"definition": "A large body of work that can be broken down into smaller user stories.",
+"example": "The 'mobile approvals' epic contains stories for timesheets, expenses and leave.",
+"related": [
+"user-story",
+"backlog-refinement"
+]
+},
+{
+"term": "Escalation",
+"slug": "escalation",
+"category": "Communications",
+"definition": "Raising an issue to a higher level of authority when it cannot be resolved at the current level.",
+"example": "After two failed attempts to get vendor access, the project manager escalates to the sponsor.",
+"related": [
+"issue",
+"steering-committee"
+]
+},
+{
+"term": "Estimate at Completion (EAC)",
+"slug": "estimate-at-completion-eac",
+"category": "Cost",
+"definition": "The expected total cost of completing all work. A common formula is EAC = BAC ÷ CPI when current cost performance is expected to continue.",
+"example": "With BAC $250,000 and CPI 0.934 (170,000 ÷ 182,000), EAC ≈ $267,650.",
+"related": [
+"estimate-to-complete-etc",
+"variance-at-completion-vac",
+"cost-performance-index-cpi"
+]
+},
+{
+"term": "Estimate to Complete (ETC)",
+"slug": "estimate-to-complete-etc",
+"category": "Cost",
+"definition": "The expected cost to finish the remaining work: ETC = EAC − AC.",
+"example": "EAC $267,650 − AC $182,000 = ETC of about $85,650.",
+"related": [
+"estimate-at-completion-eac"
+]
+},
+{
+"term": "Expected Monetary Value (EMV)",
+"slug": "expected-monetary-value-emv",
+"category": "Risk",
+"definition": "The probability of a risk multiplied by its impact in money. Threats are negative and opportunities positive.",
+"example": "A 30% chance of a $50,000 penalty has an EMV of −$15,000.",
+"related": [
+"contingency-reserve",
+"decision-tree",
+"quantitative-risk-analysis"
+]
+},
+{
+"term": "Fast Tracking",
+"slug": "fast-tracking",
+"category": "Schedule",
+"definition": "Shortening the schedule by doing activities in parallel that were planned in sequence. It increases risk and possible rework.",
+"example": "Testing starts on finished modules while development continues on others.",
+"related": [
+"crashing",
+"critical-path"
+]
+},
+{
+"term": "Fishbone Diagram",
+"slug": "fishbone-diagram",
+"category": "Quality",
+"definition": "A cause-and-effect (Ishikawa) diagram that groups possible causes of a problem into categories such as people, process and tools.",
+"example": "The team uses a fishbone diagram to explore why deployments keep failing.",
+"related": [
+"root-cause-analysis",
+"five-whys"
+]
+},
+{
+"term": "Five Whys",
+"slug": "five-whys",
+"category": "Quality",
+"definition": "Asking 'why?' repeatedly, usually about five times, to move from a symptom to its root cause.",
+"example": "Why did the release slip? Testing started late. Why? The environment was not ready…",
+"related": [
+"root-cause-analysis"
+]
+},
+{
+"term": "Fixed-Price Contract",
+"slug": "fixed-price-contract",
+"category": "Procurement",
+"definition": "A contract with a set total price for a defined product or service. The seller carries most of the cost risk.",
+"example": "The vendor builds the website for a firm fixed price of $80,000.",
+"related": [
+"contract-types",
+"cost-reimbursable-contract"
+]
+},
+{
+"term": "Float (Slack)",
+"slug": "float-slack",
+"category": "Schedule",
+"definition": "The amount of time an activity can be delayed without delaying the project end date (total float) or the next activity (free float).",
+"example": "Writing the user guide has 10 days of total float.",
+"related": [
+"critical-path",
+"critical-path-method-cpm"
+]
+},
+{
+"term": "Functional Requirement",
+"slug": "functional-requirement",
+"category": "Business Analysis",
+"definition": "A description of what a solution must do: its behaviours, features and functions.",
+"example": "The system must email the manager when a timesheet is submitted.",
+"related": [
+"non-functional-requirement",
+"requirements"
+]
+},
+{
+"term": "Gantt Chart",
+"slug": "gantt-chart",
+"category": "Schedule",
+"definition": "A bar chart of schedule information: activities on the vertical axis, dates on the horizontal axis and bars for durations.",
+"example": "The Gantt chart shows design overlapping the start of build by one week.",
+"related": [
+"milestone",
+"network-diagram"
+]
+},
+{
+"term": "Gap Analysis",
+"slug": "gap-analysis",
+"category": "Business Analysis",
+"definition": "Comparing the current state with the desired future state to identify what must change.",
+"example": "The gap analysis shows the team lacks reporting skills and a data warehouse.",
+"related": [
+"as-is-and-to-be"
+]
+},
+{
+"term": "Gold Plating",
+"slug": "gold-plating",
+"category": "Scope",
+"definition": "Adding extra features or quality that the customer did not ask for, usually by the team. It adds risk and cost without approved value.",
+"example": "A developer adds animated charts nobody requested, delaying testing.",
+"related": [
+"scope-creep",
+"scope"
+]
+},
+{
+"term": "Governance",
+"slug": "governance",
+"category": "Governance",
+"definition": "The framework of roles, decision rights, processes and controls that guides how projects are approved, overseen and kept aligned with organizational goals.",
+"example": "A steering committee that approves budget changes over $50,000 is part of project governance.",
+"related": [
+"steering-committee",
+"pmo",
+"phase-gate"
+]
+},
+{
+"term": "Grade",
+"slug": "grade",
+"category": "Quality",
+"definition": "A category assigned to products with the same use but different features. Low grade can be acceptable; low quality never is.",
+"example": "A basic phone (low grade) can still be high quality if it works without defects.",
+"related": [
+"quality"
+]
+},
+{
+"term": "Ground Rules",
+"slug": "ground-rules",
+"category": "Resources",
+"definition": "Expectations agreed by the team about acceptable behaviour, often part of the team charter.",
+"example": "A ground rule: cameras on and no phones during sprint planning.",
+"related": [
+"team-charter"
+]
+},
+{
+"term": "Hybrid Approach",
+"slug": "hybrid-approach",
+"category": "Fundamentals",
+"definition": "A combination of predictive and adaptive elements, chosen to fit different parts of the project.",
+"example": "Hardware procurement is planned predictively, while the software is built in two-week sprints.",
+"related": [
+"predictive-approach",
+"agile",
+"tailoring"
+]
+},
+{
+"term": "Impediment",
+"slug": "impediment",
+"category": "Agile",
+"definition": "Anything that blocks or slows the team's progress. The Scrum Master helps remove impediments.",
+"example": "Waiting three days for database access is an impediment.",
+"related": [
+"scrum-master",
+"daily-scrum"
+]
+},
+{
+"term": "Increment",
+"slug": "increment",
+"category": "Agile",
+"definition": "A usable step toward the product goal that meets the Definition of Done.",
+"example": "Each sprint produces a tested increment that could be released.",
+"related": [
+"definition-of-done-dod",
+"sprint"
+]
+},
+{
+"term": "Information Radiator",
+"slug": "information-radiator",
+"category": "Agile",
+"definition": "A large, visible display of key project information, such as a task board or burndown chart, that anyone can see.",
+"example": "The team board on the wall shows everyone what is blocked.",
+"related": [
+"kanban",
+"burndown-chart"
+]
+},
+{
+"term": "Internal Rate of Return (IRR)",
+"slug": "internal-rate-of-return-irr",
+"category": "Business Case",
+"definition": "The discount rate at which a project's NPV equals zero. Higher IRR means a more attractive project.",
+"example": "An IRR of 22% beats the company's 10% hurdle rate.",
+"related": [
+"net-present-value-npv"
+]
+},
+{
+"term": "INVEST",
+"slug": "invest",
+"category": "Agile",
+"definition": "A checklist for good user stories: Independent, Negotiable, Valuable, Estimable, Small and Testable.",
+"example": "The story fails INVEST because it is too big to finish in one sprint.",
+"related": [
+"user-story"
+]
+},
+{
+"term": "Issue",
+"slug": "issue",
+"category": "Risk",
+"definition": "A current condition or situation that is affecting the project and needs to be resolved. A risk that happens becomes an issue.",
+"example": "The test server crashed today: it is an issue, not a risk.",
+"related": [
+"risk",
+"issue-log"
+]
+},
+{
+"term": "Issue Log",
+"slug": "issue-log",
+"category": "Risk",
+"definition": "A document where issues are recorded and tracked with owners, actions and due dates until resolved.",
+"example": "Issue #14, missing test data, is assigned to the data analyst for Friday.",
+"related": [
+"issue",
+"raid-log"
+]
+},
+{
+"term": "Joint Application Design (JAD)",
+"slug": "joint-application-design-jad",
+"category": "Business Analysis",
+"definition": "A structured workshop where business users and IT design a system together.",
+"example": "Users and developers sketch the claim screen together in a JAD session.",
+"related": [
+"requirements-workshop"
+]
+},
+{
+"term": "Kanban",
+"slug": "kanban",
+"category": "Agile",
+"definition": "A method for managing flow by visualizing work on a board, limiting work in progress and improving continuously.",
+"example": "The support team uses a Kanban board with To do, In progress (WIP limit 3) and Done.",
+"related": [
+"work-in-progress-wip-limit",
+"cycle-time",
+"lean"
+]
+},
+{
+"term": "Key Performance Indicator (KPI)",
+"slug": "key-performance-indicator-kpi",
+"category": "Data",
+"definition": "A measurable value that shows how well an objective is being achieved.",
+"example": "On-time delivery rate and customer satisfaction are KPIs for the PMO.",
+"related": [
+"benefits-realization",
+"dashboard"
+]
+},
+{
+"term": "Kickoff Meeting",
+"slug": "kickoff-meeting",
+"category": "Communications",
+"definition": "A meeting at the start of a project, or a phase, to align the team and stakeholders on objectives, roles and the plan.",
+"example": "At kickoff the sponsor explains why the project matters and the team reviews the milestones.",
+"related": [
+"project-charter",
+"stakeholder-engagement"
+]
+},
+{
+"term": "Lead and Lag",
+"slug": "lead-and-lag",
+"category": "Schedule",
+"definition": "Lead is time a successor can start before its predecessor finishes; lag is a required delay between them.",
+"example": "Concrete needs a 3-day lag to cure before framing starts.",
+"related": [
+"dependency",
+"critical-path"
+]
+},
+{
+"term": "Lead Time",
+"slug": "lead-time",
+"category": "Agile",
+"definition": "The total time from when a request is made to when it is delivered.",
+"example": "A customer request logged on Monday and delivered Friday has a lead time of 5 days.",
+"related": [
+"cycle-time"
+]
+},
+{
+"term": "Lean",
+"slug": "lean",
+"category": "Agile",
+"definition": "An approach focused on maximizing customer value while minimizing waste, based on the Toyota Production System.",
+"example": "The team removes a duplicate approval step that added two days of waiting.",
+"related": [
+"kanban",
+"value-stream-mapping"
+]
+},
+{
+"term": "Lessons Learned",
+"slug": "lessons-learned",
+"category": "Integration",
+"definition": "Knowledge gained during a project that shows how events were addressed, or should be addressed in future, to improve performance. Lessons are captured throughout the project, not only at the end.",
+"example": "The team records that early vendor workshops reduced integration defects, and adds it to the lessons learned register.",
+"related": [
+"retrospective",
+"organizational-process-assets-opa",
+"project-closure"
+]
+},
+{
+"term": "Make-or-Buy Analysis",
+"slug": "make-or-buy-analysis",
+"category": "Procurement",
+"definition": "Deciding whether to build something in-house or buy it from a supplier, based on cost, capability, risk and strategy.",
+"example": "Buying a payroll module is cheaper and faster than building one.",
+"related": [
+"procurement"
+]
+},
+{
+"term": "Manage Quality",
+"slug": "manage-quality",
+"category": "Quality",
+"definition": "Turning the quality management plan into executable quality activities and improving processes, sometimes called quality assurance.",
+"example": "An audit finds code reviews are skipped, so the team adds a review checklist to the process.",
+"related": [
+"control-quality",
+"continuous-improvement"
+]
+},
+{
+"term": "Management Reserve",
+"slug": "management-reserve",
+"category": "Cost",
+"definition": "Budget held back for unidentified risks (unknown unknowns). It is outside the cost baseline and needs management approval to use.",
+"example": "Leadership keeps a 5% management reserve outside the project budget.",
+"related": [
+"contingency-reserve",
+"budget-at-completion-bac"
+]
+},
+{
+"term": "Milestone",
+"slug": "milestone",
+"category": "Schedule",
+"definition": "A significant point or event in a project, with zero duration.",
+"example": "'Go-live approved' is a milestone on the schedule.",
+"related": [
+"schedule-baseline",
+"phase-gate"
+]
+},
+{
+"term": "Minimum Viable Product (MVP)",
+"slug": "minimum-viable-product-mvp",
+"category": "Agile",
+"definition": "The smallest version of a product that can be released to learn whether it meets user needs.",
+"example": "The MVP lets users book appointments; payments come later.",
+"related": [
+"increment",
+"product-backlog"
+]
+},
+{
+"term": "Monte Carlo Simulation",
+"slug": "monte-carlo-simulation",
+"category": "Risk",
+"definition": "A technique that runs a model thousands of times with random values within estimated ranges to show the probability of different outcomes.",
+"example": "The simulation gives an 80% chance of finishing within 62 days.",
+"related": [
+"quantitative-risk-analysis",
+"three-point-estimate"
+]
+},
+{
+"term": "MoSCoW Prioritization",
+"slug": "moscow-prioritization",
+"category": "Agile",
+"definition": "Grouping requirements into Must have, Should have, Could have and Won't have (this time).",
+"example": "Single sign-on is a Must; dark mode is a Could.",
+"related": [
+"product-backlog",
+"requirements"
+]
+},
+{
+"term": "Motivation Theory",
+"slug": "motivation-theory",
+"category": "Resources",
+"definition": "Theories that explain what drives people at work, such as Maslow's hierarchy of needs, Herzberg's two-factor theory and McGregor's Theory X and Y.",
+"example": "Herzberg's theory suggests recognition and growth motivate more than salary alone.",
+"related": [
+"servant-leadership"
+]
+},
+{
+"term": "Net Present Value (NPV)",
+"slug": "net-present-value-npv",
+"category": "Business Case",
+"definition": "The value today of future cash flows minus the initial investment, using a discount rate. A positive NPV means the project adds value.",
+"example": "At 8%, a project costing $500,000 with returns of $200,000 a year for 4 years has an NPV of about $162,000.",
+"related": [
+"return-on-investment-roi",
+"internal-rate-of-return-irr",
+"payback-period"
+]
+},
+{
+"term": "Network Diagram",
+"slug": "network-diagram",
+"category": "Schedule",
+"definition": "A graphical representation of the logical relationships among project activities.",
+"example": "The network diagram shows testing cannot start until both build activities finish.",
+"related": [
+"critical-path",
+"dependency",
+"precedence-diagramming-method-pdm"
+]
+},
+{
+"term": "Non-Functional Requirement",
+"slug": "non-functional-requirement",
+"category": "Business Analysis",
+"definition": "A quality or condition a solution must have, such as performance, security, availability or usability.",
+"example": "Pages must load within 2 seconds for 500 concurrent users.",
+"related": [
+"functional-requirement"
+]
+},
+{
+"term": "Operations",
+"slug": "operations",
+"category": "Fundamentals",
+"definition": "Ongoing, repetitive work that keeps an organization running, such as processing payroll or answering support calls. Unlike a project, operations have no planned end.",
+"example": "After the CRM project closes, the support team takes over day-to-day CRM administration as operations.",
+"related": [
+"project",
+"transition-plan"
+]
+},
+{
+"term": "Opportunity",
+"slug": "opportunity",
+"category": "Risk",
+"definition": "A risk with a positive effect on project objectives.",
+"example": "A new release of the platform may cut development time by 20%.",
+"related": [
+"risk",
+"risk-response-strategies"
+]
+},
+{
+"term": "Opportunity Cost",
+"slug": "opportunity-cost",
+"category": "Business Case",
+"definition": "The value of the best alternative given up when choosing one option.",
+"example": "Choosing project A (NPV $100,000) over project B (NPV $80,000) has an opportunity cost of $80,000.",
+"related": [
+"net-present-value-npv",
+"portfolio"
+]
+},
+{
+"term": "Organizational Change Management",
+"slug": "organizational-change-management",
+"category": "Business Analysis",
+"definition": "The structured approach to helping people adopt a change, through communication, training, sponsorship and reinforcement. Models include ADKAR and Kotter's 8 steps.",
+"example": "The rollout includes champions in each branch and short training videos.",
+"related": [
+"adkar",
+"stakeholder-engagement",
+"transition-plan"
+]
+},
+{
+"term": "Organizational Process Assets (OPA)",
+"slug": "organizational-process-assets-opa",
+"category": "Integration",
+"definition": "Plans, processes, policies, templates and knowledge bases specific to and used by the performing organization, such as historical data and lessons learned.",
+"example": "The team reuses a risk register template and past estimates from the organization's OPA library.",
+"related": [
+"enterprise-environmental-factors-eef",
+"lessons-learned"
+]
+},
+{
+"term": "Outcome",
+"slug": "outcome",
+"category": "Fundamentals",
+"definition": "The end result or consequence of a process or project, such as a change in behaviour or performance, which leads to benefits.",
+"example": "Output: a training course. Outcome: staff use the new system correctly.",
+"related": [
+"value",
+"benefits-realization"
+]
+},
+{
+"term": "Parametric Estimating",
+"slug": "parametric-estimating",
+"category": "Schedule",
+"definition": "Estimating by using a statistical relationship between historical data and variables, such as cost per square metre or hours per test case.",
+"example": "At 3 hours per test case, 200 test cases need about 600 hours.",
+"related": [
+"analogous-estimating",
+"bottom-up-estimating"
+]
+},
+{
+"term": "Pareto Chart",
+"slug": "pareto-chart",
+"category": "Quality",
+"definition": "A bar chart sorted from most to least frequent, used to focus on the few causes behind most problems (the 80/20 rule).",
+"example": "A Pareto chart shows 3 of 15 defect types cause 75% of support tickets.",
+"related": [
+"root-cause-analysis",
+"control-chart"
+]
+},
+{
+"term": "Payback Period",
+"slug": "payback-period",
+"category": "Business Case",
+"definition": "The time needed for cumulative benefits to recover the initial investment.",
+"example": "A $500,000 project returning $200,000 a year pays back in 2.5 years.",
+"related": [
+"return-on-investment-roi",
+"net-present-value-npv"
+]
+},
+{
+"term": "Performance Measurement Baseline",
+"slug": "performance-measurement-baseline",
+"category": "Integration",
+"definition": "The integrated scope, schedule and cost baselines used to measure and compare project performance, especially in earned value management.",
+"example": "The PMB shows $250,000 of planned value spread across 9 months.",
+"related": [
+"baseline",
+"earned-value-management-evm",
+"planned-value-pv"
+]
+},
+{
+"term": "PERT",
+"slug": "pert",
+"category": "Schedule",
+"definition": "Program Evaluation and Review Technique: a three-point estimating method using optimistic, most likely and pessimistic values, weighted (O + 4M + P) ÷ 6.",
+"example": "With O = 4, M = 6 and P = 14 days, the PERT estimate is 7 days.",
+"related": [
+"three-point-estimate",
+"critical-path-method-cpm",
+"standard-deviation"
+]
+},
+{
+"term": "Phase Gate",
+"slug": "phase-gate",
+"category": "Governance",
+"definition": "A review at the end of a phase where a decision is made to continue to the next phase, continue with modification, or stop the project.",
+"example": "At the design phase gate, the sponsor approves moving to build only after the security review passes.",
+"related": [
+"governance",
+"project-life-cycle"
+]
+},
+{
+"term": "Plan-Do-Check-Act (PDCA)",
+"slug": "plan-do-check-act-pdca",
+"category": "Quality",
+"definition": "A four-step improvement cycle: plan a change, do it on a small scale, check the results and act to standardize or adjust.",
+"example": "The team pilots automated testing on one module (do), checks defect rates, then rolls it out (act).",
+"related": [
+"continuous-improvement"
+]
+},
+{
+"term": "Planned Value (PV)",
+"slug": "planned-value-pv",
+"category": "Cost",
+"definition": "The authorized budget assigned to the work scheduled to be done by a given date.",
+"example": "By the end of June, $187,500 of work was scheduled, so PV = $187,500.",
+"related": [
+"earned-value-ev",
+"schedule-variance-sv"
+]
+},
+{
+"term": "Planning Poker",
+"slug": "planning-poker",
+"category": "Agile",
+"definition": "A consensus estimating technique in which team members reveal estimate cards at the same time and discuss differences.",
+"example": "Two developers show 3 and one shows 13, so they discuss the risk before re-voting.",
+"related": [
+"story-points"
+]
+},
+{
+"term": "PMO",
+"slug": "pmo",
+"category": "Governance",
+"definition": "A Project Management Office standardizes project governance and shares resources, methods, tools and techniques. PMOs can be supportive, controlling or directive.",
+"example": "A controlling PMO requires every project to use the same status report template and risk register.",
+"related": [
+"governance",
+"portfolio",
+"status-report"
+]
+},
+{
+"term": "Portfolio",
+"slug": "portfolio",
+"category": "Fundamentals",
+"definition": "A collection of projects, programs and operations managed together to achieve strategic objectives. Portfolio management decides which work to do and how to fund it.",
+"example": "The PMO reviews the IT portfolio each quarter and pauses two low-value projects to fund a new security initiative.",
+"related": [
+"program",
+"pmo",
+"business-case"
+]
+},
+{
+"term": "Power/Interest Grid",
+"slug": "power-interest-grid",
+"category": "Stakeholders",
+"definition": "A 2×2 grid that groups stakeholders by their power and interest to decide how to engage them: manage closely, keep satisfied, keep informed or monitor.",
+"example": "The CFO (high power, low interest) is kept satisfied with a monthly summary.",
+"related": [
+"stakeholder-register",
+"salience-model"
+]
+},
+{
+"term": "Precedence Diagramming Method (PDM)",
+"slug": "precedence-diagramming-method-pdm",
+"category": "Schedule",
+"definition": "A technique for drawing network diagrams in which activities are boxes (nodes) linked by dependencies such as finish-to-start.",
+"example": "The planner uses PDM to show design finish-to-start build.",
+"related": [
+"network-diagram",
+"dependency"
+]
+},
+{
+"term": "Predictive Approach",
+"slug": "predictive-approach",
+"category": "Fundamentals",
+"definition": "An approach where scope, schedule and cost are planned in detail early, and change is managed through formal change control. Often called waterfall.",
+"example": "Building a bridge usually follows a predictive approach because requirements are well known up front.",
+"related": [
+"agile",
+"hybrid-approach",
+"project-life-cycle"
+]
+},
+{
+"term": "Probability and Impact Matrix",
+"slug": "probability-and-impact-matrix",
+"category": "Risk",
+"definition": "A grid used to rate risks by combining their probability of occurring with their impact, to prioritize them.",
+"example": "A high-probability, high-impact risk lands in the red zone of the matrix.",
+"related": [
+"qualitative-risk-analysis",
+"risk-register"
+]
+},
+{
+"term": "Process Map",
+"slug": "process-map",
+"category": "Business Analysis",
+"definition": "A diagram that shows the steps, decisions and roles in a business process, often in swimlanes.",
+"example": "The swimlane map shows invoices bouncing between finance and procurement three times.",
+"related": [
+"as-is-and-to-be",
+"bpmn"
+]
+},
+{
+"term": "Procurement",
+"slug": "procurement",
+"category": "Procurement",
+"definition": "Obtaining products, services or results from outside the project team.",
+"example": "The team procures cloud hosting and an external penetration testing service.",
+"related": [
+"make-or-buy-analysis",
+"statement-of-work-sow",
+"contract-types"
+]
+},
+{
+"term": "Product Backlog",
+"slug": "product-backlog",
+"category": "Agile",
+"definition": "An ordered list of everything that might be needed in the product. It is the single source of work for the Scrum team.",
+"example": "New feature requests go into the product backlog for the product owner to prioritize.",
+"related": [
+"product-owner",
+"backlog-refinement",
+"user-story"
+]
+},
+{
+"term": "Product Owner",
+"slug": "product-owner",
+"category": "Agile",
+"definition": "The Scrum role accountable for maximizing the value of the product, mainly by managing and ordering the product backlog.",
+"example": "The product owner moves the security fix to the top of the backlog.",
+"related": [
+"product-backlog",
+"scrum"
+]
+},
+{
+"term": "Program",
+"slug": "program",
+"category": "Fundamentals",
+"definition": "A group of related projects and activities managed in a coordinated way to obtain benefits that would not be available by managing them separately.",
+"example": "A digital transformation program might coordinate a CRM project, a data warehouse project and a training project.",
+"related": [
+"project",
+"portfolio",
+"benefits-realization"
+]
+},
+{
+"term": "Progressive Elaboration",
+"slug": "progressive-elaboration",
+"category": "Fundamentals",
+"definition": "Continuously improving and detailing the plan as more specific information and better estimates become available.",
+"example": "Cost estimates move from ±50% at initiation to ±10% after design.",
+"related": [
+"rolling-wave-planning"
+]
+},
+{
+"term": "Project",
+"slug": "project",
+"category": "Fundamentals",
+"definition": "A temporary endeavour undertaken to create a unique product, service or result. It has a defined start and end, and it ends when its objectives are met or it is stopped.",
+"example": "Building a new customer portal is a project; running the help desk every day is operations.",
+"related": [
+"operations",
+"program",
+"portfolio"
+]
+},
+{
+"term": "Project Charter",
+"slug": "project-charter",
+"category": "Integration",
+"definition": "A document issued by the sponsor that formally authorizes the project and gives the project manager authority to use organizational resources. It states the purpose, high-level objectives, risks and budget.",
+"example": "Work on the data migration starts only after the sponsor signs the project charter.",
+"related": [
+"sponsor",
+"business-case",
+"stakeholder-register"
+]
+},
+{
+"term": "Project Closure",
+"slug": "project-closure",
+"category": "Integration",
+"definition": "The process of finalizing all activities, transferring the product, releasing resources, closing contracts and archiving project information.",
+"example": "At closure the team gets formal acceptance, closes the vendor contract and holds a final lessons learned session.",
+"related": [
+"lessons-learned",
+"transition-plan",
+"acceptance-criteria"
+]
+},
+{
+"term": "Project Life Cycle",
+"slug": "project-life-cycle",
+"category": "Fundamentals",
+"definition": "The series of phases a project passes through from start to completion. Life cycles can be predictive, iterative, incremental, adaptive or hybrid.",
+"example": "A predictive life cycle might run initiation, planning, execution, testing and closing.",
+"related": [
+"predictive-approach",
+"agile",
+"hybrid-approach"
+]
+},
+{
+"term": "Project Management Plan",
+"slug": "project-management-plan",
+"category": "Integration",
+"definition": "The document that describes how the project will be executed, monitored, controlled and closed. It combines the subsidiary plans and the scope, schedule and cost baselines.",
+"example": "The project management plan explains how changes are approved and how often status reports are sent.",
+"related": [
+"baseline",
+"change-control",
+"communications-management-plan"
+]
+},
+{
+"term": "Project Manager",
+"slug": "project-manager",
+"category": "Fundamentals",
+"definition": "The person assigned by the performing organization to lead the team responsible for achieving the project objectives.",
+"example": "The project manager coordinates the team, manages risks and reports progress to the sponsor.",
+"related": [
+"sponsor",
+"servant-leadership",
+"pmo"
+]
+},
+{
+"term": "Push Communication",
+"slug": "push-communication",
+"category": "Communications",
+"definition": "Information sent to specific recipients, such as emails or reports. Pull communication is accessed by people when needed; interactive communication is two-way.",
+"example": "The weekly status email is push communication; the project wiki is pull.",
+"related": [
+"communications-management-plan"
+]
+},
+{
+"term": "Qualitative Risk Analysis",
+"slug": "qualitative-risk-analysis",
+"category": "Risk",
+"definition": "Prioritizing risks by assessing their probability and impact, usually on a scale, without detailed numbers.",
+"example": "The team rates each risk 1 to 5 for probability and impact.",
+"related": [
+"quantitative-risk-analysis",
+"probability-and-impact-matrix"
+]
+},
+{
+"term": "Quality",
+"slug": "quality",
+"category": "Quality",
+"definition": "The degree to which a set of characteristics fulfils requirements. Quality is planned and built in, not inspected in.",
+"example": "A report that shows correct totals and loads in under 3 seconds meets its quality requirements.",
+"related": [
+"grade",
+"cost-of-quality-coq",
+"control-quality"
+]
+},
+{
+"term": "Quantitative Risk Analysis",
+"slug": "quantitative-risk-analysis",
+"category": "Risk",
+"definition": "Numerically analysing the combined effect of risks on project objectives, using techniques such as EMV, decision trees and Monte Carlo simulation.",
+"example": "Monte Carlo shows only a 35% chance of finishing by the target date.",
+"related": [
+"monte-carlo-simulation",
+"expected-monetary-value-emv",
+"decision-tree"
+]
+},
+{
+"term": "RACI Matrix",
+"slug": "raci-matrix",
+"category": "Resources",
+"definition": "A responsibility assignment matrix that shows who is Responsible, Accountable, Consulted and Informed for each task or deliverable. Each item should have one Accountable person.",
+"example": "The RACI shows the analyst is Responsible for requirements and the sponsor is Accountable for sign-off.",
+"related": [
+"responsibility-assignment-matrix-ram",
+"stakeholder-register"
+]
+},
+{
+"term": "RAG Status",
+"slug": "rag-status",
+"category": "Communications",
+"definition": "A red, amber or green indicator that summarizes the health of a project or area against agreed thresholds.",
+"example": "Green means on plan, amber needs attention and red needs a decision from the sponsor.",
+"related": [
+"status-report",
+"key-performance-indicator-kpi"
+]
+},
+{
+"term": "RAID Log",
+"slug": "raid-log",
+"category": "Risk",
+"definition": "A log that tracks Risks, Assumptions, Issues and Dependencies (or Decisions) in one place.",
+"example": "The RAID log shows the open dependency on the network upgrade.",
+"related": [
+"risk-register",
+"issue-log",
+"assumption"
+]
+},
+{
+"term": "Request for Proposal (RFP)",
+"slug": "request-for-proposal-rfp",
+"category": "Procurement",
+"definition": "A document asking potential sellers to propose solutions, used when the buyer needs ideas or complex services. RFQ (quotation) is used when price is the main factor; RFI asks for information.",
+"example": "The ministry issues an RFP for a case management system.",
+"related": [
+"statement-of-work-sow",
+"source-selection-criteria"
+]
+},
+{
+"term": "Requirements",
+"slug": "requirements",
+"category": "Business Analysis",
+"definition": "Conditions or capabilities that a product, service or result must have to meet a business need.",
+"example": "'The system must let managers approve timesheets on a phone' is a requirement.",
+"related": [
+"requirements-traceability-matrix",
+"user-story",
+"acceptance-criteria"
+]
+},
+{
+"term": "Requirements Traceability Matrix",
+"slug": "requirements-traceability-matrix",
+"category": "Business Analysis",
+"definition": "A grid that links each requirement to its business need, design, tests and deliverables, so every requirement is delivered and tested.",
+"example": "The matrix shows requirement R-12 is covered by test cases T-31 and T-32.",
+"related": [
+"requirements",
+"acceptance-criteria"
+]
+},
+{
+"term": "Requirements Workshop",
+"slug": "requirements-workshop",
+"category": "Business Analysis",
+"definition": "A facilitated session that brings key stakeholders together to define requirements quickly and resolve differences.",
+"example": "A two-day workshop agrees the approval rules for all departments.",
+"related": [
+"elicitation",
+"joint-application-design-jad"
+]
+},
+{
+"term": "Residual Risk",
+"slug": "residual-risk",
+"category": "Risk",
+"definition": "The risk that remains after a response has been implemented. Secondary risk is a new risk created by the response.",
+"example": "After adding a backup supplier, a small residual risk of delay remains.",
+"related": [
+"risk-response-strategies"
+]
+},
+{
+"term": "Resource Histogram",
+"slug": "resource-histogram",
+"category": "Resources",
+"definition": "A bar chart showing the amount of a resource needed or scheduled over time, used to spot over-allocation.",
+"example": "The histogram shows the tester is needed 60 hours a week in August.",
+"related": [
+"resource-leveling"
+]
+},
+{
+"term": "Resource Leveling",
+"slug": "resource-leveling",
+"category": "Schedule",
+"definition": "Adjusting start and finish dates to balance resource demand with supply. It can lengthen the critical path.",
+"example": "The analyst is booked 150% in May, so two of her activities are moved to June.",
+"related": [
+"resource-smoothing",
+"resource-histogram"
+]
+},
+{
+"term": "Resource Smoothing",
+"slug": "resource-smoothing",
+"category": "Schedule",
+"definition": "Adjusting activities so resource needs stay within limits without changing the critical path, using only available float.",
+"example": "Two non-critical tasks are shifted within their float to avoid weekend work.",
+"related": [
+"resource-leveling",
+"float-slack"
+]
+},
+{
+"term": "Responsibility Assignment Matrix (RAM)",
+"slug": "responsibility-assignment-matrix-ram",
+"category": "Resources",
+"definition": "A grid that shows the project resources assigned to each work package. RACI is the most common type.",
+"example": "The RAM maps each WBS item to the team members working on it.",
+"related": [
+"raci-matrix",
+"work-breakdown-structure-wbs"
+]
+},
+{
+"term": "Retrospective",
+"slug": "retrospective",
+"category": "Agile",
+"definition": "The event at the end of an iteration where the team inspects how it worked and agrees improvements.",
+"example": "The retrospective agrees to start pairing on complex stories next sprint.",
+"related": [
+"continuous-improvement",
+"sprint"
+]
+},
+{
+"term": "Return on Investment (ROI)",
+"slug": "return-on-investment-roi",
+"category": "Business Case",
+"definition": "The net benefit of an investment as a percentage of its cost: (total benefits − cost) ÷ cost.",
+"example": "Benefits of $800,000 on a $500,000 cost give an ROI of 60%.",
+"related": [
+"net-present-value-npv",
+"payback-period"
+]
+},
+{
+"term": "Risk",
+"slug": "risk",
+"category": "Risk",
+"definition": "An uncertain event or condition that, if it occurs, has a positive or negative effect on one or more project objectives.",
+"example": "There is a 40% chance the vendor delivers late, which would delay testing by three weeks.",
+"related": [
+"issue",
+"risk-register",
+"opportunity"
+]
+},
+{
+"term": "Risk Appetite",
+"slug": "risk-appetite",
+"category": "Risk",
+"definition": "The degree of uncertainty an organization is willing to accept in anticipation of a reward. Risk threshold is the measurable level of exposure at which a response is required.",
+"example": "The bank has a low risk appetite for data privacy and will not accept any risk above medium.",
+"related": [
+"risk"
+]
+},
+{
+"term": "Risk Owner",
+"slug": "risk-owner",
+"category": "Risk",
+"definition": "The person responsible for monitoring a risk and carrying out its response plan.",
+"example": "The procurement lead owns the supplier delay risk.",
+"related": [
+"risk-register"
+]
+},
+{
+"term": "Risk Register",
+"slug": "risk-register",
+"category": "Risk",
+"definition": "A document listing identified risks with their causes, probability, impact, owners, triggers and planned responses.",
+"example": "Each risk in the register has an owner and is reviewed at the weekly meeting.",
+"related": [
+"risk",
+"raid-log",
+"risk-owner"
+]
+},
+{
+"term": "Risk Response Strategies",
+"slug": "risk-response-strategies",
+"category": "Risk",
+"definition": "Ways to respond to risks. For threats: avoid, transfer, mitigate, accept or escalate. For opportunities: exploit, share, enhance, accept or escalate.",
+"example": "Buying insurance transfers the risk; adding a backup supplier mitigates it.",
+"related": [
+"risk",
+"opportunity",
+"workaround"
+]
+},
+{
+"term": "Rolling Wave Planning",
+"slug": "rolling-wave-planning",
+"category": "Schedule",
+"definition": "Planning near-term work in detail while keeping future work at a higher level, refined as more is known.",
+"example": "Sprint 1 to 3 are planned in detail; later releases are only outlined.",
+"related": [
+"progressive-elaboration",
+"decomposition"
+]
+},
+{
+"term": "Root Cause Analysis",
+"slug": "root-cause-analysis",
+"category": "Quality",
+"definition": "A technique for finding the underlying cause of a problem rather than its symptoms, often with the 5 Whys or a fishbone diagram.",
+"example": "Asking 'why' five times shows that defects come from unclear acceptance criteria.",
+"related": [
+"fishbone-diagram",
+"five-whys",
+"pareto-chart"
+]
+},
+{
+"term": "Salience Model",
+"slug": "salience-model",
+"category": "Stakeholders",
+"definition": "A stakeholder classification by power, urgency and legitimacy.",
+"example": "A regulator with power and legitimacy but low urgency is classed as a dominant stakeholder until a deadline approaches.",
+"related": [
+"power-interest-grid"
+]
+},
+{
+"term": "Scaled Agile",
+"slug": "scaled-agile",
+"category": "Agile",
+"definition": "Frameworks for applying agile across many teams, such as SAFe, LeSS and Disciplined Agile.",
+"example": "Ten teams align their sprints in a SAFe Agile Release Train.",
+"related": [
+"agile",
+"scrum"
+]
+},
+{
+"term": "Schedule Baseline",
+"slug": "schedule-baseline",
+"category": "Schedule",
+"definition": "The approved version of the schedule model, used to measure schedule performance.",
+"example": "Go-live in the schedule baseline is September 30; the forecast now shows October 14.",
+"related": [
+"baseline",
+"schedule-variance-sv"
+]
+},
+{
+"term": "Schedule Performance Index (SPI)",
+"slug": "schedule-performance-index-spi",
+"category": "Cost",
+"definition": "A measure of schedule efficiency: SPI = EV ÷ PV. Below 1 means behind schedule.",
+"example": "SPI = 170,000 ÷ 187,500 = 0.91.",
+"related": [
+"schedule-variance-sv",
+"cost-performance-index-cpi"
+]
+},
+{
+"term": "Schedule Variance (SV)",
+"slug": "schedule-variance-sv",
+"category": "Cost",
+"definition": "The difference between earned value and planned value: SV = EV − PV. A negative SV means behind schedule.",
+"example": "EV $170,000 − PV $187,500 = SV of −$17,500 (behind schedule).",
+"related": [
+"schedule-performance-index-spi",
+"planned-value-pv"
+]
+},
+{
+"term": "Scope",
+"slug": "scope",
+"category": "Scope",
+"definition": "The sum of the products, services and results to be provided by a project. Product scope describes features; project scope describes the work needed to deliver them.",
+"example": "The project scope includes data migration but excludes training the sales team.",
+"related": [
+"scope-statement",
+"work-breakdown-structure-wbs",
+"scope-creep"
+]
+},
+{
+"term": "Scope Baseline",
+"slug": "scope-baseline",
+"category": "Scope",
+"definition": "The approved scope statement, work breakdown structure and WBS dictionary, used to compare actual scope against plan.",
+"example": "Any new deliverable not in the scope baseline needs an approved change request.",
+"related": [
+"work-breakdown-structure-wbs",
+"wbs-dictionary",
+"baseline"
+]
+},
+{
+"term": "Scope Creep",
+"slug": "scope-creep",
+"category": "Scope",
+"definition": "The uncontrolled expansion of scope without adjustments to time, cost and resources.",
+"example": "Small 'quick' feature requests accepted in hallway conversations add six weeks to the project.",
+"related": [
+"gold-plating",
+"change-control",
+"scope"
+]
+},
+{
+"term": "Scope Statement",
+"slug": "scope-statement",
+"category": "Scope",
+"definition": "A description of the project scope, major deliverables, assumptions, constraints and exclusions.",
+"example": "The scope statement lists what is out of scope, such as integrations with the legacy billing system.",
+"related": [
+"scope",
+"scope-baseline",
+"acceptance-criteria"
+]
+},
+{
+"term": "Scrum",
+"slug": "scrum",
+"category": "Agile",
+"definition": "An agile framework in which a small team delivers value in fixed-length sprints, with three accountabilities (Product Owner, Scrum Master, Developers), five events and three artifacts.",
+"example": "The team runs two-week sprints with planning, daily scrums, a review and a retrospective.",
+"related": [
+"sprint",
+"product-owner",
+"scrum-master"
+]
+},
+{
+"term": "Scrum Master",
+"slug": "scrum-master",
+"category": "Agile",
+"definition": "The Scrum role accountable for the team's effectiveness: coaching Scrum, removing impediments and serving the team and organization.",
+"example": "The Scrum Master arranges a workshop to help the team split large stories.",
+"related": [
+"servant-leadership",
+"impediment",
+"scrum"
+]
+},
+{
+"term": "Servant Leadership",
+"slug": "servant-leadership",
+"category": "Resources",
+"definition": "A leadership style focused on serving the team: removing impediments, coaching and enabling people to do their best work.",
+"example": "The Scrum Master clears an access problem so developers can keep working.",
+"related": [
+"scrum-master",
+"emotional-intelligence"
+]
+},
+{
+"term": "Service Level Agreement (SLA)",
+"slug": "service-level-agreement-sla",
+"category": "Procurement",
+"definition": "An agreement that defines the expected level of service, such as response times and availability, often with penalties.",
+"example": "The SLA requires critical incidents to be answered within one hour.",
+"related": [
+"procurement",
+"key-performance-indicator-kpi"
+]
+},
+{
+"term": "Source Selection Criteria",
+"slug": "source-selection-criteria",
+"category": "Procurement",
+"definition": "The criteria used to rate and select seller proposals, such as technical approach, experience, price and risk.",
+"example": "Proposals are scored 40% on technical fit, 30% on price and 30% on experience.",
+"related": [
+"request-for-proposal-rfp"
+]
+},
+{
+"term": "Spike",
+"slug": "spike",
+"category": "Agile",
+"definition": "A time-boxed piece of research or experiment to reduce uncertainty before estimating or building.",
+"example": "The team runs a two-day spike to test whether the API can handle the load.",
+"related": [
+"story-points",
+"timeboxing"
+]
+},
+{
+"term": "Sponsor",
+"slug": "sponsor",
+"category": "Stakeholders",
+"definition": "The person or group who provides resources and support for the project and is accountable for enabling its success, including the business case and benefits.",
+"example": "The VP of Sales sponsors the CRM upgrade and secures funding from the executive team.",
+"related": [
+"project-charter",
+"steering-committee",
+"business-case"
+]
+},
+{
+"term": "Sprint",
+"slug": "sprint",
+"category": "Agile",
+"definition": "A fixed time-box, usually one to four weeks, in which a Scrum team creates a usable increment.",
+"example": "Sprint 7 runs from March 3 to March 14 and ends with a sprint review.",
+"related": [
+"sprint-planning",
+"increment",
+"velocity"
+]
+},
+{
+"term": "Sprint Backlog",
+"slug": "sprint-backlog",
+"category": "Agile",
+"definition": "The sprint goal, the backlog items selected for the sprint and the plan for delivering them.",
+"example": "The sprint backlog has eight stories and their tasks on the team board.",
+"related": [
+"sprint-planning",
+"product-backlog"
+]
+},
+{
+"term": "Sprint Goal",
+"slug": "sprint-goal",
+"category": "Agile",
+"definition": "A single objective for the sprint that gives the team focus and flexibility in the work they complete.",
+"example": "Sprint goal: 'Managers can approve timesheets on mobile.'",
+"related": [
+"sprint-planning",
+"sprint"
+]
+},
+{
+"term": "Sprint Planning",
+"slug": "sprint-planning",
+"category": "Agile",
+"definition": "The Scrum event that starts a sprint, where the team agrees the sprint goal and selects backlog items to deliver.",
+"example": "In sprint planning the team commits to the goal 'customers can reset their own passwords'.",
+"related": [
+"sprint",
+"sprint-backlog",
+"sprint-goal"
+]
+},
+{
+"term": "Sprint Review",
+"slug": "sprint-review",
+"category": "Agile",
+"definition": "The Scrum event near the end of a sprint where the team shows what it built to stakeholders and adapts the product backlog based on feedback.",
+"example": "At the review, users ask for a filter, which becomes a new backlog item.",
+"related": [
+"sprint",
+"product-backlog"
+]
+},
+{
+"term": "Stakeholder",
+"slug": "stakeholder",
+"category": "Stakeholders",
+"definition": "An individual, group or organization that may affect, be affected by, or perceive itself to be affected by a project.",
+"example": "Customers, the finance team and a regulator are all stakeholders of the billing project.",
+"related": [
+"stakeholder-register",
+"stakeholder-engagement",
+"power-interest-grid"
+]
+},
+{
+"term": "Stakeholder Engagement",
+"slug": "stakeholder-engagement",
+"category": "Stakeholders",
+"definition": "Working with stakeholders to meet their needs, address issues and encourage appropriate involvement throughout the project.",
+"example": "The team runs fortnightly demos so users shape the product before release.",
+"related": [
+"stakeholder-engagement-assessment-matrix",
+"communications-management-plan"
+]
+},
+{
+"term": "Stakeholder Engagement Assessment Matrix",
+"slug": "stakeholder-engagement-assessment-matrix",
+"category": "Stakeholders",
+"definition": "A matrix comparing each stakeholder's current and desired engagement level: unaware, resistant, neutral, supportive or leading.",
+"example": "The sales director is resistant now; the goal is supportive by the pilot.",
+"related": [
+"stakeholder-engagement",
+"stakeholder-register"
+]
+},
+{
+"term": "Stakeholder Register",
+"slug": "stakeholder-register",
+"category": "Stakeholders",
+"definition": "A document that identifies stakeholders and records their role, interests, influence, expectations and engagement level.",
+"example": "The register shows the union representative has high influence and is currently resistant.",
+"related": [
+"stakeholder",
+"power-interest-grid"
+]
+},
+{
+"term": "Standard Deviation",
+"slug": "standard-deviation",
+"category": "Schedule",
+"definition": "A measure of how spread out values are around the average. In PERT, the standard deviation of an activity is (P − O) ÷ 6.",
+"example": "With O = 4 and P = 16 days, σ = (16 − 4) ÷ 6 = 2 days, so about 68% of outcomes fall within ±2 days of the mean.",
+"related": [
+"pert",
+"three-point-estimate",
+"monte-carlo-simulation"
+]
+},
+{
+"term": "Statement of Work (SOW)",
+"slug": "statement-of-work-sow",
+"category": "Procurement",
+"definition": "A narrative description of the products, services or results to be delivered by a supplier.",
+"example": "The SOW states the vendor will migrate 2 million records and provide two weeks of support.",
+"related": [
+"request-for-proposal-rfp",
+"contract-types"
+]
+},
+{
+"term": "Status Report",
+"slug": "status-report",
+"category": "Communications",
+"definition": "A regular report on project progress, usually covering schedule, cost, risks, issues and next steps, often with RAG status.",
+"example": "The status report shows the project as amber because SPI is 0.91.",
+"related": [
+"rag-status",
+"communications-management-plan"
+]
+},
+{
+"term": "Steering Committee",
+"slug": "steering-committee",
+"category": "Governance",
+"definition": "A group of senior stakeholders who give direction, make key decisions and resolve escalated issues for a project or program.",
+"example": "The steering committee meets monthly to approve the next phase and decide on major change requests.",
+"related": [
+"governance",
+"sponsor",
+"escalation"
+]
+},
+{
+"term": "Story Points",
+"slug": "story-points",
+"category": "Agile",
+"definition": "A relative measure of the effort, complexity and uncertainty of a backlog item, often on a Fibonacci-like scale.",
+"example": "The team sizes the login story at 3 points and the payment story at 8.",
+"related": [
+"velocity",
+"planning-poker"
+]
+},
+{
+"term": "Sunk Cost",
+"slug": "sunk-cost",
+"category": "Business Case",
+"definition": "Money already spent that cannot be recovered. It should not drive decisions about future investment.",
+"example": "The $300,000 already spent should not be the reason to continue a failing project.",
+"related": [
+"business-case"
+]
+},
+{
+"term": "SWOT Analysis",
+"slug": "swot-analysis",
+"category": "Business Analysis",
+"definition": "A strategic analysis of internal Strengths and Weaknesses and external Opportunities and Threats.",
+"example": "The SWOT shows a strong brand (strength) but slow digital services (weakness).",
+"related": [
+"business-case",
+"gap-analysis"
+]
+},
+{
+"term": "Tailoring",
+"slug": "tailoring",
+"category": "Fundamentals",
+"definition": "Deliberately adapting the project approach, governance and processes to suit the project's context, size and complexity.",
+"example": "For a small internal project, the team tailors the process by using a one-page charter and a simple risk list.",
+"related": [
+"hybrid-approach",
+"project-life-cycle"
+]
+},
+{
+"term": "Team Charter",
+"slug": "team-charter",
+"category": "Resources",
+"definition": "A document that records the team's values, agreements and operating guidelines, such as communication norms and decision making.",
+"example": "The team charter says core hours are 10 to 3 and decisions are made by consensus.",
+"related": [
+"tuckman-ladder",
+"ground-rules"
+]
+},
+{
+"term": "Three-Point Estimate",
+"slug": "three-point-estimate",
+"category": "Schedule",
+"definition": "An estimate based on optimistic, most likely and pessimistic values to reflect uncertainty. It can use a triangular average or the PERT (beta) formula.",
+"example": "The triangular estimate for O = 4, M = 6, P = 14 is (4 + 6 + 14) ÷ 3 = 8 days.",
+"related": [
+"pert",
+"analogous-estimating"
+]
+},
+{
+"term": "Timeboxing",
+"slug": "timeboxing",
+"category": "Agile",
+"definition": "Setting a fixed maximum time for an activity, such as a sprint or meeting.",
+"example": "The daily scrum is timeboxed to 15 minutes.",
+"related": [
+"sprint",
+"daily-scrum"
+]
+},
+{
+"term": "To-Complete Performance Index (TCPI)",
+"slug": "to-complete-performance-index-tcpi",
+"category": "Cost",
+"definition": "The cost performance needed on the remaining work to meet a target: TCPI = (BAC − EV) ÷ (BAC − AC).",
+"example": "TCPI = (250,000 − 170,000) ÷ (250,000 − 182,000) = 1.18, which is hard to achieve.",
+"related": [
+"cost-performance-index-cpi",
+"estimate-at-completion-eac"
+]
+},
+{
+"term": "Transition Plan",
+"slug": "transition-plan",
+"category": "Integration",
+"definition": "The plan for handing over the project's product to operations or the customer, including training, support and documentation.",
+"example": "The transition plan schedules training for the support team and a two-week hypercare period.",
+"related": [
+"operations",
+"project-closure"
+]
+},
+{
+"term": "Trigger",
+"slug": "trigger",
+"category": "Risk",
+"definition": "An event or condition that indicates a risk is about to occur or has occurred.",
+"example": "The vendor missing its design milestone is a trigger for the late-delivery risk.",
+"related": [
+"risk-register",
+"risk-owner"
+]
+},
+{
+"term": "Triple Constraint",
+"slug": "triple-constraint",
+"category": "Fundamentals",
+"definition": "The idea that scope, time and cost are linked, so changing one affects the others, with quality in the middle. Modern practice adds risk, resources and value.",
+"example": "Adding features without more time or budget usually puts quality at risk.",
+"related": [
+"constraint",
+"scope-creep"
+]
+},
+{
+"term": "Tuckman Ladder",
+"slug": "tuckman-ladder",
+"category": "Resources",
+"definition": "A model of team development stages: forming, storming, norming, performing and adjourning.",
+"example": "Arguments over coding standards in week three are a normal part of the storming stage.",
+"related": [
+"team-charter",
+"conflict-management"
+]
+},
+{
+"term": "Use Case",
+"slug": "use-case",
+"category": "Business Analysis",
+"definition": "A description of how an actor interacts with a system to achieve a goal, including the main flow and alternative flows.",
+"example": "Use case 'Submit expense': the employee enters details, attaches a receipt and submits.",
+"related": [
+"user-story",
+"functional-requirement"
+]
+},
+{
+"term": "User Acceptance Testing (UAT)",
+"slug": "user-acceptance-testing-uat",
+"category": "Business Analysis",
+"definition": "Testing by business users to confirm a solution meets their needs before it goes live.",
+"example": "Finance users run UAT on the month-end process before sign-off.",
+"related": [
+"acceptance-criteria",
+"validate-scope"
+]
+},
+{
+"term": "User Story",
+"slug": "user-story",
+"category": "Agile",
+"definition": "A short description of a feature from the user's point of view, often written: As a [role], I want [goal] so that [benefit].",
+"example": "As a manager, I want to approve timesheets on my phone so that I can approve them while travelling.",
+"related": [
+"invest",
+"acceptance-criteria",
+"epic"
+]
+},
+{
+"term": "Validate Scope",
+"slug": "validate-scope",
+"category": "Scope",
+"definition": "The process of formally accepting completed deliverables with the customer or sponsor.",
+"example": "The client signs off the payroll module after reviewing it against the acceptance criteria.",
+"related": [
+"acceptance-criteria",
+"control-quality"
+]
+},
+{
+"term": "Value",
+"slug": "value",
+"category": "Fundamentals",
+"definition": "The worth, importance or usefulness of something to stakeholders. Projects exist to deliver value, not only outputs.",
+"example": "The new portal's value is faster service for customers and lower call volume.",
+"related": [
+"benefits-realization",
+"business-case"
+]
+},
+{
+"term": "Value Stream Mapping",
+"slug": "value-stream-mapping",
+"category": "Agile",
+"definition": "A lean technique that maps every step needed to deliver a product, to find delays and waste.",
+"example": "The map shows code waits 4 days for manual deployment.",
+"related": [
+"lean"
+]
+},
+{
+"term": "Variance at Completion (VAC)",
+"slug": "variance-at-completion-vac",
+"category": "Cost",
+"definition": "The projected budget surplus or deficit at the end: VAC = BAC − EAC.",
+"example": "BAC $250,000 − EAC $267,650 = VAC of about −$17,650.",
+"related": [
+"budget-at-completion-bac",
+"estimate-at-completion-eac"
+]
+},
+{
+"term": "Velocity",
+"slug": "velocity",
+"category": "Agile",
+"definition": "The amount of work, usually in story points, a team completes in a sprint. Teams use average velocity to forecast.",
+"example": "With an average velocity of 30 points, a 240-point backlog needs about 8 sprints.",
+"related": [
+"story-points",
+"burndown-chart"
+]
+},
+{
+"term": "Virtual Team",
+"slug": "virtual-team",
+"category": "Resources",
+"definition": "A team that works together with little or no face-to-face time, relying on online tools.",
+"example": "The team spans Regina, Toronto and Manila and meets on video calls.",
+"related": [
+"communications-management-plan"
+]
+},
+{
+"term": "WBS Dictionary",
+"slug": "wbs-dictionary",
+"category": "Scope",
+"definition": "A document that gives detailed information about each component of the WBS, such as description, owner, acceptance criteria and estimates.",
+"example": "The WBS dictionary explains that 'data cleansing' covers duplicate removal and address standardization.",
+"related": [
+"work-breakdown-structure-wbs",
+"scope-baseline"
+]
+},
+{
+"term": "Work Breakdown Structure (WBS)",
+"slug": "work-breakdown-structure-wbs",
+"category": "Scope",
+"definition": "A hierarchical decomposition of the total scope of work into smaller, manageable deliverables called work packages.",
+"example": "The WBS splits the portal into design, build, testing and deployment, each broken down further.",
+"related": [
+"work-package",
+"wbs-dictionary",
+"decomposition"
+]
+},
+{
+"term": "Work in Progress (WIP) Limit",
+"slug": "work-in-progress-wip-limit",
+"category": "Agile",
+"definition": "A cap on the number of items allowed in a workflow stage at one time, to reduce multitasking and improve flow.",
+"example": "With a WIP limit of 3 in testing, developers help test before starting new work.",
+"related": [
+"kanban",
+"cycle-time"
+]
+},
+{
+"term": "Work Package",
+"slug": "work-package",
+"category": "Scope",
+"definition": "The lowest level of the WBS, where cost and duration can be estimated and managed.",
+"example": "'Configure user roles' is a work package estimated at 40 hours.",
+"related": [
+"work-breakdown-structure-wbs",
+"activity"
+]
+},
+{
+"term": "Workaround",
+"slug": "workaround",
+"category": "Risk",
+"definition": "An unplanned response to a risk that has occurred, usually an issue that was not identified or planned for.",
+"example": "When the server failed, the team used laptops for testing as a workaround.",
+"related": [
+"issue",
+"risk-response-strategies"
+]
+}
+]

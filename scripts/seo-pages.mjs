@@ -20,7 +20,14 @@ const articleSources={
   'resources/ai-super-coworker-project-manager-business-analyst':'src/app/pages/ai-coworker-article/ai-coworker-article.component.ts',
   'resources/21-causes-of-project-failure':'src/app/pages/project-failure-article/project-failure-article.component.ts',
   'resources/pmp-study-guide-8-week-plan':'src/app/pages/pmp-guides/pmp-study-guide.component.ts',
-  'resources/best-free-pmp-practice-exams':'src/app/pages/pmp-guides/free-pmp-exams.component.ts'
+  'resources/best-free-pmp-practice-exams':'src/app/pages/pmp-guides/free-pmp-exams.component.ts',
+  'pm-calculators/earned-value-calculator':'src/app/pages/calculators/evm-calculator.component.ts',
+  'pm-calculators/pert-three-point-estimate-calculator':'src/app/pages/calculators/pert-calculator.component.ts',
+  'pm-calculators/risk-emv-calculator':'src/app/pages/calculators/emv-calculator.component.ts',
+  'pm-calculators/npv-roi-payback-calculator':'src/app/pages/calculators/npv-calculator.component.ts',
+  'pm-calculators/monte-carlo-schedule-simulator':'src/app/pages/calculators/monte-carlo.component.ts',
+  'pm-calculators/sprint-capacity-velocity-calculator':'src/app/pages/calculators/sprint-capacity.component.ts',
+  'pm-calculators/communication-channels-calculator':'src/app/pages/calculators/channels-calculator.component.ts'
 };
 
 // Removes Angular-only syntax (@for/@if blocks, {{ }} bindings, [prop]/(event) attributes) and keeps plain HTML.
@@ -56,10 +63,37 @@ function breadcrumbs(path){
   if(!path)return null;
   const parts=path.split('/');const items=[{name:'Home',url:`${SITE}/`}];
   parts.forEach((_,i)=>{const p=parts.slice(0,i+1).join('/');if(pages[p])items.push({name:pageName(p),url:`${SITE}/${p}`});});
+  const term=path.startsWith('pm-glossary/')&&termBySlug.get(path.slice(12));
+  if(term)items.push({name:term.term,url:`${SITE}/${path}`});
   return {'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:items.map((it,i)=>({'@type':'ListItem',position:i+1,name:it.name,item:it.url}))};
 }
 const ldScript=(id,data)=>`  <script type="application/ld+json" id="${id}">${JSON.stringify(data).replace(/</g,'\\u003c')}</script>\n  </head>`;
 
+// Glossary: one generated page per term (src/app/pages/glossary/glossary-data.json), plus lists for the hub pages.
+const glossary=JSON.parse(readFileSync(join(root,'src/app/pages/glossary/glossary-data.json'),'utf8'));
+const termBySlug=new Map(glossary.map(t=>[t.slug,t]));
+// Same rules as termSeo() in src/app/pages/glossary/glossary.ts.
+function termSeo(t){
+  const short=t.term.replace(/\s*\([^)]*\)\s*$/,'');
+  const title=`What Is ${t.term}? Definition & Example | PMPORT`;
+  const desc=`${short}: ${t.definition}`.replace(/\s+/g,' ');
+  return {title:title.length<=70?title:`${t.term}: Definition | PMPORT`,description:desc.length<=158?desc:desc.slice(0,desc.lastIndexOf(' ',154))+'…'};
+}
+const customHtml={};const extraHead={};
+for(const [i,t] of glossary.entries()){
+  const path=`pm-glossary/${t.slug}`;
+  const rel=t.related.map(s=>termBySlug.get(s)).filter(Boolean).map(r=>`<li><a href="/pm-glossary/${r.slug}">${escText(r.term)}</a></li>`).join('');
+  const prev=glossary[i-1],next=glossary[i+1];
+  customHtml[path]=`<p class="seo-eyebrow">${escText(t.category)} · PM Glossary</p><h1>${escText(t.term)}</h1><p>${escText(t.definition)}</p><h2>Example</h2><p>${escText(t.example)}</p>`+
+    (rel?`<h2>Related terms</h2><ul>${rel}</ul>`:'')+`<p>${prev?`<a href="/pm-glossary/${prev.slug}">‹ ${escText(prev.term)}</a> · `:''}<a href="/pm-glossary">All glossary terms</a>${next?` · <a href="/pm-glossary/${next.slug}">${escText(next.term)} ›</a>`:''}</p>`;
+  extraHead[path]={'@context':'https://schema.org','@type':'DefinedTerm',name:t.term,description:t.definition,url:`${SITE}/${path}`,inDefinedTermSet:{'@type':'DefinedTermSet',name:'PMPORT Project Management Glossary',url:`${SITE}/pm-glossary`}};
+}
+const byLetter={};for(const t of glossary){(byLetter[t.term[0].toUpperCase()]??=[]).push(t);}
+customHtml['pm-glossary']=`<p class="seo-eyebrow">PM Glossary</p><h1>Project management glossary</h1><p>${glossary.length} project management, agile, risk, cost and business analysis terms explained in plain English, each with a real-world example.</p>`+
+  Object.entries(byLetter).map(([l,ts])=>`<h2>${l}</h2><ul>${ts.map(t=>`<li><a href="/pm-glossary/${t.slug}">${escText(t.term)}</a>: ${escText(t.definition.split(/(?<=\.)\s/)[0])}</li>`).join('')}</ul>`).join('');
+customHtml['pm-calculators']=`<p class="seo-eyebrow">PM Calculators</p><h1>Free project management calculators</h1><p>${escText(pages['pm-calculators'].description)}</p><ul>`+
+  Object.entries(pages).filter(([p])=>p.startsWith('pm-calculators/')).map(([p,pg])=>`<li><a href="/${p}">${escText(pg.title.replace(/ \| PMPORT$/,''))}</a>: ${escText(pg.description)}</li>`).join('')+'</ul>';
+function escText(v){return String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 const esc=s=>String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 
 // Main sections, linked (with a one-line summary) from every generated page so crawlers can find them.
@@ -70,6 +104,8 @@ const sections=[
   ['pm-tools','PM Artifacts Lab','Free browser tools: project charter, risk and stakeholder registers, earned value, process diagrams and PERT/CPM critical path.'],
   ['pm-learninglink','PM LearningLink','200 popular free YouTube channels and websites for project management, business analysis, data analytics and coding.'],
   ['pm-datalab','PM DataLab','Free graded practice in SQL, Excel, Power BI DAX, Python and status reporting, all on one sample project dataset.'],
+  ['pm-calculators','PM Calculators','Free earned value, PERT, risk EMV, NPV/ROI, Monte Carlo and sprint capacity calculators, each with formulas and a worked example.'],
+  ['pm-glossary','PM Glossary','More than 200 project management, agile and business analysis terms explained in plain English with examples.'],
   ['media','PMPortLive Videos','Short videos that explain one project management or business analysis concept at a time.'],
   ['pm-jobs-prep','PM JOBS Prep','Practical guidance and practice questions for project manager, PMO analyst and business analyst job interviews.'],
   ['pm-handaid','PM HandAid','A quick reference for everyday project management tasks, terms and techniques.'],
@@ -122,9 +158,10 @@ function render(path,page){
   }
   const crumbs=breadcrumbs(path);
   if(crumbs)html=html.replace('</head>',ldScript('seo-breadcrumb',crumbs));
+  if(extraHead[path])html=html.replace('</head>',ldScript('seo-term',extraHead[path]));
   const heading=page.title.replace(/ \| PMPORT$/,'').replace(/^PMPORT \| /,'');
   const links=sections.filter(([p])=>p!==path).map(([p,l,d])=>`<li><a href="/${p}">${esc(l)}</a>. ${esc(d)}</li>`).join('');
-  const article=staticArticleHtml(path);
+  const article=staticArticleHtml(path)||customHtml[path]||'';
   const intro=article||`<p class="seo-eyebrow">PMPORT</p><h1>${esc(heading)}</h1><p>${esc(page.description)}</p>${path===''?homeIntro:''}`;
   // Styles live in one <style> block (not inline attributes); the Angular app replaces this content once it starts.
   html=html.replace('</head>',`  <style>.seo-summary{max-width:900px;margin:auto;padding:3rem 1.25rem;font-family:Inter,Arial,sans-serif;color:#eaf3fc;line-height:1.7}.seo-summary p{color:#b1c3d7}.seo-summary .seo-eyebrow{color:#49cce1;letter-spacing:.15em;font-weight:800;font-size:.75rem}.seo-summary a{color:#8fe8f5}</style>\n  </head>`);
@@ -138,6 +175,11 @@ for(const [path,page] of Object.entries(pages)){
   mkdirSync(dirname(file),{recursive:true});
   writeFileSync(file,render(path,page));count++;
   if(!page.noindex)urls.push(`  <url><loc>${SITE}/${path}</loc><lastmod>${page.published||new Date().toISOString().slice(0,10)}</lastmod></url>`);
+}
+for(const t of glossary){
+  const path=`pm-glossary/${t.slug}`;const file=join(out,path,'index.html');
+  mkdirSync(dirname(file),{recursive:true});writeFileSync(file,render(path,termSeo(t)));count++;
+  urls.push(`  <url><loc>${SITE}/${path}</loc></url>`);
 }
 // The digital business card is a separate static page (public/card), so it is listed here by hand.
 urls.push(`  <url><loc>${SITE}/card</loc></url>`);

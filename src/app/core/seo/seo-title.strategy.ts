@@ -13,7 +13,17 @@ export class SeoTitleStrategy extends TitleStrategy{
 
   override updateTitle(snapshot:RouterStateSnapshot):void{
     const path=snapshot.url.split(/[?#]/)[0].replace(/^\/+|\/+$/g,'');
+    // Pages that set their own search details (e.g. glossary terms) call apply() themselves.
+    let route=snapshot.root;while(route.firstChild)route=route.firstChild;
+    if(route.data['seoCustom'])return;
     const page:SeoPage=SEO_PAGES[path]??{title:this.buildTitle(snapshot)??`${SITE_NAME} | Project Management, Learning & Practice`,description:SEO_PAGES[''].description,noindex:true};
+    this.apply(path,page);
+    this.setJsonLd('seo-term',null);
+    this.setBreadcrumbs(SEO_PAGES[path]?path:'');
+  }
+
+  /** Sets title, description, robots, social tags, canonical link and article data for a page. */
+  apply(path:string,page:SeoPage,crumbs?:{name:string;url:string}[]):void{
     const url=`${SITE_URL}/${path}`;
     const image=`${SITE_URL}/${page.image??DEFAULT_IMAGE}`;
     this.title.setTitle(page.title);
@@ -37,7 +47,16 @@ export class SeoTitleStrategy extends TitleStrategy{
     for(const [attr,key,content] of tags)this.meta.updateTag({[attr]:key,content},`${attr}="${key}"`);
     this.setCanonical(url);
     this.setArticleData(page,url,image);
-    this.setBreadcrumbs(SEO_PAGES[path]?path:'');
+    if(crumbs)this.setJsonLd('seo-breadcrumb',{'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:crumbs.map((c,i)=>({'@type':'ListItem',position:i+1,name:c.name,item:c.url}))});
+  }
+
+  /** Adds or replaces a schema.org JSON-LD block in the page head (removed when data is null). */
+  setJsonLd(id:string,data:object|null){
+    this.doc.getElementById(id)?.remove();
+    if(!data)return;
+    const script=this.doc.createElement('script');
+    script.type='application/ld+json';script.id=id;script.text=JSON.stringify(data);
+    this.doc.head.appendChild(script);
   }
 
   /** Adds schema.org breadcrumb data (Home › section › page) so search results can show the page's place in the site. */
