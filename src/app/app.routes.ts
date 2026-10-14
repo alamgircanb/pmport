@@ -9,6 +9,8 @@ export const routes:Routes=[
   {path:'resources/claude-for-project-management-business-analysis',loadComponent:()=>import('./pages/claude-pm-ba-article/claude-pm-ba-article.component').then(m=>m.ClaudePmBaArticleComponent),title:'Using Claude in Project Management and Business Analysis | PMPORT'},
   {path:'resources/ai-super-coworker-project-manager-business-analyst',loadComponent:()=>import('./pages/ai-coworker-article/ai-coworker-article.component').then(m=>m.AiCoworkerArticleComponent),title:'AI: Not Only a Tool but a Super Coworker for the Next-Gen PM and BA | PMPORT'},
   {path:'resources/21-causes-of-project-failure',loadComponent:()=>import('./pages/project-failure-article/project-failure-article.component').then(m=>m.ProjectFailureArticleComponent),title:'Top 21 Causes of Project Failure | PMPORT'},
+  {path:'resources/pmp-study-guide-8-week-plan',loadComponent:()=>import('./pages/pmp-guides/pmp-study-guide.component').then(m=>m.PmpStudyGuideComponent)},
+  {path:'resources/best-free-pmp-practice-exams',loadComponent:()=>import('./pages/pmp-guides/free-pmp-exams.component').then(m=>m.FreePmpExamsComponent)},
   {path:'pm-tools/diagram-studio',canDeactivate:[unsaved],loadComponent:()=>import('./pages/diagram/diagram.component').then(m=>m.DiagramComponent)},
   {path:'pm-tools/pert-cpm',canDeactivate:[unsaved],loadComponent:()=>import('./pages/pert/pert.component').then(m=>m.PertComponent)},
   {path:'portfolio/course-work',data:{area:'course'},loadComponent:()=>import('./pages/portfolio/portfolio.component').then(m=>m.PortfolioComponent)},

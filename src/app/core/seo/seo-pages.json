@@ -170,5 +170,23 @@
   "label": "Status Report Lab",
   "title": "Build a Project Portfolio Status Report | PMPORT",
   "description": "Practise data reporting: calculate portfolio KPIs, set RAG status, rank risks by EMV and write an executive summary, then print your one-page report."
+ },
+ "resources/pmp-study-guide-8-week-plan": {
+  "label": "PMP Study Guide",
+  "title": "Free PMP Study Guide & 8-Week Plan (2026) | PMPORT",
+  "description": "How to study for the PMP in 2026: the new exam format, domains, an 8-week study plan, the PMP mindset, mock exam review and exam-day tips. Free.",
+  "image": "og/pmp-study-guide.jpg",
+  "type": "article",
+  "published": "2026-10-14",
+  "hero": "pmp-study-guide.webp"
+ },
+ "resources/best-free-pmp-practice-exams": {
+  "label": "Free PMP Practice Exams",
+  "title": "Best Free PMP Practice Exams (2026) | PMPORT",
+  "description": "Honest comparison of free PMP practice exams and simulators in 2026: question counts, sign-up, explanations and how to use them to pass.",
+  "image": "og/free-pmp-practice-exams.jpg",
+  "type": "article",
+  "published": "2026-10-14",
+  "hero": "free-pmp-practice-exams.webp"
  }
 }
