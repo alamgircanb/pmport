@@ -2,7 +2,7 @@ import {Injectable,inject} from '@angular/core';
 import {DOCUMENT} from '@angular/common';
 import {Meta,Title} from '@angular/platform-browser';
 import {RouterStateSnapshot,TitleStrategy} from '@angular/router';
-import {DEFAULT_IMAGE,SEO_PAGES,SITE_NAME,SITE_URL,SeoPage} from './seo-pages';
+import {DEFAULT_IMAGE,SEO_PAGES,SITE_NAME,SITE_URL,SeoPage,breadcrumbData} from './seo-pages';
 
 /** Sets the page title, description, canonical link, social-sharing tags and article data on every navigation. */
 @Injectable({providedIn:'root'})
@@ -37,6 +37,18 @@ export class SeoTitleStrategy extends TitleStrategy{
     for(const [attr,key,content] of tags)this.meta.updateTag({[attr]:key,content},`${attr}="${key}"`);
     this.setCanonical(url);
     this.setArticleData(page,url,image);
+    this.setBreadcrumbs(SEO_PAGES[path]?path:'');
+  }
+
+  /** Adds schema.org breadcrumb data (Home › section › page) so search results can show the page's place in the site. */
+  private setBreadcrumbs(path:string){
+    this.doc.getElementById('seo-breadcrumb')?.remove();
+    const data=breadcrumbData(path);
+    if(!data)return;
+    const script=this.doc.createElement('script');
+    script.type='application/ld+json';script.id='seo-breadcrumb';
+    script.text=JSON.stringify(data);
+    this.doc.head.appendChild(script);
   }
 
   private setCanonical(url:string){
@@ -54,7 +66,7 @@ export class SeoTitleStrategy extends TitleStrategy{
     script.text=JSON.stringify({
       '@context':'https://schema.org','@type':'Article',
       headline:page.title.replace(/ \| PMPORT$/,''),description:page.description,image,url,mainEntityOfPage:url,
-      datePublished:page.published,author:{'@type':'Person',name:'Md Alamgir Hossain',url:`${SITE_URL}/about`},
+      datePublished:page.published,dateModified:page.published,inLanguage:'en-CA',author:{'@type':'Person',name:'Md Alamgir Hossain',url:`${SITE_URL}/about`},
       publisher:{'@type':'Organization',name:SITE_NAME,url:SITE_URL,logo:{'@type':'ImageObject',url:`${SITE_URL}/pmporticon.jpg`}}
     });
     this.doc.head.appendChild(script);
