@@ -5,8 +5,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "vercel-build": "ng build",
+    "build": "ng build && node scripts/seo-pages.mjs",
+    "vercel-build": "ng build && node scripts/seo-pages.mjs",
     "test": "ng test",
     "test:schedule": "tsc src/app/pages/pert/schedule.ts --target ES2022 --module commonjs --outDir .tmp-schedule --skipLibCheck && node tests/schedule.test.cjs .tmp-schedule/schedule.js"
   },

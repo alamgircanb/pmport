@@ -1,0 +1,127 @@
+{
+ "": {
+  "title": "PMPORT | Project Management, PMP Exam Prep, Business Analysis & Data Analytics",
+  "description": "Free project management and PMP exam prep: 5 PMP practice exams with 900 questions, PM tools and templates, business analysis and data analytics guides, videos and 200 learning links."
+ },
+ "about-pmport": {
+  "title": "About PMPORT | Project Management Learning Platform",
+  "description": "PMPORT brings project management, business analysis, technology and data together in one place to learn, explore and practise."
+ },
+ "resources": {
+  "title": "Project Management Articles, PMP Tips & Business Analysis Guides | PMPORT",
+  "description": "Free project management articles and guides: PMP exam mindset, why projects fail, AI for project managers and business analysts, and the future of project management in Canada."
+ },
+ "resources/future-project-management-canada": {
+  "title": "The Future of Project Management in Canada | PMPORT",
+  "description": "How project delivery, business needs and data are converging in Canada, with Canadian evidence and PMI research.",
+  "image": "og/canada.jpg",
+  "type": "article",
+  "published": "2026-09-30"
+ },
+ "resources/111-essential-pmp-mindsets": {
+  "title": "PMP Exam Mindset: 111 Essential PMP Mindsets | PMPORT",
+  "description": "The PMP exam mindset explained: 111 essential mindsets that show how PMI expects a project manager to think, with practical tips for PMP situational questions.",
+  "image": "og/mindsets.jpg",
+  "type": "article",
+  "published": "2026-10-03"
+ },
+ "resources/claude-for-project-management-business-analysis": {
+  "title": "Using Claude in Project Management and Business Analysis | PMPORT",
+  "description": "A practical field manual: set up Claude, apply it across the project lifecycle and business analysis work, and use it responsibly.",
+  "image": "og/claude-guide.jpg",
+  "type": "article",
+  "published": "2026-10-09"
+ },
+ "resources/ai-super-coworker-project-manager-business-analyst": {
+  "title": "AI: Not Only a Tool but a Super Coworker for the Next-Gen PM and BA | PMPORT",
+  "description": "How AI evolved from calculator to colleague, what the 2026 data says, and a ten-year forecast for project managers and business analysts.",
+  "image": "og/ai-coworker.jpg",
+  "type": "article",
+  "published": "2026-10-13"
+ },
+ "resources/21-causes-of-project-failure": {
+  "title": "Top 21 Causes of Project Failure | PMPORT",
+  "description": "Why projects fail: 21 root causes in seven themes, the early warning signals to watch for and the practical actions that keep delivery on course.",
+  "image": "og/failure.jpg",
+  "type": "article",
+  "published": "2026-10-09"
+ },
+ "pm-tools": {
+  "title": "Free Project Management Tools & Templates | PMPORT",
+  "description": "Free project management tools and templates in your browser: project charter, risk register, stakeholder register, earned value, process diagrams and PERT/CPM critical path."
+ },
+ "pm-tools/diagram-studio": {
+  "title": "Diagram Studio | Free Process & Data Flow Diagram Tool | PMPORT",
+  "description": "Draw process maps, swimlanes, data flow and context diagrams in your browser and download them, free."
+ },
+ "pm-tools/pert-cpm": {
+  "title": "PERT / CPM Calculator | Critical Path Tool | PMPORT",
+  "description": "Calculate PERT estimates, the critical path, float and project duration with a free interactive network-diagram tool."
+ },
+ "pm-handaid": {
+  "title": "PM HandAid | Project Management Quick Reference | PMPORT",
+  "description": "A quick project management reference for everyday tasks, terms and techniques used by project managers and business analysts."
+ },
+ "pm-jobs-prep": {
+  "title": "Project Manager & Business Analyst Interview Prep | PMPORT",
+  "description": "Prepare for project manager, PMO analyst and business analyst job interviews with practical guidance and practice questions.",
+  "image": "og/jobs.jpg"
+ },
+ "pm-faciliter": {
+  "title": "PMP Exam Preparation & Project Management Training | PMPORT",
+  "description": "Free PMP exam preparation and project management training: video lessons, quizzes, project math practice, a question bank and five full PMP practice exams."
+ },
+ "pm-faciliter/pmp-exam-simulator": {
+  "title": "Free PMP Practice Exam Simulator | 900 PMP Questions | PMPORT",
+  "description": "Free PMP practice exams: five full-length PMP exam simulators with 900 original questions, case studies, timed sections and domain results, aligned to the PMBOK Guide 8th Edition.",
+  "image": "og/exam.jpg"
+ },
+ "media": {
+  "title": "Project Management & Business Analysis Videos | PMPortLive | PMPORT",
+  "description": "Short project management and business analysis videos explaining PMP concepts one at a time: scope creep vs gold plating, risk vs issue, verification vs validation and more."
+ },
+ "events": {
+  "title": "PM Events & Gallery | PMPORT",
+  "description": "Community events, PMI South Saskatchewan activities, professional connections and posts from LinkedIn and Facebook."
+ },
+ "pm-learninglink": {
+  "title": "Best Free Resources to Learn PM, BA, Data Analysis & Coding | PMPORT",
+  "description": "200 of the best free YouTube channels and websites to learn project management, PMP, business analysis, data analysis (Excel, SQL, Power BI) and coding.",
+  "image": "og/learninglink.jpg"
+ },
+ "about": {
+  "title": "Md Alamgir Hossain, PMP | Project & Program Manager, Regina | PMPORT",
+  "description": "Project and program management professional in Regina, Saskatchewan: PMP, CSM and ITIL certified, working where project leadership, systems analysis and data meet.",
+  "image": "og/profile.jpg"
+ },
+ "portfolio": {
+  "title": "Portfolio | Md Alamgir Hossain | PMPORT",
+  "description": "Selected projects spanning business analysis, technology, project leadership and applied learning."
+ },
+ "portfolio/course-work": {
+  "title": "Course Work | Md Alamgir Hossain | PMPORT",
+  "description": "Academic projects in data analysis, systems development and business information systems."
+ },
+ "portfolio/professional-work": {
+  "title": "Professional Work | Md Alamgir Hossain | PMPORT",
+  "description": "Professional project, program and change-leadership work."
+ },
+ "education": {
+  "title": "Education | Md Alamgir Hossain | PMPORT",
+  "description": "BBA and MBA in MIS and a Business Information Systems diploma: degrees, courses and key coursework."
+ },
+ "credentials": {
+  "title": "Credentials | PMP, CSM, ITIL | Md Alamgir Hossain | PMPORT",
+  "description": "Professional credentials with links to their public verification records."
+ },
+ "login": {
+  "title": "Member login | PMPORT",
+  "description": "Sign in to PMPORT member features.",
+  "noindex": true
+ },
+ "pm-faciliter/member": {
+  "title": "Member area | PMPORT",
+  "description": "PMPORT member area.",
+  "noindex": true
+ }
+}
