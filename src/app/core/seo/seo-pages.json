@@ -56,9 +56,9 @@
   "hero": "project-failure-causes.webp"
  },
  "pm-tools": {
-  "label": "PM Tools & Templates",
-  "title": "Free Project Management Tools & Templates | PMPORT",
-  "description": "Free project management tools and templates: project charter, risk and stakeholder registers, earned value, process diagrams and PERT/CPM critical path."
+  "label": "PM Artifacts Lab",
+  "title": "PM Artifacts Lab: Free PM Templates & Tools | PMPORT",
+  "description": "PM Artifacts Lab: free project management templates and tools for charters, risk and stakeholder registers, earned value, diagrams and PERT/CPM."
  },
  "pm-tools/diagram-studio": {
   "title": "Diagram Studio: Free Process & Data Flow Diagrams | PMPORT",

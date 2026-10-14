@@ -65,7 +65,7 @@ const sections=[
   ['pm-faciliter/pmp-exam-simulator','Free PMP Exam Simulator','Five full-length PMP practice exams with 900 original questions, case studies, timed sections and results by domain.'],
   ['pm-faciliter','PMP Exam Preparation','PMP exam preparation and project management training: video lessons, quizzes, project math practice and a question bank.'],
   ['resources','PM Knowledge Lake','Articles on the PMP mindset, why projects fail, AI for project managers and business analysts, and project management in Canada.'],
-  ['pm-tools','PM Tools & Templates','Free browser tools: project charter, risk and stakeholder registers, earned value, process diagrams and PERT/CPM critical path.'],
+  ['pm-tools','PM Artifacts Lab','Free browser tools: project charter, risk and stakeholder registers, earned value, process diagrams and PERT/CPM critical path.'],
   ['pm-learninglink','PM LearningLink','200 popular free YouTube channels and websites for project management, business analysis, data analytics and coding.'],
   ['pm-datalab','PM DataLab','Free graded practice in SQL, Excel, Power BI DAX, Python and status reporting, all on one sample project dataset.'],
   ['media','PMPortLive Videos','Short videos that explain one project management or business analysis concept at a time.'],
