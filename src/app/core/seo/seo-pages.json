@@ -1,7 +1,8 @@
 {
  "": {
   "title": "PMPORT | Project Management, PMP Exam Prep, Business Analysis & Data Analytics",
-  "description": "Free project management and PMP exam prep: 5 PMP practice exams with 900 questions, PM tools and templates, business analysis and data analytics guides, videos and 200 learning links."
+  "description": "Free project management and PMP exam prep: 5 PMP practice exams with 900 questions, PM tools and templates, business analysis and data analytics guides, videos and 200 learning links.",
+  "hero": "pm_pg_leadership.webp"
  },
  "about-pmport": {
   "title": "About PMPORT | Project Management Learning Platform",
@@ -9,42 +10,48 @@
  },
  "resources": {
   "title": "Project Management Articles, PMP Tips & Business Analysis Guides | PMPORT",
-  "description": "Free project management articles and guides: PMP exam mindset, why projects fail, AI for project managers and business analysts, and the future of project management in Canada."
+  "description": "Free project management articles and guides: PMP exam mindset, why projects fail, AI for project managers and business analysts, and the future of project management in Canada.",
+  "hero": "ai-super-coworker.webp"
  },
  "resources/future-project-management-canada": {
   "title": "The Future of Project Management in Canada | PMPORT",
   "description": "How project delivery, business needs and data are converging in Canada, with Canadian evidence and PMI research.",
   "image": "og/canada.jpg",
   "type": "article",
-  "published": "2026-09-30"
+  "published": "2026-09-30",
+  "hero": "future-project-management-canada.webp"
  },
  "resources/111-essential-pmp-mindsets": {
   "title": "PMP Exam Mindset: 111 Essential PMP Mindsets | PMPORT",
   "description": "The PMP exam mindset explained: 111 essential mindsets that show how PMI expects a project manager to think, with practical tips for PMP situational questions.",
   "image": "og/mindsets.jpg",
   "type": "article",
-  "published": "2026-10-03"
+  "published": "2026-10-03",
+  "hero": "pmp-111-mindsets.webp"
  },
  "resources/claude-for-project-management-business-analysis": {
   "title": "Using Claude in Project Management and Business Analysis | PMPORT",
   "description": "A practical field manual: set up Claude, apply it across the project lifecycle and business analysis work, and use it responsibly.",
   "image": "og/claude-guide.jpg",
   "type": "article",
-  "published": "2026-10-09"
+  "published": "2026-10-09",
+  "hero": "claude-pm-ba-guide.webp"
  },
  "resources/ai-super-coworker-project-manager-business-analyst": {
   "title": "AI: Not Only a Tool but a Super Coworker for the Next-Gen PM and BA | PMPORT",
   "description": "How AI evolved from calculator to colleague, what the 2026 data says, and a ten-year forecast for project managers and business analysts.",
   "image": "og/ai-coworker.jpg",
   "type": "article",
-  "published": "2026-10-13"
+  "published": "2026-10-13",
+  "hero": "ai-super-coworker.webp"
  },
  "resources/21-causes-of-project-failure": {
   "title": "Top 21 Causes of Project Failure | PMPORT",
   "description": "Why projects fail: 21 root causes in seven themes, the early warning signals to watch for and the practical actions that keep delivery on course.",
   "image": "og/failure.jpg",
   "type": "article",
-  "published": "2026-10-09"
+  "published": "2026-10-09",
+  "hero": "project-failure-causes.webp"
  },
  "pm-tools": {
   "title": "Free Project Management Tools & Templates | PMPORT",
@@ -65,7 +72,8 @@
  "pm-jobs-prep": {
   "title": "Project Manager & Business Analyst Interview Prep | PMPORT",
   "description": "Prepare for project manager, PMO analyst and business analyst job interviews with practical guidance and practice questions.",
-  "image": "og/jobs.jpg"
+  "image": "og/jobs.jpg",
+  "hero": "pm-jobs-prep-banner.jpg"
  },
  "pm-faciliter": {
   "title": "PMP Exam Preparation & Project Management Training | PMPORT",
@@ -74,7 +82,8 @@
  "pm-faciliter/pmp-exam-simulator": {
   "title": "Free PMP Practice Exam Simulator | 900 PMP Questions | PMPORT",
   "description": "Free PMP practice exams: five full-length PMP exam simulators with 900 original questions, case studies, timed sections and domain results, aligned to the PMBOK Guide 8th Edition.",
-  "image": "og/exam.jpg"
+  "image": "og/exam.jpg",
+  "hero": "pmp-exam-simulator.webp"
  },
  "media": {
   "title": "Project Management & Business Analysis Videos | PMPortLive | PMPORT",
@@ -87,12 +96,14 @@
  "pm-learninglink": {
   "title": "Best Free Resources to Learn PM, BA, Data Analysis & Coding | PMPORT",
   "description": "200 of the best free YouTube channels and websites to learn project management, PMP, business analysis, data analysis (Excel, SQL, Power BI) and coding.",
-  "image": "og/learninglink.jpg"
+  "image": "og/learninglink.jpg",
+  "hero": "pm-learninglink.webp"
  },
  "about": {
   "title": "Md Alamgir Hossain, PMP | Project & Program Manager, Regina | PMPORT",
   "description": "Project and program management professional in Regina, Saskatchewan: PMP, CSM and ITIL certified, working where project leadership, systems analysis and data meet.",
-  "image": "og/profile.jpg"
+  "image": "og/profile.jpg",
+  "hero": "my_profile_pic.webp"
  },
  "portfolio": {
   "title": "Portfolio | Md Alamgir Hossain | PMPORT",
