@@ -139,7 +139,7 @@ type Lever='meetings'|'wip'|'overtime'|'testing'|'creep'|'risk'|'turnover';
     .grid3{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.25fr);gap:1rem;align-items:start}
     .col h2{font-size:1.15rem!important;letter-spacing:0!important;margin:0!important}.col h3{font-size:.95rem;margin:1.1rem 0 .3rem;color:var(--accent)}
     .note{font-size:.8rem;color:var(--muted);margin:.2rem 0 .8rem}
-    .col label{display:grid;gap:.25rem;font-size:.85rem;color:#b8cada;margin-bottom:.75rem}.col label b{color:#fff;font-weight:700;float:right}
+    .col label{display:grid;grid-template-columns:1fr auto;gap:.3rem .5rem;font-size:.85rem;color:#b8cada;margin-bottom:.75rem}.col label b{color:#fff;font-weight:700;text-align:right}.col label input[type=range]{grid-column:1/-1}
     .col input[type=range]{width:100%;accent-color:#49cce1}
     .check{display:flex!important;align-items:center;gap:.5rem}
     .seg{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid #315370;border-radius:10px;overflow:hidden;margin:.3rem 0 .8rem}
@@ -167,6 +167,7 @@ type Lever='meetings'|'wip'|'overtime'|'testing'|'creep'|'risk'|'turnover';
     .lessons{margin-top:1rem}.lessons h2{font-size:1.5rem!important;letter-spacing:0!important}.lessons li{line-height:1.7;color:#d6e4f0}
     .explain{margin-top:3rem}.explain h2{font-size:clamp(1.6rem,3vw,2.2rem)!important}.explain p{line-height:1.8;color:#c9d9e7}.explain a{color:var(--accent)}
     .effects{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:.8rem;margin:1rem 0}.effects h3{margin:0 0 .4rem}.effects p{margin:0;font-size:.92rem}
+    @media(min-width:1051px){.out{position:sticky;top:84px}}
     @media(max-width:1050px){.grid3{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.out{grid-column:1/-1}}
     @media(max-width:700px){.grid3,.charts{grid-template-columns:minmax(0,1fr)}.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
   `]
