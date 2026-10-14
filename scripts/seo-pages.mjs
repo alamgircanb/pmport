@@ -67,6 +67,7 @@ const sections=[
   ['resources','PM Knowledge Lake','Articles on the PMP mindset, why projects fail, AI for project managers and business analysts, and project management in Canada.'],
   ['pm-tools','PM Tools & Templates','Free browser tools: project charter, risk and stakeholder registers, earned value, process diagrams and PERT/CPM critical path.'],
   ['pm-learninglink','PM LearningLink','200 popular free YouTube channels and websites for project management, business analysis, data analytics and coding.'],
+  ['pm-datalab','PM DataLab','Free graded practice in SQL, Excel, Power BI DAX, Python and status reporting, all on one sample project dataset.'],
   ['media','PMPortLive Videos','Short videos that explain one project management or business analysis concept at a time.'],
   ['pm-jobs-prep','PM JOBS Prep','Practical guidance and practice questions for project manager, PMO analyst and business analyst job interviews.'],
   ['pm-handaid','PM HandAid','A quick reference for everyday project management tasks, terms and techniques.'],

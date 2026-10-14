@@ -140,5 +140,35 @@
   "title": "Member area | PMPORT",
   "description": "PMPORT member area.",
   "noindex": true
+ },
+ "pm-datalab": {
+  "label": "PM DataLab",
+  "title": "PM DataLab: SQL, Excel, Power BI & Python Practice | PMPORT",
+  "description": "Free data skills practice for project managers and analysts: graded SQL, Excel, Power BI DAX and Python exercises on one project dataset, plus status reporting."
+ },
+ "pm-datalab/sql": {
+  "label": "SQL Lab",
+  "title": "SQL Practice for Business Analysts & PMs | PMPORT",
+  "description": "26 free SQL exercises on a sample project database: SELECT, GROUP BY, JOINs, earned value, risk EMV, CTEs and window functions, checked instantly."
+ },
+ "pm-datalab/excel": {
+  "label": "Excel Lab",
+  "title": "Excel for Project Managers: Formula Practice | PMPORT",
+  "description": "20 free Excel formula exercises for project managers: earned value, CPI and SPI, RAG status, SUMIFS, COUNTIFS, VLOOKUP and INDEX/MATCH, checked instantly."
+ },
+ "pm-datalab/power-bi-dax": {
+  "label": "Power BI & DAX",
+  "title": "Power BI DAX Practice Questions for PMs | PMPORT",
+  "description": "20 free Power BI DAX practice questions on a project data model: measures, SUMX, CALCULATE, filter context, relationships and time intelligence."
+ },
+ "pm-datalab/python": {
+  "label": "Python Lab",
+  "title": "Python pandas Practice with Project Data | PMPORT",
+  "description": "Free pandas exercises that run in your browser: filter, group, merge, reshape, dates and data cleaning on a sample project portfolio, checked instantly."
+ },
+ "pm-datalab/status-report": {
+  "label": "Status Report Lab",
+  "title": "Build a Project Portfolio Status Report | PMPORT",
+  "description": "Practise data reporting: calculate portfolio KPIs, set RAG status, rank risks by EMV and write an executive summary, then print your one-page report."
  }
 }

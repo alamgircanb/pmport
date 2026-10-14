@@ -1,0 +1,11 @@
+resource_id,name,role,department,hourly_rate
+R01,Aisha Khan,Project Manager,PMO,85
+R02,Daniel Wong,Project Manager,PMO,90
+R03,Maria Lopez,Project Manager,PMO,80
+R04,Priya Patel,Project Manager,PMO,82
+R05,Tom Becker,Project Coordinator,Facilities,55
+R06,Leila Haddad,Business Analyst,IT,70
+R07,Jonas Meyer,Data Engineer,IT,78
+R08,Grace Kim,Developer,IT,75
+R09,Omar Siddiqui,QA Analyst,IT,62
+R10,Chloe Martin,Data Analyst,Marketing,68
