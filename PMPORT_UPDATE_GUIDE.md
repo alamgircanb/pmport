@@ -82,3 +82,16 @@ The production build compiles the Angular templates and TypeScript. Independent 
 All 18 original public assets and data files, including pictures, portfolio repository URLs and YouTube IDs, were checked byte-for-byte against the uploaded ZIP. The credential component was also checked unchanged.
 
 The event display recovers a title from a nonstandard title key in the original events JSON without changing that file. Draft example event cards are excluded from the Home feature area.
+
+## PM DataLab (/pm-datalab)
+
+- Pages live in `src/app/pages/datalab/`. All five modules use one fictional dataset in `datalab-data.ts`. The same data is also in `public/datalab/*.csv` and in the practice workbook `public/datalab/pm-datalab-practice.xlsx`. If you change the data, update all three.
+- Exercises:
+  - SQL: `sql-lab-data.ts`
+  - Excel: `excel-lab-data.ts`
+  - DAX: `dax-data.ts`
+  - Python: `python-lab-data.ts`
+- Each exercise has a model solution. A learner's answer counts as correct when it gives the same result as the model solution.
+- The SQL lab (sql.js) and the Python lab (Pyodide) load from cdn.jsdelivr.net when a visitor uses them.
+- The Excel lab uses its own formula engine (`excel-engine.ts`), so nothing extra is downloaded.
+- Progress is saved in the visitor's browser only (localStorage).

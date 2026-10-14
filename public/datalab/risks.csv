@@ -1,0 +1,13 @@
+risk_id,project_id,description,probability,impact_cost,status,owner_id
+K01,P01,Data quality issues delay migration,0.6,40000,Open,R07
+K02,P01,Sales team resists new CRM,0.4,25000,Open,R01
+K03,P02,Source system access delayed,0.5,60000,Open,R02
+K04,P02,ETL performance below target,0.3,45000,Open,R07
+K05,P03,Payroll integration defects,0.2,15000,Closed,R08
+K06,P04,Conveyor delivery delayed by supplier,0.7,150000,Open,R02
+K07,P04,Software integration vendor unavailable,0.5,90000,Open,R08
+K08,P05,Low survey response rate,0.4,10000,Open,R10
+K09,P06,Lease signing delayed,0.3,50000,Closed,R05
+K10,P06,Furniture supplier backorder,0.6,35000,Open,R05
+K11,P07,Low training attendance,0.5,8000,Open,R01
+K12,P08,Finance users reject new tool,0.2,12000,Closed,R04
