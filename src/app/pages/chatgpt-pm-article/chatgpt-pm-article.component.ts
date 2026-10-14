@@ -119,7 +119,6 @@ import {PMP_GUIDE_STYLES} from '../pmp-guides/pmp-guide-styles';
           <tr><td><strong>Problem solving</strong></td><td>We are facing scope creep. What are the possible solutions and next steps?</td><td><button type="button" class="copy" (click)="copy(11)" aria-label="Copy the problem solving prompt">{{label(11)}}</button></td></tr>
         </tbody>
       </table></div>
-      <p class="note">Prompts adapted from the infographic "How Project Managers Can Use ChatGPT" by Template22.</p>
     </section>
 
     <section class="card">
