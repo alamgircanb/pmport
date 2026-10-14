@@ -1,7 +1,8 @@
 import {CommonModule} from '@angular/common';
-import {Component, OnInit, HostListener} from '@angular/core';
+import {Component, OnInit, HostListener, ViewChild} from '@angular/core';
 import {RouterLink} from '@angular/router';
-import {exportWorkbook,exportTablePdf} from '../../core/export-utils';
+import {exportWorkbook,exportTablePdf,exportErrorMessage,preloadExportLibraries} from '../../core/export-utils';
+import {ArtifactPreviewComponent} from './artifact-preview.component';
 import {FormsModule} from '@angular/forms';
 
 interface ToolColumn {
@@ -23,7 +24,7 @@ interface ToolDefinition {
 @Component({
   selector:'app-pm-tools',
   standalone:true,
-  imports:[CommonModule,FormsModule,RouterLink],
+  imports:[CommonModule,FormsModule,RouterLink,ArtifactPreviewComponent],
   templateUrl:'./pm-tools.component.html',
   styleUrl:'./pm-tools.component.css'
 })
@@ -123,7 +124,8 @@ export class PMToolsComponent implements OnInit {
   dirty=false;
   newColumn='';
 
-  ngOnInit():void { this.selectTool(this.tools[0]); }
+  @ViewChild(ArtifactPreviewComponent) preview?:ArtifactPreviewComponent;
+  ngOnInit():void { this.selectTool(this.tools[0]); preloadExportLibraries(); }
 
   /** Opens a tool and restores the visitor's last saved version on this device. */
   selectTool(tool:ToolDefinition):void {
@@ -183,10 +185,10 @@ export class PMToolsComponent implements OnInit {
 
   /** Exports an Excel-compatible .xls workbook without needing an external service. */
   async exportExcel():Promise<void> {
-    try{await exportWorkbook(this.projectName+' — '+this.selectedTool.name,this.selectedTool.columns.map(c=>c.label),this.rows.map(r=>this.selectedTool.columns.map(c=>r[c.key]||'')),this.fileBase());this.message='Excel workbook exported.'}catch{this.message='Export failed. Please try again.'}
+    try{await exportWorkbook(this.projectName+' — '+this.selectedTool.name,this.selectedTool.columns.map(c=>c.label),this.rows.map(r=>this.selectedTool.columns.map(c=>r[c.key]||'')),this.fileBase());this.message='Excel workbook exported.'}catch(e){console.error(e);this.message=exportErrorMessage(e,'Excel export');}
   }
   async exportPdf():Promise<void> {
-    try{await exportTablePdf(this.projectName+' — '+this.selectedTool.name,this.selectedTool.columns.map(c=>c.label),this.rows.map(r=>this.selectedTool.columns.map(c=>r[c.key]||'')),this.fileBase());this.message='PDF exported.'}catch{this.message='PDF export failed. Please try again.'}
+    try{await exportTablePdf(this.projectName+' — '+this.selectedTool.name,this.selectedTool.columns.map(c=>c.label),this.rows.map(r=>this.selectedTool.columns.map(c=>r[c.key]||'')),this.fileBase(),this.preview?.svg());this.message='PDF exported'+(this.preview?.svg()?' with the preview diagram.':'.');}catch(e){console.error(e);this.message=exportErrorMessage(e,'PDF export');}
   }
   budgetSummary(){const total=(key:string)=>this.rows.reduce((n,r)=>n+(Number(r[key])||0),0);const planned=total('f1'),actual=total('f2'),forecast=total('f3');return {planned,actual,forecast,variance:planned-forecast}}
   /** EVM values are calculated live from the visitor's editable PV, EV and AC fields. */
