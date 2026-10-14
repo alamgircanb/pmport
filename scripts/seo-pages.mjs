@@ -90,11 +90,14 @@ for(const [i,t] of glossary.entries()){
 }
 // PM Playground: the page is interactive, so its crawler text is written here.
 customHtml['pm-playground']=`<p class="seo-eyebrow">PM Playground</p><h1>PM Playground: see how project decisions play out</h1><p>${escText(pages['pm-playground'].description)}</p>`+
-  `<h2>What you can change</h2><ul><li>Project: scope, planned duration, budget, starting team and approach (agile, hybrid or predictive).</li><li>Way of working: meetings, work in progress per person, overtime, testing and reviews, formal change control, and adding people mid-project.</li><li>Disturbances: scope creep, risk events and staff turnover.</li></ul>`+
-  `<h2>What you see each week</h2><p>A burn-up chart of work done against scope with a forecast finish, earned value (PV, EV, AC, CPI and SPI) against the budget, open defects, team morale and fatigue, and where the team's capacity went: new work, bug fixing, testing, meetings, communication, context switching and mentoring.</p>`+
-  `<h2>Four challenges</h2><ul><li>Rescue a late project: too many meetings, too much work in progress and little testing.</li><li>The overtime trap: a team pushed to 30% overtime.</li><li>Changing requirements in a predictive plan.</li><li>Quality pays: a hybrid project with no testing.</li></ul>`+
-  `<h2>The principles behind it</h2><p>Brooks's law and onboarding time, communication channels n(n-1)/2, work-in-progress limits and context switching, overtime and fatigue, the cost of quality and late defects, rework from late changes, and earned value management. It is a teaching model that shows the direction and shape of effects, not a forecast for a real project.</p>`+
-  `<p>Learn the terms in the <a href="/pm-glossary">PM glossary</a> and run the numbers with the <a href="/pm-calculators">PM calculators</a>.</p>`;
+  `<h2>Five playgrounds</h2><ul>`+
+  `<li><strong>Project delivery:</strong> scope, deadline, budget, team size, agile, hybrid or predictive, meetings, WIP, overtime, testing, change control and adding people mid-project. See a burn-up chart, earned value (CPI and SPI), defects, morale and where the team's capacity went.</li>`+
+  `<li><strong>Kanban flow:</strong> WIP limits, batch size, blockers and swarming. See a cumulative flow diagram, lead time, cycle time and Little's law in action.</li>`+
+  `<li><strong>Risk and reserve:</strong> a risk register, contingency reserve, response spending, review cadence, early-warning triggers and unknown-unknowns. See the reserve drain against open risk exposure (EMV).</li>`+
+  `<li><strong>Change adoption:</strong> sponsor visibility, communication, training, change champions, coaching and reinforcement. See the ADKAR stages, resistance, the productivity J-curve and the net value of the change.</li>`+
+  `<li><strong>Technical debt:</strong> shortcuts, refactoring, test automation and code review. See velocity, debt, test coverage and escaped defects sprint by sprint.</li></ul>`+
+  `<h2>Challenges</h2><p>Each playground has challenges to solve, such as rescuing a late project, the overtime trap, starting everything at once, accepting every risk, going live without training, the absent sponsor and the feature factory. Each run ends with a debrief that explains what happened.</p>`+
+  `<p>These are teaching models that show the direction and shape of effects, not forecasts for a real project. Learn the terms in the <a href="/pm-glossary">PM glossary</a> and run the numbers with the <a href="/pm-calculators">PM calculators</a>.</p>`;
 extraHead['pm-playground']={'@context':'https://schema.org','@type':'WebApplication',name:'PM Playground',url:`${SITE}/pm-playground`,applicationCategory:'EducationalApplication',operatingSystem:'Any (web browser)',offers:{'@type':'Offer',price:'0',priceCurrency:'CAD'},description:pages['pm-playground'].description};
 const byLetter={};for(const t of glossary){(byLetter[t.term[0].toUpperCase()]??=[]).push(t);}
 customHtml['pm-glossary']=`<p class="seo-eyebrow">PM Glossary</p><h1>Project management glossary</h1><p>${glossary.length} project management, agile, risk, cost and business analysis terms explained in plain English, each with a real-world example.</p>`+
@@ -112,7 +115,7 @@ const sections=[
   ['pm-tools','PM Artifacts Lab','Free browser tools: project charter, risk and stakeholder registers, earned value, process diagrams and PERT/CPM critical path.'],
   ['pm-learninglink','PM LearningLink','200 popular free YouTube channels and websites for project management, business analysis, data analytics and coding.'],
   ['pm-datalab','PM DataLab','Free graded practice in SQL, Excel, Power BI DAX, Python and status reporting, all on one sample project dataset.'],
-  ['pm-playground','PM Playground','An interactive project simulator: change team size, WIP, overtime, testing and scope change and watch schedule, cost, quality and morale respond week by week.'],
+  ['pm-playground','PM Playground','Five interactive simulators: project delivery, Kanban flow, risk and reserve, change adoption and technical debt, each with challenges and a debrief.'],
   ['pm-calculators','PM Calculators','Free earned value, PERT, risk EMV, NPV/ROI, Monte Carlo and sprint capacity calculators, each with formulas and a worked example.'],
   ['pm-glossary','PM Glossary','More than 200 project management, agile and business analysis terms explained in plain English with examples.'],
   ['media','PMPortLive Videos','Short videos that explain one project management or business analysis concept at a time.'],
