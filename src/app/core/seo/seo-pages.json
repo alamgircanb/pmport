@@ -1,15 +1,17 @@
 {
  "": {
-  "title": "PMPORT | Project Management, PMP Exam Prep, Business Analysis & Data Analytics",
+  "title": "PMPORT | Free PMP Exam Prep & Project Management Learning",
   "description": "Free project management and PMP exam prep: 5 PMP practice exams with 900 questions, PM tools and templates, business analysis and data analytics guides, videos and 200 learning links.",
   "hero": "pm_pg_leadership.webp"
  },
  "about-pmport": {
+  "label": "About PMPORT",
   "title": "About PMPORT | Project Management Learning Platform",
   "description": "PMPORT brings project management, business analysis, technology and data together in one place to learn, explore and practise."
  },
  "resources": {
-  "title": "Project Management Articles, PMP Tips & Business Analysis Guides | PMPORT",
+  "label": "PM Knowledge Lake",
+  "title": "Project Management Articles & PMP Tips | PMPORT",
   "description": "Free project management articles and guides: PMP exam mindset, why projects fail, AI for project managers and business analysts, and the future of project management in Canada.",
   "hero": "ai-super-coworker.webp"
  },
@@ -38,7 +40,7 @@
   "hero": "claude-pm-ba-guide.webp"
  },
  "resources/ai-super-coworker-project-manager-business-analyst": {
-  "title": "AI: Not Only a Tool but a Super Coworker for the Next-Gen PM and BA | PMPORT",
+  "title": "AI as a Super Coworker for Project Managers & BAs | PMPORT",
   "description": "How AI evolved from calculator to colleague, what the 2026 data says, and a ten-year forecast for project managers and business analysts.",
   "image": "og/ai-coworker.jpg",
   "type": "article",
@@ -54,6 +56,7 @@
   "hero": "project-failure-causes.webp"
  },
  "pm-tools": {
+  "label": "PM Tools & Templates",
   "title": "Free Project Management Tools & Templates | PMPORT",
   "description": "Free project management tools and templates in your browser: project charter, risk register, stakeholder register, earned value, process diagrams and PERT/CPM critical path."
  },
@@ -76,6 +79,7 @@
   "hero": "pm-jobs-prep-banner.jpg"
  },
  "pm-faciliter": {
+  "label": "PMP Exam Preparation",
   "title": "PMP Exam Preparation & Project Management Training | PMPORT",
   "description": "Free PMP exam preparation and project management training: video lessons, quizzes, project math practice, a question bank and five full PMP practice exams."
  },
@@ -100,12 +104,14 @@
   "hero": "pm-learninglink.webp"
  },
  "about": {
+  "label": "About Md Alamgir Hossain",
   "title": "Md Alamgir Hossain, PMP | Project & Program Manager, Regina | PMPORT",
   "description": "Project and program management professional in Regina, Saskatchewan: PMP, CSM and ITIL certified, working where project leadership, systems analysis and data meet.",
   "image": "og/profile.jpg",
   "hero": "my_profile_pic.webp"
  },
  "portfolio": {
+  "label": "Portfolio",
   "title": "Portfolio | Md Alamgir Hossain | PMPORT",
   "description": "Selected projects spanning business analysis, technology, project leadership and applied learning."
  },
