@@ -1,17 +1,27 @@
 import {Component,DestroyRef,OnInit,inject} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {ActivatedRoute,Router,RouterLink} from '@angular/router';
+import {SimPanelComponent} from './sim-panel.component';
+import {KANBAN} from './sims/kanban-sim';
+import {RISK} from './sims/risk-sim';
+import {ADOPTION} from './sims/adoption-sim';
+import {DEBT} from './sims/debt-sim';
 import {CHALLENGES,DEFAULT_PARAMS,addPeople,createSim,fromQuery,insights,step,toQuery,type Approach,type Challenge,type Params,type SimState,type WeekLog} from './playground-model';
 
 type Lever='meetings'|'wip'|'overtime'|'testing'|'creep'|'risk'|'turnover';
 
 /** PM Playground: an interactive, week-by-week project simulator inspired by TensorFlow Playground. */
 @Component({
-  standalone:true,selector:'app-pm-playground',imports:[FormsModule,RouterLink],
+  standalone:true,selector:'app-pm-playground',imports:[FormsModule,RouterLink,SimPanelComponent],
   template:`
   <section class="page playground">
     <header class="pg-head"><p class="eyebrow">PM Playground</p><h1>PM Playground: see how project decisions play out</h1>
-      <p class="lead">Set up a project, shape how the team works, then press play and watch it unfold week by week. Change team size, WIP, overtime, testing or scope change at any time and see the effect on the schedule, cost, quality and team morale.</p></header>
+      <p class="lead">Five interactive simulators for project managers. Pick one, set it up, press play and watch your decisions play out week by week. Change the settings at any time and see the effect straight away.</p>
+      <nav class="pg-nav" aria-label="Playgrounds">@for(n of navItems;track n.id){<button type="button" (click)="jump(n.id)"><span>{{n.n}}</span>{{n.label}}</button>}</nav></header>
+
+    <div class="pg-section" id="pg-delivery">
+    <p class="eyebrow">Playground 1 · Project delivery</p><h2>Project delivery: scope, team, schedule and cost</h2>
+    <p class="intro">Set up a project, shape how the team works, then watch it unfold. Change team size, WIP, overtime, testing or scope change at any time and see the effect on the schedule, cost, quality and team morale.</p>
 
     <div class="bar card">
       <div class="transport">
@@ -107,11 +117,15 @@ type Lever='meetings'|'wip'|'overtime'|'testing'|'creep'|'risk'|'turnover';
         <ol reversed>@for(e of events;track $index){<li><b>W{{e.week}}</b> {{e.text}}</li>}</ol></div>
     </div>
 
-    @if(lessons.length){<section class="card lessons"><p class="eyebrow">Debrief</p><h2>What this run shows</h2><ul>@for(l of lessons;track $index){<li>{{l}}</li>}</ul></section>}
+    @if(lessons.length){<section class="card lessons"><p class="eyebrow">Debrief</p><h3>What this run shows</h3><ul>@for(l of lessons;track $index){<li>{{l}}</li>}</ul></section>}
+    </div>
+
+    @for(d of sims;track d.id){<app-sim-panel [def]="d"></app-sim-panel>}
 
     <section class="explain">
       <h2>How the PM Playground works</h2>
-      <p>Each week, the model works out how much the team can deliver, then applies the effects of your choices and of random events. It is a teaching model built on well-known project management principles. It shows the direction and shape of effects, not exact forecasts for a real project.</p>
+      <p>Each playground is a teaching model built on well-known project management principles. At every step it applies the effects of your choices and of random events. The models show the direction and shape of effects, not exact forecasts for a real project. Each run uses a fixed random seed, so you can compare decisions fairly; press "New random run" for a different set of events.</p>
+      <h3>The project delivery model</h3>
       <div class="effects">
         <div class="card"><h3>Brooks's law</h3><p>New people need about 6 weeks to reach full speed and take mentoring time from the existing team. Communication channels grow as n(n − 1) ÷ 2. Adding people late can slow a project down before it helps.</p></div>
         <div class="card"><h3>Work in progress</h3><p>Juggling many items causes context switching. Very low WIP leaves people idle when work is blocked. One or two items per person is usually the sweet spot (Little's law).</p></div>
@@ -120,61 +134,16 @@ type Lever='meetings'|'wip'|'overtime'|'testing'|'creep'|'risk'|'turnover';
         <div class="card"><h3>Scope change</h3><p>Agile absorbs new scope into the backlog. Predictive plans also pay for rework of finished work, more so the later the change arrives. Change control filters out about half of the requests, for a small overhead.</p></div>
         <div class="card"><h3>Earned value</h3><p>PV assumes even progress to the planned end. EV is the budget share of the work done; AC is the money spent. CPI and SPI below 1.0 mean over budget and behind schedule.</p></div>
       </div>
-      <p>Learn the terms in the <a routerLink="/pm-glossary">PM glossary</a>: <a routerLink="/pm-glossary/communication-channels">communication channels</a>, <a routerLink="/pm-glossary/work-in-progress-wip-limit">WIP limit</a>, <a routerLink="/pm-glossary/cost-of-quality-coq">cost of quality</a>, <a routerLink="/pm-glossary/scope-creep">scope creep</a> and <a routerLink="/pm-glossary/earned-value-management-evm">earned value</a>. Run the numbers for a real project with the <a routerLink="/pm-calculators">PM calculators</a>.</p>
+      <p>Learn the terms in the <a routerLink="/pm-glossary">PM glossary</a>: <a routerLink="/pm-glossary/communication-channels">communication channels</a>, <a routerLink="/pm-glossary/work-in-progress-wip-limit">WIP limit</a>, <a routerLink="/pm-glossary/cost-of-quality-coq">cost of quality</a>, <a routerLink="/pm-glossary/scope-creep">scope creep</a> and <a routerLink="/pm-glossary/earned-value-management-evm">earned value</a>. Related terms for the other playgrounds: <a routerLink="/pm-glossary/kanban">Kanban</a>, <a routerLink="/pm-glossary/expected-monetary-value-emv">expected monetary value</a>, <a routerLink="/pm-glossary/contingency-reserve">contingency reserve</a>, <a routerLink="/pm-glossary/adkar">ADKAR</a> and <a routerLink="/pm-glossary/definition-of-done-dod">definition of done</a>. Run the numbers for a real project with the <a routerLink="/pm-calculators">PM calculators</a>.</p>
     </section>
   </section>`,
-  styles:[`
-    .playground{max-width:1320px}
-    .pg-head h1{font-size:clamp(2rem,4.5vw,3.4rem)!important;line-height:1.05!important}
-    .bar{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;padding:.9rem 1.1rem;margin-bottom:1rem}
-    .transport,.challenge{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap}
-    .round{width:46px;height:46px;border-radius:50%;border:1px solid #3b5874;background:#0b2340;color:#fff;font-size:1.05rem;cursor:pointer}
-    .round.play{width:58px;height:58px;background:var(--accent);color:#041223;border:0;font-size:1.3rem;font-weight:800}
-    .round:disabled{opacity:.4}
-    .week{display:grid;line-height:1.1;margin-left:.4rem}.week span{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}.week strong{font-size:1.8rem}.week small{color:var(--muted)}
-    .bar select{border:1px solid #315370;background:#071a30;color:#fff;border-radius:8px;padding:.45rem .5rem;margin-left:.3rem}
-    .speed,.challenge label{font-size:.85rem;color:#b8cada;font-weight:700}
-    .mission{margin-bottom:1rem}.mission p{margin:.3rem 0;line-height:1.6}.goal{color:#f6c35b;font-weight:700}
-    .verdict{padding:.6rem .8rem;border-radius:8px;margin-top:.6rem!important}.verdict.win{background:#0f3b2b;color:#c9f5dc}.verdict.lose{background:#401c2a;color:#ffd3dc}.verdict span{display:block;margin-top:.3rem}
-    .grid3{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.25fr);gap:1rem;align-items:start}
-    .col h2{font-size:1.15rem!important;letter-spacing:0!important;margin:0!important}.col h3{font-size:.95rem;margin:1.1rem 0 .3rem;color:var(--accent)}
-    .note{font-size:.8rem;color:var(--muted);margin:.2rem 0 .8rem}
-    .col label{display:grid;grid-template-columns:1fr auto;gap:.3rem .5rem;font-size:.85rem;color:#b8cada;margin-bottom:.75rem}.col label b{color:#fff;font-weight:700;text-align:right}.col label input[type=range]{grid-column:1/-1}
-    .col input[type=range]{width:100%;accent-color:#49cce1}
-    .check{display:flex!important;align-items:center;gap:.5rem}
-    .seg{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid #315370;border-radius:10px;overflow:hidden;margin:.3rem 0 .8rem}
-    .seg button{background:#071a30;color:#c9d9e7;border:0;padding:.55rem .3rem;cursor:pointer;font-weight:700;font-size:.85rem}.seg button.on{background:var(--accent);color:#041223}
-    .add{display:flex;align-items:center;gap:.4rem;flex-wrap:wrap;margin:.4rem 0}.add span{font-size:.85rem;color:#b8cada;font-weight:700}.add small{color:#f6c35b}
-    details summary{cursor:pointer;color:#cfe3f3;font-weight:700;margin:.4rem 0 .7rem}
-    .tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem;margin:.6rem 0}
-    .t{background:#0b2340;border:1px solid var(--line);border-radius:10px;padding:.55rem .7rem}.t span{display:block;font-size:.72rem;color:var(--muted);font-weight:700}.t strong{font-size:1.15rem;font-variant-numeric:tabular-nums}.t small{display:block;color:var(--muted);font-size:.72rem}
-    .t.good strong{color:#5fd68a}.t.bad strong{color:#ff8f8f}
-    .mini{font-size:.8rem;color:#b8cada;font-weight:700;margin:.4rem 0}
-    .stack{display:flex;height:18px;border-radius:6px;overflow:hidden;background:#0c2b49}.stack i{display:block;height:100%}
-    .legend{display:flex;flex-wrap:wrap;gap:.3rem .7rem;margin-top:.4rem;font-size:.72rem;color:#c9d9e7}.legend i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:.25rem}
-    .charts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-top:1rem}
-    figure{margin:0}figcaption{font-weight:700;color:#d9eef7;margin-bottom:.4rem}
-    svg{width:100%;height:auto;display:block}
-    .grid{stroke:#1b3a5c}.ax{fill:#8aa2b8;font-size:10px}.ax.warn{fill:#f6c35b}
-    .deadline{stroke:#f6c35b;stroke-dasharray:5 4}
-    .l-scope{fill:none;stroke:#ff8f8f;stroke-width:2}.l-done{fill:none;stroke:#49cce1;stroke-width:2.5}.a-done{fill:rgba(73,204,225,.15)}
-    .l-fc{stroke:#49cce1;stroke-dasharray:4 4}.dot-fc{fill:#49cce1}
-    .l-pv{fill:none;stroke:#7aa7d6;stroke-width:2}.l-ev{fill:none;stroke:#5fd68a;stroke-width:2.5}.l-ac{fill:none;stroke:#ff8f8f;stroke-width:2.5;stroke-dasharray:6 3}
-    .l-morale{fill:none;stroke:#5fd68a;stroke-width:2.5}.l-fatigue{fill:none;stroke:#f6c35b;stroke-width:2}.b-bug{fill:rgba(255,143,143,.35)}
-    .key{display:flex;flex-wrap:wrap;gap:.8rem;font-size:.75rem;color:#c9d9e7;margin-top:.3rem}.key span::before{content:'';display:inline-block;width:14px;height:3px;margin-right:.3rem;vertical-align:middle;background:currentColor}
-    .k-done{color:#49cce1}.k-scope{color:#ff8f8f}.k-fc{color:#7fdcec}.k-dl{color:#f6c35b}.k-pv{color:#7aa7d6}.k-ev{color:#5fd68a}.k-ac{color:#ff8f8f}.k-morale{color:#5fd68a}.k-fatigue{color:#f6c35b}.k-bug{color:#ff9fa8}
-    .log{max-height:320px;overflow:auto}.log ol{margin:0;padding-left:1.2rem}.log li{font-size:.85rem;line-height:1.5;color:#d6e4f0;margin-bottom:.3rem}.log b{color:var(--accent)}
-    .lessons{margin-top:1rem}.lessons h2{font-size:1.5rem!important;letter-spacing:0!important}.lessons li{line-height:1.7;color:#d6e4f0}
-    .explain{margin-top:3rem}.explain h2{font-size:clamp(1.6rem,3vw,2.2rem)!important}.explain p{line-height:1.8;color:#c9d9e7}.explain a{color:var(--accent)}
-    .effects{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:.8rem;margin:1rem 0}.effects h3{margin:0 0 .4rem}.effects p{margin:0;font-size:.92rem}
-    @media(min-width:1051px){.out{position:sticky;top:84px}}
-    @media(max-width:1050px){.grid3{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.out{grid-column:1/-1}}
-    @media(max-width:700px){.grid3,.charts{grid-template-columns:minmax(0,1fr)}.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
-  `]
+  styleUrl:'./playground-shared.css'
 })
 export class PlaygroundComponent implements OnInit{
   private route=inject(ActivatedRoute);private router=inject(Router);private destroy=inject(DestroyRef);
-  readonly challenges=CHALLENGES;readonly Math=Math;
+  readonly challenges=CHALLENGES;readonly Math=Math;readonly sims=[KANBAN,RISK,ADOPTION,DEBT];
+  readonly navItems=[{id:'delivery',n:1,label:'Project delivery'},{id:'kanban',n:2,label:'Kanban flow'},{id:'risk',n:3,label:'Risk and reserve'},{id:'adoption',n:4,label:'Change adoption'},{id:'debt',n:5,label:'Technical debt'}];
+  jump(id:string){document.getElementById('pg-'+id)?.scrollIntoView({behavior:'smooth',block:'start'});}
   readonly approaches:{id:Approach;label:string}[]=[{id:'agile',label:'Agile'},{id:'hybrid',label:'Hybrid'},{id:'predictive',label:'Predictive'}];
   p:Params={...DEFAULT_PARAMS};sim:SimState=createSim(this.p);
   playing=false;speed=400;challengeId='';challenge?:Challenge;result?:{ok:boolean;detail:string};copied=false;

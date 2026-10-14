@@ -113,3 +113,5 @@ The event display recovers a title from a nonstandard title key in the original 
 - Page and charts: `src/app/pages/playground/playground.component.ts`.
 - Search-engine text for the page: `customHtml['pm-playground']` in `scripts/seo-pages.mjs`; title and description in `src/app/core/seo/seo-pages.json`.
 - Shareable links: `?challenge=<id>` or the settings as query parameters (see `toQuery`/`fromQuery`).
+- Playgrounds 2–5 (Kanban flow, risk and reserve, change adoption, technical debt) live in `src/app/pages/playground/sims/` (one file each; shared types in `sim-engine.ts`). Each file holds the model, its controls (`setup`, `levers`, `disturbances`), charts, challenges and principle cards. `sim-panel.component.ts` draws any of them, so a new playground is one new file plus one entry in `sims` in `playground.component.ts`.
+- After changing a model or a challenge, check that each challenge fails with its starting settings and passes with the fix in its hint (runs use a fixed seed, so results are repeatable).

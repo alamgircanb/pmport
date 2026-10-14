@@ -236,7 +236,7 @@
  },
  "pm-playground": {
   "label": "PM Playground",
-  "title": "PM Playground: Interactive Project Management Simulator | PMPORT",
-  "description": "Free interactive project simulator: change team size, WIP, overtime, testing and scope, then watch schedule, cost, quality and morale respond week by week."
+  "title": "PM Playground: 5 Interactive Project Management Simulators | PMPORT",
+  "description": "Free project simulators: delivery, Kanban flow, risk and reserve, change adoption and technical debt. Change the settings and watch the results week by week."
  }
 }
