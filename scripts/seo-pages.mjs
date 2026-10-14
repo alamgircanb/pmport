@@ -88,6 +88,14 @@ for(const [i,t] of glossary.entries()){
     (rel?`<h2>Related terms</h2><ul>${rel}</ul>`:'')+`<p>${prev?`<a href="/pm-glossary/${prev.slug}">‹ ${escText(prev.term)}</a> · `:''}<a href="/pm-glossary">All glossary terms</a>${next?` · <a href="/pm-glossary/${next.slug}">${escText(next.term)} ›</a>`:''}</p>`;
   extraHead[path]={'@context':'https://schema.org','@type':'DefinedTerm',name:t.term,description:t.definition,url:`${SITE}/${path}`,inDefinedTermSet:{'@type':'DefinedTermSet',name:'PMPORT Project Management Glossary',url:`${SITE}/pm-glossary`}};
 }
+// PM Playground: the page is interactive, so its crawler text is written here.
+customHtml['pm-playground']=`<p class="seo-eyebrow">PM Playground</p><h1>PM Playground: see how project decisions play out</h1><p>${escText(pages['pm-playground'].description)}</p>`+
+  `<h2>What you can change</h2><ul><li>Project: scope, planned duration, budget, starting team and approach (agile, hybrid or predictive).</li><li>Way of working: meetings, work in progress per person, overtime, testing and reviews, formal change control, and adding people mid-project.</li><li>Disturbances: scope creep, risk events and staff turnover.</li></ul>`+
+  `<h2>What you see each week</h2><p>A burn-up chart of work done against scope with a forecast finish, earned value (PV, EV, AC, CPI and SPI) against the budget, open defects, team morale and fatigue, and where the team's capacity went: new work, bug fixing, testing, meetings, communication, context switching and mentoring.</p>`+
+  `<h2>Four challenges</h2><ul><li>Rescue a late project: too many meetings, too much work in progress and little testing.</li><li>The overtime trap: a team pushed to 30% overtime.</li><li>Changing requirements in a predictive plan.</li><li>Quality pays: a hybrid project with no testing.</li></ul>`+
+  `<h2>The principles behind it</h2><p>Brooks's law and onboarding time, communication channels n(n-1)/2, work-in-progress limits and context switching, overtime and fatigue, the cost of quality and late defects, rework from late changes, and earned value management. It is a teaching model that shows the direction and shape of effects, not a forecast for a real project.</p>`+
+  `<p>Learn the terms in the <a href="/pm-glossary">PM glossary</a> and run the numbers with the <a href="/pm-calculators">PM calculators</a>.</p>`;
+extraHead['pm-playground']={'@context':'https://schema.org','@type':'WebApplication',name:'PM Playground',url:`${SITE}/pm-playground`,applicationCategory:'EducationalApplication',operatingSystem:'Any (web browser)',offers:{'@type':'Offer',price:'0',priceCurrency:'CAD'},description:pages['pm-playground'].description};
 const byLetter={};for(const t of glossary){(byLetter[t.term[0].toUpperCase()]??=[]).push(t);}
 customHtml['pm-glossary']=`<p class="seo-eyebrow">PM Glossary</p><h1>Project management glossary</h1><p>${glossary.length} project management, agile, risk, cost and business analysis terms explained in plain English, each with a real-world example.</p>`+
   Object.entries(byLetter).map(([l,ts])=>`<h2>${l}</h2><ul>${ts.map(t=>`<li><a href="/pm-glossary/${t.slug}">${escText(t.term)}</a>: ${escText(t.definition.split(/(?<=\.)\s/)[0])}</li>`).join('')}</ul>`).join('');
@@ -104,6 +112,7 @@ const sections=[
   ['pm-tools','PM Artifacts Lab','Free browser tools: project charter, risk and stakeholder registers, earned value, process diagrams and PERT/CPM critical path.'],
   ['pm-learninglink','PM LearningLink','200 popular free YouTube channels and websites for project management, business analysis, data analytics and coding.'],
   ['pm-datalab','PM DataLab','Free graded practice in SQL, Excel, Power BI DAX, Python and status reporting, all on one sample project dataset.'],
+  ['pm-playground','PM Playground','An interactive project simulator: change team size, WIP, overtime, testing and scope change and watch schedule, cost, quality and morale respond week by week.'],
   ['pm-calculators','PM Calculators','Free earned value, PERT, risk EMV, NPV/ROI, Monte Carlo and sprint capacity calculators, each with formulas and a worked example.'],
   ['pm-glossary','PM Glossary','More than 200 project management, agile and business analysis terms explained in plain English with examples.'],
   ['media','PMPortLive Videos','Short videos that explain one project management or business analysis concept at a time.'],

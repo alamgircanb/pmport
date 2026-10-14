@@ -233,5 +233,10 @@
   "label": "PM Glossary",
   "title": "Project Management Glossary: 200+ Terms | PMPORT",
   "description": "Free project management glossary: 200+ PM, agile, risk, cost and business analysis terms in plain English, each with an example. For PMP and CBAP study."
+ },
+ "pm-playground": {
+  "label": "PM Playground",
+  "title": "PM Playground: Interactive Project Management Simulator | PMPORT",
+  "description": "Free interactive project simulator: change team size, WIP, overtime, testing and scope, then watch schedule, cost, quality and morale respond week by week."
  }
 }
