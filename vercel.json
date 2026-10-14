@@ -1,5 +1,10 @@
 {
-  "$schema":"https://openapi.vercel.sh/vercel.json",
-  "framework":"angular",
-  "rewrites":[{"source":"/((?!api/).*)","destination":"/index.html"}]
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "angular",
+  "rewrites": [
+    {
+      "source": "/((?!api/)(?!.*\\.(?:js|mjs|css|map|wasm|json|png|jpe?g|webp|gif|svg|ico|xlsx|csv|pdf|txt|xml|woff2?)$).*)",
+      "destination": "/index.html"
+    }
+  ]
 }

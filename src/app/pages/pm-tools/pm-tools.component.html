@@ -52,15 +52,6 @@
       </table>
     </div>
 
-    <!-- These small visual summaries make the Gantt and EVM templates immediately testable. -->
-    @if(selectedTool.id==='gantt'&&rows.length){
-      <div class="preview-block">
-        <h3>Progress preview</h3>
-        @for(row of rows;track trackRow($index)){
-          <div class="progress-row"><span>{{row['task']||'Untitled task'}}</span><div class="progress-track"><i [style.width.%]="progress(row['progress'])"></i></div><strong>{{progress(row['progress'])}}%</strong></div>
-        }
-      </div>
-    }
     @if(selectedTool.id==='budget'){@let b=budgetSummary();<div class="metric-grid"><article><small>Planned cost</small><strong>{{b.planned|number:'1.2-2'}}</strong></article><article><small>Actual cost</small><strong>{{b.actual|number:'1.2-2'}}</strong></article><article><small>Forecast cost</small><strong>{{b.forecast|number:'1.2-2'}}</strong></article><article><small>Planned − forecast</small><strong>{{b.variance|number:'1.2-2'}}</strong></article></div>}
     @if(selectedTool.id==='evm'){
       @let summary=evmSummary();
@@ -81,5 +72,6 @@
     </div>
     @if(message){<p class="status" role="status">{{message}}</p>}
     @if(savedAt){<p class="save-note">Last saved: {{savedAt|date:'medium'}}</p>}
+    <app-artifact-preview [toolId]="selectedTool.id" [toolName]="selectedTool.name" [projectName]="projectName" [columns]="selectedTool.columns" [rows]="rows"></app-artifact-preview>
   </section>
 </section>
