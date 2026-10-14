@@ -188,5 +188,50 @@
   "type": "article",
   "published": "2026-10-14",
   "hero": "free-pmp-practice-exams.webp"
+ },
+ "pm-calculators": {
+  "label": "PM Calculators",
+  "title": "Free Project Management Calculators | PMPORT",
+  "description": "Free project management calculators: earned value, PERT, risk EMV, NPV/ROI/IRR, Monte Carlo schedule risk, sprint capacity and communication channels."
+ },
+ "pm-calculators/earned-value-calculator": {
+  "label": "Earned Value Calculator",
+  "title": "Earned Value (EVM) Calculator: CPI, SPI, EAC | PMPORT",
+  "description": "Free earned value calculator: enter BAC, PV, EV and AC to get CV, SV, CPI, SPI, EAC, ETC, VAC and TCPI, with formulas and a worked example."
+ },
+ "pm-calculators/pert-three-point-estimate-calculator": {
+  "label": "PERT Calculator",
+  "title": "PERT Three-Point Estimate Calculator | PMPORT",
+  "description": "Free PERT calculator: beta and triangular three-point estimates, standard deviation, variance and confidence ranges, with formulas and an example."
+ },
+ "pm-calculators/risk-emv-calculator": {
+  "label": "Risk EMV Calculator",
+  "title": "Risk EMV Calculator: Expected Monetary Value | PMPORT",
+  "description": "Free expected monetary value calculator for project risks: EMV of threats and opportunities, net exposure and a suggested contingency reserve."
+ },
+ "pm-calculators/npv-roi-payback-calculator": {
+  "label": "NPV ROI Calculator",
+  "title": "NPV, ROI, IRR & Payback Calculator | PMPORT",
+  "description": "Free business case calculator: net present value, ROI, IRR, payback and discounted payback from an investment and yearly cash flows."
+ },
+ "pm-calculators/monte-carlo-schedule-simulator": {
+  "label": "Monte Carlo Simulator",
+  "title": "Monte Carlo Schedule Simulator (Free) | PMPORT",
+  "description": "Free Monte Carlo schedule risk simulator: run 10,000 scenarios of three-point estimates to get P50, P80, P90 and the chance of meeting a deadline."
+ },
+ "pm-calculators/sprint-capacity-velocity-calculator": {
+  "label": "Sprint Capacity Calculator",
+  "title": "Sprint Capacity & Velocity Calculator | PMPORT",
+  "description": "Free agile sprint capacity calculator: team hours with focus factor, average velocity and how many sprints your backlog needs."
+ },
+ "pm-calculators/communication-channels-calculator": {
+  "label": "Communication Channels",
+  "title": "Communication Channels Calculator (PMP) | PMPORT",
+  "description": "Free communication channels calculator using n(n − 1) ÷ 2: total channels for a team and how many are added when people join."
+ },
+ "pm-glossary": {
+  "label": "PM Glossary",
+  "title": "Project Management Glossary: 200+ Terms | PMPORT",
+  "description": "Free project management glossary: 200+ PM, agile, risk, cost and business analysis terms in plain English, each with an example. For PMP and CBAP study."
  }
 }
