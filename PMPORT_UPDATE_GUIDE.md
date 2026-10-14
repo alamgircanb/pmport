@@ -38,6 +38,10 @@ Edit `public/data/social-posts.json`. Each item needs `id` (unique, no spaces), 
 
 The section appears under the event cards. It moves to the next post every 30 seconds, pauses while the pointer or keyboard focus is on a post, and stops rotating once a visitor picks a post.
 
+## Search and sharing (SEO)
+
+Every public page's Google title, description and LinkedIn/Facebook preview image are set in `src/app/core/seo/seo-pages.ts`. Preview images are 1200×630 JPGs in `public/og/`. When you add a new page, add an entry there and add its address to `public/sitemap.xml`.
+
 ## PM Knowledge Lake
 
 Existing books and articles are still loaded from `public/data/resources.json`. The featured Canada article is at `/resources/future-project-management-canada`. Its full text and reference links are in `src/app/pages/article/article.component.ts`. The exact selected illustration is `public/future-project-management-canada.webp`.
