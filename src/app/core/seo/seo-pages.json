@@ -1,7 +1,7 @@
 {
  "": {
   "title": "PMPORT | Free PMP Exam Prep & Project Management Learning",
-  "description": "Free project management and PMP exam prep: 5 PMP practice exams with 900 questions, PM tools and templates, business analysis and data analytics guides, videos and 200 learning links.",
+  "description": "Free PMP exam prep with 900 practice questions, project management tools and templates, business analysis and data analytics guides, and 200 learning links.",
   "hero": "pm_pg_leadership.webp"
  },
  "about-pmport": {
@@ -12,7 +12,7 @@
  "resources": {
   "label": "PM Knowledge Lake",
   "title": "Project Management Articles & PMP Tips | PMPORT",
-  "description": "Free project management articles and guides: PMP exam mindset, why projects fail, AI for project managers and business analysts, and the future of project management in Canada.",
+  "description": "Free project management articles: PMP exam mindsets, why projects fail, AI for project managers and business analysts, and the future of PM in Canada.",
   "hero": "ai-super-coworker.webp"
  },
  "resources/future-project-management-canada": {
@@ -32,7 +32,7 @@
   "hero": "pmp-111-mindsets.webp"
  },
  "resources/claude-for-project-management-business-analysis": {
-  "title": "Using Claude in Project Management and Business Analysis | PMPORT",
+  "title": "Claude for Project Management & Business Analysis | PMPORT",
   "description": "A practical field manual: set up Claude, apply it across the project lifecycle and business analysis work, and use it responsibly.",
   "image": "og/claude-guide.jpg",
   "type": "article",
@@ -58,10 +58,10 @@
  "pm-tools": {
   "label": "PM Tools & Templates",
   "title": "Free Project Management Tools & Templates | PMPORT",
-  "description": "Free project management tools and templates in your browser: project charter, risk register, stakeholder register, earned value, process diagrams and PERT/CPM critical path."
+  "description": "Free project management tools and templates: project charter, risk and stakeholder registers, earned value, process diagrams and PERT/CPM critical path."
  },
  "pm-tools/diagram-studio": {
-  "title": "Diagram Studio | Free Process & Data Flow Diagram Tool | PMPORT",
+  "title": "Diagram Studio: Free Process & Data Flow Diagrams | PMPORT",
   "description": "Draw process maps, swimlanes, data flow and context diagrams in your browser and download them, free."
  },
  "pm-tools/pert-cpm": {
@@ -84,29 +84,29 @@
   "description": "Free PMP exam preparation and project management training: video lessons, quizzes, project math practice, a question bank and five full PMP practice exams."
  },
  "pm-faciliter/pmp-exam-simulator": {
-  "title": "Free PMP Practice Exam Simulator | 900 PMP Questions | PMPORT",
-  "description": "Free PMP practice exams: five full-length PMP exam simulators with 900 original questions, case studies, timed sections and domain results, aligned to the PMBOK Guide 8th Edition.",
+  "title": "Free PMP Exam Simulator: 900 Practice Questions | PMPORT",
+  "description": "Five free full-length PMP practice exams with 900 original questions, case studies, timed sections and domain results, aligned to the PMBOK Guide 8th Edition.",
   "image": "og/exam.jpg",
   "hero": "pmp-exam-simulator.webp"
  },
  "media": {
-  "title": "Project Management & Business Analysis Videos | PMPortLive | PMPORT",
-  "description": "Short project management and business analysis videos explaining PMP concepts one at a time: scope creep vs gold plating, risk vs issue, verification vs validation and more."
+  "title": "Project Management & BA Videos | PMPortLive | PMPORT",
+  "description": "Short project management and business analysis videos on PMP concepts: scope creep vs gold plating, risk vs issue, verification vs validation and more."
  },
  "events": {
   "title": "PM Events & Gallery | PMPORT",
   "description": "Community events, PMI South Saskatchewan activities, professional connections and posts from LinkedIn and Facebook."
  },
  "pm-learninglink": {
-  "title": "Best Free Resources to Learn PM, BA, Data Analysis & Coding | PMPORT",
+  "title": "Free Resources to Learn PM, BA, Data & Coding | PMPORT",
   "description": "200 of the best free YouTube channels and websites to learn project management, PMP, business analysis, data analysis (Excel, SQL, Power BI) and coding.",
   "image": "og/learninglink.jpg",
   "hero": "pm-learninglink.webp"
  },
  "about": {
   "label": "About Md Alamgir Hossain",
-  "title": "Md Alamgir Hossain, PMP | Project & Program Manager, Regina | PMPORT",
-  "description": "Project and program management professional in Regina, Saskatchewan: PMP, CSM and ITIL certified, working where project leadership, systems analysis and data meet.",
+  "title": "Md Alamgir Hossain, PMP | Project Manager, Regina | PMPORT",
+  "description": "Project and program management professional in Regina, Saskatchewan: PMP, CSM and ITIL certified, working where project leadership, systems and data meet.",
   "image": "og/profile.jpg",
   "hero": "my_profile_pic.webp"
  },
