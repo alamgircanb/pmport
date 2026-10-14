@@ -44,7 +44,8 @@ export class DatalabNavComponent{@Input() current='';readonly modules=DATALAB_MO
 export const LAB_STYLES=`
   .lab-head{max-width:900px;margin-bottom:1.5rem}.lab-head h1{font-size:clamp(2.2rem,5vw,3.6rem)!important}
   .lab{display:grid;grid-template-columns:280px minmax(0,1fr);gap:1.25rem;align-items:start}
-  .ex-list{position:sticky;top:1rem;max-height:calc(100vh - 2rem);overflow:auto;background:#081d34;border:1px solid var(--line);border-radius:14px;padding:.8rem}
+  .task{min-width:0}
+  .ex-list{position:sticky;top:88px;max-height:calc(100vh - 104px);overflow:auto;background:#081d34;border:1px solid var(--line);border-radius:14px;padding:.8rem}
   .ex-list h3{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:.9rem .4rem .4rem}
   .ex-list h3:first-child{margin-top:.2rem}
   .ex-list button{display:flex;gap:.5rem;align-items:flex-start;width:100%;text-align:left;background:transparent;border:1px solid transparent;color:#d6e4f0;border-radius:8px;padding:.45rem .5rem;cursor:pointer;font-size:.88rem;line-height:1.35}
@@ -69,5 +70,5 @@ export const LAB_STYLES=`
   details.panel{background:#081d34;border:1px solid var(--line);border-radius:12px;padding:.7rem 1rem;margin:1rem 0}
   details.panel summary{cursor:pointer;font-weight:700;color:#d9eef7}
   .kbd{font-size:.78rem;color:var(--muted)}
-  @media(max-width:900px){.lab{grid-template-columns:1fr}.ex-list{position:static;max-height:260px}}
+  @media(max-width:900px){.lab{grid-template-columns:minmax(0,1fr)}.ex-list{position:static;max-height:260px}}
 `;

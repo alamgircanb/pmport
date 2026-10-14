@@ -68,7 +68,7 @@ export const EXCEL_EXERCISES:ExcelExercise[]=[
   {id:'x17',level:'Conditional totals',title:'Done tasks in a project',sheet:'Projects',cell:'B18',label:'P01 tasks done',
     prompt:'In B18, count tasks that belong to project "P01" and have status "Done".',hint:'COUNTIFS takes pairs of range and criteria: =COUNTIFS(Tasks!B2:B32,"P01",Tasks!G2:G32,"Done")',
     solution:'=COUNTIFS(Tasks!B2:B32,"P01",Tasks!G2:G32,"Done")'},
-  {id:'x18',level:'Lookups',title:'Project with the largest budget',sheet:'Projects',cell:'B19',label:'Largest project',
+  {id:'x18',level:'Advanced lookups',title:'Project with the largest budget',sheet:'Projects',cell:'B19',label:'Largest project',
     prompt:'In B19, return the name of the project with the largest budget, using INDEX and MATCH (no typing the name).',
     hint:'MATCH(MAX(G2:G9),G2:G9,0) finds the row position; INDEX(B2:B9, position) returns the name.',solution:'=INDEX(B2:B9,MATCH(MAX(G2:G9),G2:G9,0))'},
   {id:'x19',level:'Task tracking',title:'Hours variance %',sheet:'Tasks',cell:'I2',header:'Hours variance %',fill:[2,32],
