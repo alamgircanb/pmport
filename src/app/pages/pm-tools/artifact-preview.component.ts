@@ -91,6 +91,7 @@ const SVG_KINDS=['wbs','gantt','milestones','stakeholders','budget','evm','benef
             <rect [attr.width]="e.L+e.W+40" [attr.height]="e.T+e.H+50" fill="#ffffff"/>
             @for(gr of e.grid;track $index){<line [attr.x1]="e.L" [attr.x2]="e.L+e.W" [attr.y1]="gr.y" [attr.y2]="gr.y" stroke="#e3e9f0"/><text [attr.x]="e.L-6" [attr.y]="gr.y+4" font-size="10" fill="#5a6b7c" text-anchor="end">{{short(gr.v)}}</text>}
             <path [attr.d]="e.paths.pv" fill="none" stroke="#7aa7d6" stroke-width="2.5"/><path [attr.d]="e.paths.ev" fill="none" stroke="#1f7a46" stroke-width="2.5"/><path [attr.d]="e.paths.ac" fill="none" stroke="#b42318" stroke-width="2.5" stroke-dasharray="6 3"/>
+            @for(p of e.pts;track $index){<circle [attr.cx]="p.x" [attr.cy]="p.ypv" r="4" fill="#7aa7d6"/><circle [attr.cx]="p.x" [attr.cy]="p.yev" r="4" fill="#1f7a46"/><circle [attr.cx]="p.x" [attr.cy]="p.yac" r="4" fill="#b42318"/>}
             @for(p of e.pts;track $index){<text [attr.x]="p.x" [attr.y]="e.T+e.H+18" font-size="10" fill="#5a6b7c" text-anchor="middle">{{clip(p.label,12)}}</text>}
             <g font-size="11" [attr.transform]="'translate('+e.L+','+(e.T+e.H+38)+')'"><rect width="12" height="4" y="-4" fill="#7aa7d6"/><text x="16" fill="#16222f">PV (planned)</text><rect x="120" width="12" height="4" y="-4" fill="#1f7a46"/><text x="136" fill="#16222f">EV (earned)</text><rect x="230" width="12" height="4" y="-4" fill="#b42318"/><text x="246" fill="#16222f">AC (actual)</text><text x="360" fill="#0b2340" font-weight="700">CPI {{fix(e.cpi)}} · SPI {{fix(e.spi)}}</text></g>
           </svg></div>
@@ -172,9 +173,11 @@ export class ArtifactPreviewComponent{
   get raci(){return raciMatrix(this.rows);}
   get boardKey(){return ({backlog:'f5',actions:'f4',change:'f4'} as Record<string,string>)[this.toolId]??'';}
   board(key:string,order:string[]=[]){return groupBy(this.rows,key,order);}
-  get detailCols(){return this.columns.slice(1).filter(c=>c.key!==this.boardKey);}
+  /** True when the first column is an ID, so the title combines it with the second column. */
+  get idFirst(){return /^(id|#)$/i.test(this.columns[0]?.label??'');}
+  get detailCols(){return this.columns.slice(this.idFirst?2:1).filter(c=>c.key!==this.boardKey);}
   titleOf(r:Row){const first=this.columns[0]?.key;const second=this.columns[1]?.key;
-    const a=first?r[first]:'',b=second?r[second]:'';return /^(id|#)$/i.test(this.columns[0]?.label??'')||/^[A-Z]{1,4}-\d+$/.test(a||'')?`${a} · ${b}`:a||'Untitled';}
+    const a=first?r[first]:'',b=second?r[second]:'';return this.idFirst?[a,b].filter(Boolean).join(' · ')||'Untitled':a||'Untitled';}
   /** Power/interest strategy for a cell: r = influence level, c = interest level (0 low … 2 high). */
   quad(r:number,c:number){
     if(r===2&&c===2)return {label:'MANAGE CLOSELY',fill:'#ffe2e0'};

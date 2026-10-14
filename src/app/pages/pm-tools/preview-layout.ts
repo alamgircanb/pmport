@@ -63,7 +63,7 @@ export function ganttLayout(rows:Row[],nameKey='task',startKey='start',endKey='e
   const byName=new Map(bars.map(b=>[b.name.trim().toLowerCase(),b]));
   const deps:GanttLayout['deps']=[];
   valid.forEach((v,i)=>{for(const dname of String(v.r[depKey]??'').split(/[,;]/)){const p=byName.get(dname.trim().toLowerCase());if(p&&p!==bars[i])deps.push({x1:p.x+p.w,y1:p.y+rowH/2-4,x2:bars[i].x,y2:bars[i].y+rowH/2-4});}});
-  return {bars,ticks,today,width:labelW+chartW+20,height:top+bars.length*rowH+10,labelW,rowH,deps,skipped};
+  return {bars,ticks,today,width:labelW+chartW+60,height:top+bars.length*rowH+10,labelW,rowH,deps,skipped};
 }
 
 /* ---------- Milestones ---------- */
