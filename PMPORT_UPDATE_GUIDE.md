@@ -40,7 +40,7 @@ The section appears under the event cards. It moves to the next post every 30 se
 
 ## Search and sharing (SEO)
 
-Every public page's Google title, description and LinkedIn/Facebook preview image are set in `src/app/core/seo/seo-pages.ts`. Preview images are 1200×630 JPGs in `public/og/`. When you add a new page, add an entry there and add its address to `public/sitemap.xml`.
+Every public page's Google title, description and LinkedIn/Facebook preview image are set in `src/app/core/seo/seo-pages.json`. Preview images are 1200×630 JPGs in `public/og/`. When you add a new page, add one entry to that file: the build (`scripts/seo-pages.mjs`) then creates the page's search-friendly HTML and adds it to `sitemap.xml` automatically.
 
 ## PM Knowledge Lake
 
