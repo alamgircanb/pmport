@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {RouterLink} from '@angular/router';
 import {PMP_GUIDE_STYLES} from '../pmp-guides/pmp-guide-styles';
 
-/** Article: 12 practical ways project managers can use ChatGPT, with starter prompts and guardrails.
+/** Article: how project managers can use ChatGPT across the project life cycle, with copy-ready prompts and guardrails.
  * The text is static so it is also copied into the pre-built HTML for search engines. */
 @Component({
   standalone:true,selector:'app-chatgpt-pm-article',imports:[RouterLink],
@@ -14,140 +14,156 @@ import {PMP_GUIDE_STYLES} from '../pmp-guides/pmp-guide-styles';
       <div class="hero-overlay">
         <p class="eyebrow">AI in practice · Project management</p>
         <h1>How Project Managers Can Use ChatGPT</h1>
-        <p class="hero-lead">AI is a co-pilot, not the project manager. Twelve practical ways to use it, starter prompts you can copy, and the guardrails that keep it safe.</p>
-        <p class="byline">Md Alamgir Hossain, PMP® · October 14, 2026 · 6-minute read</p>
+        <p class="hero-lead">Twelve practical uses from initiation to closure, a prompt for each one, what AI gets wrong, and five rules for using it safely.</p>
+        <p class="byline">Md Alamgir Hossain, PMP® · October 14, 2026 · 8-minute read</p>
       </div>
     </header>
 
     <section class="card">
-      <h2>AI is a co-pilot, not the project manager</h2>
-      <p>ChatGPT can take hours of drafting, summarizing and first-pass analysis off a project manager's week. It cannot own a decision, read the room in a steering committee, or be accountable for delivery. That accountability stays with us.</p>
-      <p>Used well, generative AI works like a fast, tireless junior analyst. It produces a solid first draft in seconds, and the project manager brings the context, judgment and stakeholder knowledge that turn the draft into something usable.</p>
-      <p>Below are 12 practical ways to put it to work, grouped into five areas of everyday PM practice, followed by the guardrails that keep it safe.</p>
+      <h2>A co-pilot, not a replacement</h2>
+      <p>Most project managers do not lose their week to big decisions. They lose it to writing: status reports, meeting summaries, risk logs, and emails that say the same thing three ways for three audiences. That is the work ChatGPT and similar tools do well.</p>
+      <p>What these tools cannot do is lead. They do not know your sponsor's priorities, the history between two departments, or which vendor always delivers late. They cannot be accountable for a decision. The best way to think about them is as a quick, well-read assistant who has never met your stakeholders: useful for a first draft, never the final word.</p>
+      <div class="callout"><p><strong>The working rule: draft, check, decide.</strong> Let AI produce the first draft. Check every fact, name and number against your own sources. Then make the decision yourself, in your own words.</p></div>
     </section>
 
     <nav class="card toc" aria-label="In this article">
       <p class="eyebrow">In this article</p>
       <ol>
-        <li><a routerLink="/resources/how-project-managers-can-use-chatgpt" fragment="planning">Planning and ideation</a></li>
-        <li><a routerLink="/resources/how-project-managers-can-use-chatgpt" fragment="risk">Risk and problem solving</a></li>
-        <li><a routerLink="/resources/how-project-managers-can-use-chatgpt" fragment="communication">Communication and meetings</a></li>
-        <li><a routerLink="/resources/how-project-managers-can-use-chatgpt" fragment="data">Data, productivity and people</a></li>
-        <li><a routerLink="/resources/how-project-managers-can-use-chatgpt" fragment="guardrails">Guardrails: use AI with governance</a></li>
-        <li><a routerLink="/resources/how-project-managers-can-use-chatgpt" fragment="prompts">12 starter prompts</a></li>
+        <li><a routerLink="/resources/how-project-managers-can-use-chatgpt" fragment="initiating">Initiating: uses 1–2</a></li>
+        <li><a routerLink="/resources/how-project-managers-can-use-chatgpt" fragment="planning">Planning: uses 3–5</a></li>
+        <li><a routerLink="/resources/how-project-managers-can-use-chatgpt" fragment="executing">Executing: uses 6–8</a></li>
+        <li><a routerLink="/resources/how-project-managers-can-use-chatgpt" fragment="monitoring">Monitoring and controlling: uses 9–10</a></li>
+        <li><a routerLink="/resources/how-project-managers-can-use-chatgpt" fragment="closing">Closing and growing: uses 11–12</a></li>
+        <li><a routerLink="/resources/how-project-managers-can-use-chatgpt" fragment="limits">What AI gets wrong</a></li>
+        <li><a routerLink="/resources/how-project-managers-can-use-chatgpt" fragment="rules">Five rules for safe use</a></li>
+        <li><a routerLink="/resources/how-project-managers-can-use-chatgpt" fragment="start">A 30-day starter plan</a></li>
       </ol>
     </nav>
 
+    <section class="card">
+      <h2>How to use the prompts</h2>
+      <p>Each use below comes with a prompt you can copy. Replace the parts in [square brackets] with your own details. The more context you give (the project, the audience, the format you want), the better the draft. Remove names, contract values and anything confidential before you paste.</p>
+    </section>
+
+    <section id="initiating">
+      <p class="eyebrow">Initiating</p>
+      <h2>Start projects on a clear footing</h2>
+      <h3>1. Turn a vague request into a draft charter</h3>
+      <p>Projects often begin as an email or a hallway conversation. Paste the request and ask for a draft charter. The value is not the document itself but the gaps it exposes: missing objectives, no success measures, no named sponsor. Those gaps become your questions for the kickoff.</p>
+      <div class="prompt"><p>Here is a project request: [paste request]. Draft a one-page project charter with purpose, objectives, high-level scope, out of scope, success measures, key stakeholders, assumptions and constraints. Then list the questions I must answer before the charter can be approved.</p><button type="button" class="copy" (click)="copy($any($event.target).previousElementSibling.textContent,1)">{{label(1)}}</button></div>
+      <h3>2. Map stakeholders and what they care about</h3>
+      <p>Describe the groups affected by the project and ask what each one is likely to worry about. You will get a starting stakeholder register and a sense of where resistance may come from. Then correct it with what you actually know about the people involved.</p>
+      <div class="prompt"><p>For a project that will [describe the change], list the likely stakeholder groups. For each one, give their main interests, likely concerns, level of influence and a suggested way to engage them. Present it as a table.</p><button type="button" class="copy" (click)="copy($any($event.target).previousElementSibling.textContent,2)">{{label(2)}}</button></div>
+    </section>
+
     <section id="planning">
-      <p class="eyebrow">Area 1</p>
-      <h2>Planning and ideation</h2>
-      <p>The blank page is the slowest part of planning, and it is where AI helps most.</p>
-      <h3>1. Create project plans</h3>
-      <p>Ask for a draft plan with phases, tasks, milestones and owners, or a first-cut work breakdown structure. Then check it against your scope statement, your team's real capacity and your organization's methodology. Treat the output as a skeleton, never as a baseline.</p>
-      <h3>2. Brainstorm ideas</h3>
-      <p>When delivery stalls, ask for ten ways to improve flow or collaboration. Most suggestions will be generic, but one or two usually lead to a better conversation with the team.</p>
-      <h3>3. Create templates</h3>
-      <p>Charters, status reports, RAID logs, meeting agendas and lessons-learned forms can be drafted in minutes. Align them with your PMO's standards before you share them. You can also start from the free templates in <a routerLink="/pm-tools">PM Artifacts Lab</a>.</p>
+      <p class="eyebrow">Planning</p>
+      <h2>Plan faster without skipping the thinking</h2>
+      <h3>3. Break the scope into a first-cut WBS</h3>
+      <p>A work breakdown structure is tedious to start from nothing. Ask for a draft with deliverables and work packages, then refine it with your team. The team's corrections are where the real estimates come from. You can build the final version in the free <a routerLink="/pm-tools">PM Artifacts Lab</a>, which draws the WBS tree for you.</p>
+      <div class="prompt"><p>Create a work breakdown structure for [project and main deliverables], three levels deep, with WBS codes. Mark the work packages that usually carry the most estimating uncertainty and explain why.</p><button type="button" class="copy" (click)="copy($any($event.target).previousElementSibling.textContent,3)">{{label(3)}}</button></div>
+      <h3>4. Stress-test the schedule</h3>
+      <p>Instead of asking AI to build your schedule, ask it to attack one. Share the main milestones and durations and ask what could make them wrong. It is a quick way to find optimistic assumptions before your sponsor does. For a numeric view of schedule risk, try the <a routerLink="/pm-calculators/monte-carlo-schedule-simulator">Monte Carlo schedule simulator</a>.</p>
+      <div class="prompt"><p>Here are my milestones and durations: [paste list]. Act as a sceptical reviewer. Which estimates look optimistic, which dependencies are missing, and what three questions should I ask the team before I commit to these dates?</p><button type="button" class="copy" (click)="copy($any($event.target).previousElementSibling.textContent,4)">{{label(4)}}</button></div>
+      <h3>5. Widen your risk list</h3>
+      <p>Everyone has blind spots. AI is good at listing the risks that are common to a type of project: vendor dependence, data migration, key-person loss, low adoption. It cannot know the risks that live inside your organization. Use it to widen the list, then score each risk and give it an owner in your register.</p>
+      <div class="prompt"><p>List 15 risks for a [type of project] in [industry], grouped by category. For each, give the cause, the possible effect, an early warning sign and one response. Leave probability and impact blank so my team can score them.</p><button type="button" class="copy" (click)="copy($any($event.target).previousElementSibling.textContent,5)">{{label(5)}}</button></div>
     </section>
 
-    <section id="risk">
-      <p class="eyebrow">Area 2</p>
-      <h2>Risk and problem solving</h2>
-      <p>AI is a useful second pair of eyes on what could go wrong.</p>
-      <h3>4. Identify risks</h3>
-      <p>Describe the project and ask for likely risks with mitigation options. It is good at surfacing the common categories: vendor dependency, resourcing, integration and change adoption. It will miss the risks only insiders know about. Use it to widen the list, then score and assign an owner to each risk in your register.</p>
-      <h3>5. Solve problems</h3>
-      <p>For issues like scope creep, ask for structured options and next steps. A prompt such as "We are facing scope creep from two business units; what are our options and the trade-offs of each?" gives you a framework to bring to the sponsor. The decision still follows your change control process.</p>
+    <section id="executing">
+      <p class="eyebrow">Executing</p>
+      <h2>Communicate more, write less</h2>
+      <h3>6. Write one update for several audiences</h3>
+      <p>Executives want decisions and status at a glance. The team wants priorities and blockers. Clients want progress and next steps. Write the facts once, then ask for a version for each audience. You keep control of the facts; AI only changes the framing.</p>
+      <div class="prompt"><p>Here are this week's facts: [paste bullet points]. Write three short updates: one for executives (status, decisions needed, top risk), one for the team (priorities and blockers) and one for the client (progress and next steps). Do not add any facts that are not in my notes.</p><button type="button" class="copy" (click)="copy($any($event.target).previousElementSibling.textContent,6)">{{label(6)}}</button></div>
+      <h3>7. Turn meeting notes into decisions and actions</h3>
+      <p>Rough notes become a clean summary in seconds. Read it before you send it: AI sometimes gives an action to the wrong person or turns a discussion into a decision that was never made.</p>
+      <div class="prompt"><p>Turn these meeting notes into a summary with three sections: decisions made, action items (owner and due date) and open questions. If an owner or date is unclear, write "to confirm" instead of guessing. Notes: [paste notes].</p><button type="button" class="copy" (click)="copy($any($event.target).previousElementSibling.textContent,7)">{{label(7)}}</button></div>
+      <h3>8. Rehearse a difficult conversation</h3>
+      <p>Before telling a sponsor that the date will slip, practise. Ask the AI to play a sceptical sponsor and push back on your message. It helps you find the weak points in your argument and prepare clear options.</p>
+      <div class="prompt"><p>Play the role of a demanding project sponsor. I need to tell you that [the issue] and recommend [your option]. Push back the way a busy executive would. After five exchanges, tell me where my message was weak and how to make it stronger.</p><button type="button" class="copy" (click)="copy($any($event.target).previousElementSibling.textContent,8)">{{label(8)}}</button></div>
     </section>
 
-    <section id="communication">
-      <p class="eyebrow">Area 3</p>
-      <h2>Communication and meetings</h2>
-      <p>Project managers spend most of their time communicating, so this is where the time savings add up fastest.</p>
-      <h3>6. Stakeholder communication</h3>
-      <p>Give it the facts and the audience, and ask for a concise status email. An executive version leads with decisions needed and RAG status. A team version leads with priorities and blockers. You supply the facts; AI adjusts the tone.</p>
-      <h3>7. Prepare meeting notes</h3>
-      <p>Paste rough notes and ask for key decisions, action items, owners and due dates. Review the result before sending, because AI can confidently assign an action to the wrong person.</p>
-      <h3>8. Ask better questions</h3>
-      <p>Ask for strong questions for a kickoff, a retrospective or a difficult sponsor conversation. Good questions uncover hidden assumptions early, which costs far less than finding them in testing.</p>
+    <section id="monitoring">
+      <p class="eyebrow">Monitoring and controlling</p>
+      <h2>Make sense of the numbers and the changes</h2>
+      <h3>9. Explain variances in plain language</h3>
+      <p>Share anonymized figures and ask for a plain-language explanation of what they mean and what to look into next. Always recalculate the numbers yourself, because AI can misread a column or invent a total. The free <a routerLink="/pm-calculators/earned-value-calculator">earned value calculator</a> gives you CPI, SPI and forecasts you can trust.</p>
+      <div class="prompt"><p>My project has these figures: planned value [PV], earned value [EV], actual cost [AC], budget at completion [BAC]. Explain in plain language what they say about cost and schedule, what the likely final cost is, and which three questions I should ask the team. Show your calculations so I can check them.</p><button type="button" class="copy" (click)="copy($any($event.target).previousElementSibling.textContent,9)">{{label(9)}}</button></div>
+      <h3>10. Assess a change request</h3>
+      <p>When a change request arrives, AI can help you think through its full impact before it reaches the change board. It will not know your real capacity, but it will remind you of the knock-on effects people forget: testing, training, documentation and other teams.</p>
+      <div class="prompt"><p>A stakeholder has asked to [describe the change] on a project that is [current status]. List the possible impacts on scope, schedule, cost, quality, risk and other teams, and the questions the change board should ask before deciding.</p><button type="button" class="copy" (click)="copy($any($event.target).previousElementSibling.textContent,10)">{{label(10)}}</button></div>
     </section>
 
-    <section id="data">
-      <p class="eyebrow">Area 4</p>
-      <h2>Data, productivity and people</h2>
-      <h3>9. Analyze data</h3>
-      <p>Share an anonymized schedule or budget extract and ask for trends, variances and questions worth investigating. Always check the numbers yourself or in your BI tool, because AI can misread a column or invent a total. To check earned value figures, use the <a routerLink="/pm-calculators/earned-value-calculator">earned value calculator</a>.</p>
-      <h3>10. Save time on routine work</h3>
-      <p>Turn bullet points into a polished status report, reformat a risk log, or tighten a long email. These small wins return hours every month.</p>
-      <h3>11. Improve team performance</h3>
-      <p>When a project is delayed and morale drops, ask for ways to rebuild momentum, recognize effort and reset expectations. The ideas are a starting point; trust comes from how you act on them.</p>
-      <h3>12. Learn and stay updated</h3>
-      <p>Ask it to explain Agile, earned value or a new framework in plain terms with real examples. It is a strong study partner for certifications such as PMP, as long as you confirm key points against official sources like the PMBOK® Guide. Then test yourself with the free <a routerLink="/pm-faciliter/pmp-exam-simulator">PMP exam simulator</a>.</p>
+    <section id="closing">
+      <p class="eyebrow">Closing and growing</p>
+      <h2>Capture the learning, and keep learning</h2>
+      <h3>11. Draft lessons learned and the closure report</h3>
+      <p>Lessons learned are often skipped because the team has already moved on. Collect quick notes from the retrospective and ask AI to organize them. Make sure each lesson ends with something specific the next project should do differently.</p>
+      <div class="prompt"><p>Organize these retrospective notes into lessons learned: [paste notes]. Group them into what went well, what did not and what to change. Turn each lesson into one specific, actionable recommendation for future projects.</p><button type="button" class="copy" (click)="copy($any($event.target).previousElementSibling.textContent,11)">{{label(11)}}</button></div>
+      <h3>12. Learn a concept and test yourself</h3>
+      <p>AI is a patient tutor. Ask it to explain a framework with an example from your own industry, then ask it to quiz you. If you are preparing for the PMP exam, confirm key points against the PMBOK® Guide and practise with the free <a routerLink="/pm-faciliter/pmp-exam-simulator">PMPORT exam simulator</a>.</p>
+      <div class="prompt"><p>Explain [concept, for example earned value or Kanban] using an example from [your industry]. Then ask me five questions, one at a time, and tell me after each answer whether I am right and why.</p><button type="button" class="copy" (click)="copy($any($event.target).previousElementSibling.textContent,12)">{{label(12)}}</button></div>
     </section>
 
-    <section id="guardrails">
-      <p class="eyebrow">Area 5</p>
-      <h2>Guardrails: use AI with governance</h2>
-      <p>AI is only as valuable as the discipline around it. Four rules keep it safe and credible:</p>
-      <div class="facts">
-        <div class="fact"><strong>Protect</strong><span>Never paste client names, personal information, contract values or internal financials into a public AI tool. Follow your organization's AI policy and use approved enterprise tools where they exist.</span></div>
-        <div class="fact"><strong>Validate</strong><span>AI can produce answers that are confident, plausible and wrong. Check facts, figures, dates and names before anything leaves your desk.</span></div>
-        <div class="fact"><strong>Own it</strong><span>Keep accountability human. AI drafts; the project manager decides, signs off and owns the outcome.</span></div>
-        <div class="fact"><strong>Disclose</strong><span>Be transparent. If AI shaped a deliverable, tell your team and sponsor, in line with your organization's norms.</span></div>
-      </div>
-      <div class="callout"><p><strong>Getting started.</strong> Start small. Pick one routine task this week, such as a status report or meeting summary, and let AI draft it. Measure the time saved, review the quality, and expand from there.</p></div>
-    </section>
-
-    <section id="prompts">
-      <p class="eyebrow">Copy and adapt</p>
-      <h2>12 starter prompts for project managers</h2>
-      <p>Add your own context to each prompt: the project, the audience and the format you want. Remove anything confidential first.</p>
+    <section id="limits">
+      <p class="eyebrow">Know the limits</p>
+      <h2>What AI gets wrong</h2>
       <div class="table-wrap"><table class="data">
-        <thead><tr><th>Use case</th><th>Starter prompt</th><th><span class="sr">Copy</span></th></tr></thead>
+        <thead><tr><th>Weakness</th><th>What it looks like</th><th>What to do</th></tr></thead>
         <tbody>
-          <tr><td><strong>Project plan</strong></td><td>Create a detailed project plan with phases, tasks, milestones and owners for a new project.</td><td><button type="button" class="copy" (click)="copy(0)" aria-label="Copy the project plan prompt">{{label(0)}}</button></td></tr>
-          <tr><td><strong>Brainstorming</strong></td><td>Give me 10 creative ideas to improve project delivery and team collaboration.</td><td><button type="button" class="copy" (click)="copy(1)" aria-label="Copy the brainstorming prompt">{{label(1)}}</button></td></tr>
-          <tr><td><strong>Risks</strong></td><td>What are the key risks in this project and how can we mitigate them?</td><td><button type="button" class="copy" (click)="copy(2)" aria-label="Copy the risks prompt">{{label(2)}}</button></td></tr>
-          <tr><td><strong>Status update</strong></td><td>Write a concise project status update email for stakeholders.</td><td><button type="button" class="copy" (click)="copy(3)" aria-label="Copy the status update prompt">{{label(3)}}</button></td></tr>
-          <tr><td><strong>Data analysis</strong></td><td>Analyze this project data and highlight key trends, issues and recommendations.</td><td><button type="button" class="copy" (click)="copy(4)" aria-label="Copy the data analysis prompt">{{label(4)}}</button></td></tr>
-          <tr><td><strong>Templates</strong></td><td>Create a project charter template with all essential sections.</td><td><button type="button" class="copy" (click)="copy(5)" aria-label="Copy the templates prompt">{{label(5)}}</button></td></tr>
-          <tr><td><strong>Meeting notes</strong></td><td>Summarize these meeting notes and list key decisions and action items.</td><td><button type="button" class="copy" (click)="copy(6)" aria-label="Copy the meeting notes prompt">{{label(6)}}</button></td></tr>
-          <tr><td><strong>Questions</strong></td><td>Give me 10 powerful questions to ask in a project kickoff meeting.</td><td><button type="button" class="copy" (click)="copy(7)" aria-label="Copy the questions prompt">{{label(7)}}</button></td></tr>
-          <tr><td><strong>Routine work</strong></td><td>Turn these bullet points into a professional project status report.</td><td><button type="button" class="copy" (click)="copy(8)" aria-label="Copy the routine work prompt">{{label(8)}}</button></td></tr>
-          <tr><td><strong>Team morale</strong></td><td>Suggest ways to improve team morale when the project is delayed.</td><td><button type="button" class="copy" (click)="copy(9)" aria-label="Copy the team morale prompt">{{label(9)}}</button></td></tr>
-          <tr><td><strong>Learning</strong></td><td>Explain the Agile methodology in simple terms with real examples.</td><td><button type="button" class="copy" (click)="copy(10)" aria-label="Copy the learning prompt">{{label(10)}}</button></td></tr>
-          <tr><td><strong>Problem solving</strong></td><td>We are facing scope creep. What are the possible solutions and next steps?</td><td><button type="button" class="copy" (click)="copy(11)" aria-label="Copy the problem solving prompt">{{label(11)}}</button></td></tr>
+          <tr><td><strong>Invented facts</strong></td><td>A confident date, figure, name or reference that does not exist.</td><td>Check every fact against your own sources before you use it.</td></tr>
+          <tr><td><strong>Generic answers</strong></td><td>Risk lists and plans that would fit any project.</td><td>Give more context and ask it to be specific to your situation.</td></tr>
+          <tr><td><strong>No organizational context</strong></td><td>Advice that ignores politics, history and culture.</td><td>Treat the output as a starting point and apply your judgment.</td></tr>
+          <tr><td><strong>Out-of-date knowledge</strong></td><td>Old versions of standards, tools or exam content.</td><td>Confirm against the latest official source.</td></tr>
+          <tr><td><strong>Agreeing too easily</strong></td><td>It supports whatever you suggest.</td><td>Ask it to argue the other side or to find flaws in your plan.</td></tr>
         </tbody>
       </table></div>
     </section>
 
+    <section id="rules">
+      <p class="eyebrow">Governance</p>
+      <h2>Five rules for safe use</h2>
+      <div class="facts">
+        <div class="fact"><strong>Protect data</strong><span>Never paste personal information, client names, contract values or internal financials into a public AI tool. Use the tools your organization has approved.</span></div>
+        <div class="fact"><strong>Verify</strong><span>Check every fact, number, name and date before anything leaves your desk.</span></div>
+        <div class="fact"><strong>Own decisions</strong><span>AI drafts; you decide, sign off and stay accountable for the result.</span></div>
+        <div class="fact"><strong>Be open</strong><span>Tell your team and sponsor when AI helped shape a deliverable, in line with your organization's policy.</span></div>
+        <div class="fact"><strong>Keep your voice</strong><span>Edit drafts so they sound like you. Stakeholders trust people, not polished text.</span></div>
+      </div>
+    </section>
+
+    <section id="start">
+      <p class="eyebrow">Getting started</p>
+      <h2>A 30-day starter plan</h2>
+      <div class="weeks">
+        <div class="week"><h3>Week 1: Status reports</h3><p>Write this week's update from your bullet points with use 6. Note how long it took compared with usual.</p></div>
+        <div class="week"><h3>Week 2: Meetings</h3><p>Summarize two meetings with use 7. Check every action owner before sending.</p></div>
+        <div class="week"><h3>Week 3: Risks</h3><p>Run use 5 before your next risk review and bring the new ideas to the team to score.</p></div>
+        <div class="week"><h3>Week 4: Review</h3><p>Add up the time saved and the errors you caught. Keep what worked, drop what did not, and agree simple team rules for AI use.</p></div>
+      </div>
+    </section>
+
     <section class="card">
-      <p>The project managers who gain most from AI will not be the ones who use it most. They will be the ones who pair it with sound judgment, strong governance and real stakeholder relationships.</p>
+      <h2>The bottom line</h2>
+      <p>AI will not make anyone a better project manager on its own. It gives back time, and what matters is how you spend it: more time with stakeholders, more thought on the decisions that matter, and less on formatting documents. Draft with AI, check with care, and lead in your own voice.</p>
       <div class="cta"><a class="button primary" routerLink="/resources/claude-for-project-management-business-analysis">Read: Using Claude in PM and BA</a><a class="button secondary" routerLink="/resources/ai-super-coworker-project-manager-business-analyst">Read: AI as a super coworker</a></div>
     </section>
   </article>`,
   styles:[PMP_GUIDE_STYLES+`
-    .copy{border:1px solid #315370;background:#0b2340;color:#d9eef7;border-radius:8px;padding:.35rem .7rem;font-weight:700;cursor:pointer;white-space:nowrap}
-    .copy:hover{background:#12385f}.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
-    .guide .fact strong{font-size:1.35rem}
+    .prompt{display:flex;gap:1rem;align-items:flex-start;background:#071a30;border:1px solid #24507a;border-left:4px solid var(--accent);border-radius:12px;padding:1rem 1.1rem;margin:.6rem 0 1.4rem}
+    .prompt p{margin:0;flex:1;font-family:Consolas,'Courier New',monospace;font-size:.93rem!important;line-height:1.65!important;color:#d9eef7!important}
+    .copy{border:1px solid #315370;background:#0b2340;color:#d9eef7;border-radius:8px;padding:.4rem .75rem;font-weight:700;cursor:pointer;white-space:nowrap}
+    .copy:hover{background:#12385f}
+    .guide .fact strong{font-size:1.3rem}
+    .week p{margin:.3rem 0 0;font-size:.97rem}
+    @media(max-width:600px){.prompt{flex-direction:column}}
   `]
 })
 export class ChatgptPmArticleComponent{
-  readonly prompts=[
-    {use:'Project plan',text:'Create a detailed project plan with phases, tasks, milestones and owners for a new project.'},
-    {use:'Brainstorming',text:'Give me 10 creative ideas to improve project delivery and team collaboration.'},
-    {use:'Risks',text:'What are the key risks in this project and how can we mitigate them?'},
-    {use:'Status update',text:'Write a concise project status update email for stakeholders.'},
-    {use:'Data analysis',text:'Analyze this project data and highlight key trends, issues and recommendations.'},
-    {use:'Templates',text:'Create a project charter template with all essential sections.'},
-    {use:'Meeting notes',text:'Summarize these meeting notes and list key decisions and action items.'},
-    {use:'Questions',text:'Give me 10 powerful questions to ask in a project kickoff meeting.'},
-    {use:'Routine work',text:'Turn these bullet points into a professional project status report.'},
-    {use:'Team morale',text:'Suggest ways to improve team morale when the project is delayed.'},
-    {use:'Learning',text:'Explain the Agile methodology in simple terms with real examples.'},
-    {use:'Problem solving',text:'We are facing scope creep. What are the possible solutions and next steps?'},
-  ];
-  copiedIndex=-1;
-  label(i:number){return this.copiedIndex===i?'Copied ✓':'Copy';}
-  async copy(i:number){try{await navigator.clipboard.writeText(this.prompts[i].text);this.copiedIndex=i;setTimeout(()=>{if(this.copiedIndex===i)this.copiedIndex=-1;},2000);}catch{this.copiedIndex=-1;}}
+  copiedIndex=0;
+  label(i:number){return this.copiedIndex===i?'Copied ✓':'Copy prompt';}
+  async copy(text:string|null,i:number){
+    try{await navigator.clipboard.writeText((text??'').trim());this.copiedIndex=i;setTimeout(()=>{if(this.copiedIndex===i)this.copiedIndex=0;},2000);}catch{this.copiedIndex=0;}
+  }
 }
