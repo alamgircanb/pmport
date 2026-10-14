@@ -80,6 +80,9 @@ const homeIntro=`<p>PMPORT is a free learning and practice hub for project manag
 <h2>Prepare for the PMP exam</h2><p>Practise with five full-length PMP exam simulators. They hold 900 original scenario questions in the style of the real exam. Questions cover the People, Process and Business Environment domains. Each answer has an explanation, and you see your results by domain.</p><p>The PMP preparation section adds video lessons, quizzes and project math practice. The article on 111 essential PMP mindsets explains how the exam expects a project manager to think. The exam itself is run by the <a href="https://www.pmi.org/certifications/project-management-pmp" rel="noopener">Project Management Institute (PMI)</a>.</p>
 <h2>Learn project management, business analysis and data analytics</h2><p>Read practical articles on why projects fail and how AI is becoming a coworker for project managers. Other articles look at where project management in Canada is heading. Free tools cover project charters, risk registers, stakeholder registers, earned value and critical path analysis.</p><p>PM LearningLink lists 200 hand-picked YouTube channels and websites. They cover project management, business analysis, data analysis (Excel, SQL, Power BI) and coding. You can also watch short PMPortLive videos on <a href="https://www.youtube.com/@pmportlive" rel="noopener">YouTube</a> and follow updates on <a href="https://www.linkedin.com/in/alamgircanb" rel="noopener">LinkedIn</a>.</p>`;
 
+// Share links for the page (LinkedIn, Facebook, X).
+const share=url=>{const u=encodeURIComponent(url);return `<p>Share this page: <a href="https://www.linkedin.com/sharing/share-offsite/?url=${u}" rel="noopener">LinkedIn</a> · <a href="https://www.facebook.com/sharer/sharer.php?u=${u}" rel="noopener">Facebook</a> · <a href="https://twitter.com/intent/tweet?url=${u}" rel="noopener">X</a></p>`;};
+
 function render(path,page){
   const url=`${SITE}/${path}`;
   const image=`${SITE}/${page.image||'og/default.jpg'}`;
@@ -109,7 +112,7 @@ function render(path,page){
   const intro=article||`<p class="seo-eyebrow">PMPORT</p><h1>${esc(heading)}</h1><p>${esc(page.description)}</p>${path===''?homeIntro:''}`;
   // Styles live in one <style> block (not inline attributes); the Angular app replaces this content once it starts.
   html=html.replace('</head>',`  <style>.seo-summary{max-width:900px;margin:auto;padding:3rem 1.25rem;font-family:Inter,Arial,sans-serif;color:#eaf3fc;line-height:1.7}.seo-summary p{color:#b1c3d7}.seo-summary .seo-eyebrow{color:#49cce1;letter-spacing:.15em;font-weight:800;font-size:.75rem}.seo-summary a{color:#8fe8f5}</style>\n  </head>`);
-  const summary=`<app-root><main class="seo-summary">${intro}<nav aria-label="PMPORT sections"><h2>Explore PMPORT</h2><ul>${links}</ul></nav></main></app-root>`;
+  const summary=`<app-root><main class="seo-summary">${intro}<nav aria-label="PMPORT sections"><h2>Explore PMPORT</h2><ul>${links}</ul></nav>${share(url)}</main></app-root>`;
   return html.replace('<app-root></app-root>',()=>summary);
 }
 
