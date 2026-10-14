@@ -1,4 +1,4 @@
-import {Component,DestroyRef,inject,Input,OnInit} from '@angular/core';
+import {AfterViewInit,Component,DestroyRef,ElementRef,NgZone,inject,Input,OnInit} from '@angular/core';
 import {RouterLink} from '@angular/router';
 import {DomSanitizer,SafeResourceUrl} from '@angular/platform-browser';
 import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
@@ -23,7 +23,7 @@ import {SocialPost} from '../../core/models/portfolio.models';
           <div class="player card" (mouseenter)="hover=true" (mouseleave)="hover=false" (focusin)="hover=true" (focusout)="hover=false">
             @if(selected){
               @if(frame(selected);as src){
-                <div class="frame-wrap"><iframe [src]="src" [title]="selected.title" [style.height.px]="compact?460:(selected.height||defaultHeight(selected))" loading="lazy" allowfullscreen></iframe></div>
+                <div class="frame-wrap">@if(inView){<iframe [src]="src" [title]="selected.title" [style.height.px]="compact?460:(selected.height||defaultHeight(selected))" loading="lazy" allowfullscreen></iframe>}@else{<div class="frame-placeholder" [style.height.px]="compact?460:(selected.height||defaultHeight(selected))"></div>}</div>
               }@else{
                 <div class="link-card"><span class="badge" [class.fb]="selected.platform==='facebook'">{{label(selected)}}</span><strong>{{selected.title}}</strong>@if(selected.date){<small>{{selected.date}}</small>}<p class="muted">{{selected.description}}</p><a class="button primary" [href]="selected.url" target="_blank" rel="noreferrer">Open on {{label(selected)}} ↗</a></div>
               }
@@ -41,6 +41,8 @@ import {SocialPost} from '../../core/models/portfolio.models';
     .social h2{margin-bottom:1.3rem}
     .social-layout{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:1rem;align-items:start}
     .frame-wrap{display:flex;justify-content:center;background:#fff;border-radius:12px;overflow:hidden}
+    :host{display:block}
+    .frame-placeholder{width:100%;max-width:552px;background:#fff}
     .frame-wrap iframe{width:100%;max-width:552px;border:0;display:block;background:#fff}
     .link-card{display:grid;gap:.7rem;justify-items:start;padding:2rem 1rem;min-height:260px;align-content:center}
     .link-card strong{font-size:1.5rem;line-height:1.2}
@@ -59,7 +61,15 @@ import {SocialPost} from '../../core/models/portfolio.models';
     @media(max-width:850px){.social-layout{grid-template-columns:1fr}.post-list{max-height:390px}}
   `]
 })
-export class SocialPostsComponent implements OnInit{
+export class SocialPostsComponent implements OnInit,AfterViewInit{
+  private host=inject(ElementRef<HTMLElement>);private zone=inject(NgZone);
+  /** The LinkedIn/Facebook embed is heavy, so it loads only when the section is about to scroll into view. */
+  inView=typeof IntersectionObserver==='undefined';
+  ngAfterViewInit():void{
+    if(this.inView)return;
+    const io=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)){io.disconnect();this.zone.run(()=>this.inView=true);}},{rootMargin:'300px'});
+    io.observe(this.host.nativeElement);this.destroyRef.onDestroy(()=>io.disconnect());
+  }
   private content=inject(ContentService);private sanitizer=inject(DomSanitizer);private destroyRef=inject(DestroyRef);
   /** Home-page version: player only, no list. */
   @Input() compact=false;

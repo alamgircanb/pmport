@@ -34,6 +34,8 @@ function render(path,page){
     .replace(/<meta property="og:url" content="[^"]*">/,`<meta property="og:url" content="${url}">`)
     .replace(/<meta property="og:image" content="[^"]*">/,`<meta property="og:image" content="${image}">`)
     .replace(/<meta name="twitter:card" content="[^"]*">/,`<meta name="twitter:card" content="summary_large_image">\n    <meta name="twitter:title" content="${esc(page.title)}">\n    <meta name="twitter:description" content="${esc(page.description)}">\n    <meta name="twitter:image" content="${image}">`);
+  // Let the browser start downloading the page's main picture straight away (faster Largest Contentful Paint).
+  if(page.hero)html=html.replace('</head>',`  <link rel="preload" as="image" href="/${page.hero}" fetchpriority="high">\n  </head>`);
   if(page.type==='article'){
     const ld={'@context':'https://schema.org','@type':'Article',headline:page.title.replace(/ \| PMPORT$/,''),description:page.description,image,url,mainEntityOfPage:url,datePublished:page.published,
       author:{'@type':'Person',name:'Md Alamgir Hossain',url:`${SITE}/about`},publisher:{'@type':'Organization',name:'PMPORT',url:SITE,logo:{'@type':'ImageObject',url:`${SITE}/pmporticon.jpg`}}};

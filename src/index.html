@@ -20,13 +20,17 @@
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://pmport.ca/#website","name":"PMPORT","url":"https://pmport.ca/","description":"Project management, business analysis and data analytics learning and practice.","inLanguage":"en-CA","publisher":{"@id":"https://pmport.ca/#person"}},{"@type":"Person","@id":"https://pmport.ca/#person","name":"Md Alamgir Hossain","jobTitle":"Project and Program Management Professional","url":"https://pmport.ca/about","image":"https://pmport.ca/og/profile.jpg","address":{"@type":"PostalAddress","addressLocality":"Regina","addressRegion":"SK","addressCountry":"CA"},"sameAs":["https://www.linkedin.com/in/alamgircanb","https://www.youtube.com/@pmportlive"]}]}</script>
     <meta name="theme-color" content="#071a33">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap">
     <!-- Google Analytics 4 (property pmport.ca). Page changes inside the app are counted by Enhanced measurement (browser history events). -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ED8GTJLNNB"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-ED8GTJLNNB');
+      // Load the Google Analytics library after the page has finished loading, so it never slows down the first view.
+      window.addEventListener('load', function(){ setTimeout(function(){ var s=document.createElement('script'); s.async=true; s.src='https://www.googletagmanager.com/gtag/js?id=G-ED8GTJLNNB'; document.head.appendChild(s); }, 1500); });
     </script>
   </head>
   <body><app-root></app-root></body>
