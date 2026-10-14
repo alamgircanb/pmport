@@ -48,7 +48,7 @@ Existing books and articles are still loaded from `public/data/resources.json`. 
 
 ## Project artifacts
 
-PM Tools includes 22 templates: the original Gantt, RACI, RAID, stakeholder register, WBS and EVM tools, plus charter, business case, scope, milestones, communications, budget, change requests, status, actions, decisions, backlog, user stories, traceability, lessons learned, closure and benefits tracking.
+PM Artifacts Lab (the /pm-tools page) includes 22 templates: the original Gantt, RACI, RAID, stakeholder register, WBS and EVM tools, plus charter, business case, scope, milestones, communications, budget, change requests, status, actions, decisions, backlog, user stories, traceability, lessons learned, closure and benefits tracking.
 
 Visitors can edit, add, reorder and delete rows; add and remove columns; save per tool in browser storage; download/import editable JSON; and export real `.xlsx` workbooks or PDF reports. Save before switching tools. Leaving a page with unsaved changes requests confirmation. Browser data is local to the device; there is no account synchronization for these tools.
 
