@@ -11,6 +11,17 @@
     "published": true
   },
   {
+    "id": "chatgpt-for-project-managers",
+    "label": "PM Knowledge Lake · AI in practice",
+    "title": "How Project Managers Can Use ChatGPT",
+    "description": "Twelve practical ways to use AI for plans, risks, status updates and meeting notes, with starter prompts and the guardrails that keep it safe.",
+    "image": "chatgpt-for-project-managers.webp",
+    "alt": "An AI co-pilot chat drafting a project status update beside a project manager's review checklist",
+    "path": "/resources/how-project-managers-can-use-chatgpt",
+    "action": "Read the article",
+    "published": true
+  },
+  {
     "id": "pm-playground",
     "label": "PM Playground · 5 simulators",
     "title": "PM Playground",
