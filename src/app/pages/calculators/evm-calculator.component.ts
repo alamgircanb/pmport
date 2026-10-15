@@ -8,7 +8,7 @@ import {evm} from './calc-math';
   standalone:true,selector:'app-evm-calculator',imports:[FormsModule,RouterLink,CalcMoreComponent],
   template:`
   <section class="page calc">
-    <a routerLink="/pm-calculators" class="back">← PM Calculators</a>
+    <a routerLink="/pm-calculators" class="back">← Calculators</a>
     <header class="calc-head"><p class="eyebrow">Free PM calculator · Cost</p><h1>Earned Value (EVM) Calculator</h1>
       <p class="lead">Enter your budget at completion, planned value, earned value and actual cost. You get every earned value metric (CV, SV, CPI, SPI, EAC, ETC, VAC and TCPI) with a plain-English summary of where your project stands.</p></header>
     <div class="tool">
@@ -50,7 +50,7 @@ import {evm} from './calc-math';
       </ul>
       <h3>How to read CPI and SPI</h3>
       <p>A value of 1.0 means exactly on plan. Below 1.0 is unfavourable: over budget for CPI, behind schedule for SPI. Above 1.0 is favourable. A TCPI above about 1.1 means the remaining work must be done far more efficiently than so far, which is rarely realistic. Consider re-baselining or asking for more budget.</p>
-      <p>Learn the terms: <a routerLink="/pm-glossary/earned-value-management-evm">earned value management</a>, <a routerLink="/pm-glossary/cost-performance-index-cpi">CPI</a>, <a routerLink="/pm-glossary/schedule-performance-index-spi">SPI</a>, <a routerLink="/pm-glossary/estimate-at-completion-eac">EAC</a> and <a routerLink="/pm-glossary/to-complete-performance-index-tcpi">TCPI</a>. Practise EVM formulas in the <a routerLink="/pm-datalab/excel">PM DataLab Excel lab</a>.</p>
+      <p>Learn the terms: <a routerLink="/pm-glossary/earned-value-management-evm">earned value management</a>, <a routerLink="/pm-glossary/cost-performance-index-cpi">CPI</a>, <a routerLink="/pm-glossary/schedule-performance-index-spi">SPI</a>, <a routerLink="/pm-glossary/estimate-at-completion-eac">EAC</a> and <a routerLink="/pm-glossary/to-complete-performance-index-tcpi">TCPI</a>. Practise EVM formulas in the <a routerLink="/pm-datalab/excel">DataLab Excel lab</a>.</p>
     </div>
     <app-calc-more current="earned-value-calculator"></app-calc-more>
   </section>`,

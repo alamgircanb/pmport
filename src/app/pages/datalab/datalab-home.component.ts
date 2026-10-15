@@ -9,13 +9,13 @@ import {PY_EXERCISES} from './python-lab-data';
 
 const TOTALS:Record<ModuleId,number>={sql:SQL_EXERCISES.length,excel:EXCEL_EXERCISES.length,dax:DAX_QUESTIONS.length,python:PY_EXERCISES.length,report:5};
 
-/** PM DataLab overview: the five practice modules and the shared sample dataset. */
+/** DataLab overview: the five practice modules and the shared sample dataset. */
 @Component({
   standalone:true,selector:'app-datalab-home',imports:[RouterLink,DatalabNavComponent],
   template:`
   <section class="page">
     <app-datalab-nav></app-datalab-nav>
-    <header class="page-header"><p class="eyebrow">PM DataLab</p><h1>Data skills practice for project managers and analysts</h1>
+    <header class="page-header"><p class="eyebrow">DataLab</p><h1>Data skills practice for project managers and analysts</h1>
       <p class="lead">Practise SQL, Excel, Power BI (DAX), Python and status reporting on one realistic project portfolio. Every exercise is checked instantly in your browser. It's free, with no sign-up, and your progress is saved on this device.</p>
       <div class="actions"><a class="button primary" routerLink="/pm-datalab/sql">Start with SQL</a><button type="button" class="button secondary" (click)="toDataset()">See the dataset</button></div>
     </header>

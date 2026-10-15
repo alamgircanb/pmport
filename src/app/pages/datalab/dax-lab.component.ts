@@ -3,13 +3,13 @@ import {RouterLink} from '@angular/router';
 import {DatalabNavComponent,LAB_STYLES,progress} from './datalab-shared';
 import {DAX_QUESTIONS,type DaxQuestion} from './dax-data';
 
-/** PM DataLab, Power BI & DAX module: case-style DAX questions with explanations. */
+/** DataLab, Power BI & DAX module: case-style DAX questions with explanations. */
 @Component({
   standalone:true,selector:'app-dax-lab',imports:[RouterLink,DatalabNavComponent],
   template:`
   <section class="page">
     <app-datalab-nav></app-datalab-nav>
-    <header class="lab-head"><p class="eyebrow">PM DataLab · Power BI & DAX</p><h1>Power BI & DAX</h1>
+    <header class="lab-head"><p class="eyebrow">DataLab · Power BI & DAX</p><h1>Power BI & DAX</h1>
       <p class="lead">Twenty case-style questions on the DAX you need for project dashboards: measures vs columns, iterators, CALCULATE, filter context, relationships and time intelligence. All questions use the same project data model.</p></header>
     <div class="lab">
       <aside class="ex-list" aria-label="DAX questions">
@@ -40,7 +40,7 @@ import {DAX_QUESTIONS,type DaxQuestion} from './dax-data';
           @else{<button type="button" class="button secondary small" (click)="step(1)" [disabled]="index(current)===questions.length-1">Next ›</button>}
         </div>
         <details class="panel"><summary>Practise in Power BI Desktop</summary>
-          <p class="muted">Download the four CSV files from the <a routerLink="/pm-datalab">PM DataLab overview</a> and load them into Power BI Desktop (Get data → Text/CSV). Create these relationships, then build the measures from the questions:</p>
+          <p class="muted">Download the four CSV files from the <a routerLink="/pm-datalab">DataLab overview</a> and load them into Power BI Desktop (Get data → Text/CSV). Create these relationships, then build the measures from the questions:</p>
           <pre class="code">Projects[project_id]   1 ─ * Tasks[project_id]
 Projects[project_id]   1 ─ * Risks[project_id]
 Resources[resource_id] 1 ─ * Tasks[owner_id]

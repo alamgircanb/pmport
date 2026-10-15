@@ -1,4 +1,4 @@
-// Layout maths for the PM Artifacts Lab preview canvas (pure functions, no Angular).
+// Layout maths for the Artifacts Lab preview canvas (pure functions, no Angular).
 export type Row=Record<string,string>;
 const blank=(v:string|undefined)=>!v||!v.trim()||/^[—–-]+$/.test(v.trim());
 const n=(v:string|undefined)=>{const x=Number(String(v??'').replace(/[$,\s]/g,''));return isFinite(x)?x:0;};

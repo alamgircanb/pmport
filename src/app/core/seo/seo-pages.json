@@ -10,7 +10,7 @@
   "description": "PMPORT brings project management, business analysis, technology and data together in one place to learn, explore and practise."
  },
  "resources": {
-  "label": "PM Knowledge Lake",
+  "label": "Knowledge Lake",
   "title": "Project Management Articles & PMP Tips | PMPORT",
   "description": "Free project management articles: PMP exam mindsets, why projects fail, AI for project managers and business analysts, and the future of PM in Canada.",
   "hero": "ai-super-coworker.webp"
@@ -56,9 +56,9 @@
   "hero": "project-failure-causes.webp"
  },
  "pm-tools": {
-  "label": "PM Artifacts Lab",
-  "title": "PM Artifacts Lab: Free PM Templates & Tools | PMPORT",
-  "description": "PM Artifacts Lab: free project management templates and tools for charters, risk and stakeholder registers, earned value, diagrams and PERT/CPM."
+  "label": "Artifacts Lab",
+  "title": "Artifacts Lab: Free Project Management Templates & Tools | PMPORT",
+  "description": "Artifacts Lab: free project management templates and tools for charters, risk and stakeholder registers, earned value, diagrams and PERT/CPM."
  },
  "pm-tools/diagram-studio": {
   "title": "Diagram Studio: Free Process & Data Flow Diagrams | PMPORT",
@@ -69,8 +69,9 @@
   "description": "Calculate PERT estimates, the critical path, float and project duration with a free interactive network-diagram tool."
  },
  "pm-handaid": {
-  "title": "PM HandAid | Project Management Quick Reference | PMPORT",
-  "description": "A quick project management reference for everyday tasks, terms and techniques used by project managers and business analysts."
+  "label": "NotePad",
+  "title": "NotePad: Free Online Notepad to Write, Draw & Export | PMPORT",
+  "description": "Free online notepad: write, draw or type notes on several pages, then export them as PDF, Word, JPG or GIF. Nothing to install, no sign-up."
  },
  "pm-jobs-prep": {
   "title": "Project Manager & Business Analyst Interview Prep | PMPORT",
@@ -94,7 +95,7 @@
   "description": "Short project management and business analysis videos on PMP concepts: scope creep vs gold plating, risk vs issue, verification vs validation and more."
  },
  "events": {
-  "title": "PM Events & Gallery | PMPORT",
+  "title": "Events & Gallery: Project Management Community | PMPORT",
   "description": "Community events, PMI South Saskatchewan activities, professional connections and posts from LinkedIn and Facebook."
  },
  "pm-learninglink": {
@@ -142,8 +143,8 @@
   "noindex": true
  },
  "pm-datalab": {
-  "label": "PM DataLab",
-  "title": "PM DataLab: SQL, Excel, Power BI & Python Practice | PMPORT",
+  "label": "DataLab",
+  "title": "DataLab: Free SQL, Excel, Power BI & Python Practice | PMPORT",
   "description": "Free data skills practice for project managers and analysts: graded SQL, Excel, Power BI DAX and Python exercises on one project dataset, plus status reporting."
  },
  "pm-datalab/sql": {
@@ -199,7 +200,7 @@
   "hero": "free-pmp-practice-exams.webp"
  },
  "pm-calculators": {
-  "label": "PM Calculators",
+  "label": "Calculators",
   "title": "Free Project Management Calculators | PMPORT",
   "description": "Free project management calculators: earned value, PERT, risk EMV, NPV/ROI/IRR, Monte Carlo schedule risk, sprint capacity and communication channels."
  },
@@ -239,13 +240,13 @@
   "description": "Free communication channels calculator using n(n − 1) ÷ 2: total channels for a team and how many are added when people join."
  },
  "pm-glossary": {
-  "label": "PM Glossary",
+  "label": "Glossary",
   "title": "Project Management Glossary: 200+ Terms | PMPORT",
   "description": "Free project management glossary: 200+ PM, agile, risk, cost and business analysis terms in plain English, each with an example. For PMP and CBAP study."
  },
  "pm-playground": {
-  "label": "PM Playground",
-  "title": "PM Playground: 5 Interactive Project Management Simulators | PMPORT",
+  "label": "Playground",
+  "title": "Project Management Playground: 5 Interactive Simulators | PMPORT",
   "description": "Free project simulators: delivery, Kanban flow, risk and reserve, change adoption and technical debt. Change the settings and watch the results week by week."
  }
 }

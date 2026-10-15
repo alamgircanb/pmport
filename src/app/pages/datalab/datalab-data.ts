@@ -1,4 +1,4 @@
-// Generated sample dataset for PM DataLab: fictional company "Prairie Logistics". All names are invented.
+// Generated sample dataset for DataLab: fictional company "Prairie Logistics". All names are invented.
 export type Cell=string|number;
 export interface DataTable{columns:string[];types:string[];rows:Cell[][]}
 export const DATASET:Record<string,DataTable>={

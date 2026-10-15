@@ -8,7 +8,7 @@ import {sprintCapacity} from './calc-math';
   standalone:true,selector:'app-sprint-capacity',imports:[FormsModule,RouterLink,CalcMoreComponent],
   template:`
   <section class="page calc">
-    <a routerLink="/pm-calculators" class="back">← PM Calculators</a>
+    <a routerLink="/pm-calculators" class="back">← Calculators</a>
     <header class="calc-head"><p class="eyebrow">Free PM calculator · Agile</p><h1>Sprint Capacity &amp; Velocity Forecast Calculator</h1>
       <p class="lead">Work out your team's capacity for the next sprint and forecast how many sprints the remaining backlog will take, using your recent velocity.</p></header>
     <div class="card">

@@ -14,9 +14,9 @@ export const CALCULATORS=[
 /** Links to the other calculators, shown at the bottom of each calculator page. */
 @Component({
   standalone:true,selector:'app-calc-more',imports:[RouterLink],
-  template:`<nav class="calc-more" aria-label="More PM calculators"><p class="eyebrow">More free PM calculators</p><div class="links">
+  template:`<nav class="calc-more" aria-label="More calculators"><p class="eyebrow">More free calculators</p><div class="links">
     @for(c of calculators;track c.slug){@if(c.slug!==current){<a [routerLink]="'/pm-calculators/'+c.slug">{{c.short}}</a>}}
-    <a routerLink="/pm-calculators">All calculators</a><a routerLink="/pm-glossary">PM glossary</a></div></nav>`,
+    <a routerLink="/pm-calculators">All calculators</a><a routerLink="/pm-glossary">Glossary</a></div></nav>`,
   styles:[`.calc-more{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--line)}.links{display:flex;flex-wrap:wrap;gap:.5rem}
     .links a{padding:.5rem .85rem;border:1px solid var(--line);border-radius:99px;background:#082039;color:#d9eef7;text-decoration:none;font-weight:700;font-size:.88rem}.links a:hover{border-color:var(--accent)}`]
 })

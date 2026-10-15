@@ -13,13 +13,13 @@ declare global{interface Window{initSqlJs?:(cfg:{locateFile:(f:string)=>string})
 
 const SQLJS='https://cdn.jsdelivr.net/npm/sql.js@1.10.3/dist/';
 
-/** PM DataLab, SQL module: graded SQL exercises on a sample project database, run in the browser with sql.js. */
+/** DataLab, SQL module: graded SQL exercises on a sample project database, run in the browser with sql.js. */
 @Component({
   standalone:true,selector:'app-sql-lab',imports:[FormsModule,RouterLink,DatalabNavComponent],
   template:`
   <section class="page">
     <app-datalab-nav></app-datalab-nav>
-    <header class="lab-head"><p class="eyebrow">PM DataLab · SQL</p><h1>SQL for analysts</h1>
+    <header class="lab-head"><p class="eyebrow">DataLab · SQL</p><h1>SQL for analysts</h1>
       <p class="lead">Practise SQL on a sample project portfolio: projects, tasks, people and risks. Your query runs in your browser, and each answer is checked instantly.</p></header>
     <div class="lab">
       <aside class="ex-list" aria-label="SQL exercises">
@@ -56,7 +56,7 @@ const SQLJS='https://cdn.jsdelivr.net/npm/sql.js@1.10.3/dist/';
         </div>
         <details class="panel" open><summary>Database tables</summary>
           @for(t of tables;track t.name){<p><strong>{{t.name}}</strong> <span class="kbd">({{t.rows}} rows)</span><br><code>{{t.columns}}</code></p>}
-          <p class="kbd">The database resets every time you run a query, so you can't break anything. Download the same data as CSV from the <a routerLink="/pm-datalab">PM DataLab overview</a>.</p>
+          <p class="kbd">The database resets every time you run a query, so you can't break anything. Download the same data as CSV from the <a routerLink="/pm-datalab">DataLab overview</a>.</p>
         </details>
       </div>
     </div>

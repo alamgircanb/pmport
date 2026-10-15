@@ -10,7 +10,7 @@ type FailureTheme={id:string;number:string;label:string;title:string;start:numbe
   imports:[RouterLink],
   template:`
   <article class="page failure-article">
-    <a routerLink="/resources" class="back">← PM Knowledge Lake</a>
+    <a routerLink="/resources" class="back">← Knowledge Lake</a>
 
     <header class="article-hero">
       <img src="project-failure-causes.webp" alt="Project team studying a holographic project path that breaks under warning signs and then recovers toward a summit">
@@ -66,7 +66,7 @@ type FailureTheme={id:string;number:string;label:string;title:string;start:numbe
       <blockquote>Projects seldom fail suddenly. They fail quietly, one ignored signal at a time. Make problems visible early, address their root causes and keep every decision connected to business value.</blockquote>
     </section>
 
-    <footer class="disclaimer"><p>PMPORT is an independent project-management learning platform. PMP® and PMI® are registered marks of Project Management Institute, Inc. This educational article reflects practitioner experience and common project-management guidance; it is not endorsed by or affiliated with PMI.</p><a routerLink="/resources" class="button primary">Back to PM Knowledge Lake</a></footer>
+    <footer class="disclaimer"><p>PMPORT is an independent project-management learning platform. PMP® and PMI® are registered marks of Project Management Institute, Inc. This educational article reflects practitioner experience and common project-management guidance; it is not endorsed by or affiliated with PMI.</p><a routerLink="/resources" class="button primary">Back to Knowledge Lake</a></footer>
   </article>`,
   styles:[`
     .failure-article{max-width:1180px}.back{display:inline-block;margin-bottom:1rem;color:var(--accent);font-weight:700}

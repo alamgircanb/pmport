@@ -12,7 +12,7 @@ import {buildQuestionBank,PracticeQuestion,PracticeQuestionType} from './pm-ques
   standalone:true,selector:'app-pm-faciliter',imports:[AsyncPipe,FormsModule,RouterLink],
   template:`
     <section class="page">
-      <header class="page-header"><p class="eyebrow">PM Faciliter</p><h1>Learn by doing.</h1><p class="lead">Training modules combine organized YouTube lessons with quizzes, sequencing, diagrams, project-math practice and a 100-question practice bank.</p></header>
+      <header class="page-header"><p class="eyebrow">Faciliter</p><h1>Learn by doing.</h1><p class="lead">Training modules combine organized YouTube lessons with quizzes, sequencing, diagrams, project-math practice and a 100-question practice bank.</p></header>
       <a class="sim-feature" routerLink="/pm-faciliter/pmp-exam-simulator"><img src="pmp-exam-simulator.webp" alt="Candidate taking a computer-based exam with project charts floating around the workstation" loading="lazy"><div><span class="eyebrow">New · PMP exam preparation</span><h2>PMP Exam Simulator</h2><p>A full 180-question mock exam modelled on the July 2026 PMP exam, with case studies, timed sections, breaks and domain results, plus a practice mode. Updated for the PMBOK® Guide, Eighth Edition.</p><span class="button primary">Open the simulator</span></div></a>
       @if(modules$|async;as modules){
         <div class="module-tabs scroll-list" tabindex="0">@for(m of modules;track m.id){<button type="button" [class.active]="selected?.id===m.id" (click)="choose(m)"><small>{{m.level}}</small><strong>{{m.title}}</strong><span>{{m.videos.length}} videos</span></button>}</div>

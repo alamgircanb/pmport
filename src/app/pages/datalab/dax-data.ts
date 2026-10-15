@@ -1,4 +1,4 @@
-// Power BI & DAX questions. The model: Projects, Tasks, Resources and Risks tables (the PM DataLab CSVs)
+// Power BI & DAX questions. The model: Projects, Tasks, Resources and Risks tables (the DataLab CSVs)
 // plus a 'Date' table marked as a date table, related to Tasks[end_date].
 export interface DaxQuestion{id:string;topic:string;question:string;code?:string;options:string[];answer:number;explanation:string}
 

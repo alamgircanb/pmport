@@ -8,7 +8,7 @@ import {channels} from './calc-math';
   standalone:true,selector:'app-channels-calculator',imports:[FormsModule,RouterLink,CalcMoreComponent],
   template:`
   <section class="page calc">
-    <a routerLink="/pm-calculators" class="back">← PM Calculators</a>
+    <a routerLink="/pm-calculators" class="back">← Calculators</a>
     <header class="calc-head"><p class="eyebrow">Free PM calculator · Communication</p><h1>Communication Channels Calculator</h1>
       <p class="lead">Find how many communication channels a team or stakeholder group has, and how many are added when people join. This is a classic PMP exam question.</p></header>
     <div class="tool">

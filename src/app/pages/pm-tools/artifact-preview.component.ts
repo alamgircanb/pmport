@@ -5,7 +5,7 @@ import {benefitProgress,budgetBars,evmSeries,ganttLayout,groupBy,milestoneLayout
 interface Col{key:string;label:string}
 const SVG_KINDS=['wbs','gantt','milestones','stakeholders','budget','evm','benefits'];
 
-/** Live preview canvas under each PM Artifacts Lab template: a diagram, chart, board or formatted document built from the rows. */
+/** Live preview canvas under each Artifacts Lab template: a diagram, chart, board or formatted document built from the rows. */
 @Component({
   standalone:true,selector:'app-artifact-preview',
   template:`

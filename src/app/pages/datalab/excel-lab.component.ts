@@ -6,13 +6,13 @@ import {buildSheets,EXCEL_EXERCISES,type ExcelExercise} from './excel-lab-data';
 
 type SheetName='Projects'|'Tasks'|'Resources';
 
-/** PM DataLab, Excel module: type a formula, it is calculated on a practice sheet and checked (including fill-down). */
+/** DataLab, Excel module: type a formula, it is calculated on a practice sheet and checked (including fill-down). */
 @Component({
   standalone:true,selector:'app-excel-lab',imports:[FormsModule,DatalabNavComponent],
   template:`
   <section class="page">
     <app-datalab-nav></app-datalab-nav>
-    <header class="lab-head"><p class="eyebrow">PM DataLab · Excel</p><h1>Excel for project managers</h1>
+    <header class="lab-head"><p class="eyebrow">DataLab · Excel</p><h1>Excel for project managers</h1>
       <p class="lead">Write the formulas a PMO analyst uses every week. Type a formula, and it is calculated on the practice sheet and checked, including whether it still works when you fill it down.</p></header>
     <div class="lab">
       <aside class="ex-list" aria-label="Excel exercises">
@@ -57,7 +57,7 @@ type SheetName='Projects'|'Tasks'|'Resources';
         </div>
         <details class="panel"><summary>Functions you can use</summary>
           <p class="kbd">SUM, AVERAGE, MIN, MAX, MEDIAN, COUNT, COUNTA, COUNTBLANK, COUNTIF(S), SUMIF(S), AVERAGEIF(S), SUMPRODUCT, IF, IFS, IFERROR, AND, OR, NOT, ROUND, ROUNDUP, ROUNDDOWN, ABS, VLOOKUP, HLOOKUP, XLOOKUP, INDEX, MATCH, LEFT, RIGHT, LEN, UPPER, LOWER, CONCAT. Use $ to lock a row (for example $A$2) and Sheet!A1 to refer to another sheet.</p>
-          <p class="kbd">Want to practise in real Excel? Download the practice workbook from the PM DataLab overview page.</p>
+          <p class="kbd">Want to practise in real Excel? Download the practice workbook from the DataLab overview page.</p>
         </details>
       </div>
     </div>
