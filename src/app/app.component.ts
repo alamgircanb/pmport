@@ -4,7 +4,7 @@ import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
 import {AuthService} from './core/auth/auth.service';
 @Component({selector:'app-root',standalone:true,imports:[RouterOutlet,RouterLink,RouterLinkActive],templateUrl:'./app.component.html',styleUrl:'./app.component.css'})
 export class AppComponent{
- readonly auth=inject(AuthService); readonly year=new Date().getFullYear(); menuOpen=false; portfolioOpen=true; examOpen=true;
+ readonly auth=inject(AuthService); readonly year=new Date().getFullYear(); menuOpen=false; portfolioOpen=false; examOpen=false;
  private readonly router=inject(Router);isMobile=typeof window!=='undefined'&&window.innerWidth<=920;private desktopPreference=true;private workspace=false;
  constructor(){try{this.desktopPreference=localStorage.getItem('pmport-sidebar-open')!=='false'}catch{}this.applyRoute(this.router.url);this.router.events.pipe(takeUntilDestroyed()).subscribe(event=>{if(event instanceof NavigationEnd)this.applyRoute(event.urlAfterRedirects)})}
  private applyRoute(url:string){this.workspace=true;this.menuOpen=this.isMobile?false:this.workspace?false:this.desktopPreference}
