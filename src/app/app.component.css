@@ -5,3 +5,5 @@
 .menu-button{display:block;position:fixed;top:.75rem;right:.85rem;z-index:40;background:#49cce1;color:#041223;border:0;border-radius:10px;padding:.65rem .8rem;font-size:1.2rem;min-width:44px;min-height:44px;cursor:pointer}.sidebar{transform:translateX(-105%);visibility:hidden;transition:transform .25s,visibility .25s}.sidebar.open{transform:none;visibility:visible}.site-shell{transition:margin-left .25s}.site-shell.sidebar-collapsed{margin-left:0}.topbar{padding-right:5rem}@media(max-width:1100px){.topbar-name span{display:none}}@media(prefers-reduced-motion:reduce){.sidebar,.site-shell{transition:none}}
 .site-shell footer{flex-wrap:wrap}.privacy-note a{color:#8faac7}
 .site-shell main{min-height:100vh}
+
+.nav-parent{display:flex;align-items:stretch}.nav-parent a{flex:1}.nav-toggle{border:0;background:transparent;color:#c5d4e5;font-weight:700;padding:0 .75rem;cursor:pointer;border-radius:8px}.nav-toggle:hover,.nav-toggle:focus-visible{color:#fff;background:#0d2947}

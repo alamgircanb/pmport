@@ -1,4 +1,4 @@
-.back{display:inline-block;margin-bottom:1rem;color:var(--accent);font-weight:700;text-decoration:none}
+.back{display:inline-block;margin-bottom:1rem;color:var(--accent);font-weight:700;text-decoration:none}.sim-links{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 1.5rem;margin-bottom:1rem}.sim-links .back{margin:0}.guide-link{color:var(--muted);font-weight:700;font-size:.9rem;text-decoration:none}.guide-link:hover,.guide-link:focus-visible{color:#fff}
 .back.link{background:none;border:0;padding:0;cursor:pointer;font:inherit}
 .muted.small,.small{font-size:.88rem}
 .card h2{font-size:clamp(1.35rem,2.4vw,1.9rem);margin:.2rem 0 1rem}
