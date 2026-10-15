@@ -27,3 +27,8 @@ export function qs(prefix:string,domain:string,items:(Q|M)[],caseId?:string):Exa
 export function examSet(id:number,subtitle:string,questions:ExamQuestion[],cases:CaseStudy[]=[],caseQuestions:ExamQuestion[]=[]):ExamSet{
   return {id,title:`Exam Simulator ${id}`,subtitle,cases,caseQuestions,questions};
 }
+
+/** Case-study questions that span several domains: [domain, item] pairs, ids prefix + two-digit index. */
+export function caseQs(prefix:string,caseId:string,items:[string,Q|M][]):ExamQuestion[]{
+  return items.map(([domain,it],i)=>({...qs(prefix,domain,[it],caseId)[0],id:`${prefix}${String(i+1).padStart(2,'0')}`}));
+}
