@@ -11,6 +11,17 @@
     "published": true
   },
   {
+    "id": "faciliter-certifications",
+    "label": "Faciliter · Certification exam prep",
+    "title": "Free Exam Simulators for PMP, CAPM, ECBA, CBAP and ITIL 5",
+    "description": "Five full-length mock exams for each certification, with original questions weighted to the official outlines, timed sections and detailed results.",
+    "image": "cbap-exam-simulator.webp",
+    "alt": "A business analyst reviewing a case study with requirements models and a traceability matrix",
+    "path": "/pm-faciliter",
+    "action": "Choose your certification",
+    "published": true
+  },
+  {
     "id": "chatgpt-for-project-managers",
     "label": "Knowledge Lake · AI in practice",
     "title": "How Project Managers Can Use ChatGPT",

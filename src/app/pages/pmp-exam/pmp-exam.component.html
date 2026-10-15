@@ -3,23 +3,23 @@
 <!-- ================= HOME ================= -->
 @case('home'){
 <section class="page sim-home">
-  <a routerLink="/pm-faciliter" class="back">← Faciliter</a>
+  <a [routerLink]="program.overview" class="back">← {{program.code}} exam prep</a>
   <header class="sim-hero">
-    <img src="pmp-exam-simulator.webp" alt="Candidate taking a computer-based exam with project charts floating around the workstation">
+    <img [src]="program.heroImage" [alt]="program.heroAlt">
     <div class="hero-overlay">
-      <p class="eyebrow">Faciliter · PMP exam preparation</p>
-      <h1>PMP Exam Simulators</h1>
-      <p class="hero-lead">Five full-length mock exams modelled on the July 2026 PMP exam—case studies, timed sections, breaks and domain-level results—with 900 original questions reflecting the PMBOK® Guide, Eighth Edition.</p>
-      <div class="hero-actions"><button class="button primary" type="button" (click)="scrollToSection('exams')">Choose an exam</button><button class="button secondary" type="button" (click)="scrollToSection('practice')">Practice by domain</button></div>
+      <p class="eyebrow">{{program.eyebrow}}</p>
+      <h1>{{program.title}}</h1>
+      <p class="hero-lead">{{program.lead}}</p>
+      <div class="hero-actions"><button class="button primary" type="button" (click)="scrollToSection('exams')">Choose an exam</button><button class="button secondary" type="button" (click)="scrollToSection('practice')">Practice by {{program.domainLabel.toLowerCase()}}</button></div>
     </div>
   </header>
 
   <section id="exams" class="exam-cards">
     @for(e of exams;track e.id){
       <article class="card exam-card">
-        <p class="eyebrow">Full mock · 180 questions · 240 minutes</p>
+        <p class="eyebrow">{{program.examMeta}}</p>
         <h2>{{e.title}}</h2>
-        <p class="muted">Case studies: {{e.subtitle}}</p>
+        <p class="muted">{{e.subtitle}}</p>
         @if(savedFor(slotKey(e.id));as sv){<p class="exam-status" [class.done]="sv.finished">{{savedLabel(sv)}}</p>}
         <div class="exam-actions">
           @if(savedFor(slotKey(e.id));as sv){
@@ -35,41 +35,32 @@
   }
 
   <section class="facts">
-    <div class="fact"><strong>180</strong><span>questions (170 scored + 10 unscored pretest)</span></div>
-    <div class="fact"><strong>240</strong><span>minutes, plus two optional 10-minute breaks</span></div>
-    <div class="fact"><strong>900</strong><span>original questions across five full exams, each opening with three case studies</span></div>
-    <div class="fact"><strong>~60%</strong><span>agile and hybrid scenarios, ~40% predictive</span></div>
+    @for(f of program.facts;track f.big){<div class="fact"><strong>{{f.big}}</strong><span>{{f.text}}</span></div>}
   </section>
 
   <section class="grid-2">
-    <article class="card"><p class="eyebrow">Exam content outline · July 2026</p><h2>What the simulator covers</h2>
-      @for(d of domains;track d){<div class="domain-row"><div class="domain-head"><strong>{{d}}</strong><span>{{weights[d]}}% · {{tasks[d].length}} tasks</span></div><div class="bar"><span [style.width.%]="weights[d]*2.2"></span></div><p class="muted small">{{tasks[d].join(' · ')}}</p></div>}
+    <article class="card"><p class="eyebrow">{{program.coverageEyebrow}}</p><h2>{{program.coverageTitle}}</h2>
+      @for(d of domains;track d){<div class="domain-row"><div class="domain-head"><strong>{{d}}</strong><span>{{weights[d]}}% · {{tasks[d].length}} {{program.taskLabel.toLowerCase()}}s</span></div><div class="bar"><span [style.width.%]="weights[d]/maxWeight*90"></span></div><p class="muted small">{{tasks[d].join(' · ')}}</p></div>}
     </article>
-    <article class="card"><p class="eyebrow">PMBOK® Guide, Eighth Edition</p><h2>Built on the latest standard</h2>
-      <ul class="ticks">
-        <li><strong>Six principles:</strong> holistic view, value, quality, accountable leadership, sustainability and empowered culture</li>
-        <li><strong>Seven performance domains:</strong> governance, scope, schedule, finance, stakeholders, resources and risk</li>
-        <li><strong>Five focus areas:</strong> initiating, planning, executing, monitoring and controlling, and closing</li>
-        <li><strong>New emphasis:</strong> AI in project work, sustainability, value delivery and governance</li>
-        <li><strong>Item types:</strong> case sets, graphic-based items, multiple choice, multiple response, matching, pull-down lists and point-and-click hotspots</li>
-      </ul>
+    <article class="card"><p class="eyebrow">{{program.standardEyebrow}}</p><h2>{{program.standardTitle}}</h2>
+      <ul class="ticks">@for(b of program.standardBullets;track $index){<li [innerHTML]="b"></li>}</ul>
     </article>
   </section>
 
   <section id="practice" class="card practice-card">
-    <p class="eyebrow">Practice mode</p><h2>Drill a domain or task</h2>
+    <p class="eyebrow">Practice mode</p><h2>Drill a {{program.domainLabel.toLowerCase()}} or {{program.taskLabel.toLowerCase()}}</h2>
     <p class="muted">No timer. Check each answer as you go and read the explanation straight away.</p>
     <div class="filters">
-      <label>Exam<select (change)="setExam($any($event.target).value)"><option value="0">All three exams</option>@for(e of exams;track e.id){<option [value]="e.id" [selected]="filter.exam===e.id">{{e.title}}</option>}</select></label>
-      <label>Domain<select (change)="setDomain($any($event.target).value)"><option value="All">All domains</option>@for(d of domains;track d){<option [value]="d" [selected]="filter.domain===d">{{d}}</option>}</select></label>
-      <label>Task<select (change)="setTask($any($event.target).value)" [disabled]="filter.domain==='All'"><option value="0">All tasks</option>@if(filter.domain!=='All'){@for(t of tasks[filter.domain];track t;let i=$index){<option [value]="i+1" [selected]="filter.task===i+1">{{i+1}}. {{t}}</option>}}</select></label>
-      <label>Approach<select (change)="setApproach($any($event.target).value)">@for(a of approachList;track a){<option [value]="a" [selected]="filter.approach===a">{{a==='All'?'All approaches':a}}</option>}</select></label>
+      <label>Exam<select (change)="setExam($any($event.target).value)"><option value="0">All {{exams.length}} exams</option>@for(e of exams;track e.id){<option [value]="e.id" [selected]="filter.exam===e.id">{{e.title}}</option>}</select></label>
+      <label>{{program.domainLabel}}<select (change)="setDomain($any($event.target).value)"><option value="All">All {{program.domainLabel.toLowerCase()}}s</option>@for(d of domains;track d){<option [value]="d" [selected]="filter.domain===d">{{d}}</option>}</select></label>
+      <label>{{program.taskLabel}}<select (change)="setTask($any($event.target).value)" [disabled]="filter.domain==='All'"><option value="0">All {{program.taskLabel.toLowerCase()}}s</option>@if(filter.domain!=='All'){@for(t of tasks[filter.domain];track t;let i=$index){<option [value]="i+1" [selected]="filter.task===i+1">{{i+1}}. {{t}}</option>}}</select></label>
+      @if(program.approaches.length){<label>Approach<select (change)="setApproach($any($event.target).value)">@for(a of approachList;track a){<option [value]="a" [selected]="filter.approach===a">{{a==='All'?'All approaches':a}}</option>}</select></label>}
       <label>Questions<select (change)="setCount($any($event.target).value)"><option value="10" [selected]="filter.count===10">10</option><option value="20" [selected]="filter.count===20">20</option><option value="40" [selected]="filter.count===40">40</option><option value="0" [selected]="filter.count===0">All matching</option></select></label>
     </div>
     <div class="practice-go"><span class="muted">{{practiceCount()}} questions match these filters.</span><button class="button primary" type="button" [disabled]="!practiceCount()" (click)="startPractice()">Start practice</button></div>
   </section>
 
-  <p class="disclaimer">All questions are original PMPORT practice items written to the public PMP® Examination Content Outline (July 2026) and the PMBOK® Guide, Eighth Edition. They are not actual exam questions. Performance ratings are PMPORT estimates; PMI does not publish the passing score. PMP®, PMBOK® and PMI® are registered marks of Project Management Institute, Inc. PMPORT is not affiliated with or endorsed by PMI.</p>
+  <p class="disclaimer">{{program.disclaimer}}</p>
 </section>
 }
 
@@ -77,15 +68,7 @@
 @case('intro'){
 <section class="page sim-intro">
   <p class="eyebrow">Before you begin · {{examTitle}}</p><h1>Exam instructions</h1>
-  <ol class="rules card">
-    <li>The exam has <strong>180 questions</strong> and a <strong>240-minute</strong> time limit. The timer runs only while you are answering questions; it pauses during breaks.</li>
-    <li><strong>Section 1</strong> contains three case studies with 10 questions each. Read the case on the left; it stays visible while you answer.</li>
-    <li>After Section 1 and Section 2 you may take an optional <strong>10-minute break</strong>. <strong>Once you end a section, you cannot return to it.</strong></li>
-    <li>Use <strong>Flag for review</strong> to mark questions, and the <strong>section review</strong> screen to revisit unanswered or flagged items before ending a section.</li>
-    <li>Right-click is not needed: use the <strong>✕</strong> button beside an option to strike it out, and the <strong>calculator</strong> in the top bar for project-math questions.</li>
-    <li>Ten questions are <strong>unscored pretest items</strong>, as on the real exam. You will not know which ones until your results.</li>
-    <li>Your progress is saved in this browser, so you can close the page and resume later.</li>
-  </ol>
+  <ol class="rules card">@for(r of program.rules;track $index){<li [innerHTML]="r"></li>}</ol>
   <div class="intro-actions"><button class="button secondary" type="button" (click)="home()">Back</button><button class="button primary" type="button" (click)="startFull()">Start the exam</button></div>
 </section>
 }
@@ -109,7 +92,7 @@
     <div class="bar-left"><strong>{{isPractice?'Practice set':examTitle+' · '+form?.sections?.[section]?.title}}</strong><span>Question {{index+1}} of {{ids.length}}</span></div>
     <div class="bar-right">
       @if(!isPractice){<span class="timer" [class.low]="timeLeft<900" aria-live="off">⏱ {{clock(timeLeft)}}</span>}
-      <button type="button" class="tool" (click)="showCalc=!showCalc" [class.on]="showCalc">Calculator</button>
+      @if(program.calculator){<button type="button" class="tool" (click)="showCalc=!showCalc" [class.on]="showCalc">Calculator</button>}
       <button type="button" class="tool" (click)="toggleFlag()" [class.on]="flags.has(q.id)">{{flags.has(q.id)?'⚑ Flagged':'⚐ Flag for review'}}</button>
       <button type="button" class="tool" (click)="showNavigator=!showNavigator">Navigator</button>
     </div>
@@ -139,7 +122,7 @@
       </aside>
     }
     <article id="exam-question" class="question card">
-      <div class="q-meta"><span>{{q.domain}} · Task {{q.task}}</span>@if(isPractice){<span>{{q.approach}}</span>}</div>
+      <div class="q-meta"><span>{{q.domain}} · {{program.taskLabel}} {{q.task}}</span>@if(isPractice&&q.approach){<span>{{q.approach}}</span>}</div>
       @if(q.graphic&&q.graphic!==caseStudy?.graphic){<app-exam-graphic [id]="q.graphic" [hotspot]="q.type==='hotspot'" [selected]="hotspotSelected(q)" [disabled]="lockedQuestion" (picked)="hotspot($event)"/>}
       @if(q.graphic&&q.graphic===caseStudy?.graphic&&q.type==='hotspot'){<app-exam-graphic [id]="q.graphic" [hotspot]="true" [selected]="hotspotSelected(q)" [disabled]="lockedQuestion" (picked)="hotspot($event)"/>}
       <h2 class="stem">{{q.stem}}</h2>
@@ -197,16 +180,16 @@
   <p class="eyebrow">{{isPractice?'Practice results':examTitle+' results'}}</p>
   <h1>{{r.overall.pct}}% <span [class]="'rating-pill '+ratingClass(r.overall.rating)">{{r.overall.rating}}</span></h1>
   <p class="lead">{{r.overall.correct}} of {{r.overall.total}} scored questions correct · {{r.answered}} answered@if(!isPractice){ · time used {{clock(examMinutes*60-timeLeft)}}}</p>
-  @if(!isPractice){<p class="muted">Many candidates aim to score consistently at or above about 75% on full-length mocks before booking the real exam. Use the domain and task results to target your study.</p>}
+  @if(!isPractice){<p class="muted">{{program.resultsNote}}</p>}
 
   <div class="score-grid">@for(d of r.domains;track d.label){<article class="card score-card"><p class="eyebrow">{{d.label}}</p><strong>{{d.pct}}%</strong><span [class]="'rating-pill '+ratingClass(d.rating)">{{d.rating}}</span><small>{{d.correct}} / {{d.total}} correct</small></article>}</div>
 
   <div class="grid-2">
-    <article class="card"><h2>By approach</h2>@for(a of r.approaches;track a.label){<div class="domain-row"><div class="domain-head"><strong>{{a.label}}</strong><span>{{a.correct}}/{{a.total}} · {{a.pct}}%</span></div><div class="bar"><span [style.width.%]="a.pct"></span></div></div>}</article>
-    <article class="card"><h2>Rating guide</h2><ul class="ticks small"><li><strong>Above Target</strong> — 80% or more</li><li><strong>Target</strong> — 65–79%</li><li><strong>Below Target</strong> — 50–64%</li><li><strong>Needs Improvement</strong> — below 50%</li></ul><p class="muted small">PMI reports performance by domain using these four categories but does not publish the thresholds. These cut-offs are PMPORT estimates for practice.</p></article>
+    @if(r.approaches.length){<article class="card"><h2>By approach</h2>@for(a of r.approaches;track a.label){<div class="domain-row"><div class="domain-head"><strong>{{a.label}}</strong><span>{{a.correct}}/{{a.total}} · {{a.pct}}%</span></div><div class="bar"><span [style.width.%]="a.pct"></span></div></div>}</article>}
+    <article class="card"><h2>Rating guide</h2><ul class="ticks small"><li><strong>Above Target</strong> — {{program.cuts[0]}}% or more</li><li><strong>Target</strong> — {{program.cuts[1]}}–{{program.cuts[0]-1}}%</li><li><strong>Below Target</strong> — {{program.cuts[2]}}–{{program.cuts[1]-1}}%</li><li><strong>Needs Improvement</strong> — below {{program.cuts[2]}}%</li></ul><p class="muted small">{{program.ratingNote}}</p></article>
   </div>
 
-  <article class="card tasks-card"><h2>By exam task</h2>
+  <article class="card tasks-card"><h2>By {{program.taskLabel.toLowerCase()}}</h2>
     <div class="task-table">@for(t of r.tasks;track t.label){<div class="task-row"><span class="t-name">{{t.domain}} {{t.task}} · {{taskName(t.domain,t.task)}}</span><span class="t-score">{{t.correct}}/{{t.total}}</span><span [class]="'rating-pill '+ratingClass(t.rating)">{{t.rating}}</span></div>}</div>
   </article>
 
@@ -227,14 +210,14 @@
   <div class="tabs">@for(f of ['incorrect','flagged','unanswered','all'];track f){<button type="button" [class.on]="answerFilter===f" (click)="answerFilter=$any(f)">{{f==='all'?'All':f[0].toUpperCase()+f.slice(1)}}</button>}</div>
   @for(item of reviewItems;track item.q.id){
     <article class="card answer-card" [class.ok]="correct(item.q.id)">
-      <div class="q-meta"><span>Q{{item.n}} · {{item.q.domain}} · Task {{item.q.task}} · {{item.q.approach}}</span>@if(item.pretest){<span class="pre">Unscored pretest</span>}<span class="mark">{{correct(item.q.id)?'✓ Correct':'✕ Incorrect'}}</span></div>
+      <div class="q-meta"><span>Q{{item.n}} · {{item.q.domain}} · {{program.taskLabel}} {{item.q.task}}@if(item.q.approach){ · {{item.q.approach}}}</span>@if(item.pretest){<span class="pre">Unscored pretest</span>}<span class="mark">{{correct(item.q.id)?'✓ Correct':'✕ Incorrect'}}</span></div>
       @if(caseFor(item.q);as c){<p class="muted small">{{c.title}}</p>}
       @if(item.q.graphic){<app-exam-graphic [id]="item.q.graphic" [hotspot]="item.q.type==='hotspot'" [selected]="item.q.answer?.[0]??null" [disabled]="true"/>}
       <h3>{{item.q.stem}}</h3>
       <p><span class="lbl">Your answer</span>{{responseText(item.q)}}</p>
       <p><span class="lbl ok">Correct answer</span>{{correctText(item.q)}}</p>
       <p class="explain">{{item.q.explanation}}</p>
-      <small class="ref">PMBOK® Guide 8 · {{item.q.ref}}</small>
+      <small class="ref">{{program.refPrefix}} · {{item.q.ref}}</small>
     </article>
   }@empty{<p class="muted">No questions match this filter.</p>}
 </section>

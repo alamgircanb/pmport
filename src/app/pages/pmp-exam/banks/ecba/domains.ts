@@ -1,0 +1,1 @@
+export const ECBA_D={U:'Understanding Business Analysis',M:'Mindset for Effective Business Analysis',I:'Implementing Business Analysis',C:'Change',N:'Need',S:'Solution',K:'Stakeholder',V:'Value',X:'Context'};

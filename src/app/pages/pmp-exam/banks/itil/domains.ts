@@ -1,0 +1,1 @@
+export const ITIL_D={T:'Key ITIL terms and definitions',F:'Four dimensions of product and service management',L:'Product and service lifecycle',V:'ITIL value system',S:'Value streams',A:'ITIL and AI',O:'ITIL and other frameworks'};

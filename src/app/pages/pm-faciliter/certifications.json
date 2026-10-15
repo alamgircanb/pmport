@@ -1,0 +1,237 @@
+[
+  {
+    "id": "pmp",
+    "code": "PMP",
+    "name": "Project Management Professional (PMP)®",
+    "body": "Project Management Institute (PMI)",
+    "bodyUrl": "https://www.pmi.org/certifications/project-management-pmp",
+    "level": "Experienced project managers",
+    "eyebrow": "Faciliter · PMP exam preparation",
+    "title": "PMP Exam Preparation",
+    "lead": "Everything you need to prepare for the PMP exam in one place: what the exam covers, a study approach that works, five free full-length simulators with 900 original questions, and the guides to go with them.",
+    "hero": "pmp-exam-simulator.webp",
+    "heroAlt": "Candidate taking a computer-based exam with project charts floating around the workstation",
+    "simulator": "/pm-faciliter/pmp-exam-simulator",
+    "simulatorLabel": "Open the PMP exam simulators",
+    "facts": [
+      {"big": "180", "text": "questions on the exam"},
+      {"big": "240", "text": "minutes, with two optional breaks"},
+      {"big": "3", "text": "domains: People, Process and Business Environment"},
+      {"big": "900", "text": "free practice questions in five full PMPORT mocks"}
+    ],
+    "outline": [
+      {"name": "People", "weight": "33%", "items": "Leading teams, managing conflict, engaging and aligning stakeholders, communication and knowledge transfer."},
+      {"name": "Process", "weight": "41%", "items": "Planning and integration, scope, value delivery, resources, procurement, finance, quality, schedule, status and closure."},
+      {"name": "Business Environment", "weight": "26%", "items": "Governance, compliance, change control, impediments, risk, continuous improvement, organizational change and external changes."}
+    ],
+    "audience": "Project managers who lead and direct projects and want the most widely recognized project management certification.",
+    "eligibility": "PMI requires project leadership experience (typically 36 months with a four-year degree, or 60 months with a secondary diploma) and 35 contact hours of project management education. Always check PMI's current PMP handbook before applying.",
+    "format": ["Scenario-based questions across predictive, agile and hybrid approaches", "Multiple choice, multiple response, matching, hotspot and graphic-based items", "Case studies that test how you apply judgement in context"],
+    "plan": [
+      {"title": "Weeks 1–2: Learn the outline", "text": "Read the exam content outline and the PMBOK® Guide principles. Take one simulator in practice mode to find your weak domains."},
+      {"title": "Weeks 3–4: Build the mindset", "text": "Study the PMP mindset: servant leadership, value, collaboration and tailoring. Drill the People domain by task."},
+      {"title": "Weeks 5–6: Process and agile", "text": "Work through planning, schedule, cost, risk and agile practices. Practise the project maths with the calculators."},
+      {"title": "Weeks 7–8: Full mocks", "text": "Take full timed mocks, review every wrong answer and aim for a consistent 75% or more before booking the exam."}
+    ],
+    "related": [
+      {"label": "Free PMP study guide and 8-week plan", "path": "/resources/pmp-study-guide-8-week-plan"},
+      {"label": "Best free PMP practice exams compared", "path": "/resources/best-free-pmp-practice-exams"},
+      {"label": "111 essential PMP mindsets", "path": "/resources/111-essential-pmp-mindsets"},
+      {"label": "Project management glossary", "path": "/pm-glossary"},
+      {"label": "Earned value and PERT calculators", "path": "/pm-calculators"}
+    ],
+    "faq": [
+      {"q": "How hard is the PMP exam?", "a": "It is demanding because questions test judgement in realistic situations, not memorization. Regular full-length practice is the best preparation."},
+      {"q": "Are the PMPORT questions real exam questions?", "a": "No. They are original practice questions written to the public exam content outline. Real exam questions are confidential."}
+    ]
+  },
+  {
+    "id": "capm",
+    "code": "CAPM",
+    "name": "Certified Associate in Project Management (CAPM)®",
+    "body": "Project Management Institute (PMI)",
+    "bodyUrl": "https://www.pmi.org/certifications/certified-associate-capm",
+    "level": "Entry level",
+    "eyebrow": "Faciliter · CAPM exam preparation",
+    "title": "CAPM Exam Preparation",
+    "lead": "Start your project management career with the CAPM. Learn what the exam covers, follow a simple study plan and practise with five free full-length CAPM simulators: 750 original questions on fundamentals, predictive and agile delivery, and business analysis.",
+    "hero": "capm-exam-simulator.webp",
+    "heroAlt": "A new project team member studying a project life cycle, a Kanban board and a requirements map on a large screen",
+    "simulator": "/pm-faciliter/capm-exam-simulator",
+    "simulatorLabel": "Open the CAPM exam simulators",
+    "facts": [
+      {"big": "150", "text": "questions (135 scored, 15 unscored)"},
+      {"big": "180", "text": "minutes, with a 10-minute break after question 75"},
+      {"big": "4", "text": "domains, including business analysis"},
+      {"big": "750", "text": "free practice questions in five full PMPORT mocks"}
+    ],
+    "outline": [
+      {"name": "Project Management Fundamentals and Core Concepts", "weight": "36%", "items": "Life cycles and processes, planning, roles and responsibilities, following planned strategies, and problem-solving tools."},
+      {"name": "Predictive, Plan-Based Methodologies", "weight": "17%", "items": "When to use a predictive approach, the project schedule, and documenting project controls."},
+      {"name": "Agile Frameworks/Methodologies", "weight": "20%", "items": "When to use an adaptive approach, iteration planning, adaptive controls, adaptive plans and task management."},
+      {"name": "Business Analysis Frameworks", "weight": "27%", "items": "BA roles, stakeholder communication, gathering requirements, product roadmaps, methodology influence and validating requirements."}
+    ],
+    "audience": "Students, career changers and team members who want to show they understand project management fundamentals before they lead projects.",
+    "eligibility": "PMI requires a secondary degree and 23 hours of project management education completed before the exam. No project experience is needed. Check PMI's current CAPM handbook before applying.",
+    "format": ["Multiple choice, drag-and-drop matching, hotspot and short scenario items", "Questions on predictive and adaptive approaches in all four domains", "One optional 10-minute break; you cannot return to the first half after it"],
+    "plan": [
+      {"title": "Week 1: The basics", "text": "Learn life cycles, process groups, roles and the project management plan. Take a practice set to see where you stand."},
+      {"title": "Week 2: Predictive planning", "text": "Study scope, WBS, schedules, critical path, baselines and change control. Practise schedule questions."},
+      {"title": "Week 3: Agile", "text": "Learn Scrum roles and events, Kanban, XP, backlogs, velocity and burndown charts."},
+      {"title": "Week 4: Business analysis", "text": "Study elicitation, requirements, user stories, acceptance criteria, traceability and product roadmaps."},
+      {"title": "Weeks 5–6: Full mocks", "text": "Take full timed CAPM mocks, review explanations and repeat until you score 75% or more consistently."}
+    ],
+    "related": [
+      {"label": "Project management glossary", "path": "/pm-glossary"},
+      {"label": "Critical path (PERT/CPM) calculator", "path": "/pm-tools/pert-cpm"},
+      {"label": "Free project templates in Artifacts Lab", "path": "/pm-tools"},
+      {"label": "Free learning links", "path": "/pm-learninglink"}
+    ],
+    "faq": [
+      {"q": "Should I take the CAPM or the PMP?", "a": "The CAPM suits people early in their career with little project experience. The PMP requires several years of project leadership experience."},
+      {"q": "Does the CAPM include business analysis?", "a": "Yes. Business analysis frameworks are 27% of the exam, so study requirements, stakeholders and roadmaps as well as project management."}
+    ]
+  },
+  {
+    "id": "ecba",
+    "code": "ECBA",
+    "name": "Entry Certificate in Business Analysis (ECBA)™",
+    "body": "International Institute of Business Analysis (IIBA)",
+    "bodyUrl": "https://www.iiba.org/business-analysis-certifications/ecba/",
+    "level": "Entry level",
+    "eyebrow": "Faciliter · ECBA exam preparation",
+    "title": "ECBA Exam Preparation",
+    "lead": "Begin your business analysis career with the ECBA. Learn how the exam is structured, follow a short study plan and practise with five free full-length ECBA simulators: 250 original questions across the nine knowledge areas of the current blueprint.",
+    "hero": "ecba-exam-simulator.webp",
+    "heroAlt": "A new business analyst mapping a need, stakeholders and a solution around the six core concepts of business analysis",
+    "simulator": "/pm-faciliter/ecba-exam-simulator",
+    "simulatorLabel": "Open the ECBA exam simulators",
+    "facts": [
+      {"big": "50", "text": "questions on the exam"},
+      {"big": "75", "text": "minutes, online proctored"},
+      {"big": "9", "text": "knowledge areas in the current blueprint"},
+      {"big": "250", "text": "free practice questions in five full PMPORT mocks"}
+    ],
+    "outline": [
+      {"name": "Understanding Business Analysis", "weight": "20%", "items": "What business analysis is, the BA role, key terms, requirement types and the core concept model."},
+      {"name": "Mindset for Effective Business Analysis", "weight": "14%", "items": "Curiosity, systems thinking, adaptability, ethics and collaboration."},
+      {"name": "Implementing Business Analysis", "weight": "6%", "items": "Planning and tailoring business analysis work and governance."},
+      {"name": "Change, Need, Solution, Stakeholder, Value and Context", "weight": "10% each", "items": "The six core concepts applied to everyday situations: defining needs, comparing solutions, engaging stakeholders and assessing value in context."}
+    ],
+    "audience": "Students, graduates and career changers starting out in business analysis, and team members who want a recognized foundation.",
+    "eligibility": "No business analysis work experience is required. You must accept IIBA's code of conduct and terms. Check IIBA's current ECBA handbook for any training requirements before applying.",
+    "format": ["Situation-based and standard multiple-choice questions", "Based on The Business Analysis Standard and the BABOK® Guide", "Online remote proctored exam"],
+    "plan": [
+      {"title": "Week 1: Foundations", "text": "Learn what business analysis is, requirement types and the six core concepts. Take a practice set."},
+      {"title": "Week 2: Mindset and planning", "text": "Study curiosity, systems thinking, ethics and how business analysis work is planned and governed."},
+      {"title": "Week 3: The core concepts in practice", "text": "Work through need, solution, stakeholder, value, change and context with real examples and techniques."},
+      {"title": "Week 4: Full mocks", "text": "Take full timed mocks, review every explanation and aim for 75% or more before booking."}
+    ],
+    "related": [
+      {"label": "DataLab: SQL, Excel and Power BI practice", "path": "/pm-datalab"},
+      {"label": "Project management and BA glossary", "path": "/pm-glossary"},
+      {"label": "Using Claude in PM and business analysis", "path": "/resources/claude-for-project-management-business-analysis"},
+      {"label": "Free learning links for BAs", "path": "/pm-learninglink"}
+    ],
+    "faq": [
+      {"q": "Do I need experience for the ECBA?", "a": "No business analysis work experience is required, which makes the ECBA a good first certification."},
+      {"q": "What changed in the ECBA blueprint?", "a": "The current blueprint uses nine knowledge areas: three foundations from The Business Analysis Standard and the six core concepts applied in practice."}
+    ]
+  },
+  {
+    "id": "cbap",
+    "code": "CBAP",
+    "name": "Certified Business Analysis Professional (CBAP)®",
+    "body": "International Institute of Business Analysis (IIBA)",
+    "bodyUrl": "https://www.iiba.org/business-analysis-certifications/cbap/",
+    "level": "Senior business analysts",
+    "eyebrow": "Faciliter · CBAP exam preparation",
+    "title": "CBAP Exam Preparation",
+    "lead": "Prepare for the CBAP with confidence. See how the exam is weighted, follow a study plan built around the BABOK® Guide and practise with five free full-length CBAP simulators: 600 original scenario and case-study questions.",
+    "hero": "cbap-exam-simulator.webp",
+    "heroAlt": "A senior business analyst reviewing a case study with requirements models, a traceability matrix and a value analysis",
+    "simulator": "/pm-faciliter/cbap-exam-simulator",
+    "simulatorLabel": "Open the CBAP exam simulators",
+    "facts": [
+      {"big": "120", "text": "scenario and case-study questions"},
+      {"big": "210", "text": "minutes (3.5 hours)"},
+      {"big": "6", "text": "BABOK® Guide knowledge areas"},
+      {"big": "600", "text": "free practice questions in five full PMPORT mocks"}
+    ],
+    "outline": [
+      {"name": "Requirements Analysis and Design Definition", "weight": "30%", "items": "Specify and model requirements, verify, validate, define requirements architecture and design options, and recommend a solution."},
+      {"name": "Strategy Analysis", "weight": "15%", "items": "Analyse the current state, define the future state, assess risks and define the change strategy."},
+      {"name": "Requirements Life Cycle Management", "weight": "15%", "items": "Trace, maintain, prioritize, assess changes to and approve requirements."},
+      {"name": "Business Analysis Planning and Monitoring", "weight": "14%", "items": "Plan the approach, stakeholder engagement, governance, information management and performance improvements."},
+      {"name": "Solution Evaluation", "weight": "14%", "items": "Measure and analyse performance, assess solution and enterprise limitations, and recommend actions to increase value."},
+      {"name": "Elicitation and Collaboration", "weight": "12%", "items": "Prepare for and conduct elicitation, confirm results, communicate information and manage collaboration."}
+    ],
+    "audience": "Experienced business analysts who lead complex analysis work and want the senior IIBA certification.",
+    "eligibility": "IIBA requires 7,500 hours of business analysis work experience in the last 10 years (with at least 900 hours in four of the six knowledge areas), 35 hours of professional development in the last four years, and two references. Check IIBA's current CBAP handbook before applying.",
+    "format": ["Scenario-based multiple-choice questions with one best answer", "Case studies of several paragraphs followed by questions", "Based on the BABOK® Guide v3, all 30 tasks"],
+    "plan": [
+      {"title": "Weeks 1–2: Map the BABOK® Guide", "text": "Learn the six knowledge areas, their tasks, inputs and outputs, and the core concept model. Take a practice set."},
+      {"title": "Weeks 3–4: RADD and strategy", "text": "Focus on the biggest areas: requirements analysis and design definition, then strategy analysis."},
+      {"title": "Weeks 5–6: Life cycle, planning, evaluation", "text": "Study traceability, prioritization, change, governance and solution evaluation with scenarios."},
+      {"title": "Week 7: Techniques", "text": "Review the most-used techniques and when each one fits a situation."},
+      {"title": "Week 8: Full mocks", "text": "Take full timed mocks, review every case study and aim for 75% or more before booking."}
+    ],
+    "related": [
+      {"label": "DataLab: SQL, Excel and Power BI practice", "path": "/pm-datalab"},
+      {"label": "Project management and BA glossary", "path": "/pm-glossary"},
+      {"label": "Free BA templates in Artifacts Lab", "path": "/pm-tools"},
+      {"label": "Using Claude in PM and business analysis", "path": "/resources/claude-for-project-management-business-analysis"}
+    ],
+    "faq": [
+      {"q": "How is the CBAP different from the ECBA?", "a": "The ECBA tests foundations and needs no experience. The CBAP tests how an experienced analyst applies the BABOK® Guide in complex scenarios and case studies."},
+      {"q": "Which knowledge area matters most?", "a": "Requirements Analysis and Design Definition is 30% of the exam, about twice any other area."}
+    ]
+  },
+  {
+    "id": "itil",
+    "code": "ITIL 5 Foundation",
+    "name": "ITIL® Foundation (Version 5)",
+    "body": "PeopleCert",
+    "bodyUrl": "https://www.peoplecert.org/",
+    "level": "Foundation",
+    "eyebrow": "Faciliter · ITIL® (Version 5) Foundation preparation",
+    "title": "ITIL 5 Foundation Exam Preparation",
+    "lead": "Get ready for ITIL® Foundation (Version 5). See what the syllabus covers, follow a two-week study plan and practise with five free full-length simulators: 200 original questions weighted like the real exam.",
+    "hero": "itil-exam-simulator.webp",
+    "heroAlt": "A service management team looking at a digital service lifecycle, value streams and an AI assistant on a service dashboard",
+    "simulator": "/pm-faciliter/itil-foundation-exam-simulator",
+    "simulatorLabel": "Open the ITIL 5 Foundation simulators",
+    "facts": [
+      {"big": "40", "text": "multiple-choice questions"},
+      {"big": "60", "text": "minutes, closed book"},
+      {"big": "65%", "text": "pass mark (26 of 40)"},
+      {"big": "200", "text": "free practice questions in five full PMPORT mocks"}
+    ],
+    "outline": [
+      {"name": "ITIL value system", "weight": "40%", "items": "The seven guiding principles, governance, practices, continual improvement, and how opportunity and demand become value."},
+      {"name": "Key ITIL terms and definitions", "weight": "30%", "items": "Products, services and offerings; value, outcomes, costs and risks; utility and warranty; service relationships and roles."},
+      {"name": "Four dimensions of product and service management", "weight": "10%", "items": "Organizations and people, information and technology, partners and suppliers, value streams and processes, and external factors."},
+      {"name": "Product and service lifecycle", "weight": "10%", "items": "Discover, design, acquire, build, transition, operate, deliver and support, used iteratively."},
+      {"name": "Value streams", "weight": "5%", "items": "Identifying, mapping and managing value streams."},
+      {"name": "ITIL and AI; ITIL and other frameworks", "weight": "2.5% each", "items": "Using AI responsibly in service management, and combining ITIL with Agile, DevOps and PRINCE2."}
+    ],
+    "audience": "Anyone who works in or with IT and digital services: service desk, operations, development, project and product roles.",
+    "eligibility": "There are no formal prerequisites for the Foundation exam. Training with an accredited provider is optional. Check PeopleCert's current exam details before booking.",
+    "format": ["40 multiple-choice questions with one correct answer", "Standard, missing-word, list and occasional negative questions", "Closed book; pass mark 65%"],
+    "plan": [
+      {"title": "Days 1–4: Key terms", "text": "Learn the definitions of service, product, value, outcome, output, cost, risk, utility and warranty, and the consumer roles."},
+      {"title": "Days 5–8: Value system", "text": "Study the seven guiding principles in depth, governance, the continual improvement model and key practice purposes."},
+      {"title": "Days 9–11: Dimensions and lifecycle", "text": "Learn the four dimensions, external factors, the eight lifecycle activities and value streams."},
+      {"title": "Days 12–14: Full mocks", "text": "Take full timed mocks and review every answer until you score 75% or more consistently."}
+    ],
+    "related": [
+      {"label": "Project management glossary", "path": "/pm-glossary"},
+      {"label": "Kanban flow playground", "path": "/pm-playground"},
+      {"label": "Free learning links", "path": "/pm-learninglink"}
+    ],
+    "faq": [
+      {"q": "Is ITIL 5 very different from ITIL 4?", "a": "Version 5 keeps the guiding principles and value system, adds the product and service lifecycle, and gives more attention to AI and to working with other frameworks."},
+      {"q": "What score do I need to pass?", "a": "The pass mark is 26 out of 40 (65%). Aim higher in practice to give yourself a margin."}
+    ]
+  }
+]

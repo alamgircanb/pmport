@@ -119,3 +119,13 @@ The event display recovers a title from a nonstandard title key in the original 
 ## Module names (October 2026)
 - Module names no longer start with "PM": Artifacts Lab, Faciliter, JOBS Prep, Media, Events & Gallery, Knowledge Lake, LearningLink, DataLab, Playground, Calculators, Glossary. PM HandAid is now **NotePad**.
 - Web addresses did not change (for example NotePad is still /pm-handaid), so links and Google indexing keep working. Search-engine titles keep descriptive words such as "Project Management" in `src/app/core/seo/seo-pages.json`.
+
+## Faciliter certifications and exam simulators (/pm-faciliter)
+
+- **Certifications:** PMP, CAPM, ECBA, CBAP and ITIL 5 Foundation. Each has an overview page (`/pm-faciliter/<id>`, ITIL is `/pm-faciliter/itil-foundation`) and an exam simulator (`/pm-faciliter/<id>-exam-simulator`). Overview text (facts, outline, eligibility, study plan, FAQ) lives in `src/app/pages/pm-faciliter/certifications.json`.
+- **One simulator for all:** `src/app/pages/pmp-exam/` holds the shared engine (`exam-engine.ts`), the shared page (`exam-simulator.base.ts`, `pmp-exam.component.html/.css`) and one small component per certification. Everything that differs (timing, breaks, sections, domains and weights, tasks, page text, rating cut-offs) is in `programs/<cert>-program.ts`.
+- **Question banks:** `banks/<cert>/` (CAPM, ECBA, CBAP, ITIL) use the compact format in `banks/authoring.ts`: `[task, stem, options, answer, explanation, reference, approach?]`. Write the correct option first; the simulator shuffles options. Matching items use `[task, stem, [[left, choiceIndex]...], choices, explanation, reference]`. CBAP case studies use `caseQs` with `[domain, item]` pairs and case ids that are unique across exams (for example `CB3-A`). PMP questions stay in `questions/`.
+- **Counts:** CAPM 5 × 150, ECBA 5 × 50, CBAP 5 × 120 (3 cases × 4 questions per exam), ITIL 5 × 40. Keep per-domain counts close to the weights in the program file.
+- **Adding a question or exam:** add items to the right domain array, keep question ids stable (they are generated from position, so add new items at the end of a domain array to avoid renumbering saved attempts), and add a new exam to `banks/<cert>/index.ts`.
+- **Writing good items:** make wrong options plausible and about the same length as the correct one, so the longest option is not a giveaway. All questions are original; do not copy or credit other prep sites.
+- **Saved attempts:** each certification stores progress in the browser under its own key prefix (`store` in the program file). Attempts that refer to removed question ids are ignored.
