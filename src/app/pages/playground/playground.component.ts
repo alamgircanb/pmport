@@ -10,12 +10,12 @@ import {CHALLENGES,DEFAULT_PARAMS,addPeople,createSim,fromQuery,insights,step,to
 
 type Lever='meetings'|'wip'|'overtime'|'testing'|'creep'|'risk'|'turnover';
 
-/** PM Playground: an interactive, week-by-week project simulator inspired by TensorFlow Playground. */
+/** Playground: an interactive, week-by-week project simulator inspired by TensorFlow Playground. */
 @Component({
   standalone:true,selector:'app-pm-playground',imports:[FormsModule,RouterLink,SimPanelComponent],
   template:`
   <section class="page playground">
-    <header class="pg-head"><p class="eyebrow">PM Playground</p><h1>PM Playground: see how project decisions play out</h1>
+    <header class="pg-head"><p class="eyebrow">Playground</p><h1>Playground: see how project decisions play out</h1>
       <p class="lead">Five interactive simulators for project managers. Pick one, set it up, press play and watch your decisions play out week by week. Change the settings at any time and see the effect straight away.</p>
       <nav class="pg-nav" aria-label="Playgrounds">@for(n of navItems;track n.id){<button type="button" (click)="jump(n.id)"><span>{{n.n}}</span>{{n.label}}</button>}</nav></header>
 
@@ -123,7 +123,7 @@ type Lever='meetings'|'wip'|'overtime'|'testing'|'creep'|'risk'|'turnover';
     @for(d of sims;track d.id){<app-sim-panel [def]="d"></app-sim-panel>}
 
     <section class="explain">
-      <h2>How the PM Playground works</h2>
+      <h2>How the Playground works</h2>
       <p>Each playground is a teaching model built on well-known project management principles. At every step it applies the effects of your choices and of random events. The models show the direction and shape of effects, not exact forecasts for a real project. Each run uses a fixed random seed, so you can compare decisions fairly; press "New random run" for a different set of events.</p>
       <h3>The project delivery model</h3>
       <div class="effects">
@@ -134,7 +134,7 @@ type Lever='meetings'|'wip'|'overtime'|'testing'|'creep'|'risk'|'turnover';
         <div class="card"><h3>Scope change</h3><p>Agile absorbs new scope into the backlog. Predictive plans also pay for rework of finished work, more so the later the change arrives. Change control filters out about half of the requests, for a small overhead.</p></div>
         <div class="card"><h3>Earned value</h3><p>PV assumes even progress to the planned end. EV is the budget share of the work done; AC is the money spent. CPI and SPI below 1.0 mean over budget and behind schedule.</p></div>
       </div>
-      <p>Learn the terms in the <a routerLink="/pm-glossary">PM glossary</a>: <a routerLink="/pm-glossary/communication-channels">communication channels</a>, <a routerLink="/pm-glossary/work-in-progress-wip-limit">WIP limit</a>, <a routerLink="/pm-glossary/cost-of-quality-coq">cost of quality</a>, <a routerLink="/pm-glossary/scope-creep">scope creep</a> and <a routerLink="/pm-glossary/earned-value-management-evm">earned value</a>. Related terms for the other playgrounds: <a routerLink="/pm-glossary/kanban">Kanban</a>, <a routerLink="/pm-glossary/expected-monetary-value-emv">expected monetary value</a>, <a routerLink="/pm-glossary/contingency-reserve">contingency reserve</a>, <a routerLink="/pm-glossary/adkar">ADKAR</a> and <a routerLink="/pm-glossary/definition-of-done-dod">definition of done</a>. Run the numbers for a real project with the <a routerLink="/pm-calculators">PM calculators</a>.</p>
+      <p>Learn the terms in the <a routerLink="/pm-glossary">Glossary</a>: <a routerLink="/pm-glossary/communication-channels">communication channels</a>, <a routerLink="/pm-glossary/work-in-progress-wip-limit">WIP limit</a>, <a routerLink="/pm-glossary/cost-of-quality-coq">cost of quality</a>, <a routerLink="/pm-glossary/scope-creep">scope creep</a> and <a routerLink="/pm-glossary/earned-value-management-evm">earned value</a>. Related terms for the other playgrounds: <a routerLink="/pm-glossary/kanban">Kanban</a>, <a routerLink="/pm-glossary/expected-monetary-value-emv">expected monetary value</a>, <a routerLink="/pm-glossary/contingency-reserve">contingency reserve</a>, <a routerLink="/pm-glossary/adkar">ADKAR</a> and <a routerLink="/pm-glossary/definition-of-done-dod">definition of done</a>. Run the numbers for a real project with the <a routerLink="/pm-calculators">PM calculators</a>.</p>
     </section>
   </section>`,
   styleUrl:'./playground-shared.css'

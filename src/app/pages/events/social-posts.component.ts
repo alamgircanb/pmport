@@ -6,7 +6,7 @@ import {ContentService} from '../../core/services/content.service';
 import {SocialPost} from '../../core/models/portfolio.models';
 
 /**
- * Facebook and LinkedIn posts and events, shown like the PM Media player.
+ * Facebook and LinkedIn posts and events, shown like the Media player.
  * Add items to public/data/social-posts.json — only the post's link ("url") is needed.
  * Posts are embedded; events (and anything that can't be embedded) show as a link card.
  */

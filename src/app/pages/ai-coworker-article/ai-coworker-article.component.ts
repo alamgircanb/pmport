@@ -12,7 +12,7 @@ type Ref={n:number;text:string;url:string};
   imports:[RouterLink],
   template:`
   <article class="page coworker-article">
-    <a routerLink="/resources" class="back">← PM Knowledge Lake</a>
+    <a routerLink="/resources" class="back">← Knowledge Lake</a>
 
     <header class="article-hero">
       <img src="ai-super-coworker.webp" alt="A project manager and a business analyst discuss a holographic project board with a glowing AI coworker, under icons showing AI evolving from calculator to spreadsheet, chat and connected agents">
@@ -171,7 +171,7 @@ type Ref={n:number;text:string;url:string};
       <p class="muted small">Statistics are quoted from the sources above as published; survey results are self-reported. Forecasts in section 05 are the author’s analysis, built on the cited trends.</p>
     </section>
 
-    <footer class="disclaimer"><p>PMPORT is an independent project-management learning platform. PMP® and PMI® are registered marks of Project Management Institute, Inc. This educational article is not endorsed by or affiliated with PMI, Gartner, McKinsey, Microsoft, Stanford HAI, METR or the World Economic Forum.</p><a routerLink="/resources" class="button primary">Back to PM Knowledge Lake</a></footer>
+    <footer class="disclaimer"><p>PMPORT is an independent project-management learning platform. PMP® and PMI® are registered marks of Project Management Institute, Inc. This educational article is not endorsed by or affiliated with PMI, Gartner, McKinsey, Microsoft, Stanford HAI, METR or the World Economic Forum.</p><a routerLink="/resources" class="button primary">Back to Knowledge Lake</a></footer>
   </article>`,
   styles:[`
     .coworker-article{max-width:1180px}.back{display:inline-block;margin-bottom:1rem;color:var(--accent);font-weight:700}

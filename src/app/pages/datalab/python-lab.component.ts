@@ -49,13 +49,13 @@ def _run(user, setup, solution):
     return json.dumps(out)
 `;
 
-/** PM DataLab, Python module: pandas exercises that run in the browser with Pyodide. */
+/** DataLab, Python module: pandas exercises that run in the browser with Pyodide. */
 @Component({
   standalone:true,selector:'app-python-lab',imports:[FormsModule,DatalabNavComponent],
   template:`
   <section class="page">
     <app-datalab-nav></app-datalab-nav>
-    <header class="lab-head"><p class="eyebrow">PM DataLab · Python</p><h1>Python for data</h1>
+    <header class="lab-head"><p class="eyebrow">DataLab · Python</p><h1>Python for data</h1>
       <p class="lead">Practise pandas on project data, right in your browser. The DataFrames <code>projects</code>, <code>tasks</code>, <code>resources</code> and <code>risks</code> are already loaded. Store your answer in a variable called <code>result</code>.</p></header>
     @if(state!=='ready'){
       <div class="card start">

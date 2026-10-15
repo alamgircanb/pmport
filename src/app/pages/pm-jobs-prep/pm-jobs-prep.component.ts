@@ -5,7 +5,7 @@ import {INTERVIEW_QUESTIONS} from './interview-questions';
  template:`
  <section class="prep">
  <img class="banner" src="pm-jobs-prep-banner.jpg" alt="Project management candidate preparing for a professional interview" width="1942" height="809">
- <header><p class="eyebrow">Prepare · Practice · Succeed</p><h1>PM JOBS Prep</h1><p>51 behavioral interview questions with sample STAR answers for program and project managers.</p></header>
+ <header><p class="eyebrow">Prepare · Practice · Succeed</p><h1>JOBS Prep</h1><p>51 behavioral interview questions with sample STAR answers for program and project managers.</p></header>
  <p class="tip">Use these sample answers as a starting point. Adapt each story to your own experience and results.</p>
  <label for="question-search">Find a question</label>
  <input id="question-search" type="search" placeholder="Search questions and answers…" (input)="search=$any($event.target).value">

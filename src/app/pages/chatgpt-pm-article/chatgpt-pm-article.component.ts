@@ -8,7 +8,7 @@ import {PMP_GUIDE_STYLES} from '../pmp-guides/pmp-guide-styles';
   standalone:true,selector:'app-chatgpt-pm-article',imports:[RouterLink],
   template:`
   <article class="page guide">
-    <a routerLink="/resources" class="back">← PM Knowledge Lake</a>
+    <a routerLink="/resources" class="back">← Knowledge Lake</a>
     <header class="article-hero">
       <img src="chatgpt-for-project-managers.webp" alt="An AI co-pilot chat drafting a project status update for review, beside a project manager's checklist: validate facts, protect data, decide and sign off, be transparent" width="1600" height="900" fetchpriority="high">
       <div class="hero-overlay">
@@ -60,7 +60,7 @@ import {PMP_GUIDE_STYLES} from '../pmp-guides/pmp-guide-styles';
       <p class="eyebrow">Planning</p>
       <h2>Plan faster without skipping the thinking</h2>
       <h3>3. Break the scope into a first-cut WBS</h3>
-      <p>A work breakdown structure is tedious to start from nothing. Ask for a draft with deliverables and work packages, then refine it with your team. The team's corrections are where the real estimates come from. You can build the final version in the free <a routerLink="/pm-tools">PM Artifacts Lab</a>, which draws the WBS tree for you.</p>
+      <p>A work breakdown structure is tedious to start from nothing. Ask for a draft with deliverables and work packages, then refine it with your team. The team's corrections are where the real estimates come from. You can build the final version in the free <a routerLink="/pm-tools">Artifacts Lab</a>, which draws the WBS tree for you.</p>
       <div class="prompt"><p>Create a work breakdown structure for [project and main deliverables], three levels deep, with WBS codes. Mark the work packages that usually carry the most estimating uncertainty and explain why.</p><button type="button" class="copy" (click)="copy($any($event.target).previousElementSibling.textContent,3)">{{label(3)}}</button></div>
       <h3>4. Stress-test the schedule</h3>
       <p>Instead of asking AI to build your schedule, ask it to attack one. Share the main milestones and durations and ask what could make them wrong. It is a quick way to find optimistic assumptions before your sponsor does. For a numeric view of schedule risk, try the <a routerLink="/pm-calculators/monte-carlo-schedule-simulator">Monte Carlo schedule simulator</a>.</p>

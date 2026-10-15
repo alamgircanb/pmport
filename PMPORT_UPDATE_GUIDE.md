@@ -42,13 +42,13 @@ The section appears under the event cards. It moves to the next post every 30 se
 
 Every public page's Google title, description and LinkedIn/Facebook preview image are set in `src/app/core/seo/seo-pages.json`. Preview images are 1200×630 JPGs in `public/og/`. When you add a new page, add one entry to that file: the build (`scripts/seo-pages.mjs`) then creates the page's search-friendly HTML and adds it to `sitemap.xml` automatically.
 
-## PM Knowledge Lake
+## Knowledge Lake
 
 Existing books and articles are still loaded from `public/data/resources.json`. The featured Canada article is at `/resources/future-project-management-canada`. Its full text and reference links are in `src/app/pages/article/article.component.ts`. The exact selected illustration is `public/future-project-management-canada.webp`.
 
 ## Project artifacts
 
-PM Artifacts Lab (the /pm-tools page) includes 22 templates: the original Gantt, RACI, RAID, stakeholder register, WBS and EVM tools, plus charter, business case, scope, milestones, communications, budget, change requests, status, actions, decisions, backlog, user stories, traceability, lessons learned, closure and benefits tracking.
+Artifacts Lab (the /pm-tools page) includes 22 templates: the original Gantt, RACI, RAID, stakeholder register, WBS and EVM tools, plus charter, business case, scope, milestones, communications, budget, change requests, status, actions, decisions, backlog, user stories, traceability, lessons learned, closure and benefits tracking.
 
 Visitors can edit, add, reorder and delete rows; add and remove columns; save per tool in browser storage; download/import editable JSON; and export real `.xlsx` workbooks or PDF reports. Save before switching tools. Leaving a page with unsaved changes requests confirmation. Browser data is local to the device; there is no account synchronization for these tools.
 
@@ -83,7 +83,7 @@ All 18 original public assets and data files, including pictures, portfolio repo
 
 The event display recovers a title from a nonstandard title key in the original events JSON without changing that file. Draft example event cards are excluded from the Home feature area.
 
-## PM DataLab (/pm-datalab)
+## DataLab (/pm-datalab)
 
 - Pages live in `src/app/pages/datalab/`. All five modules use one fictional dataset in `datalab-data.ts`. The same data is also in `public/datalab/*.csv` and in the practice workbook `public/datalab/pm-datalab-practice.xlsx`. If you change the data, update all three.
 - Exercises:
@@ -96,7 +96,7 @@ The event display recovers a title from a nonstandard title key in the original 
 - The Excel lab uses its own formula engine (`excel-engine.ts`), so nothing extra is downloaded.
 - Progress is saved in the visitor's browser only (localStorage).
 
-## PM Calculators (/pm-calculators) and PM Glossary (/pm-glossary)
+## Calculators (/pm-calculators) and Glossary (/pm-glossary)
 
 - **Calculators:** each one is its own component in `src/app/pages/calculators/`. All the maths is in `calc-math.ts`. To add a calculator:
   - add it to `CALCULATORS` in `calc-shared.ts`;
@@ -107,7 +107,7 @@ The event display recovers a title from a nonstandard title key in the original 
   - Each term automatically gets its own page at `/pm-glossary/<slug>`, its own search title and description, structured data, and a sitemap entry. No other changes are needed.
   - Keep `related` pointing at slugs that exist.
 
-## PM Playground (/pm-playground)
+## Playground (/pm-playground)
 - Model (all the maths): `src/app/pages/playground/playground-model.ts`. Change effect sizes there (onboarding `RAMP`, meeting/WIP/testing factors, defect fix cost, overtime fatigue).
 - Challenges: the `CHALLENGES` array in the same file. Each has starting `params`, a `goal` text and a `check()` rule. After changing a challenge, make sure it fails with its starting settings and passes with the fix described in its `hint`.
 - Page and charts: `src/app/pages/playground/playground.component.ts`.
@@ -115,3 +115,7 @@ The event display recovers a title from a nonstandard title key in the original 
 - Shareable links: `?challenge=<id>` or the settings as query parameters (see `toQuery`/`fromQuery`).
 - Playgrounds 2–5 (Kanban flow, risk and reserve, change adoption, technical debt) live in `src/app/pages/playground/sims/` (one file each; shared types in `sim-engine.ts`). Each file holds the model, its controls (`setup`, `levers`, `disturbances`), charts, challenges and principle cards. `sim-panel.component.ts` draws any of them, so a new playground is one new file plus one entry in `sims` in `playground.component.ts`.
 - After changing a model or a challenge, check that each challenge fails with its starting settings and passes with the fix in its hint (runs use a fixed seed, so results are repeatable).
+
+## Module names (October 2026)
+- Module names no longer start with "PM": Artifacts Lab, Faciliter, JOBS Prep, Media, Events & Gallery, Knowledge Lake, LearningLink, DataLab, Playground, Calculators, Glossary. PM HandAid is now **NotePad**.
+- Web addresses did not change (for example NotePad is still /pm-handaid), so links and Google indexing keep working. Search-engine titles keep descriptive words such as "Project Management" in `src/app/core/seo/seo-pages.json`.

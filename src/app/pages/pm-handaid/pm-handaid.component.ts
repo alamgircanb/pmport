@@ -75,8 +75,8 @@ export class PMHandAidComponent implements AfterViewInit{
  const canvases=this.pages.map(page=>this.canvas(page));
  if(format==='pdf'){const {jsPDF}=await import('jspdf');const pdf=new jsPDF({orientation:'landscape',unit:'px',format:[1200,800],hotfixes:['px_scaling'],compress:true});canvases.forEach((canvas,i)=>{if(i)pdf.addPage([1200,800],'landscape');pdf.addImage(canvas.toDataURL('image/png'),'PNG',0,0,1200,800)});pdf.save('PM-HandAid.pdf')}
  else if(format==='docx'){const entries=await Promise.all(canvases.map(async(canvas,i)=>({png:await this.bytes(canvas,'image/png'),text:[this.pages[i].text,...this.pages[i].strokes.filter(stroke=>stroke.tool==='textbox').map(stroke=>stroke.text||'')].filter(Boolean).join('\n')})));downloadBlob(new Blob([encodeDocx(entries)],{type:'application/vnd.openxmlformats-officedocument.wordprocessingml.document'}),'PM-HandAid.docx')}
- else{const files=await Promise.all(canvases.map(async(canvas,i)=>({name:'PM-HandAid-page-'+(i+1)+'.'+format,data:format==='gif'?encodeGif(canvas.getContext('2d')!.getImageData(0,0,1200,800)):await this.bytes(canvas,'image/jpeg')})));
- if(files.length===1)downloadBlob(new Blob([files[0].data],{type:format==='gif'?'image/gif':'image/jpeg'}),files[0].name);else downloadBlob(new Blob([zipStored(files)],{type:'application/zip'}),'PM-HandAid-'+format+'-pages.zip')}
+ else{const files=await Promise.all(canvases.map(async(canvas,i)=>({name:'NotePad-page-'+(i+1)+'.'+format,data:format==='gif'?encodeGif(canvas.getContext('2d')!.getImageData(0,0,1200,800)):await this.bytes(canvas,'image/jpeg')})));
+ if(files.length===1)downloadBlob(new Blob([files[0].data],{type:format==='gif'?'image/gif':'image/jpeg'}),files[0].name);else downloadBlob(new Blob([zipStored(files)],{type:'application/zip'}),'NotePad-'+format+'-pages.zip')}
  this.dirty=false;this.status='Download ready. Your pages are still available.';
  }catch(error){this.status='Could not export. Your work is still here; please try again.';console.error(error)}finally{this.busy=false}
  }

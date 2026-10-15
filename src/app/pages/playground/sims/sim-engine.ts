@@ -1,4 +1,4 @@
-// Shared types and helpers for the extra PM Playground simulations (Kanban flow, risk and reserve,
+// Shared types and helpers for the extra Playground simulations (Kanban flow, risk and reserve,
 // change adoption, technical debt). Each simulation is a pure model plus a description of its controls,
 // charts and challenges; one panel component renders any of them.
 

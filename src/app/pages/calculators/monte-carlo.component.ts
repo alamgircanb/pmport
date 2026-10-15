@@ -8,7 +8,7 @@ import {monteCarlo,type McResult} from './calc-math';
   standalone:true,selector:'app-monte-carlo',imports:[FormsModule,RouterLink,CalcMoreComponent],
   template:`
   <section class="page calc">
-    <a routerLink="/pm-calculators" class="back">← PM Calculators</a>
+    <a routerLink="/pm-calculators" class="back">← Calculators</a>
     <header class="calc-head"><p class="eyebrow">Free PM calculator · Schedule risk</p><h1>Monte Carlo Schedule Simulator</h1>
       <p class="lead">Enter three-point estimates for tasks done one after another. The simulator runs thousands of random scenarios and shows how likely you are to finish by any date: P50, P80, P90 and the chance of meeting your deadline.</p></header>
     <div class="card">

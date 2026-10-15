@@ -1,4 +1,4 @@
-// PM Playground: a week-by-week teaching model of a software/business project.
+// Playground: a week-by-week teaching model of a software/business project.
 // It shows the direction and dynamics of common PM effects (Brooks's law, WIP, overtime, quality, scope creep),
 // not precise forecasts. All randomness comes from a seeded generator, so a shared link replays the same run.
 

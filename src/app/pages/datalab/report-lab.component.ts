@@ -14,13 +14,13 @@ function rows<T>(table:string,map:(get:(c:string)=>string|number)=>T):T[]{
 }
 const ragOf=(pc:number,pp:number):Rag=>pp===0||pc/pp>=0.95?'Green':pc/pp>=0.85?'Amber':'Red';
 
-/** PM DataLab, Data reporting module: build a portfolio status report in four guided steps. */
+/** DataLab, Data reporting module: build a portfolio status report in four guided steps. */
 @Component({
   standalone:true,selector:'app-report-lab',imports:[DecimalPipe,FormsModule,RouterLink,DatalabNavComponent],
   template:`
   <section class="page">
     <app-datalab-nav></app-datalab-nav>
-    <header class="lab-head"><p class="eyebrow">PM DataLab · Data reporting</p><h1>Build a portfolio status report</h1>
+    <header class="lab-head"><p class="eyebrow">DataLab · Data reporting</p><h1>Build a portfolio status report</h1>
       <p class="lead">You are the PMO analyst at Prairie Logistics. Leadership wants this month's portfolio status report. Work through four steps: headline KPIs, RAG status, top risks and an executive summary. At the end you'll have a finished one-page report.</p></header>
 
     <ol class="stepper" aria-label="Steps">

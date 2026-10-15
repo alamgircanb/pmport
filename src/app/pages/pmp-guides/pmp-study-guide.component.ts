@@ -7,7 +7,7 @@ import {PMP_GUIDE_STYLES} from './pmp-guide-styles';
   standalone:true,selector:'app-pmp-study-guide',imports:[RouterLink],
   template:`
   <article class="page guide">
-    <a routerLink="/resources" class="back">← PM Knowledge Lake</a>
+    <a routerLink="/resources" class="back">← Knowledge Lake</a>
     <header class="article-hero">
       <img src="pmp-study-guide.webp" alt="A glowing eight-step study path leading to an exam-day flag, with a domain progress card and a readiness gauge" width="1600" height="900" fetchpriority="high">
       <div class="hero-overlay">
@@ -89,7 +89,7 @@ import {PMP_GUIDE_STYLES} from './pmp-guide-styles';
           <li>Practise 60 People questions and log every mistake with the reason.</li></ul></div>
         <div class="week"><span class="tag">Week 3</span><h3>Process: predictive planning</h3><ul>
           <li>Scope, WBS, schedule, critical path, cost and earned value (CPI, SPI, EAC).</li>
-          <li>Try the free <a routerLink="/pm-tools/pert-cpm">PERT/CPM calculator</a> and the earned value exercises in <a routerLink="/pm-datalab/excel">PM DataLab</a>.</li>
+          <li>Try the free <a routerLink="/pm-tools/pert-cpm">PERT/CPM calculator</a> and the earned value exercises in <a routerLink="/pm-datalab/excel">DataLab</a>.</li>
           <li>Practise 60 Process questions.</li></ul></div>
         <div class="week"><span class="tag">Week 4</span><h3>Process: agile and hybrid</h3><ul>
           <li>Scrum roles and events, Kanban, backlogs, user stories, velocity and burn charts.</li>

@@ -29,10 +29,10 @@ export function loadScript(src:string):Promise<void>{
   return loading.get(src)!;
 }
 
-/** Tabs shown at the top of every PM DataLab page. */
+/** Tabs shown at the top of every DataLab page. */
 @Component({
   standalone:true,selector:'app-datalab-nav',imports:[RouterLink,RouterLinkActive],
-  template:`<nav class="dl-nav" aria-label="PM DataLab modules">
+  template:`<nav class="dl-nav" aria-label="DataLab modules">
     <a routerLink="/pm-datalab" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Overview</a>
     @for(m of modules;track m.id){<a [routerLink]="m.path" routerLinkActive="active">{{m.short}}</a>}
   </nav>`,

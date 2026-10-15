@@ -7,7 +7,7 @@ import {PMP_GUIDE_STYLES} from './pmp-guide-styles';
   standalone:true,selector:'app-free-pmp-exams',imports:[RouterLink],
   template:`
   <article class="page guide">
-    <a routerLink="/resources" class="back">← PM Knowledge Lake</a>
+    <a routerLink="/resources" class="back">← Knowledge Lake</a>
     <header class="article-hero">
       <img src="free-pmp-practice-exams.webp" alt="A PMP practice exam question card with a correct answer, a four-hour exam timer and a results chart" width="1600" height="900" fetchpriority="high">
       <div class="hero-overlay">

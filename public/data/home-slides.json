@@ -7,12 +7,12 @@
     "image": "pm_pg_leadership.webp",
     "alt": "Collaborative project leadership",
     "path": "/pm-tools",
-    "action": "Explore PM Artifacts Lab",
+    "action": "Explore Artifacts Lab",
     "published": true
   },
   {
     "id": "chatgpt-for-project-managers",
-    "label": "PM Knowledge Lake · AI in practice",
+    "label": "Knowledge Lake · AI in practice",
     "title": "How Project Managers Can Use ChatGPT",
     "description": "Twelve practical ways to use AI for plans, risks, status updates and meeting notes, with starter prompts and the guardrails that keep it safe.",
     "image": "chatgpt-for-project-managers.webp",
@@ -23,8 +23,8 @@
   },
   {
     "id": "pm-playground",
-    "label": "PM Playground · 5 simulators",
-    "title": "PM Playground",
+    "label": "Playground · 5 simulators",
+    "title": "Playground",
     "description": "Play with project delivery, Kanban flow, risk and reserve, change adoption and technical debt. Change the settings and watch the results week by week.",
     "image": "pm-playground.webp",
     "alt": "Simulator control panel with sliders, a burn-up chart and a play button",
@@ -34,8 +34,8 @@
   },
   {
     "id": "pm-datalab",
-    "label": "PM DataLab · Data skills practice",
-    "title": "PM DataLab",
+    "label": "DataLab · Data skills practice",
+    "title": "DataLab",
     "description": "Practise SQL, Excel, Power BI DAX, Python and status reporting on one sample project portfolio, with every answer checked instantly.",
     "image": "pm-datalab.webp",
     "alt": "SQL query editor beside a results table and a bar chart",
@@ -45,8 +45,8 @@
   },
   {
     "id": "pm-calculators",
-    "label": "PM Calculators · Free tools",
-    "title": "PM Calculators",
+    "label": "Calculators · Free tools",
+    "title": "Calculators",
     "description": "Earned value, PERT, risk EMV, NPV and ROI, Monte Carlo, sprint capacity and communication channels, each with formulas and a worked example.",
     "image": "pm-calculators.webp",
     "alt": "Calculator showing a CPI result beside a Monte Carlo curve and project formulas",
@@ -56,8 +56,8 @@
   },
   {
     "id": "pm-glossary",
-    "label": "PM Glossary · 217 terms",
-    "title": "PM Glossary",
+    "label": "Glossary · 217 terms",
+    "title": "Glossary",
     "description": "More than 200 project management, agile and business analysis terms explained in plain English, each with a real-world example.",
     "image": "pm-glossary.webp",
     "alt": "Stacked glossary cards for scope creep, critical path and earned value above an A to Z index",
@@ -67,7 +67,7 @@
   },
   {
     "id": "pmp-study-guide",
-    "label": "PM Knowledge Lake · PMP preparation",
+    "label": "Knowledge Lake · PMP preparation",
     "title": "Free PMP Study Guide & 8-Week Plan",
     "description": "A week-by-week plan for the PMP exam, with the free resources to use at each stage and how to know you are ready.",
     "image": "pmp-study-guide.webp",
@@ -78,7 +78,7 @@
   },
   {
     "id": "free-pmp-practice-exams",
-    "label": "PM Knowledge Lake · PMP preparation",
+    "label": "Knowledge Lake · PMP preparation",
     "title": "Best Free PMP Practice Exams",
     "description": "A comparison of free PMP practice exams and question banks: how many questions each has, how close they are to the real exam, and how to use them.",
     "image": "free-pmp-practice-exams.webp",
@@ -89,8 +89,8 @@
   },
   {
     "id": "pm-learninglink",
-    "label": "PM LearningLink · Free resources",
-    "title": "PM LearningLink",
+    "label": "LearningLink · Free resources",
+    "title": "LearningLink",
     "description": "200 popular free YouTube channels and websites for project management, business analysis, data analytics and coding.",
     "image": "pm-learninglink.webp",
     "alt": "Learner at a desk surrounded by linked videos and resources for project management, data and coding",
@@ -100,7 +100,7 @@
   },
   {
     "id": "ai-super-coworker",
-    "label": "PM Knowledge Lake · Future of work",
+    "label": "Knowledge Lake · Future of work",
     "title": "AI: Not Only a Tool, but a Super Coworker",
     "description": "How AI evolved from calculator to colleague, what the data says today, and the next ten years for project managers and business analysts.",
     "image": "ai-super-coworker.webp",
@@ -111,7 +111,7 @@
   },
   {
     "id": "pmp-exam-simulator",
-    "label": "PM Faciliter · PMP exam preparation",
+    "label": "Faciliter · PMP exam preparation",
     "title": "PMP Exam Simulator",
     "description": "A full 180-question mock exam modelled on the July 2026 PMP exam and the PMBOK® Guide, Eighth Edition.",
     "image": "pmp-exam-simulator.webp",
@@ -122,7 +122,7 @@
   },
   {
     "id": "claude-pm-ba-guide",
-    "label": "PM Knowledge Lake · AI in practice",
+    "label": "Knowledge Lake · AI in practice",
     "title": "Using Claude in PM and Business Analysis",
     "description": "A practical field manual: set up Claude, apply it across the project lifecycle and use it responsibly.",
     "image": "claude-pm-ba-guide.webp",
@@ -133,7 +133,7 @@
   },
   {
     "id": "project-failure-causes",
-    "label": "PM Knowledge Lake · Project delivery",
+    "label": "Knowledge Lake · Project delivery",
     "title": "Top 21 Causes of Project Failure",
     "description": "Learn why projects break down, the early warning signals to watch for and the practical actions that keep delivery on course.",
     "image": "project-failure-causes.webp",
@@ -155,18 +155,18 @@
   },
   {
     "id": "tools",
-    "label": "PM Artifacts Lab · Interactive workspaces",
+    "label": "Artifacts Lab · Interactive workspaces",
     "title": "Plan. Track. Make better decisions.",
     "description": "Create project artifacts, draw diagrams and explore PERT and critical path calculations.",
     "image": "power-bi-project-presentation.webp",
     "alt": "Project dashboard presentation",
     "path": "/pm-tools",
-    "action": "Open PM Artifacts Lab",
+    "action": "Open Artifacts Lab",
     "published": true
   },
   {
     "id": "media",
-    "label": "PM Media · PMPortLive",
+    "label": "Media · PMPortLive",
     "title": "Learn one concept at a time.",
     "description": "Discover short videos explaining commonly confused concepts in project management and business analysis.",
     "image": "it-systems-development.webp",
@@ -221,7 +221,7 @@
   },
   {
     "id": "pmp-mindsets",
-    "label": "PM Knowledge Lake · PMP exam preparation",
+    "label": "Knowledge Lake · PMP exam preparation",
     "title": "111 Essential PMP Mindsets for Exam Excellence",
     "description": "Think like a project leader and approach predictive, agile and hybrid situational questions with confidence.",
     "image": "pmp-111-mindsets.webp",

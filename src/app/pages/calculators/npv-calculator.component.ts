@@ -8,7 +8,7 @@ import {finance} from './calc-math';
   standalone:true,selector:'app-npv-calculator',imports:[FormsModule,RouterLink,CalcMoreComponent],
   template:`
   <section class="page calc">
-    <a routerLink="/pm-calculators" class="back">← PM Calculators</a>
+    <a routerLink="/pm-calculators" class="back">← Calculators</a>
     <header class="calc-head"><p class="eyebrow">Free PM calculator · Business case</p><h1>NPV, ROI, IRR &amp; Payback Calculator</h1>
       <p class="lead">Build the numbers for a business case. Enter the initial investment, the yearly net benefits and your discount rate. You get net present value, ROI, internal rate of return, payback and discounted payback.</p></header>
     <div class="tool">

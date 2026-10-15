@@ -8,7 +8,7 @@ import {pert} from './calc-math';
   standalone:true,selector:'app-pert-calculator',imports:[FormsModule,RouterLink,CalcMoreComponent],
   template:`
   <section class="page calc">
-    <a routerLink="/pm-calculators" class="back">← PM Calculators</a>
+    <a routerLink="/pm-calculators" class="back">← Calculators</a>
     <header class="calc-head"><p class="eyebrow">Free PM calculator · Estimating</p><h1>PERT Three-Point Estimate Calculator</h1>
       <p class="lead">Enter optimistic, most likely and pessimistic estimates for a task, in days, hours or dollars. You get the PERT (beta) estimate, the triangular average, the standard deviation and confidence ranges.</p></header>
     <div class="tool">

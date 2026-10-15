@@ -12,7 +12,7 @@ type Rule={title:string;text:string};
   imports:[RouterLink],
   template:`
   <article class="page guide-article">
-    <a routerLink="/resources" class="back">← PM Knowledge Lake</a>
+    <a routerLink="/resources" class="back">← Knowledge Lake</a>
 
     <header class="article-hero">
       <img src="claude-pm-ba-guide.webp" alt="Project team collaborating around a laptop running an AI assistant, with floating panels for a timeline, risk heat map, story board, process flow, stakeholder map and dashboard">
@@ -113,7 +113,7 @@ type Rule={title:string;text:string};
       <blockquote>AI will not replace the project manager or business analyst who brings judgment, relationships and accountability. It will strengthen the ones who learn to use it well—and who never stop verifying.</blockquote>
     </section>
 
-    <footer class="disclaimer"><p>PMPORT is an independent project-management learning platform. Claude is a product of Anthropic; this article is not endorsed by or affiliated with Anthropic. Features such as Projects, file uploads, web search and connectors vary by plan and change over time—check <a href="https://support.claude.com" target="_blank" rel="noreferrer">support.claude.com</a> for current details. Always follow your organization’s policies on AI tools and data. PMP® and PMI® are registered marks of Project Management Institute, Inc.</p><a routerLink="/resources" class="button primary">Back to PM Knowledge Lake</a></footer>
+    <footer class="disclaimer"><p>PMPORT is an independent project-management learning platform. Claude is a product of Anthropic; this article is not endorsed by or affiliated with Anthropic. Features such as Projects, file uploads, web search and connectors vary by plan and change over time—check <a href="https://support.claude.com" target="_blank" rel="noreferrer">support.claude.com</a> for current details. Always follow your organization’s policies on AI tools and data. PMP® and PMI® are registered marks of Project Management Institute, Inc.</p><a routerLink="/resources" class="button primary">Back to Knowledge Lake</a></footer>
   </article>`,
   styles:[`
     .guide-article{max-width:1180px}.back{display:inline-block;margin-bottom:1rem;color:var(--accent);font-weight:700}

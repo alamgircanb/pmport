@@ -11,7 +11,7 @@ import {TERM_BY_SLUG,TERMS,termSeo,type GlossaryTerm} from './glossary';
   standalone:true,selector:'app-glossary-term',imports:[RouterLink],
   template:`
   <article class="page term-page">
-    <a routerLink="/pm-glossary" class="back">← PM Glossary</a>
+    <a routerLink="/pm-glossary" class="back">← Glossary</a>
     @if(term();as t){
       <p class="eyebrow">{{t.category}}</p>
       <h1>{{t.term}}</h1>
@@ -51,7 +51,7 @@ export class GlossaryTermComponent{
     if(typeof this.seo.apply!=='function')return;
     if(!t){this.seo.apply('pm-glossary',{title:'Term not found | PMPORT',description:'This term is not in the PMPORT project management glossary.',noindex:true});this.seo.setJsonLd('seo-term',null);return;}
     const path=`pm-glossary/${t.slug}`;const s=termSeo(t);
-    this.seo.apply(path,{title:s.title,description:s.description},[{name:'Home',url:`${SITE_URL}/`},{name:'PM Glossary',url:`${SITE_URL}/pm-glossary`},{name:t.term,url:`${SITE_URL}/${path}`}]);
+    this.seo.apply(path,{title:s.title,description:s.description},[{name:'Home',url:`${SITE_URL}/`},{name:'Glossary',url:`${SITE_URL}/pm-glossary`},{name:t.term,url:`${SITE_URL}/${path}`}]);
     this.seo.setJsonLd('seo-term',{'@context':'https://schema.org','@type':'DefinedTerm',name:t.term,description:t.definition,url:`${SITE_URL}/${path}`,
       inDefinedTermSet:{'@type':'DefinedTermSet',name:'PMPORT Project Management Glossary',url:`${SITE_URL}/pm-glossary`}});
   }

@@ -8,7 +8,7 @@ import {emv,type RiskRow} from './calc-math';
   standalone:true,selector:'app-emv-calculator',imports:[FormsModule,RouterLink,CalcMoreComponent],
   template:`
   <section class="page calc">
-    <a routerLink="/pm-calculators" class="back">← PM Calculators</a>
+    <a routerLink="/pm-calculators" class="back">← Calculators</a>
     <header class="calc-head"><p class="eyebrow">Free PM calculator · Risk</p><h1>Risk EMV Calculator</h1>
       <p class="lead">List your risks with their probability and cost impact. The calculator gives the expected monetary value (EMV) of each one, the total for threats and opportunities, and a suggested contingency reserve.</p></header>
     <div class="card">

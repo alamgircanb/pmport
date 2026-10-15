@@ -6,7 +6,7 @@ import {CALCULATORS} from './calc-shared';
   standalone:true,selector:'app-calculators-hub',imports:[RouterLink],
   template:`
   <section class="page">
-    <header class="page-header"><p class="eyebrow">PM Calculators</p><h1>Free project management calculators</h1>
+    <header class="page-header"><p class="eyebrow">Calculators</p><h1>Free project management calculators</h1>
       <p class="lead">Quick, accurate calculators for the numbers project managers and business analysts use every week: earned value, PERT estimates, risk EMV, business case NPV and ROI, Monte Carlo schedule risk, sprint capacity and communication channels. Each one explains the formula with a worked example. No sign-up needed.</p></header>
     <div class="calc-grid">
       @for(c of calculators;track c.slug;let i=$index){
@@ -15,7 +15,7 @@ import {CALCULATORS} from './calc-shared';
     </div>
     <section class="section-block">
       <p class="eyebrow">Also on PMPORT</p><h2>Learn the terms behind the numbers</h2>
-      <p class="lead">Not sure what TCPI, float or EMV means? The <a routerLink="/pm-glossary">PM glossary</a> explains more than 200 project management, agile and business analysis terms in plain English, each with an example. Practise the formulas in <a routerLink="/pm-datalab">PM DataLab</a>, and test yourself with the <a routerLink="/pm-faciliter/pmp-exam-simulator">free PMP exam simulator</a>.</p>
+      <p class="lead">Not sure what TCPI, float or EMV means? The <a routerLink="/pm-glossary">Glossary</a> explains more than 200 project management, agile and business analysis terms in plain English, each with an example. Practise the formulas in <a routerLink="/pm-datalab">DataLab</a>, and test yourself with the <a routerLink="/pm-faciliter/pmp-exam-simulator">free PMP exam simulator</a>.</p>
     </section>
   </section>`,
   styles:[`
