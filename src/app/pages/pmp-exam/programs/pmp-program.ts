@@ -4,7 +4,7 @@ import {EXAMS} from '../questions';
 export const PMP_PROGRAM:ExamProgram={
   id:'pmp',overview:'/pm-faciliter/pmp',code:'PMP',store:'pmport-pmp-exam-v2-',
   heroImage:'pmp-exam-simulator.webp',heroAlt:'Candidate taking a computer-based exam with project charts floating around the workstation',
-  eyebrow:'Faciliter · PMP exam preparation',title:'PMP Exam Simulators',
+  eyebrow:'Exam Faciliter · PMP exam preparation',title:'PMP Exam Simulators',
   lead:'Five full-length mock exams modelled on the July 2026 PMP exam—case studies, timed sections, breaks and domain-level results—with 900 original questions reflecting the PMBOK® Guide, Eighth Edition.',
   minutes:240,breakMinutes:10,pretest:10,splits:2,questionsPerExam:180,
   domains:['People','Process','Business Environment'],weights:DOMAIN_WEIGHT,tasks:ECO_TASKS,taskLabel:'Task',domainLabel:'Domain',

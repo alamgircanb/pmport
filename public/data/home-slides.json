@@ -12,7 +12,7 @@
   },
   {
     "id": "faciliter-certifications",
-    "label": "Faciliter · Certification exam prep",
+    "label": "Exam Faciliter · Certification exam prep",
     "title": "Free Exam Simulators for PMP, CAPM, ECBA, CBAP and ITIL 5",
     "description": "Five full-length mock exams for each certification, with original questions weighted to the official outlines, timed sections and detailed results.",
     "image": "cbap-exam-simulator.webp",
@@ -122,7 +122,7 @@
   },
   {
     "id": "pmp-exam-simulator",
-    "label": "Faciliter · PMP exam preparation",
+    "label": "Exam Faciliter · PMP exam preparation",
     "title": "PMP Exam Simulator",
     "description": "A full 180-question mock exam modelled on the July 2026 PMP exam and the PMBOK® Guide, Eighth Edition.",
     "image": "pmp-exam-simulator.webp",

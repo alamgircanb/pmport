@@ -9,13 +9,13 @@ export interface Certification{
 }
 export const CERTIFICATIONS=certs as Certification[];
 
-/** Overview page for one certification under Faciliter (PMP, CAPM, ECBA, CBAP, ITIL 5 Foundation). */
+/** Overview page for one certification under Exam Faciliter (PMP, CAPM, ECBA, CBAP, ITIL 5 Foundation). */
 @Component({
   standalone:true,selector:'app-cert-overview',imports:[RouterLink],
   template:`
   @if(c;as c){
   <article class="page cert">
-    <a routerLink="/pm-faciliter" class="back">← Faciliter</a>
+    <a routerLink="/pm-faciliter" class="back">← Exam Faciliter</a>
     <header class="cert-hero">
       <img [src]="c.hero" [alt]="c.heroAlt" width="1600" height="900" fetchpriority="high">
       <div class="hero-overlay">

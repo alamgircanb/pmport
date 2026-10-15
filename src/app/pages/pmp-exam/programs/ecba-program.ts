@@ -8,7 +8,7 @@ const [U,M,I,C,N,S,K,V,X]=ECBA_DOMAINS;
 export const ECBA_PROGRAM:ExamProgram={
   id:'ecba',overview:'/pm-faciliter/ecba',code:'ECBA',store:'pmport-ecba-exam-v1-',
   heroImage:'ecba-exam-simulator.webp',heroAlt:'A new business analyst mapping a need, stakeholders and a solution around the six core concepts of business analysis',
-  eyebrow:'Faciliter · ECBA exam preparation',title:'ECBA Exam Simulators',
+  eyebrow:'Exam Faciliter · ECBA exam preparation',title:'ECBA Exam Simulators',
   lead:'Five full-length ECBA mock exams with 250 original questions on the current ECBA blueprint: business analysis foundations, the BA mindset and the six core concepts of change, need, solution, stakeholder, value and context.',
   minutes:75,breakMinutes:0,pretest:0,splits:1,questionsPerExam:50,
   domains:ECBA_DOMAINS,

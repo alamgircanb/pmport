@@ -120,7 +120,9 @@ The event display recovers a title from a nonstandard title key in the original 
 - Module names no longer start with "PM": Artifacts Lab, Faciliter, JOBS Prep, Media, Events & Gallery, Knowledge Lake, LearningLink, DataLab, Playground, Calculators, Glossary. PM HandAid is now **NotePad**.
 - Web addresses did not change (for example NotePad is still /pm-handaid), so links and Google indexing keep working. Search-engine titles keep descriptive words such as "Project Management" in `src/app/core/seo/seo-pages.json`.
 
-## Faciliter certifications and exam simulators (/pm-faciliter)
+## Exam Faciliter: certifications and exam simulators (/pm-faciliter)
+
+- **Navigation:** "Exam Faciliter" is a parent item in the sidebar with children PMP, CAPM, ECBA, CBAP and ITIL 5 Foundation (`navigation` in `src/app/app.component.ts`). The Exam Faciliter page lists the certifications; each card opens that certification's own simulator page, with a smaller link to its exam guide. Training modules and the practice bank sit below under "More practice".
 
 - **Certifications:** PMP, CAPM, ECBA, CBAP and ITIL 5 Foundation. Each has an overview page (`/pm-faciliter/<id>`, ITIL is `/pm-faciliter/itil-foundation`) and an exam simulator (`/pm-faciliter/<id>-exam-simulator`). Overview text (facts, outline, eligibility, study plan, FAQ) lives in `src/app/pages/pm-faciliter/certifications.json`.
 - **One simulator for all:** `src/app/pages/pmp-exam/` holds the shared engine (`exam-engine.ts`), the shared page (`exam-simulator.base.ts`, `pmp-exam.component.html/.css`) and one small component per certification. Everything that differs (timing, breaks, sections, domains and weights, tasks, page text, rating cut-offs) is in `programs/<cert>-program.ts`.

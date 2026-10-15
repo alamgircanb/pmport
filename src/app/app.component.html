@@ -5,7 +5,7 @@
 <nav aria-label="Primary navigation">
 <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" (click)="closeMenu()">Home</a>
 <a routerLink="/about-pmport" routerLinkActive="active" (click)="closeMenu()">About PMPORT</a>
-@for(item of navigation;track item.path){<a [routerLink]="item.path" routerLinkActive="active" (click)="closeMenu()">{{item.label}}</a>}
+@for(item of navigation;track item.path){@if(item.children){<div class="nav-parent"><a [routerLink]="item.path" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" (click)="closeMenu()">{{item.label}}</a><button type="button" class="nav-toggle" (click)="examOpen=!examOpen" [attr.aria-expanded]="examOpen" aria-controls="exam-menu" [attr.aria-label]="(examOpen?'Collapse ':'Expand ')+item.label">{{examOpen?'−':'+'}}</button></div>@if(examOpen){<div id="exam-menu" class="subnav">@for(child of item.children;track child.path){<a [routerLink]="child.path" routerLinkActive="active" (click)="closeMenu()">{{child.label}}</a>}</div>}}@else{<a [routerLink]="item.path" routerLinkActive="active" (click)="closeMenu()">{{item.label}}</a>}}
 <button class="nav-group" (click)="portfolioOpen=!portfolioOpen" [attr.aria-expanded]="portfolioOpen" aria-controls="portfolio-menu">Portfolio <span>{{portfolioOpen?'−':'+'}}</span></button>
 @if(portfolioOpen){<div id="portfolio-menu" class="subnav">@for(item of portfolio;track item.path){<a [routerLink]="item.path" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" (click)="closeMenu()">{{item.label}}</a>}</div>}
 </nav>

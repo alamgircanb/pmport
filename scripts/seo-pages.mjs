@@ -113,6 +113,7 @@ for(const c of certs){
     `<h2>Frequently asked questions</h2>${c.faq.map(f=>`<h3>${escText(f.q)}</h3><p>${escText(f.a)}</p>`).join('')}`;
   if(c.id!=='pmp')customHtml[c.simulator.slice(1)]=`<p class="seo-eyebrow">${escText(c.eyebrow)}</p><h1>${escText(c.code)} Exam Simulators</h1><p>${escText(pages[c.simulator.slice(1)].description)}</p>${facts}${outline}<p><a href="/pm-faciliter/${slug}">${escText(c.code)} exam overview and study plan</a></p>`;
 }
+customHtml['pm-faciliter']=`<p class="seo-eyebrow">Exam Faciliter</p><h1>Choose your certification exam.</h1><p>${escText(pages['pm-faciliter'].description)}</p><ul>${certs.map(c=>`<li><a href="${c.simulator}">${escText(c.code)} exam simulator</a>: ${escText(c.facts[3].big)} ${escText(c.facts[3].text)}. <a href="/pm-faciliter/${c.id==='itil'?'itil-foundation':c.id}">${escText(c.code)} exam guide and study plan</a></li>`).join('')}</ul>`;
 const byLetter={};for(const t of glossary){(byLetter[t.term[0].toUpperCase()]??=[]).push(t);}
 customHtml['pm-glossary']=`<p class="seo-eyebrow">Glossary</p><h1>Project management glossary</h1><p>${glossary.length} project management, agile, risk, cost and business analysis terms explained in plain English, each with a real-world example.</p>`+
   Object.entries(byLetter).map(([l,ts])=>`<h2>${l}</h2><ul>${ts.map(t=>`<li><a href="/pm-glossary/${t.slug}">${escText(t.term)}</a>: ${escText(t.definition.split(/(?<=\.)\s/)[0])}</li>`).join('')}</ul>`).join('');
@@ -124,7 +125,7 @@ const esc=s=>String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g
 // Main sections, linked (with a one-line summary) from every generated page so crawlers can find them.
 const sections=[
   ['pm-faciliter/pmp-exam-simulator','Free PMP Exam Simulator','Five full-length PMP practice exams with 900 original questions, case studies, timed sections and results by domain.'],
-  ['pm-faciliter','Faciliter: Certification Exam Prep','Free exam prep for PMP, CAPM, ECBA, CBAP and ITIL 5 Foundation, with full-length mock exams, plus video lessons and quizzes.'],
+  ['pm-faciliter','Exam Faciliter: Certification Exam Prep','Free exam prep for PMP, CAPM, ECBA, CBAP and ITIL 5 Foundation, with full-length mock exams, plus video lessons and quizzes.'],
   ['resources','Knowledge Lake','Articles on the PMP mindset, why projects fail, AI for project managers and business analysts, and project management in Canada.'],
   ['pm-tools','Artifacts Lab','Free browser tools: project charter, risk and stakeholder registers, earned value, process diagrams and PERT/CPM critical path.'],
   ['pm-learninglink','LearningLink','200 popular free YouTube channels and websites for project management, business analysis, data analytics and coding.'],
