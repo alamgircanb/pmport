@@ -100,6 +100,19 @@ customHtml['pm-playground']=`<p class="seo-eyebrow">Playground</p><h1>Playground
   `<h2>Challenges</h2><p>Each playground has challenges to solve, such as rescuing a late project, the overtime trap, starting everything at once, accepting every risk, going live without training, the absent sponsor and the feature factory. Each run ends with a debrief that explains what happened.</p>`+
   `<p>These are teaching models that show the direction and shape of effects, not forecasts for a real project. Learn the terms in the <a href="/pm-glossary">Glossary</a> and run the numbers with the <a href="/pm-calculators">PM calculators</a>.</p>`;
 extraHead['pm-playground']={'@context':'https://schema.org','@type':'WebApplication',name:'Playground',url:`${SITE}/pm-playground`,applicationCategory:'EducationalApplication',operatingSystem:'Any (web browser)',offers:{'@type':'Offer',price:'0',priceCurrency:'CAD'},description:pages['pm-playground'].description};
+// Faciliter certification pages (overview + simulator) are data-driven, so their crawler text is built from the same data.
+const certs=JSON.parse(readFileSync(join(root,'src/app/pages/pm-faciliter/certifications.json'),'utf8'));
+for(const c of certs){
+  const slug=c.id==='itil'?'itil-foundation':c.id;
+  const facts=`<ul>${c.facts.map(f=>`<li><strong>${escText(f.big)}</strong> ${escText(f.text)}</li>`).join('')}</ul>`;
+  const outline=`<h2>What the exam covers</h2><ul>${c.outline.map(o=>`<li><strong>${escText(o.name)} (${escText(o.weight)})</strong>: ${escText(o.items)}</li>`).join('')}</ul>`;
+  customHtml[`pm-faciliter/${slug}`]=`<p class="seo-eyebrow">${escText(c.eyebrow)}</p><h1>${escText(c.title)}</h1><p>${escText(c.lead)}</p>${facts}`+
+    `<h2>About the ${escText(c.code)} certification</h2><p>${escText(c.name)}, awarded by ${escText(c.body)}. ${escText(c.audience)}</p><p>${escText(c.eligibility)}</p>${outline}`+
+    `<h2>Study plan</h2><ol>${c.plan.map(x=>`<li><strong>${escText(x.title)}</strong>: ${escText(x.text)}</li>`).join('')}</ol>`+
+    `<p><a href="${c.simulator}">${escText(c.simulatorLabel)}</a></p>`+
+    `<h2>Frequently asked questions</h2>${c.faq.map(f=>`<h3>${escText(f.q)}</h3><p>${escText(f.a)}</p>`).join('')}`;
+  if(c.id!=='pmp')customHtml[c.simulator.slice(1)]=`<p class="seo-eyebrow">${escText(c.eyebrow)}</p><h1>${escText(c.code)} Exam Simulators</h1><p>${escText(pages[c.simulator.slice(1)].description)}</p>${facts}${outline}<p><a href="/pm-faciliter/${slug}">${escText(c.code)} exam overview and study plan</a></p>`;
+}
 const byLetter={};for(const t of glossary){(byLetter[t.term[0].toUpperCase()]??=[]).push(t);}
 customHtml['pm-glossary']=`<p class="seo-eyebrow">Glossary</p><h1>Project management glossary</h1><p>${glossary.length} project management, agile, risk, cost and business analysis terms explained in plain English, each with a real-world example.</p>`+
   Object.entries(byLetter).map(([l,ts])=>`<h2>${l}</h2><ul>${ts.map(t=>`<li><a href="/pm-glossary/${t.slug}">${escText(t.term)}</a>: ${escText(t.definition.split(/(?<=\.)\s/)[0])}</li>`).join('')}</ul>`).join('');
@@ -111,7 +124,7 @@ const esc=s=>String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g
 // Main sections, linked (with a one-line summary) from every generated page so crawlers can find them.
 const sections=[
   ['pm-faciliter/pmp-exam-simulator','Free PMP Exam Simulator','Five full-length PMP practice exams with 900 original questions, case studies, timed sections and results by domain.'],
-  ['pm-faciliter','PMP Exam Preparation','PMP exam preparation and project management training: video lessons, quizzes, project math practice and a question bank.'],
+  ['pm-faciliter','Faciliter: Certification Exam Prep','Free exam prep for PMP, CAPM, ECBA, CBAP and ITIL 5 Foundation, with full-length mock exams, plus video lessons and quizzes.'],
   ['resources','Knowledge Lake','Articles on the PMP mindset, why projects fail, AI for project managers and business analysts, and project management in Canada.'],
   ['pm-tools','Artifacts Lab','Free browser tools: project charter, risk and stakeholder registers, earned value, process diagrams and PERT/CPM critical path.'],
   ['pm-learninglink','LearningLink','200 popular free YouTube channels and websites for project management, business analysis, data analytics and coding.'],

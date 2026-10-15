@@ -6,7 +6,7 @@ export const CBAP_DOMAINS=Object.values(CBAP_D);
 const [P,E,L,S,R,V]=CBAP_DOMAINS;
 
 export const CBAP_PROGRAM:ExamProgram={
-  id:'cbap',code:'CBAP',store:'pmport-cbap-exam-v1-',
+  id:'cbap',overview:'/pm-faciliter/cbap',code:'CBAP',store:'pmport-cbap-exam-v1-',
   heroImage:'cbap-exam-simulator.webp',heroAlt:'A senior business analyst reviewing a case study with requirements models, a traceability matrix and a value analysis',
   eyebrow:'Faciliter · CBAP exam preparation',title:'CBAP Exam Simulators',
   lead:'Five full-length CBAP mock exams with 600 original scenario and case-study questions across the six BABOK® Guide knowledge areas, weighted like the real exam.',

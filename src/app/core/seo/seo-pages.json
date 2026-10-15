@@ -80,9 +80,9 @@
   "hero": "pm-jobs-prep-banner.jpg"
  },
  "pm-faciliter": {
-  "label": "PMP Exam Preparation",
-  "title": "PMP Exam Preparation & Project Management Training | PMPORT",
-  "description": "Free PMP exam preparation and project management training: video lessons, quizzes, project math practice, a question bank and five full PMP practice exams."
+  "label": "Faciliter",
+  "title": "Faciliter: Free PMP, CAPM, ECBA, CBAP & ITIL Exam Prep | PMPORT",
+  "description": "Free certification exam prep for PMP, CAPM, ECBA, CBAP and ITIL 5 Foundation: overviews, study plans and full-length mock exams, plus PM training."
  },
  "pm-faciliter/pmp-exam-simulator": {
   "title": "Free PMP Exam Simulator: 900 Practice Questions | PMPORT",
@@ -136,6 +136,61 @@
   "title": "Member login | PMPORT",
   "description": "Sign in to PMPORT member features.",
   "noindex": true
+ },
+ "pm-faciliter/pmp": {
+  "label": "PMP",
+  "title": "PMP Exam Prep: Outline, Study Plan & Free Mock Exams | PMPORT",
+  "description": "Free PMP exam preparation: what the July 2026 exam covers, an 8-week study plan and five full-length PMP mock exams with 900 original questions.",
+  "hero": "pmp-exam-simulator.webp",
+  "image": "og/exam.jpg"
+ },
+ "pm-faciliter/capm": {
+  "label": "CAPM",
+  "title": "CAPM Exam Prep: Outline, Study Plan & Free Mock Exams | PMPORT",
+  "description": "Free CAPM exam preparation: the four exam domains, a 6-week study plan and five full-length CAPM mock exams with 750 original practice questions.",
+  "hero": "capm-exam-simulator.webp"
+ },
+ "pm-faciliter/ecba": {
+  "label": "ECBA",
+  "title": "ECBA Exam Prep: Blueprint, Study Plan & Free Mock Exams | PMPORT",
+  "description": "Free ECBA exam preparation: the nine knowledge areas of the current blueprint, a 4-week study plan and five full ECBA mock exams (250 questions).",
+  "hero": "ecba-exam-simulator.webp"
+ },
+ "pm-faciliter/cbap": {
+  "label": "CBAP",
+  "title": "CBAP Exam Prep: Knowledge Areas, Study Plan & Free Mocks | PMPORT",
+  "description": "Free CBAP exam preparation: the six BABOK knowledge areas and weights, an 8-week study plan and five full CBAP mock exams with 600 scenario questions.",
+  "hero": "cbap-exam-simulator.webp"
+ },
+ "pm-faciliter/itil-foundation": {
+  "label": "ITIL 5 Foundation",
+  "title": "ITIL 5 Foundation Exam Prep & Free Mock Exams | PMPORT",
+  "description": "Free ITIL Foundation (Version 5) exam preparation: the syllabus areas and weights, a two-week study plan and five full mock exams with 200 questions.",
+  "hero": "itil-exam-simulator.webp"
+ },
+ "pm-faciliter/capm-exam-simulator": {
+  "label": "CAPM Exam Simulator",
+  "title": "Free CAPM Exam Simulator: 750 Practice Questions | PMPORT",
+  "description": "Five free full-length CAPM practice exams: 150 timed questions each, a break after question 75, explanations and results by domain and task.",
+  "hero": "capm-exam-simulator.webp"
+ },
+ "pm-faciliter/ecba-exam-simulator": {
+  "label": "ECBA Exam Simulator",
+  "title": "Free ECBA Exam Simulator: 250 Practice Questions | PMPORT",
+  "description": "Five free full-length ECBA practice exams: 50 questions in 75 minutes each, on the current nine-area blueprint, with explanations and results.",
+  "hero": "ecba-exam-simulator.webp"
+ },
+ "pm-faciliter/cbap-exam-simulator": {
+  "label": "CBAP Exam Simulator",
+  "title": "Free CBAP Exam Simulator: 600 Practice Questions | PMPORT",
+  "description": "Five free full-length CBAP practice exams: 120 scenario and case-study questions in 210 minutes each, with results by knowledge area and task.",
+  "hero": "cbap-exam-simulator.webp"
+ },
+ "pm-faciliter/itil-foundation-exam-simulator": {
+  "label": "ITIL 5 Exam Simulator",
+  "title": "Free ITIL 5 Foundation Exam Simulator: 200 Questions | PMPORT",
+  "description": "Five free ITIL Foundation (Version 5) practice exams: 40 questions in 60 minutes each, weighted like the syllabus, with a 65% pass mark.",
+  "hero": "itil-exam-simulator.webp"
  },
  "pm-faciliter/member": {
   "title": "Member area | PMPORT",

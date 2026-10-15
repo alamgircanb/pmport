@@ -51,6 +51,8 @@ export interface ExamSet{id:number;title:string;subtitle:string;cases:CaseStudy[
 /** Everything that differs between certifications: timing, structure, outline and page text. */
 export interface ExamProgram{
   id:string;
+  /** Certification overview page (back link from the simulator). */
+  overview:string;
   /** Short name, e.g. PMP, CAPM, ECBA, CBAP, ITIL 5 Foundation. */
   code:string;
   /** localStorage key prefix for saved attempts (per browser). */

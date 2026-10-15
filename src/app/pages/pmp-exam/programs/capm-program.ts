@@ -6,7 +6,7 @@ export const CAPM_DOMAINS=Object.values(CAPM_D);
 const [D1,D2,D3,D4]=CAPM_DOMAINS;
 
 export const CAPM_PROGRAM:ExamProgram={
-  id:'capm',code:'CAPM',store:'pmport-capm-exam-v1-',
+  id:'capm',overview:'/pm-faciliter/capm',code:'CAPM',store:'pmport-capm-exam-v1-',
   heroImage:'capm-exam-simulator.webp',heroAlt:'A new project team member studying a project life cycle, a Kanban board and a requirements map on a large screen',
   eyebrow:'Faciliter · CAPM exam preparation',title:'CAPM Exam Simulators',
   lead:'Five full-length CAPM mock exams with 750 original questions on the current CAPM Examination Content Outline: project fundamentals, predictive planning, agile frameworks and business analysis. Timed, with a break after question 75 and results by domain.',
