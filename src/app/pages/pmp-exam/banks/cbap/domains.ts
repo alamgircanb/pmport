@@ -1,0 +1,1 @@
+export const CBAP_D={P:'Business Analysis Planning and Monitoring',E:'Elicitation and Collaboration',L:'Requirements Life Cycle Management',S:'Strategy Analysis',R:'Requirements Analysis and Design Definition',V:'Solution Evaluation'};
