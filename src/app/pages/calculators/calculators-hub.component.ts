@@ -6,7 +6,7 @@ import {CALCULATORS} from './calc-shared';
   standalone:true,selector:'app-calculators-hub',imports:[RouterLink],
   template:`
   <section class="page">
-    <header class="page-header"><p class="eyebrow">Calculators</p><h1>Free project management calculators</h1>
+    <header class="page-header"><p class="eyebrow">Tools · Calculators</p><h1>Free project management calculators</h1>
       <p class="lead">Quick, accurate calculators for the numbers project managers and business analysts use every week: earned value, PERT estimates, risk EMV, business case NPV and ROI, Monte Carlo schedule risk, sprint capacity and communication channels. Each one explains the formula with a worked example. No sign-up needed.</p></header>
     <div class="calc-grid">
       @for(c of calculators;track c.slug;let i=$index){

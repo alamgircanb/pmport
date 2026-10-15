@@ -9,7 +9,7 @@ import {MediaVideo} from '../../core/models/portfolio.models';
   selector:'app-media',
   template:`
     <section class="page">
-      <header class="page-header"><p class="eyebrow">Media</p><h1>PMPortLive</h1><p class="lead">Select a video manually, or let the featured display move to the next video every 30 seconds. While a video is playing it stays on screen until it finishes.</p></header>
+      <header class="page-header"><p class="eyebrow">Learn · Videos</p><h1>PMPortLive</h1><p class="lead">Select a video manually, or let the featured display move to the next video every 30 seconds. While a video is playing it stays on screen until it finishes.</p></header>
       @if(selected){
         <div class="player card">
           @if(selected.youtubeVideoId){<iframe #player (load)="listen(player)" [src]="embed(selected.youtubeVideoId)" [title]="selected.title" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>}

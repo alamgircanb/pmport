@@ -13,7 +13,7 @@ import {CERTIFICATIONS} from './cert-overview.component';
   standalone:true,selector:'app-pm-faciliter',imports:[AsyncPipe,FormsModule,RouterLink],
   template:`
     <section class="page">
-      <header class="page-header"><p class="eyebrow">Exam Faciliter</p><h1>Choose your certification exam.</h1><p class="lead">Each certification has its own exam simulator page with five full-length timed mock exams, explanations and results by area. Pick one to start.</p></header>
+      <header class="page-header"><p class="eyebrow">Exam Prep · Exam Faciliter</p><h1>Choose your certification exam.</h1><p class="lead">Each certification has its own exam simulator page with five full-length timed mock exams, explanations and results by area. Pick one to start.</p></header>
       <section class="cert-section" aria-label="Certification exam simulators">
         <div class="cert-grid">@for(c of certs;track c.id){<article class="cert-card"><a class="cert-main" [routerLink]="c.simulator"><img [src]="c.hero" [alt]="c.heroAlt" loading="lazy"><div><span class="eyebrow">{{c.level}}</span><h2>{{c.code}}</h2><p>{{c.facts[3].big}} {{c.facts[3].text}}</p><span class="card-link">Open exam simulator →</span></div></a><a class="cert-guide" [routerLink]="'/pm-faciliter/'+(c.id==='itil'?'itil-foundation':c.id)">Exam guide</a></article>}</div>
       </section>
