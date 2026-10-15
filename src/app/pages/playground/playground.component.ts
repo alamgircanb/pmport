@@ -15,7 +15,7 @@ type Lever='meetings'|'wip'|'overtime'|'testing'|'creep'|'risk'|'turnover';
   standalone:true,selector:'app-pm-playground',imports:[FormsModule,RouterLink,SimPanelComponent],
   template:`
   <section class="page playground">
-    <header class="pg-head"><p class="eyebrow">Playground</p><h1>Playground: see how project decisions play out</h1>
+    <header class="pg-head"><p class="eyebrow">Practice · Project simulations</p><h1>Playground: see how project decisions play out</h1>
       <p class="lead">Five interactive simulators for project managers. Pick one, set it up, press play and watch your decisions play out week by week. Change the settings at any time and see the effect straight away.</p>
       <nav class="pg-nav" aria-label="Playgrounds">@for(n of navItems;track n.id){<button type="button" (click)="jump(n.id)"><span>{{n.n}}</span>{{n.label}}</button>}</nav></header>
 

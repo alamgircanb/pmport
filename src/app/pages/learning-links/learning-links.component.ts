@@ -14,7 +14,7 @@ type LinkCategory={id:string;title:string;links:LearningLink[]};
   imports:[AsyncPipe,RouterLink],
   template:`
   <section class="page learning-links">
-    <header class="hero"><img src="pm-learninglink.webp" alt="A learner at a laptop surrounded by glowing video and link tiles for project management, business analysis, data analytics and coding"><div class="hero-text"><p class="eyebrow">LearningLink</p><h1>Learning links</h1><p class="lead">Popular YouTube channels and websites for project management, business analysis, data analytics and coding, all in one place.</p></div></header>
+    <header class="hero"><img src="pm-learninglink.webp" alt="A learner at a laptop surrounded by glowing video and link tiles for project management, business analysis, data analytics and coding"><div class="hero-text"><p class="eyebrow">Learn · Free courses &amp; channels · LearningLink</p><h1>Learning links</h1><p class="lead">Popular YouTube channels and websites for project management, business analysis, data analytics and coding, all in one place.</p></div></header>
     @if(categories$|async;as categories){
       <nav class="jump" aria-label="Categories">
         @for(c of categories;track c.id){<a routerLink="/pm-learninglink" [fragment]="c.id">{{c.title}} <small>{{c.links.length}}</small></a>}

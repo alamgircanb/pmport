@@ -7,3 +7,4 @@
 .site-shell main{min-height:100vh}
 
 .nav-parent{display:flex;align-items:stretch}.nav-parent a{flex:1}.nav-toggle{border:0;background:transparent;color:#c5d4e5;font-weight:700;padding:0 .75rem;cursor:pointer;border-radius:8px}.nav-toggle:hover,.nav-toggle:focus-visible{color:#fff;background:#0d2947}
+.nav-group.current{color:#fff}.nav-divider{height:1px;background:#1b3a5a;margin:.6rem .75rem}.crumbs{max-width:1180px;margin:0 auto;padding:1.1rem clamp(1.25rem,6vw,5rem) 0}.crumbs ol{display:flex;flex-wrap:wrap;gap:.25rem .5rem;list-style:none;margin:0;padding:0;font-size:.82rem;color:#8ea6bf}.crumbs li+li::before{content:"›";margin-right:.5rem;color:#56728f}.crumbs a{color:#9fd8e6;text-decoration:none}.crumbs a:hover,.crumbs a:focus-visible{text-decoration:underline}.crumbs span[aria-current]{color:#d6e4f2}

@@ -8,7 +8,7 @@ import {CATEGORIES,TERMS,type GlossaryTerm} from './glossary';
   standalone:true,selector:'app-glossary-hub',imports:[FormsModule,RouterLink],
   template:`
   <section class="page glossary">
-    <header class="page-header"><p class="eyebrow">Glossary</p><h1>Project management glossary</h1>
+    <header class="page-header"><p class="eyebrow">Learn · Glossary</p><h1>Project management glossary</h1>
       <p class="lead">{{terms.length}} project management, agile, risk, cost and business analysis terms explained in plain English, each with a real-world example. Useful for PMP, CAPM, PMI-ACP and CBAP study, and for everyday project work.</p></header>
     <div class="tools">
       <label class="sr-only" for="q">Search the glossary</label>

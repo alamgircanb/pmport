@@ -25,3 +25,5 @@
 .seo-score{display:flex;flex-direction:column;gap:.5rem;justify-content:center;align-items:center;min-height:70px;margin:1rem 0}
 .seo-score img{display:block;max-width:100%;height:auto}
 .seo-score .share{margin:0;color:var(--muted)}.seo-score .share a{color:var(--accent)}
+
+.start{margin-top:3rem}.start-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-top:1.2rem}.start-card{display:flex;flex-direction:column;gap:.55rem;background:linear-gradient(145deg,rgba(14,45,78,.94),rgba(8,30,54,.96));border:1px solid var(--line);border-radius:18px;padding:1.4rem}.start-card:hover{border-color:var(--accent)}.start-icon{font-size:1.6rem}.start-card h3{margin:0;font-size:1.2rem;line-height:1.25}.start-card h3 a{color:#fff;text-decoration:none}.start-card p{margin:0;color:var(--muted);line-height:1.55;font-size:.95rem}.start-card ul{list-style:none;margin:.2rem 0 .6rem;padding:0;display:grid;gap:.3rem}.start-card li a{color:#9fd8e6;font-size:.9rem;text-decoration:none}.start-card li a:hover{text-decoration:underline}.start-card .button{margin-top:auto;align-self:flex-start}

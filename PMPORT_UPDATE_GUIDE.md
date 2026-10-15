@@ -131,3 +131,11 @@ The event display recovers a title from a nonstandard title key in the original 
 - **Adding a question or exam:** add items to the right domain array, keep question ids stable (they are generated from position, so add new items at the end of a domain array to avoid renumbering saved attempts), and add a new exam to `banks/<cert>/index.ts`.
 - **Writing good items:** make wrong options plausible and about the same length as the correct one, so the longest option is not a giveaway. All questions are original; do not copy or credit other prep sites.
 - **Saved attempts:** each certification stores progress in the browser under its own key prefix (`store` in the program file). Attempts that refer to removed question ids are ignored.
+
+## Site navigation (October 2026)
+
+- The sidebar is grouped by what visitors want to do: **Exam Prep, Learn, Practice, Tools, Career**, then **About PMPORT** and **About Alamgir** at the bottom. All groups start collapsed; the group of the current page is shown in white.
+- Groups, labels and order live in one file: `src/app/core/navigation.ts`. Menu labels use plain words ("Articles", "Videos", "Templates & diagrams"); page headings keep the PMPORT brand names (Knowledge Lake, DataLab, Artifacts Lab) in their small eyebrow line.
+- The "you are here" trail above each page (Home › group › page) is built from the same file, so a new page only needs a menu entry (or to sit under an existing menu address) to get a correct trail.
+- The Home page "Start here" cards (four goals) are in `goals` in `src/app/pages/home/home.component.ts`.
+- Addresses did not change, so Google indexing is unaffected.
