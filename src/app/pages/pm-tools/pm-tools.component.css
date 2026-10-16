@@ -17,4 +17,4 @@
 .tags .tag-predictive{background:#2b3f6b}.tags .tag-agile{background:#1f5a4a}.tags .tag-kanban{background:#5a4a1f}.tags .tag-hybrid{background:#4a2b5a}
 @media(max-width:760px){.role-tabs{grid-template-columns:1fr}}
 .tool-group .tool-picker{max-height:none;overflow:visible;grid-template-columns:repeat(3,minmax(0,1fr));margin-bottom:.5rem}
-@media(max-width:1100px){.tool-group .tool-picker{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:640px){.tool-group .tool-picker{grid-template-columns:1fr}}
+@media(max-width:1100px){.tool-group .tool-picker{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:650px){.tool-group .tool-picker{display:grid;grid-template-columns:minmax(0,1fr);overflow:visible}.tool-group .tool-picker>button{min-width:0}}
