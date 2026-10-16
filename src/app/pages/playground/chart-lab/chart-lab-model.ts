@@ -359,7 +359,7 @@ function waterfall(v:V):Built{
   const drivers=steps.slice(1,-1).sort((a,b)=>Math.abs(b.x)-Math.abs(a.x)),big=drivers[0],net=final-500;
   return {shapes,caption:'From baseline to forecast cost ($ thousands)',legend:[{label:'Total',c:'s1'},{label:'Increase',c:'s5'},{label:'Decrease',c:'s4'}],
     story:{headline:net>0?`The forecast is $${fmt(net)}k (${pct(net/500)}) over the baseline, driven mostly by ${big.n.toLowerCase()}`:`The forecast is $${fmt(-net)}k under the baseline`,
-      lines:[`Starting from the $500k baseline, the forecast is now $${fmt(final)}k.`,`The biggest single driver is ${big.n.toLowerCase()} at ${big.x>=0?'+':'−'}$${fmt(Math.abs(big.x))}k.`,v['savings']>0?`Savings of $${fmt(v['savings'])}k offset part of the increases.`:'No savings have been found to offset the increases.'],
+      lines:[`Starting from the $500k baseline, the forecast is now $${fmt(final)}k.`,`The biggest single driver is ${big.n.toLowerCase()} at ${big.x>=0?'+':'−'}$${fmt(Math.abs(big.x))}k.`,v['savings']<=0?'No savings have been found to offset the increases.':v['savings']>=v['scope']+v['rates']+v['risk']?`Savings of $${fmt(v['savings'])}k more than cover all the increases.`:`Savings of $${fmt(v['savings'])}k offset part of the increases.`],
       soWhat:net>50?`Take this to the steering committee: decide whether to fund the increase, reduce scope or find more savings, starting with ${big.n.toLowerCase()}.`:'The variance is small. Keep the bridge up to date so every change to the forecast has an explanation.'}};
 }
 
