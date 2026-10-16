@@ -56,9 +56,9 @@
   "hero": "project-failure-causes.webp"
  },
  "pm-tools": {
-  "label": "Artifacts Lab",
-  "title": "Artifacts Lab: Free Project Management Templates & Tools | PMPORT",
-  "description": "Artifacts Lab: free project management templates and tools for charters, risk and stakeholder registers, earned value, diagrams and PERT/CPM."
+  "label": "PM templates",
+  "title": "Free Project Management Templates: Charter, WBS, RAID, Status | PMPORT",
+  "description": "Free project management templates for predictive, agile, Kanban and hybrid projects: charter, WBS, Gantt, roadmap, RAID log, budget, earned value, phase gates and status reports."
  },
  "pm-tools/diagram-studio": {
   "title": "Diagram Studio: Free Process & Data Flow Diagrams | PMPORT",
@@ -308,5 +308,15 @@
   "title": "Chart Lab: Interactive Data Storytelling for PMs & BAs | PMPORT",
   "description": "Move the data and watch 12 charts react: bar, line, scatter, histogram, box plot, donut, stacked bar, heatmap, burndown, waterfall and radar, each with a guide and a live data story.",
   "label": "Chart Lab"
+ },
+ "pm-tools/ba": {
+  "label": "BA templates",
+  "title": "Free Business Analysis Templates: Requirements, Stories, Rules | PMPORT",
+  "description": "Free business analysis templates: business case, SWOT, as-is/to-be process, gap analysis, SIPOC, value stream map, requirements, story map, use cases, business rules, data dictionary and traceability."
+ },
+ "pm-tools/teams": {
+  "label": "Team & developer templates",
+  "title": "Free Agile & Developer Templates: Sprint, Kanban, Bugs, Tests | PMPORT",
+  "description": "Free templates for delivery teams and developers: product backlog, sprint planning, Kanban board, Definition of Done, test cases, bug tracker, technical debt, ADRs, flow metrics, retrospectives and go-live checklist."
  }
 }

@@ -26,7 +26,9 @@ export const NAV_GROUPS:NavGroup[]=[
     {label:'Chart Lab (data storytelling)',path:'/pm-playground/chart-lab'},
     {label:'Data skills (SQL, Excel, Power BI, Python)',path:'/pm-datalab'}]},
   {id:'tools',label:'Tools',links:[
-    {label:'Templates & diagrams',path:'/pm-tools'},
+    {label:'PM templates',path:'/pm-tools',exact:true},
+    {label:'BA templates',path:'/pm-tools/ba'},
+    {label:'Team & developer templates',path:'/pm-tools/teams'},
     {label:'Calculators',path:'/pm-calculators'},
     {label:'Notes',path:'/pm-handaid'}]},
   {id:'career',label:'Career',links:[

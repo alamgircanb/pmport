@@ -1,21 +1,36 @@
 <section class="page tools-page">
   <header class="page-header">
-    <p class="eyebrow">Tools · Templates &amp; diagrams</p>
-    <h1>Artifacts Lab</h1>
-    <p class="lead">Choose a template, enter your project information and export a working copy. Your saved data stays in this browser.</p>
-  </header><div class="grid two studio-links"><a class="card" routerLink="/pm-tools/diagram-studio"><p class="eyebrow">Diagram Studio</p><h3>Draw processes and data flows</h3><p class="muted">Context diagrams, DFDs, process maps, WBS and custom diagrams. Export PNG, JPG or PDF.</p></a><a class="card" routerLink="/pm-tools/pert-cpm"><p class="eyebrow">Schedule analysis</p><h3>PERT / CPM Calculator</h3><p class="muted">Build activity networks, calculate float and highlight critical paths.</p></a></div><h2 style="font-size:2rem;margin:2rem 0 1rem">Project artifacts</h2>
+    <p class="eyebrow">{{role.eyebrow}}</p>
+    <h1>{{role.title}}</h1>
+    <p class="lead">{{role.lead}}</p>
+  </header>
 
-  <!-- Tool cards make each mini-application independently selectable. -->
-  <div class="tool-picker" role="group" aria-label="Project management tools">
-    @for(tool of tools;track tool.id){
-      <button type="button"  [attr.aria-pressed]="selectedTool.id===tool.id" [class.active]="selectedTool.id===tool.id" (click)="selectTool(tool)">
-        <span class="tool-icon" aria-hidden="true">{{tool.icon}}</span>
-        <span><strong>{{tool.name}}</strong><small>{{tool.description}}</small></span>
-      </button>
-    }
-  </div>
+  <nav class="role-tabs" aria-label="Templates by role">@for(r of roles;track r.id){<a [routerLink]="r.path" [class.active]="r.id===role.id" [attr.aria-current]="r.id===role.id?'page':null"><small>Templates for</small>{{r.tab}}</a>}</nav>
 
-  <section class="workspace card" aria-live="polite">
+  <div class="grid two studio-links">@for(st of role.studios;track st.path){<a class="card" [routerLink]="st.path"><p class="eyebrow">{{st.eyebrow}}</p><h3>{{st.title}}</h3><p class="muted">{{st.text}}</p></a>}</div>
+
+  <section class="approach" aria-label="Filter by delivery approach">
+    <h2>Templates <span>Filter by how your project is delivered</span></h2>
+    <div class="approach-chips"><button type="button" [class.active]="!approach" (click)="approach=null">All approaches <b>{{countFor(null)}}</b></button>@for(a of approaches;track a.id){<button type="button" [class.active]="approach===a.id" (click)="approach=a.id">{{a.label}} <b>{{countFor(a.id)}}</b></button>}</div>
+    @if(approachTip){<p class="approach-tip">{{approachTip}}</p>}
+  </section>
+
+  <!-- Templates are grouped by what the role is trying to do; each card shows the approaches it suits. -->
+  @for(cat of categories;track cat.name){
+    <section class="tool-group" [attr.aria-label]="cat.name">
+      <h3>{{cat.name}} <small>{{cat.blurb}}</small></h3>
+      <div class="tool-picker" role="group" [attr.aria-label]="cat.name">
+        @for(tool of cat.items;track tool.id){
+          <button type="button" [attr.aria-pressed]="selectedTool.id===tool.id" [class.active]="selectedTool.id===tool.id" (click)="openTool(tool)">
+            <span class="tool-icon" aria-hidden="true">{{tool.icon}}</span>
+            <span><strong>{{tool.name}}</strong><small>{{tool.description}}</small><span class="tags">@for(a of approachesOf(tool.id);track a){<i [class]="'tag-'+a">{{approachLabel(a)}}</i>}</span></span>
+          </button>
+        }
+      </div>
+    </section>
+  }
+
+  <section class="workspace card" id="workspace" aria-live="polite">
     <div class="workspace-heading">
       <div>
         <p class="eyebrow">Current tool</p>

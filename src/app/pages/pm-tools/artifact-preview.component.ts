@@ -1,3 +1,4 @@
+import {BOARDS} from './artifact-catalog';
 import {Component,ElementRef,Input,ViewChild} from '@angular/core';
 import {exportSvg} from '../../core/export-utils';
 import {benefitProgress,budgetBars,evmSeries,ganttLayout,groupBy,milestoneLayout,raciMatrix,stakeholderGrid,statusColor,wbsLayout,type Row} from './preview-layout';
@@ -122,7 +123,7 @@ const SVG_KINDS=['wbs','gantt','milestones','stakeholders','budget','evm','benef
           <div class="status-grid">@for(it of rows;track $index){<div class="story"><small>{{it['f0']}} · {{it['f5']}} priority</small><p><strong>As a</strong> {{it['f1']}}, <strong>I want</strong> {{lower(it['f2'])}} <strong>so that</strong> {{lower(it['f3'])}}.</p>@if(it['f4']){<p class="ac">✓ {{it['f4']}}</p>}</div>}</div>
         }
         @default{
-          @if(boardKey){<div class="board">@for(col of board(boardKey);track col.name){<div class="col"><h4>{{col.name}} <small>{{col.items.length}}</small></h4>
+          @if(boardKey){<div class="board">@for(col of board(boardKey,boardOrder);track col.name){<div class="col"><h4>{{col.name}} <small>{{col.items.length}}</small></h4>
             @for(it of col.items;track $index){<div class="card-i" [style.borderLeftColor]="color(col.name)"><strong>{{titleOf(it)}}</strong>@for(c of detailCols;track c.key){@if(it[c.key]){<small>{{c.label}}: {{it[c.key]}}</small>}}</div>}</div>}</div>}
           @else{<div class="doc">@for(it of rows;track $index){<section><h4>{{titleOf(it)}}</h4>@for(c of detailCols;track c.key){@if(it[c.key]){<p><span>{{c.label}}</span>{{it[c.key]}}</p>}}</section>}</div>}
         }
@@ -162,7 +163,7 @@ export class ArtifactPreviewComponent{
   get isSvg(){return SVG_KINDS.includes(this.toolId)&&this.rows.length>0;}
   /** The diagram, if this template has one (used to add it to the PDF export). */
   svg():SVGSVGElement|undefined{return this.isSvg?this.canvas?.nativeElement:undefined;}
-  get heading(){return ({wbs:'WBS tree',gantt:'Gantt chart',milestones:'Milestone timeline',stakeholders:'Influence / interest grid',budget:'Budget chart',evm:'Earned value S-curve',benefits:'Benefits progress',raci:'RACI matrix',raid:'RAID board',status:'Status dashboard',stories:'Story cards',backlog:'Backlog board',actions:'Action board',change:'Change board'} as Record<string,string>)[this.toolId]??'Document view';}
+  get heading(){return ({wbs:'WBS tree',gantt:'Gantt chart',milestones:'Milestone timeline',stakeholders:'Influence / interest grid',budget:'Budget chart',evm:'Earned value S-curve',benefits:'Benefits progress',raci:'RACI matrix',raid:'RAID board',status:'Status dashboard',stories:'Story cards',backlog:'Backlog board',actions:'Action board',change:'Change board'} as Record<string,string>)[this.toolId]??(BOARDS[this.toolId]?'Board view':'Document view');}
   get wbs(){return wbsLayout(this.rows,this.projectName);}
   get gantt(){return ganttLayout(this.rows);}
   get milestones(){return milestoneLayout(this.rows);}
@@ -171,7 +172,8 @@ export class ArtifactPreviewComponent{
   get evm(){return evmSeries(this.rows);}
   get benefits(){return benefitProgress(this.rows);}
   get raci(){return raciMatrix(this.rows);}
-  get boardKey(){return ({backlog:'f5',actions:'f4',change:'f4'} as Record<string,string>)[this.toolId]??'';}
+  get boardKey(){return ({backlog:'f5',actions:'f4',change:'f4'} as Record<string,string>)[this.toolId]??BOARDS[this.toolId]?.[0]??'';}
+  get boardOrder(){return BOARDS[this.toolId]?.[1]??[];}
   board(key:string,order:string[]=[]){return groupBy(this.rows,key,order);}
   /** True when the first column is an ID, so the title combines it with the second column. */
   get idFirst(){return /^(id|#)$/i.test(this.columns[0]?.label??'');}
