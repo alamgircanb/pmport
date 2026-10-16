@@ -17,7 +17,7 @@ type Lever='meetings'|'wip'|'overtime'|'testing'|'creep'|'risk'|'turnover';
   <section class="page playground">
     <header class="pg-head"><p class="eyebrow">Practice · Project simulations</p><h1>Playground: see how project decisions play out</h1>
       <p class="lead">Five interactive simulators for project managers. Pick one, set it up, press play and watch your decisions play out week by week. Change the settings at any time and see the effect straight away.</p>
-      <nav class="pg-nav" aria-label="Playgrounds">@for(n of navItems;track n.id){<button type="button" (click)="jump(n.id)"><span>{{n.n}}</span>{{n.label}}</button>}</nav></header>
+      <nav class="pg-nav" aria-label="Playgrounds">@for(n of navItems;track n.id){<button type="button" (click)="jump(n.id)"><span>{{n.n}}</span>{{n.label}}</button>}<a class="lab-link" routerLink="/pm-playground/chart-lab"><span>New</span>Chart Lab: data storytelling →</a></nav></header>
 
     <div class="pg-section" id="pg-delivery">
     <p class="eyebrow">Playground 1 · Project delivery</p><h2>Project delivery: scope, team, schedule and cost</h2>

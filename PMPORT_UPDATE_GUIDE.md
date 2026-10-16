@@ -139,3 +139,10 @@ The event display recovers a title from a nonstandard title key in the original 
 - The "you are here" trail above each page (Home › group › page) is built from the same file, so a new page only needs a menu entry (or to sit under an existing menu address) to get a correct trail.
 - The Home page "Start here" cards (four goals) are in `goals` in `src/app/pages/home/home.component.ts`.
 - Addresses did not change, so Google indexing is unaffected.
+
+## Chart Lab (/pm-playground/chart-lab)
+
+- Twelve charts with demo project data, sliders, "Try a scenario" presets, a live data story (headline, three points, "So what?") and a four-part guide (what it is, when to use it, how to read it, common mistakes).
+- Everything lives in `src/app/pages/playground/chart-lab/`: `chart-lab-model.ts` holds each chart's text, sliders and presets (`CHARTS`) and one builder function per chart that turns slider values into SVG shapes and the story. `chart-lab.component.ts` draws whatever shapes a builder returns.
+- To add a chart: add an entry to `CHARTS`, write a builder that returns `{shapes, legend, caption, story}`, and add it to the `build()` switch. Shape colours are CSS classes (`s1`–`s6`, `ln1`, `dot1` and so on) defined in the component styles.
+- A chart can be linked directly with `?chart=<id>`, for example `/pm-playground/chart-lab?chart=burndown`.

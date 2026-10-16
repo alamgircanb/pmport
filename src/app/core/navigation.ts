@@ -22,7 +22,8 @@ export const NAV_GROUPS:NavGroup[]=[
     {label:'Glossary',path:'/pm-glossary'},
     {label:'Free courses & channels',path:'/pm-learninglink'}]},
   {id:'practice',label:'Practice',links:[
-    {label:'Project simulations',path:'/pm-playground'},
+    {label:'Project simulations',path:'/pm-playground',exact:true},
+    {label:'Chart Lab (data storytelling)',path:'/pm-playground/chart-lab'},
     {label:'Data skills (SQL, Excel, Power BI, Python)',path:'/pm-datalab'}]},
   {id:'tools',label:'Tools',links:[
     {label:'Templates & diagrams',path:'/pm-tools'},

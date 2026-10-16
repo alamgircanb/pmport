@@ -47,6 +47,7 @@ export const routes:Routes=[
   {path:'media',loadComponent:()=>import('./pages/media/media.component').then(m=>m.MediaComponent)},
   {path:'events',loadComponent:()=>import('./pages/events/events.component').then(m=>m.EventsComponent)},
   {path:'pm-learninglink',loadComponent:()=>import('./pages/learning-links/learning-links.component').then(m=>m.LearningLinksComponent),title:'LearningLink | PMPORT'},
+  {path:'pm-playground/chart-lab',loadComponent:()=>import('./pages/playground/chart-lab/chart-lab.component').then(m=>m.ChartLabComponent)},
   {path:'pm-playground',loadComponent:()=>import('./pages/playground/playground.component').then(m=>m.PlaygroundComponent)},
   {path:'pm-datalab',loadComponent:()=>import('./pages/datalab/datalab-home.component').then(m=>m.DatalabHomeComponent)},
   {path:'pm-datalab/sql',loadComponent:()=>import('./pages/datalab/sql-lab.component').then(m=>m.SqlLabComponent)},
