@@ -303,5 +303,10 @@
   "label": "Playground",
   "title": "Project Management Playground: 5 Interactive Simulators | PMPORT",
   "description": "Free project simulators: delivery, Kanban flow, risk and reserve, change adoption and technical debt. Change the settings and watch the results week by week."
+ },
+ "pm-playground/chart-lab": {
+  "title": "Chart Lab: Interactive Data Storytelling for PMs & BAs | PMPORT",
+  "description": "Move the data and watch 12 charts react: bar, line, scatter, histogram, box plot, donut, stacked bar, heatmap, burndown, waterfall and radar, each with a guide and a live data story.",
+  "label": "Chart Lab"
  }
 }

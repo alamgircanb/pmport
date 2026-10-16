@@ -58,3 +58,4 @@ svg{width:100%;height:auto;display:block}
 .principles{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.8rem;margin-top:1rem}.principles h3{margin:0 0 .4rem;font-size:1rem}.principles p{margin:0;font-size:.9rem;line-height:1.6;color:#c9d9e7}
 .explain h3{margin:1.5rem 0 .2rem}
 .key .k::before{display:none}
+.pg-nav .lab-link{border:1px solid var(--accent);background:#0d2f4d;color:#fff;border-radius:999px;padding:.5rem .9rem;font-weight:700;font-size:.88rem;text-decoration:none}.pg-nav .lab-link span{background:var(--accent);color:#041223;border-radius:999px;padding:.05rem .45rem;margin-right:.45rem;font-size:.72rem}.pg-nav .lab-link:hover{background:#12385f}
