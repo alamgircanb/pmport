@@ -3,3 +3,18 @@
 .studio-links a{text-decoration:none}.studio-links a:hover{border-color:var(--accent)}.tool-picker{grid-template-columns:repeat(2,minmax(0,1fr));max-height:420px;overflow:auto;padding:4px}.tool-picker>button{min-height:95px}.tool-picker small{font-size:.875rem}.table-wrap th,.project-name,.save-note{font-size:.875rem}
 
 .column-delete{background:transparent;border:0;color:#c6dcea;cursor:pointer;font-size:1rem}.file{position:relative;overflow:hidden;cursor:pointer}.file input{position:absolute;inset:0;opacity:0;cursor:pointer}
+
+.role-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem;margin:0 0 1.5rem}
+.role-tabs a{display:grid;gap:.15rem;padding:.9rem 1rem;border:1px solid var(--line);border-radius:14px;background:#0a2039;color:#fff;text-decoration:none;font-weight:800;font-size:1.05rem}
+.role-tabs a small{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:700}
+.role-tabs a.active{border-color:var(--accent);background:#0d2f4d;box-shadow:inset 0 -3px 0 var(--accent)}
+.approach{margin:2rem 0 .5rem}.approach h2{font-size:1.8rem!important;margin:0 0 .7rem!important}.approach h2 span{display:block;font-size:.9rem;font-weight:500;color:var(--muted);letter-spacing:0;margin-top:.3rem;font-family:Inter,sans-serif}
+.approach-chips{display:flex;flex-wrap:wrap;gap:.5rem}.approach-chips button{border:1px solid #315370;background:#0b2340;color:#d9eef7;border-radius:999px;padding:.5rem .9rem;font-weight:700;font-size:.88rem;cursor:pointer}
+.approach-chips button b{display:inline-block;margin-left:.3rem;color:var(--accent)}.approach-chips button.active{background:var(--accent);color:#041223;border-color:var(--accent)}.approach-chips button.active b{color:#041223}
+.approach-tip{margin:.8rem 0 0;padding:.7rem .9rem;border-left:3px solid var(--accent);background:#0a2039;border-radius:0 10px 10px 0;color:#c9dcec;line-height:1.55;max-width:900px}
+.tool-group{margin-top:1.4rem}.tool-group h3{margin:0 0 .7rem;font-size:1.15rem}.tool-group h3 small{font-weight:500;color:var(--muted);font-size:.88rem;margin-left:.5rem}
+.tags{display:flex!important;flex-wrap:wrap;gap:.25rem;margin-top:.45rem}.tags i{font-style:normal;font-size:.66rem;font-weight:800;letter-spacing:.04em;padding:.12rem .45rem;border-radius:99px;background:#12385c;color:#cfe3f3}
+.tags .tag-predictive{background:#2b3f6b}.tags .tag-agile{background:#1f5a4a}.tags .tag-kanban{background:#5a4a1f}.tags .tag-hybrid{background:#4a2b5a}
+@media(max-width:760px){.role-tabs{grid-template-columns:1fr}}
+.tool-group .tool-picker{max-height:none;overflow:visible;grid-template-columns:repeat(3,minmax(0,1fr));margin-bottom:.5rem}
+@media(max-width:1100px){.tool-group .tool-picker{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:650px){.tool-group .tool-picker{display:grid;grid-template-columns:minmax(0,1fr);overflow:visible}.tool-group .tool-picker>button{min-width:0}}

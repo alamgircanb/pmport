@@ -1,25 +1,11 @@
 import {CommonModule} from '@angular/common';
-import {Component, OnInit, HostListener, ViewChild} from '@angular/core';
-import {RouterLink} from '@angular/router';
+import {Component, OnInit, HostListener, ViewChild, inject} from '@angular/core';
+import {ActivatedRoute,RouterLink} from '@angular/router';
+import {APPROACHES,Approach,NEW_TOOLS,ROLE_PAGES,RoleId,TOOL_APPROACHES,ToolColumn,ToolDefinition} from './artifact-catalog';
 import {exportWorkbook,exportTablePdf,exportErrorMessage,preloadExportLibraries} from '../../core/export-utils';
 import {ArtifactPreviewComponent} from './artifact-preview.component';
 import {FormsModule} from '@angular/forms';
 
-interface ToolColumn {
-  key:string;
-  label:string;
-  type:'text'|'number'|'date'|'select';
-  options?:string[];
-}
-
-interface ToolDefinition {
-  id:string;
-  name:string;
-  icon:string;
-  description:string;
-  columns:ToolColumn[];
-  sampleRows:Record<string,string>[];
-}
 
 @Component({
   selector:'app-pm-tools',
@@ -112,10 +98,22 @@ export class PMToolsComponent implements OnInit {
       sampleRows:[
         {period:'Month 1',pv:'10000',ev:'9000',ac:'9500',notes:'Initial delivery period'}
       ]
-    }
+    },
+    ...NEW_TOOLS
   ];
 
   private readonly defaults=JSON.parse(JSON.stringify(this.tools)) as ToolDefinition[];
+  private readonly route=inject(ActivatedRoute);
+  readonly roles=ROLE_PAGES;readonly approaches=APPROACHES;
+  readonly role=ROLE_PAGES.find(r=>r.id===(this.route.snapshot.data['role'] as RoleId))??ROLE_PAGES[0];
+  approach:Approach|null=null;
+  private byId(id:string){return this.tools.find(t=>t.id===id);}
+  approachesOf(id:string){return TOOL_APPROACHES[id]??APPROACHES.map(a=>a.id);}
+  approachLabel(id:Approach){return ({predictive:'Predictive',agile:'Agile',kanban:'Kanban',hybrid:'Hybrid'} as Record<Approach,string>)[id];}
+  /** Categories on this role page, filtered by the chosen delivery approach. */
+  get categories(){return this.role.categories.map(c=>({...c,items:c.tools.map(id=>this.byId(id)).filter((t):t is ToolDefinition=>!!t&&(!this.approach||this.approachesOf(t.id).includes(this.approach)))})).filter(c=>c.items.length);}
+  get approachTip(){return APPROACHES.find(a=>a.id===this.approach)?.tip??'';}
+  countFor(a:Approach|null){return this.role.categories.flatMap(c=>c.tools).filter(id=>!a||this.approachesOf(id).includes(a)).length;}
   selectedTool=this.tools[0];
   projectName='My Project';
   rows:Record<string,string>[]=[];
@@ -125,7 +123,10 @@ export class PMToolsComponent implements OnInit {
   newColumn='';
 
   @ViewChild(ArtifactPreviewComponent) preview?:ArtifactPreviewComponent;
-  ngOnInit():void { this.selectTool(this.tools[0]); preloadExportLibraries(); }
+  ngOnInit():void { this.selectTool(this.byId(this.role.categories[0].tools[0])??this.tools[0]); preloadExportLibraries(); }
+
+  /** Opens a template from a card and brings its workspace into view. */
+  openTool(tool:ToolDefinition):void{const before=this.selectedTool;this.selectTool(tool);if(this.selectedTool!==before||before===tool)setTimeout(()=>document.getElementById('workspace')?.scrollIntoView({behavior:'smooth',block:'start'}),0);}
 
   /** Opens a tool and restores the visitor's last saved version on this device. */
   selectTool(tool:ToolDefinition):void {

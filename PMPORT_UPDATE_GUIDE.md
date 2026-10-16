@@ -146,3 +146,10 @@ The event display recovers a title from a nonstandard title key in the original 
 - Everything lives in `src/app/pages/playground/chart-lab/`: `chart-lab-model.ts` holds each chart's text, sliders and presets (`CHARTS`) and one builder function per chart that turns slider values into SVG shapes and the story. `chart-lab.component.ts` draws whatever shapes a builder returns.
 - To add a chart: add an entry to `CHARTS`, write a builder that returns `{shapes, legend, caption, story}`, and add it to the `build()` switch. Shape colours are CSS classes (`s1`–`s6`, `ln1`, `dot1` and so on) defined in the component styles.
 - A chart can be linked directly with `?chart=<id>`, for example `/pm-playground/chart-lab?chart=burndown`.
+
+## Artifacts Lab by role and delivery approach
+
+- Three pages share one component: **/pm-tools** (project managers), **/pm-tools/ba** (business analysts) and **/pm-tools/teams** (delivery teams and developers). The route's `role` data picks the page.
+- `src/app/pages/pm-tools/artifact-catalog.ts` holds the page text, the categories on each page (which templates, in which order), the delivery approaches each template suits (`TOOL_APPROACHES`: predictive, agile, kanban, hybrid) and the newer templates (`NEW_TOOLS`). The original 22 templates are still in `pm-tools.component.ts`.
+- To add a template: add it with `tpl()` in `NEW_TOOLS`, put its id in a category on the right role page, tag its approaches, and (optionally) give it a board preview in `BOARDS`. Then update the crawler list `ARTIFACT_LISTS` in `scripts/seo-pages.mjs`.
+- Saved work is stored per template id in the browser, so moving a template to a different page keeps visitors' saved data.
