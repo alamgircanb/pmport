@@ -22,6 +22,7 @@ const articleSources={
   'resources/pmp-study-guide-8-week-plan':'src/app/pages/pmp-guides/pmp-study-guide.component.ts',
   'resources/best-free-pmp-practice-exams':'src/app/pages/pmp-guides/free-pmp-exams.component.ts',
   'resources/how-project-managers-can-use-chatgpt':'src/app/pages/chatgpt-pm-article/chatgpt-pm-article.component.ts',
+  'resources/nine-women-one-month-brooks-law':'src/app/pages/brooks-law-article/brooks-law-article.component.ts',
   'pm-calculators/earned-value-calculator':'src/app/pages/calculators/evm-calculator.component.ts',
   'pm-calculators/pert-three-point-estimate-calculator':'src/app/pages/calculators/pert-calculator.component.ts',
   'pm-calculators/risk-emv-calculator':'src/app/pages/calculators/emv-calculator.component.ts',

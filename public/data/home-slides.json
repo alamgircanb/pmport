@@ -11,6 +11,17 @@
     "published": true
   },
   {
+    "id": "nine-women-one-month",
+    "label": "Knowledge Lake · Project delivery",
+    "title": "You Can't Add Nine Women to Deliver a Baby in One Month",
+    "description": "Why adding people to a late project often makes it later, what the evidence on team size says, and ten better ways to recover.",
+    "image": "nine-women-one-month.webp",
+    "alt": "A team pushing a giant hourglass beside a nine-month calendar",
+    "path": "/resources/nine-women-one-month-brooks-law",
+    "action": "Read the article",
+    "published": true
+  },
+  {
     "id": "faciliter-certifications",
     "label": "Exam Faciliter · Certification exam prep",
     "title": "Free Exam Simulators for PMP, CAPM, ECBA, CBAP and ITIL 5",

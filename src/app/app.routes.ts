@@ -10,6 +10,7 @@ export const routes:Routes=[
   {path:'resources/ai-super-coworker-project-manager-business-analyst',loadComponent:()=>import('./pages/ai-coworker-article/ai-coworker-article.component').then(m=>m.AiCoworkerArticleComponent),title:'AI: Not Only a Tool but a Super Coworker for the Next-Gen PM and BA | PMPORT'},
   {path:'resources/21-causes-of-project-failure',loadComponent:()=>import('./pages/project-failure-article/project-failure-article.component').then(m=>m.ProjectFailureArticleComponent),title:'Top 21 Causes of Project Failure | PMPORT'},
   {path:'resources/pmp-study-guide-8-week-plan',loadComponent:()=>import('./pages/pmp-guides/pmp-study-guide.component').then(m=>m.PmpStudyGuideComponent)},
+  {path:'resources/nine-women-one-month-brooks-law',loadComponent:()=>import('./pages/brooks-law-article/brooks-law-article.component').then(m=>m.BrooksLawArticleComponent)},
   {path:'resources/how-project-managers-can-use-chatgpt',loadComponent:()=>import('./pages/chatgpt-pm-article/chatgpt-pm-article.component').then(m=>m.ChatgptPmArticleComponent)},
   {path:'resources/best-free-pmp-practice-exams',loadComponent:()=>import('./pages/pmp-guides/free-pmp-exams.component').then(m=>m.FreePmpExamsComponent)},
   {path:'pm-calculators',loadComponent:()=>import('./pages/calculators/calculators-hub.component').then(m=>m.CalculatorsHubComponent)},

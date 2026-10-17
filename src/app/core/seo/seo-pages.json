@@ -318,5 +318,14 @@
   "label": "Team & developer templates",
   "title": "Free Agile & Developer Templates: Sprint, Kanban, Bugs, Tests | PMPORT",
   "description": "Free templates for delivery teams and developers: product backlog, sprint planning, Kanban board, Definition of Done, test cases, bug tracker, technical debt, ADRs, flow metrics, retrospectives and go-live checklist."
+ },
+ "resources/nine-women-one-month-brooks-law": {
+  "label": "Nine Women, One Month",
+  "title": "Brooks's Law: Why Adding People to a Late Project Makes It Later | PMPORT",
+  "description": "You can't add nine women to deliver a baby in one month. The evidence on team size, communication channels and late projects, when adding people helps, and 10 better ways to recover.",
+  "image": "og/nine-women-one-month.jpg",
+  "type": "article",
+  "published": "2026-10-17",
+  "hero": "nine-women-one-month.webp"
  }
 }
