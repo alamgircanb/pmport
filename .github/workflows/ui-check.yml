@@ -1,0 +1,23 @@
+name: Temporary DataLab UI check
+on:
+  push:
+    branches: [ci/simulator-ui-check]
+permissions:
+  contents: write
+jobs:
+  ui:
+    if: "!contains(github.event.head_commit.message, '[results]')"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 20, cache: npm}
+      - run: npm ci
+      - run: npm run build
+      - run: npx --yes serve@14.2.4 -s dist/portfolio/browser -l 4200 &
+      - run: npm i --no-save playwright@1.55.0 && npx playwright install --with-deps chromium
+      - run: sleep 3 && node tests/ui/datalab-check.cjs
+      - if: always()
+        run: |
+          git config user.name "ui-check" && git config user.email "ui-check@users.noreply.github.com"
+          git add -f tests/ui/out && git commit -m "UI check output [results]" && git push
