@@ -1,0 +1,7 @@
+desk h1 You Can't Add Nine Women to Deliver a Baby in One Month | title Brooks's Law: Why Adding People to a Late Project Makes It Later | PMPORT | h2 9 | sources 12 | img 1600 | scrollWidth 1440 | crumbs Home › Learn › Articles › Nine Women, One Month
+toc http://localhost:4200/resources/nine-women-one-month-brooks-law#instead 0
+resources first card You Can't Add Nine Women to Deliver a Baby in One Month
+mob h1 You Can't Add Nine Women to Deliver a Baby in One Month | title Brooks's Law: Why Adding People to a Late Project Makes It Later | PMPORT | h2 9 | sources 12 | img 1600 | scrollWidth 390 | crumbs Home › Learn › Articles › Nine Women, One Month
+prerender <title>Brooks's Law: Why Adding People to a Late Project Makes It Later | PMPORT | has evidence true | og true
+sitemap true
+errors []
