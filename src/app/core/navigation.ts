@@ -30,6 +30,8 @@ export const NAV_GROUPS:NavGroup[]=[
     {label:'BA templates',path:'/pm-tools/ba'},
     {label:'Team & developer templates',path:'/pm-tools/teams'},
     {label:'Calculators',path:'/pm-calculators'},
+    {label:'PERT / CPM critical path',path:'/pm-tools/pert-cpm'},
+    {label:'Diagram Studio',path:'/pm-tools/diagram-studio'},
     {label:'Notes',path:'/pm-handaid'}]},
   {id:'career',label:'Career',links:[
     {label:'Job prep',path:'/pm-jobs-prep'},
