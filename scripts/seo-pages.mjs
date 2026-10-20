@@ -181,7 +181,7 @@ function render(path,page){
   // Let the browser start downloading the page's main picture straight away (faster Largest Contentful Paint).
   if(page.hero)html=html.replace('</head>',`  <link rel="preload" as="image" href="/${page.hero}" fetchpriority="high">\n  </head>`);
   if(page.type==='article'){
-    const ld={'@context':'https://schema.org','@type':'Article',headline:page.title.replace(/ \| PMPORT$/,''),description:page.description,image,url,mainEntityOfPage:url,datePublished:page.published,dateModified:page.published,inLanguage:'en-CA',
+    const ld={'@context':'https://schema.org','@type':'Article',headline:page.title.replace(/ \| PMPORT$/,''),description:page.description,image,url,mainEntityOfPage:url,datePublished:page.published,dateModified:page.updated||page.published,inLanguage:'en-CA',
       author:{'@type':'Person',name:'Md Alamgir Hossain',url:`${SITE}/about`},publisher:{'@type':'Organization',name:'PMPORT',url:SITE,logo:{'@type':'ImageObject',url:`${SITE}/pmporticon.jpg`}}};
     html=html.replace('</head>',ldScript('seo-article',ld));
   }
@@ -208,7 +208,9 @@ for(const [path,page] of Object.entries(pages)){
   const file=path===''?join(out,'index.html'):join(out,path,'index.html');
   mkdirSync(dirname(file),{recursive:true});
   writeFileSync(file,render(path,page));count++;
-  if(!page.noindex)urls.push(`  <url><loc>${SITE}/${path}</loc><lastmod>${page.published||new Date().toISOString().slice(0,10)}</lastmod></url>`);
+  // lastmod is a real edit date only ("updated", else "published"); pages with neither leave it out, so Google keeps trusting the dates.
+  const lastmod=page.updated||page.published;
+  if(!page.noindex)urls.push(`  <url><loc>${SITE}/${path}</loc>${lastmod?`<lastmod>${lastmod}</lastmod>`:''}</url>`);
 }
 for(const t of glossary){
   const path=`pm-glossary/${t.slug}`;const file=join(out,path,'index.html');

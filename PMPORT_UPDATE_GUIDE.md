@@ -40,7 +40,7 @@ The section appears under the event cards. It moves to the next post every 30 se
 
 ## Search and sharing (SEO)
 
-Every public page's Google title, description and LinkedIn/Facebook preview image are set in `src/app/core/seo/seo-pages.json`. Preview images are 1200×630 JPGs in `public/og/`. When you add a new page, add one entry to that file: the build (`scripts/seo-pages.mjs`) then creates the page's search-friendly HTML and adds it to `sitemap.xml` automatically.
+Every public page's Google title, description and LinkedIn/Facebook preview image are set in `src/app/core/seo/seo-pages.json`. Preview images are 1200×630 JPGs in `public/og/`. When you add a new page, add one entry to that file: the build (`scripts/seo-pages.mjs`) then creates the page's search-friendly HTML and adds it to `sitemap.xml` automatically. The sitemap's `lastmod` date comes from the entry's optional `updated` field (YYYY-MM-DD), or `published` if there is no `updated`. When you make a real change to a page, set `updated` to that day's date. Pages with neither date are listed without one.
 
 ## Knowledge Lake
 
