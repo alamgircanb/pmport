@@ -24,7 +24,7 @@ The original `/about`, `/education`, `/portfolio`, `/credentials`, `/media`, `/e
 
 ## Rotating Home banner
 
-Edit `public/data/home-slides.json` to add or change slides. Fields: `id`, `label`, `title`, `description`, `image`, `alt`, `path`, `action`, `published`.
+Edit `public/data/home-slides.json` to add or change slides. Fields: `id`, `label`, `title`, `description`, `image`, `alt`, `path`, `action`, `published`, and optional `layout` (`portrait` puts a square photo on the right). The slides are built into the page, so changes appear after the next deploy.
 
 Slides follow the order in the file. Set `published` to false to hide a slide. Use a valid image in `public/` and an existing internal route. The banner rotates every 7 seconds and pauses on hover, focus and hidden tabs. Arrows, dots, pause/play and mobile swiping are supported. Reduced-motion visitors start with rotation paused.
 
