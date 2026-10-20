@@ -1,6 +1,7 @@
 import {Directive,HostListener,OnDestroy,OnInit} from '@angular/core';
 import type {Domain,ExamProgram,ExamQuestion,ExamSet} from './exam-types';
 import {ExamBank,calculate,isAnswered,isCorrect,type ExamForm,type ExamResult,type PracticeFilter,type Response} from './exam-engine';
+import {trackEvent} from '../../core/analytics';
 
 type View='home'|'intro'|'exam'|'review'|'break'|'results'|'answers';
 type Mode='full'|'practice';
@@ -65,8 +66,8 @@ export abstract class ExamSimulatorBase implements OnInit,OnDestroy{
 
   // ---------- Starting ----------
   startIntro(examId=this.pendingExam){this.pendingExam=examId;this.mode='full';this.view='intro';window.scrollTo({top:0})}
-  startFull(){this.reset('full',this.bank.buildFullExam(this.pendingExam));this.view='exam';this.persist();window.scrollTo({top:0})}
-  startPractice(){const form=this.bank.buildPractice(this.filter);if(!form.sections[0].ids.length)return;this.reset('practice',form);this.view='exam';this.persist();window.scrollTo({top:0})}
+  startFull(){trackEvent('simulator_start',{exam:this.program.code,mode:'full',form:this.pendingExam});this.reset('full',this.bank.buildFullExam(this.pendingExam));this.view='exam';this.persist();window.scrollTo({top:0})}
+  startPractice(){const form=this.bank.buildPractice(this.filter);if(!form.sections[0].ids.length)return;trackEvent('simulator_start',{exam:this.program.code,mode:'practice'});this.reset('practice',form);this.view='exam';this.persist();window.scrollTo({top:0})}
   practiceCount(){return this.bank.practicePool(this.filter).length}
   private reset(mode:Mode,form:ExamForm){this.mode=mode;this.form=form;this.section=0;this.index=0;this.responses={};this.flags=new Set();this.strikes={};this.checked=new Set();this.timeLeft=this.program.minutes*60;this.breakLeft=this.program.breakMinutes*60;this.finished=false;this.result=null;this.confirmEnd=false;this.showNavigator=false}
   resume(key:SlotKey){const s=this.saves[key];if(!s)return;if(s.mode==='full')this.pendingExam=s.form.examId;this.mode=s.mode;this.form=s.form;this.view=s.view;this.section=s.section;this.index=s.index;this.responses=s.responses;this.flags=new Set(s.flags);this.strikes=s.strikes;this.checked=new Set(s.checked);this.timeLeft=s.timeLeft;this.breakLeft=s.breakLeft;this.finished=s.finished;if(this.finished)this.result=this.bank.score(this.form,this.responses);window.scrollTo({top:0})}
@@ -119,7 +120,7 @@ export abstract class ExamSimulatorBase implements OnInit,OnDestroy{
   }
   endBreak(){this.view='exam';this.touch();window.scrollTo({top:0})}
   check(){this.checked.add(this.q.id);this.touch()}
-  finish(){if(!this.form)return;this.finished=true;this.result=this.bank.score(this.form,this.responses);this.view='results';this.touch();window.scrollTo({top:0})}
+  finish(){if(!this.form)return;this.finished=true;this.result=this.bank.score(this.form,this.responses);trackEvent('simulator_complete',{exam:this.program.code,mode:this.mode});this.view='results';this.touch();window.scrollTo({top:0})}
   retake(){this.mode==='full'?this.startIntro(this.form?.examId||1):this.home()}
 
   private scrollQuestion(){setTimeout(()=>document.getElementById('exam-question')?.scrollIntoView({block:'start',behavior:'smooth'}),0)}

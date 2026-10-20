@@ -6,7 +6,7 @@ import pages from './seo-pages.json';
  * The same file drives the sitemap and the per-page HTML generated at build time
  * (scripts/seo-pages.mjs), so a new page only needs an entry there.
  */
-export interface SeoPage{title:string;description:string;image?:string;type?:'website'|'article';published?:string;noindex?:boolean;hero?:string;label?:string}
+export interface SeoPage{title:string;description:string;image?:string;type?:'website'|'article';published?:string;updated?:string;noindex?:boolean;hero?:string;label?:string}
 
 export const SITE_URL='https://pmport.ca';
 export const SITE_NAME='PMPORT';

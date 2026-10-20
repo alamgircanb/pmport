@@ -9,6 +9,12 @@
   "title": "About PMPORT | Project Management Learning Platform",
   "description": "PMPORT brings project management, business analysis, technology and data together in one place to learn, explore and practise."
  },
+ "start-here": {
+  "label": "Start here",
+  "title": "Start Here: Free PMP Prep, PM Tools & Learning | PMPORT",
+  "description": "New to PMPORT? Pick a path: prepare for the PMP or another certification, learn project management from the basics, or use a free template or calculator now.",
+  "updated": "2026-10-20"
+ },
  "resources": {
   "label": "Knowledge Lake",
   "title": "Project Management Articles & PMP Tips | PMPORT",
