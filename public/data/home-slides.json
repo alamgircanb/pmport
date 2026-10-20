@@ -12,6 +12,17 @@
     "layout": "portrait"
   },
   {
+    "id": "nine-women-one-month",
+    "label": "Knowledge Lake · Project delivery",
+    "title": "You Can't Add Nine Women to Deliver a Baby in One Month",
+    "description": "Why adding people to a late project often makes it later, what the evidence on team size says, and ten better ways to recover.",
+    "image": "nine-women-one-month.webp",
+    "alt": "A team pushing a giant hourglass beside a nine-month calendar",
+    "path": "/resources/nine-women-one-month-brooks-law",
+    "action": "Read the article",
+    "published": true
+  },
+  {
     "id": "faciliter-certifications",
     "label": "Exam Faciliter · Certification exam prep",
     "title": "Free Exam Simulators for PMP, CAPM, ECBA, CBAP and ITIL 5",
@@ -20,6 +31,39 @@
     "alt": "A business analyst reviewing a case study with requirements models and a traceability matrix",
     "path": "/pm-faciliter",
     "action": "Choose your certification",
+    "published": true
+  },
+  {
+    "id": "chatgpt-for-project-managers",
+    "label": "Knowledge Lake · AI in practice",
+    "title": "How Project Managers Can Use ChatGPT",
+    "description": "Twelve practical ways to use AI for plans, risks, status updates and meeting notes, with starter prompts and the guardrails that keep it safe.",
+    "image": "chatgpt-for-project-managers.webp",
+    "alt": "An AI co-pilot chat drafting a project status update beside a project manager's review checklist",
+    "path": "/resources/how-project-managers-can-use-chatgpt",
+    "action": "Read the article",
+    "published": true
+  },
+  {
+    "id": "pm-playground",
+    "label": "Playground · 5 simulators",
+    "title": "Playground",
+    "description": "Play with project delivery, Kanban flow, risk and reserve, change adoption and technical debt. Change the settings and watch the results week by week.",
+    "image": "pm-playground.webp",
+    "alt": "Simulator control panel with sliders, a burn-up chart and a play button",
+    "path": "/pm-playground",
+    "action": "Open the playgrounds",
+    "published": true
+  },
+  {
+    "id": "pm-datalab",
+    "label": "DataLab · Data skills practice",
+    "title": "DataLab",
+    "description": "Practise SQL, Excel, Power BI DAX, Python and status reporting on one sample project portfolio, with every answer checked instantly.",
+    "image": "pm-datalab.webp",
+    "alt": "SQL query editor beside a results table and a bar chart",
+    "path": "/pm-datalab",
+    "action": "Start practising",
     "published": true
   },
   {
@@ -34,50 +78,6 @@
     "published": true
   },
   {
-    "id": "nine-women-one-month",
-    "label": "Knowledge Lake · Project delivery",
-    "title": "You Can't Add Nine Women to Deliver a Baby in One Month",
-    "description": "Why adding people to a late project often makes it later, what the evidence on team size says, and ten better ways to recover.",
-    "image": "nine-women-one-month.webp",
-    "alt": "A team pushing a giant hourglass beside a nine-month calendar",
-    "path": "/resources/nine-women-one-month-brooks-law",
-    "action": "Read the article",
-    "published": true
-  },
-  {
-    "id": "chatgpt-for-project-managers",
-    "label": "Knowledge Lake · AI in practice",
-    "title": "How Project Managers Can Use ChatGPT",
-    "description": "Twelve practical ways to use AI for plans, risks, status updates and meeting notes, with starter prompts and the guardrails that keep it safe.",
-    "image": "chatgpt-for-project-managers.webp",
-    "alt": "An AI co-pilot chat drafting a project status update beside a project manager's review checklist",
-    "path": "/resources/how-project-managers-can-use-chatgpt",
-    "action": "Read the article",
-    "published": false
-  },
-  {
-    "id": "pm-playground",
-    "label": "Playground · 5 simulators",
-    "title": "Playground",
-    "description": "Play with project delivery, Kanban flow, risk and reserve, change adoption and technical debt. Change the settings and watch the results week by week.",
-    "image": "pm-playground.webp",
-    "alt": "Simulator control panel with sliders, a burn-up chart and a play button",
-    "path": "/pm-playground",
-    "action": "Open the playgrounds",
-    "published": false
-  },
-  {
-    "id": "pm-datalab",
-    "label": "DataLab · Data skills practice",
-    "title": "DataLab",
-    "description": "Practise SQL, Excel, Power BI DAX, Python and status reporting on one sample project portfolio, with every answer checked instantly.",
-    "image": "pm-datalab.webp",
-    "alt": "SQL query editor beside a results table and a bar chart",
-    "path": "/pm-datalab",
-    "action": "Start practising",
-    "published": false
-  },
-  {
     "id": "pm-glossary",
     "label": "Glossary · 217 terms",
     "title": "Glossary",
@@ -86,7 +86,7 @@
     "alt": "Stacked glossary cards for scope creep, critical path and earned value above an A to Z index",
     "path": "/pm-glossary",
     "action": "Browse the glossary",
-    "published": false
+    "published": true
   },
   {
     "id": "pmp-study-guide",
@@ -97,7 +97,7 @@
     "alt": "A winding eight-step study path leading to a PMP goal",
     "path": "/resources/pmp-study-guide-8-week-plan",
     "action": "Read the study guide",
-    "published": false
+    "published": true
   },
   {
     "id": "free-pmp-practice-exams",
@@ -108,7 +108,7 @@
     "alt": "Practice exam question card with a countdown timer and a results chart",
     "path": "/resources/best-free-pmp-practice-exams",
     "action": "Compare practice exams",
-    "published": false
+    "published": true
   },
   {
     "id": "pm-learninglink",
@@ -119,7 +119,7 @@
     "alt": "Learner at a desk surrounded by linked videos and resources for project management, data and coding",
     "path": "/pm-learninglink",
     "action": "Explore the links",
-    "published": false
+    "published": true
   },
   {
     "id": "ai-super-coworker",
@@ -130,7 +130,7 @@
     "alt": "Project manager and business analyst working with a glowing AI coworker at a holographic project board",
     "path": "/resources/ai-super-coworker-project-manager-business-analyst",
     "action": "Read the article",
-    "published": false
+    "published": true
   },
   {
     "id": "pmp-exam-simulator",
@@ -141,7 +141,7 @@
     "alt": "Candidate taking a computer-based exam with project charts floating around the workstation",
     "path": "/pm-faciliter/pmp-exam-simulator",
     "action": "Start the simulator",
-    "published": false
+    "published": true
   },
   {
     "id": "claude-pm-ba-guide",
@@ -152,7 +152,7 @@
     "alt": "Project team collaborating around a laptop running an AI assistant with floating project dashboards",
     "path": "/resources/claude-for-project-management-business-analysis",
     "action": "Read the guide",
-    "published": false
+    "published": true
   },
   {
     "id": "project-failure-causes",
@@ -163,7 +163,7 @@
     "alt": "Project team studying a project path that breaks under warning signs and then recovers toward a summit",
     "path": "/resources/21-causes-of-project-failure",
     "action": "Read all 21 causes",
-    "published": false
+    "published": true
   },
   {
     "id": "canada",
@@ -174,7 +174,7 @@
     "alt": "Canadian maple leaf connecting delivery, people and analytics",
     "path": "/resources/future-project-management-canada",
     "action": "Read article",
-    "published": false
+    "published": true
   },
   {
     "id": "tools",
@@ -185,7 +185,7 @@
     "alt": "Project dashboard presentation",
     "path": "/pm-tools",
     "action": "Open Artifacts Lab",
-    "published": false
+    "published": true
   },
   {
     "id": "media",
@@ -196,7 +196,7 @@
     "alt": "Technology and systems development",
     "path": "/media",
     "action": "Watch videos",
-    "published": false
+    "published": true
   },
   {
     "id": "portfolio-business-analysis-data-analytics",
@@ -207,7 +207,7 @@
     "alt": "Alamgir presenting a project progress dashboard to his team",
     "path": "/portfolio",
     "action": "Explore portfolio",
-    "published": false
+    "published": true
   },
   {
     "id": "portfolio-it-systems-development",
@@ -218,7 +218,7 @@
     "alt": "Information technology and systems development project work",
     "path": "/portfolio",
     "action": "Explore portfolio",
-    "published": false
+    "published": true
   },
   {
     "id": "portfolio-project-program-change-leadership",
@@ -229,7 +229,7 @@
     "alt": "Project, program and change leadership in a collaborative setting",
     "path": "/portfolio/professional-work",
     "action": "Explore portfolio",
-    "published": false
+    "published": true
   },
   {
     "id": "portfolio-academic-projects-applied-learning",
@@ -240,7 +240,7 @@
     "alt": "Md Alamgir Hossain representing academic projects and applied learning",
     "path": "/portfolio/course-work",
     "action": "Explore portfolio",
-    "published": false
+    "published": true
   },
   {
     "id": "pmp-mindsets",
@@ -251,6 +251,6 @@
     "alt": "Project leader and collaborative team progressing toward project management excellence",
     "path": "/resources/111-essential-pmp-mindsets",
     "action": "Explore all 111 mindsets",
-    "published": false
+    "published": true
   }
 ]
