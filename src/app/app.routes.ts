@@ -3,6 +3,7 @@ import {authGuard} from './core/auth/auth.guard';
 const unsaved=(component:{dirty?:boolean})=>!component.dirty||confirm('You have unsaved changes. Leave this page? Save or download a copy first to keep them.');
 export const routes:Routes=[
   {path:'',loadComponent:()=>import('./pages/home/home.component').then(m=>m.HomeComponent)},
+  {path:'start-here',loadComponent:()=>import('./pages/start-here/start-here.component').then(m=>m.StartHereComponent)},
   {path:'about-pmport',loadComponent:()=>import('./pages/about-pmport/about-pmport.component').then(m=>m.AboutPMPortComponent)},
   {path:'resources/future-project-management-canada',loadComponent:()=>import('./pages/article/article.component').then(m=>m.ArticleComponent)},
   {path:'resources/111-essential-pmp-mindsets',loadComponent:()=>import('./pages/pmp-mindsets-article/pmp-mindsets-article.component').then(m=>m.PmpMindsetsArticleComponent),title:'111 Essential PMP Mindsets | PMPORT'},
