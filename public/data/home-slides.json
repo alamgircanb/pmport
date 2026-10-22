@@ -4,12 +4,11 @@
     "label": "Welcome to PMPORT",
     "title": "Turn project knowledge into practice.",
     "description": "Explore project management, business analysis and data analytics. Learn a concept. Try a tool. Build something useful.",
-    "image": "professional-photo.webp",
-    "alt": "Md Alamgir Hossain, PMP, founder of PMPORT",
+    "image": "welcome-learn-try-build.webp",
+    "alt": "A glowing path rising across three steps: an open book and light bulb for Learn, a dashboard with sliders for Try, and stacked blocks with a flag for Build",
     "path": "/start-here",
     "action": "Start here",
-    "published": true,
-    "layout": "portrait"
+    "published": true
   },
   {
     "id": "nine-women-one-month",
