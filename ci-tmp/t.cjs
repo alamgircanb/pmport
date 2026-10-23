@@ -1,7 +1,7 @@
 const {chromium}=require('playwright');
 const B=process.argv[2];
 (async()=>{const b=await chromium.launch();const p=await b.newPage();
-const errs=[];p.on('pageerror',e=>errs.push(e.message));
+await p.route(/googletagmanager|google-analytics|analytics.google/,r=>r.abort());const errs=[];p.on('pageerror',e=>errs.push(e.message));
 await p.addInitScript(()=>{window.__ev=[];const iv=setInterval(()=>{if(window.gtag&&!window.gtag.__w){const g=window.gtag;window.gtag=function(...a){if(a[0]==='event'||a[0]==='config')window.__ev.push(JSON.stringify(a));return g.apply(this,a)};window.gtag.__w=1}},5)});
 const r=await p.goto(B+'/?internal=on');console.log('status',r.status(),p.url().slice(0,80));
 await p.waitForTimeout(1500);
