@@ -13,4 +13,5 @@ jobs:
       - run: |
           node -e "const h=require('serve-handler');require('http').createServer((q,r)=>h(q,r,{public:'dist/portfolio/browser',rewrites:[{source:'**',destination:'/index.html'}],cleanUrls:true})).listen(4300)" &
           sleep 2
-          node ci-tmp/t.cjs http://localhost:4300
+          node ci-tmp/t.cjs http://localhost:4300 > out.txt 2>&1 || true
+          echo "::notice title=out::$(cat out.txt | tr "\n" "~" | sed "s/%/%25/g")"
