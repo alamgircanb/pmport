@@ -1,4 +1,4 @@
-import {Component,Input} from '@angular/core';
+import {Component,ElementRef,Input,OnDestroy,afterNextRender,inject} from '@angular/core';
 import {RouterLink} from '@angular/router';
 import {SEO_PAGES,pageName} from '../seo/seo-pages';
 import {trackEvent} from '../analytics';
@@ -46,11 +46,22 @@ h2{font-size:clamp(1.6rem,3vw,2.2rem);letter-spacing:-.03em;margin:0 0 1.2rem}
 .try-label{color:#49cce1;text-transform:uppercase;letter-spacing:.12em;font-size:.75rem;font-weight:800}
 @media(max-width:850px){.related-grid{grid-template-columns:1fr}.related-card{flex-direction:row;align-items:center}.related-card img{width:120px;flex:none}}
 `]})
-export class RelatedReadingComponent{
+export class RelatedReadingComponent implements OnDestroy{
   next?:Next;cards:{path:string;title:string;image?:string}[]=[];private current='';
+  /** Articles already counted as read to the end during this visit to the page. */
+  private finished=new Set<string>();private observer?:IntersectionObserver;
+  constructor(){
+    const host=inject(ElementRef<HTMLElement>);
+    // "Keep reading" sits after the last section, so seeing it means the reader reached the end of the article.
+    afterNextRender(()=>{if(typeof IntersectionObserver==='undefined')return;
+      this.observer=new IntersectionObserver(entries=>{if(!entries.some(e=>e.isIntersecting)||!this.next||!this.current||this.finished.has(this.current)||window.scrollY<400)return;
+        this.finished.add(this.current);trackEvent('article_complete',{article:this.current})});
+      this.observer.observe(host.nativeElement)});
+  }
+  ngOnDestroy(){this.observer?.disconnect()}
   /** Page path of the article being read, without the leading slash. */
   @Input({required:true}) set path(value:string){
-    this.current=value;this.next=NEXT[value];
+    if(value!==this.current)this.finished.delete(value);this.current=value;this.next=NEXT[value];
     this.cards=(this.next?.articles??[]).filter(p=>SEO_PAGES[p]).map(p=>({path:p,title:pageName(p),image:SEO_PAGES[p]?.hero}));
   }
   track(target:string){trackEvent('related_click',{from:this.current,to:target})}

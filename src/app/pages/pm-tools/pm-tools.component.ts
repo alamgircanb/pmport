@@ -3,6 +3,7 @@ import {Component, OnInit, HostListener, ViewChild, inject} from '@angular/core'
 import {ActivatedRoute,RouterLink} from '@angular/router';
 import {APPROACHES,Approach,NEW_TOOLS,ROLE_PAGES,RoleId,TOOL_APPROACHES,ToolColumn,ToolDefinition} from './artifact-catalog';
 import {exportWorkbook,exportTablePdf,exportErrorMessage,preloadExportLibraries} from '../../core/export-utils';
+import {trackDownload,trackEvent} from '../../core/analytics';
 import {ArtifactPreviewComponent} from './artifact-preview.component';
 import {FormsModule} from '@angular/forms';
 
@@ -126,7 +127,7 @@ export class PMToolsComponent implements OnInit {
   ngOnInit():void { this.selectTool(this.byId(this.role.categories[0].tools[0])??this.tools[0]); preloadExportLibraries(); }
 
   /** Opens a template from a card and brings its workspace into view. */
-  openTool(tool:ToolDefinition):void{const before=this.selectedTool;this.selectTool(tool);if(this.selectedTool!==before||before===tool)setTimeout(()=>document.getElementById('workspace')?.scrollIntoView({behavior:'smooth',block:'start'}),0);}
+  openTool(tool:ToolDefinition):void{trackEvent('template_open',{template:tool.name,role:this.role.id});const before=this.selectedTool;this.selectTool(tool);if(this.selectedTool!==before||before===tool)setTimeout(()=>document.getElementById('workspace')?.scrollIntoView({behavior:'smooth',block:'start'}),0);}
 
   /** Opens a tool and restores the visitor's last saved version on this device. */
   selectTool(tool:ToolDefinition):void {
@@ -215,7 +216,7 @@ export class PMToolsComponent implements OnInit {
   private cloneSampleRows(tool:ToolDefinition){return tool.sampleRows.map(row=>({...row}));}
   private storageKey(id:string){return `pmport-pm-tool-${id}`;}
   private fileBase(){return `${this.projectName}-${this.selectedTool.name}`.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')||'pm-tool';}
-  private download(blob:Blob,name:string){const url=URL.createObjectURL(blob);const link=document.createElement('a');link.href=url;link.download=name;link.click();URL.revokeObjectURL(url);}
+  private download(blob:Blob,name:string){trackDownload(name);const url=URL.createObjectURL(blob);const link=document.createElement('a');link.href=url;link.download=name;link.click();URL.revokeObjectURL(url);}
   private xml(value:string){return this.html(value).replace(/'/g,'&apos;');}
   private html(value:string){return String(value).replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]||char));}
 }

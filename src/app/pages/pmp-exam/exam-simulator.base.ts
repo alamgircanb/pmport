@@ -120,7 +120,7 @@ export abstract class ExamSimulatorBase implements OnInit,OnDestroy{
   }
   endBreak(){this.view='exam';this.touch();window.scrollTo({top:0})}
   check(){this.checked.add(this.q.id);this.touch()}
-  finish(){if(!this.form)return;this.finished=true;this.result=this.bank.score(this.form,this.responses);trackEvent('simulator_complete',{exam:this.program.code,mode:this.mode});this.view='results';this.touch();window.scrollTo({top:0})}
+  finish(){if(!this.form)return;this.finished=true;const result=this.bank.score(this.form,this.responses);this.result=result;trackEvent('simulator_complete',{exam:this.program.code,mode:this.mode,form:this.mode==='full'?this.form.examId||1:0,score:result.overall.pct});this.view='results';this.touch();window.scrollTo({top:0})}
   retake(){this.mode==='full'?this.startIntro(this.form?.examId||1):this.home()}
 
   private scrollQuestion(){setTimeout(()=>document.getElementById('exam-question')?.scrollIntoView({block:'start',behavior:'smooth'}),0)}
