@@ -5,7 +5,7 @@ out.push('prerender: title='+/<title>([^<]*)/.exec(html)[1]+' | hasHowItWorks='+
 out.push('sitemap has page: '+fs.readFileSync('dist/portfolio/browser/sitemap.xml','utf8').includes('/daily-practice<'));
 for(const [w,h] of [[1400,900],[390,844]]){const p=await b.newPage({viewport:{width:w,height:h}});await p.route(/googletagmanager|google-analytics/,r=>r.abort());
 p.on('pageerror',e=>errs.push(w+': '+e.message));p.on('console',m=>{if(m.type()==='error')errs.push(w+' console: '+m.text().slice(0,150))});
-await p.goto(B+'/daily-practice');await p.waitForSelector('.stem',{timeout:15000});
+await p.goto(B+'/daily-practice');try{await p.waitForSelector('.stem',{timeout:15000})}catch(e){out.push(w+' NO STEM. text: '+(await p.textContent('main')).replace(/\s+/g,' ').slice(0,700));console.log(out.join('\n'));console.log('errors',JSON.stringify(errs));process.exit(0)}
 const first=(await p.textContent('.stem')).trim();out.push(w+' q1: '+first.slice(0,70)+' | tags: '+(await p.locator('.q-head .tag').allTextContents()).join(', '));
 let right=0;for(let i=0;i<5;i++){await p.locator('.option').first().click();if(await p.locator('.option.right').first().getAttribute('class').then(()=>true))right+=0;
  const fb=(await p.textContent('.feedback')).trim().slice(0,40);if(i===0)out.push(w+' feedback: '+fb);await p.click('.question .button.primary');}
