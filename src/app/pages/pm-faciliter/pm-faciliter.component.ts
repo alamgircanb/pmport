@@ -1,5 +1,6 @@
 import {AsyncPipe} from '@angular/common';
 import {Component,inject} from '@angular/core';
+import {AuthService} from '../../core/auth/auth.service';
 import {FormsModule} from '@angular/forms';
 import {DomSanitizer} from '@angular/platform-browser';
 import {RouterLink} from '@angular/router';
@@ -33,7 +34,7 @@ import {CERTIFICATIONS} from './cert-overview.component';
               @for(step of steps;track step;let i=$index){<div class="step"><span>{{i+1}}. {{step}}</span><span><button type="button" (click)="move(i,-1)" aria-label="Move up">↑</button><button type="button" (click)="move(i,1)" aria-label="Move down">↓</button></span></div>}
               <h3>Calculation</h3><p>{{m.calculation.question}}</p><div class="calc"><input type="number" step="0.01" [(ngModel)]="calculation"><button class="button small secondary" type="button" (click)="checkCalculation(m)">Check</button></div>@if(calcFeedback){<p class="status">{{calcFeedback}}</p>}
               <h3>Make a diagram</h3><div class="calc"><input [(ngModel)]="nodeText" placeholder="Add a process node"><button class="button small secondary" type="button" (click)="addNode()">Add</button></div><div class="diagram">@for(node of nodes;track $index){<span>{{node}}</span>}</div>
-              <a class="button primary member" routerLink="/pm-faciliter/member">Open member progress</a>
+              @if(auth.configured){<a class="button primary member" routerLink="/pm-faciliter/member">Open member progress</a>}
             </aside>
           </div>
         }
@@ -72,7 +73,7 @@ import {CERTIFICATIONS} from './cert-overview.component';
 })
 export class PMFaciliterComponent{
   readonly certs=CERTIFICATIONS;
-  private content=inject(ContentService);private sanitizer=inject(DomSanitizer);
+  readonly auth=inject(AuthService);private content=inject(ContentService);private sanitizer=inject(DomSanitizer);
   selected?:TrainingModule;activeVideo?:TrainingVideo;quizAnswer:number|null=null;feedback='';calculation:number|null=null;calcFeedback='';steps:string[]=[];nodeText='';nodes:string[]=[];
   modules$=this.content.load<TrainingModule[]>('pm-faciliter-modules.json').pipe(map(items=>items.sort((a,b)=>a.priority-b.priority)),tap(items=>{if(!this.selected&&items[0])this.choose(items[0])}));
 

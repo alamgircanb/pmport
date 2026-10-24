@@ -1,4 +1,6 @@
-import {Routes} from '@angular/router';
+import {inject} from '@angular/core';
+import {Router,Routes} from '@angular/router';
+import {AuthService} from './core/auth/auth.service';
 import {authGuard} from './core/auth/auth.guard';
 const unsaved=(component:{dirty?:boolean})=>!component.dirty||confirm('You have unsaved changes. Leave this page? Save or download a copy first to keep them.');
 export const routes:Routes=[
@@ -62,6 +64,7 @@ export const routes:Routes=[
   {path:'resources',loadComponent:()=>import('./pages/resources/resources.component').then(m=>m.ResourcesComponent)},
   {path:'credentials',loadComponent:()=>import('./pages/credentials/credentials.component').then(m=>m.CredentialsComponent)},
   {path:'contact',redirectTo:'about-pmport',pathMatch:'full'},
-  {path:'login',loadComponent:()=>import('./pages/auth/auth.component').then(m=>m.AuthComponent)},
+  // Member accounts are hidden until Supabase values are added to src/environments/environment.ts.
+  {path:'login',canActivate:[()=>inject(AuthService).configured||inject(Router).createUrlTree(['/'])],loadComponent:()=>import('./pages/auth/auth.component').then(m=>m.AuthComponent)},
   {path:'**',loadComponent:()=>import('./pages/not-found/not-found.component').then(m=>m.NotFoundComponent)}
 ];
