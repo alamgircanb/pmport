@@ -1,4 +1,5 @@
-export function downloadBlob(blob:Blob,name:string){const u=URL.createObjectURL(blob);const a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),1000)}
+import {trackDownload} from './analytics';
+export function downloadBlob(blob:Blob,name:string){trackDownload(name);const u=URL.createObjectURL(blob);const a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),1000)}
 
 /** Loads the PDF and Excel libraries early, so exports still work if the site is updated while the page is open. */
 export function preloadExportLibraries(){import('jspdf').catch(()=>{});import('xlsx').catch(()=>{});}
@@ -11,7 +12,7 @@ export function exportErrorMessage(e:unknown,what:string){
   return `${what} failed. Please try again.`;
 }
 
-export async function exportWorkbook(title:string,headers:string[],rows:(string|number)[][],name:string){const XLSX=await import('xlsx');const ws=XLSX.utils.aoa_to_sheet([[title],[],headers,...rows]);ws['!cols']=headers.map(()=>({wch:28}));const wb=XLSX.utils.book_new();XLSX.utils.book_append_sheet(wb,ws,'Project');XLSX.writeFile(wb,name+'.xlsx')}
+export async function exportWorkbook(title:string,headers:string[],rows:(string|number)[][],name:string){const XLSX=await import('xlsx');const ws=XLSX.utils.aoa_to_sheet([[title],[],headers,...rows]);ws['!cols']=headers.map(()=>({wch:28}));const wb=XLSX.utils.book_new();XLSX.utils.book_append_sheet(wb,ws,'Project');XLSX.writeFile(wb,name+'.xlsx');trackDownload(name+'.xlsx')}
 
 /** jsPDF's built-in fonts only cover Western European characters, so common typographic symbols are replaced. */
 function pdfText(v:unknown){return String(v??'').replace(/[—–]/g,'-').replace(/[“”]/g,'"').replace(/[‘’]/g,"'").replace(/…/g,'...').replace(/[•·]/g,'-').replace(/Σ/g,'Sum ').replace(/[✓✔]/g,'Yes').replace(/[^\x00-\xFF]/g,'?');}
@@ -29,7 +30,7 @@ export async function exportTablePdf(title:string,headers:string[],rows:(string|
   const img=await svgToPng(diagram);doc.addPage();doc.setFontSize(13);doc.setFont('helvetica','bold');doc.text(pdfText(title+' - preview'),margin,14);
   const scale=Math.min((width-2*margin)/img.w,(height-30)/img.h);doc.addImage(img.dataUrl,'PNG',margin,20,img.w*scale,img.h*scale);
  }
- doc.save(name+'.pdf')}
+ doc.save(name+'.pdf');trackDownload(name+'.pdf')}
 
 /** Renders an SVG element to a PNG data URL (white background, 2× resolution). */
 export async function svgToPng(svg:SVGSVGElement):Promise<{dataUrl:string;w:number;h:number;canvas:HTMLCanvasElement}>{
@@ -41,6 +42,6 @@ export async function svgToPng(svg:SVGSVGElement):Promise<{dataUrl:string;w:numb
 
 export async function exportSvg(svg:SVGSVGElement,name:string,format:'png'|'jpg'|'pdf'){
  const {canvas,w,h,dataUrl}=await svgToPng(svg);
- if(format==='pdf'){const {jsPDF}=await import('jspdf');const pdf=new jsPDF({orientation:w>=h?'landscape':'portrait',unit:'px',format:[w,h],hotfixes:['px_scaling'],compress:true});pdf.addImage(dataUrl,'PNG',0,0,w,h);pdf.save(name+'.pdf')}
+ if(format==='pdf'){const {jsPDF}=await import('jspdf');const pdf=new jsPDF({orientation:w>=h?'landscape':'portrait',unit:'px',format:[w,h],hotfixes:['px_scaling'],compress:true});pdf.addImage(dataUrl,'PNG',0,0,w,h);pdf.save(name+'.pdf');trackDownload(name+'.pdf')}
  else{const blob=await new Promise<Blob>((res,rej)=>canvas.toBlob(b=>b?res(b):rej(new Error('Export failed')),format==='jpg'?'image/jpeg':'image/png',.94));downloadBlob(blob,name+'.'+format)}
 }
