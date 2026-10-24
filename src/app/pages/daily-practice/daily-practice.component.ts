@@ -1,4 +1,4 @@
-import {Component,OnDestroy,afterNextRender} from '@angular/core';
+import {Component,NgZone,OnDestroy,afterNextRender,inject} from '@angular/core';
 import {RouterLink} from '@angular/router';
 import type {ExamProgram,ExamQuestion} from '../pmp-exam/exam-types';
 import {TERMS,type GlossaryTerm} from '../glossary/glossary';
@@ -146,12 +146,14 @@ export class DailyPracticeComponent implements OnDestroy{
   term:GlossaryTerm|null=null;streak=0;week:{key:string;label:string;done:boolean;today:boolean}[]=[];countdown='';message='';
   private store:Store={v:1,track:'all',days:{}};private today=dayKey();private timer?:ReturnType<typeof setInterval>;private loadId=0;
 
-  constructor(){afterNextRender(()=>{
+  private zone=inject(NgZone);
+  // Browser-only start-up. afterNextRender runs outside Angular's zone, so the work is moved back into it to keep the view updating.
+  constructor(){afterNextRender(()=>this.zone.run(()=>{
     this.store=this.read();this.track=this.store.track;
     this.term=TERMS[hash('term|'+this.today)%TERMS.length]??null;
     this.refreshStreak();this.load();
-    this.timer=setInterval(()=>{if(dayKey()!==this.today){this.today=dayKey();this.load()}this.tick()},1000);this.tick();
-  })}
+    this.timer=setInterval(()=>{if(dayKey()!==this.today){this.today=dayKey();this.refreshStreak();this.load()}this.tick()},30000);this.tick();
+  }))}
   ngOnDestroy(){clearInterval(this.timer)}
 
   get finished(){return this.record.done}
