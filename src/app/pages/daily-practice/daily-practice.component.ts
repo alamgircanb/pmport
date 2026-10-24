@@ -79,7 +79,7 @@ function usable(q:ExamQuestion){return q.type==='single'&&!q.caseId&&!q.graphic&
             <strong>{{isCorrect(item,record.answers[current]!)?'Correct.':'Not quite.'}}</strong> {{item.q.explanation}}
             @if(item.q.ref){<p class="ref">{{item.q.ref}}</p>}
           </div>
-          <button type="button" class="button primary" (click)="next()">{{current<items.length-1?'Next question':'See my result'}}</button>
+          <button type="button" class="button primary" (click)="next()">{{isLast?'See my result':'Next question'}}</button>
         }
       </article>
     }@else{
@@ -155,6 +155,7 @@ export class DailyPracticeComponent implements OnDestroy{
   ngOnDestroy(){clearInterval(this.timer)}
 
   get finished(){return this.record.done}
+  get isLast(){return this.current>=this.items.length-1}
   answered(i:number){return this.record.answers[i]!=null}
   isCorrect(item:DailyItem,o:number){return item.q.answer![0]===o}
 
