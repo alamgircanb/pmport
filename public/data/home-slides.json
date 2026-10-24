@@ -11,6 +11,17 @@
     "published": true
   },
   {
+    "id": "daily-practice",
+    "label": "Practice · 5 minutes a day",
+    "title": "Daily Practice: Five New Questions Every Day",
+    "description": "Exam-style questions for project management, business analysis and ITIL, with an explanation for every answer, a term of the day and a streak to keep you going.",
+    "image": "daily-practice.webp",
+    "alt": "A calendar with a lit streak of days beside a question card with a correct answer tick",
+    "path": "/daily-practice",
+    "action": "Start today's practice",
+    "published": true
+  },
+  {
     "id": "nine-women-one-month",
     "label": "Knowledge Lake · Project delivery",
     "title": "You Can't Add Nine Women to Deliver a Baby in One Month",
