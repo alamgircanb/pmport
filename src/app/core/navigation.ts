@@ -22,6 +22,7 @@ export const NAV_GROUPS:NavGroup[]=[
     {label:'Glossary',path:'/pm-glossary'},
     {label:'Free courses & channels',path:'/pm-learninglink'}]},
   {id:'practice',label:'Practice',links:[
+    {label:'Daily practice (5 min)',path:'/daily-practice'},
     {label:'Project simulations',path:'/pm-playground',exact:true},
     {label:'Chart Lab (data storytelling)',path:'/pm-playground/chart-lab'},
     {label:'Data skills (SQL, Excel, Power BI, Python)',path:'/pm-datalab'}]},

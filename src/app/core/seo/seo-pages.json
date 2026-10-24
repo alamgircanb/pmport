@@ -333,5 +333,13 @@
   "type": "article",
   "published": "2026-10-17",
   "hero": "nine-women-one-month.webp"
+ },
+ "daily-practice": {
+  "label": "Daily practice",
+  "title": "Daily Practice: 5 Free PMP, CAPM, CBAP & ITIL Questions a Day | PMPORT",
+  "description": "Five new exam-style questions every day for project management, business analysis and ITIL, with explanations, a term of the day and a streak. Free, 5 minutes.",
+  "updated": "2026-10-24",
+  "image": "og/daily-practice.jpg",
+  "hero": "daily-practice.webp"
  }
 }
