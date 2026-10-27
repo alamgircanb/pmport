@@ -1,0 +1,578 @@
+[
+ {
+  "id": "pmp-exam",
+  "area": "pm",
+  "level": "Mid-career",
+  "icon": "🎯",
+  "title": "PMP Exam Journey",
+  "summary": "From the exam outline to a full mock exam: study plan, mindsets, daily questions, project maths and timed practice.",
+  "steps": [
+   {
+    "id": "outline",
+    "kind": "learn",
+    "title": "Understand the PMP exam",
+    "text": "What the July 2026 exam covers: People, Process and Business Environment.",
+    "path": "/pm-faciliter/pmp",
+    "xp": 10,
+    "done": {
+     "event": "visit",
+     "match": "/pm-faciliter/pmp"
+    }
+   },
+   {
+    "id": "plan",
+    "kind": "learn",
+    "title": "Read the 8-week study plan",
+    "text": "A week-by-week plan you can follow alongside work.",
+    "path": "/resources/pmp-study-guide-8-week-plan",
+    "xp": 20,
+    "done": {
+     "event": "article_complete",
+     "match": "pmp-study-guide-8-week-plan"
+    }
+   },
+   {
+    "id": "mindsets",
+    "kind": "learn",
+    "title": "Learn the PMP mindsets",
+    "text": "How PMI expects a project manager to think in scenario questions.",
+    "path": "/resources/111-essential-pmp-mindsets",
+    "xp": 20,
+    "done": {
+     "event": "article_complete",
+     "match": "111-essential-pmp-mindsets"
+    }
+   },
+   {
+    "id": "daily",
+    "kind": "try",
+    "title": "Answer today's daily practice",
+    "text": "Five exam-style questions with explanations. Choose the project management track.",
+    "path": "/daily-practice",
+    "xp": 25,
+    "done": {
+     "event": "daily_practice_complete"
+    }
+   },
+   {
+    "id": "critical-path",
+    "kind": "learn",
+    "title": "Learn the critical path",
+    "text": "The schedule idea behind many exam maths questions.",
+    "path": "/pm-glossary/critical-path",
+    "xp": 10,
+    "done": {
+     "event": "visit",
+     "match": "/pm-glossary/critical-path"
+    }
+   },
+   {
+    "id": "evm",
+    "kind": "try",
+    "title": "Practise earned value",
+    "text": "Change the numbers and watch CPI, SPI and the forecasts move.",
+    "path": "/pm-calculators/earned-value-calculator",
+    "xp": 25,
+    "done": {
+     "event": "tool_use",
+     "match": "/pm-calculators/earned-value-calculator"
+    }
+   },
+   {
+    "id": "practice-set",
+    "kind": "prove",
+    "title": "Finish a PMP practice set",
+    "text": "Pick a domain or approach and get feedback on every answer.",
+    "path": "/pm-faciliter/pmp-exam-simulator",
+    "xp": 40,
+    "done": {
+     "event": "simulator_complete",
+     "match": "\"exam\":\"PMP\",\"mode\":\"practice\""
+    }
+   },
+   {
+    "id": "full-mock",
+    "kind": "prove",
+    "title": "Pass a full PMP mock exam",
+    "text": "180 questions in 240 minutes, with results by domain.",
+    "path": "/pm-faciliter/pmp-exam-simulator",
+    "xp": 150,
+    "done": {
+     "event": "simulator_complete",
+     "match": "\"exam\":\"PMP\",\"mode\":\"full\""
+    }
+   }
+  ]
+ },
+ {
+  "id": "pm-foundations",
+  "area": "pm",
+  "level": "Entry level",
+  "icon": "🧱",
+  "title": "Project Management Foundations",
+  "summary": "The core ideas every new project team member needs, practised in simulations and real templates, ending with CAPM questions.",
+  "steps": [
+   {
+    "id": "project",
+    "kind": "learn",
+    "title": "What makes work a project",
+    "text": "Temporary, unique and with a clear outcome.",
+    "path": "/pm-glossary/project",
+    "xp": 10,
+    "done": {
+     "event": "visit",
+     "match": "/pm-glossary/project"
+    }
+   },
+   {
+    "id": "triple",
+    "kind": "learn",
+    "title": "Scope, time and cost",
+    "text": "Why changing one always moves the others.",
+    "path": "/pm-glossary/triple-constraint",
+    "xp": 10,
+    "done": {
+     "event": "visit",
+     "match": "/pm-glossary/triple-constraint"
+    }
+   },
+   {
+    "id": "wbs",
+    "kind": "learn",
+    "title": "Break work down",
+    "text": "Turn a big goal into work packages people can own.",
+    "path": "/pm-glossary/work-breakdown-structure-wbs",
+    "xp": 10,
+    "done": {
+     "event": "visit",
+     "match": "/pm-glossary/work-breakdown-structure-wbs"
+    }
+   },
+   {
+    "id": "charter",
+    "kind": "use",
+    "title": "Write a project charter",
+    "text": "Fill in a real charter template and save it.",
+    "path": "/pm-tools",
+    "xp": 25,
+    "done": {
+     "event": "tool_use",
+     "match": "/pm-tools"
+    }
+   },
+   {
+    "id": "pert",
+    "kind": "try",
+    "title": "Estimate with three points",
+    "text": "Optimistic, likely and pessimistic: see the expected duration.",
+    "path": "/pm-calculators/pert-three-point-estimate-calculator",
+    "xp": 25,
+    "done": {
+     "event": "tool_use",
+     "match": "/pm-calculators/pert-three-point-estimate-calculator"
+    }
+   },
+   {
+    "id": "simulate",
+    "kind": "try",
+    "title": "Run a project simulation",
+    "text": "Rescue a late project and watch the week-by-week results.",
+    "path": "/pm-playground",
+    "xp": 25,
+    "done": {
+     "event": "tool_use",
+     "match": "/pm-playground"
+    }
+   },
+   {
+    "id": "failure",
+    "kind": "learn",
+    "title": "Learn why projects fail",
+    "text": "21 causes and how to spot them early.",
+    "path": "/resources/21-causes-of-project-failure",
+    "xp": 20,
+    "done": {
+     "event": "article_complete",
+     "match": "21-causes-of-project-failure"
+    }
+   },
+   {
+    "id": "brooks",
+    "kind": "learn",
+    "title": "Why more people can make it later",
+    "text": "Brooks's law and better ways to recover a late project.",
+    "path": "/resources/nine-women-one-month-brooks-law",
+    "xp": 20,
+    "done": {
+     "event": "article_complete",
+     "match": "nine-women-one-month-brooks-law"
+    }
+   },
+   {
+    "id": "capm",
+    "kind": "prove",
+    "title": "Finish a CAPM practice set",
+    "text": "Entry-level exam questions with explanations.",
+    "path": "/pm-faciliter/capm-exam-simulator",
+    "xp": 40,
+    "done": {
+     "event": "simulator_complete",
+     "match": "\"exam\":\"CAPM\""
+    }
+   }
+  ]
+ },
+ {
+  "id": "business-analysis",
+  "area": "ba",
+  "level": "Entry to mid-career",
+  "icon": "🔍",
+  "title": "Business Analysis Journey",
+  "summary": "Requirements, elicitation and modelling, practised with BA templates and diagrams, then proved with ECBA and CBAP questions.",
+  "steps": [
+   {
+    "id": "ecba",
+    "kind": "learn",
+    "title": "Understand the ECBA exam",
+    "text": "What IIBA's entry certification covers.",
+    "path": "/pm-faciliter/ecba",
+    "xp": 10,
+    "done": {
+     "event": "visit",
+     "match": "/pm-faciliter/ecba"
+    }
+   },
+   {
+    "id": "requirements",
+    "kind": "learn",
+    "title": "Learn what requirements are",
+    "text": "Business, stakeholder, solution and transition requirements.",
+    "path": "/pm-glossary/requirements",
+    "xp": 10,
+    "done": {
+     "event": "visit",
+     "match": "/pm-glossary/requirements"
+    }
+   },
+   {
+    "id": "elicitation",
+    "kind": "learn",
+    "title": "Learn elicitation",
+    "text": "How analysts draw out what people really need.",
+    "path": "/pm-glossary/elicitation",
+    "xp": 10,
+    "done": {
+     "event": "visit",
+     "match": "/pm-glossary/elicitation"
+    }
+   },
+   {
+    "id": "user-story",
+    "kind": "learn",
+    "title": "Write good user stories",
+    "text": "Who, what and why, with acceptance criteria.",
+    "path": "/pm-glossary/user-story",
+    "xp": 10,
+    "done": {
+     "event": "visit",
+     "match": "/pm-glossary/user-story"
+    }
+   },
+   {
+    "id": "diagram",
+    "kind": "try",
+    "title": "Draw a process or data flow",
+    "text": "Use Diagram Studio for a context diagram or process map.",
+    "path": "/pm-tools/diagram-studio",
+    "xp": 25,
+    "done": {
+     "event": "tool_use",
+     "match": "/pm-tools/diagram-studio"
+    }
+   },
+   {
+    "id": "ba-templates",
+    "kind": "use",
+    "title": "Use a BA template",
+    "text": "Requirements, traceability and more, ready to fill in and save.",
+    "path": "/pm-tools/ba",
+    "xp": 25,
+    "done": {
+     "event": "tool_use",
+     "match": "/pm-tools/ba"
+    }
+   },
+   {
+    "id": "ai-ba",
+    "kind": "learn",
+    "title": "Use AI as a BA co-worker",
+    "text": "Where AI helps analysis work, and where it does not.",
+    "path": "/resources/claude-for-project-management-business-analysis",
+    "xp": 20,
+    "done": {
+     "event": "article_complete",
+     "match": "claude-for-project-management-business-analysis"
+    }
+   },
+   {
+    "id": "ecba-set",
+    "kind": "prove",
+    "title": "Finish an ECBA practice set",
+    "text": "Entry-level BA questions with explanations.",
+    "path": "/pm-faciliter/ecba-exam-simulator",
+    "xp": 40,
+    "done": {
+     "event": "simulator_complete",
+     "match": "\"exam\":\"ECBA\""
+    }
+   },
+   {
+    "id": "cbap-set",
+    "kind": "prove",
+    "title": "Try a CBAP practice set",
+    "text": "Senior case-style BA questions.",
+    "path": "/pm-faciliter/cbap-exam-simulator",
+    "xp": 40,
+    "done": {
+     "event": "simulator_complete",
+     "match": "\"exam\":\"CBAP\""
+    }
+   }
+  ]
+ },
+ {
+  "id": "data-decisions",
+  "area": "data",
+  "level": "All levels",
+  "icon": "📊",
+  "title": "Data for Project Decisions",
+  "summary": "Turn project data into decisions: charts that tell a story, then SQL, Excel, Power BI and Python on real project data.",
+  "steps": [
+   {
+    "id": "kpi",
+    "kind": "learn",
+    "title": "Choose the right KPI",
+    "text": "Measures that show whether work is on track.",
+    "path": "/pm-glossary/key-performance-indicator-kpi",
+    "xp": 10,
+    "done": {
+     "event": "visit",
+     "match": "/pm-glossary/key-performance-indicator-kpi"
+    }
+   },
+   {
+    "id": "dashboard",
+    "kind": "learn",
+    "title": "What a good dashboard does",
+    "text": "One screen, one decision.",
+    "path": "/pm-glossary/dashboard",
+    "xp": 10,
+    "done": {
+     "event": "visit",
+     "match": "/pm-glossary/dashboard"
+    }
+   },
+   {
+    "id": "chart-lab",
+    "kind": "try",
+    "title": "Make the data tell a story",
+    "text": "Move the data in Chart Lab and read the story it writes.",
+    "path": "/pm-playground/chart-lab",
+    "xp": 25,
+    "done": {
+     "event": "tool_use",
+     "match": "/pm-playground/chart-lab"
+    }
+   },
+   {
+    "id": "sql",
+    "kind": "try",
+    "title": "Query project data with SQL",
+    "text": "Write real queries against a project database.",
+    "path": "/pm-datalab/sql",
+    "xp": 25,
+    "done": {
+     "event": "tool_use",
+     "match": "/pm-datalab/sql"
+    }
+   },
+   {
+    "id": "excel",
+    "kind": "try",
+    "title": "Analyse in Excel",
+    "text": "Formulas and summaries on project data.",
+    "path": "/pm-datalab/excel",
+    "xp": 25,
+    "done": {
+     "event": "tool_use",
+     "match": "/pm-datalab/excel"
+    }
+   },
+   {
+    "id": "dax",
+    "kind": "try",
+    "title": "Build Power BI measures",
+    "text": "DAX measures for project reporting.",
+    "path": "/pm-datalab/power-bi-dax",
+    "xp": 25,
+    "done": {
+     "event": "tool_use",
+     "match": "/pm-datalab/power-bi-dax"
+    }
+   },
+   {
+    "id": "python",
+    "kind": "try",
+    "title": "Analyse with Python",
+    "text": "Short Python exercises on project data.",
+    "path": "/pm-datalab/python",
+    "xp": 25,
+    "done": {
+     "event": "tool_use",
+     "match": "/pm-datalab/python"
+    }
+   },
+   {
+    "id": "forecast",
+    "kind": "try",
+    "title": "Forecast a finish date",
+    "text": "Run a Monte Carlo schedule simulation.",
+    "path": "/pm-calculators/monte-carlo-schedule-simulator",
+    "xp": 25,
+    "done": {
+     "event": "tool_use",
+     "match": "/pm-calculators/monte-carlo-schedule-simulator"
+    }
+   },
+   {
+    "id": "report",
+    "kind": "use",
+    "title": "Write a data-driven status report",
+    "text": "Turn the numbers into a report a sponsor can act on.",
+    "path": "/pm-datalab/status-report",
+    "xp": 25,
+    "done": {
+     "event": "tool_use",
+     "match": "/pm-datalab/status-report"
+    }
+   }
+  ]
+ },
+ {
+  "id": "it-service",
+  "area": "it",
+  "level": "Entry to mid-career",
+  "icon": "🖥️",
+  "title": "IT Service Management Journey",
+  "summary": "How IT teams deliver and improve services: service levels, change and continuous improvement, ending with ITIL 5 Foundation questions.",
+  "steps": [
+   {
+    "id": "itil",
+    "kind": "learn",
+    "title": "Understand ITIL 5 Foundation",
+    "text": "What the exam covers and how it is weighted.",
+    "path": "/pm-faciliter/itil-foundation",
+    "xp": 10,
+    "done": {
+     "event": "visit",
+     "match": "/pm-faciliter/itil-foundation"
+    }
+   },
+   {
+    "id": "sla",
+    "kind": "learn",
+    "title": "Learn service level agreements",
+    "text": "What IT promises and how it is measured.",
+    "path": "/pm-glossary/service-level-agreement-sla",
+    "xp": 10,
+    "done": {
+     "event": "visit",
+     "match": "/pm-glossary/service-level-agreement-sla"
+    }
+   },
+   {
+    "id": "change",
+    "kind": "learn",
+    "title": "Learn change control",
+    "text": "How changes are assessed, approved and recorded.",
+    "path": "/pm-glossary/change-control",
+    "xp": 10,
+    "done": {
+     "event": "visit",
+     "match": "/pm-glossary/change-control"
+    }
+   },
+   {
+    "id": "improve",
+    "kind": "learn",
+    "title": "Learn continuous improvement",
+    "text": "Small, steady improvements to services.",
+    "path": "/pm-glossary/continuous-improvement",
+    "xp": 10,
+    "done": {
+     "event": "visit",
+     "match": "/pm-glossary/continuous-improvement"
+    }
+   },
+   {
+    "id": "kanban",
+    "kind": "learn",
+    "title": "Learn Kanban",
+    "text": "Visualise work and limit work in progress.",
+    "path": "/pm-glossary/kanban",
+    "xp": 10,
+    "done": {
+     "event": "visit",
+     "match": "/pm-glossary/kanban"
+    }
+   },
+   {
+    "id": "team-templates",
+    "kind": "use",
+    "title": "Use a team template",
+    "text": "Kanban boards, release plans and incident logs for IT teams.",
+    "path": "/pm-tools/teams",
+    "xp": 25,
+    "done": {
+     "event": "tool_use",
+     "match": "/pm-tools/teams"
+    }
+   },
+   {
+    "id": "ai",
+    "kind": "learn",
+    "title": "Work with AI in IT and projects",
+    "text": "How AI changes everyday delivery work.",
+    "path": "/resources/ai-super-coworker-project-manager-business-analyst",
+    "xp": 20,
+    "done": {
+     "event": "article_complete",
+     "match": "ai-super-coworker-project-manager-business-analyst"
+    }
+   },
+   {
+    "id": "daily",
+    "kind": "try",
+    "title": "Answer today's daily practice",
+    "text": "Choose the IT service management track.",
+    "path": "/daily-practice",
+    "xp": 25,
+    "done": {
+     "event": "daily_practice_complete"
+    }
+   },
+   {
+    "id": "itil-set",
+    "kind": "prove",
+    "title": "Finish an ITIL practice set",
+    "text": "Foundation-level questions with explanations.",
+    "path": "/pm-faciliter/itil-foundation-exam-simulator",
+    "xp": 40,
+    "done": {
+     "event": "simulator_complete",
+     "match": "\"exam\":\"ITIL 5 Foundation\""
+    }
+   }
+  ]
+ }
+]

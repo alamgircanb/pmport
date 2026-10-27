@@ -22,3 +22,14 @@
 .site-shell footer.site-footer{display:block;padding:3rem clamp(1.25rem,5vw,4rem) 1.5rem;font-size:.86rem}.footer-grid{display:grid;grid-template-columns:1.6fr repeat(6,minmax(0,1fr));gap:2rem 1.5rem;max-width:1400px;margin:0 auto}.footer-logo{color:#fff;font-weight:800;letter-spacing:.13em;text-decoration:none}.footer-brand p{color:#8ea6bf;line-height:1.6;margin:.8rem 0 0}.footer-social{display:flex;flex-wrap:wrap;gap:1rem}.footer-social a{color:#9fd8e6;text-decoration:none}.footer-col h2{margin:0 0 .8rem;font-family:Inter,Arial,sans-serif;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:#49cce1}.footer-col ul{list-style:none;margin:0;padding:0;display:grid;gap:.45rem}.footer-col a{color:#9fb1c7;text-decoration:none;line-height:1.4}.footer-col a:hover,.footer-col a:focus-visible,.footer-social a:hover{color:#fff;text-decoration:underline}.footer-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;max-width:1400px;margin:2.5rem auto 0;padding-top:1.25rem;border-top:1px solid #183754;color:#6f89a5;font-size:.8rem}
 @media(max-width:1200px){.footer-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.footer-brand{grid-column:1/-1}}
 @media(max-width:600px){.footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.footer-col a{display:inline-block;padding:.2rem 0}}
+
+/* Points chip and "+points" pop-ups (learning progress, see core/progress) */
+.xp-chip{display:inline-flex;align-items:center;gap:.35rem;min-height:44px;padding:0 .8rem;border:1px solid #2a4b6b;border-radius:10px;background:#071a30;color:#fff;font-weight:800;font-size:.9rem;text-decoration:none;white-space:nowrap}
+.xp-chip:hover{border-color:var(--accent)}.xp-pts{color:#8fe8f5;font-weight:700;margin-left:.2rem}
+@media(max-width:560px){.xp-pts{display:none}.xp-chip{padding:0 .6rem}}
+.toasts{position:fixed;right:16px;bottom:16px;z-index:60;display:grid;gap:.5rem;max-width:min(360px,calc(100vw - 32px));pointer-events:none}
+.toast{pointer-events:auto;display:flex;align-items:center;gap:.75rem;padding:.75rem .9rem;border:1px solid #3ecf8e;border-radius:14px;background:#0b2a2a;color:#fff;box-shadow:0 10px 30px rgba(0,0,0,.35);animation:toast-in .3s ease}
+.t-icon{font-size:1.4rem}.toast strong{display:block;font-size:.95rem}.toast small{display:block;color:#b8d3dc;font-size:.8rem;line-height:1.35;margin-top:.1rem}
+.toast button{margin-left:auto;background:none;border:0;color:#9db1c7;font-size:1.3rem;cursor:pointer;padding:0 .2rem;min-width:28px;min-height:28px}
+@keyframes toast-in{from{transform:translateY(12px);opacity:0}to{transform:none;opacity:1}}
+@media(prefers-reduced-motion:reduce){.toast{animation:none}}

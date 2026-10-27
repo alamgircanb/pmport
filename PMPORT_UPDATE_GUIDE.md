@@ -153,3 +153,23 @@ The event display recovers a title from a nonstandard title key in the original 
 - `src/app/pages/pm-tools/artifact-catalog.ts` holds the page text, the categories on each page (which templates, in which order), the delivery approaches each template suits (`TOOL_APPROACHES`: predictive, agile, kanban, hybrid) and the newer templates (`NEW_TOOLS`). The original 22 templates are still in `pm-tools.component.ts`.
 - To add a template: add it with `tpl()` in `NEW_TOOLS`, put its id in a category on the right role page, tag its approaches, and (optionally) give it a board preview in `BOARDS`. Then update the crawler list `ARTIFACT_LISTS` in `scripts/seo-pages.mjs`.
 - Saved work is stored per template id in the browser, so moving a template to a different page keeps visitors' saved data.
+
+## Daily practice (/daily-practice)
+
+- Page: `src/app/pages/daily-practice/daily-practice.component.ts`. Five questions a day plus a glossary term of the day.
+- Questions come from the exam simulator banks (stand-alone, single-answer questions only; no case studies or exhibits). New questions added to a bank appear automatically.
+- Tracks: Mixed (2 PM, 2 BA, 1 ITIL), Project management (PMP + CAPM), Business analysis (ECBA + CBAP), IT service management (ITIL). To change the mix, edit `PLAN` in the component.
+- Everyone gets the same set on the same day (chosen from the visitor's local date). The streak and answers are saved in the browser (`pmport-daily-practice-v1`).
+- Analytics events: `daily_practice_start`, `daily_practice_complete` (track, score, streak). Mark `daily_practice_complete` as a Key event in GA4.
+
+## Learning journeys, points, streak and badges (/journeys, /my-progress)
+
+- Journeys live in `src/app/pages/journeys/journeys-data.json` (also read by `scripts/seo-pages.mjs` for search text). Each step: `kind` (learn, try, prove, use), `title`, `text`, `path`, `xp`, and `done` = how it ticks itself:
+  - `{"event":"visit","match":"/pm-glossary/kanban"}` when the page is opened
+  - `{"event":"article_complete","match":"<article slug>"}` when the reader reaches the end
+  - `{"event":"tool_use","match":"/pm-calculators/..."}` when the tool is used
+  - `{"event":"simulator_complete","match":"\"exam\":\"PMP\",\"mode\":\"full\""}` when an exam set is finished
+  - `{"event":"daily_practice_complete"}` when daily practice is finished
+  Visitors can also tick any step with "I've done this". For a new journey, also add `journeys/<id>` to `seo-pages.json`.
+- Points, levels, streak (with up to 2 streak freezes, one earned per 7-day streak) and 14 badges are in `src/app/core/progress/progress.service.ts`. Points come from the same events sent to Google Analytics, so new tools that send `tool_use` earn points automatically.
+- Everything is saved in the visitor's browser (`pmport-progress-v1`); no account is needed. The points chip in the top bar appears after the first points are earned.

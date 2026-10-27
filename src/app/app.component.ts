@@ -1,4 +1,4 @@
-import {Component,HostListener,afterNextRender,inject} from '@angular/core';
+import {Component,HostListener,NgZone,afterNextRender,inject} from '@angular/core';
 import {NavigationEnd,Router,RouterLink,RouterLinkActive,RouterOutlet} from '@angular/router';
 import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
 import {AuthService} from './core/auth/auth.service';
@@ -8,11 +8,13 @@ import {Title} from '@angular/platform-browser';
 import {SiteSearchComponent} from './core/search/site-search.component';
 import {RelatedReadingComponent} from './core/related/related-reading.component';
 import {startInteractionTracking} from './core/analytics';
+import {ProgressService} from './core/progress/progress.service';
 @Component({selector:'app-root',standalone:true,imports:[RouterOutlet,RouterLink,RouterLinkActive,SiteSearchComponent,RelatedReadingComponent],templateUrl:'./app.component.html',styleUrl:'./app.component.css'})
 export class AppComponent{
  readonly auth=inject(AuthService); readonly year=new Date().getFullYear(); menuOpen=false; readonly groups=NAV_GROUPS; readonly aboutGroup=ABOUT_GROUP; open:Record<string,boolean>={}; url='/'; crumbs:{label:string;path?:string}[]=[]; private title=inject(Title); topOpen:string|null=null; private hoverOpened:string|null=null; searchOpen=false; relatedPath:string|null=null;
  private readonly router=inject(Router);isMobile=typeof window!=='undefined'&&window.innerWidth<=920;private desktopPreference=true;private workspace=false;
- constructor(){afterNextRender(()=>startInteractionTracking());try{this.desktopPreference=localStorage.getItem('pmport-sidebar-open')!=='false'}catch{}this.applyRoute(this.router.url);this.router.events.pipe(takeUntilDestroyed()).subscribe(event=>{if(event instanceof NavigationEnd)this.applyRoute(event.urlAfterRedirects)})}
+ readonly progress=inject(ProgressService);private readonly zone=inject(NgZone);
+ constructor(){afterNextRender(()=>{startInteractionTracking();this.zone.run(()=>this.progress.start())});try{this.desktopPreference=localStorage.getItem('pmport-sidebar-open')!=='false'}catch{}this.applyRoute(this.router.url);this.router.events.pipe(takeUntilDestroyed()).subscribe(event=>{if(event instanceof NavigationEnd)this.applyRoute(event.urlAfterRedirects)})}
  private applyRoute(url:string){this.url=url.split(/[?#]/)[0];this.topOpen=null;this.searchOpen=false;const key=this.url.slice(1);this.relatedPath=SEO_PAGES[key]?.type==='article'?key:null;this.buildCrumbs();this.workspace=true;this.menuOpen=this.isMobile?false:this.workspace?false:this.desktopPreference}
  @HostListener('window:resize') onResize(){const mobile=window.innerWidth<=920;if(mobile!==this.isMobile){this.isMobile=mobile;this.menuOpen=mobile?false:this.workspace?false:this.desktopPreference}}
  private savePreference(){this.desktopPreference=this.menuOpen;try{localStorage.setItem('pmport-sidebar-open',String(this.menuOpen))}catch{}}

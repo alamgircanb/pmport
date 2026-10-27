@@ -14,8 +14,15 @@
  *   search              search_term                site search
  */
 export function trackEvent(name:string,params:Record<string,string|number>={}):void{
-  try{if(typeof window==='undefined')return;const gtag=(window as unknown as {gtag?:(...args:unknown[])=>void}).gtag;gtag?.('event',name,params)}catch{}
+  if(typeof window==='undefined')return;
+  try{const gtag=(window as unknown as {gtag?:(...args:unknown[])=>void}).gtag;gtag?.('event',name,params)}catch{}
+  for(const fn of listeners){try{fn(name,params)}catch{}}
 }
+
+type Listener=(name:string,params:Record<string,string|number>)=>void;
+const listeners=new Set<Listener>();
+/** Lets other parts of the site (points and journeys) react to the same events GA receives. Works even when GA is blocked. */
+export function onTrack(fn:Listener):()=>void{listeners.add(fn);return()=>listeners.delete(fn)}
 
 /** Records a file the visitor saved (exports are made in the browser, so GA cannot see them as link downloads). */
 export function trackDownload(fileName:string):void{
