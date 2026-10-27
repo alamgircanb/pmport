@@ -17,12 +17,14 @@ export const NAV_GROUPS:NavGroup[]=[
     {label:'Free PMP practice exams',path:'/resources/best-free-pmp-practice-exams'},
     {label:'111 PMP mindsets',path:'/resources/111-essential-pmp-mindsets'}]},
   {id:'learn',label:'Learn',links:[
+    {label:'Learning journeys',path:'/journeys'},
     {label:'Articles',path:'/resources'},
     {label:'Videos',path:'/media'},
     {label:'Glossary',path:'/pm-glossary'},
     {label:'Free courses & channels',path:'/pm-learninglink'}]},
   {id:'practice',label:'Practice',links:[
     {label:'Daily practice (5 min)',path:'/daily-practice'},
+    {label:'My progress & badges',path:'/my-progress'},
     {label:'Project simulations',path:'/pm-playground',exact:true},
     {label:'Chart Lab (data storytelling)',path:'/pm-playground/chart-lab'},
     {label:'Data skills (SQL, Excel, Power BI, Python)',path:'/pm-datalab'}]},

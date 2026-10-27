@@ -341,5 +341,54 @@
   "updated": "2026-10-24",
   "image": "og/daily-practice.jpg",
   "hero": "daily-practice.webp"
+ },
+ "journeys": {
+  "label": "Learning journeys",
+  "title": "Learning Journeys: Step-by-Step PM, BA, Data & ITIL Paths | PMPORT",
+  "description": "Free guided paths for project management, business analysis, data and IT service management. Learn, try, prove and use each skill, earn points and badges.",
+  "updated": "2026-10-27",
+  "image": "og/learning-journeys.jpg",
+  "hero": "learning-journeys.webp"
+ },
+ "journeys/pmp-exam": {
+  "label": "PMP Exam Journey",
+  "title": "PMP Exam Journey: Free Step-by-Step Path | PMPORT",
+  "description": "From the exam outline to a full mock exam: study plan, mindsets, daily questions, project maths and timed practice. 8 free steps, 500 points.",
+  "updated": "2026-10-27",
+  "image": "og/learning-journeys.jpg"
+ },
+ "journeys/pm-foundations": {
+  "label": "Project Management Foundations",
+  "title": "Project Management Foundations: Free Step-by-Step Path | PMPORT",
+  "description": "The core ideas every new project team member needs, practised in simulations and real templates, ending with CAPM questions. 9 free steps, 385 points.",
+  "updated": "2026-10-27",
+  "image": "og/learning-journeys.jpg"
+ },
+ "journeys/business-analysis": {
+  "label": "Business Analysis Journey",
+  "title": "Business Analysis Journey: Free Step-by-Step Path | PMPORT",
+  "description": "Requirements, elicitation and modelling, practised with BA templates and diagrams, then proved with ECBA and CBAP questions. 9 free steps, 390 points.",
+  "updated": "2026-10-27",
+  "image": "og/learning-journeys.jpg"
+ },
+ "journeys/data-decisions": {
+  "label": "Data for Project Decisions",
+  "title": "Data for Project Decisions: Free Step-by-Step Path | PMPORT",
+  "description": "Turn project data into decisions: charts that tell a story, then SQL, Excel, Power BI and Python on real project data. 9 free steps, 395 points.",
+  "updated": "2026-10-27",
+  "image": "og/learning-journeys.jpg"
+ },
+ "journeys/it-service": {
+  "label": "IT Service Management Journey",
+  "title": "IT Service Management Journey: Free Step-by-Step Path | PMPORT",
+  "description": "Service levels, change and continuous improvement for IT teams, ending with ITIL 5 Foundation questions. 9 free steps, 360 points.",
+  "updated": "2026-10-27",
+  "image": "og/learning-journeys.jpg"
+ },
+ "my-progress": {
+  "label": "My progress",
+  "title": "My Progress: Points, Streak & Badges | PMPORT",
+  "description": "Your PMPORT level, points, daily streak, badges and learning journeys, saved in this browser.",
+  "noindex": true
  }
 }

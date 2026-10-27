@@ -161,3 +161,15 @@ The event display recovers a title from a nonstandard title key in the original 
 - Tracks: Mixed (2 PM, 2 BA, 1 ITIL), Project management (PMP + CAPM), Business analysis (ECBA + CBAP), IT service management (ITIL). To change the mix, edit `PLAN` in the component.
 - Everyone gets the same set on the same day (chosen from the visitor's local date). The streak and answers are saved in the browser (`pmport-daily-practice-v1`).
 - Analytics events: `daily_practice_start`, `daily_practice_complete` (track, score, streak). Mark `daily_practice_complete` as a Key event in GA4.
+
+## Learning journeys, points, streak and badges (/journeys, /my-progress)
+
+- Journeys live in `src/app/pages/journeys/journeys-data.json` (also read by `scripts/seo-pages.mjs` for search text). Each step: `kind` (learn, try, prove, use), `title`, `text`, `path`, `xp`, and `done` = how it ticks itself:
+  - `{"event":"visit","match":"/pm-glossary/kanban"}` when the page is opened
+  - `{"event":"article_complete","match":"<article slug>"}` when the reader reaches the end
+  - `{"event":"tool_use","match":"/pm-calculators/..."}` when the tool is used
+  - `{"event":"simulator_complete","match":"\"exam\":\"PMP\",\"mode\":\"full\""}` when an exam set is finished
+  - `{"event":"daily_practice_complete"}` when daily practice is finished
+  Visitors can also tick any step with "I've done this". For a new journey, also add `journeys/<id>` to `seo-pages.json`.
+- Points, levels, streak (with up to 2 streak freezes, one earned per 7-day streak) and 14 badges are in `src/app/core/progress/progress.service.ts`. Points come from the same events sent to Google Analytics, so new tools that send `tool_use` earn points automatically.
+- Everything is saved in the visitor's browser (`pmport-progress-v1`); no account is needed. The points chip in the top bar appears after the first points are earned.
