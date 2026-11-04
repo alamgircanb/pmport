@@ -13,8 +13,8 @@ import {sprintCapacity} from './calc-math';
       <p class="lead">Work out your team's capacity for the next sprint and forecast how many sprints the remaining backlog will take, using your recent velocity.</p></header>
     <div class="card">
       <p class="eyebrow">1 · Team capacity for the next sprint</p>
-      <div class="table-wrap"><table class="grid-input">
-        <thead><tr><th>Team member</th><th>Days available</th><th>Hours per day</th><th>Focus %</th><th>Hours</th><th></th></tr></thead>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Table: team capacity"><table class="grid-input">
+        <thead><tr><th>Team member</th><th>Days available</th><th>Hours per day</th><th>Focus %</th><th>Hours</th><th><span class="sr-only">Remove</span></th></tr></thead>
         <tbody>@for(m of members;track $index;let i=$index){<tr>
           <td><input [(ngModel)]="m.name" [attr.aria-label]="'Member '+(i+1)+' name'"></td>
           <td><input type="number" min="0" [(ngModel)]="m.days" [attr.aria-label]="'Member '+(i+1)+' days available'"></td>

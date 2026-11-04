@@ -46,7 +46,7 @@ import {PMP_GUIDE_STYLES} from './pmp-guide-styles';
         <div class="fact"><strong>3</strong><span>domains: People, Process and Business Environment</span></div>
         <div class="fact"><strong>~60%</strong><span>agile and hybrid approaches; about 40% predictive</span></div>
       </div>
-      <div class="table-wrap"><table class="data">
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Table: The PMP exam at a glance (from July 9, 2026)"><table class="data">
         <thead><tr><th>Domain</th><th>Share of the exam</th><th>Before July 2026</th><th>What it covers</th></tr></thead>
         <tbody>
           <tr><td>People</td><td>33%</td><td>42%</td><td>Leading and building teams, conflict, collaboration with stakeholders, coaching and empowerment.</td></tr>
@@ -62,7 +62,7 @@ import {PMP_GUIDE_STYLES} from './pmp-guide-styles';
       <p class="eyebrow">02 · Before you start</p>
       <h2>Are you eligible for the PMP?</h2>
       <p>You need <strong>35 hours of project management training</strong> (an active CAPM® also counts) and project experience within the last 10 years. The experience depends on your education:</p>
-      <div class="table-wrap"><table class="data">
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Table: Are you eligible for the PMP?"><table class="data">
         <thead><tr><th>Your education</th><th>Project management experience needed</th></tr></thead>
         <tbody>
           <tr><td>High school diploma or equivalent</td><td>5 years</td></tr>
@@ -140,7 +140,7 @@ import {PMP_GUIDE_STYLES} from './pmp-guide-styles';
       <p class="eyebrow">05 · Learn from every mistake</p>
       <h2>How to review a mock exam</h2>
       <p>The score is the least useful part of a mock exam. The review is where you improve. For every question you got wrong, or guessed, write one line in an error log:</p>
-      <div class="table-wrap"><table class="data">
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Table: How to review a mock exam"><table class="data">
         <thead><tr><th>Question</th><th>Domain / topic</th><th>Why I chose the wrong answer</th><th>Rule to remember</th></tr></thead>
         <tbody><tr><td>Exam 2, Q47</td><td>People · conflict</td><td>I escalated to the sponsor too early.</td><td>Talk to the team members first; escalate last.</td></tr>
         <tr><td>Exam 2, Q103</td><td>Process · agile change</td><td>I used a change request in a Scrum project.</td><td>New work in agile goes to the product owner and the backlog.</td></tr></tbody>

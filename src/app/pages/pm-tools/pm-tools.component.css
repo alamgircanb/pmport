@@ -12,7 +12,7 @@
 .approach-chips{display:flex;flex-wrap:wrap;gap:.5rem}.approach-chips button{border:1px solid #315370;background:#0b2340;color:#d9eef7;border-radius:999px;padding:.5rem .9rem;font-weight:700;font-size:.88rem;cursor:pointer}
 .approach-chips button b{display:inline-block;margin-left:.3rem;color:var(--accent)}.approach-chips button.active{background:var(--accent);color:#041223;border-color:var(--accent)}.approach-chips button.active b{color:#041223}
 .approach-tip{margin:.8rem 0 0;padding:.7rem .9rem;border-left:3px solid var(--accent);background:#0a2039;border-radius:0 10px 10px 0;color:#c9dcec;line-height:1.55;max-width:900px}
-.tool-group{margin-top:1.4rem}.tool-group h3{margin:0 0 .7rem;font-size:1.15rem}.tool-group h3 small{font-weight:500;color:var(--muted);font-size:.88rem;margin-left:.5rem}
+.tool-group{margin-top:1.4rem}.studio-links h2{margin:.3rem 0 .7rem;font-size:1.17em;line-height:normal;letter-spacing:0}.tool-group h3{margin:0 0 .7rem;font-size:1.15rem}.tool-group h3 small{font-weight:500;color:var(--muted);font-size:.88rem;margin-left:.5rem}
 .tags{display:flex!important;flex-wrap:wrap;gap:.25rem;margin-top:.45rem}.tags i{font-style:normal;font-size:.66rem;font-weight:800;letter-spacing:.04em;padding:.12rem .45rem;border-radius:99px;background:#12385c;color:#cfe3f3}
 .tags .tag-predictive{background:#2b3f6b}.tags .tag-agile{background:#1f5a4a}.tags .tag-kanban{background:#5a4a1f}.tags .tag-hybrid{background:#4a2b5a}
 @media(max-width:760px){.role-tabs{grid-template-columns:1fr}}

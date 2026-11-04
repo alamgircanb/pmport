@@ -25,7 +25,7 @@ const SQLJS='https://cdn.jsdelivr.net/npm/sql.js@1.10.3/dist/';
       <aside class="ex-list" aria-label="SQL exercises">
         <p class="progress-line">{{done.length}} of {{exercises.length}} completed</p>
         @for(g of groups;track g.level){
-          <h3>{{g.level}}</h3>
+          <h2>{{g.level}}</h2>
           @for(e of g.items;track e.id){<button type="button" [class.active]="e.id===current.id" (click)="open(e)"><span class="tick">{{done.includes(e.id)?'✓':''}}</span><span class="num">{{index(e)+1}}.</span><span>{{e.title}}</span></button>}
         }
       </aside>
@@ -47,7 +47,7 @@ const SQLJS='https://cdn.jsdelivr.net/npm/sql.js@1.10.3/dist/';
         @if(status){<div class="feedback" [class.ok]="statusKind==='ok'" [class.bad]="statusKind==='bad'" role="status">{{status}}</div>}
         @if(result){
           <p class="kbd">{{result.values.length}} row{{result.values.length===1?'':'s'}}{{result.values.length>200?' (first 200 shown)':''}}</p>
-          <div class="result-wrap"><table class="result"><thead><tr>@for(c of result.columns;track $index){<th>{{c}}</th>}</tr></thead>
+          <div class="result-wrap" tabindex="0" role="region" aria-label="Table: query results"><table class="result"><thead><tr>@for(c of result.columns;track $index){<th>{{c}}</th>}</tr></thead>
             <tbody>@for(r of result.values.slice(0,200);track $index){<tr>@for(v of r;track $index){<td [class.n]="isNum(v)">{{show(v)}}</td>}</tr>}</tbody></table></div>
         }
         <div class="nav-row">

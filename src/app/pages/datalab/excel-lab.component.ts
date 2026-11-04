@@ -18,7 +18,7 @@ type SheetName='Projects'|'Tasks'|'Resources';
       <aside class="ex-list" aria-label="Excel exercises">
         <p class="progress-line">{{done.length}} of {{exercises.length}} completed</p>
         @for(g of groups;track g.level){
-          <h3>{{g.level}}</h3>
+          <h2>{{g.level}}</h2>
           @for(e of g.items;track e.id){<button type="button" [class.active]="e.id===current.id" (click)="open(e)"><span class="tick">{{done.includes(e.id)?'✓':''}}</span><span class="num">{{index(e)+1}}.</span><span>{{e.title}}</span></button>}
         }
       </aside>
@@ -46,7 +46,7 @@ type SheetName='Projects'|'Tasks'|'Resources';
         </div>
         <div class="grid-wrap" tabindex="0" [attr.aria-label]="view+' sheet'">
           <table class="xl">
-            <thead><tr><th class="corner"></th>@for(c of cols(view);track c){<th>{{letter(c)}}</th>}</tr></thead>
+            <thead><tr><th class="corner"><span class="sr-only">Row</span></th>@for(c of cols(view);track c){<th>{{letter(c)}}</th>}</tr></thead>
             <tbody>@for(r of rows(view);track r){<tr><th>{{r+1}}</th>@for(c of cols(view);track c){
               <td [class.target]="isTarget(r,c)" [class.filled]="isFilled(r,c)" [class.head]="r===0" [class.n]="isNum(r,c)" [class.err]="isError(r,c)">{{cell(r,c)}}</td>}</tr>}</tbody>
           </table>

@@ -26,7 +26,7 @@ import {PMP_GUIDE_STYLES} from './pmp-guide-styles';
     <section id="table">
       <p class="eyebrow">At a glance</p>
       <h2>Free PMP practice exams compared</h2>
-      <div class="table-wrap"><table class="data">
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Table: Free PMP practice exams compared"><table class="data">
         <thead><tr><th>Resource</th><th>Free questions</th><th>Sign-up</th><th>Explanations</th><th>Best for</th></tr></thead>
         <tbody>
           <tr><td><a routerLink="/pm-faciliter/pmp-exam-simulator"><strong>PMPORT PMP Exam Simulator</strong></a></td><td>900 in 5 full 180-question exams</td><td>None</td><td>Yes, for every question</td><td>Full-length timed practice and domain results, with no account</td></tr>

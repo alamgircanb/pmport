@@ -15,7 +15,7 @@ import {DAX_QUESTIONS,type DaxQuestion} from './dax-data';
       <aside class="ex-list" aria-label="DAX questions">
         <p class="progress-line">{{correct.length}} of {{questions.length}} answered correctly</p>
         @for(g of groups;track g.topic){
-          <h3>{{g.topic}}</h3>
+          <h2>{{g.topic}}</h2>
           @for(q of g.items;track q.id){<button type="button" [class.active]="q.id===current.id" (click)="open(q)"><span class="tick">{{correct.includes(q.id)?'✓':''}}</span><span class="num">{{index(q)+1}}.</span><span>{{short(q)}}</span></button>}
         }
       </aside>

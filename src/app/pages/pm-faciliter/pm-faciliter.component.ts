@@ -27,15 +27,15 @@ import {CERTIFICATIONS} from './cert-overview.component';
               @if(activeVideo?.youtubeVideoId){<iframe [src]="embed(activeVideo!.youtubeVideoId)" [title]="activeVideo!.title" allowfullscreen></iframe>}@else{<div class="empty-frame">Add YouTube IDs to <code>public/data/pm-faciliter-modules.json</code></div>}
               <div class="video-scroll scroll-list" tabindex="0">@for(v of sortedVideos(m.videos);track v.title){<button type="button" (click)="activeVideo=v"><span>▶</span>{{v.title}} <small>{{v.duration}}</small></button>}@empty{<p class="empty">No videos yet. Add videos to this module’s JSON array.</p>}</div>
             </article>
-            <aside class="practice card"><span class="eyebrow">Practice lab</span><h3>Quick quiz</h3><p>{{m.quiz.question}}</p>
+            <section class="practice card" aria-label="Practice lab"><span class="eyebrow">Practice lab</span><h3>Quick quiz</h3><p>{{m.quiz.question}}</p>
               @for(option of m.quiz.options;track option;let i=$index){<label class="option"><input type="radio" name="quiz" [value]="i" [(ngModel)]="quizAnswer"> {{option}}</label>}
               <button class="button small secondary" type="button" (click)="checkQuiz(m)">Check answer</button>@if(feedback){<p class="status">{{feedback}}</p>}
               <h3>Sequence the work</h3><p class="muted">Use the arrows to arrange the steps.</p>
               @for(step of steps;track step;let i=$index){<div class="step"><span>{{i+1}}. {{step}}</span><span><button type="button" (click)="move(i,-1)" aria-label="Move up">↑</button><button type="button" (click)="move(i,1)" aria-label="Move down">↓</button></span></div>}
-              <h3>Calculation</h3><p>{{m.calculation.question}}</p><div class="calc"><input type="number" step="0.01" [(ngModel)]="calculation"><button class="button small secondary" type="button" (click)="checkCalculation(m)">Check</button></div>@if(calcFeedback){<p class="status">{{calcFeedback}}</p>}
+              <h3>Calculation</h3><p>{{m.calculation.question}}</p><div class="calc"><input type="number" step="0.01" [(ngModel)]="calculation" aria-label="Your answer"><button class="button small secondary" type="button" (click)="checkCalculation(m)">Check</button></div>@if(calcFeedback){<p class="status">{{calcFeedback}}</p>}
               <h3>Make a diagram</h3><div class="calc"><input [(ngModel)]="nodeText" placeholder="Add a process node"><button class="button small secondary" type="button" (click)="addNode()">Add</button></div><div class="diagram">@for(node of nodes;track $index){<span>{{node}}</span>}</div>
               @if(auth.configured){<a class="button primary member" routerLink="/pm-faciliter/member">Open member progress</a>}
-            </aside>
+            </section>
           </div>
         }
       }

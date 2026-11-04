@@ -15,7 +15,7 @@ import {finance} from './calc-math';
       <div class="card inputs">
         <label>Initial investment ($) <input type="number" min="0" [(ngModel)]="investment" inputmode="decimal"></label>
         <label>Discount rate (%) <small>Your organization's cost of capital or hurdle rate</small><input type="number" step="0.5" [(ngModel)]="rate" inputmode="decimal"></label>
-        <div><table class="grid-input"><thead><tr><th>Year</th><th>Net cash flow ($)</th><th></th></tr></thead>
+        <div><table class="grid-input"><thead><tr><th>Year</th><th>Net cash flow ($)</th><th><span class="sr-only">Remove</span></th></tr></thead>
           <tbody>@for(f of flows;track $index;let i=$index){<tr><td>{{i+1}}</td><td><input type="number" [(ngModel)]="flows[i]" [attr.aria-label]="'Year '+(i+1)+' cash flow'"></td><td><button type="button" (click)="remove(i)" [attr.aria-label]="'Remove year '+(i+1)">✕</button></td></tr>}</tbody></table>
           <div class="row-actions"><button type="button" class="button secondary small" (click)="add()">+ Add year</button></div></div>
       </div>

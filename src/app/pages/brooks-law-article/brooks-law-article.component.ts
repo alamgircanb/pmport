@@ -49,7 +49,7 @@ import {PMP_GUIDE_STYLES} from '../pmp-guides/pmp-guide-styles';
         <div class="week"><h3>3. Some work cannot be divided</h3><p>Painting a fence or cleaning hotel rooms scales with people. Designing an architecture, making a key decision or finding a subtle defect does not. When tasks depend on each other in sequence, the critical path sets the pace, not the headcount.</p></div>
         <div class="week"><h3>4. Effort per person drops in bigger groups</h3><p>As early as 1913, the French engineer Max Ringelmann found that people pulling a rope in a group each pulled less hard than when they pulled alone. Later experiments with fake team-mates showed this was not only poor coordination but a loss of motivation, now called social loafing [4].</p></div>
       </div>
-      <div class="table-wrap"><table class="data">
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Table: 4. Effort per person drops in bigger groups"><table class="data">
         <caption class="sr-only">Communication channels by team size</caption>
         <thead><tr><th>Team size</th><th>Communication channels n(n−1)/2</th><th>Change</th></tr></thead>
         <tbody>
@@ -68,7 +68,7 @@ import {PMP_GUIDE_STYLES} from '../pmp-guides/pmp-guide-styles';
       <p class="eyebrow">The data</p>
       <h2>What the evidence says</h2>
       <p>Brooks wrote from experience. Since then, researchers have tested the idea against thousands of real projects. The pattern is consistent: bigger teams buy a little time at a high price.</p>
-      <div class="table-wrap"><table class="data">
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Table: What the evidence says"><table class="data">
         <thead><tr><th>Study</th><th>What was compared</th><th>Key finding</th></tr></thead>
         <tbody>
           <tr><td>Putnam, QSM (1997)</td><td>491 completed software projects</td><td>For medium-sized systems, teams of about 3–7 people were the most efficient [5].</td></tr>
@@ -97,7 +97,7 @@ import {PMP_GUIDE_STYLES} from '../pmp-guides/pmp-guide-styles';
         <li><strong>Late projects are often underestimated projects.</strong> In "Brooks' Law Repealed" (1999), Steve McConnell argued that the law mainly applies in the final stages. Many projects that look "late" were simply under-planned, and adding staff early, with time to become productive, can help [2].</li>
       </ul>
       <p>So the better question is not "Does adding people ever work?" but "Will these people, added now, to this kind of work, produce more than they consume?"</p>
-      <div class="table-wrap"><table class="data">
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Table: It is not an iron law"><table class="data">
         <thead><tr><th>Adding people is more likely to help when…</th><th>Adding people is more likely to backfire when…</th></tr></thead>
         <tbody>
           <tr><td>It happens early, with time to ramp up</td><td>It happens in the last weeks before a deadline</td></tr>

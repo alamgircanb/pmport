@@ -109,7 +109,7 @@ import {PMP_GUIDE_STYLES} from '../pmp-guides/pmp-guide-styles';
     <section id="limits">
       <p class="eyebrow">Know the limits</p>
       <h2>What AI gets wrong</h2>
-      <div class="table-wrap"><table class="data">
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Table: What AI gets wrong"><table class="data">
         <thead><tr><th>Weakness</th><th>What it looks like</th><th>What to do</th></tr></thead>
         <tbody>
           <tr><td><strong>Invented facts</strong></td><td>A confident date, figure, name or reference that does not exist.</td><td>Check every fact against your own sources before you use it.</td></tr>
