@@ -18,7 +18,7 @@ export class SeoTitleStrategy extends TitleStrategy{
     if(route.data['seoCustom'])return;
     const page:SeoPage=SEO_PAGES[path]??{title:this.buildTitle(snapshot)??`${SITE_NAME} | Project Management, Learning & Practice`,description:SEO_PAGES[''].description,noindex:true};
     this.apply(path,page);
-    this.setJsonLd('seo-term',null);
+    this.setJsonLd('seo-term',null);this.setJsonLd('seo-term-faq',null);
     this.setBreadcrumbs(SEO_PAGES[path]?path:'');
   }
 
