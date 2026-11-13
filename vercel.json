@@ -1,6 +1,13 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "angular",
+  "redirects": [
+    {
+      "source": "/resources/:file([^/]+\\.(?:webp|jpe?g|png|gif|svg))",
+      "destination": "/:file",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/((?!api/)(?!.*\\.(?:js|mjs|css|map|wasm|json|png|jpe?g|webp|gif|svg|ico|xlsx|csv|pdf|txt|xml|woff2?)$).*)",
