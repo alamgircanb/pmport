@@ -35,3 +35,17 @@
 @media(max-width:650px){.banner.portrait .banner-image{width:100%;aspect-ratio:4/3;object-position:center 18%;-webkit-mask-image:none;mask-image:none}}
 /* Slide dots on wide screens: small to look at, 24px to tap (padding keeps the visible dot the same size). Narrower screens keep the original dots so all slides fit. */
 @media(min-width:1200px){.banner .dots button{box-sizing:border-box;width:24px;height:24px;padding:8px;border-radius:50%;background-clip:content-box}.banner .dots button.selected{width:40px;border-radius:12px}}
+
+/* Quick start: practice tools straight under the banner */
+.quick-start{margin-top:1.5rem}
+.quick-lead{margin:0 0 .8rem;color:var(--muted)}
+.quick-lead strong{color:#fff}
+.quick-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.8rem}
+.quick-card{display:flex;align-items:center;gap:.75rem;min-height:72px;padding:.9rem 1rem;border:1px solid var(--line);border-radius:14px;background:linear-gradient(145deg,rgba(14,45,78,.94),rgba(8,30,54,.96));color:#fff;text-decoration:none}
+.quick-card:hover,.quick-card:focus-visible{border-color:var(--accent)}
+.quick-card strong{display:block;font-size:.98rem;line-height:1.25}
+.quick-card small{display:block;margin-top:.2rem;color:var(--muted);font-size:.82rem;line-height:1.35}
+.quick-icon{font-size:1.5rem;flex:none}
+.quick-go{margin-left:auto;color:var(--accent);font-weight:800;flex:none}
+@media(max-width:1000px){.quick-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.quick-grid{grid-template-columns:1fr}}

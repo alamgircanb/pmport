@@ -1,0 +1,463 @@
+{
+ "pmo": {
+  "updated": "2026-11-12",
+  "sections": [
+   {
+    "h": "What does a PMO do?",
+    "items": [
+     "Sets project standards: methods, templates, stage gates and reporting rules.",
+     "Gives leaders one view of all projects through dashboards and status reports.",
+     "Supports project managers with coaching, training, tools and lessons learned.",
+     "Helps choose and prioritize projects so money and people go to the work that matters most.",
+     "Manages shared resources and spots conflicts between projects early."
+    ]
+   },
+   {
+    "h": "The three types of PMO",
+    "items": [
+     "Supportive PMO (low control): acts as a consultant. It offers templates, training and lessons learned, but projects choose whether to use them.",
+     "Controlling PMO (moderate control): requires compliance. Projects must use its methods, templates and reporting, and it may run audits.",
+     "Directive PMO (high control): takes over the projects. It assigns and manages the project managers directly."
+    ]
+   },
+   {
+    "h": "PMO vs project manager",
+    "p": "A project manager leads one project to deliver its objectives. A PMO works across many projects. It sets the rules, collects the data and helps leaders decide. In many organizations the PMO also hosts PMO analysts, who build reports, track risks and keep the project portfolio data clean."
+   },
+   {
+    "h": "Other kinds of PMO",
+    "p": "The same letters are used at different levels. A project management office supports projects. A program management office supports one large program. A portfolio management office (also called an enterprise PMO or EPMO) supports the whole organization's investment decisions."
+   }
+  ],
+  "examTip": "On the PMP exam, if a question says the PMO \"requires\" a template or method, think controlling PMO. If the PMO \"manages\" the projects directly, think directive. If it only \"provides\" templates and advice, think supportive.",
+  "faq": [
+   {
+    "q": "What does PMO stand for?",
+    "a": "PMO stands for Project Management Office. It can also mean Program Management Office or Portfolio Management Office, depending on the level it works at."
+   },
+   {
+    "q": "What are the three types of PMO?",
+    "a": "Supportive (low control, offers templates and advice), controlling (moderate control, requires compliance) and directive (high control, directly manages the projects)."
+   },
+   {
+    "q": "What does a PMO analyst do?",
+    "a": "A PMO analyst collects project data, builds status reports and dashboards, tracks risks, issues and resources across projects, and checks that projects follow the PMO's standards."
+   }
+  ]
+ },
+ "earned-value-management-evm": {
+  "updated": "2026-11-12",
+  "sections": [
+   {
+    "h": "The three core numbers",
+    "items": [
+     "Planned Value (PV): the budgeted cost of the work you planned to finish by now.",
+     "Earned Value (EV): the budgeted cost of the work you have actually finished.",
+     "Actual Cost (AC): what you have really spent to finish that work."
+    ]
+   },
+   {
+    "h": "Key formulas",
+    "items": [
+     "Schedule Variance: SV = EV − PV. Negative means behind schedule.",
+     "Cost Variance: CV = EV − AC. Negative means over budget.",
+     "Schedule Performance Index: SPI = EV ÷ PV. Below 1.0 means behind schedule.",
+     "Cost Performance Index: CPI = EV ÷ AC. Below 1.0 means over budget.",
+     "Estimate at Completion: EAC = BAC ÷ CPI (if current cost performance continues).",
+     "Estimate to Complete: ETC = EAC − AC. Variance at Completion: VAC = BAC − EAC."
+    ]
+   },
+   {
+    "h": "Worked example",
+    "p": "A project has a budget at completion (BAC) of $100,000. By the end of month 3 the plan said 40% would be done, so PV = $40,000. The team has finished 30% of the work, so EV = $30,000. They have spent $36,000, so AC = $36,000. SV = 30,000 − 40,000 = −$10,000 (behind schedule). CV = 30,000 − 36,000 = −$6,000 (over budget). SPI = 0.75 and CPI = 0.83. If cost performance stays the same, EAC = 100,000 ÷ 0.83 ≈ $120,000."
+   },
+   {
+    "h": "Why EVM matters",
+    "p": "Comparing only planned spend with actual spend can hide problems. A project can be on budget simply because work is late. EVM adds the value of the work actually completed, so you see schedule and cost health together and can forecast the final cost early."
+   }
+  ],
+  "examTip": "Remember: EV always comes first in every variance and index formula. Negative variance or an index below 1.0 is bad news; positive variance or above 1.0 is good news.",
+  "faq": [
+   {
+    "q": "What is the difference between PV, EV and AC?",
+    "a": "PV is the value of work planned to date, EV is the value of work actually completed, and AC is what that completed work actually cost."
+   },
+   {
+    "q": "What does a CPI of 0.8 mean?",
+    "a": "You get 80 cents of planned work for every dollar spent, so the project is over budget. If nothing changes, the final cost will be about 25% above budget (BAC ÷ 0.8)."
+   },
+   {
+    "q": "Is EVM used in agile projects?",
+    "a": "Yes. Agile EVM uses story points or completed features to measure earned value per sprint or release, while the formulas stay the same."
+   }
+  ]
+ },
+ "work-breakdown-structure-wbs": {
+  "updated": "2026-11-12",
+  "sections": [
+   {
+    "h": "How a WBS is built",
+    "items": [
+     "Level 1 is the whole project or final product.",
+     "Level 2 is usually the major deliverables or phases.",
+     "Each level below breaks the work into smaller deliverables.",
+     "The lowest level is the work package: small enough to estimate cost and time, assign to one owner and track."
+    ]
+   },
+   {
+    "h": "Rules of a good WBS",
+    "items": [
+     "The 100% rule: the WBS includes all the project's work, and nothing outside the scope. Each level adds up to 100% of its parent.",
+     "Use nouns for deliverables (for example, \"Training materials\"), not verbs. Activities come later in the schedule.",
+     "Do not overlap: each piece of work appears in only one place.",
+     "Decompose only as far as you need for planning and control. That is often the 8/80 rule: a work package takes between 8 and 80 hours."
+    ]
+   },
+   {
+    "h": "WBS dictionary and scope baseline",
+    "p": "The WBS dictionary describes each element: its description, owner, acceptance criteria, cost and milestones. The approved scope statement, the WBS and the WBS dictionary together form the scope baseline, which is used to control scope changes."
+   },
+   {
+    "h": "Example",
+    "p": "For a website launch, Level 2 might be Design, Content, Development, Testing and Launch. Under Content you might have Home page copy, Product pages and Images. \"Product pages\" is a work package the content writer owns and estimates."
+   }
+  ],
+  "examTip": "On the PMP exam, the WBS is deliverable-oriented and part of the scope baseline. If an answer creates the WBS from activities or puts the schedule first, it is usually wrong.",
+  "faq": [
+   {
+    "q": "What is a work package in a WBS?",
+    "a": "The lowest level of the WBS. It is small enough to estimate, schedule, assign to one owner and control."
+   },
+   {
+    "q": "What is the 100% rule?",
+    "a": "The WBS must include 100% of the project's work and nothing beyond it, and the children of each element must add up to 100% of that element."
+   },
+   {
+    "q": "Is a WBS the same as a schedule?",
+    "a": "No. A WBS breaks down what will be delivered. The schedule then lists the activities, durations and order needed to produce those deliverables."
+   }
+  ]
+ },
+ "rag-status": {
+  "updated": "2026-11-12",
+  "sections": [
+   {
+    "h": "What each colour means",
+    "items": [
+     "Green: on track. Scope, schedule and cost are within tolerance. No help needed.",
+     "Amber (yellow): at risk. There is a problem, but the team has a plan to recover. Watch closely.",
+     "Red: off track. The project will miss its targets without a decision or help from the sponsor or steering committee."
+    ]
+   },
+   {
+    "h": "How to use RAG well",
+    "items": [
+     "Agree thresholds in advance, for example Amber when SPI or CPI falls below 0.95 and Red below 0.90.",
+     "Rate scope, schedule, cost, risk and resources separately, then give an overall status.",
+     "Always add a short reason and the action or decision needed next to Amber and Red.",
+     "Avoid \"watermelon\" reporting: green on the outside and red inside. Report Amber early instead of hiding problems."
+    ]
+   },
+   {
+    "h": "Some organizations add Blue",
+    "p": "A RAGB scale adds Blue for work that is complete or closed. Others use Grey for not started. Check your PMO's reporting standard."
+   }
+  ],
+  "examTip": "Status colours are only useful if they are honest and backed by data. On exams and in interviews, escalate Red items with options and a recommendation, not just the colour.",
+  "faq": [
+   {
+    "q": "What does RAG stand for?",
+    "a": "Red, Amber, Green. It is a traffic-light rating used in status reports and dashboards."
+   },
+   {
+    "q": "When should a project be Amber instead of Red?",
+    "a": "Amber means there is a problem but the team can recover within its own authority. Red means targets will be missed unless someone above the team makes a decision or adds help."
+   }
+  ]
+ },
+ "project-closure": {
+  "updated": "2026-11-12",
+  "sections": [
+   {
+    "h": "Project closure checklist",
+    "items": [
+     "Get formal acceptance of the final deliverables from the customer or sponsor.",
+     "Hand over the product, documents, training and support to operations.",
+     "Close all contracts and procurement, and confirm final payments.",
+     "Release the team and resources, and recognize their work.",
+     "Hold a lessons learned session and add the results to the organization's knowledge base.",
+     "Archive project records, update organizational process assets and write the final report."
+    ]
+   },
+   {
+    "h": "Closing a phase vs closing a project",
+    "p": "Each phase can be closed in the same way: confirm its exit criteria, get approval at the phase gate and record lessons learned. Closing the project is the final close at the end of the last phase."
+   },
+   {
+    "h": "Projects that end early",
+    "p": "A project can also close because it was cancelled. Closure is still needed: document why it stopped, what was completed, what it cost, and what can be reused or learned."
+   }
+  ],
+  "examTip": "On the PMP exam, the first step in closing is usually confirming that the deliverables were formally accepted. Lessons learned are gathered throughout the project, not only at the end.",
+  "faq": [
+   {
+    "q": "What is the first step in project closure?",
+    "a": "Confirm that all deliverables are complete and formally accepted by the customer or sponsor."
+   },
+   {
+    "q": "What goes in a project closure report?",
+    "a": "A summary of objectives vs results, scope, schedule and cost performance, acceptance evidence, open items and their owners, the handover, and key lessons learned."
+   }
+  ]
+ },
+ "steering-committee": {
+  "updated": "2026-11-12",
+  "sections": [
+   {
+    "h": "What a steering committee does",
+    "items": [
+     "Approves the project's direction, budget and major changes.",
+     "Makes decisions and resolves issues that are beyond the project manager's authority.",
+     "Prioritizes between competing demands and confirms the business case is still valid.",
+     "Makes go / no-go decisions at phase gates.",
+     "Champions the project and removes organizational barriers."
+    ]
+   },
+   {
+    "h": "Who sits on it?",
+    "p": "Usually the project sponsor (who often chairs it), senior leaders from the business areas affected, a finance representative, and sometimes key suppliers or the PMO lead. The project manager normally attends to report and recommend, but does not vote."
+   },
+   {
+    "h": "Running a good steering committee meeting",
+    "items": [
+     "Send a short status report and decisions needed before the meeting.",
+     "Focus on decisions, risks and escalations, not task-level detail.",
+     "Bring options with a recommendation for every issue.",
+     "Record decisions and owners in a decision log."
+    ]
+   }
+  ],
+  "examTip": "When an issue is outside the project manager's authority, such as a budget increase or a scope change beyond tolerance, escalate it to the sponsor or steering committee with options.",
+  "faq": [
+   {
+    "q": "What is the purpose of a steering committee?",
+    "a": "To give direction and governance to a project or program: approve major decisions, resolve escalated issues and keep the work aligned with business goals."
+   },
+   {
+    "q": "How often does a steering committee meet?",
+    "a": "Commonly monthly, or at each phase gate, with extra meetings when urgent decisions are needed."
+   },
+   {
+    "q": "Is a steering committee the same as a change control board?",
+    "a": "Not always. A change control board reviews change requests. In smaller organizations the steering committee may play both roles."
+   }
+  ]
+ },
+ "burndown-chart": {
+  "updated": "2026-11-12",
+  "sections": [
+   {
+    "h": "How to read a burndown chart",
+    "items": [
+     "The vertical axis shows the work remaining, in story points, tasks or hours.",
+     "The horizontal axis shows time, usually the days of a sprint.",
+     "The ideal line runs straight from the total work on day 1 to zero on the last day.",
+     "The actual line shows what really remains each day. Above the ideal line means behind; below means ahead."
+    ]
+   },
+   {
+    "h": "What common shapes tell you",
+    "items": [
+     "Flat for several days: work is blocked, or the team is not updating the board.",
+     "A sudden cliff at the end: stories are only closed at the end, so the work is too big or testing is late.",
+     "The line goes up: scope was added during the sprint.",
+     "Always below the ideal line: the sprint may have been under-planned."
+    ]
+   },
+   {
+    "h": "Burndown vs burnup",
+    "p": "A burndown shows only work remaining, so scope changes are hidden inside the line. A burnup chart shows completed work and total scope as two separate lines, so you can see when scope grows."
+   }
+  ],
+  "examTip": "On the PMP exam, a burndown chart is an information radiator. Use it to discuss impediments in the daily standup, not to blame individuals.",
+  "faq": [
+   {
+    "q": "What is the difference between a burndown and a burnup chart?",
+    "a": "A burndown shows the work left to do. A burnup shows the work completed and the total scope, which makes scope changes visible."
+   },
+   {
+    "q": "Who updates the burndown chart?",
+    "a": "The team, usually automatically through their agile tool as tasks or stories move to done."
+   }
+  ]
+ },
+ "colocation": {
+  "updated": "2026-11-12",
+  "sections": [
+   {
+    "h": "Why teams are co-located",
+    "items": [
+     "Faster communication: questions are answered in minutes, not days.",
+     "Better trust and team building through informal contact.",
+     "Osmotic communication: people pick up useful information just by being near the conversation.",
+     "Easier use of visual tools such as task boards and information radiators."
+    ]
+   },
+   {
+    "h": "Colocation vs virtual teams",
+    "p": "Many teams now work virtually or hybrid. They can recreate the benefits of colocation with shared working hours, video calls, a virtual team room, online boards and occasional in-person workshops. A \"tight matrix\" is an older name for putting the team in one location."
+   }
+  ],
+  "examTip": "On the PMP exam, colocation is a tool for developing the team and improving communication. For virtual teams, look for answers that build shared ground rules, overlapping hours and good collaboration tools.",
+  "faq": [
+   {
+    "q": "What is a co-located team?",
+    "a": "A team whose members work in the same physical place, often the same room, so they can communicate face to face."
+   },
+   {
+    "q": "Is colocation required for agile teams?",
+    "a": "It is preferred in early agile thinking, but many successful agile teams are distributed. They use virtual collaboration tools and agreed working hours instead."
+   }
+  ]
+ },
+ "project-life-cycle": {
+  "updated": "2026-11-12",
+  "sections": [
+   {
+    "h": "The generic phases",
+    "items": [
+     "Starting the project: define the need, approve the business case and charter, and identify stakeholders.",
+     "Organizing and preparing: plan scope, schedule, cost, risk and resources, and form the team.",
+     "Carrying out the work: build the deliverables while monitoring and controlling progress.",
+     "Ending the project: get acceptance, hand over, release resources and capture lessons learned."
+    ]
+   },
+   {
+    "h": "Types of life cycle",
+    "items": [
+     "Predictive (waterfall): scope, time and cost are fixed early. Phases happen in sequence.",
+     "Iterative: the product is refined through repeated cycles, with feedback each time.",
+     "Incremental: the product is delivered in usable pieces that add up over time.",
+     "Adaptive (agile): short iterations deliver value and the plan changes based on feedback.",
+     "Hybrid: a mix, for example predictive for hardware and agile for software."
+    ]
+   },
+   {
+    "h": "Project life cycle vs product life cycle",
+    "p": "The project life cycle ends when the project closes. The product life cycle is longer: it continues through operation, improvement and finally retirement of the product. One product may need several projects during its life."
+   }
+  ],
+  "examTip": "Choose the life cycle based on how clear the requirements are and how often they will change. Clear and stable points to predictive; unclear and changing points to adaptive.",
+  "faq": [
+   {
+    "q": "What are the phases of the project life cycle?",
+    "a": "Starting the project, organizing and preparing, carrying out the work, and ending the project. Many organizations name these initiation, planning, execution and closure."
+   },
+   {
+    "q": "What is the difference between predictive and adaptive life cycles?",
+    "a": "Predictive plans scope in detail at the start and controls changes. Adaptive delivers in short iterations and expects scope to evolve with feedback."
+   }
+  ]
+ },
+ "communications-management-plan": {
+  "updated": "2026-11-12",
+  "sections": [
+   {
+    "h": "What the plan includes",
+    "items": [
+     "Stakeholder information needs: who needs what information.",
+     "Format and method: report, dashboard, meeting, email or chat.",
+     "Frequency and timing: daily, weekly, monthly or at milestones.",
+     "Who sends it and who approves sensitive information.",
+     "Escalation paths and response times.",
+     "Glossary, templates and any constraints such as language, privacy or time zones."
+    ]
+   },
+   {
+    "h": "Push, pull and interactive communication",
+    "items": [
+     "Interactive: two-way, in real time, such as meetings and calls. Best for complex or sensitive topics.",
+     "Push: sent to people, such as emails, memos and reports. The sender cannot be sure it was understood.",
+     "Pull: people get it themselves, such as an intranet, wiki or shared dashboard. Good for large audiences."
+    ]
+   },
+   {
+    "h": "Communication channels formula",
+    "p": "The number of communication channels is n(n − 1) ÷ 2, where n is the number of people. A team of 10 has 45 channels. Add 5 people and it becomes 105. This is why communication gets harder quickly as teams grow."
+   }
+  ],
+  "examTip": "On the PMP exam, a communication problem often points to the communications management plan or the stakeholder engagement plan. Check and update the plan before choosing a new tool.",
+  "faq": [
+   {
+    "q": "What is the purpose of a communications management plan?",
+    "a": "To make sure every stakeholder gets the right information, in the right format, at the right time, from the right person."
+   },
+   {
+    "q": "How do you calculate communication channels?",
+    "a": "Use n(n − 1) ÷ 2. For 8 people: 8 × 7 ÷ 2 = 28 channels."
+   }
+  ]
+ },
+ "resource-histogram": {
+  "updated": "2026-11-12",
+  "sections": [
+   {
+    "h": "How to read a resource histogram",
+    "items": [
+     "Each bar shows how many hours or people a resource or role is scheduled for in a period.",
+     "A horizontal line shows the available capacity, for example 40 hours a week.",
+     "Bars above the line show over-allocation: the plan needs more than is available.",
+     "Deep dips show under-use, which can mean idle time or a chance to pull work forward."
+    ]
+   },
+   {
+    "h": "Fixing over-allocation",
+    "items": [
+     "Resource smoothing: move activities within their float, so the end date does not change.",
+     "Resource leveling: delay activities until the resource is free. The end date may move and the critical path can change.",
+     "Add or swap resources, or reduce or re-sequence scope with stakeholder agreement."
+    ]
+   }
+  ],
+  "examTip": "On the PMP exam, resource leveling can extend the schedule and change the critical path. Resource smoothing does not change the end date.",
+  "faq": [
+   {
+    "q": "What is a resource histogram used for?",
+    "a": "To see whether people or equipment are over- or under-allocated over time, so the schedule can be adjusted before problems happen."
+   },
+   {
+    "q": "What is the difference between resource leveling and smoothing?",
+    "a": "Leveling can delay the end date to remove over-allocation. Smoothing only moves activities within their float, so the end date stays the same."
+   }
+  ]
+ },
+ "benefits-register": {
+  "updated": "2026-11-12",
+  "sections": [
+   {
+    "h": "What a benefits register records",
+    "items": [
+     "Each expected benefit and the business objective it supports.",
+     "How the benefit will be measured (KPI), the baseline and the target.",
+     "The benefit owner who is accountable after handover.",
+     "When the benefit is expected, and any dependencies or risks."
+    ]
+   },
+   {
+    "h": "How it fits with other documents",
+    "p": "The business case says why the project is worth doing. The benefits management plan explains how and when benefits will be achieved and measured. The benefits register is the list used to track each benefit over time, often long after the project closes."
+   }
+  ],
+  "examTip": "Benefits are often realized after the project ends, so the benefit owner is usually in the business, not on the project team.",
+  "faq": [
+   {
+    "q": "What is the difference between a benefits register and a benefits management plan?",
+    "a": "The plan describes the approach to realizing and measuring benefits. The register lists each individual benefit with its measure, target, owner and status."
+   },
+   {
+    "q": "Who owns the benefits register?",
+    "a": "Usually the sponsor or a benefits owner in the business, often supported by the PMO."
+   }
+  ]
+ }
+}
