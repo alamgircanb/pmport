@@ -74,6 +74,9 @@ const ldScript=(id,data)=>`  <script type="application/ld+json" id="${id}">${JSO
 // Glossary: one generated page per term (src/app/pages/glossary/glossary-data.json), plus lists for the hub pages.
 const glossary=JSON.parse(readFileSync(join(root,'src/app/pages/glossary/glossary-data.json'),'utf8'));
 const termBySlug=new Map(glossary.map(t=>[t.slug,t]));
+// In-depth sections and FAQs for the most-searched terms (same file the Angular term page reads).
+const deep=JSON.parse(readFileSync(join(root,'src/app/pages/glossary/glossary-deep.json'),'utf8'));
+const termFaq={};
 // Same rules as termSeo() in src/app/pages/glossary/glossary.ts.
 function termSeo(t){
   const short=t.term.replace(/\s*\([^)]*\)\s*$/,'');
@@ -86,7 +89,12 @@ for(const [i,t] of glossary.entries()){
   const path=`pm-glossary/${t.slug}`;
   const rel=t.related.map(s=>termBySlug.get(s)).filter(Boolean).map(r=>`<li><a href="/pm-glossary/${r.slug}">${escText(r.term)}</a></li>`).join('');
   const prev=glossary[i-1],next=glossary[i+1];
-  customHtml[path]=`<p class="seo-eyebrow">${escText(t.category)} · Glossary</p><h1>${escText(t.term)}</h1><p>${escText(t.definition)}</p><h2>Example</h2><p>${escText(t.example)}</p>`+
+  const d=deep[t.slug];
+  const deepHtml=d?d.sections.map(x=>`<h2>${escText(x.h)}</h2>`+(x.p?`<p>${escText(x.p)}</p>`:'')+(x.items?`<ul>${x.items.map(i=>`<li>${escText(i)}</li>`).join('')}</ul>`:'')).join('')+
+    (d.examTip?`<h2>PMP exam tip</h2><p>${escText(d.examTip)}</p>`:'')+
+    (d.faq?.length?`<h2>Frequently asked questions</h2>${d.faq.map(f=>`<h3>${escText(f.q)}</h3><p>${escText(f.a)}</p>`).join('')}`:''):'';
+  if(d?.faq?.length)termFaq[path]={'@context':'https://schema.org','@type':'FAQPage',mainEntity:d.faq.map(f=>({'@type':'Question',name:f.q,acceptedAnswer:{'@type':'Answer',text:f.a}}))};
+  customHtml[path]=`<p class="seo-eyebrow">${escText(t.category)} · Glossary</p><h1>${escText(t.term)}</h1><p>${escText(t.definition)}</p><h2>Example</h2><p>${escText(t.example)}</p>`+deepHtml+
     (rel?`<h2>Related terms</h2><ul>${rel}</ul>`:'')+`<p>${prev?`<a href="/pm-glossary/${prev.slug}">‹ ${escText(prev.term)}</a> · `:''}<a href="/pm-glossary">All glossary terms</a>${next?` · <a href="/pm-glossary/${next.slug}">${escText(next.term)} ›</a>`:''}</p>`;
   extraHead[path]={'@context':'https://schema.org','@type':'DefinedTerm',name:t.term,description:t.definition,url:`${SITE}/${path}`,inDefinedTermSet:{'@type':'DefinedTermSet',name:'PMPORT Project Management Glossary',url:`${SITE}/pm-glossary`}};
 }
@@ -201,6 +209,7 @@ function render(path,page){
   const crumbs=breadcrumbs(path);
   if(crumbs)html=html.replace('</head>',ldScript('seo-breadcrumb',crumbs));
   if(extraHead[path])html=html.replace('</head>',ldScript('seo-term',extraHead[path]));
+  if(termFaq[path])html=html.replace('</head>',ldScript('seo-term-faq',termFaq[path]));
   const heading=page.title.replace(/ \| PMPORT$/,'').replace(/^PMPORT \| /,'');
   const links=sections.filter(([p])=>p!==path).map(([p,l,d])=>`<li><a href="/${p}">${esc(l)}</a>. ${esc(d)}</li>`).join('');
   const article=staticArticleHtml(path)||customHtml[path]||'';
@@ -223,7 +232,8 @@ for(const [path,page] of Object.entries(pages)){
 for(const t of glossary){
   const path=`pm-glossary/${t.slug}`;const file=join(out,path,'index.html');
   mkdirSync(dirname(file),{recursive:true});writeFileSync(file,render(path,termSeo(t)));count++;
-  urls.push(`  <url><loc>${SITE}/${path}</loc></url>`);
+  const updated=deep[t.slug]?.updated;
+  urls.push(`  <url><loc>${SITE}/${path}</loc>${updated?`<lastmod>${updated}</lastmod>`:''}</url>`);
 }
 // The digital business card is a separate static page (public/card), so it is listed here by hand.
 urls.push(`  <url><loc>${SITE}/card</loc></url>`);
