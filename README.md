@@ -1,7 +1,7 @@
 # PMPORT — Project Management, Learning & Practice
 
 A responsive Angular learning platform and portfolio, with rotating Home banners, project artifacts, Diagram Studio, and a PERT/CPM calculator. See `PMPORT_UPDATE_GUIDE.md` for the updated structure and editing instructions.
-
+[![Architecture diagram of alamgircanb/pmport](https://gitdiagram.com/alamgircanb/pmport/diagram.png)](https://gitdiagram.com/alamgircanb/pmport?utm_source=readme&utm_medium=picture)
 ## Run and build
 
 ```bash
