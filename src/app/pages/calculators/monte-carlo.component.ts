@@ -12,8 +12,8 @@ import {monteCarlo,type McResult} from './calc-math';
     <header class="calc-head"><p class="eyebrow">Free PM calculator · Schedule risk</p><h1>Monte Carlo Schedule Simulator</h1>
       <p class="lead">Enter three-point estimates for tasks done one after another. The simulator runs thousands of random scenarios and shows how likely you are to finish by any date: P50, P80, P90 and the chance of meeting your deadline.</p></header>
     <div class="card">
-      <div class="table-wrap"><table class="grid-input">
-        <thead><tr><th>Task</th><th>Optimistic</th><th>Most likely</th><th>Pessimistic</th><th></th></tr></thead>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Table: tasks"><table class="grid-input">
+        <thead><tr><th>Task</th><th>Optimistic</th><th>Most likely</th><th>Pessimistic</th><th><span class="sr-only">Remove</span></th></tr></thead>
         <tbody>@for(t of tasks;track $index;let i=$index){<tr>
           <td><input [(ngModel)]="t.name" [attr.aria-label]="'Task '+(i+1)+' name'"></td>
           <td><input type="number" min="0" [(ngModel)]="t.o" [attr.aria-label]="'Task '+(i+1)+' optimistic'"></td>

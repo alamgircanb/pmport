@@ -73,7 +73,7 @@ type Lever='meetings'|'wip'|'overtime'|'testing'|'creep'|'risk'|'turnover';
       </section>
 
       <!-- Column 3: outputs -->
-      <section class="col card out" aria-label="Results" aria-live="polite">
+      <section class="col card out" aria-label="Project delivery: results" aria-live="polite">
         <h2>3 · Results</h2>
         <div class="tiles">
           <div class="t"><span>Done / scope</span><strong>{{r0(last?.done??0)}} / {{r0(sim.scope)}}</strong></div>

@@ -24,7 +24,7 @@ import {money,pct,type Control,type ChartDef,type Fmt,type P,type Part,type Row,
       @if(result){<p class="verdict" [class.win]="result.ok" [class.lose]="!result.ok">{{result.ok?'✅ Challenge complete!':'❌ Not this time.'}} {{result.detail}} @if(!result.ok){<span>Tip: {{challenge.hint}}</span>}</p>}</div>}
 
     <div class="grid3">
-      <section class="col card" aria-label="Setup">
+      <section class="col card" [attr.aria-label]="def.title+': setup'">
         <h2>1 · Setup</h2><p class="note">Changing these restarts the simulation.</p>
         @for(c of def.setup;track c.key){
           @if(c.kind==='toggle'){<label class="check"><input type="checkbox" [checked]="!!p[c.key]" (change)="set(c,$any($event.target).checked?1:0,true)"> {{c.label}}</label>}
@@ -32,7 +32,7 @@ import {money,pct,type Control,type ChartDef,type Fmt,type P,type Part,type Row,
         }
         <button type="button" class="button secondary small" (click)="newRun()">New random run</button>
       </section>
-      <section class="col card" aria-label="Decisions">
+      <section class="col card" [attr.aria-label]="def.title+': decisions'">
         <h2>2 · Your decisions</h2><p class="note">Change these any time, even mid-run.</p>
         @for(c of def.levers;track c.key){
           @if(c.kind==='toggle'){<label class="check"><input type="checkbox" [checked]="!!p[c.key]" (change)="set(c,$any($event.target).checked?1:0,false)"> {{c.label}}</label>}
@@ -44,7 +44,7 @@ import {money,pct,type Control,type ChartDef,type Fmt,type P,type Part,type Row,
           @else{<label>{{c.label}} <b>{{show(c)}}</b><input type="range" [min]="c.min" [max]="c.max" [step]="c.step" [value]="p[c.key]" (input)="set(c,+$any($event.target).value,false)"></label>}
         }
       </section>
-      <section class="col card out" aria-label="Results" aria-live="polite">
+      <section class="col card out" [attr.aria-label]="def.title+': results'" aria-live="polite">
         <h2>3 · Results</h2>
         <div class="tiles">@for(t of tiles;track t.label){<div class="t" [class.good]="t.tone==='good'" [class.bad]="t.tone==='bad'"><span>{{t.label}}</span><strong>{{t.value}}</strong>@if(t.sub){<small>{{t.sub}}</small>}</div>}</div>
         @if(stack.parts.length){<div class="cap"><p class="mini">{{stack.title}}</p>

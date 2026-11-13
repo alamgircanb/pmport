@@ -29,7 +29,7 @@ const ragOf=(pc:number,pp:number):Rag=>pp===0||pc/pp>=0.95?'Green':pc/pp>=0.85?'
 
     @if(stepIx<4){
       <details class="panel" [open]="stepIx<2"><summary>Project data (status date: this month)</summary>
-        <div class="result-wrap"><table class="result"><thead><tr><th>ID</th><th>Project</th><th>Department</th><th>Status</th><th>Budget (BAC)</th><th>Actual cost (AC)</th><th>% complete</th><th>Planned %</th></tr></thead>
+        <div class="result-wrap" tabindex="0" role="region" aria-label="Table: project data"><table class="result"><thead><tr><th>ID</th><th>Project</th><th>Department</th><th>Status</th><th>Budget (BAC)</th><th>Actual cost (AC)</th><th>% complete</th><th>Planned %</th></tr></thead>
         <tbody>@for(p of projects;track p.id){<tr><td>{{p.id}}</td><td>{{p.name}}</td><td>{{p.department}}</td><td>{{p.status}}</td><td class="n">{{p.budget|number}}</td><td class="n">{{p.ac|number}}</td><td class="n">{{p.pc*100|number:'1.0-0'}}%</td><td class="n">{{p.pp*100|number:'1.0-0'}}%</td></tr>}</tbody></table></div>
         <p class="kbd">EV = Budget × % complete · PV = Budget × Planned % · CPI = EV ÷ AC · SPI = EV ÷ PV. Tip: you can calculate these in the <a routerLink="/pm-datalab/excel">Excel lab</a> or <a routerLink="/pm-datalab/sql">SQL lab</a>.</p>
       </details>
@@ -63,7 +63,7 @@ const ragOf=(pc:number,pp:number):Rag=>pp===0||pc/pp>=0.95?'Green':pc/pp>=0.85?'
       @case(2){
         <div class="card step"><h2>Step 3: Top 3 risks</h2>
           <p class="prompt">Leadership only has time for three risks. Pick the three <strong>open</strong> risks with the highest expected monetary value (EMV = probability × impact).</p>
-          <div class="result-wrap"><table class="result"><thead><tr><th>Pick</th><th>Risk</th><th>Project</th><th>Probability</th><th>Impact ($)</th></tr></thead>
+          <div class="result-wrap" tabindex="0" role="region" aria-label="Table: Step 3: Top 3 risks"><table class="result"><thead><tr><th>Pick</th><th>Risk</th><th>Project</th><th>Probability</th><th>Impact ($)</th></tr></thead>
             <tbody>@for(k of openRisks;track k.id){<tr><td><input type="checkbox" [checked]="picked.has(k.id)" (change)="toggle(k.id)" [attr.aria-label]="'Pick '+k.description"></td><td>{{k.description}}</td><td>{{k.project}}</td><td class="n">{{k.probability*100|number:'1.0-0'}}%</td><td class="n">{{k.impact|number}}</td></tr>}</tbody></table></div>
           <div class="toolbar"><button type="button" class="button primary" (click)="checkRisks()">Check my top 3</button></div>
           @if(msg){<div class="feedback" [class.ok]="msgOk" [class.bad]="!msgOk" role="status">{{msg}}</div>}

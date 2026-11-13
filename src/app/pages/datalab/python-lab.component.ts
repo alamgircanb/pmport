@@ -69,7 +69,7 @@ def _run(user, setup, solution):
       <aside class="ex-list" aria-label="Python exercises">
         <p class="progress-line">{{done.length}} of {{exercises.length}} completed</p>
         @for(g of groups;track g.level){
-          <h3>{{g.level}}</h3>
+          <h2>{{g.level}}</h2>
           @for(e of g.items;track e.id){<button type="button" [class.active]="e.id===current.id" (click)="open(e)"><span class="tick">{{done.includes(e.id)?'✓':''}}</span><span class="num">{{index(e)+1}}.</span><span>{{e.title}}</span></button>}
         }
       </aside>

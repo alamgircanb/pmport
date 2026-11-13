@@ -12,8 +12,8 @@ import {emv,type RiskRow} from './calc-math';
     <header class="calc-head"><p class="eyebrow">Free PM calculator · Risk</p><h1>Risk EMV Calculator</h1>
       <p class="lead">List your risks with their probability and cost impact. The calculator gives the expected monetary value (EMV) of each one, the total for threats and opportunities, and a suggested contingency reserve.</p></header>
     <div class="card">
-      <div class="table-wrap"><table class="grid-input">
-        <thead><tr><th>Risk</th><th>Type</th><th>Probability %</th><th>Impact ($)</th><th>EMV</th><th></th></tr></thead>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Table: risk register"><table class="grid-input">
+        <thead><tr><th>Risk</th><th>Type</th><th>Probability %</th><th>Impact ($)</th><th>EMV</th><th><span class="sr-only">Remove</span></th></tr></thead>
         <tbody>@for(row of rows;track $index;let i=$index){<tr>
           <td><input [(ngModel)]="row.name" [attr.aria-label]="'Risk '+(i+1)+' name'"></td>
           <td><select [(ngModel)]="row.type" [attr.aria-label]="'Risk '+(i+1)+' type'"><option value="threat">Threat</option><option value="opportunity">Opportunity</option></select></td>

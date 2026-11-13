@@ -46,8 +46,8 @@ export const LAB_STYLES=`
   .lab{display:grid;grid-template-columns:280px minmax(0,1fr);gap:1.25rem;align-items:start}
   .task{min-width:0}
   .ex-list{position:sticky;top:88px;max-height:calc(100vh - 104px);overflow:auto;background:#081d34;border:1px solid var(--line);border-radius:14px;padding:.8rem}
-  .ex-list h3{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:.9rem .4rem .4rem}
-  .ex-list h3:first-child{margin-top:.2rem}
+  .ex-list h2{line-height:normal;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:.9rem .4rem .4rem}
+  .ex-list h2:first-child{margin-top:.2rem}
   .ex-list button{display:flex;gap:.5rem;align-items:flex-start;width:100%;text-align:left;background:transparent;border:1px solid transparent;color:#d6e4f0;border-radius:8px;padding:.45rem .5rem;cursor:pointer;font-size:.88rem;line-height:1.35}
   .ex-list button:hover{background:#0c2a49}.ex-list button.active{border-color:var(--accent);background:#0c2a49}
   .ex-list .tick{flex:none;width:1.1rem;color:#5fd68a;font-weight:800}.ex-list .num{flex:none;width:1.4rem;color:var(--muted)}

@@ -7,7 +7,7 @@
 
   <nav class="role-tabs" aria-label="Templates by role">@for(r of roles;track r.id){<a [routerLink]="r.path" [class.active]="r.id===role.id" [attr.aria-current]="r.id===role.id?'page':null"><small>Templates for</small>{{r.tab}}</a>}</nav>
 
-  <div class="grid two studio-links">@for(st of role.studios;track st.path){<a class="card" [routerLink]="st.path"><p class="eyebrow">{{st.eyebrow}}</p><h3>{{st.title}}</h3><p class="muted">{{st.text}}</p></a>}</div>
+  <div class="grid two studio-links">@for(st of role.studios;track st.path){<a class="card" [routerLink]="st.path"><p class="eyebrow">{{st.eyebrow}}</p><h2>{{st.title}}</h2><p class="muted">{{st.text}}</p></a>}</div>
 
   <section class="approach" aria-label="Filter by delivery approach">
     <h2>Templates <span>Filter by how your project is delivered</span></h2>
