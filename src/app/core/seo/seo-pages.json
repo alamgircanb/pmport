@@ -177,7 +177,7 @@
  "pm-faciliter/rmp": {
   "label": "PMI-RMP",
   "title": "PMI-RMP Exam Prep: Risk Management Domains & Free Mocks | PMPORT",
-  "description": "Free risk management (PMI-RMP) exam preparation: the five domains and weights, a 6-week study plan, key formulas and three full mock exams with 345 questions.",
+  "description": "Free risk management (PMI-RMP) exam preparation: the five domains and weights, a 6-week study plan, key formulas and five full mock exams with 575 questions.",
   "published": "2026-11-14",
   "hero": "rmp-exam-simulator.webp"
  },
@@ -207,8 +207,8 @@
  },
  "pm-faciliter/rmp-exam-simulator": {
   "label": "PMI-RMP Exam Simulator",
-  "title": "Free PMI-RMP Exam Simulator: 345 Risk Management Questions | PMPORT",
-  "description": "Three free full-length risk management practice exams: 115 questions in 150 minutes each, with EMV, PERT and Monte Carlo questions and results by domain.",
+  "title": "Free PMI-RMP Exam Simulator: 575 Risk Management Questions | PMPORT",
+  "description": "Five free full-length risk management practice exams: 115 questions in 150 minutes each, with EMV, PERT and Monte Carlo questions and results by domain.",
   "published": "2026-11-14",
   "hero": "rmp-exam-simulator.webp"
  },
