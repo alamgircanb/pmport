@@ -87,8 +87,8 @@
  },
  "pm-faciliter": {
   "label": "Exam Faciliter",
-  "title": "Exam Faciliter: Free PMP, CAPM, ECBA, CBAP & ITIL Exam Prep | PMPORT",
-  "description": "Free certification exam prep for PMP, CAPM, ECBA, CBAP and ITIL 5 Foundation: overviews, study plans and full-length mock exams, plus PM training."
+  "title": "Exam Faciliter: Free PMP, CAPM, PMI-RMP, ECBA, CBAP, ITIL & CCMP Exam Prep | PMPORT",
+  "description": "Free exam prep for PMP, CAPM, PMI-RMP risk management, ECBA, CBAP, ITIL 5 Foundation and CCMP change management: overviews, study plans and full-length mock exams."
  },
  "pm-faciliter/pmp-exam-simulator": {
   "title": "Free PMP Exam Simulator: 900 Practice Questions | PMPORT",
@@ -174,6 +174,13 @@
   "description": "Free ITIL Foundation (Version 5) exam preparation: the syllabus areas and weights, a two-week study plan and five full mock exams with 200 questions.",
   "hero": "itil-exam-simulator.webp"
  },
+ "pm-faciliter/rmp": {
+  "label": "PMI-RMP",
+  "title": "PMI-RMP Exam Prep: Risk Management Domains & Free Mocks | PMPORT",
+  "description": "Free risk management (PMI-RMP) exam preparation: the five domains and weights, a 6-week study plan, key formulas and five full mock exams with 575 questions.",
+  "published": "2026-11-14",
+  "hero": "rmp-exam-simulator.webp"
+ },
  "pm-faciliter/capm-exam-simulator": {
   "label": "CAPM Exam Simulator",
   "title": "Free CAPM Exam Simulator: 750 Practice Questions | PMPORT",
@@ -197,6 +204,13 @@
   "title": "Free ITIL 5 Foundation Exam Simulator: 200 Questions | PMPORT",
   "description": "Five free ITIL Foundation (Version 5) practice exams: 40 questions in 60 minutes each, weighted like the syllabus, with a 65% pass mark.",
   "hero": "itil-exam-simulator.webp"
+ },
+ "pm-faciliter/rmp-exam-simulator": {
+  "label": "PMI-RMP Exam Simulator",
+  "title": "Free PMI-RMP Exam Simulator: 575 Risk Management Questions | PMPORT",
+  "description": "Five free full-length risk management practice exams: 115 questions in 150 minutes each, with EMV, PERT and Monte Carlo questions and results by domain.",
+  "published": "2026-11-14",
+  "hero": "rmp-exam-simulator.webp"
  },
  "pm-faciliter/ccmp": {
   "label": "CCMP",

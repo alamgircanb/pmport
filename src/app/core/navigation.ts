@@ -13,6 +13,7 @@ export const NAV_GROUPS:NavGroup[]=[
     {label:'ECBA',path:'/pm-faciliter/ecba-exam-simulator'},
     {label:'CBAP',path:'/pm-faciliter/cbap-exam-simulator'},
     {label:'ITIL 5 Foundation',path:'/pm-faciliter/itil-foundation-exam-simulator'},
+    {label:'PMI-RMP (risk management)',path:'/pm-faciliter/rmp-exam-simulator'},
     {label:'Change management (CCMP)',path:'/pm-faciliter/ccmp-exam-simulator'},
     {label:'Change management study guide',path:'/resources/change-management-study-guide'},
     {label:'PMP study plan',path:'/resources/pmp-study-guide-8-week-plan'},

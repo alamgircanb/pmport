@@ -393,6 +393,80 @@
    "explanation": "AI can add value to products and services, but it needs governance, transparency and human accountability."
   }
  ],
+ "rmp": [
+  {
+   "domain": "Risk Strategy and Planning",
+   "question": "You have just been assigned as risk manager on a new infrastructure program. What should you do first to understand the risk context?",
+   "options": [
+    "Review the business case, charter, contracts and lessons learned from similar programs",
+    "Hold a risk identification workshop with the full team to build the register quickly",
+    "Ask the sponsor to approve a contingency reserve of 10% of the program budget",
+    "Run a Monte Carlo simulation on the draft schedule to find the likely finish date"
+   ],
+   "answer": 0,
+   "explanation": "A preliminary document analysis comes first. The business case, charter, contracts and lessons learned show objectives, constraints and known risk sources before any workshop is run."
+  },
+  {
+   "domain": "Risk Identification",
+   "question": "What is the main purpose of a risk identification workshop?",
+   "options": [
+    "To find as many relevant uncertain events and conditions as possible, from many viewpoints",
+    "To agree responses and owners for the top ten risks that the sponsor is worried about",
+    "To estimate the probability and impact of every risk on the current register",
+    "To confirm that the contingency reserve is large enough to cover all known risks"
+   ],
+   "answer": 0,
+   "explanation": "Identification aims for breadth: finding risks from many perspectives. Analysis and response planning come later."
+  },
+  {
+   "domain": "Risk Analysis",
+   "question": "What is the main purpose of qualitative risk analysis?",
+   "options": [
+    "To prioritize individual risks for further action by assessing probability, impact and other characteristics",
+    "To calculate the overall probability of meeting the project's cost and schedule objectives",
+    "To identify every risk that might affect the project before planning begins",
+    "To decide the risk response for each risk and assign action owners"
+   ],
+   "answer": 0,
+   "explanation": "Qualitative analysis prioritizes individual risks, usually by probability and impact, so the team focuses on the most important ones."
+  },
+  {
+   "domain": "Risk Response",
+   "question": "A team changes the design to remove a component that has a history of failures. Which threat response is this?",
+   "options": [
+    "Avoid",
+    "Mitigate",
+    "Transfer",
+    "Accept"
+   ],
+   "answer": 0,
+   "explanation": "Changing the plan so that the threat can no longer occur, or has no effect, is avoidance."
+  },
+  {
+   "domain": "Monitor and Close Risks",
+   "question": "Which data best shows whether risk responses are working?",
+   "options": [
+    "Changes in risk scores and exposure after responses are implemented",
+    "The number of risks added to the register each month",
+    "The number of attendees at each risk review",
+    "The length of the risk register"
+   ],
+   "answer": 0,
+   "explanation": "The effect of responses is seen in changes to probability, impact and overall exposure."
+  },
+  {
+   "domain": "Risk Strategy and Planning",
+   "question": "During an environmental scan, the team finds that a key supplier is about to launch a faster component. How should this be treated?",
+   "options": [
+    "As a possible opportunity to assess and plan for",
+    "As an issue to log and escalate immediately",
+    "As a constraint that limits the design options",
+    "As an assumption to remove from the scope"
+   ],
+   "answer": 0,
+   "explanation": "An uncertain event with a positive effect on objectives is an opportunity. It should be identified, assessed and planned like a threat."
+  }
+ ],
  "ccmp": [
   {
    "domain": "Change management foundations",

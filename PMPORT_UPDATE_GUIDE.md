@@ -174,6 +174,15 @@ The event display recovers a title from a nonstandard title key in the original 
 - Points, levels, streak (with up to 2 streak freezes, one earned per 7-day streak) and 14 badges are in `src/app/core/progress/progress.service.ts`. Points come from the same events sent to Google Analytics, so new tools that send `tool_use` earn points automatically.
 - Everything is saved in the visitor's browser (`pmport-progress-v1`); no account is needed. The points chip in the top bar appears after the first points are earned.
 
+## Risk management module: PMI-RMP (November 2026)
+
+- **Pages:** overview and study plan at `/pm-faciliter/rmp`, simulator at `/pm-faciliter/rmp-exam-simulator`. Sidebar: Exam Prep → "PMI-RMP (risk management)".
+- **Overview text** (facts, five domains, eligibility, six-week plan, key formulas in the FAQ) is the `rmp` entry in `src/app/pages/pm-faciliter/certifications.json`.
+- **Simulator settings** (115 questions, 15 unscored pretest, 150 minutes, domain weights 22/23/23/13/19, tasks, disclaimer) are in `src/app/pages/pmp-exam/programs/rmp-program.ts`.
+- **Questions:** `src/app/pages/pmp-exam/banks/rmp/exam1.ts`–`exam5.ts`, 115 each (planning 25, identification 27, analysis 26, response 15, monitoring 22). Same compact format as the other banks. To add another exam, copy a file, change the id prefix (`R6S`, `R6I`, ...) and add it to `banks/rmp/index.ts`.
+- **Legal:** every question and explanation is original PMPORT content. Nothing is copied from PMI's standards, the PMBOK® Guide or real exam items, no PMI logos are used, and both pages carry a non-affiliation notice.
+- **Search pages:** `seo-pages.json` has both pages; sample questions are generated with `npm run seo:samples`. Hero image: `public/rmp-exam-simulator.webp`.
+
 ## Change management: CCMP simulator and study guide (November 2026)
 
 - **Pages:** `/pm-faciliter/ccmp` (overview), `/pm-faciliter/ccmp-exam-simulator` (two full mocks) and `/resources/change-management-study-guide` (ACMP process groups, Prosci's ADKAR®, Kotter, Lewin, Bridges, 6-week plan). Menu links sit under **Exam Prep**.

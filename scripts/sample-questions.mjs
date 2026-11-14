@@ -9,8 +9,8 @@ import {tmpdir} from 'node:os';
 import {fileURLToPath,pathToFileURL} from 'node:url';
 
 const root=join(dirname(fileURLToPath(import.meta.url)),'..');
-const programs={pmp:'PMP_PROGRAM',capm:'CAPM_PROGRAM',ecba:'ECBA_PROGRAM',cbap:'CBAP_PROGRAM',itil:'ITIL_PROGRAM',ccmp:'CCMP_PROGRAM'};
-const PER_EXAM={pmp:8,capm:6,ecba:6,cbap:6,itil:6,ccmp:6};
+const programs={pmp:'PMP_PROGRAM',capm:'CAPM_PROGRAM',ecba:'ECBA_PROGRAM',cbap:'CBAP_PROGRAM',itil:'ITIL_PROGRAM',rmp:'RMP_PROGRAM',ccmp:'CCMP_PROGRAM'};
+const PER_EXAM={pmp:8,capm:6,ecba:6,cbap:6,itil:6,rmp:6,ccmp:6};
 
 const dir=mkdtempSync(join(tmpdir(),'pmport-samples-'));
 try{
