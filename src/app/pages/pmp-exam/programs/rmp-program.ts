@@ -9,7 +9,7 @@ export const RMP_PROGRAM:ExamProgram={
   id:'rmp',overview:'/pm-faciliter/rmp',code:'PMI-RMP',store:'pmport-rmp-exam-v1-',
   heroImage:'rmp-exam-simulator.webp',heroAlt:'A probability and impact heat map with risk markers, a risk trend line and an S-curve on a project risk dashboard',
   eyebrow:'Exam Faciliter · Risk management (PMI-RMP®) preparation',title:'Risk Management (PMI-RMP) Exam Simulators',
-  lead:'Three full-length risk management mock exams with 345 original questions, weighted like the five PMI-RMP® domains: risk strategy and planning, identification, analysis, response, and monitoring and closing risks. Timed, with EMV, PERT and decision tree math and results by domain.',
+  lead:'Five full-length risk management mock exams with 575 original questions, weighted like the five PMI-RMP® domains: risk strategy and planning, identification, analysis, response, and monitoring and closing risks. Timed, with EMV, PERT and decision tree math and results by domain.',
   minutes:150,breakMinutes:0,pretest:15,splits:1,questionsPerExam:115,
   domains:RMP_DOMAINS,
   weights:{[S]:22,[I]:23,[A]:23,[R]:13,[M]:19},
@@ -21,7 +21,7 @@ export const RMP_PROGRAM:ExamProgram={
     [M]:['Gather and analyze performance data','Monitor residual and secondary risks','Update project documents with risk information','Monitor project risk levels']},
   taskLabel:'Task',domainLabel:'Domain',approaches:[],
   exams:RMP_EXAMS,
-  facts:[{big:'115',text:'questions (100 scored + 15 unscored pretest)'},{big:'150',text:'minutes for the whole exam'},{big:'5',text:'domains: planning 22%, identification 23%, analysis 23%, response 13%, monitoring 19%'},{big:'345',text:'original questions across three full exams'}],
+  facts:[{big:'115',text:'questions (100 scored + 15 unscored pretest)'},{big:'150',text:'minutes for the whole exam'},{big:'5',text:'domains: planning 22%, identification 23%, analysis 23%, response 13%, monitoring 19%'},{big:'575',text:'original questions across five full exams'}],
   coverageEyebrow:'PMI-RMP® domains',coverageTitle:'What the simulator covers',
   standardEyebrow:'Project risk management',standardTitle:'Built for the risk management professional exam',
   standardBullets:[
