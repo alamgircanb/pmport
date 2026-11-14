@@ -48,7 +48,7 @@ export const CERTIFICATIONS=certs as Certification[];
       <div class="plan">@for(p of c.plan;track p.title;let i=$index){<div class="step card"><span class="n">{{i+1}}</span><h3>{{p.title}}</h3><p>{{p.text}}</p></div>}</div>
     </section>
 
-    <section class="cta card"><div><p class="eyebrow">Free practice</p><h2>Full-length {{c.code}} mock exams</h2><p>Timed like the real exam, with explanations for every answer, results by area and a practice mode to drill weak topics. Your progress is saved in your browser.</p></div><a class="button primary" [routerLink]="c.simulator">{{c.simulatorLabel}}</a></section>
+    <section class="cta card"><div><p class="eyebrow">Free practice</p><h2>Five full-length {{c.code}} mock exams</h2><p>Timed like the real exam, with explanations for every answer, results by area and a practice mode to drill weak topics. Your progress is saved in your browser.</p></div><a class="button primary" [routerLink]="c.simulator">{{c.simulatorLabel}}</a></section>
 
     <section class="grid-2">
       <article class="card"><p class="eyebrow">Keep learning</p><h2>Related on PMPORT</h2><ul class="links">@for(r of c.related;track r.path){<li><a [routerLink]="r.path">{{r.label}}</a></li>}</ul></article>

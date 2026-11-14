@@ -243,7 +243,7 @@
     "level": "Risk specialists",
     "eyebrow": "Exam Faciliter · Risk management (PMI-RMP®) preparation",
     "title": "Risk Management (PMI-RMP) Exam Preparation",
-    "lead": "Get ready for the PMI-RMP® exam. Learn what each of the five risk domains covers, follow a six-week study plan, revise the key risk formulas and practise with three free full-length simulators: 345 original questions weighted like the real exam.",
+    "lead": "Get ready for the PMI-RMP® exam. Learn what each of the five risk domains covers, follow a six-week study plan, revise the key risk formulas and practise with five free full-length simulators: 575 original questions weighted like the real exam.",
     "hero": "rmp-exam-simulator.webp",
     "heroAlt": "A probability and impact heat map with risk markers, a risk trend line and an S-curve on a project risk dashboard",
     "simulator": "/pm-faciliter/rmp-exam-simulator",
@@ -262,8 +262,8 @@
         "text": "domains, from risk planning to closing risks"
       },
       {
-        "big": "345",
-        "text": "free practice questions in three full PMPORT mocks"
+        "big": "575",
+        "text": "free practice questions in five full PMPORT mocks"
       }
     ],
     "outline": [
@@ -323,7 +323,7 @@
       },
       {
         "title": "Week 6: Full mocks",
-        "text": "Take all three timed mocks, review every explanation and drill weak domains in practice mode until you score 75% or more consistently."
+        "text": "Take all five timed mocks, review every explanation and drill weak domains in practice mode until you score 75% or more consistently."
       }
     ],
     "related": [
