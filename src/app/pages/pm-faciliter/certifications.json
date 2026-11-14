@@ -233,5 +233,138 @@
       {"q": "Is ITIL 5 very different from ITIL 4?", "a": "Version 5 keeps the guiding principles and value system, adds the product and service lifecycle, and gives more attention to AI and to working with other frameworks."},
       {"q": "What score do I need to pass?", "a": "The pass mark is 26 out of 40 (65%). Aim higher in practice to give yourself a margin."}
     ]
+  },
+  {
+    "id": "rmp",
+    "code": "PMI-RMP",
+    "name": "PMI Risk Management Professional (PMI-RMP)®",
+    "body": "Project Management Institute (PMI)",
+    "bodyUrl": "https://www.pmi.org/certifications/risk-management-rmp",
+    "level": "Risk specialists",
+    "eyebrow": "Exam Faciliter · Risk management (PMI-RMP®) preparation",
+    "title": "Risk Management (PMI-RMP) Exam Preparation",
+    "lead": "Get ready for the PMI-RMP® exam. Learn what each of the five risk domains covers, follow a six-week study plan, revise the key risk formulas and practise with three free full-length simulators: 345 original questions weighted like the real exam.",
+    "hero": "rmp-exam-simulator.webp",
+    "heroAlt": "A probability and impact heat map with risk markers, a risk trend line and an S-curve on a project risk dashboard",
+    "simulator": "/pm-faciliter/rmp-exam-simulator",
+    "simulatorLabel": "Open the risk management simulators",
+    "facts": [
+      {
+        "big": "115",
+        "text": "questions (100 scored + 15 unscored)"
+      },
+      {
+        "big": "150",
+        "text": "minutes"
+      },
+      {
+        "big": "5",
+        "text": "domains, from risk planning to closing risks"
+      },
+      {
+        "big": "345",
+        "text": "free practice questions in three full PMPORT mocks"
+      }
+    ],
+    "outline": [
+      {
+        "name": "Risk Identification",
+        "weight": "23%",
+        "items": "Identification workshops, prompt lists such as PESTLE, checklists, SWOT, Delphi and premortems; assumption and constraint analysis; specific, measurable triggers; cause-event-effect risk statements; and building a useful risk register with one accountable owner per risk."
+      },
+      {
+        "name": "Risk Analysis",
+        "weight": "23%",
+        "items": "Qualitative analysis with probability and impact scales and the P-I matrix; other parameters such as urgency, manageability, detectability and connectivity; data quality and bias; quantitative analysis with EMV, three-point (PERT) estimates, decision trees, Monte Carlo simulation, S-curves and tornado charts; threats, opportunities, variability, ambiguity and overall project risk."
+      },
+      {
+        "name": "Risk Strategy and Planning",
+        "weight": "22%",
+        "items": "Reviewing the charter, business case, contracts and lessons learned; assessing the internal and external environment; turning risk appetite into measurable thresholds; tailoring the risk process to the project; writing the risk management plan; and leading risk work with stakeholders."
+      },
+      {
+        "name": "Monitor and Close Risks",
+        "weight": "19%",
+        "items": "Using performance data (earned value, trends, technical measures, agile metrics) to spot risks; reserve analysis; monitoring residual and secondary risks and the watch list; risk audits and reviews; updating the register and risk report; tracking overall risk against thresholds; closing risks and capturing lessons learned."
+      },
+      {
+        "name": "Risk Response",
+        "weight": "13%",
+        "items": "Threat strategies (avoid, mitigate, transfer, escalate, accept) and opportunity strategies (exploit, enhance, share, escalate, accept); contingency and fallback plans; cost-effective, owned responses; funding from contingency reserve; and checking that implemented responses work."
+      }
+    ],
+    "audience": "Project managers, risk analysts and specialists who lead or support risk management on projects and programs and want to show specialist risk skills.",
+    "eligibility": "PMI asks for project risk experience plus risk management education: typically 36 months of risk experience and 40 contact hours with a secondary degree, or 24 months and 30 contact hours with a four-year degree, within the last five years. Check PMI's current PMI-RMP handbook before applying.",
+    "format": [
+      "115 multiple-choice, multiple-response and matching questions",
+      "15 of the questions are unscored pretest items",
+      "Scenario questions plus EMV, PERT, decision tree and Monte Carlo interpretation"
+    ],
+    "plan": [
+      {
+        "title": "Week 1: Strategy and planning",
+        "text": "Learn risk appetite versus thresholds, tailoring, the contents of a risk management plan and the roles of sponsor, risk owner and action owner."
+      },
+      {
+        "title": "Week 2: Identification",
+        "text": "Practise writing cause-event-effect risk statements, run through prompt lists (PESTLE, TECOP), assumption analysis and triggers, and design a risk register."
+      },
+      {
+        "title": "Week 3: Qualitative analysis",
+        "text": "Master probability and impact scales, the P-I matrix, urgency, manageability and connectivity, and how bias distorts ratings."
+      },
+      {
+        "title": "Week 4: Quantitative analysis",
+        "text": "Work through EMV, PERT mean and standard deviation, decision trees, P50/P80 on S-curves, tornado charts and contingency from confidence levels."
+      },
+      {
+        "title": "Week 5: Responses, monitoring and closing",
+        "text": "Learn each threat and opportunity strategy, contingency and fallback plans, secondary and residual risk, reserve analysis, audits and risk reports."
+      },
+      {
+        "title": "Week 6: Full mocks",
+        "text": "Take all three timed mocks, review every explanation and drill weak domains in practice mode until you score 75% or more consistently."
+      }
+    ],
+    "related": [
+      {
+        "label": "Risk EMV calculator",
+        "path": "/pm-calculators/risk-emv-calculator"
+      },
+      {
+        "label": "Monte Carlo schedule simulator",
+        "path": "/pm-calculators/monte-carlo-schedule-simulator"
+      },
+      {
+        "label": "PERT three-point estimate calculator",
+        "path": "/pm-calculators/pert-three-point-estimate-calculator"
+      },
+      {
+        "label": "Risk and reserve playground",
+        "path": "/pm-playground"
+      },
+      {
+        "label": "Project management glossary",
+        "path": "/pm-glossary"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Which formulas do I need for the PMI-RMP exam?",
+        "a": "Expected monetary value (probability × impact, negative for threats and positive for opportunities), PERT mean (O + 4M + P) / 6, triangular mean (O + M + P) / 3, PERT standard deviation (P − O) / 6, variance (standard deviation squared) and decision tree expected values. You should also be able to read P50 and P80 values from an S-curve."
+      },
+      {
+        "q": "What is the difference between a risk threshold and a trigger?",
+        "a": "A threshold is the limit of acceptable risk for an objective, agreed with stakeholders in the risk management plan. A trigger is a warning sign that one specific risk is about to happen, recorded in the register so the owner knows when to act."
+      },
+      {
+        "q": "How is the PMI-RMP different from the PMP?",
+        "a": "The PMP covers all of project management. The PMI-RMP goes deep into one area: planning, identifying, analyzing, responding to and monitoring project risk, including quantitative techniques."
+      },
+      {
+        "q": "Are these official PMI-RMP questions?",
+        "a": "No. Every question and explanation is original PMPORT practice content. PMPORT is not affiliated with or endorsed by PMI."
+      }
+    ]
   }
 ]
