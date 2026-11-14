@@ -87,8 +87,8 @@
  },
  "pm-faciliter": {
   "label": "Exam Faciliter",
-  "title": "Exam Faciliter: Free PMP, CAPM, ECBA, CBAP & ITIL Exam Prep | PMPORT",
-  "description": "Free certification exam prep for PMP, CAPM, PMI-RMP, ECBA, CBAP and ITIL 5 Foundation: overviews, study plans and full-length mock exams, plus PM training."
+  "title": "Exam Faciliter: Free PMP, CAPM, PMI-RMP, ECBA, CBAP, ITIL & CCMP Exam Prep | PMPORT",
+  "description": "Free exam prep for PMP, CAPM, PMI-RMP risk management, ECBA, CBAP, ITIL 5 Foundation and CCMP change management: overviews, study plans and full-length mock exams."
  },
  "pm-faciliter/pmp-exam-simulator": {
   "title": "Free PMP Exam Simulator: 900 Practice Questions | PMPORT",
@@ -212,6 +212,22 @@
   "published": "2026-11-14",
   "hero": "rmp-exam-simulator.webp"
  },
+ "pm-faciliter/ccmp": {
+  "label": "CCMP",
+  "title": "CCMP Change Management Exam Prep & Free Mock Exams | PMPORT",
+  "description": "Free CCMP exam preparation: the ACMP process groups, a 6-week study plan, ADKAR, Kotter and Lewin, and two full CCMP mock exams with 300 questions.",
+  "hero": "ccmp-exam-simulator.webp",
+  "image": "og/ccmp.jpg",
+  "published": "2026-11-14"
+ },
+ "pm-faciliter/ccmp-exam-simulator": {
+  "label": "CCMP Exam Simulator",
+  "title": "Free CCMP Exam Simulator: 300 Change Management Questions | PMPORT",
+  "description": "Two free full-length CCMP practice exams: 150 change management questions in 3 hours each, with explanations and results by process group.",
+  "hero": "ccmp-exam-simulator.webp",
+  "image": "og/ccmp.jpg",
+  "published": "2026-11-14"
+ },
  "pm-faciliter/member": {
   "title": "Member area | PMPORT",
   "description": "PMPORT member area.",
@@ -255,6 +271,15 @@
   "type": "article",
   "published": "2026-10-14",
   "hero": "pmp-study-guide.webp"
+ },
+ "resources/change-management-study-guide": {
+  "label": "Change Management Study Guide",
+  "title": "Change Management Study Guide: CCMP, ADKAR, Kotter & Lewin | PMPORT",
+  "description": "Change management models in plain English: the ACMP process groups behind the CCMP, Prosci's ADKAR, Kotter's 8 steps, Lewin and Bridges, plus a 6-week plan.",
+  "image": "og/change-management-study-guide.jpg",
+  "type": "article",
+  "published": "2026-11-14",
+  "hero": "change-management-study-guide.webp"
  },
  "resources/how-project-managers-can-use-chatgpt": {
   "label": "How PMs Can Use ChatGPT",

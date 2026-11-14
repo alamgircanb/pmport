@@ -1,0 +1,1 @@
+export const CCMP_D={F:'Change management foundations',E:'Evaluate change impact and organizational readiness',S:'Formulate the change management strategy',P:'Develop the change management plan',X:'Execute the change management plan',C:'Complete the change management effort'};

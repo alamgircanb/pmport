@@ -466,5 +466,79 @@
    "answer": 0,
    "explanation": "An uncertain event with a positive effect on objectives is an opportunity. It should be identified, assessed and planned like a threat."
   }
+ ],
+ "ccmp": [
+  {
+   "domain": "Change management foundations",
+   "question": "What is the main purpose of change management on an initiative?",
+   "options": [
+    "To help the people affected adopt the change so the expected benefits are realized",
+    "To control changes to the project scope, schedule and budget baselines",
+    "To make sure the technical solution is delivered on time and within budget",
+    "To document every request for change and route it to the change board"
+   ],
+   "answer": 0,
+   "explanation": "Change management focuses on the people side of change: preparing, equipping and supporting individuals so they adopt the change and the benefits are realized. Scope change control is a project management process."
+  },
+  {
+   "domain": "Evaluate change impact and organizational readiness",
+   "question": "What is the first thing a change practitioner should clarify when starting work on a new initiative?",
+   "options": [
+    "What is changing, why it is changing and what outcomes are expected",
+    "Which training tools the organization has licensed for the rollout",
+    "How many emails the communication team can send each month",
+    "Which employees are most likely to resist the change"
+   ],
+   "answer": 0,
+   "explanation": "Defining the change, its drivers and its expected outcomes is the basis for every later assessment and strategy."
+  },
+  {
+   "domain": "Formulate the change management strategy",
+   "question": "What should a sponsorship strategy define?",
+   "options": [
+    "How sponsors will lead, communicate and stay visibly involved throughout the change",
+    "How the project budget will be divided among the sponsors of each business area",
+    "How sponsors will be trained to use the new technical system before go-live",
+    "How the sponsor's performance on the change will be rated by human resources"
+   ],
+   "answer": 0,
+   "explanation": "A sponsorship strategy sets out the sponsor's role, the sponsor coalition and how they will stay active and visible."
+  },
+  {
+   "domain": "Develop the change management plan",
+   "question": "Why should change management activities be built into the project plan?",
+   "options": [
+    "So people activities are scheduled, resourced and tracked alongside technical work",
+    "So the project manager can take over the change practitioner's role and budget",
+    "So that the vendor can approve each change activity before it is carried out",
+    "So that the plan can be closed earlier than the original project schedule"
+   ],
+   "answer": 0,
+   "explanation": "An integrated plan aligns change activities with project milestones and keeps them visible in governance."
+  },
+  {
+   "domain": "Execute the change management plan",
+   "question": "Sponsor attendance at change events has dropped. What should the practitioner do first?",
+   "options": [
+    "Meet the sponsor to understand the reason and agree how to restore visible support",
+    "Ask a different executive to take over as the sponsor of the change",
+    "Continue the events without the sponsor and report the issue at closure",
+    "Cancel the remaining events until the sponsor is able to attend them again"
+   ],
+   "answer": 0,
+   "explanation": "The practitioner coaches the sponsor and addresses the root cause before escalating."
+  },
+  {
+   "domain": "Complete the change management effort",
+   "question": "How should the success of a change be judged?",
+   "options": [
+    "By adoption and the business outcomes against the agreed success criteria",
+    "By whether every activity in the change management plan was completed on time",
+    "By the number of people who attended the training sessions before go-live",
+    "By whether the project finished on budget and on the date in the baseline"
+   ],
+   "answer": 0,
+   "explanation": "Success is measured against criteria for adoption and outcomes."
+  }
  ]
 }

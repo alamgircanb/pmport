@@ -32,7 +32,7 @@ kbd{padding:.1rem .4rem;border:1px solid #315370;border-radius:6px;background:#0
 `]})
 export class StartHereComponent{
   readonly paths:Path[]=[
-    {id:'exam',eyebrow:'Certification',title:'I’m preparing for an exam',intro:'PMP, CAPM, ECBA, CBAP or ITIL 5 Foundation. Practise under real exam conditions, then fix your weak areas.',
+    {id:'exam',eyebrow:'Certification',title:'I’m preparing for an exam',intro:'PMP, CAPM, PMI-RMP, ECBA, CBAP, ITIL 5 Foundation or CCMP. Practise under real exam conditions, then fix your weak areas.',
       steps:[
         {label:'Follow the PMP 8-week study plan',path:'/resources/pmp-study-guide-8-week-plan',note:'What to study each week, and when to take mock exams.'},
         {label:'Take a timed mock exam',path:'/pm-faciliter',note:'Full-length simulators with explanations for every answer.'},

@@ -182,3 +182,11 @@ The event display recovers a title from a nonstandard title key in the original 
 - **Questions:** `src/app/pages/pmp-exam/banks/rmp/exam1.ts`–`exam5.ts`, 115 each (planning 25, identification 27, analysis 26, response 15, monitoring 22). Same compact format as the other banks. To add another exam, copy a file, change the id prefix (`R6S`, `R6I`, ...) and add it to `banks/rmp/index.ts`.
 - **Legal:** every question and explanation is original PMPORT content. Nothing is copied from PMI's standards, the PMBOK® Guide or real exam items, no PMI logos are used, and both pages carry a non-affiliation notice.
 - **Search pages:** `seo-pages.json` has both pages; sample questions are generated with `npm run seo:samples`. Hero image: `public/rmp-exam-simulator.webp`.
+
+## Change management: CCMP simulator and study guide (November 2026)
+
+- **Pages:** `/pm-faciliter/ccmp` (overview), `/pm-faciliter/ccmp-exam-simulator` (two full mocks) and `/resources/change-management-study-guide` (ACMP process groups, Prosci's ADKAR®, Kotter, Lewin, Bridges, 6-week plan). Menu links sit under **Exam Prep**.
+- **Simulator:** program in `src/app/pages/pmp-exam/programs/ccmp-program.ts`; questions in `banks/ccmp/` (exam 1 and 2, each split into `a` = foundations/evaluate/formulate and `b` = develop/execute/complete). 2 × 150 questions, 3 hours, weights foundations 10, evaluate 20, formulate 20, develop 15, execute 25, complete 10. These are PMPORT study weights, not ACMP's official figures. To add a third exam, copy `exam2*.ts`, use the prefix `M3`, add it to `banks/ccmp/index.ts`, and change `mocks` in `certifications.json` and the counts in the text.
+- **Overview text:** the `ccmp` entry in `certifications.json` (`mocks` sets the "Two full-length mock exams" wording; other certifications default to "Five").
+- **Legal:** all questions and explanations are original. Models are described in PMPORT's own words and credited (ADKAR® to Prosci, the 8 steps to Kotter Inc., transition to William Bridges). Keep the trademark and non-affiliation notes on the overview, simulator and guide. Do not use ACMP or Prosci logos.
+- After changing the bank, run `npm run seo:samples` to refresh the sample questions shown to search engines.

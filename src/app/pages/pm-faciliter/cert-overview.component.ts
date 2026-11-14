@@ -6,10 +6,11 @@ export interface Certification{
   id:string;code:string;name:string;body:string;bodyUrl:string;level:string;eyebrow:string;title:string;lead:string;hero:string;heroAlt:string;
   simulator:string;simulatorLabel:string;facts:{big:string;text:string}[];outline:{name:string;weight:string;items:string}[];
   audience:string;eligibility:string;format:string[];plan:{title:string;text:string}[];related:{label:string;path:string}[];faq:{q:string;a:string}[];
+  /** Number of full mocks in words for the call-to-action (default "Five"). */mocks?:string;
 }
 export const CERTIFICATIONS=certs as Certification[];
 
-/** Overview page for one certification under Exam Faciliter (PMP, CAPM, PMI-RMP, ECBA, CBAP, ITIL 5 Foundation). */
+/** Overview page for one certification under Exam Faciliter (PMP, CAPM, PMI-RMP, ECBA, CBAP, ITIL 5 Foundation, CCMP). */
 @Component({
   standalone:true,selector:'app-cert-overview',imports:[RouterLink],
   template:`
@@ -48,7 +49,7 @@ export const CERTIFICATIONS=certs as Certification[];
       <div class="plan">@for(p of c.plan;track p.title;let i=$index){<div class="step card"><span class="n">{{i+1}}</span><h3>{{p.title}}</h3><p>{{p.text}}</p></div>}</div>
     </section>
 
-    <section class="cta card"><div><p class="eyebrow">Free practice</p><h2>Five full-length {{c.code}} mock exams</h2><p>Timed like the real exam, with explanations for every answer, results by area and a practice mode to drill weak topics. Your progress is saved in your browser.</p></div><a class="button primary" [routerLink]="c.simulator">{{c.simulatorLabel}}</a></section>
+    <section class="cta card"><div><p class="eyebrow">Free practice</p><h2>{{c.mocks||'Five'}} full-length {{c.code}} mock exams</h2><p>Timed like the real exam, with explanations for every answer, results by area and a practice mode to drill weak topics. Your progress is saved in your browser.</p></div><a class="button primary" [routerLink]="c.simulator">{{c.simulatorLabel}}</a></section>
 
     <section class="grid-2">
       <article class="card"><p class="eyebrow">Keep learning</p><h2>Related on PMPORT</h2><ul class="links">@for(r of c.related;track r.path){<li><a [routerLink]="r.path">{{r.label}}</a></li>}</ul></article>
@@ -56,7 +57,7 @@ export const CERTIFICATIONS=certs as Certification[];
     </section>
 
     <nav class="others" aria-label="Other certifications"><p class="eyebrow">Other certifications</p><div>@for(o of others;track o.id){<a [routerLink]="'/pm-faciliter/'+(o.id==='itil'?'itil-foundation':o.id)">{{o.code}}</a>}</div></nav>
-    <p class="note">PMPORT is not affiliated with PMI, IIBA or PeopleCert. Exam details can change; always confirm them with the certification body before you apply. PMP®, CAPM®, PMI-RMP® and PMBOK® are registered marks of Project Management Institute, Inc. IIBA®, BABOK®, CBAP® and ECBA™ are trademarks of the International Institute of Business Analysis. ITIL® is a registered trademark of PeopleCert group.</p>
+    <p class="note">PMPORT is not affiliated with PMI, IIBA, PeopleCert, ACMP or Prosci. Exam details can change; always confirm them with the certification body before you apply. PMP®, CAPM®, PMI-RMP® and PMBOK® are registered marks of Project Management Institute, Inc. IIBA®, BABOK®, CBAP® and ECBA™ are trademarks of the International Institute of Business Analysis. ITIL® is a registered trademark of PeopleCert group. CCMP® and Standard for Change Management® are marks of the Association of Change Management Professionals. ADKAR® is a registered trademark of Prosci, Inc.</p>
   </article>
   }`,
   styles:[`
