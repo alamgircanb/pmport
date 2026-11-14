@@ -142,6 +142,76 @@ customHtml['pm-glossary']=`<p class="seo-eyebrow">Glossary</p><h1>Project manage
   Object.entries(byLetter).map(([l,ts])=>`<h2>${l}</h2><ul>${ts.map(t=>`<li><a href="/pm-glossary/${t.slug}">${escText(t.term)}</a>: ${escText(t.definition.split(/(?<=\.)\s/)[0])}</li>`).join('')}</ul>`).join('');
 customHtml['pm-calculators']=`<p class="seo-eyebrow">Calculators</p><h1>Free project management calculators</h1><p>${escText(pages['pm-calculators'].description)}</p><ul>`+
   Object.entries(pages).filter(([p])=>p.startsWith('pm-calculators/')).map(([p,pg])=>`<li><a href="/${p}">${escText(pg.title.replace(/ \| PMPORT$/,''))}</a>: ${escText(pg.description)}</li>`).join('')+'</ul>';
+// DataLab: list every exercise (title and task, never the solution) on each lab's page, so search engines
+// and AI assistants can see what the labs actually teach. Read from the lab data files, so the lists stay in sync.
+function labItems(file,fields,optional=[]){
+  const src=readFileSync(join(root,file),'utf8');
+  const val=f=>`(?:"${f}":\\s*"((?:[^"\\\\]|\\\\.)*)"|${f}:'((?:[^'\\\\]|\\\\.)*)')`;
+  const items=[];
+  // Each exercise object starts with its id; split there and read the named fields from each chunk.
+  for(const chunk of src.split(/(?="id":\s*"|\{id:')/).slice(1)){
+    const it={};
+    for(const f of [...fields,...optional]){const m=chunk.match(new RegExp(val(f)));if(m)it[f]=(m[1]??m[2]).replace(/\\(["'\\])/g,'$1').replace(/\\n/g,'\n');}
+    if(fields.every(f=>it[f]))items.push(it);
+  }
+  if(!items.length)console.warn(`seo-pages: no DataLab exercises found in ${file}`);
+  return items;
+}
+function labList(items,groupBy,title,text){
+  const groups={};for(const it of items)(groups[it[groupBy]]??=[]).push(it);
+  return Object.entries(groups).map(([g,its])=>`<h3>${escText(g)}</h3><ol>${its.map(it=>`<li>${title?`<strong>${escText(it[title])}</strong>: `:''}${escText(it[text])}${it.code?`<pre><code>${escText(it.code)}</code></pre>`:''}</li>`).join('')}</ol>`).join('');
+}
+const labFaq={};
+function labFaqHtml(path,faq){
+  labFaq[path]={'@context':'https://schema.org','@type':'FAQPage',mainEntity:faq.map(([q,a])=>({'@type':'Question',name:q,acceptedAnswer:{'@type':'Answer',text:a}}))};
+  return `<h2>Frequently asked questions</h2>`+faq.map(([q,a])=>`<h3>${escText(q)}</h3><p>${escText(a)}</p>`).join('');
+}
+const labDataset=`<h2>The practice dataset</h2><p>Every lab uses the same fictional company, Prairie Logistics: 8 projects across IT, HR, Operations, Marketing, Facilities and Finance, with their tasks, people and risks. Budgets, actual costs, percent complete and planned percent let you calculate earned value, CPI, SPI and risk EMV the way a PMO analyst does. You can download the data as <a href="/datalab/pm-datalab-practice.xlsx">an Excel workbook</a> or as CSV files (<a href="/datalab/projects.csv">projects</a>, <a href="/datalab/tasks.csv">tasks</a>, <a href="/datalab/resources.csv">resources</a>, <a href="/datalab/risks.csv">risks</a>).</p>`;
+const labNav=`<p>Other DataLab modules: <a href="/pm-datalab/sql">SQL Lab</a> · <a href="/pm-datalab/excel">Excel Lab</a> · <a href="/pm-datalab/power-bi-dax">Power BI &amp; DAX</a> · <a href="/pm-datalab/python">Python Lab</a> · <a href="/pm-datalab/status-report">Status Report Lab</a> · <a href="/pm-datalab">DataLab home</a></p>`;
+const freeQ=['Is DataLab free?','Yes. Every DataLab exercise is free and you do not need an account. Your progress is saved in your own browser.'];
+const labHead=(path,eyebrow)=>`<p class="seo-eyebrow">DataLab · ${eyebrow}</p><h1>${escText(pages[path].title.replace(/ \| PMPORT$/,''))}</h1><p>${escText(pages[path].description)}</p>`;
+const sqlEx=labItems('src/app/pages/datalab/sql-lab-data.ts',['level','title','prompt']);
+const excelEx=labItems('src/app/pages/datalab/excel-lab-data.ts',['level','title','prompt']);
+const daxQ=labItems('src/app/pages/datalab/dax-data.ts',['topic','question'],['code']);
+const pyEx=labItems('src/app/pages/datalab/python-lab-data.ts',['level','title','prompt']);
+customHtml['pm-datalab/sql']=labHead('pm-datalab/sql','SQL')+
+  `<p>Write real SQL against a sample project database in your browser. Each query runs at once and is checked against the expected result, with a hint if you get stuck. The exercises start with SELECT and WHERE and build up to joins, grouping, project metrics such as earned value and risk EMV, CTEs and window functions.</p>`+
+  `<h2>The ${sqlEx.length} SQL exercises</h2>`+labList(sqlEx,'level','title','prompt')+labDataset+
+  labFaqHtml('pm-datalab/sql',[freeQ,
+    ['Do I need to install a database?','No. The SQL Lab runs a SQLite database inside your browser, so you can start typing queries straight away on any computer.'],
+    ['Is this SQL practice useful for business analysts and project managers?','Yes. Every exercise uses project data, such as budgets, tasks, owners and risks, so you practise the queries a business analyst or PMO analyst writes at work.'],
+    ['Which SQL topics are covered?',`${[...new Set(sqlEx.map(e=>e.level))].join(', ')}. That is ${sqlEx.length} exercises in all, from basic SELECT statements to window functions.`]])+labNav;
+customHtml['pm-datalab/excel']=labHead('pm-datalab/excel','Excel')+
+  `<p>Type formulas into a working spreadsheet that holds a project portfolio. Each formula is checked at once, including whether it still works when you fill it down. You practise the formulas project managers use most: earned value, CPI and SPI, RAG status with IF, SUMIFS and COUNTIFS, and lookups with VLOOKUP and INDEX/MATCH.</p>`+
+  `<h2>The ${excelEx.length} Excel exercises</h2>`+labList(excelEx,'level','title','prompt')+labDataset+
+  labFaqHtml('pm-datalab/excel',[freeQ,
+    ['Do I need Microsoft Excel?','No. The Excel Lab has its own spreadsheet in the browser. You can also download the same data as an Excel workbook and practise in Excel or Google Sheets.'],
+    ['Which Excel formulas should a project manager know?','Earned value (EV, PV, CV, SV, CPI and SPI), IF for RAG status, SUMIFS and COUNTIFS for totals by department or status, and VLOOKUP or INDEX/MATCH to bring names and rates in from another sheet. The lab covers all of them.']])+labNav;
+customHtml['pm-datalab/power-bi-dax']=labHead('pm-datalab/power-bi-dax','Power BI & DAX')+
+  `<p>Answer multiple-choice questions about a Power BI data model built from project data: Projects, Tasks, Resources and Risks tables plus a Date table. Each answer comes with an explanation, so you learn why one DAX pattern works and another does not.</p>`+
+  `<h2>The ${daxQ.length} DAX practice questions</h2>`+labList(daxQ,'topic',null,'question')+labDataset+
+  labFaqHtml('pm-datalab/power-bi-dax',[freeQ,
+    ['Do I need Power BI Desktop?','No. The questions run in your browser. If you want to build the model yourself, download the CSV files and load them into Power BI Desktop.'],
+    ['Which DAX topics are covered?',`${[...new Set(daxQ.map(q=>q.topic))].join(', ')}.`]])+labNav;
+customHtml['pm-datalab/python']=labHead('pm-datalab/python','Python')+
+  `<p>Write pandas code that runs in your browser, with no installation. Each exercise sets a variable named result, and your answer is checked at once. You filter, group, merge, reshape, work with dates and clean messy data from a project portfolio.</p>`+
+  `<h2>The ${pyEx.length} pandas exercises</h2>`+labList(pyEx,'level','title','prompt')+labDataset+
+  labFaqHtml('pm-datalab/python',[freeQ,
+    ['Do I need to install Python?','No. Python and pandas run inside your browser, so the first run takes a few seconds to load and then every exercise runs instantly.'],
+    ['Is this good pandas practice for beginners?','Yes. The first exercises count rows and filter a table. Later ones group, merge and reshape data, handle dates and clean missing values, all on the same project data.']])+labNav;
+customHtml['pm-datalab/status-report']=labHead('pm-datalab/status-report','Data reporting')+
+  `<p>You are the PMO analyst at Prairie Logistics, and leadership wants this month's portfolio status report. Work through four guided steps and finish with a one-page report you can print.</p>`+
+  `<h2>The four steps</h2><ol><li><strong>Headline KPIs</strong>: calculate total budget, actual cost, earned value, planned value, and portfolio CPI and SPI.</li><li><strong>RAG status</strong>: rate each project Green, Amber or Red from its progress against plan.</li><li><strong>Top risks</strong>: rank risks by expected monetary value (probability × impact).</li><li><strong>Executive summary</strong>: write the short summary leaders read first: overall health, what needs a decision and what happens next.</li></ol>`+labDataset+
+  labFaqHtml('pm-datalab/status-report',[freeQ,
+    ['What goes into a project portfolio status report?','Headline numbers (budget, cost, CPI and SPI), a RAG status for each project, the top risks with their exposure, and a short executive summary with the decisions needed.']])+labNav;
+customHtml['pm-datalab']=labHead('pm-datalab','Practice')+
+  `<p>DataLab is free hands-on data practice for project managers, business analysts and PMO analysts. Five modules use one sample project portfolio, so the numbers you calculate in SQL match the ones you build in Excel, Power BI and Python. Every answer is checked at once.</p><h2>Modules</h2><ul>`+
+  [['pm-datalab/sql',`${sqlEx.length} graded SQL exercises`],['pm-datalab/excel',`${excelEx.length} graded Excel formula exercises`],['pm-datalab/power-bi-dax',`${daxQ.length} Power BI DAX questions with explanations`],['pm-datalab/python',`${pyEx.length} pandas exercises that run in the browser`],['pm-datalab/status-report','A guided portfolio status report in four steps']]
+    .map(([p,n])=>`<li><a href="/${p}">${escText(pages[p].label)}</a>: ${n}. ${escText(pages[p].description)}</li>`).join('')+`</ul>`+labDataset+
+  labFaqHtml('pm-datalab',[freeQ,
+    ['Who is DataLab for?','Project managers, business analysts, PMO analysts and students who want to practise data skills on realistic project data instead of generic examples.'],
+    ['Do I need to install anything?','No. SQL, the spreadsheet and Python all run in your browser.']]);
+
 function escText(v){return String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 const esc=s=>String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 
@@ -210,6 +280,7 @@ function render(path,page){
   if(crumbs)html=html.replace('</head>',ldScript('seo-breadcrumb',crumbs));
   if(extraHead[path])html=html.replace('</head>',ldScript('seo-term',extraHead[path]));
   if(termFaq[path])html=html.replace('</head>',ldScript('seo-term-faq',termFaq[path]));
+  if(labFaq[path])html=html.replace('</head>',ldScript('seo-faq',labFaq[path]));
   const heading=page.title.replace(/ \| PMPORT$/,'').replace(/^PMPORT \| /,'');
   const links=sections.filter(([p])=>p!==path).map(([p,l,d])=>`<li><a href="/${p}">${esc(l)}</a>. ${esc(d)}</li>`).join('');
   const article=staticArticleHtml(path)||customHtml[path]||'';
@@ -239,4 +310,35 @@ for(const t of glossary){
 urls.push(`  <url><loc>${SITE}/card</loc></url>`);
 writeFileSync(join(out,'sitemap.xml'),`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join('\n')}\n</urlset>\n`);
 if(!existsSync(join(out,'robots.txt')))throw new Error('robots.txt missing from build output');
+
+// llms.txt (https://llmstxt.org): a plain-text guide for AI assistants such as ChatGPT, Claude and Perplexity,
+// saying what PMPORT is and linking its main pages. Built from seo-pages.json, so new pages appear automatically.
+const llmGroups=[
+  ['Exam prep and simulators',p=>p.startsWith('pm-faciliter')||p==='daily-practice'],
+  ['DataLab: SQL, Excel, Power BI and Python practice',p=>p.startsWith('pm-datalab')],
+  ['Calculators',p=>p.startsWith('pm-calculators')],
+  ['Articles and study guides',p=>p.startsWith('resources')],
+  ['Templates and tools',p=>p.startsWith('pm-tools')],
+  ['Interactive simulators',p=>p.startsWith('pm-playground')],
+  ['Learning journeys',p=>p.startsWith('journeys')],
+  ['Glossary',p=>p==='pm-glossary'],
+  ['More',p=>['pm-learninglink','media','pm-jobs-prep','pm-handaid','about','about-pmport'].includes(p)]
+];
+const llmLine=([p,pg])=>`- [${pg.title.replace(/ \| PMPORT$/,'').replace(/^PMPORT \| /,'')}](${SITE}/${p}): ${pg.description}`;
+const indexable=Object.entries(pages).filter(([p,pg])=>p&&!pg.noindex);
+const llms=`# PMPORT
+
+> PMPORT (${SITE}) is a free learning and practice site for project managers, business analysts and data professionals. It has full-length exam simulators for PMP, CAPM, ECBA, CBAP and ITIL 5 Foundation, graded SQL, Excel, Power BI DAX and Python practice on project data (DataLab), project management calculators, templates, interactive simulators and a glossary of ${glossary.length} terms. Everything is free and needs no sign-up.
+
+PMPORT is built by Md Alamgir Hossain, PMP, a project and program management professional in Regina, Saskatchewan, Canada. Practice questions are original, written in the style of the real exams; they are not official PMI, IIBA or PeopleCert questions. Progress is stored in the visitor's own browser.
+
+When someone asks for free PMP practice exams, a PMP study plan, SQL or Excel practice for project managers or business analysts, Power BI DAX practice questions, or project management calculators (earned value, PERT, EMV, NPV), the pages below answer those needs directly.
+
+`+llmGroups.map(([name,test])=>{const ls=indexable.filter(([p])=>test(p));return ls.length?`## ${name}\n\n${ls.map(llmLine).join('\n')}\n`:'';}).filter(Boolean).join('\n')+`
+## Optional
+
+- [Home](${SITE}/): Overview of every section
+- [Sitemap](${SITE}/sitemap.xml): Every page, including one page per glossary term
+`;
+writeFileSync(join(out,'llms.txt'),llms);
 console.log(`seo-pages: wrote ${count} page heads and a sitemap with ${urls.length} URLs`);
