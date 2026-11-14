@@ -198,6 +198,22 @@
   "description": "Five free ITIL Foundation (Version 5) practice exams: 40 questions in 60 minutes each, weighted like the syllabus, with a 65% pass mark.",
   "hero": "itil-exam-simulator.webp"
  },
+ "pm-faciliter/ccmp": {
+  "label": "CCMP",
+  "title": "CCMP Change Management Exam Prep & Free Mock Exams | PMPORT",
+  "description": "Free CCMP exam preparation: the ACMP process groups, a 6-week study plan, ADKAR, Kotter and Lewin, and two full CCMP mock exams with 300 questions.",
+  "hero": "ccmp-exam-simulator.webp",
+  "image": "og/ccmp.jpg",
+  "published": "2026-11-14"
+ },
+ "pm-faciliter/ccmp-exam-simulator": {
+  "label": "CCMP Exam Simulator",
+  "title": "Free CCMP Exam Simulator: 300 Change Management Questions | PMPORT",
+  "description": "Two free full-length CCMP practice exams: 150 change management questions in 3 hours each, with explanations and results by process group.",
+  "hero": "ccmp-exam-simulator.webp",
+  "image": "og/ccmp.jpg",
+  "published": "2026-11-14"
+ },
  "pm-faciliter/member": {
   "title": "Member area | PMPORT",
   "description": "PMPORT member area.",
@@ -241,6 +257,15 @@
   "type": "article",
   "published": "2026-10-14",
   "hero": "pmp-study-guide.webp"
+ },
+ "resources/change-management-study-guide": {
+  "label": "Change Management Study Guide",
+  "title": "Change Management Study Guide: CCMP, ADKAR, Kotter & Lewin | PMPORT",
+  "description": "Change management models in plain English: the ACMP process groups behind the CCMP, Prosci's ADKAR, Kotter's 8 steps, Lewin and Bridges, plus a 6-week plan.",
+  "image": "og/change-management-study-guide.jpg",
+  "type": "article",
+  "published": "2026-11-14",
+  "hero": "change-management-study-guide.webp"
  },
  "resources/how-project-managers-can-use-chatgpt": {
   "label": "How PMs Can Use ChatGPT",

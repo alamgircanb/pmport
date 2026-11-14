@@ -173,3 +173,11 @@ The event display recovers a title from a nonstandard title key in the original 
   Visitors can also tick any step with "I've done this". For a new journey, also add `journeys/<id>` to `seo-pages.json`.
 - Points, levels, streak (with up to 2 streak freezes, one earned per 7-day streak) and 14 badges are in `src/app/core/progress/progress.service.ts`. Points come from the same events sent to Google Analytics, so new tools that send `tool_use` earn points automatically.
 - Everything is saved in the visitor's browser (`pmport-progress-v1`); no account is needed. The points chip in the top bar appears after the first points are earned.
+
+## Change management: CCMP simulator and study guide (November 2026)
+
+- **Pages:** `/pm-faciliter/ccmp` (overview), `/pm-faciliter/ccmp-exam-simulator` (two full mocks) and `/resources/change-management-study-guide` (ACMP process groups, Prosci's ADKAR®, Kotter, Lewin, Bridges, 6-week plan). Menu links sit under **Exam Prep**.
+- **Simulator:** program in `src/app/pages/pmp-exam/programs/ccmp-program.ts`; questions in `banks/ccmp/` (exam 1 and 2, each split into `a` = foundations/evaluate/formulate and `b` = develop/execute/complete). 2 × 150 questions, 3 hours, weights foundations 10, evaluate 20, formulate 20, develop 15, execute 25, complete 10. These are PMPORT study weights, not ACMP's official figures. To add a third exam, copy `exam2*.ts`, use the prefix `M3`, add it to `banks/ccmp/index.ts`, and change `mocks` in `certifications.json` and the counts in the text.
+- **Overview text:** the `ccmp` entry in `certifications.json` (`mocks` sets the "Two full-length mock exams" wording; other certifications default to "Five").
+- **Legal:** all questions and explanations are original. Models are described in PMPORT's own words and credited (ADKAR® to Prosci, the 8 steps to Kotter Inc., transition to William Bridges). Keep the trademark and non-affiliation notes on the overview, simulator and guide. Do not use ACMP or Prosci logos.
+- After changing the bank, run `npm run seo:samples` to refresh the sample questions shown to search engines.

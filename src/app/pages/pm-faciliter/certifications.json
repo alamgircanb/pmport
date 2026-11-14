@@ -233,5 +233,126 @@
       {"q": "Is ITIL 5 very different from ITIL 4?", "a": "Version 5 keeps the guiding principles and value system, adds the product and service lifecycle, and gives more attention to AI and to working with other frameworks."},
       {"q": "What score do I need to pass?", "a": "The pass mark is 26 out of 40 (65%). Aim higher in practice to give yourself a margin."}
     ]
+  },
+  {
+    "id": "ccmp",
+    "code": "CCMP",
+    "name": "Certified Change Management Professional (CCMP®)",
+    "body": "Association of Change Management Professionals (ACMP)",
+    "bodyUrl": "https://www.acmpglobal.org/",
+    "level": "Professional",
+    "eyebrow": "Exam Faciliter · CCMP® change management preparation",
+    "title": "CCMP Change Management Exam Preparation",
+    "lead": "Get ready for the CCMP® change management exam. See what the ACMP Standard for Change Management® process groups cover, follow a 6-week study plan, learn ADKAR®, Kotter, Lewin and Bridges, and practise with two free full-length simulators: 300 original questions.",
+    "hero": "ccmp-exam-simulator.webp",
+    "heroAlt": "A change adoption curve rising across the five process groups, from evaluate to complete, with an active sponsor badge",
+    "simulator": "/pm-faciliter/ccmp-exam-simulator",
+    "simulatorLabel": "Open the CCMP simulators",
+    "mocks": "Two",
+    "facts": [
+      {
+        "big": "150",
+        "text": "multiple-choice questions"
+      },
+      {
+        "big": "3",
+        "text": "hours, at a test centre or online"
+      },
+      {
+        "big": "21",
+        "text": "hours of change management training required"
+      },
+      {
+        "big": "300",
+        "text": "free practice questions in two full PMPORT mocks"
+      }
+    ],
+    "outline": [
+      {
+        "name": "Evaluate change impact and organizational readiness",
+        "weight": "≈20%",
+        "items": "Define the change and its drivers, identify impacted groups and stakeholders, assess impact, readiness, culture and change history, and identify people-side risks."
+      },
+      {
+        "name": "Formulate the change management strategy",
+        "weight": "≈20%",
+        "items": "Sponsorship and governance, stakeholder engagement and communication, learning, resistance and risk mitigation, measurement and sustainment."
+      },
+      {
+        "name": "Develop the change management plan",
+        "weight": "≈15%",
+        "items": "Integrate with the project plan; sponsor roadmaps; communication, training, coaching, resistance, reinforcement and measurement plans."
+      },
+      {
+        "name": "Execute the change management plan",
+        "weight": "≈25%",
+        "items": "Engage sponsors, equip managers and change agents, deliver communication and training, manage resistance, monitor adoption and adjust."
+      },
+      {
+        "name": "Complete the change management effort",
+        "weight": "≈10%",
+        "items": "Evaluate adoption and outcomes, transfer ownership, sustain the change, capture lessons learned and close."
+      },
+      {
+        "name": "Change management foundations and ethics",
+        "weight": "≈10%",
+        "items": "Roles, individual and organizational change, change models (ADKAR®, Kotter, Lewin, Bridges), resistance and professional ethics."
+      }
+    ],
+    "audience": "Experienced change practitioners, project and program managers, HR and organizational development professionals, and leaders who run change in their organizations.",
+    "eligibility": "ACMP says the CCMP is for experienced practitioners of change. You need 21 hours of change management training in the last 7 years, an application essay and agreement to ACMP's Code of Ethics. Check ACMP's current handbook for the full experience requirements before you apply.",
+    "format": [
+      "150 multiple-choice questions, four options each",
+      "3 hours, at a Kryterion test centre or online proctored",
+      "Based on the ACMP Standard for Change Management® (second edition from 2026)",
+      "Up to three attempts within one year of approval",
+      "Renew every 3 years with 60 professional development units"
+    ],
+    "plan": [
+      {
+        "title": "Week 1: Foundations",
+        "text": "Learn the roles and the classic models (ADKAR®, Kotter, Lewin, Bridges) with the PMPORT change management study guide."
+      },
+      {
+        "title": "Weeks 2–3: Evaluate and formulate",
+        "text": "Impact and readiness assessments, stakeholder analysis, change risks, and the sponsorship, communication, learning, resistance and sustainment strategies."
+      },
+      {
+        "title": "Week 4: Develop and execute",
+        "text": "Sponsor roadmaps, communication and training plans, manager coaching, resistance management and adoption tracking."
+      },
+      {
+        "title": "Weeks 5–6: Complete and full mocks",
+        "text": "Evaluation, ownership and lessons learned, then take both full mocks under time and review every answer until you score 75% or more."
+      }
+    ],
+    "related": [
+      {
+        "label": "Change management study guide (ADKAR®, Kotter, Lewin, Bridges)",
+        "path": "/resources/change-management-study-guide"
+      },
+      {
+        "label": "Change adoption playground",
+        "path": "/pm-playground"
+      },
+      {
+        "label": "Project management glossary",
+        "path": "/pm-glossary"
+      }
+    ],
+    "faq": [
+      {
+        "q": "What is the CCMP exam based on?",
+        "a": "ACMP's Standard for Change Management®. From April 2026 the exam reflects the Standard's second edition. The weights on this page are PMPORT's study guide, not ACMP's official figures."
+      },
+      {
+        "q": "Do I need Prosci certification first?",
+        "a": "No. CCMP and Prosci certification are separate. Prosci's ADKAR® model is useful background, but the CCMP tests the vendor-neutral ACMP Standard."
+      },
+      {
+        "q": "Are these official CCMP questions?",
+        "a": "No. All 300 questions are original PMPORT practice items. They are not ACMP exam questions."
+      }
+    ]
   }
 ]
