@@ -1,0 +1,396 @@
+{
+ "pmp": [
+  {
+   "domain": "People",
+   "question": "A newly formed agile team is starting a product that will replace three internal tools. Team members describe the goal differently, and some think it is only a technical upgrade. What should the project manager do first?",
+   "options": [
+    "Ask the team lead to write a vision statement and email it to everyone",
+    "Facilitate a vision workshop with the product owner, team and key users to co-create a product vision and measurable outcomes",
+    "Start the first sprint and let the vision emerge",
+    "Ask the sponsor to present the business case at the next all-hands meeting"
+   ],
+   "answer": 1,
+   "explanation": "A common vision is strongest when it is created together with the people who will deliver and use the product. A co-created vision builds understanding and commitment that a document alone cannot."
+  },
+  {
+   "domain": "Process",
+   "question": "A project has stable regulatory requirements for its infrastructure work and uncertain user requirements for its customer app. Which delivery approach is most appropriate?",
+   "options": [
+    "Predictive for the whole project",
+    "Agile for the whole project",
+    "A hybrid approach: predictive for the infrastructure and adaptive for the app, with integrated milestones",
+    "Whichever approach the team prefers"
+   ],
+   "answer": 2,
+   "explanation": "Tailoring the delivery approach to each component’s uncertainty and constraints is the essence of a hybrid approach. The parts must still be integrated through shared milestones and governance."
+  },
+  {
+   "domain": "Business Environment",
+   "question": "A new hybrid program has no clear rules for who can approve scope changes, budget changes or release decisions. What should the project manager do first?",
+   "options": [
+    "Make all decisions personally to avoid delays",
+    "Work with the sponsor to define governance: decision rights, escalation paths and thresholds, and the roles of the steering committee, product owners and change control board",
+    "Let each team decide independently",
+    "Wait for the PMO to issue a policy"
+   ],
+   "answer": 1,
+   "explanation": "Governance defines how decisions are made, by whom and within which limits. Establishing it early prevents delays and conflicts later."
+  },
+  {
+   "domain": "People",
+   "question": "Two senior stakeholders publicly disagree in a steering meeting about project priorities. What should the project manager do?",
+   "options": [
+    "Side with the more senior stakeholder",
+    "Acknowledge both views, propose a follow-up session to evaluate the options against the business case, and document the decision",
+    "Ignore the disagreement and continue the agenda",
+    "Ask the team to choose"
+   ],
+   "answer": 1,
+   "explanation": "Conflict between stakeholders should be handled respectfully and resolved with objective information. A follow-up session lets the parties work it through without derailing the meeting."
+  },
+  {
+   "domain": "Process",
+   "question": "The product owner must choose which of four features to build next. Which approach best maximizes value?",
+   "options": [
+    "Build the feature requested by the most senior stakeholder",
+    "Prioritize using value, cost of delay, risk reduction and effort—for example with weighted shortest job first",
+    "Build the easiest feature first",
+    "Build features in the order they were requested"
+   ],
+   "answer": 1,
+   "explanation": "Value-based prioritization considers economic value, urgency, risk and size. Weighted shortest job first is one common technique."
+  },
+  {
+   "domain": "Business Environment",
+   "question": "A change request has been approved by the change control board. What should the project manager do next?",
+   "options": [
+    "Close the change request",
+    "Update the affected baselines and plans, implement the change, and communicate it to the affected stakeholders",
+    "Ask the requester to implement it",
+    "Wait for the next phase"
+   ],
+   "answer": 1,
+   "explanation": "After approval, the project manager updates the plans and baselines, manages implementation and informs stakeholders."
+  },
+  {
+   "domain": "People",
+   "question": "An influential operations manager says agile is “chaos” and refuses to give feedback until the product is complete. What should the project manager do?",
+   "options": [
+    "Remove the manager from the stakeholder list",
+    "Show working increments in a short, focused session tied to the manager’s goals, and explain how early feedback reduces risk",
+    "Switch the project to a predictive approach",
+    "Ask HR to intervene"
+   ],
+   "answer": 1,
+   "explanation": "Engagement improves when stakeholders see value that matters to them. Demonstrating working results and explaining the benefits of early feedback builds trust."
+  },
+  {
+   "domain": "Process",
+   "question": "Which contract type places the most cost risk on the seller?",
+   "options": [
+    "Cost plus fixed fee",
+    "Time and materials",
+    "Firm fixed price",
+    "Cost plus award fee"
+   ],
+   "answer": 2,
+   "explanation": "Under a firm fixed price contract, the seller must deliver for the agreed price, so the seller bears most of the cost risk."
+  }
+ ],
+ "capm": [
+  {
+   "domain": "Project Management Fundamentals and Core Concepts",
+   "question": "Which statement best describes a project?",
+   "options": [
+    "A temporary endeavour undertaken to create a unique product, service or result",
+    "An ongoing activity that keeps the organization running from day to day",
+    "A permanent team that maintains an existing product for its whole life",
+    "A set of repeated tasks that produce the same output each month"
+   ],
+   "answer": 0,
+   "explanation": "Projects are temporary and produce unique results; operations are ongoing and repetitive."
+  },
+  {
+   "domain": "Predictive, Plan-Based Methodologies",
+   "question": "Which project is the best fit for a predictive approach?",
+   "options": [
+    "Building a bridge with fixed engineering requirements and strict regulations",
+    "Developing a new mobile app whose features are still uncertain",
+    "Exploring a new market with frequent customer feedback",
+    "Creating a prototype to test several design ideas"
+   ],
+   "answer": 0,
+   "explanation": "Stable, well-defined requirements with high cost of change favour predictive approaches."
+  },
+  {
+   "domain": "Agile Frameworks/Methodologies",
+   "question": "Which project is the best fit for an adaptive approach?",
+   "options": [
+    "A new customer app where needs will be discovered through user feedback",
+    "A pipeline built to a fixed engineering specification",
+    "A regulatory report with a fixed format and deadline",
+    "A building renovation with approved architectural drawings"
+   ],
+   "answer": 0,
+   "explanation": "Adaptive approaches suit uncertain requirements that evolve with feedback."
+  },
+  {
+   "domain": "Business Analysis Frameworks",
+   "question": "What is a main responsibility of a business analyst on a project?",
+   "options": [
+    "Eliciting, analysing and communicating requirements",
+    "Approving the scope baseline and change requests",
+    "Managing the project schedule and resources",
+    "Testing the solution and fixing its defects"
+   ],
+   "answer": 0,
+   "explanation": "Business analysts focus on understanding needs and defining requirements."
+  },
+  {
+   "domain": "Project Management Fundamentals and Core Concepts",
+   "question": "What is the work breakdown structure (WBS)?",
+   "options": [
+    "A hierarchical decomposition of the total scope into deliverables and work packages",
+    "A hierarchical chart of the project team showing reporting lines and roles",
+    "A bar chart that shows scheduled activities against a calendar timeline",
+    "A table of activities with their durations, dependencies and float"
+   ],
+   "answer": 0,
+   "explanation": "The WBS breaks scope into manageable work packages."
+  },
+  {
+   "domain": "Predictive, Plan-Based Methodologies",
+   "question": "A team builds a data centre with fixed hardware requirements and a software portal whose features are uncertain. What approach is most appropriate?",
+   "options": [
+    "Hybrid: predictive for the data centre, adaptive for the portal",
+    "Predictive for both, with all portal features fixed upfront",
+    "Adaptive for both, with no fixed plan for the data centre",
+    "No formal approach, because the work is mixed"
+   ],
+   "answer": 0,
+   "explanation": "Different parts of a project can use different approaches."
+  }
+ ],
+ "ecba": [
+  {
+   "domain": "Understanding Business Analysis",
+   "question": "Which statement best describes business analysis?",
+   "options": [
+    "The practice of enabling change by defining needs and recommending solutions that deliver value",
+    "The practice of documenting system functions so developers can build what users request",
+    "The practice of controlling project scope, schedule and cost on behalf of a sponsor",
+    "The practice of testing solutions against requirements before they are released to users"
+   ],
+   "answer": 0,
+   "explanation": "Business analysis enables change by defining needs and recommending solutions that deliver value."
+  },
+  {
+   "domain": "Mindset for Effective Business Analysis",
+   "question": "A stakeholder says, \"We need a new dashboard.\" What should a curious business analyst do first?",
+   "options": [
+    "Ask what decisions the dashboard should support and what problem it solves",
+    "Ask which charts and colours the stakeholder would like to see on it",
+    "Ask the developer how long a dashboard would take to build and test",
+    "Ask the sponsor whether there is budget available for a dashboard"
+   ],
+   "answer": 0,
+   "explanation": "Curiosity means understanding the underlying need before accepting a proposed solution."
+  },
+  {
+   "domain": "Implementing Business Analysis",
+   "question": "What should a business analyst do before starting analysis work on a new initiative?",
+   "options": [
+    "Plan the approach: activities, stakeholders, techniques and deliverables",
+    "Write a draft of the requirements so stakeholders have something to review",
+    "Choose the solution so that the analysis can focus on the right details",
+    "Prepare test cases so that requirements can be checked as they are written"
+   ],
+   "answer": 0,
+   "explanation": "Planning the business analysis approach makes the work fit the initiative."
+  },
+  {
+   "domain": "Change",
+   "question": "In business analysis, what is a change?",
+   "options": [
+    "The act of transforming in response to a need",
+    "A software release that adds new features",
+    "A decision by management to restructure",
+    "A request from a stakeholder for a solution"
+   ],
+   "answer": 0,
+   "explanation": "Change is the act of transformation in response to a need, and it is what business analysis enables."
+  },
+  {
+   "domain": "Need",
+   "question": "Which statement is a need rather than a solution?",
+   "options": [
+    "Customers wait too long for answers to simple questions",
+    "We need a chatbot to answer customer questions",
+    "We should buy new contact centre software",
+    "We should hire more contact centre staff"
+   ],
+   "answer": 0,
+   "explanation": "A need is a problem or opportunity. The others are proposed solutions."
+  },
+  {
+   "domain": "Solution",
+   "question": "What is a solution in business analysis terms?",
+   "options": [
+    "A specific way of satisfying one or more needs in a context",
+    "A software product selected to replace a current system",
+    "The option with the lowest cost and the fastest delivery",
+    "The approved set of requirements for an initiative"
+   ],
+   "answer": 0,
+   "explanation": "A solution satisfies needs by resolving a problem or enabling an opportunity."
+  }
+ ],
+ "cbap": [
+  {
+   "domain": "Business Analysis Planning and Monitoring",
+   "question": "A project has high uncertainty and a product owner who is available every day. Which business analysis approach is MOST suitable?",
+   "options": [
+    "An adaptive approach, with requirements elaborated just in time",
+    "A predictive approach, with all requirements approved upfront",
+    "A predictive approach, with a formal sign-off at each phase",
+    "An adaptive approach, with requirements frozen after the first sprint"
+   ],
+   "answer": 0,
+   "explanation": "Adaptive approaches suit uncertainty and frequent stakeholder access."
+  },
+  {
+   "domain": "Elicitation and Collaboration",
+   "question": "Before an elicitation workshop, what should the business analyst do?",
+   "options": [
+    "Define the goals, agenda, participants and the materials needed",
+    "Write the final requirements so participants only need to approve them",
+    "Invite as many people as possible so that no view is missed",
+    "Ask the developers to design the solution for participants to review"
+   ],
+   "answer": 0,
+   "explanation": "Preparation sets scope, goals, logistics and participants."
+  },
+  {
+   "domain": "Requirements Life Cycle Management",
+   "question": "A stakeholder asks why a particular feature is being built. Which information helps answer this?",
+   "options": [
+    "Backward traceability from the feature to the requirement and business objective",
+    "Forward traceability from the feature to the test cases that verify it",
+    "The list of developers assigned to build and maintain the feature",
+    "The estimated effort and cost of building the feature in this release"
+   ],
+   "answer": 0,
+   "explanation": "Backward traceability links to origin and justification."
+  },
+  {
+   "domain": "Strategy Analysis",
+   "question": "Why should the business analyst understand the current state before defining a solution?",
+   "options": [
+    "It shows the root causes of the need and what must change",
+    "It shows which software vendor the organisation already uses",
+    "It shows the cost of the project that has been approved",
+    "It shows the order in which features should be released"
+   ],
+   "answer": 0,
+   "explanation": "Current state analysis explains the need in context."
+  },
+  {
+   "domain": "Requirements Analysis and Design Definition",
+   "question": "Which model BEST shows the rules that decide a loan application outcome based on several conditions?",
+   "options": [
+    "A decision table",
+    "A data flow diagram",
+    "A state diagram",
+    "A process model"
+   ],
+   "answer": 0,
+   "explanation": "Decision tables capture complex rule combinations."
+  },
+  {
+   "domain": "Solution Evaluation",
+   "question": "Which item is the BEST measure of solution performance?",
+   "options": [
+    "A measure tied to the business objective, such as cost per transaction",
+    "The number of features that were delivered in the last release",
+    "The number of hours the team worked during the last month",
+    "The number of user stories completed in the last iteration"
+   ],
+   "answer": 0,
+   "explanation": "Performance measures link to objectives."
+  }
+ ],
+ "itil": [
+  {
+   "domain": "Key ITIL terms and definitions",
+   "question": "Which statement best describes a service?",
+   "options": [
+    "A means of enabling value co-creation by facilitating outcomes customers want, without them managing specific costs and risks",
+    "A set of resources owned by the consumer and operated on their behalf by the provider under a fixed contract",
+    "A configuration of technology and people that the provider uses internally to run its own operations",
+    "A formal agreement that defines the targets, penalties and reporting for an outsourced activity"
+   ],
+   "answer": 0,
+   "explanation": "A service enables value co-creation by facilitating outcomes for the customer while the provider takes on specific costs and risks."
+  },
+  {
+   "domain": "Four dimensions of product and service management",
+   "question": "Which dimension covers roles, responsibilities, culture, skills and competencies?",
+   "options": [
+    "Organizations and people",
+    "Information and technology",
+    "Partners and suppliers",
+    "Value streams and processes"
+   ],
+   "answer": 0,
+   "explanation": "Organizations and people covers structures, roles, culture, staffing and competencies needed to create and support products and services."
+  },
+  {
+   "domain": "Product and service lifecycle",
+   "question": "Which list contains activities of the ITIL product and service lifecycle?",
+   "options": [
+    "Discover, design, acquire, build, transition, operate, deliver and support",
+    "Plan, improve, engage, design, obtain, build, deliver and support",
+    "Strategy, design, transition, operation and continual service improvement",
+    "Initiate, plan, execute, monitor, control, close, review and retire"
+   ],
+   "answer": 0,
+   "explanation": "The Version 5 lifecycle describes eight activities from discovering needs to supporting the product or service in use."
+  },
+  {
+   "domain": "ITIL value system",
+   "question": "Which guiding principle recommends reusing existing services, processes and tools where possible?",
+   "options": [
+    "Start where you are",
+    "Keep it simple and practical",
+    "Optimize and automate",
+    "Focus on value"
+   ],
+   "answer": 0,
+   "explanation": "Start where you are means assessing what already exists, through direct observation, before building something new."
+  },
+  {
+   "domain": "Value streams",
+   "question": "What is a value stream?",
+   "options": [
+    "A series of steps an organization takes to create and deliver products and services",
+    "A catalogue of all the services an organization offers to its consumer groups",
+    "A set of agreed targets for the performance of a service over a fixed period",
+    "A model of how information flows between the organization's technical systems"
+   ],
+   "answer": 0,
+   "explanation": "A value stream is the end-to-end set of steps that turns demand into value for a consumer."
+  },
+  {
+   "domain": "ITIL and AI",
+   "question": "Which approach to using AI in service management is consistent with ITIL guidance?",
+   "options": [
+    "Use AI to support people and decisions, with governance, human accountability and attention to risk",
+    "Let AI make routine decisions without oversight so that staff can focus on strategic work",
+    "Use AI only where it can fully replace human roles, to maximize the reduction in costs",
+    "Avoid AI in service management until the technology is proven to be completely accurate"
+   ],
+   "answer": 0,
+   "explanation": "AI can add value to products and services, but it needs governance, transparency and human accountability."
+  }
+ ]
+}
