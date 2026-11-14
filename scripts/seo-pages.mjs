@@ -212,6 +212,37 @@ customHtml['pm-datalab']=labHead('pm-datalab','Practice')+
     ['Who is DataLab for?','Project managers, business analysts, PMO analysts and students who want to practise data skills on realistic project data instead of generic examples.'],
     ['Do I need to install anything?','No. SQL, the spreadsheet and Python all run in your browser.']]);
 
+// Exam simulators: sample questions with answers and explanations (src/app/pages/pm-faciliter/sample-questions.json,
+// made by scripts/sample-questions.mjs), shown as readable text and as Quiz structured data.
+const samples=JSON.parse(readFileSync(join(root,'src/app/pages/pm-faciliter/sample-questions.json'),'utf8'));
+const quizLd={};
+for(const c of certs){
+  const qs=samples[c.id];if(!qs?.length)continue;
+  const path=c.simulator.slice(1);const L='ABCDEFGH';
+  const html=`<h2>Sample ${escText(c.code)} practice questions</h2><p>These ${qs.length} questions come from the first ${escText(c.code)} mock exam. The simulator has the full exams, with a timer and results by domain.</p>`+
+    qs.map((q,i)=>`<h3>Question ${i+1} (${escText(q.domain)})</h3><p>${escText(q.question)}</p><ol type="A">${q.options.map(o=>`<li>${escText(o)}</li>`).join('')}</ol><p><strong>Answer: ${L[q.answer]}.</strong> ${escText(q.explanation)}</p>`).join('');
+  if(!customHtml[path]){const pg=pages[path];customHtml[path]=`<p class="seo-eyebrow">${escText(c.eyebrow)}</p><h1>${escText(pg.title.replace(/ \| PMPORT$/,''))}</h1><p>${escText(pg.description)}</p><ul>${c.facts.map(f=>`<li><strong>${escText(f.big)}</strong> ${escText(f.text)}</li>`).join('')}</ul><p><a href="/pm-faciliter/${c.id==='itil'?'itil-foundation':c.id}">${escText(c.code)} exam overview and study plan</a></p>`;}
+  customHtml[path]+=html;
+  quizLd[path]={'@context':'https://schema.org','@type':'Quiz',name:`Sample ${c.code} practice questions`,about:{'@type':'Thing',name:`${c.code} certification exam`},educationalLevel:c.level,isAccessibleForFree:true,
+    hasPart:qs.map(q=>({'@type':'Question',eduQuestionType:'Multiple choice',text:q.question,
+      acceptedAnswer:{'@type':'Answer',text:q.options[q.answer],answerExplanation:{'@type':'Comment',text:q.explanation}},
+      suggestedAnswer:q.options.filter((_,i)=>i!==q.answer).map(o=>({'@type':'Answer',text:o}))}))};
+}
+
+// Hub pages: a short visible FAQ with matching FAQPage structured data.
+customHtml['pm-faciliter']+=labFaqHtml('pm-faciliter',[
+  ['Are the PMPORT exam simulators free?','Yes. All five simulators (PMP, CAPM, ECBA, CBAP and ITIL 5 Foundation) are free and need no account.'],
+  ['How many PMP practice questions are there?','900 original PMP questions in five full-length mock exams of 180 questions each, timed like the real exam, with results by domain.'],
+  ['Are these official exam questions?','No. Every question is original and written in the style of the current exam content outlines. They are not official PMI, IIBA or PeopleCert questions.'],
+  ['Which exam should I start with?','Choose CAPM if you are new to project management and PMP if you lead projects and meet PMI\'s experience requirement. For business analysis, ECBA is the entry level and CBAP is for experienced analysts. ITIL 5 Foundation suits anyone working in IT services.']]);
+customHtml['pm-calculators']+=labFaqHtml('pm-calculators',[
+  ['Are the project management calculators free?','Yes. Every calculator is free, works in your browser and needs no sign-up.'],
+  ['Which calculators are useful for the PMP exam?','The earned value (EV, PV, AC, CPI, SPI, EAC), PERT three-point estimate, risk EMV and communication channels calculators cover the project math that appears on the PMP and CAPM exams.'],
+  ['Do the calculators show the formulas?','Yes. Each calculator shows the formula it uses and a worked example, so you can check your own answers by hand.']]);
+customHtml['pm-glossary']+=labFaqHtml('pm-glossary',[
+  ['How many terms are in the PMPORT glossary?',`${glossary.length} project management, agile, risk, cost and business analysis terms, each with a plain-English definition and a real-world example.`],
+  ['Is the glossary useful for PMP and CAPM study?','Yes. It covers the terms that appear in PMP and CAPM questions, such as earned value, critical path, risk response strategies and agile ceremonies, and links related terms together.']]);
+
 function escText(v){return String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 const esc=s=>String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 
@@ -281,6 +312,7 @@ function render(path,page){
   if(extraHead[path])html=html.replace('</head>',ldScript('seo-term',extraHead[path]));
   if(termFaq[path])html=html.replace('</head>',ldScript('seo-term-faq',termFaq[path]));
   if(labFaq[path])html=html.replace('</head>',ldScript('seo-faq',labFaq[path]));
+  if(quizLd[path])html=html.replace('</head>',ldScript('seo-quiz',quizLd[path]));
   const heading=page.title.replace(/ \| PMPORT$/,'').replace(/^PMPORT \| /,'');
   const links=sections.filter(([p])=>p!==path).map(([p,l,d])=>`<li><a href="/${p}">${esc(l)}</a>. ${esc(d)}</li>`).join('');
   const article=staticArticleHtml(path)||customHtml[path]||'';
