@@ -110,6 +110,21 @@
   "image": "og/learninglink.jpg",
   "hero": "pm-learninglink.webp"
  },
+ "tips-n-tech": {
+  "label": "Tips n Tech",
+  "title": "Tips n Tech: Time-Saving Tricks for GitHub, Google & More | PMPORT",
+  "description": "Small tricks that save real time: GitHub URL hacks, YouTube and Google Docs shortcuts, search operators and job-search filters. Free, no installs.",
+  "image": "og/tips-n-tech.jpg",
+  "published": "2026-11-15"
+ },
+ "tips-n-tech/github-url-tricks": {
+  "label": "GitHub URL Tricks",
+  "title": "140 GitHub URL Tricks: github1s, GitDiagram, Gitingest & More | PMPORT",
+  "description": "Change one word in a GitHub link to open a repo in VS Code, as a diagram, an AI wiki or an LLM-ready digest. 140 free tricks with examples.",
+  "image": "og/github-url-tricks.jpg",
+  "type": "article",
+  "published": "2026-11-15"
+ },
  "about": {
   "label": "About Md Alamgir Hossain",
   "title": "Md Alamgir Hossain, PMP | Project Manager, Regina | PMPORT",

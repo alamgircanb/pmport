@@ -24,7 +24,8 @@ export const NAV_GROUPS:NavGroup[]=[
     {label:'Articles',path:'/resources'},
     {label:'Videos',path:'/media'},
     {label:'Glossary',path:'/pm-glossary'},
-    {label:'Free courses & channels',path:'/pm-learninglink'}]},
+    {label:'Free courses & channels',path:'/pm-learninglink'},
+    {label:'Tips n Tech',path:'/tips-n-tech'}]},
   {id:'practice',label:'Practice',links:[
     {label:'Daily practice (5 min)',path:'/daily-practice'},
     {label:'My progress & badges',path:'/my-progress'},
