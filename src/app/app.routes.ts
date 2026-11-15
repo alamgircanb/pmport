@@ -58,6 +58,8 @@ export const routes:Routes=[
   {path:'media',loadComponent:()=>import('./pages/media/media.component').then(m=>m.MediaComponent)},
   {path:'events',loadComponent:()=>import('./pages/events/events.component').then(m=>m.EventsComponent)},
   {path:'pm-learninglink',loadComponent:()=>import('./pages/learning-links/learning-links.component').then(m=>m.LearningLinksComponent),title:'LearningLink | PMPORT'},
+  {path:'tips-n-tech',loadComponent:()=>import('./pages/tips-n-tech/tips-hub.component').then(m=>m.TipsHubComponent)},
+  {path:'tips-n-tech/github-url-tricks',loadComponent:()=>import('./pages/tips-n-tech/github-url-tricks.component').then(m=>m.GithubUrlTricksComponent)},
   {path:'journeys',loadComponent:()=>import('./pages/journeys/journeys.component').then(m=>m.JourneysComponent)},
   {path:'journeys/:id',loadComponent:()=>import('./pages/journeys/journey.component').then(m=>m.JourneyComponent)},
   {path:'my-progress',loadComponent:()=>import('./pages/journeys/my-progress.component').then(m=>m.MyProgressComponent)},

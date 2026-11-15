@@ -7,7 +7,7 @@ import {trackEvent} from '../analytics';
 interface Entry{title:string;text:string;path:string;kind:string;hay:string}
 
 /** Section name shown beside each result, from the first part of the address. */
-const KIND:Record<string,string>={'':'Home','resources':'Article','pm-glossary':'Glossary','pm-calculators':'Calculator','pm-faciliter':'Exam prep','pm-tools':'Tools','pm-datalab':'DataLab','pm-playground':'Practice','portfolio':'Portfolio','media':'Videos','pm-learninglink':'Learn','pm-jobs-prep':'Career','events':'Career','pm-handaid':'Tools','about':'About','about-pmport':'About','education':'About','credentials':'About','start-here':'Start here'};
+const KIND:Record<string,string>={'':'Home','resources':'Article','pm-glossary':'Glossary','pm-calculators':'Calculator','pm-faciliter':'Exam prep','pm-tools':'Tools','pm-datalab':'DataLab','pm-playground':'Practice','portfolio':'Portfolio','media':'Videos','pm-learninglink':'Learn','tips-n-tech':'Learn','pm-jobs-prep':'Career','events':'Career','pm-handaid':'Tools','about':'About','about-pmport':'About','education':'About','credentials':'About','start-here':'Start here'};
 const norm=(s:string)=>s.toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g,'');
 
 /**

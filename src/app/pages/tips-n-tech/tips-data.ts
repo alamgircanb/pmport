@@ -1,0 +1,243 @@
+/**
+ * Tips n Tech: content for the hub page and for each tip collection.
+ * To add a new collection, add an entry to TIP_COLLECTIONS (and a page + route for it),
+ * or add it with live:false to show it as "coming soon" on the hub.
+ */
+
+export interface TipCollection{
+  id:string;title:string;blurb:string;icon:string;path?:string;
+  count?:string;tags:string[];live:boolean;
+  /** Two colours for the card's gradient. */
+  colors:[string,string];
+}
+
+export const TIP_COLLECTIONS:TipCollection[]=[
+  {id:'github',title:'GitHub URL Tricks',icon:'🐙',path:'/tips-n-tech/github-url-tricks',count:'140 tips',live:true,
+   blurb:'Change one word in a GitHub address and get a code editor, a diagram, an AI wiki or an LLM-ready digest of any repository.',
+   tags:['GitHub','AI tools','Developer'],colors:['#6f8fff','#49cce1']},
+  {id:'youtube',title:'YouTube URL Tricks',icon:'▶️',count:'20+ tips',live:false,
+   blurb:'Start at a timestamp, play only a clip, loop a video, watch Shorts in the normal player and build instant playlists.',
+   tags:['YouTube','Productivity'],colors:['#ff6b6b','#ffb36b']},
+  {id:'google',title:'Google Docs, Sheets & Drive Tricks',icon:'📄',count:'25+ tips',live:false,
+   blurb:'Force "make a copy", export straight to PDF or CSV, link to a cell range and create files with .new shortcuts.',
+   tags:['Google Workspace','Productivity'],colors:['#3ddc97','#49cce1']},
+  {id:'search',title:'Search Like a Pro',icon:'🔎',count:'25+ tips',live:false,
+   blurb:'Google operators, date filters, web-only results, page archives and text-fragment links that jump to a sentence.',
+   tags:['Research','Web'],colors:['#b47cff','#6f8fff']},
+  {id:'linkedin',title:'LinkedIn Job-Search Filters',icon:'💼',count:'10+ tips',live:false,
+   blurb:'Edit the job-search URL to see roles posted in the last hour, remote only, by experience level, newest first.',
+   tags:['Career','Job search'],colors:['#2d8cff','#49cce1']},
+];
+
+export type TipCat='editors'|'ai'|'files'|'code'|'repos'|'search'|'profiles'|'stats';
+
+export interface Tip{cat:TipCat;pattern:string;what:string;how:string;example?:string}
+
+export const TIP_CATS:{id:TipCat;label:string;icon:string;color:string}[]=[
+  {id:'editors',label:'Editors & viewers',icon:'🧑‍💻',color:'#6f8fff'},
+  {id:'ai',label:'AI & understanding',icon:'🤖',color:'#b47cff'},
+  {id:'files',label:'Notebooks, CDN & downloads',icon:'📦',color:'#3ddc97'},
+  {id:'code',label:'Files, commits & PRs',icon:'🧩',color:'#49cce1'},
+  {id:'repos',label:'Repos & issues',icon:'🗂️',color:'#ffb36b'},
+  {id:'search',label:'Search & discovery',icon:'🔎',color:'#ff8fb1'},
+  {id:'profiles',label:'Profiles & API',icon:'👤',color:'#f5d76e'},
+  {id:'stats',label:'Stats & badges',icon:'📈',color:'#7fe0ff'},
+];
+
+/** GitHub URL tricks. OWNER, REPO, SHA, USER and FILE are placeholders to replace. */
+export const GITHUB_TIPS:Tip[]=[
+  // Editors & viewers
+  {cat:'editors',pattern:'github1s.com/OWNER/REPO',what:'Read-only VS Code in the browser',how:'Add "1s" after github',example:'github1s.com/microsoft/vscode'},
+  {cat:'editors',pattern:'gitlab1s.com/OWNER/REPO',what:'The same VS Code view for GitLab projects',how:'Add "1s" after gitlab',example:'gitlab1s.com/gitlab-org/gitlab'},
+  {cat:'editors',pattern:'npmjs1s.com/PACKAGE',what:'Browse an npm package\'s source in VS Code',how:'Add "1s" after npmjs',example:'npmjs1s.com/react'},
+  {cat:'editors',pattern:'github.dev/OWNER/REPO',what:'GitHub\'s official web editor: edit and commit without installing anything',how:'Change .com to .dev, or press . on any repo',example:'github.dev/pandas-dev/pandas'},
+  {cat:'editors',pattern:'vscode.dev/github/OWNER/REPO',what:'Microsoft\'s VS Code for the Web, opening a repo',how:'Put vscode.dev/github/ in front',example:'vscode.dev/github/microsoft/vscode'},
+  {cat:'editors',pattern:'githubbox.com/OWNER/REPO',what:'Opens the repo in CodeSandbox so web apps run live',how:'Replace "hub" with "box"',example:'githubbox.com/facebook/react'},
+  {cat:'editors',pattern:'codesandbox.io/p/github/OWNER/REPO',what:'Direct CodeSandbox import (where githubbox sends you)',how:'Put codesandbox.io/p/github/ in front',example:'codesandbox.io/p/github/vercel/next.js'},
+  {cat:'editors',pattern:'stackblitz.com/github/OWNER/REPO',what:'Runs Node and JavaScript projects inside the browser',how:'Put stackblitz.com/github/ in front',example:'stackblitz.com/github/vitejs/vite'},
+  {cat:'editors',pattern:'codespaces.new/OWNER/REPO',what:'Starts a full GitHub Codespace (a cloud dev machine)',how:'Put codespaces.new/ in front',example:'codespaces.new/github/docs'},
+  {cat:'editors',pattern:'gitpod.io/#https://github.com/OWNER/REPO',what:'Cloud dev environment by Gitpod (now Ona)',how:'Put gitpod.io/# in front of the full URL'},
+  {cat:'editors',pattern:'github.githistory.xyz/OWNER/REPO/blob/main/FILE',what:'Animated history of one file, commit by commit',how:'On a file URL, replace .com with .githistory.xyz',example:'github.githistory.xyz/expressjs/express/blob/master/package.json'},
+  {cat:'editors',pattern:'sourcegraph.com/github.com/OWNER/REPO',what:'Code search with "go to definition" across the repo',how:'Put sourcegraph.com/ in front',example:'sourcegraph.com/github.com/golang/go'},
+  {cat:'editors',pattern:'grep.app/search?q=TERM',what:'Search code across about a million public repos',how:'Put your term after ?q=',example:'grep.app/search?q=useEffect'},
+
+  // AI & understanding
+  {cat:'ai',pattern:'gitdiagram.com/OWNER/REPO',what:'Interactive architecture diagram; boxes link to the files',how:'Replace "hub" with "diagram"',example:'gitdiagram.com/fastapi/fastapi'},
+  {cat:'ai',pattern:'gitingest.com/OWNER/REPO',what:'The whole repo as one prompt-ready text digest for Claude or ChatGPT',how:'Replace "hub" with "ingest"',example:'gitingest.com/pallets/flask'},
+  {cat:'ai',pattern:'uithub.com/OWNER/REPO',what:'Repo as one text page (and API) for LLMs, with file filters',how:'Replace "git" with "ui"',example:'uithub.com/psf/requests'},
+  {cat:'ai',pattern:'deepwiki.com/OWNER/REPO',what:'AI-written wiki of the repo, plus a box to ask questions',how:'Replace github.com with deepwiki.com',example:'deepwiki.com/langchain-ai/langchain'},
+  {cat:'ai',pattern:'gitmcp.io/OWNER/REPO',what:'Turns the repo into an MCP server so AI assistants can read its docs',how:'Replace github.com with gitmcp.io',example:'gitmcp.io/microsoft/playwright'},
+  {cat:'ai',pattern:'OWNER.gitmcp.io/REPO',what:'The same, for GitHub Pages documentation sites',how:'Use for OWNER.github.io/REPO sites'},
+  {cat:'ai',pattern:'talktogithub.com/OWNER/REPO',what:'Chat with any public repo, no sign-up',how:'Add "talkto" in front of github',example:'talktogithub.com/expressjs/express'},
+  {cat:'ai',pattern:'githubchat.ai/OWNER/REPO',what:'Chat with a repo, a single file or a wiki page',how:'Replace github.com with githubchat.ai',example:'githubchat.ai/nodejs/node'},
+  {cat:'ai',pattern:'github.gg/OWNER/REPO',what:'Chat-style repo navigator with scorecards',how:'Replace .com with .gg',example:'github.gg/sveltejs/svelte'},
+  {cat:'ai',pattern:'gitpodcast.com/OWNER/REPO',what:'An AI audio podcast that explains the repo',how:'Replace "hub" with "podcast"',example:'gitpodcast.com/tiangolo/typer'},
+  {cat:'ai',pattern:'gitmvp.com/OWNER/REPO',what:'Shows a repo\'s most valuable contributors',how:'Replace "hub" with "mvp"',example:'gitmvp.com/django/django'},
+
+  // Notebooks, CDN & downloads
+  {cat:'files',pattern:'colab.research.google.com/github/OWNER/REPO/blob/main/NOTEBOOK.ipynb',what:'Open a Jupyter notebook from GitHub in Google Colab (free GPU)',how:'Replace github.com/ with colab.research.google.com/github/'},
+  {cat:'files',pattern:'nbviewer.org/github/OWNER/REPO/blob/main/NOTEBOOK.ipynb',what:'Fast, clean notebook view when GitHub\'s preview fails',how:'Put nbviewer.org/github/ in front'},
+  {cat:'files',pattern:'mybinder.org/v2/gh/OWNER/REPO/HEAD',what:'Launch the whole repo as a live Jupyter environment',how:'Put mybinder.org/v2/gh/ in front and /HEAD after',example:'mybinder.org/v2/gh/binder-examples/requirements/HEAD'},
+  {cat:'files',pattern:'raw.githubusercontent.com/OWNER/REPO/main/FILE',what:'The plain raw file, for curl, wget or pandas read_csv',how:'Click Raw, or swap the domain and drop /blob',example:'raw.githubusercontent.com/mwaskom/seaborn-data/master/tips.csv'},
+  {cat:'files',pattern:'github.com/OWNER/REPO/blob/main/FILE?raw=true',what:'Redirects to the raw file',how:'Add ?raw=true',example:'github.com/mwaskom/seaborn-data/blob/master/iris.csv?raw=true'},
+  {cat:'files',pattern:'cdn.jsdelivr.net/gh/OWNER/REPO@main/FILE',what:'Free, fast CDN link for any file on GitHub',how:'Put cdn.jsdelivr.net/gh/ in front; branch or tag after @',example:'cdn.jsdelivr.net/gh/twbs/bootstrap@main/README.md'},
+  {cat:'files',pattern:'cdn.jsdelivr.net/gh/OWNER/REPO@main/',what:'Browse a repo\'s file list through jsDelivr',how:'End the address with /',example:'cdn.jsdelivr.net/gh/jquery/jquery@main/'},
+  {cat:'files',pattern:'raw.githack.com/OWNER/REPO/main/FILE.html',what:'Serve HTML or JS from GitHub with the right headers so it renders',how:'Swap raw.githubusercontent.com for raw.githack.com'},
+  {cat:'files',pattern:'htmlpreview.github.io/?FULL_FILE_URL',what:'Preview an HTML file stored in a repo',how:'Put htmlpreview.github.io/? in front'},
+  {cat:'files',pattern:'OWNER.github.io/REPO',what:'The project\'s GitHub Pages website, if it has one',how:'Turn the owner into a subdomain',example:'pandas-dev.github.io/pandas'},
+  {cat:'files',pattern:'github.com/OWNER/REPO/archive/HEAD.zip',what:'Download the default branch as a ZIP, no git needed',how:'Add /archive/HEAD.zip',example:'github.com/psf/requests/archive/HEAD.zip'},
+  {cat:'files',pattern:'github.com/OWNER/REPO/archive/refs/tags/TAG.tar.gz',what:'Download one release tag as a tarball',how:'Use the tag name',example:'github.com/psf/requests/archive/refs/tags/v2.31.0.tar.gz'},
+  {cat:'files',pattern:'download-directory.github.io/?url=FOLDER_URL',what:'Download just one folder of a repo as a ZIP',how:'Put the tool in front and paste a /tree/... address'},
+  {cat:'files',pattern:'github.com/OWNER/REPO/releases/latest',what:'Always jumps to the newest release',how:'Add /releases/latest',example:'github.com/cli/cli/releases/latest'},
+  {cat:'files',pattern:'github.com/OWNER/REPO/releases/latest/download/ASSET',what:'A link that always downloads the newest release\'s file',how:'Use the exact asset file name'},
+  {cat:'files',pattern:'gist.githubusercontent.com/USER/GIST_ID/raw',what:'Raw content of a Gist, latest version',how:'Add /raw to a gist address'},
+
+  // Files, commits & PRs
+  {cat:'code',pattern:'.../blob/main/FILE#L10',what:'Highlight one line',how:'Add #L and the line number',example:'github.com/psf/requests/blob/main/setup.py#L10'},
+  {cat:'code',pattern:'.../blob/main/FILE#L10-L25',what:'Highlight a range of lines',how:'#Lstart-Lend, or shift-click line numbers',example:'github.com/psf/requests/blob/main/setup.py#L10-L25'},
+  {cat:'code',pattern:'.../blob/SHA/FILE#L10',what:'Permalink that never changes when the file does',how:'Replace the branch with a commit ID (press y)'},
+  {cat:'code',pattern:'.../README.md?plain=1',what:'Show Markdown source with line numbers instead of the rendered page',how:'Add ?plain=1',example:'github.com/psf/requests/blob/main/README.md?plain=1'},
+  {cat:'code',pattern:'.../README.md?plain=1#L5-L9',what:'Link to exact lines inside a Markdown file',how:'Combine ?plain=1 with #L',example:'github.com/psf/requests/blob/main/README.md?plain=1#L5-L9'},
+  {cat:'code',pattern:'.../blame/main/FILE',what:'Who last changed each line, and when',how:'Replace /blob/ with /blame/',example:'github.com/psf/requests/blame/main/setup.py'},
+  {cat:'code',pattern:'.../commits/main/FILE',what:'Full commit history of one file',how:'/commits/BRANCH/PATH',example:'github.com/psf/requests/commits/main/setup.py'},
+  {cat:'code',pattern:'.../commits?author=USER',what:'Commits by one person',how:'Add ?author=',example:'github.com/psf/requests/commits?author=nateprewitt'},
+  {cat:'code',pattern:'.../commits/main?since=2026-01-01&until=2026-06-30',what:'Commits in a date range',how:'since and until as YYYY-MM-DD'},
+  {cat:'code',pattern:'.../commit/SHA.patch',what:'A commit as an email-style patch, ready for git am',how:'Add .patch'},
+  {cat:'code',pattern:'.../commit/SHA.diff',what:'A plain unified diff of a commit',how:'Add .diff'},
+  {cat:'code',pattern:'.../pull/123.diff',what:'A whole pull request as a diff (or .patch)',how:'Add .diff or .patch to a PR address'},
+  {cat:'code',pattern:'.../pull/123/files?w=1',what:'Hide whitespace-only changes in a diff',how:'Add ?w=1'},
+  {cat:'code',pattern:'.../pull/123/files',what:'Jump straight to "Files changed"',how:'Add /files'},
+  {cat:'code',pattern:'.../pull/123/commits',what:'The list of commits in a PR',how:'Add /commits'},
+  {cat:'code',pattern:'.../compare/v1.0...v2.0',what:'Everything that changed between two tags, branches or commits',how:'/compare/A...B',example:'github.com/psf/requests/compare/v2.30.0...v2.31.0'},
+  {cat:'code',pattern:'.../compare/main...my-branch?expand=1',what:'Opens the "create pull request" form directly',how:'Add ?expand=1'},
+  {cat:'code',pattern:'.../compare/A...B.diff',what:'Download a comparison as a diff',how:'Add .diff'},
+  {cat:'code',pattern:'.../tree/main/FOLDER',what:'Open a specific folder',how:'/tree/BRANCH/PATH',example:'github.com/pandas-dev/pandas/tree/main/doc'},
+  {cat:'code',pattern:'.../tree/SHA',what:'Browse the repo exactly as it was at one commit',how:'Use a commit ID instead of a branch'},
+  {cat:'code',pattern:'.../find/main',what:'Fuzzy file finder',how:'Add /find/BRANCH (or press t)',example:'github.com/microsoft/vscode/find/main'},
+  {cat:'code',pattern:'.../edit/main/FILE',what:'Open the web editor for one file',how:'Replace /blob/ with /edit/'},
+  {cat:'code',pattern:'.../new/main?filename=docs/notes.md',what:'Create a new file with its name filled in',how:'/new/BRANCH?filename='},
+  {cat:'code',pattern:'.../new/main?filename=x.md&value=Hello',what:'Fill in the new file\'s content too',how:'Add &value= (URL-encoded)'},
+  {cat:'code',pattern:'.../upload/main',what:'Drag-and-drop upload page',how:'Add /upload/BRANCH'},
+  {cat:'code',pattern:'.../delete/main/FILE',what:'Delete-file confirmation page',how:'Replace /blob/ with /delete/'},
+
+  // Repos & issues
+  {cat:'repos',pattern:'repo.new',what:'Create a new repository',how:'Type it in the address bar',example:'repo.new'},
+  {cat:'repos',pattern:'gist.new',what:'Create a new Gist',how:'Type it in the address bar',example:'gist.new'},
+  {cat:'repos',pattern:'github.com/new/import',what:'Import a repo from another host',how:'Fixed address',example:'github.com/new/import'},
+  {cat:'repos',pattern:'.../issues/new?title=...&body=...&labels=bug',what:'Pre-filled issue form, ideal for "Report a bug" links',how:'Query parameters, URL-encoded'},
+  {cat:'repos',pattern:'.../issues/new?assignees=USER&milestone=v1',what:'New issue with assignee and milestone set',how:'Add assignees and milestone'},
+  {cat:'repos',pattern:'.../issues/new?template=bug_report.md',what:'Open a specific issue template',how:'?template=FILE'},
+  {cat:'repos',pattern:'.../issues?q=is:open+label:bug',what:'Filtered issue list',how:'GitHub search syntax after q='},
+  {cat:'repos',pattern:'.../issues?q=is:issue+is:open+no:assignee',what:'Open issues nobody has picked up',how:'Use no:assignee'},
+  {cat:'repos',pattern:'.../issues?q=label:"good first issue"',what:'Beginner-friendly issues for your first contribution',how:'Filter by label',example:'github.com/pandas-dev/pandas/issues?q=label:"good first issue"'},
+  {cat:'repos',pattern:'.../issues?q=sort:reactions-+1-desc',what:'Most-upvoted issues: real feature demand',how:'Sort by thumbs-up reactions',example:'github.com/microsoft/vscode/issues?q=sort:reactions-+1-desc'},
+  {cat:'repos',pattern:'github.com/pulls/review-requested',what:'Pull requests waiting for your review',how:'Fixed address',example:'github.com/pulls/review-requested'},
+  {cat:'repos',pattern:'github.com/pulls',what:'All your open pull requests across GitHub',how:'Fixed address',example:'github.com/pulls'},
+  {cat:'repos',pattern:'github.com/issues/assigned',what:'All issues assigned to you',how:'Fixed address',example:'github.com/issues/assigned'},
+  {cat:'repos',pattern:'.../issues/123#issuecomment-ID',what:'Deep link to one comment',how:'Copy the comment\'s timestamp link'},
+  {cat:'repos',pattern:'.../labels',what:'All labels of a repo',how:'Add /labels'},
+  {cat:'repos',pattern:'.../milestones',what:'Milestones with percent complete, like a mini roadmap',how:'Add /milestones'},
+  {cat:'repos',pattern:'.../discussions',what:'The repo\'s Q&A forum',how:'Add /discussions',example:'github.com/vercel/next.js/discussions'},
+  {cat:'repos',pattern:'.../wiki',what:'The repo wiki',how:'Add /wiki'},
+  {cat:'repos',pattern:'.../actions',what:'CI/CD workflow runs',how:'Add /actions'},
+  {cat:'repos',pattern:'.../releases',what:'Release notes and downloads (or /tags)',how:'Add /releases',example:'github.com/cli/cli/releases'},
+  {cat:'repos',pattern:'.../graphs/contributors',what:'Contributor activity charts',how:'Add /graphs/contributors',example:'github.com/psf/requests/graphs/contributors'},
+  {cat:'repos',pattern:'.../graphs/commit-activity',what:'Commits per week for the last year',how:'Add /graphs/commit-activity',example:'github.com/psf/requests/graphs/commit-activity'},
+  {cat:'repos',pattern:'.../graphs/code-frequency',what:'Lines added and removed over time',how:'Add /graphs/code-frequency',example:'github.com/psf/requests/graphs/code-frequency'},
+  {cat:'repos',pattern:'.../pulse/monthly',what:'Activity summary for the last month (or /pulse for a week)',how:'Add /pulse/monthly',example:'github.com/psf/requests/pulse/monthly'},
+  {cat:'repos',pattern:'.../network/members',what:'Every fork of the repo',how:'Add /network/members'},
+  {cat:'repos',pattern:'.../network/dependents',what:'Repos that use this project',how:'Add /network/dependents',example:'github.com/psf/requests/network/dependents'},
+  {cat:'repos',pattern:'.../network/dependencies',what:'What this repo depends on',how:'Add /network/dependencies'},
+  {cat:'repos',pattern:'.../stargazers',what:'Who starred it (also /forks and /watchers)',how:'Add /stargazers'},
+  {cat:'repos',pattern:'.../community',what:'Community health checklist: README, licence, code of conduct',how:'Add /community'},
+  {cat:'repos',pattern:'.../security',what:'Security policy and advisories',how:'Add /security'},
+  {cat:'repos',pattern:'github.com/OWNER/REPO.git',what:'Clone address; in a browser it opens the repo',how:'Add .git'},
+
+  // Search & discovery
+  {cat:'search',pattern:'github.com/search?q=QUERY&type=repositories',what:'Repository search',how:'type= repositories, code, issues or users',example:'github.com/search?q=power+bi&type=repositories'},
+  {cat:'search',pattern:'github.com/search?q=stars:>1000+language:python',what:'Popular repos in one language',how:'Use stars: and language:',example:'github.com/search?q=stars:>1000+language:python&type=repositories'},
+  {cat:'search',pattern:'github.com/search?q=topic:power-bi',what:'Search by topic tag',how:'Use topic:',example:'github.com/search?q=topic:power-bi&type=repositories'},
+  {cat:'search',pattern:'github.com/search?q=pushed:>2026-01-01',what:'Recently active repos only',how:'Use pushed: or created:'},
+  {cat:'search',pattern:'github.com/search?q=filename:docker-compose.yml&type=code',what:'Find files by name',how:'Use filename:, path: or extension:',example:'github.com/search?q=filename:docker-compose.yml&type=code'},
+  {cat:'search',pattern:'github.com/search?q=org:microsoft+typescript',what:'Search inside one organisation or user',how:'Use org:, user: or repo:',example:'github.com/search?q=org:microsoft+typescript&type=repositories'},
+  {cat:'search',pattern:'github.com/search?q=is:issue+is:open+label:"help wanted"+language:python',what:'Find projects that want contributors',how:'Combine qualifiers',example:'github.com/search?q=is:issue+is:open+label:"help wanted"+language:python&type=issues'},
+  {cat:'search',pattern:'github.com/topics/TOPIC',what:'Topic page with the top repos',how:'/topics/ plus a tag',example:'github.com/topics/data-analysis'},
+  {cat:'search',pattern:'github.com/trending',what:'Trending repos today',how:'Fixed address',example:'github.com/trending'},
+  {cat:'search',pattern:'github.com/trending/python?since=weekly',what:'Trending by language and period',how:'/LANGUAGE?since=daily, weekly or monthly',example:'github.com/trending/python?since=weekly'},
+  {cat:'search',pattern:'github.com/trending/developers',what:'Trending developers',how:'Fixed address',example:'github.com/trending/developers'},
+  {cat:'search',pattern:'github.com/collections',what:'Curated, themed lists of repos',how:'Fixed address',example:'github.com/collections/machine-learning'},
+  {cat:'search',pattern:'github.com/explore',what:'Personalised discovery feed',how:'Fixed address',example:'github.com/explore'},
+
+  // Profiles & API
+  {cat:'profiles',pattern:'github.com/USER?tab=repositories&sort=stargazers',what:'A user\'s repos, most-starred first',how:'Add ?tab=repositories',example:'github.com/torvalds?tab=repositories'},
+  {cat:'profiles',pattern:'github.com/USER?tab=stars',what:'Repos a person starred: a great discovery trick',how:'Add ?tab=stars',example:'github.com/sindresorhus?tab=stars'},
+  {cat:'profiles',pattern:'github.com/USER?tab=followers',what:'A user\'s followers',how:'Add ?tab=followers'},
+  {cat:'profiles',pattern:'github.com/USER.png?size=200',what:'A user\'s avatar as an image',how:'Add .png',example:'github.com/octocat.png?size=200'},
+  {cat:'profiles',pattern:'github.com/USER.keys',what:'A user\'s public SSH keys',how:'Add .keys',example:'github.com/octocat.keys'},
+  {cat:'profiles',pattern:'github.com/USER.gpg',what:'A user\'s public GPG keys',how:'Add .gpg',example:'github.com/octocat.gpg'},
+  {cat:'profiles',pattern:'github.com/USER/USER',what:'Profile README: a repo named exactly like the user shows on their profile',how:'Create a repo with your username'},
+  {cat:'profiles',pattern:'github.com/orgs/ORG/repositories',what:'All repos of an organisation',how:'Fixed path',example:'github.com/orgs/microsoft/repositories'},
+  {cat:'profiles',pattern:'github.com/sponsors/USER',what:'Sponsor a developer',how:'Fixed path'},
+  {cat:'profiles',pattern:'api.github.com/repos/OWNER/REPO',what:'Repo facts as JSON: stars, forks, licence, dates',how:'Put api. in front and add /repos/',example:'api.github.com/repos/psf/requests'},
+  {cat:'profiles',pattern:'api.github.com/users/USER',what:'A public profile as JSON',how:'/users/USER',example:'api.github.com/users/octocat'},
+  {cat:'profiles',pattern:'api.github.com/repos/OWNER/REPO/releases/latest',what:'The latest release as JSON, for version checks',how:'Add /releases/latest',example:'api.github.com/repos/cli/cli/releases/latest'},
+  {cat:'profiles',pattern:'api.github.com/repos/OWNER/REPO/languages',what:'Language breakdown in bytes',how:'Add /languages',example:'api.github.com/repos/psf/requests/languages'},
+  {cat:'profiles',pattern:'api.github.com/repos/OWNER/REPO/contents/PATH',what:'A folder listing as JSON',how:'Add /contents/ and a path',example:'api.github.com/repos/psf/requests/contents/'},
+  {cat:'profiles',pattern:'github.com/settings/tokens',what:'Your personal access tokens',how:'Fixed address',example:'github.com/settings/tokens'},
+  {cat:'profiles',pattern:'githubstatus.com',what:'Is GitHub down right now?',how:'Fixed address',example:'githubstatus.com'},
+
+  // Stats & badges
+  {cat:'stats',pattern:'star-history.com/#OWNER/REPO&Date',what:'Star growth over time; compare several repos',how:'Add repos after #, joined with &',example:'star-history.com/#microsoft/vscode&Date'},
+  {cat:'stats',pattern:'ossinsight.io/analyze/OWNER/REPO',what:'Deep analytics: contributors, PR speed, geography',how:'Put ossinsight.io/analyze/ in front',example:'ossinsight.io/analyze/pandas-dev/pandas'},
+  {cat:'stats',pattern:'useful-forks.github.io/?repo=OWNER/REPO',what:'Finds forks that are still active when the original is abandoned',how:'Add ?repo=',example:'useful-forks.github.io/?repo=psf/requests'},
+  {cat:'stats',pattern:'socialify.git.ci/OWNER/REPO',what:'A good-looking social preview banner for a repo',how:'Put socialify.git.ci/ in front',example:'socialify.git.ci/psf/requests'},
+  {cat:'stats',pattern:'img.shields.io/github/stars/OWNER/REPO',what:'Live star-count badge for a README',how:'shields.io path',example:'img.shields.io/github/stars/psf/requests'},
+  {cat:'stats',pattern:'img.shields.io/github/last-commit/OWNER/REPO',what:'"Last commit" badge (also /license/, /issues/)',how:'Same family of paths',example:'img.shields.io/github/last-commit/psf/requests'},
+  {cat:'stats',pattern:'img.shields.io/badge/LABEL-MESSAGE-COLOR',what:'Your own custom badge',how:'Dashes separate the parts',example:'img.shields.io/badge/PMP-Certified-blue'},
+  {cat:'stats',pattern:'github-readme-stats.vercel.app/api?username=USER',what:'Stats card for your profile README',how:'Add ?username= (and &theme=dark)',example:'github-readme-stats.vercel.app/api?username=octocat&show_icons=true'},
+  {cat:'stats',pattern:'github-readme-stats.vercel.app/api/top-langs/?username=USER',what:'Top-languages card',how:'Use the top-langs endpoint',example:'github-readme-stats.vercel.app/api/top-langs/?username=octocat'},
+  {cat:'stats',pattern:'github-readme-stats.vercel.app/api/pin/?username=USER&repo=REPO',what:'Pinned-repo card',how:'Use the pin endpoint'},
+  {cat:'stats',pattern:'ghchart.rshah.org/USER',what:'Your contribution graph as an image',how:'Put ghchart.rshah.org/ in front',example:'ghchart.rshah.org/octocat'},
+  {cat:'stats',pattern:'skillicons.dev/icons?i=python,git,docker',what:'A row of tech icons for a README',how:'Comma-separated icon names',example:'skillicons.dev/icons?i=python,git,docker'},
+  {cat:'stats',pattern:'libraries.io/github/OWNER/REPO',what:'Dependencies, dependents and release history',how:'Put libraries.io/github/ in front',example:'libraries.io/github/psf/requests'},
+  {cat:'stats',pattern:'securityscorecards.dev/viewer/?uri=github.com/OWNER/REPO',what:'OpenSSF security score for a project',how:'Add ?uri=',example:'securityscorecards.dev/viewer/?uri=github.com/psf/requests'},
+];
+
+export const GITHUB_SHORTCUTS:{keys:string[];where:string;what:string}[]=[
+  {keys:['.'],where:'Repo, file or PR',what:'Open it in github.dev (web VS Code)'},
+  {keys:['>'],where:'Repo',what:'Open github.dev in a new tab'},
+  {keys:['t'],where:'Repo',what:'File finder'},
+  {keys:['y'],where:'File',what:'Turn the address into a permanent link'},
+  {keys:['b'],where:'File',what:'Open blame view'},
+  {keys:['l'],where:'File',what:'Jump to a line'},
+  {keys:['w'],where:'Repo',what:'Switch branch or tag'},
+  {keys:['s'],where:'Anywhere',what:'Focus search (or /)'},
+  {keys:['g','c'],where:'Repo',what:'Go to Code'},
+  {keys:['g','i'],where:'Repo',what:'Go to Issues'},
+  {keys:['g','p'],where:'Repo',what:'Go to Pull requests'},
+  {keys:['g','n'],where:'Anywhere',what:'Go to notifications'},
+  {keys:['Ctrl','K'],where:'Anywhere',what:'Command palette (Cmd K on Mac)'},
+  {keys:['?'],where:'Anywhere',what:'Show every shortcut for the page'},
+];
+
+/** Tools offered by the "Transform a repo" box. */
+export const REPO_TOOLS:{name:string;icon:string;what:string;url:(o:string,r:string)=>string}[]=[
+  {name:'github1s',icon:'🧑‍💻',what:'Read in VS Code',url:(o,r)=>`https://github1s.com/${o}/${r}`},
+  {name:'github.dev',icon:'✏️',what:'Edit & commit',url:(o,r)=>`https://github.dev/${o}/${r}`},
+  {name:'githubbox',icon:'📦',what:'Run in CodeSandbox',url:(o,r)=>`https://githubbox.com/${o}/${r}`},
+  {name:'StackBlitz',icon:'⚡',what:'Run Node in browser',url:(o,r)=>`https://stackblitz.com/github/${o}/${r}`},
+  {name:'Codespaces',icon:'☁️',what:'Cloud dev machine',url:(o,r)=>`https://codespaces.new/${o}/${r}`},
+  {name:'GitDiagram',icon:'🗺️',what:'Architecture diagram',url:(o,r)=>`https://gitdiagram.com/${o}/${r}`},
+  {name:'DeepWiki',icon:'📚',what:'AI wiki + Q&A',url:(o,r)=>`https://deepwiki.com/${o}/${r}`},
+  {name:'Gitingest',icon:'🤖',what:'LLM-ready digest',url:(o,r)=>`https://gitingest.com/${o}/${r}`},
+  {name:'uithub',icon:'📄',what:'Repo as one text page',url:(o,r)=>`https://uithub.com/${o}/${r}`},
+  {name:'GitMCP',icon:'🔌',what:'MCP server for AI',url:(o,r)=>`https://gitmcp.io/${o}/${r}`},
+  {name:'TalkToGitHub',icon:'💬',what:'Chat with the repo',url:(o,r)=>`https://talktogithub.com/${o}/${r}`},
+  {name:'GitPodcast',icon:'🎧',what:'Listen to it',url:(o,r)=>`https://gitpodcast.com/${o}/${r}`},
+  {name:'Sourcegraph',icon:'🧭',what:'Code search',url:(o,r)=>`https://sourcegraph.com/github.com/${o}/${r}`},
+  {name:'Star History',icon:'⭐',what:'Star growth chart',url:(o,r)=>`https://star-history.com/#${o}/${r}&Date`},
+  {name:'OSS Insight',icon:'📈',what:'Repo analytics',url:(o,r)=>`https://ossinsight.io/analyze/${o}/${r}`},
+  {name:'Useful forks',icon:'🍴',what:'Active forks',url:(o,r)=>`https://useful-forks.github.io/?repo=${o}/${r}`},
+  {name:'ZIP download',icon:'⬇️',what:'Default branch',url:(o,r)=>`https://github.com/${o}/${r}/archive/HEAD.zip`},
+  {name:'API JSON',icon:'🧾',what:'Repo facts',url:(o,r)=>`https://api.github.com/repos/${o}/${r}`},
+];
