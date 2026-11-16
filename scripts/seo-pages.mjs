@@ -25,6 +25,7 @@ const articleSources={
   'resources/how-project-managers-can-use-chatgpt':'src/app/pages/chatgpt-pm-article/chatgpt-pm-article.component.ts',
   'resources/nine-women-one-month-brooks-law':'src/app/pages/brooks-law-article/brooks-law-article.component.ts',
   'tips-n-tech/github-url-tricks':'src/app/pages/tips-n-tech/github-url-tricks.component.ts',
+  'tips-n-tech/claude-tips':'src/app/pages/tips-n-tech/claude-tips.component.ts',
   'pm-calculators/earned-value-calculator':'src/app/pages/calculators/evm-calculator.component.ts',
   'pm-calculators/pert-three-point-estimate-calculator':'src/app/pages/calculators/pert-calculator.component.ts',
   'pm-calculators/risk-emv-calculator':'src/app/pages/calculators/emv-calculator.component.ts',

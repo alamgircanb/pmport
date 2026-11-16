@@ -125,6 +125,14 @@
   "type": "article",
   "published": "2026-11-15"
  },
+ "tips-n-tech/claude-tips": {
+  "label": "Claude Tips & Tricks",
+  "title": "Claude Tips & Tricks: Prompt Links, Shortcuts & Claude Code | PMPORT",
+  "description": "100+ Claude tips: shareable prompt links, app shortcuts, prompting habits, Projects and memory, plus Claude Code keys, slash commands and CLI flags.",
+  "image": "og/claude-tips.jpg",
+  "type": "article",
+  "published": "2026-11-15"
+ },
  "about": {
   "label": "About Md Alamgir Hossain",
   "title": "Md Alamgir Hossain, PMP | Project Manager, Regina | PMPORT",
