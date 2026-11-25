@@ -16,6 +16,8 @@ type SlotKey='exam1'|'exam2'|'exam3'|'exam4'|'exam5'|'practice';
  */
 @Directive()
 export abstract class ExamSimulatorBase implements OnInit,OnDestroy{
+  /** This simulator's page path without the leading slash (e.g. pm-faciliter/pmp-exam-simulator), used for its FAQ. */
+  get pagePath(){return (this.program.overview+'-exam-simulator').slice(1);}
   readonly bank:ExamBank;
   readonly domains:Domain[];
   readonly tasks:Record<string,string[]>;

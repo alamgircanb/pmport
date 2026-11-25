@@ -1,0 +1,33 @@
+{
+  "pm-faciliter/pmp-exam-simulator": {
+    "summary": "PMPORT's PMP exam simulator is free and needs no sign-up. It has five full-length mock exams with 900 original questions. Each exam has 180 questions (170 scored and 10 unscored pretest) in 240 minutes with two optional 10-minute breaks, like the July 2026 PMP exam. Every exam opens with three case studies, about 60% of the questions use agile or hybrid scenarios, and you get an explanation for every answer and results by domain.",
+    "faq": [
+      {"q": "Is the PMPORT PMP exam simulator free?", "a": "Yes. All five full-length PMP mock exams and the practice mode are free. You do not need an account, and your progress is saved in your own browser so you can stop and resume later."},
+      {"q": "How many questions are on the PMP exam, and how long is it?", "a": "The PMP exam modelled here has 180 questions, of which 170 are scored and 10 are unscored pretest items. You have 240 minutes, with two optional 10-minute breaks. The PMPORT mock exams use the same length, timing and breaks."},
+      {"q": "What score do I need to pass the PMP exam?", "a": "PMI does not publish a passing score. It reports your performance in each domain as Above Target, Target, Below Target or Needs Improvement. As a practice guide, PMPORT rates 80% or more as Above Target and 65% to 79% as Target. Many candidates book the real exam once they score in the Target range or better on several full mocks."},
+      {"q": "How should I use the PMP mock exams?", "a": "Take one full mock exam first to get a baseline. Then use practice mode to drill your weakest domain or task, with no timer and an explanation after each question. Take another full mock about once a week, and review every incorrect answer before the next one."},
+      {"q": "Are these real PMP exam questions?", "a": "No. Every question is original and written in the scenario style of the current PMP exam content outline and the PMBOK Guide, Eighth Edition. Real exam questions are confidential, and PMPORT is not affiliated with PMI."},
+      {"q": "Can I practise for the PMP on my phone?", "a": "Yes. The simulator works in any modern phone, tablet or computer browser. Progress is saved on the device you use, so finish an exam on the same device and browser where you started it."}
+    ]
+  },
+  "pm-faciliter/rmp-exam-simulator": {
+    "summary": "PMPORT's PMI-RMP exam simulator is free and needs no sign-up. It has five full-length risk management mock exams with 575 original questions. Each exam has 115 questions (100 scored and 15 unscored pretest) in 150 minutes, weighted across the five PMI-RMP domains, with a built-in calculator for EMV, PERT and decision tree questions and results by domain.",
+    "faq": [
+      {"q": "Is the PMI-RMP mock exam free?", "a": "Yes. All five full-length PMI-RMP mock exams and the practice mode are free, with no account. Your progress is saved in your browser so you can resume later."},
+      {"q": "How many questions are on the PMI-RMP exam, and how long is it?", "a": "The PMI-RMP exam has 115 questions in 150 minutes. Fifteen of them are unscored pretest items, so 100 count toward your result. Each PMPORT mock uses the same length and time limit."},
+      {"q": "What are the PMI-RMP exam domains and weights?", "a": "Risk strategy and planning (22%), risk identification (23%), risk analysis (23%), risk response (13%) and monitoring and closing risks (19%). The PMPORT mock exams follow these weights."},
+      {"q": "Is there math on the PMI-RMP exam?", "a": "Yes. Expect expected monetary value (EMV), PERT and triangular estimates, standard deviation, decision trees and reading P50 or P80 values from a Monte Carlo S-curve. The simulator has a built-in calculator for these questions."},
+      {"q": "Who should take the PMI-RMP certification?", "a": "Project managers, risk analysts and PMO staff who specialise in project risk. PMI typically asks for 36 months of project risk experience and 40 contact hours of risk education with a secondary degree, or 24 months and 30 hours with a four-year degree. Check PMI's current handbook before applying."},
+      {"q": "Are these official PMI-RMP questions?", "a": "No. Every question and explanation is original PMPORT practice content. PMPORT is not affiliated with or endorsed by PMI."}
+    ]
+  },
+  "pm-playground": {
+    "summary": "The PMPORT Playground is a free set of five interactive project simulators: project delivery, Kanban flow, risk and reserve, change adoption and technical debt. You set up a project, press play and watch the effect of your decisions week by week on schedule, cost, quality and morale. It works in any browser, including on a phone, with no sign-up.",
+    "faq": [
+      {"q": "What is the Project Management Playground?", "a": "A set of five free browser-based simulators that show how project decisions play out over time. Each one has challenges to solve, such as rescuing a late project or the overtime trap, and a debrief that explains what happened."},
+      {"q": "Does the Playground help with the PMP or PMI-RMP exam?", "a": "Yes. The simulators show concepts that exam questions test: Brooks's law and communication channels, WIP limits and Little's law, earned value (CPI and SPI), contingency reserve and EMV, and ADKAR for change adoption. Seeing them in action makes the scenario questions easier to reason about."},
+      {"q": "Do I need an account or to install anything?", "a": "No. The Playground runs in your browser on a computer, tablet or phone, and it is free."},
+      {"q": "Can I share a scenario with my team or students?", "a": "Yes. Press \"Copy link to this scenario\" and the link opens the Playground with the same settings, so everyone can run the same project and compare decisions."}
+    ]
+  }
+}

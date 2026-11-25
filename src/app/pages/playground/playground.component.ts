@@ -2,6 +2,7 @@ import {Component,DestroyRef,OnInit,inject} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {ActivatedRoute,Router,RouterLink} from '@angular/router';
 import {SimPanelComponent} from './sim-panel.component';
+import {PageFaqComponent} from '../../core/seo/page-faq.component';
 import {KANBAN} from './sims/kanban-sim';
 import {RISK} from './sims/risk-sim';
 import {ADOPTION} from './sims/adoption-sim';
@@ -12,11 +13,12 @@ type Lever='meetings'|'wip'|'overtime'|'testing'|'creep'|'risk'|'turnover';
 
 /** Playground: an interactive, week-by-week project simulator inspired by TensorFlow Playground. */
 @Component({
-  standalone:true,selector:'app-pm-playground',imports:[FormsModule,RouterLink,SimPanelComponent],
+  standalone:true,selector:'app-pm-playground',imports:[FormsModule,RouterLink,SimPanelComponent,PageFaqComponent],
   template:`
   <section class="page playground">
     <header class="pg-head"><p class="eyebrow">Practice · Project simulations</p><h1>Playground: see how project decisions play out</h1>
       <p class="lead">Five interactive simulators for project managers. Pick one, set it up, press play and watch your decisions play out week by week. Change the settings at any time and see the effect straight away.</p>
+      <app-page-faq part="summary" path="pm-playground"/>
       <nav class="pg-nav" aria-label="Playgrounds">@for(n of navItems;track n.id){<button type="button" (click)="jump(n.id)"><span>{{n.n}}</span>{{n.label}}</button>}<a class="lab-link" routerLink="/pm-playground/chart-lab"><span>New</span>Chart Lab: data storytelling →</a></nav></header>
 
     <div class="pg-section" id="pg-delivery">
@@ -136,6 +138,7 @@ type Lever='meetings'|'wip'|'overtime'|'testing'|'creep'|'risk'|'turnover';
       </div>
       <p>Learn the terms in the <a routerLink="/pm-glossary">Glossary</a>: <a routerLink="/pm-glossary/communication-channels">communication channels</a>, <a routerLink="/pm-glossary/work-in-progress-wip-limit">WIP limit</a>, <a routerLink="/pm-glossary/cost-of-quality-coq">cost of quality</a>, <a routerLink="/pm-glossary/scope-creep">scope creep</a> and <a routerLink="/pm-glossary/earned-value-management-evm">earned value</a>. Related terms for the other playgrounds: <a routerLink="/pm-glossary/kanban">Kanban</a>, <a routerLink="/pm-glossary/expected-monetary-value-emv">expected monetary value</a>, <a routerLink="/pm-glossary/contingency-reserve">contingency reserve</a>, <a routerLink="/pm-glossary/adkar">ADKAR</a> and <a routerLink="/pm-glossary/definition-of-done-dod">definition of done</a>. Run the numbers for a real project with the <a routerLink="/pm-calculators">PM calculators</a>.</p>
     </section>
+    <app-page-faq path="pm-playground"/>
   </section>`,
   styleUrl:'./playground-shared.css'
 })

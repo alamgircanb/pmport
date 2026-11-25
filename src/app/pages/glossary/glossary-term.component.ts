@@ -20,6 +20,7 @@ import {DEEP,TERM_BY_SLUG,TERMS,termSeo,type GlossaryTerm} from './glossary';
       @if(deep(t);as d){
         @for(s of d.sections;track s.h){<section class="deep"><h2>{{s.h}}</h2>@if(s.p){<p>{{s.p}}</p>}@if(s.items){<ul>@for(i of s.items;track i){<li>{{i}}</li>}</ul>}</section>}
         @if(d.examTip){<div class="tip card"><p class="eyebrow">PMP exam tip</p><p>{{d.examTip}}</p></div>}
+        @if(d.tools?.length){<section class="deep tools"><h2>Practise it</h2><div class="tool-grid">@for(x of d.tools??[];track x.path){<a [routerLink]="x.path"><strong>{{x.label}} →</strong><span>{{x.text}}</span></a>}</div></section>}
         @if(d.faq?.length){<section class="deep faq"><h2>Frequently asked questions</h2>@for(f of d.faq??[];track f.q){<h3>{{f.q}}</h3><p>{{f.a}}</p>}</section>}
       }
       @if(related(t).length){<section class="related"><h2>Related terms</h2><div class="chips">@for(r of related(t);track r.slug){<a [routerLink]="'/pm-glossary/'+r.slug">{{r.term}}</a>}</div></section>}
@@ -41,6 +42,7 @@ import {DEEP,TERM_BY_SLUG,TERMS,termSeo,type GlossaryTerm} from './glossary';
     .chips{display:flex;flex-wrap:wrap;gap:.5rem}.chips a{padding:.5rem .85rem;border:1px solid var(--line);border-radius:99px;background:#082039;color:#d9eef7;text-decoration:none;font-weight:700;font-size:.9rem}
     .chips a:hover{border-color:var(--accent)}
     .prevnext{display:flex;justify-content:space-between;gap:1rem;margin:2rem 0 1rem}.prevnext a{color:var(--accent);font-weight:700}
+    .tool-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.75rem}.tool-grid a{display:grid;gap:.3rem;padding:1rem;border:1px solid #2a5a80;border-radius:14px;background:#0b2340;color:#b1c3d7;text-decoration:none;line-height:1.5}.tool-grid a:hover,.tool-grid a:focus-visible{border-color:#49cce1}.tool-grid strong{color:#fff}
     .deep h2{font-size:1.45rem!important;letter-spacing:0!important;margin:2rem 0 .7rem!important;line-height:1.25!important}
     .deep p,.deep li{line-height:1.75;color:#d0e0ee}.deep ul{padding-left:1.2rem;display:grid;gap:.45rem}
     .faq h3{font-size:1.08rem;margin:1.2rem 0 .3rem}.tip{margin:1.8rem 0;border-color:#2c6b7d}.tip p:last-child{margin:0;line-height:1.7;color:#d0e0ee}
