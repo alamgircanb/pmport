@@ -70,3 +70,71 @@ src/app/
 public/data/     # editable content database
 api/             # Vercel contact function
 ```
+
+## Repo map
+
+A quick guide to where everything lives and which part of the site it powers.
+
+```text
+pmport/
+├── .github/workflows/deploy.yml   # CI/CD workflow
+├── api/
+│   └── contact.mjs                # Vercel function for the contact form (Resend)
+├── previews/                      # Screenshots used in docs (Home, Mobile, Diagram, CPM)
+├── public/                        # Static assets served as-is
+│   ├── card/index.html            # Digital business card -> pmport.ca/card
+│   ├── data/                      # JSON content "database" (edit here, no code changes)
+│   ├── datalab/                   # DataLab practice files (Excel workbook + CSVs)
+│   ├── og/                        # Open Graph / social share images
+│   └── *.webp, *.png              # Article covers, banners and icons
+├── scripts/
+│   ├── seo-pages.mjs              # Generates SEO page data
+│   └── sample-questions.mjs       # Builds sample exam questions
+├── src/
+│   ├── index.html, main.ts, styles.css
+│   ├── environments/environment.ts  # Supabase URL + public key
+│   └── app/
+│       ├── app.component.*        # Shell: sidebar, top bar, footer, navigation
+│       ├── app.routes.ts          # All lazy-loaded routes
+│       ├── app.config.ts
+│       ├── core/                  # Shared logic used across pages
+│       │   ├── auth/              # Auth service + route guard (Supabase)
+│       │   ├── models/            # Shared TypeScript models
+│       │   ├── progress/          # Learner progress tracking
+│       │   ├── related/           # "Related reading" component
+│       │   ├── search/            # Site-wide search
+│       │   ├── seo/               # Page titles, meta tags, seo-pages.json
+│       │   ├── services/          # content.service.ts (loads public/data JSON)
+│       │   ├── analytics.ts       # Google Analytics 4 helper
+│       │   ├── export-utils.ts    # Export/download helpers
+│       │   └── navigation.ts
+│       └── pages/                 # One folder per page (see table below)
+├── angular.json, package.json     # Angular + npm config
+├── vercel.json                    # Route fallback for the SPA + /api functions
+└── *_GUIDE.md                     # Editing guides (update, portfolio, tools)
+```
+
+### Pages → site routes
+
+| Folder in `src/app/pages/` | Route(s) on pmport.ca | What it is |
+|---|---|---|
+| `home` | `/` | Home with rotating banners |
+| `start-here`, `about-pmport` | `/start-here`, `/about-pmport` | Orientation and about the site |
+| `about`, `education`, `credentials` | `/about`, `/education`, `/credentials` | Profile, degrees, certifications |
+| `portfolio` | `/portfolio`, `/portfolio/course-work`, `/portfolio/professional-work` | Portfolio areas and work items |
+| `pm-tools`, `diagram`, `pert` | `/pm-tools`, `/pm-tools/ba`, `/pm-tools/teams`, `/pm-tools/diagram-studio`, `/pm-tools/pert-cpm` | Artifacts Lab, Diagram Studio, PERT/CPM |
+| `calculators` | `/pm-calculators/...` | EVM, PERT, risk EMV and other calculators |
+| `datalab` | `/pm-datalab`, `/pm-datalab/sql`, `/pm-datalab/excel` | DataLab: SQL / Excel / DAX / Python practice |
+| `playground` | `/pm-playground`, `/pm-playground/chart-lab` | Chart Lab and simulations |
+| `pm-faciliter`, `pmp-exam`, `member` | `/pm-faciliter/...` | Training modules, PMP/CAPM/ECBA/CBAP/CCMP/RMP/ITIL exam simulators, member area |
+| `pm-handaid` | `/pm-handaid` | NotePad |
+| `pm-jobs-prep` | `/pm-jobs-prep` | Job and interview prep |
+| `journeys`, `daily-practice` | `/journeys`, `/my-progress`, `/daily-practice` | Learning paths and progress |
+| `glossary` | `/pm-glossary` | PM glossary |
+| `resources` + article folders | `/resources/...` | Books, articles and study guides |
+| `tips-n-tech` | `/tips-n-tech/...` | Tips n Tech (GitHub URL tricks, Claude tips) |
+| `learning-links` | `/pm-learninglink` | Curated learning links |
+| `media`, `events` | `/media`, `/events` | YouTube videos and events |
+| `contact` | — (`/contact` currently redirects to `/about-pmport`) | Contact form component (posts to `api/contact.mjs`) |
+| `auth` | `/login` | Member login (only active once Supabase is configured) |
+| `not-found` | `**` | 404 page |
