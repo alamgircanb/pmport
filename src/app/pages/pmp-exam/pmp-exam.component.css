@@ -161,3 +161,28 @@ select:disabled{opacity:.6}
 .next-steps a:hover,.next-steps a:focus-visible{border-color:#49cce1}
 .next-steps a strong{color:#fff}
 @media(max-width:700px){.next-steps ul{grid-template-columns:1fr}}
+
+/* Code exhibits (DAX, Power Query M) */
+pre.code{margin:-.4rem 0 1.1rem;padding:.9rem 1rem;border:1px solid #2a4a69;border-radius:10px;background:#04101f;color:#dcebf7;font:13.5px/1.6 'Cascadia Code',Consolas,'Courier New',monospace;white-space:pre;overflow-x:auto}
+.answer-card pre.code{margin:.2rem 0 .8rem}
+/* Ordering (drag-and-drop style) */
+.order-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:.9rem}
+.order-col{display:grid;gap:.5rem;align-content:start;padding:.75rem;border:1px dashed #2a4a69;border-radius:12px;background:#081a30}
+.answer-area{border-style:solid;border-color:#49cce1}
+.order-head{margin:0 0 .2rem;font-size:.8rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#9db1c7}
+.order-item{display:flex;gap:.6rem;align-items:flex-start;text-align:left;padding:.65rem .75rem;border:1px solid #2a4a69;border-radius:10px;background:#0a1f38;color:#e6eef6;font:inherit;line-height:1.45;cursor:pointer}
+.order-item:hover:not(:disabled){border-color:#49cce1}.order-item:disabled{opacity:.55;cursor:default}
+.order-item .add{color:#49cce1;font-weight:800}
+.order-slot{display:flex;gap:.6rem;align-items:center;padding:.55rem .65rem;border:1px solid #2a4a69;border-radius:10px;background:#0a1f38;line-height:1.45}
+.order-slot .txt{flex:1}.order-slot.is-right{border-color:#3ecf8e}.order-slot.is-wrong{border-color:#ff7a6b}
+.slot-tools{display:flex;gap:.25rem}.slot-tools button{width:30px;height:30px;border:1px solid #2a4a69;border-radius:8px;background:#061629;color:#dcebf7;cursor:pointer}
+.slot-tools button:disabled{opacity:.35;cursor:default}
+/* Yes / No series */
+.yesno{display:grid;gap:.7rem}
+.yn-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.75rem;align-items:center;padding:.75rem;border:1px solid #2a4a69;border-radius:12px;background:#0a1f38;line-height:1.5}
+.yn-row small{grid-column:1/-1;color:#7fe0b0}.yn-row.is-right{border-color:#3ecf8e}.yn-row.is-wrong{border-color:#ff7a6b}
+.yn-btns{display:flex;gap:.4rem}.yn-btns button{min-width:56px;padding:.45rem .8rem;border:1px solid #2a4a69;border-radius:999px;background:#061629;color:#dcebf7;font-weight:700;cursor:pointer}
+.yn-btns button.on{background:#49cce1;border-color:#49cce1;color:#041223}
+.feedback.shown{border-color:#49cce1;background:rgba(73,204,225,.08)}
+.feedback .key-line{display:block;margin:.35rem 0;color:#7fe0b0;font-weight:700}
+@media(max-width:700px){.order-wrap{grid-template-columns:1fr}.yn-row{grid-template-columns:1fr}}

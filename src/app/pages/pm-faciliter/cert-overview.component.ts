@@ -10,7 +10,7 @@ export interface Certification{
 }
 export const CERTIFICATIONS=certs as Certification[];
 
-/** Overview page for one certification under Exam Faciliter (PMP, CAPM, PMI-RMP, ECBA, CBAP, ITIL 5 Foundation, CCMP). */
+/** Overview page for one certification under Exam Faciliter (PMP, CAPM, PMI-RMP, ECBA, CBAP, ITIL 5 Foundation, CCMP, PL-300). */
 @Component({
   standalone:true,selector:'app-cert-overview',imports:[RouterLink],
   template:`
@@ -57,7 +57,7 @@ export const CERTIFICATIONS=certs as Certification[];
     </section>
 
     <nav class="others" aria-label="Other certifications"><p class="eyebrow">Other certifications</p><div>@for(o of others;track o.id){<a [routerLink]="'/pm-faciliter/'+(o.id==='itil'?'itil-foundation':o.id)">{{o.code}}</a>}</div></nav>
-    <p class="note">PMPORT is not affiliated with PMI, IIBA, PeopleCert, ACMP or Prosci. Exam details can change; always confirm them with the certification body before you apply. PMP®, CAPM®, PMI-RMP® and PMBOK® are registered marks of Project Management Institute, Inc. IIBA®, BABOK®, CBAP® and ECBA™ are trademarks of the International Institute of Business Analysis. ITIL® is a registered trademark of PeopleCert group. CCMP® and Standard for Change Management® are marks of the Association of Change Management Professionals. ADKAR® is a registered trademark of Prosci, Inc.</p>
+    <p class="note">PMPORT is not affiliated with PMI, IIBA, PeopleCert, ACMP, Prosci or Microsoft. Exam details can change; always confirm them with the certification body before you apply. PMP®, CAPM®, PMI-RMP® and PMBOK® are registered marks of Project Management Institute, Inc. IIBA®, BABOK®, CBAP® and ECBA™ are trademarks of the International Institute of Business Analysis. ITIL® is a registered trademark of PeopleCert group. CCMP® and Standard for Change Management® are marks of the Association of Change Management Professionals. ADKAR® is a registered trademark of Prosci, Inc. Microsoft and Power BI are trademarks of the Microsoft group of companies.</p>
   </article>
   }`,
   styles:[`

@@ -21,6 +21,31 @@
       {"q": "Are these official PMI-RMP questions?", "a": "No. Every question and explanation is original PMPORT practice content. PMPORT is not affiliated with or endorsed by PMI."}
     ]
   },
+  "pm-faciliter/pl300-exam-simulator": {
+    "summary": "PMPORT's PL-300 exam simulator is free and needs no sign-up. It has 1,000 original Power BI questions, 250 in each skill area (prepare the data, model the data, visualize and analyze the data, manage and secure Power BI), arranged as twenty timed mock exams of 50 questions in 100 minutes. Each mock opens with a case study and uses every question type on the real exam: multiple choice, multiple answer, ordering, DAX and Power Query drop-downs, Yes/No series, hotspot exhibits and matching. Practice mode shows the answer and explanation whenever you ask.",
+    "faq": [
+      {
+        "q": "Is the PL-300 practice exam free?",
+        "a": "Yes. All twenty PL-300 mock exams and the practice mode are free, with no account. Your progress is saved in your browser so you can resume later."
+      },
+      {
+        "q": "How many questions are on the PL-300 exam, and how long is it?",
+        "a": "Microsoft does not fix the number, but candidates usually see 40 to 60 questions, including at least one case study, with about 100 minutes to answer. Each PMPORT mock has 50 questions in 100 minutes."
+      },
+      {
+        "q": "What score do I need to pass PL-300?",
+        "a": "Microsoft reports a scaled score from 1 to 1,000 and you pass at 700. The scaled score is not a simple percentage, so as a practice guide aim for 80% or more on several different PMPORT mocks."
+      },
+      {
+        "q": "Can I see the answer and explanation for a question?",
+        "a": "Yes. In practice mode press Show answer at any time to see the correct answer and its explanation. After a full mock, the answer review shows every question with its explanation."
+      },
+      {
+        "q": "Are these real PL-300 exam questions?",
+        "a": "No. Every question is original PMPORT practice content written to Microsoft's public skills measured. They are not taken from Microsoft exams or dump sites, and PMPORT is not affiliated with or endorsed by Microsoft."
+      }
+    ]
+  },
   "pm-playground": {
     "summary": "The PMPORT Playground is a free set of five interactive project simulators: project delivery, Kanban flow, risk and reserve, change adoption and technical debt. You set up a project, press play and watch the effect of your decisions week by week on schedule, cost, quality and morale. It works in any browser, including on a phone, with no sign-up.",
     "faq": [

@@ -8,7 +8,8 @@ type Mode='full'|'practice';
 interface Saved{v:1;mode:Mode;form:ExamForm;view:View;section:number;index:number;responses:Record<string,Response>;flags:string[];strikes:Record<string,number[]>;checked:string[];timeLeft:number;breakLeft:number;finished:boolean;savedAt:number}
 /** Only PMP had a saved attempt before the store moved to per-exam slots. */
 const LEGACY_STORE='pmport-pmp-exam-v1';
-type SlotKey='exam1'|'exam2'|'exam3'|'exam4'|'exam5'|'practice';
+/** 'exam1'…'examN' for each full mock, plus 'practice'. */
+type SlotKey=string;
 
 /**
  * One exam simulator for every certification (PMP, CAPM, ECBA, CBAP, ITIL). Each certification is a small
@@ -24,7 +25,7 @@ export abstract class ExamSimulatorBase implements OnInit,OnDestroy{
   readonly weights:Record<string,number>;
   readonly totalQuestions:number;
   readonly exams:ExamSet[];
-  readonly slots:SlotKey[]=['exam1','exam2','exam3','exam4','exam5','practice'];
+  readonly slots:SlotKey[];
   readonly examMinutes:number;
   readonly breakMinutes:number;
   readonly letters='ABCDEFGH';
@@ -32,6 +33,7 @@ export abstract class ExamSimulatorBase implements OnInit,OnDestroy{
   constructor(readonly program:ExamProgram){
     this.bank=new ExamBank(program);this.domains=program.domains;this.tasks=program.tasks;this.weights=program.weights;
     this.totalQuestions=this.bank.all.length;this.exams=this.bank.exams;this.examMinutes=program.minutes;this.breakMinutes=program.breakMinutes;
+    this.slots=[...program.exams.map(e=>`exam${e.id}`),'practice'];
     this.maxWeight=Math.max(...program.domains.map(d=>program.weights[d]??0));
     this.timeLeft=program.minutes*60;this.breakLeft=program.breakMinutes*60;
   }
@@ -100,6 +102,16 @@ export abstract class ExamSimulatorBase implements OnInit,OnDestroy{
   chooseSelect(value:string){const v=Number(value);if(this.lockedQuestion)return;if(v>=0)this.responses[this.q.id]=[v];else delete this.responses[this.q.id];this.touch()}
   match(i:number,value:string){if(this.lockedQuestion)return;const q=this.q;const cur=this.responses[q.id]??q.pairs!.map(()=>-1);const next=[...cur];next[i]=Number(value);this.responses[q.id]=next;this.touch()}
   matchValue(q:ExamQuestion,i:number){return (this.responses[q.id]??[])[i]??-1}
+  /** Ordering items: add an action to the answer sequence, move it, or take it out again. */
+  orderSeq(q:ExamQuestion){return this.responses[q.id]??[]}
+  orderPool(q:ExamQuestion){const used=this.orderSeq(q);const order=this.form?.optionOrder[q.id]??q.items!.map((_,i)=>i);return order.filter(i=>!used.includes(i))}
+  orderAdd(i:number){if(this.lockedQuestion)return;const q=this.q;const cur=this.orderSeq(q);if(cur.includes(i)||cur.length>=this.need(q))return;this.responses[q.id]=[...cur,i];this.touch()}
+  orderRemove(pos:number){if(this.lockedQuestion)return;const q=this.q;const next=this.orderSeq(q).filter((_,k)=>k!==pos);if(next.length)this.responses[q.id]=next;else delete this.responses[q.id];this.touch()}
+  orderMove(pos:number,dir:number){if(this.lockedQuestion)return;const q=this.q;const next=[...this.orderSeq(q)];const to=pos+dir;if(to<0||to>=next.length)return;[next[pos],next[to]]=[next[to],next[pos]];this.responses[q.id]=next;this.touch()}
+  /** Drop-down completion: one list per blank. */
+  blank(i:number,value:string){if(this.lockedQuestion)return;const q=this.q;const cur=this.responses[q.id]??q.blanks!.map(()=>-1);const next=[...cur];next[i]=Number(value);this.responses[q.id]=next;this.touch()}
+  /** Yes/No series: choice 0 = Yes, 1 = No. */
+  yesNo(i:number,v:number){if(this.lockedQuestion)return;const q=this.q;const cur=this.responses[q.id]??q.pairs!.map(()=>-1);const next=[...cur];next[i]=v;this.responses[q.id]=next;this.touch()}
   hotspot(i:number){if(this.lockedQuestion)return;this.responses[this.q.id]=[i];this.touch()}
   hotspotSelected(q:ExamQuestion){const r=this.responses[q.id];return r&&r.length?r[0]:null}
   strike(o:number,e:Event){e.stopPropagation();const cur=this.strikes[this.q.id]??[];this.strikes[this.q.id]=cur.includes(o)?cur.filter(x=>x!==o):[...cur,o];this.touch()}
@@ -122,6 +134,8 @@ export abstract class ExamSimulatorBase implements OnInit,OnDestroy{
   }
   endBreak(){this.view='exam';this.touch();window.scrollTo({top:0})}
   check(){this.checked.add(this.q.id);this.touch()}
+  /** Practice mode: show the answer and explanation on request, even before answering. */
+  reveal(){trackEvent('simulator_reveal',{exam:this.program.code});this.check()}
   finish(){if(!this.form)return;this.finished=true;const result=this.bank.score(this.form,this.responses);this.result=result;trackEvent('simulator_complete',{exam:this.program.code,mode:this.mode,form:this.mode==='full'?this.form.examId||1:0,score:result.overall.pct});this.view='results';this.touch();window.scrollTo({top:0})}
   retake(){this.mode==='full'?this.startIntro(this.form?.examId||1):this.home()}
 
@@ -137,10 +151,17 @@ export abstract class ExamSimulatorBase implements OnInit,OnDestroy{
   showAnswers(f:'all'|'incorrect'|'flagged'|'unanswered'){this.answerFilter=f;this.view='answers';window.scrollTo({top:0})}
   responseText(q:ExamQuestion){
     const r=this.responses[q.id];if(!isAnswered(q,r))return 'Not answered';
-    if(q.type==='matching')return q.pairs!.map((p,i)=>`${p.left} → ${q.choices![r![i]]}`).join(' · ');
+    if(q.type==='matching'||q.type==='yesno')return q.pairs!.map((p,i)=>`${p.left} → ${q.choices![r![i]]}`).join(' · ');
+    if(q.type==='blanks')return q.blanks!.map((b,i)=>`${b.label}: ${b.options[r![i]]}`).join(' · ');
+    if(q.type==='order')return r!.map((o,i)=>`${i+1}. ${q.items![o]}`).join(' → ');
     return r!.map(o=>q.options![o]).join(' · ');
   }
-  correctText(q:ExamQuestion){return q.type==='matching'?q.pairs!.map(p=>`${p.left} → ${q.choices![p.right]}`).join(' · '):q.answer!.map(o=>q.options![o]).join(' · ')}
+  correctText(q:ExamQuestion){
+    if(q.type==='matching'||q.type==='yesno')return q.pairs!.map(p=>`${p.left} → ${q.choices![p.right]}`).join(' · ');
+    if(q.type==='blanks')return q.blanks!.map(b=>`${b.label}: ${b.options[b.answer]}`).join(' · ');
+    if(q.type==='order')return q.answer!.map((o,i)=>`${i+1}. ${q.items![o]}`).join(' → ');
+    return q.answer!.map(o=>q.options![o]).join(' · ');
+  }
   taskName(d:Domain,t:number){return this.tasks[d]?.[t-1]??''}
   ratingClass(r:string){return r.toLowerCase().replace(/\s+/g,'-')}
 
@@ -171,7 +192,7 @@ export abstract class ExamSimulatorBase implements OnInit,OnDestroy{
   private loadAll(){
     this.saves={};
     for(const k of this.slots){const s=this.read(this.program.store+k);if(s&&this.valid(s))this.saves[k]=s}
-    if(this.program.id==='pmp'&&!this.saves.exam1){const legacy=this.read(LEGACY_STORE);if(legacy){if(legacy.mode==='full')this.saves.exam1=legacy;else if(!this.saves.practice)this.saves.practice=legacy}}
+    if(this.program.id==='pmp'&&!this.saves['exam1']){const legacy=this.read(LEGACY_STORE);if(legacy){if(legacy.mode==='full')this.saves['exam1']=legacy;else if(!this.saves['practice'])this.saves['practice']=legacy}}
   }
   savedFor(key:SlotKey){return this.saves[key]??null}
   slotKey(examId:number){return `exam${examId}` as SlotKey}

@@ -10,6 +10,7 @@ const PLAYGROUND:Step={label:'Run a project simulation',text:'Change a setting a
 const JOURNEYS:Step={label:'Follow a learning journey',text:'Step-by-step paths that tick themselves off as you go.',path:'/journeys'};
 const CALCULATORS:Step={label:'Run the numbers',text:'Earned value, PERT, EMV, NPV and Monte Carlo calculators with formulas.',path:'/pm-calculators'};
 const DATALAB:Step={label:'Practise data skills',text:'Graded SQL, Excel, Power BI DAX and Python on one project dataset.',path:'/pm-datalab'};
+const PL300_SIM:Step={label:'Take a free PL-300 mock exam',text:'1,000 Power BI questions on Power Query, DAX, reports and the service.',path:'/pm-faciliter/pl300-exam-simulator'};
 const RISK_SIM:Step={label:'Take a free PMI-RMP mock exam',text:'575 risk management questions with EMV, PERT and decision tree math.',path:'/pm-faciliter/rmp-exam-simulator'};
 
 /**
@@ -29,6 +30,7 @@ const NEXT:Record<string,Step[]>={
   'pm-calculators/risk-emv-calculator':[RISK_SIM,{label:'See risk reserve in action',text:'The risk and reserve simulator drains contingency as risks hit.',path:'/pm-playground'},{label:'All calculators',text:'Seven free calculators, each with a worked example.',path:'/pm-calculators'}],
   'pm-datalab':[{label:'Start with SQL',text:'Real queries on a project portfolio, checked at once.',path:'/pm-datalab/sql'},PLAYGROUND,PMP],
   'pm-datalab/':[{label:'Try another DataLab module',text:'SQL, Excel, Power BI DAX, Python and status reporting on the same data.',path:'/pm-datalab'},{label:'Tell the story with charts',text:'Chart Lab shows which chart makes the data clear.',path:'/pm-playground/chart-lab'},PLAYGROUND],
+  'pm-datalab/power-bi-dax':[PL300_SIM,{label:'Try another DataLab module',text:'SQL, Excel, Python and status reporting on the same data.',path:'/pm-datalab'},{label:'Tell the story with charts',text:'Chart Lab shows which chart makes the data clear.',path:'/pm-playground/chart-lab'}],
   'pm-glossary/':[DAILY,PMP,PLAYGROUND],
   'pm-faciliter':[DAILY,PLAYGROUND,JOURNEYS]
 };

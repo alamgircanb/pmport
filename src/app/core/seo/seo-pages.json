@@ -235,6 +235,20 @@
   "published": "2026-11-14",
   "hero": "rmp-exam-simulator.webp"
  },
+ "pm-faciliter/pl300": {
+  "label": "PL-300 Power BI",
+  "title": "PL-300 Power BI Data Analyst Exam Prep & Free Mocks | PMPORT",
+  "description": "Free Microsoft PL-300 exam preparation: the four Power BI skill areas, a six-week study plan and twenty timed mock exams with 1,000 original questions.",
+  "published": "2026-11-27",
+  "hero": "pl300-exam-simulator.webp"
+ },
+ "pm-faciliter/pl300-exam-simulator": {
+  "label": "PL-300 Exam Simulator",
+  "title": "Free PL-300 Exam Simulator: 1,000 Power BI Questions | PMPORT",
+  "description": "Twenty free PL-300 practice exams: 50 questions in 100 minutes each, with case studies, DAX and Power Query drop-downs, ordering, Yes/No and hotspot questions.",
+  "published": "2026-11-27",
+  "hero": "pl300-exam-simulator.webp"
+ },
  "pm-faciliter/ccmp": {
   "label": "CCMP",
   "title": "CCMP Change Management Exam Prep & Free Mock Exams | PMPORT",
