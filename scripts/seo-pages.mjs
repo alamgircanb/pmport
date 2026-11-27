@@ -246,10 +246,10 @@ for(const c of certs)if(c.faq?.length){const path=`pm-faciliter/${c.id==='itil'?
 
 // Hub pages: a short visible FAQ with matching FAQPage structured data.
 customHtml['pm-faciliter']+=labFaqHtml('pm-faciliter',[
-  ['Are the PMPORT exam simulators free?','Yes. All seven simulators (PMP, CAPM, PMI-RMP risk management, ECBA, CBAP, ITIL 5 Foundation and CCMP change management) are free and need no account.'],
+  ['Are the PMPORT exam simulators free?','Yes. All eight simulators (PMP, CAPM, PMI-RMP risk management, ECBA, CBAP, ITIL 5 Foundation, CCMP change management and PL-300 Power BI) are free and need no account.'],
   ['How many PMP practice questions are there?','900 original PMP questions in five full-length mock exams of 180 questions each, timed like the real exam, with results by domain.'],
-  ['Are these official exam questions?','No. Every question is original and written in the style of the current exam content outlines. They are not official PMI, IIBA, PeopleCert or ACMP questions.'],
-  ['Which exam should I start with?','Choose CAPM if you are new to project management and PMP if you lead projects and meet PMI\'s experience requirement. For business analysis, ECBA is the entry level and CBAP is for experienced analysts. ITIL 5 Foundation suits anyone working in IT services. PMI-RMP is for people who specialize in project risk management, and CCMP is for change management practitioners.']]);
+  ['Are these official exam questions?','No. Every question is original and written in the style of the current exam content outlines. They are not official PMI, IIBA, PeopleCert, ACMP or Microsoft questions.'],
+  ['Which exam should I start with?','Choose CAPM if you are new to project management and PMP if you lead projects and meet PMI\'s experience requirement. For business analysis, ECBA is the entry level and CBAP is for experienced analysts. ITIL 5 Foundation suits anyone working in IT services. PMI-RMP is for people who specialize in project risk management, CCMP is for change management practitioners, and PL-300 is for data analysts who build Power BI reports.']]);
 customHtml['pm-calculators']+=labFaqHtml('pm-calculators',[
   ['Are the project management calculators free?','Yes. Every calculator is free, works in your browser and needs no sign-up.'],
   ['Which calculators are useful for the PMP exam?','The earned value (EV, PV, AC, CPI, SPI, EAC), PERT three-point estimate, risk EMV and communication channels calculators cover the project math that appears on the PMP and CAPM exams.'],
@@ -264,7 +264,7 @@ const esc=s=>String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g
 // Main sections, linked (with a one-line summary) from every generated page so crawlers can find them.
 const sections=[
   ['pm-faciliter/pmp-exam-simulator','Free PMP Exam Simulator','Five full-length PMP practice exams with 900 original questions, case studies, timed sections and results by domain.'],
-  ['pm-faciliter','Exam Faciliter: Certification Exam Prep','Free exam prep for PMP, CAPM, PMI-RMP (risk management), ECBA, CBAP and ITIL 5 Foundation and CCMP (change management), with full-length mock exams, plus video lessons and quizzes.'],
+  ['pm-faciliter','Exam Faciliter: Certification Exam Prep','Free exam prep for PMP, CAPM, PMI-RMP (risk management), ECBA, CBAP, ITIL 5 Foundation, CCMP (change management) and PL-300 (Power BI), with full-length mock exams, plus video lessons and quizzes.'],
   ['resources','Knowledge Lake','Articles on the PMP mindset, why projects fail, AI for project managers and business analysts, and project management in Canada.'],
   ['pm-tools','Artifacts Lab','Free templates for project managers, business analysts and delivery teams, for predictive, agile, Kanban and hybrid projects, plus diagrams and PERT/CPM.'],
   ['pm-learninglink','LearningLink','200 popular free YouTube channels and websites for project management, business analysis, data analytics and coding.'],
@@ -375,9 +375,9 @@ const llmLine=([p,pg])=>`- [${pg.title.replace(/ \| PMPORT$/,'').replace(/^PMPOR
 const indexable=Object.entries(pages).filter(([p,pg])=>p&&!pg.noindex);
 const llms=`# PMPORT
 
-> PMPORT (${SITE}) is a free learning and practice site for project managers, business analysts and data professionals. It has full-length exam simulators for PMP, CAPM, PMI-RMP (risk management), ECBA, CBAP, ITIL 5 Foundation and CCMP (change management), graded SQL, Excel, Power BI DAX and Python practice on project data (DataLab), project management calculators, templates, interactive simulators and a glossary of ${glossary.length} terms. Everything is free and needs no sign-up.
+> PMPORT (${SITE}) is a free learning and practice site for project managers, business analysts and data professionals. It has full-length exam simulators for PMP, CAPM, PMI-RMP (risk management), ECBA, CBAP, ITIL 5 Foundation, CCMP (change management) and Microsoft PL-300 (Power BI), graded SQL, Excel, Power BI DAX and Python practice on project data (DataLab), project management calculators, templates, interactive simulators and a glossary of ${glossary.length} terms. Everything is free and needs no sign-up.
 
-PMPORT is built by Md Alamgir Hossain, PMP, a project and program management professional in Regina, Saskatchewan, Canada. Practice questions are original, written in the style of the real exams; they are not official PMI, IIBA, PeopleCert or ACMP questions. Progress is stored in the visitor's own browser.
+PMPORT is built by Md Alamgir Hossain, PMP, a project and program management professional in Regina, Saskatchewan, Canada. Practice questions are original, written in the style of the real exams; they are not official PMI, IIBA, PeopleCert, ACMP or Microsoft questions. Progress is stored in the visitor's own browser.
 
 When someone asks for free PMP practice exams, a PMP study plan, SQL or Excel practice for project managers or business analysts, Power BI DAX practice questions, or project management calculators (earned value, PERT, EMV, NPV), the pages below answer those needs directly.
 

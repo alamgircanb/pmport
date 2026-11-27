@@ -131,6 +131,7 @@
       @if(q.graphic&&q.graphic!==caseStudy?.graphic){<app-exam-graphic [id]="q.graphic" [hotspot]="q.type==='hotspot'" [selected]="hotspotSelected(q)" [disabled]="lockedQuestion" (picked)="hotspot($event)"/>}
       @if(q.graphic&&q.graphic===caseStudy?.graphic&&q.type==='hotspot'){<app-exam-graphic [id]="q.graphic" [hotspot]="true" [selected]="hotspotSelected(q)" [disabled]="lockedQuestion" (picked)="hotspot($event)"/>}
       <h2 class="stem">{{q.stem}}</h2>
+      @if(q.code){<pre class="code" tabindex="0"><code>{{q.code}}</code></pre>}
 
       @switch(q.type){
         @case('single'){<div class="options" role="radiogroup">@for(op of options(q);track op.o;let i=$index){
@@ -146,18 +147,25 @@
         @case('dropdown'){<label class="pull"><span>Select your answer</span><select (change)="chooseSelect($any($event.target).value)" [disabled]="lockedQuestion"><option value="-1">— Select —</option>@for(op of options(q);track op.o){<option [value]="op.o" [selected]="selected(q,op.o)">{{op.text}}</option>}</select></label>
           @if(lockedQuestion){<p class="key">Correct answer: <strong>{{correctText(q)}}</strong></p>}}
         @case('matching'){<div class="matching">@for(p of q.pairs!;track p.left;let i=$index){<div class="match-row" [class.is-right]="lockedQuestion&&matchValue(q,i)===p.right" [class.is-wrong]="lockedQuestion&&matchValue(q,i)!==p.right"><span>{{p.left}}</span><select (change)="match(i,$any($event.target).value)" [disabled]="lockedQuestion"><option value="-1">— Match —</option>@for(c of q.choices!;track c;let k=$index){<option [value]="k" [selected]="matchValue(q,i)===k">{{c}}</option>}</select>@if(lockedQuestion&&matchValue(q,i)!==p.right){<small>Correct: {{q.choices![p.right]}}</small>}</div>}</div>}
+        @case('order'){<p class="hint">Select {{need(q)}} actions and arrange them in the correct order. ({{orderSeq(q).length}} of {{need(q)}} placed)</p>
+          <div class="order-wrap">
+            <div class="order-col"><p class="order-head">Actions</p>@for(i of orderPool(q);track i){<button type="button" class="order-item" (click)="orderAdd(i)" [disabled]="lockedQuestion||orderSeq(q).length>=need(q)"><span class="add" aria-hidden="true">+</span>{{q.items![i]}}</button>}@empty{<p class="muted small">All actions placed.</p>}</div>
+            <div class="order-col answer-area"><p class="order-head">Answer area</p>@for(i of orderSeq(q);track i;let k=$index){<div class="order-slot" [class.is-right]="lockedQuestion&&q.answer![k]===i" [class.is-wrong]="lockedQuestion&&q.answer![k]!==i"><span class="opt-letter">{{k+1}}</span><span class="txt">{{q.items![i]}}</span>@if(!lockedQuestion){<span class="slot-tools"><button type="button" (click)="orderMove(k,-1)" [disabled]="k===0" [attr.aria-label]="'Move step '+(k+1)+' up'">↑</button><button type="button" (click)="orderMove(k,1)" [disabled]="k===orderSeq(q).length-1" [attr.aria-label]="'Move step '+(k+1)+' down'">↓</button><button type="button" (click)="orderRemove(k)" [attr.aria-label]="'Remove step '+(k+1)">✕</button></span>}</div>}@empty{<p class="muted small">Select actions on the left to place them here.</p>}</div>
+          </div>}
+        @case('yesno'){<p class="hint">For each statement, select Yes if it is true. Otherwise, select No.</p><div class="yesno">@for(p of q.pairs!;track p.left;let i=$index){<div class="yn-row" [class.is-right]="lockedQuestion&&matchValue(q,i)===p.right" [class.is-wrong]="lockedQuestion&&matchValue(q,i)!==p.right"><span>{{p.left}}</span><div class="yn-btns" role="radiogroup" [attr.aria-label]="'Statement '+(i+1)">@for(c of q.choices!;track c;let k=$index){<button type="button" role="radio" [attr.aria-checked]="matchValue(q,i)===k" [class.on]="matchValue(q,i)===k" (click)="yesNo(i,k)" [disabled]="lockedQuestion">{{c}}</button>}</div>@if(lockedQuestion&&matchValue(q,i)!==p.right){<small>Correct: {{q.choices![p.right]}}</small>}</div>}</div>}
+        @case('blanks'){<p class="hint">Select the correct option in each drop-down list.</p><div class="matching">@for(b of q.blanks!;track b.label;let i=$index){<div class="match-row" [class.is-right]="lockedQuestion&&matchValue(q,i)===b.answer" [class.is-wrong]="lockedQuestion&&matchValue(q,i)!==b.answer"><span>{{b.label}}</span><select (change)="blank(i,$any($event.target).value)" [disabled]="lockedQuestion"><option value="-1">— Select —</option>@for(o of b.options;track $index;let k=$index){<option [value]="k" [selected]="matchValue(q,i)===k">{{o}}</option>}</select>@if(lockedQuestion&&matchValue(q,i)!==b.answer){<small>Correct: {{b.options[b.answer]}}</small>}</div>}</div>}
         @case('hotspot'){<p class="hint">Selected: <strong>{{hotspotSelected(q)===null?'none':q.options![hotspotSelected(q)!]}}</strong></p>@if(lockedQuestion){<p class="key">Correct answer: <strong>{{correctText(q)}}</strong></p>}}
       }
 
       @if(isPractice&&lockedQuestion){
-        <div class="feedback" [class.good]="correct(q.id)"><strong>{{correct(q.id)?'Correct.':'Not quite.'}}</strong> {{q.explanation}}<small>{{q.ref}}</small></div>
+        <div class="feedback" [class.good]="correct(q.id)" [class.shown]="!answered(q.id)"><strong>{{correct(q.id)?'Correct.':answered(q.id)?'Not quite.':'Answer and explanation.'}}</strong>@if(q.type==='order'||q.type==='blanks'||q.type==='yesno'||q.type==='matching'||!answered(q.id)){<span class="key-line">Correct answer: {{correctText(q)}}</span>} {{q.explanation}}<small>{{q.ref}}</small></div>
       }
     </article>
   </div>
 
   <footer class="exam-foot">
     <button class="button secondary" type="button" (click)="prev()" [disabled]="index===0">← Previous</button>
-    @if(isPractice&&!lockedQuestion){<button class="button primary" type="button" (click)="check()" [disabled]="!answered(q.id)">Check answer</button>}
+    @if(isPractice&&!lockedQuestion){<button class="button secondary" type="button" (click)="reveal()">Show answer</button><button class="button primary" type="button" (click)="check()" [disabled]="!answered(q.id)">Check answer</button>}
     <button class="button secondary" type="button" (click)="openReview()">{{isPractice?'Finish':'Review section'}}</button>
     <button class="button primary" type="button" (click)="next()">{{index===ids.length-1?'Review →':'Next →'}}</button>
   </footer>
@@ -211,7 +219,7 @@
       <li><a [routerLink]="program.overview"><strong>Follow the {{program.code}} study plan →</strong><span>Work on your weakest {{program.domainLabel.toLowerCase()}} first, then take the next mock.</span></a></li>
       <li><a routerLink="/daily-practice"><strong>Do 5 questions a day →</strong><span>Daily practice keeps what you learned fresh between full mocks.</span></a></li>
       <li><a routerLink="/pm-playground"><strong>Try a project simulation →</strong><span>See the ideas behind the questions play out week by week.</span></a></li>
-      <li><a routerLink="/pm-faciliter"><strong>Explore the other exam simulators →</strong><span>PMP, CAPM, PMI-RMP, ECBA, CBAP, ITIL 5 Foundation and CCMP.</span></a></li>
+      <li><a routerLink="/pm-faciliter"><strong>Explore the other exam simulators →</strong><span>PMP, CAPM, PMI-RMP, ECBA, CBAP, ITIL 5 Foundation, CCMP and PL-300 Power BI.</span></a></li>
     </ul>
   </nav>
 </section>
@@ -229,6 +237,7 @@
       @if(caseFor(item.q);as c){<p class="muted small">{{c.title}}</p>}
       @if(item.q.graphic){<app-exam-graphic [id]="item.q.graphic" [hotspot]="item.q.type==='hotspot'" [selected]="item.q.answer?.[0]??null" [disabled]="true"/>}
       <h3>{{item.q.stem}}</h3>
+      @if(item.q.code){<pre class="code"><code>{{item.q.code}}</code></pre>}
       <p><span class="lbl">Your answer</span>{{responseText(item.q)}}</p>
       <p><span class="lbl ok">Correct answer</span>{{correctText(item.q)}}</p>
       <p class="explain">{{item.q.explanation}}</p>

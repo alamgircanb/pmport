@@ -1,6 +1,6 @@
 import {CaseStudy,Domain,ExamProgram,ExamQuestion,ExamSet} from './exam-types';
 
-/** A user's response: option indexes (single/multi/dropdown/hotspot) or one choice index per pair (matching; -1 = unanswered). */
+/** A user's response: option indexes (single/multi/dropdown/hotspot), one choice index per pair (matching, yesno) or blank (blanks; -1 = unanswered), or a sequence of item indexes (order). */
 export type Response=number[];
 
 export interface ExamSection{title:string;ids:string[]}
@@ -13,20 +13,26 @@ export function shuffle<T>(items:T[],rand:()=>number):T[]{const a=[...items];for
 /** Options are shuffled for single and multiple-response items, as on the real exams. Numeric pull-down lists and hotspot labels keep their order. */
 function optionOrders(questions:ExamQuestion[],rand:()=>number){
   const order:Record<string,number[]>={};
-  for(const q of questions){if(q.options){const idx=q.options.map((_,i)=>i);order[q.id]=(q.type==='single'||q.type==='multi')?shuffle(idx,rand):idx}}
+  for(const q of questions){
+    if(q.options){const idx=q.options.map((_,i)=>i);order[q.id]=(q.type==='single'||q.type==='multi')?shuffle(idx,rand):idx}
+    else if(q.items)order[q.id]=shuffle(q.items.map((_,i)=>i),rand);
+  }
   return order;
 }
 
 export function isAnswered(q:ExamQuestion,r:Response|undefined):boolean{
   if(!r||!r.length)return false;
-  if(q.type==='matching')return r.length===q.pairs!.length&&r.every(v=>v>=0);
-  if(q.type==='multi')return r.length===q.answer!.length;
+  if(q.type==='matching'||q.type==='yesno')return r.length===q.pairs!.length&&r.every(v=>v>=0);
+  if(q.type==='blanks')return r.length===q.blanks!.length&&r.every(v=>v>=0);
+  if(q.type==='multi'||q.type==='order')return r.length===q.answer!.length;
   return r.length===1&&r[0]>=0;
 }
 
 export function isCorrect(q:ExamQuestion,r:Response|undefined):boolean{
   if(!isAnswered(q,r))return false;
-  if(q.type==='matching')return q.pairs!.every((p,i)=>r![i]===p.right);
+  if(q.type==='matching'||q.type==='yesno')return q.pairs!.every((p,i)=>r![i]===p.right);
+  if(q.type==='blanks')return q.blanks!.every((b,i)=>r![i]===b.answer);
+  if(q.type==='order')return q.answer!.every((a,i)=>r![i]===a);
   const want=[...q.answer!].sort((a,b)=>a-b).join(',');
   return [...r!].sort((a,b)=>a-b).join(',')===want;
 }

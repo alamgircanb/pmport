@@ -97,6 +97,15 @@ import {GRAPHICS,GraphicSpec} from './exam-graphics-data';
         @for(b of r.bars;track $index){<rect [attr.class]="b.over?'bar-over':'bar-r'" [attr.x]="b.x" [attr.y]="b.y" [attr.width]="b.w" [attr.height]="b.h"/><text class="axis-t" [attr.x]="b.x+b.w/2" y="288" text-anchor="middle">{{$index+1}}</text>}
         <line class="limit" x1="56" x2="530" [attr.y1]="r.y(r.limit)" [attr.y2]="r.y(r.limit)"/><text class="label" x="530" [attr.y]="r.y(r.limit)-6" text-anchor="end">Available: {{r.limit}}</text>
       </svg>}}
+    @case('table'){@if(tbl;as t){
+      <table class="data"><thead><tr>@for(c of t.columns;track $index){<th scope="col">{{c}}</th>}</tr></thead><tbody>@for(r of t.rows;track $index){<tr>@for(v of r;track $index){<td>{{v}}</td>}</tr>}</tbody></table>}}
+    @case('model'){@if(mdl;as m){
+      <svg [attr.viewBox]="'0 0 640 '+m.h" role="img" [attr.aria-label]="m.aria">
+        @for(r of m.rels;track $index){<line class="rel" [class.inactive]="!r.active" [attr.x1]="r.x1" [attr.y1]="r.y1" [attr.x2]="r.x2" [attr.y2]="r.y2"/><rect class="rel-bg" [attr.x]="r.mx-r.w/2" [attr.y]="r.my-11" [attr.width]="r.w" height="20" rx="10"/><text class="rel-t" [attr.x]="r.mx" [attr.y]="r.my+4" text-anchor="middle">{{r.text}}</text>}
+        @for(t of m.tables;track t.name;let idx=$index){<g [class.region]="hotspot" [class.picked]="hotspot&&idx===selected" (click)="pick(idx)" (keydown.enter)="pick(idx)" [attr.tabindex]="hotspot?0:null" [attr.role]="hotspot?'button':null" [attr.aria-label]="t.name">
+          <rect class="box" [attr.x]="t.x" [attr.y]="t.y" width="150" [attr.height]="t.h" rx="8"/><text class="node-t" [attr.x]="t.x+75" [attr.y]="t.y+20" text-anchor="middle">{{t.name}}</text>
+          @for(c of t.cols;track $index){<text class="col-t" [attr.x]="t.x+12" [attr.y]="t.y+40+$index*17">{{c}}</text>}</g>}
+      </svg>}}
     }
     @if(hotspot){<figcaption>Click an item in the exhibit to select your answer.</figcaption>}
   </figure>}`,
@@ -122,6 +131,10 @@ import {GRAPHICS,GraphicSpec} from './exam-graphics-data';
     .hot .region{cursor:pointer}.hot .region:hover .box,.hot .region:hover .risk,.hot .region:hover .chip,.hot .region:focus .box,.hot .region:focus .risk,.hot .region:focus .chip{stroke:#f0c36b;stroke-width:3}
     .picked .box,.picked .risk,.picked .chip{stroke:#f0c36b!important;stroke-width:4!important;fill:#4a3a12!important}
     .region:focus{outline:none}
+    table.data{width:100%;border-collapse:collapse;font:13.5px Inter,Arial,sans-serif;color:#dcebf7}
+    table.data th,table.data td{padding:.45rem .6rem;border:1px solid #1d3a57;text-align:left;white-space:nowrap}
+    table.data th{background:#0b2340;color:#9db1c7;font-weight:700}
+    .rel{stroke:#7d93a8;stroke-width:1.8}.rel.inactive{stroke-dasharray:6 5}.rel-bg{fill:#061629;stroke:#3b5874}.rel-t{fill:#ffd98c;font-size:11.5px;font-weight:700}.col-t{fill:#9db1c7;font-size:12px}
   `]
 })
 export class ExamGraphicComponent{
@@ -181,6 +194,13 @@ export class ExamGraphicComponent{
   get tor(){const g=this.spec;if(g?.kind!=='tornado')return null;
     const m=Math.max(...g.bars.map(b=>Math.max(-b.low,b.high)));const cx=392,scale=140/m;
     return {cx,base:g.base,bars:g.bars.map((b,i)=>({...b,y:24+i*46,lx:cx+b.low*scale,lw:-b.low*scale,hw:b.high*scale})),aria:'Tornado diagram of NPV swing from base '+g.base+': '+g.bars.map(b=>`${b.label} ${b.low} to +${b.high}`).join('; ')}}
+  get tbl(){const g=this.spec;return g?.kind==='table'?g:null}
+  get mdl(){const g=this.spec;if(g?.kind!=='model')return null;
+    const tables=g.tables.map(t=>({...t,h:30+t.cols.length*17+6}));const find=(n:string)=>tables.find(t=>t.name===n)!;
+    const rels=g.rels.map(r=>{const A=find(r.a),B=find(r.b);const x1=A.x+75,y1=A.y+A.h/2,x2=B.x+75,y2=B.y+B.h/2;const text=`${r.card} · ${r.dir}${r.active===false?' · inactive':''}`;
+      return {x1,y1,x2,y2,mx:(x1+x2)/2,my:(y1+y2)/2,text,w:text.length*6.4+14,active:r.active!==false}});
+    const h=Math.max(...tables.map(t=>t.y+t.h))+12;
+    return {tables,rels,h,aria:'Model diagram. Tables: '+tables.map(t=>`${t.name} (${t.cols.join(', ')})`).join('; ')+'. Relationships: '+g.rels.map(r=>`${r.a} to ${r.b}, ${r.card}, cross-filter ${r.dir}${r.active===false?', inactive':''}`).join('; ')+'.'}}
   get res(){const g=this.spec;if(g?.kind!=='resource')return null;
     const ticks=this.axis(Math.max(g.limit,...g.values)+1);const top=ticks[ticks.length-1];const y=(v:number)=>270-v*(240/top);const w=34,gap=(474-g.values.length*w)/(g.values.length+1);
     return {...g,ticks,y,bars:g.values.map((v,i)=>({x:56+gap+i*(w+gap),w,y:y(v),h:270-y(v),over:v>g.limit})),aria:`Resource histogram. ${g.unit} per week: ${g.values.join(', ')}. Available ${g.limit}.`}}

@@ -7,7 +7,8 @@
 export type Domain=string;
 /** Delivery approach tag (PMP and CAPM only). */
 export type Approach=string;
-export type ItemType='single'|'multi'|'matching'|'dropdown'|'hotspot';
+/** order = arrange a sequence (drag-and-drop style); yesno = a series of Yes/No statements; blanks = several drop-downs that complete a statement or code. */
+export type ItemType='single'|'multi'|'matching'|'dropdown'|'hotspot'|'order'|'yesno'|'blanks';
 /** Id of an exhibit in exam-graphics-data.ts. */
 export type GraphicId=string;
 
@@ -22,14 +23,20 @@ export interface ExamQuestion{
   caseId?:string;
   graphic?:GraphicId;
   stem:string;
+  /** Optional code or formula shown under the stem (DAX, Power Query M, SQL). */
+  code?:string;
   /** Options for single, multi, dropdown and hotspot (hotspot options are region labels). */
   options?:string[];
   /** Correct option indexes. single/dropdown/hotspot: one index; multi: several. */
   answer?:number[];
   /** Matching: left-hand prompts and the correct right-hand option index for each. */
   pairs?:{left:string;right:number}[];
-  /** Matching: right-hand choices. */
+  /** Matching: right-hand choices. Yes/No series: ['Yes','No']. */
   choices?:string[];
+  /** Ordering: the available actions (may include distractors). answer holds the correct sequence of item indexes. */
+  items?:string[];
+  /** Drop-down completion: one list per blank; answer is the correct option index in each list. */
+  blanks?:{label:string;options:string[];answer:number}[];
   explanation:string;
   /** PMBOK® Guide 8th Edition anchor: principle, performance domain and/or focus area. */
   ref:string;

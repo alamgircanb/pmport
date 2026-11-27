@@ -9,8 +9,8 @@ import {tmpdir} from 'node:os';
 import {fileURLToPath,pathToFileURL} from 'node:url';
 
 const root=join(dirname(fileURLToPath(import.meta.url)),'..');
-const programs={pmp:'PMP_PROGRAM',capm:'CAPM_PROGRAM',ecba:'ECBA_PROGRAM',cbap:'CBAP_PROGRAM',itil:'ITIL_PROGRAM',rmp:'RMP_PROGRAM',ccmp:'CCMP_PROGRAM'};
-const PER_EXAM={pmp:8,capm:6,ecba:6,cbap:6,itil:6,rmp:6,ccmp:6};
+const programs={pmp:'PMP_PROGRAM',capm:'CAPM_PROGRAM',ecba:'ECBA_PROGRAM',cbap:'CBAP_PROGRAM',itil:'ITIL_PROGRAM',rmp:'RMP_PROGRAM',ccmp:'CCMP_PROGRAM',pl300:'PL300_PROGRAM'};
+const PER_EXAM={pmp:8,capm:6,ecba:6,cbap:6,itil:6,rmp:6,ccmp:6,pl300:6};
 
 const dir=mkdtempSync(join(tmpdir(),'pmport-samples-'));
 try{
@@ -21,7 +21,7 @@ try{
   const mod=await import(pathToFileURL(outfile).href);
   const out={};
   for(const [id,name] of Object.entries(programs)){
-    const qs=mod[name].exams[0].questions.filter(q=>q.type==='single'&&q.answer?.length===1&&q.explanation);
+    const qs=mod[name].exams[0].questions.filter(q=>q.type==='single'&&!q.code&&(id!=='pl300'||!q.graphic)&&q.answer?.length===1&&q.explanation);
     // Spread the picks across the exam's domains: take questions round-robin from each domain in turn.
     const byDomain={};for(const q of qs)(byDomain[q.domain]??=[]).push(q);
     const lists=Object.values(byDomain);const picks=[];

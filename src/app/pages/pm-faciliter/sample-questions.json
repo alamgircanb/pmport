@@ -540,5 +540,79 @@
    "answer": 0,
    "explanation": "Success is measured against criteria for adoption and outcomes."
   }
+ ],
+ "pl300": [
+  {
+   "domain": "Prepare the data",
+   "question": "You need to build a report from a semantic model that another team already published to a Power BI workspace. You must not copy the data or duplicate the model. Which connection should you use in Power BI Desktop?",
+   "options": [
+    "Connect to the published semantic model with a live connection",
+    "Import the source tables again into a new Power BI Desktop file",
+    "Export the model data to CSV files and import the files",
+    "Use Get data > Web with the URL of the published report"
+   ],
+   "answer": 0,
+   "explanation": "A live connection to a published semantic model reuses the existing model and its security. No data is copied and the model stays the single source of truth."
+  },
+  {
+   "domain": "Model the data",
+   "question": "You create a relationship between Sales[ProductKey] and Product[ProductKey]. Sales contains keys that do not exist in Product. What will users see?",
+   "options": [
+    "A (Blank) member in visuals that group by Product columns",
+    "An error when the model refreshes and the relationship is created",
+    "Those sales rows are removed from the model during refresh",
+    "The relationship becomes many-to-many"
+   ],
+   "answer": 0,
+   "explanation": "Unmatched keys appear under a blank row that Power BI adds to the one-side table, so totals still include them."
+  },
+  {
+   "domain": "Visualize and analyze the data",
+   "question": "Managers mostly view reports on phones. How do you design a phone-friendly view of a report page?",
+   "options": [
+    "Use Mobile layout view and arrange the page's visuals on the phone canvas",
+    "Create a new report with only small visuals on each page",
+    "Reduce the page size to 300 × 600 pixels in the canvas settings",
+    "Publish the report twice with different themes"
+   ],
+   "answer": 0,
+   "explanation": "Mobile layout lets you place and size existing visuals for portrait phone viewing."
+  },
+  {
+   "domain": "Manage and secure Power BI",
+   "question": "Which workspace role can add or remove other Admins?",
+   "options": [
+    "Admin",
+    "Member",
+    "Contributor",
+    "Viewer"
+   ],
+   "answer": 0,
+   "explanation": "Only Admins can add or remove Admins and delete the workspace."
+  },
+  {
+   "domain": "Prepare the data",
+   "question": "You need two queries that start from the same cleaned source query. When you change a step in the source query, both new queries must pick up the change. What should you create?",
+   "options": [
+    "Two references of the source query",
+    "Two duplicates of the source query",
+    "A copy of the .pbix file",
+    "Two parameters that point to the source"
+   ],
+   "answer": 0,
+   "explanation": "A reference starts from the output of the original query, so later changes flow through. A duplicate copies the steps and is then independent."
+  },
+  {
+   "domain": "Model the data",
+   "question": "Which DAX formula returns sales for the current filter context but ignores any filter on Customer[City] only?",
+   "options": [
+    "CALCULATE([Total Sales], REMOVEFILTERS(Customer[City]))",
+    "CALCULATE([Total Sales], ALL(Customer))",
+    "CALCULATE([Total Sales], ALLEXCEPT(Customer, Customer[City]))",
+    "CALCULATE([Total Sales], VALUES(Customer[City]))"
+   ],
+   "answer": 0,
+   "explanation": "REMOVEFILTERS on one column clears just that filter. ALL(Customer) clears every Customer filter, and ALLEXCEPT keeps City."
+  }
  ]
 }

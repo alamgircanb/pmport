@@ -190,3 +190,13 @@ The event display recovers a title from a nonstandard title key in the original 
 - **Overview text:** the `ccmp` entry in `certifications.json` (`mocks` sets the "Two full-length mock exams" wording; other certifications default to "Five").
 - **Legal:** all questions and explanations are original. Models are described in PMPORT's own words and credited (ADKAR® to Prosci, the 8 steps to Kotter Inc., transition to William Bridges). Keep the trademark and non-affiliation notes on the overview, simulator and guide. Do not use ACMP or Prosci logos.
 - After changing the bank, run `npm run seo:samples` to refresh the sample questions shown to search engines.
+
+## Power BI module: PL-300 (November 2026)
+
+- **Pages:** overview and study plan at `/pm-faciliter/pl300`, simulator at `/pm-faciliter/pl300-exam-simulator`. Sidebar: Exam Prep → "Power BI (PL-300)". The DAX lab (`/pm-datalab/power-bi-dax`) links to the simulator as its next step.
+- **Overview text** (facts, four skill areas, six-week plan, FAQ) is the `pl300` entry in `src/app/pages/pm-faciliter/certifications.json` (`mocks: "Twenty"`).
+- **Simulator settings** (50 questions, 100 minutes, four skill areas weighted 25 each, skills list, Microsoft disclaimer) are in `src/app/pages/pmp-exam/programs/pl300-program.ts`.
+- **Questions:** 1,000 in `src/app/pages/pmp-exam/banks/pl300/`, 250 per skill area: `prepare1–5.ts`, `model1–5.ts`, `visualize1–5.ts`, `manage1–5.ts` (45 each) and `cases1–4.ts` (20 case studies × 5 questions). `index.ts` deals them into 20 mocks of 45 independent questions plus one case study each. Items use compact tuples, explained at the top of `authoring.ts`: a plain tuple is single choice (an array answer makes it multiple answer), `'Y'` is a Yes/No series, `'O'` ordering, `'B'` drop-down code blanks, `'H'` hotspot, `'X'` exhibit question and `'M'` matching. Exhibits (model diagrams and tables) are in `src/app/pages/pmp-exam/exam-graphics-pl300.ts`.
+- **New question types** (`order`, `yesno`, `blanks`, plus `code` on any question) are handled in `exam-types.ts`, `exam-engine.ts`, `exam-simulator.base.ts` and the shared `pmp-exam.component.html`, so any other exam can use them. Practice mode has a **Show answer** button that reveals the answer and explanation on request.
+- **Legal:** every question and explanation is original PMPORT content written to Microsoft's public skills measured, not copied from Microsoft exams or dump sites. No Microsoft logos are used; both pages carry the Microsoft trademark and non-affiliation note.
+- **Search pages:** `seo-pages.json` has both pages and `page-faq.json` has the simulator FAQ. Run `npm run seo:samples` after changing the bank. Hero image: `public/pl300-exam-simulator.webp`.

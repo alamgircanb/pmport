@@ -487,5 +487,122 @@
         "a": "No. All 300 questions are original PMPORT practice items. They are not ACMP exam questions."
       }
     ]
+  },
+  {
+    "id": "pl300",
+    "code": "PL-300",
+    "name": "Microsoft Certified: Power BI Data Analyst Associate (Exam PL-300)",
+    "body": "Microsoft",
+    "bodyUrl": "https://learn.microsoft.com/credentials/certifications/data-analyst-associate/",
+    "level": "Data analysts",
+    "mocks": "Twenty",
+    "eyebrow": "Exam Faciliter · Power BI Data Analyst (PL-300) preparation",
+    "title": "Power BI Data Analyst (PL-300) Exam Preparation",
+    "lead": "Get ready for Microsoft Exam PL-300. Learn what each of the four skill areas covers, follow a six-week study plan and practise with twenty free timed mock exams: 1,000 original Power BI questions with case studies, DAX and Power Query drop-downs, ordering, Yes/No and hotspot questions.",
+    "hero": "pl300-exam-simulator.webp",
+    "heroAlt": "A star schema data model beside a report with KPI cards and a combined bar and line chart",
+    "simulator": "/pm-faciliter/pl300-exam-simulator",
+    "simulatorLabel": "Open the PL-300 simulators",
+    "facts": [
+      {
+        "big": "40–60",
+        "text": "questions, including at least one case study"
+      },
+      {
+        "big": "100",
+        "text": "minutes to answer the questions"
+      },
+      {
+        "big": "700",
+        "text": "scaled score out of 1,000 needed to pass"
+      },
+      {
+        "big": "1,000",
+        "text": "free practice questions in twenty PMPORT mocks"
+      }
+    ],
+    "outline": [
+      {
+        "name": "Prepare the data",
+        "weight": "25–30%",
+        "items": "Getting data from files, databases, Dataverse, APIs and shared semantic models; storage modes (Import, DirectQuery, Dual, composite); credentials, privacy levels and parameters; profiling data with column quality, distribution and profile; resolving errors and data types; Power Query transforms such as grouping, pivot, unpivot, merge and append; and shaping fact and dimension tables with keys."
+      },
+      {
+        "name": "Model the data",
+        "weight": "25–30%",
+        "items": "Star schema design, table and column properties, relationships, cardinality and cross-filter direction, role-playing dimensions and date tables, row-level security roles, DAX measures with CALCULATE, time intelligence and semi-additive measures, calculated columns and tables, calculation groups, and performance tuning with Performance analyzer and DAX query view."
+      },
+      {
+        "name": "Visualize and analyze the data",
+        "weight": "25–30%",
+        "items": "Choosing and formatting visuals, themes and conditional formatting, slicers and filters, bookmarks, tooltips, drillthrough and interactions, mobile layout and accessibility, export and personalization settings, automatic page refresh, visual calculations, grouping, binning and clustering, the Analytics pane, AI visuals and Copilot."
+      },
+      {
+        "name": "Manage and secure Power BI",
+        "weight": "15–20%",
+        "items": "Workspaces and roles, publishing and apps with audiences, dashboards, subscriptions and data alerts, gateways and scheduled refresh, item-level sharing and Build permission, RLS membership, endorsement (promoted and certified), sensitivity labels and impact analysis."
+      }
+    ],
+    "audience": "Data analysts, business intelligence developers, report authors and Excel power users who build Power BI semantic models and reports for their organization.",
+    "eligibility": "There are no formal prerequisites. Microsoft recommends hands-on experience with Power Query, DAX and the Power BI service. The certification is renewed each year with a free online assessment on Microsoft Learn. Check Microsoft's current exam page and study guide before you book.",
+    "format": [
+      "Multiple choice and multiple answer questions",
+      "Drag-and-drop ordering, drop-down completion of DAX and Power Query code, Yes/No series and hotspot exhibits",
+      "At least one case study with several questions about one scenario"
+    ],
+    "plan": [
+      {
+        "title": "Week 1: Get and prepare data",
+        "text": "Practise connectors, storage modes, privacy levels and parameters, then profile a messy file and fix its errors and data types in Power Query."
+      },
+      {
+        "title": "Week 2: Shape data",
+        "text": "Work through group by, pivot and unpivot, nested JSON, merge and append, and build fact and dimension tables with clean keys."
+      },
+      {
+        "title": "Week 3: Model and secure",
+        "text": "Build a star schema with a marked date table, role-playing dates and correct relationships, then add static and dynamic row-level security and test it with View as."
+      },
+      {
+        "title": "Week 4: DAX",
+        "text": "Master CALCULATE and filter context, DIVIDE, iterators, time intelligence, semi-additive measures, calculation groups and the basics of tuning with Performance analyzer."
+      },
+      {
+        "title": "Week 5: Reports and the service",
+        "text": "Practise visuals, formatting, bookmarks, drillthrough, tooltips, mobile layout and accessibility, then workspaces, apps, gateways, refresh, sharing, endorsement and labels."
+      },
+      {
+        "title": "Week 6: Full mocks",
+        "text": "Take a timed mock every second day, review every answer and use practice mode on your weakest skill until you score 80% or more on several mocks."
+      }
+    ],
+    "related": [
+      {
+        "label": "Daily practice (5 minutes)",
+        "path": "/daily-practice"
+      },
+      {
+        "label": "Free courses and channels",
+        "path": "/pm-learninglink"
+      }
+    ],
+    "faq": [
+      {
+        "q": "What question types are on the PL-300 exam?",
+        "a": "Expect multiple choice and multiple answer questions, drag-and-drop ordering, drop-down lists that complete DAX or Power Query code, Yes/No statement series, hotspot questions on an exhibit and at least one case study. The PMPORT simulator includes all of these."
+      },
+      {
+        "q": "How hard is the DAX on PL-300?",
+        "a": "You need to read and complete measures rather than write long code from memory. Know CALCULATE and filter context, DIVIDE, SUMX and other iterators, ALL and ALLEXCEPT, USERELATIONSHIP, time intelligence such as TOTALYTD and SAMEPERIODLASTYEAR, and semi-additive patterns such as LASTDATE or LASTNONBLANK."
+      },
+      {
+        "q": "Do I need a paid Power BI license to study?",
+        "a": "No. Power BI Desktop is free, and you can practise Power Query, modelling, DAX and report design with it. A free Microsoft Fabric trial or a developer tenant lets you try workspaces, apps and sharing in the service."
+      },
+      {
+        "q": "Are these official PL-300 questions?",
+        "a": "No. Every question and explanation is original PMPORT practice content written to the public skills measured. PMPORT is not affiliated with or endorsed by Microsoft."
+      }
+    ]
   }
 ]

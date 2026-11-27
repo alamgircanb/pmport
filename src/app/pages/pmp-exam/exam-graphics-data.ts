@@ -13,12 +13,19 @@ export type GraphicSpec=
   |{kind:'control';label:string;unit:string;mean:number;ucl:number;lcl:number;values:number[]}
   |{kind:'pareto';label:string;bars:{label:string;v:number}[]}
   |{kind:'tornado';label:string;base:number;unit:string;bars:{label:string;low:number;high:number}[]}
-  |{kind:'resource';label:string;unit:string;limit:number;values:number[]};
+  |{kind:'resource';label:string;unit:string;limit:number;values:number[]}
+  /** A small data table (sample rows of a query, a visual or an export). */
+  |{kind:'table';label:string;columns:string[];rows:(string|number)[][]}
+  /** A semantic model diagram: tables at x/y with their key columns, and relationships. In hotspot mode, tables are the regions. */
+  |{kind:'model';label:string;tables:{name:string;x:number;y:number;cols:string[]}[];rels:{a:string;b:string;card:string;dir:'Single'|'Both';active?:boolean}[]};
 
 /** Grid coordinates: x 60–502 (interest low→high), y 20–322 (power high→low). */
 const LEFT=170,RIGHT=392,TOP=88,BOTTOM=252;
 
+import {PL300_GRAPHICS} from './exam-graphics-pl300';
+
 export const GRAPHICS:Record<string,GraphicSpec>={
+  ...PL300_GRAPHICS,
   // ---------------- Exam 1 ----------------
   'ev-curve':{kind:'ev',label:'Earned value at the end of month 6 ($000)',months:10,status:6,bac:1000,
     pv:[0,40,100,190,300,440,600,750,870,950,1000],ev:[0,35,85,160,250,360,480],ac:[0,40,95,180,280,400,540]},
