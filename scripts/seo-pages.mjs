@@ -85,6 +85,7 @@ function termSeo(t){
   const short=t.term.replace(/\s*\([^)]*\)\s*$/,'');
   const title=`What Is ${t.term}? Definition & Example | PMPORT`;
   const desc=`${short}: ${t.definition}`.replace(/\s+/g,' ');
+  const d=deep[t.slug];if(d?.seoTitle&&d.seoDescription)return {title:d.seoTitle+' | PMPORT',description:d.seoDescription};
   return {title:title.length<=70?title:`${t.term}: Definition | PMPORT`,description:desc.length<=158?desc:desc.slice(0,desc.lastIndexOf(' ',154))+'…'};
 }
 const customHtml={};const extraHead={};
@@ -95,6 +96,7 @@ for(const [i,t] of glossary.entries()){
   const d=deep[t.slug];
   const deepHtml=d?d.sections.map(x=>`<h2>${escText(x.h)}</h2>`+(x.p?`<p>${escText(x.p)}</p>`:'')+(x.items?`<ul>${x.items.map(i=>`<li>${escText(i)}</li>`).join('')}</ul>`:'')).join('')+
     (d.examTip?`<h2>PMP exam tip</h2><p>${escText(d.examTip)}</p>`:'')+
+    (d.tools?.length?`<h2>Practise it</h2><ul>${d.tools.map(x=>`<li><a href="${x.path}">${escText(x.label)}</a>: ${escText(x.text)}</li>`).join('')}</ul>`:'')+
     (d.faq?.length?`<h2>Frequently asked questions</h2>${d.faq.map(f=>`<h3>${escText(f.q)}</h3><p>${escText(f.a)}</p>`).join('')}`:''):'';
   if(d?.faq?.length)termFaq[path]={'@context':'https://schema.org','@type':'FAQPage',mainEntity:d.faq.map(f=>({'@type':'Question',name:f.q,acceptedAnswer:{'@type':'Answer',text:f.a}}))};
   customHtml[path]=`<p class="seo-eyebrow">${escText(t.category)} · Glossary</p><h1>${escText(t.term)}</h1><p>${escText(t.definition)}</p><h2>Example</h2><p>${escText(t.example)}</p>`+deepHtml+
@@ -231,6 +233,16 @@ for(const c of certs){
       acceptedAnswer:{'@type':'Answer',text:q.options[q.answer],answerExplanation:{'@type':'Comment',text:q.explanation}},
       suggestedAnswer:q.options.filter((_,i)=>i!==q.answer).map(o=>({'@type':'Answer',text:o}))}))};
 }
+
+// Answer-first summaries and FAQs (src/app/core/seo/page-faq.json, the same file the pages show), so search engines
+// and AI assistants read a direct answer near the top and a FAQ with matching FAQPage structured data.
+const pageFaq=JSON.parse(readFileSync(join(root,'src/app/core/seo/page-faq.json'),'utf8'));
+for(const [path,d] of Object.entries(pageFaq)){
+  if(!customHtml[path])throw new Error(`page-faq.json: no crawler text for ${path}`);
+  customHtml[path]=customHtml[path].replace('</h1>',`</h1><p><strong>Quick answer:</strong> ${escText(d.summary)}</p>`)+labFaqHtml(path,d.faq.map(f=>[f.q,f.a]));
+}
+// Certification overview pages already show a FAQ; give each one matching FAQPage structured data.
+for(const c of certs)if(c.faq?.length){const path=`pm-faciliter/${c.id==='itil'?'itil-foundation':c.id}`;if(!labFaq[path])labFaq[path]={'@context':'https://schema.org','@type':'FAQPage',mainEntity:c.faq.map(f=>({'@type':'Question',name:f.q,acceptedAnswer:{'@type':'Answer',text:f.a}}))};}
 
 // Hub pages: a short visible FAQ with matching FAQPage structured data.
 customHtml['pm-faciliter']+=labFaqHtml('pm-faciliter',[

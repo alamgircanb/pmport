@@ -46,7 +46,7 @@
   ]
  },
  "earned-value-management-evm": {
-  "updated": "2026-11-12",
+  "updated": "2026-11-25",
   "sections": [
    {
     "h": "The three core numbers",
@@ -89,6 +89,25 @@
    {
     "q": "Is EVM used in agile projects?",
     "a": "Yes. Agile EVM uses story points or completed features to measure earned value per sprint or release, while the formulas stay the same."
+   }
+  ],
+  "seoTitle": "Earned Value Management (EVM): Formulas & Worked Example",
+  "seoDescription": "Earned value management (EVM) measures project cost and schedule performance with PV, EV and AC. See the key formulas (CPI, SPI, EAC) and a worked example.",
+  "tools": [
+   {
+    "label": "Earned value calculator",
+    "path": "/pm-calculators/earned-value-calculator",
+    "text": "Enter PV, EV, AC and BAC to get CPI, SPI, EAC, ETC, VAC and TCPI with the formulas shown."
+   },
+   {
+    "label": "Project delivery simulator",
+    "path": "/pm-playground",
+    "text": "Watch PV, EV and AC, CPI and SPI move week by week as you change the team and scope."
+   },
+   {
+    "label": "PMP exam simulator",
+    "path": "/pm-faciliter/pmp-exam-simulator",
+    "text": "900 original practice questions with an explanation for every answer."
    }
   ]
  },
@@ -139,7 +158,7 @@
   ]
  },
  "rag-status": {
-  "updated": "2026-11-12",
+  "updated": "2026-11-25",
   "sections": [
    {
     "h": "What each colour means",
@@ -172,6 +191,25 @@
    {
     "q": "When should a project be Amber instead of Red?",
     "a": "Amber means there is a problem but the team can recover within its own authority. Red means targets will be missed unless someone above the team makes a decision or adds help."
+   }
+  ],
+  "seoTitle": "RAG Status Meaning: Red, Amber and Green in Projects",
+  "seoDescription": "RAG status means red, amber or green: a quick health rating for a project. See what each colour means, how to set thresholds and how to report it well.",
+  "tools": [
+   {
+    "label": "Status report lab",
+    "path": "/pm-datalab/status-report",
+    "text": "Rate real projects Red, Amber or Green from their data and build a one-page report."
+   },
+   {
+    "label": "Status report",
+    "path": "/pm-glossary/status-report",
+    "text": "Where RAG ratings are usually reported."
+   },
+   {
+    "label": "Free PM templates",
+    "path": "/pm-tools",
+    "text": "Status report and RAID log templates you fill in online."
    }
   ]
  },
@@ -457,6 +495,424 @@
    {
     "q": "Who owns the benefits register?",
     "a": "Usually the sponsor or a benefits owner in the business, often supported by the PMO."
+   }
+  ]
+ },
+ "enterprise-environmental-factors-eef": {
+  "updated": "2026-11-25",
+  "seoTitle": "EEF (Enterprise Environmental Factors): Meaning & Examples",
+  "seoDescription": "EEF means enterprise environmental factors: internal and external conditions the project team cannot control. See examples, EEF vs OPA and PMP exam tips.",
+  "sections": [
+   {
+    "h": "What EEF means in one line",
+    "p": "Enterprise environmental factors (EEF) are conditions outside the project team's direct control that shape, limit or guide the project. The team cannot change them, so it plans around them."
+   },
+   {
+    "h": "Internal EEF examples",
+    "items": [
+     "Organizational culture, structure and governance",
+     "Where teams and facilities are located (geographic distribution)",
+     "Infrastructure, such as buildings, equipment and IT systems",
+     "Resource availability and the skills of current staff",
+     "The organization's risk appetite and tolerance"
+    ]
+   },
+   {
+    "h": "External EEF examples",
+    "items": [
+     "Marketplace conditions, competitors and supplier availability",
+     "Laws, regulations and industry standards",
+     "Social and cultural norms in the countries involved",
+     "Economic conditions such as exchange rates and inflation",
+     "The physical environment: weather, geography and working conditions"
+    ]
+   },
+   {
+    "h": "EEF vs OPA",
+    "p": "Organizational process assets (OPA) are the organization's own plans, processes, templates and lessons learned, which the team can use and update. EEF are conditions the team must accept. A simple test: if the team can pick it up and use it, it is an OPA; if it surrounds and constrains the project, it is an EEF."
+   }
+  ],
+  "examTip": "On the PMP exam, EEF and OPA appear as inputs to many processes. Regulations, company culture and market conditions are EEF. Templates, historical data and lessons learned registers are OPA.",
+  "faq": [
+   {
+    "q": "What does EEF stand for in project management?",
+    "a": "EEF stands for enterprise environmental factors: the internal and external conditions, not under the project team's control, that influence or constrain a project."
+   },
+   {
+    "q": "What is the difference between EEF and OPA?",
+    "a": "EEF are conditions the team cannot control, such as regulations, culture and market conditions. OPA are the organization's own processes, templates, policies and knowledge bases that the team uses and can update."
+   },
+   {
+    "q": "Is organizational culture an EEF?",
+    "a": "Yes. Culture, structure and governance are internal enterprise environmental factors because the project team cannot change them during the project."
+   }
+  ],
+  "tools": [
+   {
+    "label": "Organizational process assets (OPA)",
+    "path": "/pm-glossary/organizational-process-assets-opa",
+    "text": "The companion term that is often confused with EEF on the exam."
+   },
+   {
+    "label": "PMP exam simulator",
+    "path": "/pm-faciliter/pmp-exam-simulator",
+    "text": "900 original practice questions with an explanation for every answer."
+   }
+  ]
+ },
+ "salience-model": {
+  "updated": "2026-11-25",
+  "seoTitle": "Salience Model: Stakeholder Power, Legitimacy & Urgency",
+  "seoDescription": "The salience model classifies stakeholders by power, legitimacy and urgency into seven types, from dormant to definitive. See each type with examples.",
+  "sections": [
+   {
+    "h": "The salience model in one line",
+    "p": "The salience model sorts stakeholders by three attributes: power (can they impose their will?), legitimacy (is their involvement appropriate?) and urgency (do they need attention now?). The more attributes a stakeholder has, the more attention they need. It was proposed by Mitchell, Agle and Wood in 1997."
+   },
+   {
+    "h": "The seven stakeholder types",
+    "items": [
+     "Dormant (power only): could matter a lot but is not engaged yet. Keep informed and watch.",
+     "Discretionary (legitimacy only): has a valid interest but little power or urgency.",
+     "Demanding (urgency only): noisy and wants attention now, but has little power or legitimacy.",
+     "Dominant (power and legitimacy): has formal influence, such as a senior executive. Engage regularly.",
+     "Dangerous (power and urgency): can act forcefully without legitimacy, such as during a dispute. Handle with care.",
+     "Dependent (legitimacy and urgency): relies on others' power to be heard, such as end users. Partner them with an advocate.",
+     "Definitive (all three): the highest priority. Engage closely, often the sponsor or a key regulator."
+    ]
+   },
+   {
+    "h": "When to use it",
+    "p": "Use the salience model on large or complex projects where stakeholder influence changes over time. A power/interest grid uses two attributes and is quicker. The salience model adds urgency, so it shows who needs attention now as well as who matters most."
+   }
+  ],
+  "examTip": "On the PMP exam, the salience model is a stakeholder analysis tool used in Identify Stakeholders. If a question mentions power, urgency and legitimacy together, the answer is the salience model.",
+  "faq": [
+   {
+    "q": "What are the three attributes of the salience model?",
+    "a": "Power, legitimacy and urgency. Stakeholders with all three are definitive stakeholders and get the most attention."
+   },
+   {
+    "q": "What is a definitive stakeholder?",
+    "a": "A stakeholder who has power, legitimacy and urgency at the same time. They are the highest priority, for example a sponsor who must approve a delayed release this week."
+   },
+   {
+    "q": "How is the salience model different from a power/interest grid?",
+    "a": "A power/interest grid places stakeholders by two attributes in four boxes. The salience model uses three attributes and seven types, adding urgency, so it is better at showing who needs attention right now."
+   }
+  ],
+  "tools": [
+   {
+    "label": "Power/interest grid",
+    "path": "/pm-glossary/power-interest-grid",
+    "text": "The simpler two-attribute stakeholder grid."
+   },
+   {
+    "label": "Change adoption simulator",
+    "path": "/pm-playground",
+    "text": "See how sponsor visibility and stakeholder engagement change adoption."
+   },
+   {
+    "label": "PMP exam simulator",
+    "path": "/pm-faciliter/pmp-exam-simulator",
+    "text": "900 original practice questions with an explanation for every answer."
+   }
+  ]
+ },
+ "manage-quality": {
+  "updated": "2026-11-25",
+  "seoTitle": "Manage Quality (Quality Assurance): PMP Definition & Tools",
+  "seoDescription": "Manage Quality, also called quality assurance, applies the quality plan and improves processes. Its tools, outputs and how it differs from Control Quality.",
+  "sections": [
+   {
+    "h": "Manage Quality in one line",
+    "p": "Manage Quality is the executing work of applying the quality management plan and improving processes, so that the project is likely to meet its quality requirements. Quality assurance is part of it: checking that the team follows the right processes, rather than inspecting the product."
+   },
+   {
+    "h": "Common tools and techniques",
+    "items": [
+     "Quality audits to confirm the team follows policies and processes",
+     "Checklists, flowcharts and cause-and-effect (fishbone) diagrams",
+     "Root cause analysis and problem solving",
+     "Design for X, such as design for reliability or for maintenance",
+     "Histograms and scatter diagrams to spot patterns in quality data"
+    ]
+   },
+   {
+    "h": "Main outputs",
+    "items": [
+     "Quality reports for stakeholders",
+     "Test and evaluation documents",
+     "Change requests and updates to the quality management plan"
+    ]
+   },
+   {
+    "h": "Manage Quality vs Control Quality",
+    "p": "Manage Quality looks at the process and prevents defects; it happens during executing. Control Quality looks at the product and finds defects by inspecting and testing deliverables; it happens during monitoring and controlling. Prevention is cheaper than inspection."
+   }
+  ],
+  "examTip": "If a PMP question talks about auditing processes or improving how the work is done, think Manage Quality. If it talks about inspecting deliverables or measuring them against requirements, think Control Quality.",
+  "faq": [
+   {
+    "q": "Is Manage Quality the same as quality assurance?",
+    "a": "Mostly. Quality assurance is the core of Manage Quality, but the process also covers design for quality and process improvement. The PMBOK Guide renamed the process from Perform Quality Assurance to Manage Quality to show this wider scope."
+   },
+   {
+    "q": "What is the difference between Manage Quality and Control Quality?",
+    "a": "Manage Quality is about the process and preventing defects during executing. Control Quality is about the product and finding defects by inspection during monitoring and controlling."
+   },
+   {
+    "q": "What is a quality audit?",
+    "a": "A structured, independent review that checks whether project work follows the organization's quality policies and processes, and finds good practices to share."
+   }
+  ],
+  "tools": [
+   {
+    "label": "Control Quality",
+    "path": "/pm-glossary/control-quality",
+    "text": "The companion process that inspects deliverables."
+   },
+   {
+    "label": "Cost of quality",
+    "path": "/pm-glossary/cost-of-quality-coq",
+    "text": "Why prevention costs less than failure."
+   },
+   {
+    "label": "Technical debt simulator",
+    "path": "/pm-playground",
+    "text": "See how cutting testing and reviews raises defects later."
+   }
+  ]
+ },
+ "communication-channels": {
+  "updated": "2026-11-25",
+  "seoTitle": "Communication Channels Formula n(n−1)/2 with Examples",
+  "seoDescription": "Communication channels in project management: the formula n(n−1)/2, worked examples, how adding people raises channels, and a free calculator.",
+  "sections": [
+   {
+    "h": "The formula",
+    "p": "Number of communication channels = n(n − 1) ÷ 2, where n is the number of people, including the project manager. Each channel is one possible two-way path between two people."
+   },
+   {
+    "h": "Worked examples",
+    "items": [
+     "4 people: 4 × 3 ÷ 2 = 6 channels",
+     "5 people: 5 × 4 ÷ 2 = 10 channels",
+     "10 people: 10 × 9 ÷ 2 = 45 channels",
+     "Team grows from 6 to 9 people: 15 channels become 36, an increase of 21"
+    ]
+   },
+   {
+    "h": "Why it matters",
+    "p": "Channels grow much faster than team size, so every new person adds coordination overhead. This is one reason adding people to a late project can make it later (Brooks's law). Large teams need a clear communications management plan, smaller sub-teams and agreed reporting paths."
+   }
+  ],
+  "examTip": "On the PMP exam, read whether the question asks for the total number of channels or the increase. Count the project manager in n unless the question says otherwise, then subtract the old total from the new total for the increase.",
+  "faq": [
+   {
+    "q": "What is the formula for communication channels?",
+    "a": "n(n − 1) ÷ 2, where n is the number of people on the project, including the project manager."
+   },
+   {
+    "q": "How many communication channels are there with 10 people?",
+    "a": "45. Ten people give 10 × 9 ÷ 2 = 45 channels."
+   },
+   {
+    "q": "How many channels are added when a team grows from 5 to 8 people?",
+    "a": "18. Five people have 10 channels and eight people have 28, so the team gains 18 channels."
+   }
+  ],
+  "tools": [
+   {
+    "label": "Communication channels calculator",
+    "path": "/pm-calculators/communication-channels-calculator",
+    "text": "Enter the team size before and after a change to get the channels and the increase."
+   },
+   {
+    "label": "Project delivery simulator",
+    "path": "/pm-playground",
+    "text": "Add people mid-project and watch communication overhead and mentoring slow the team."
+   },
+   {
+    "label": "Brooks's law article",
+    "path": "/resources/nine-women-one-month-brooks-law",
+    "text": "Why adding people to a late project can make it later."
+   }
+  ]
+ },
+ "performance-measurement-baseline": {
+  "updated": "2026-11-25",
+  "seoTitle": "Performance Measurement Baseline (PMB): Meaning & Example",
+  "seoDescription": "The performance measurement baseline joins the scope, schedule and cost baselines. See what it includes, how it differs from the budget and how EVM uses it.",
+  "sections": [
+   {
+    "h": "The performance baseline in one line",
+    "p": "The performance measurement baseline (PMB) is the approved, integrated scope, schedule and cost baseline that a project's actual performance is measured against. It can only change through formal change control."
+   },
+   {
+    "h": "What it includes",
+    "items": [
+     "Scope baseline: the scope statement, WBS and WBS dictionary",
+     "Schedule baseline: the approved start and finish dates",
+     "Cost baseline: the time-phased budget, including contingency reserves"
+    ]
+   },
+   {
+    "h": "Baseline vs budget",
+    "p": "The cost baseline is the cost estimates plus contingency reserves. The project budget is the cost baseline plus management reserve. Management reserve is outside the performance measurement baseline because it covers unknown-unknowns and needs approval to use."
+   },
+   {
+    "h": "How earned value uses it",
+    "p": "Planned value (PV) over time is the performance measurement baseline drawn as an S-curve, and budget at completion (BAC) is its total. Earned value and actual cost are compared with it to get variances and the CPI and SPI indexes."
+   }
+  ],
+  "examTip": "On the PMP exam, if a change affects scope, schedule or cost, the baseline is updated only after the change request is approved. Management reserve is not part of the performance measurement baseline.",
+  "faq": [
+   {
+    "q": "What are the three baselines in the performance measurement baseline?",
+    "a": "The scope baseline, the schedule baseline and the cost baseline, integrated into one."
+   },
+   {
+    "q": "Is management reserve part of the performance measurement baseline?",
+    "a": "No. Contingency reserves are part of the cost baseline, but management reserve sits outside the baseline and is added on top to make the project budget."
+   },
+   {
+    "q": "Can the performance baseline change?",
+    "a": "Yes, but only through an approved change request. Re-baselining without approval hides real variances."
+   }
+  ],
+  "tools": [
+   {
+    "label": "Earned value calculator",
+    "path": "/pm-calculators/earned-value-calculator",
+    "text": "Enter PV, EV, AC and BAC to get CPI, SPI, EAC, ETC, VAC and TCPI with the formulas shown."
+   },
+   {
+    "label": "Project delivery simulator",
+    "path": "/pm-playground",
+    "text": "Watch PV, EV and AC, CPI and SPI move week by week as you change the team and scope."
+   },
+   {
+    "label": "Earned value management",
+    "path": "/pm-glossary/earned-value-management-evm",
+    "text": "How PV, EV and AC are compared with the baseline."
+   }
+  ]
+ },
+ "elicitation": {
+  "updated": "2026-11-25",
+  "seoTitle": "Elicitation Meaning & Techniques in Business Analysis",
+  "seoDescription": "Elicitation means drawing out requirements from stakeholders. See the main elicitation techniques, such as interviews and workshops, and when to use each.",
+  "sections": [
+   {
+    "h": "Elicitation meaning",
+    "p": "Elicitation is drawing out information, needs and requirements from stakeholders and other sources. It is more than gathering: the analyst helps people discover and explain needs they may not have put into words yet."
+   },
+   {
+    "h": "Common elicitation techniques",
+    "items": [
+     "Interviews: one-to-one conversations for depth and sensitive topics",
+     "Workshops (such as JAD or requirements workshops): bring stakeholders together to agree requirements quickly",
+     "Focus groups: a small group shares opinions about a product or idea",
+     "Observation or job shadowing: watch how people actually do the work",
+     "Surveys and questionnaires: reach many people quickly",
+     "Document analysis: study existing procedures, reports and systems",
+     "Interface analysis: find how systems and users interact",
+     "Prototyping: show a model so stakeholders can react to something concrete",
+     "Brainstorming: generate many ideas without judging them"
+    ]
+   },
+   {
+    "h": "Choosing a technique",
+    "p": "Use interviews and observation for depth, surveys for reach, and workshops when many stakeholders must agree. Most analysts combine several techniques, then confirm what they learned with stakeholders before documenting requirements."
+   }
+  ],
+  "examTip": "On the ECBA, CBAP and PMP exams, pick observation when users cannot explain their work, workshops when stakeholders disagree or must align fast, and surveys when the audience is large or spread out.",
+  "faq": [
+   {
+    "q": "What does elicitation mean in business analysis?",
+    "a": "Elicitation means drawing out requirements and related information from stakeholders and other sources, using techniques such as interviews, workshops, observation and surveys."
+   },
+   {
+    "q": "What are the most common elicitation techniques?",
+    "a": "Interviews, workshops, focus groups, observation, surveys, document analysis, interface analysis, prototyping and brainstorming."
+   },
+   {
+    "q": "What is the difference between elicitation and requirements gathering?",
+    "a": "Gathering suggests the requirements already exist and only need collecting. Elicitation recognises that the analyst must actively draw out, question and confirm needs with stakeholders."
+   }
+  ],
+  "tools": [
+   {
+    "label": "Requirements workshop",
+    "path": "/pm-glossary/requirements-workshop",
+    "text": "One of the fastest ways to elicit and agree requirements."
+   },
+   {
+    "label": "ECBA exam simulator",
+    "path": "/pm-faciliter/ecba-exam-simulator",
+    "text": "Practise elicitation questions in the style of the IIBA entry exam."
+   },
+   {
+    "label": "CBAP exam simulator",
+    "path": "/pm-faciliter/cbap-exam-simulator",
+    "text": "Scenario questions for experienced business analysts."
+   }
+  ]
+ },
+ "estimate-at-completion-eac": {
+  "updated": "2026-11-25",
+  "seoTitle": "Estimate at Completion (EAC): 4 Formulas & Worked Example",
+  "seoDescription": "Estimate at completion (EAC) forecasts a project's final cost. See the four EAC formulas, when to use each, and a worked example with BAC, CPI and SPI.",
+  "sections": [
+   {
+    "h": "EAC in one line",
+    "p": "Estimate at completion (EAC) is the forecast total cost of the project when it finishes, based on performance so far. Compare it with the budget at completion (BAC) to see if the project will finish over or under budget."
+   },
+   {
+    "h": "The four EAC formulas",
+    "items": [
+     "EAC = BAC ÷ CPI: current cost performance will continue (the most common)",
+     "EAC = AC + (BAC − EV): the variance was a one-off and the rest will go to plan",
+     "EAC = AC + (BAC − EV) ÷ (CPI × SPI): both cost and schedule performance affect the remaining work",
+     "EAC = AC + bottom-up ETC: the original plan is no longer valid, so the remaining work is re-estimated"
+    ]
+   },
+   {
+    "h": "Worked example",
+    "p": "BAC is $100,000. The team has earned $40,000 of value (EV) and spent $50,000 (AC), so CPI = 40,000 ÷ 50,000 = 0.8. If this continues, EAC = 100,000 ÷ 0.8 = $125,000, and the variance at completion (VAC = BAC − EAC) is −$25,000. If the overrun was a one-off, EAC = 50,000 + (100,000 − 40,000) = $110,000."
+   }
+  ],
+  "examTip": "On the PMP exam, look for clues: \"typical\" or \"current trend continues\" means BAC ÷ CPI; \"atypical\" or \"one-time\" means AC + (BAC − EV); \"the original estimate was flawed\" means AC + bottom-up ETC.",
+  "faq": [
+   {
+    "q": "What is the formula for estimate at completion?",
+    "a": "The most common is EAC = BAC ÷ CPI. Others are AC + (BAC − EV) for a one-off variance, AC + (BAC − EV) ÷ (CPI × SPI) when schedule pressure also matters, and AC + bottom-up ETC when re-estimating."
+   },
+   {
+    "q": "What is the difference between EAC and ETC?",
+    "a": "EAC is the forecast total cost of the whole project. ETC (estimate to complete) is the forecast cost of the remaining work only. EAC = AC + ETC."
+   },
+   {
+    "q": "What does it mean if EAC is higher than BAC?",
+    "a": "The project is forecast to finish over budget. The difference, VAC = BAC − EAC, is negative."
+   }
+  ],
+  "tools": [
+   {
+    "label": "Earned value calculator",
+    "path": "/pm-calculators/earned-value-calculator",
+    "text": "Enter PV, EV, AC and BAC to get CPI, SPI, EAC, ETC, VAC and TCPI with the formulas shown."
+   },
+   {
+    "label": "Project delivery simulator",
+    "path": "/pm-playground",
+    "text": "Watch PV, EV and AC, CPI and SPI move week by week as you change the team and scope."
+   },
+   {
+    "label": "Estimate to complete (ETC)",
+    "path": "/pm-glossary/estimate-to-complete-etc",
+    "text": "The cost of the remaining work."
    }
   ]
  }

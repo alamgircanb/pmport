@@ -10,6 +10,7 @@
  *   template_open       template, role             a template is opened in the Artifacts Lab
  *   article_complete    article                    a reader reaches the end of an article ("Keep reading" block)
  *   related_click       from, to                   a "Keep reading" link is followed
+ *   next_step_click     from, to                   a "Your next step" link at the end of a tool, quiz or journey page is followed
  *   home_click          area, link_text, link_path a link on the home page (banner, Start here, cards)
  *   search              search_term                site search
  */

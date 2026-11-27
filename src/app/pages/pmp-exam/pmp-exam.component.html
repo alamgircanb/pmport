@@ -13,6 +13,7 @@
       <div class="hero-actions"><button class="button primary" type="button" (click)="scrollToSection('exams')">Choose an exam</button><button class="button secondary" type="button" (click)="scrollToSection('practice')">Practice by {{program.domainLabel.toLowerCase()}}</button></div>
     </div>
   </header>
+  <app-page-faq part="summary" [path]="pagePath"/>
 
   <section id="exams" class="exam-cards">
     @for(e of exams;track e.id){
@@ -59,6 +60,10 @@
     </div>
     <div class="practice-go"><span class="muted">{{practiceCount()}} questions match these filters.</span><button class="button primary" type="button" [disabled]="!practiceCount()" (click)="startPractice()">Start practice</button></div>
   </section>
+
+  <a class="card playground-promo" routerLink="/pm-playground"><span class="eyebrow">Put it into practice</span><strong>See project decisions play out in the Playground →</strong><span class="muted">Five free simulators show what exam scenarios test: adding people late, WIP limits, earned value, risk reserve and change adoption. Change a setting and watch the schedule, cost and morale respond week by week.</span></a>
+
+  <app-page-faq [path]="pagePath"/>
 
   <p class="disclaimer">{{program.disclaimer}}</p>
 </section>
@@ -199,6 +204,16 @@
     <button class="button secondary" type="button" (click)="retake()">{{isPractice?'New practice set':'Retake '+examTitle}}</button>
     <button class="button secondary" type="button" (click)="home()">Simulator home</button>
   </div>
+
+  <nav class="card next-steps" aria-labelledby="next-steps-title">
+    <p class="eyebrow">Your next step</p><h2 id="next-steps-title">Keep the momentum going</h2>
+    <ul>
+      <li><a [routerLink]="program.overview"><strong>Follow the {{program.code}} study plan →</strong><span>Work on your weakest {{program.domainLabel.toLowerCase()}} first, then take the next mock.</span></a></li>
+      <li><a routerLink="/daily-practice"><strong>Do 5 questions a day →</strong><span>Daily practice keeps what you learned fresh between full mocks.</span></a></li>
+      <li><a routerLink="/pm-playground"><strong>Try a project simulation →</strong><span>See the ideas behind the questions play out week by week.</span></a></li>
+      <li><a routerLink="/pm-faciliter"><strong>Explore the other exam simulators →</strong><span>PMP, CAPM, PMI-RMP, ECBA, CBAP, ITIL 5 Foundation and CCMP.</span></a></li>
+    </ul>
+  </nav>
 </section>
 }}
 

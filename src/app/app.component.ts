@@ -7,9 +7,10 @@ import {SEO_PAGES,pageName} from './core/seo/seo-pages';
 import {Title} from '@angular/platform-browser';
 import {SiteSearchComponent} from './core/search/site-search.component';
 import {RelatedReadingComponent} from './core/related/related-reading.component';
+import {NextStepComponent} from './core/related/next-step.component';
 import {startInteractionTracking} from './core/analytics';
 import {ProgressService} from './core/progress/progress.service';
-@Component({selector:'app-root',standalone:true,imports:[RouterOutlet,RouterLink,RouterLinkActive,SiteSearchComponent,RelatedReadingComponent],templateUrl:'./app.component.html',styleUrl:'./app.component.css'})
+@Component({selector:'app-root',standalone:true,imports:[RouterOutlet,RouterLink,RouterLinkActive,SiteSearchComponent,RelatedReadingComponent,NextStepComponent],templateUrl:'./app.component.html',styleUrl:'./app.component.css'})
 export class AppComponent{
  readonly auth=inject(AuthService); readonly year=new Date().getFullYear(); menuOpen=false; readonly groups=NAV_GROUPS; readonly aboutGroup=ABOUT_GROUP; open:Record<string,boolean>={}; url='/'; crumbs:{label:string;path?:string}[]=[]; private title=inject(Title); topOpen:string|null=null; private hoverOpened:string|null=null; searchOpen=false; relatedPath:string|null=null;
  private readonly router=inject(Router);isMobile=typeof window!=='undefined'&&window.innerWidth<=920;private desktopPreference=true;private workspace=false;
